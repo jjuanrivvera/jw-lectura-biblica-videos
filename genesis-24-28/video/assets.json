@@ -1,0 +1,103 @@
+{
+  "project": "genesis-24-28",
+  "assets": [
+    {
+      "path": "assets/img/betel-ruinas.jpg",
+      "title": "Ruinas de la antigua Betel",
+      "source": "Perspicacia para comprender las Escrituras, vol. 1, “Betel”, págs. 345-348.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1200000682",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/camello.jpg",
+      "title": "Camello árabe",
+      "source": "Perspicacia para comprender las Escrituras, vol. 1, “Camello”, pág. 400.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1200000871",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/escalera.jpg",
+      "title": "Jacob sueña con una escalera y ángeles",
+      "source": "Seamos valientes al andar con Dios, cap. 7, pág. 42.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1102025907",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/guisado.jpg",
+      "title": "Esaú cambia su primogenitura por un plato de comida",
+      "source": "Lecciones que aprendo de la Biblia, lección 12, pág. 34.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1102016022",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/haran-hoy.jpg",
+      "title": "Casas de adobe de Harán",
+      "source": "Perspicacia para comprender las Escrituras, vol. 1, “Harán”, pág. 1088.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1200001872",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/jacob-esau-historia.jpg",
+      "title": "Historieta “Jacob y Esaú”",
+      "source": "Historia bíblica ilustrada “Jacob y Esaú”, pág. 1.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/502013187",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/jacob-esau.jpg",
+      "title": "Jacob y Esaú",
+      "source": "Lecciones que aprendo de la Biblia, lección 12, pág. 34.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1102016022",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/mapa-b2-recuadro.jpg",
+      "title": "Recuadro del sur de Canaán del mapa B2",
+      "source": "Traducción del Nuevo Mundo (edición de estudio), apéndice B2, “Génesis y los viajes de los patriarcas”; marcas y trazos añadidos por la investigación.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1001070222",
+      "rights": "Titular del mapa base: Watch Tower Bible and Tract Society of Pennsylvania; rótulos, rutas o marcas añadidos por la investigación."
+    },
+    {
+      "path": "assets/img/mapa-b2.jpg",
+      "title": "Mapa de Canaán y los viajes de los patriarcas",
+      "source": "Traducción del Nuevo Mundo (edición de estudio), apéndice B2, “Génesis y los viajes de los patriarcas”; rutas y marcas añadidas por la investigación.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1001070222",
+      "rights": "Titular del mapa base: Watch Tower Bible and Tract Society of Pennsylvania; rótulos, rutas o marcas añadidos por la investigación."
+    },
+    {
+      "path": "assets/img/mapa-cinco-capitulos.jpg",
+      "title": "Mapa de los cinco capítulos",
+      "source": "Veamos “la buena tierra”, pág. 6, “El mundo de los patriarcas”; números por capítulo añadidos por la investigación.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1102003104",
+      "rights": "Titular del mapa base: Watch Tower Bible and Tract Society of Pennsylvania; rótulos, rutas o marcas añadidos por la investigación."
+    },
+    {
+      "path": "assets/img/mapa-pozos.jpg",
+      "title": "Mapa de los pozos de Isaac",
+      "source": "Veamos “la buena tierra”, pág. 7, “El mundo de los patriarcas”; números y zona punteada añadidos por la investigación.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1102003104",
+      "rights": "Titular del mapa base: Watch Tower Bible and Tract Society of Pennsylvania; rótulos, rutas o marcas añadidos por la investigación."
+    },
+    {
+      "path": "assets/img/negueb.jpg",
+      "title": "Paisaje del Négueb",
+      "source": "Seamos valientes al andar con Dios, cap. 6, pág. 38.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1102025906",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/rebeca-isaac.jpg",
+      "title": "Rebeca se acerca a Isaac",
+      "source": "Seamos valientes al andar con Dios, cap. 6, pág. 37.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1102025906",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/rebeca-pozo.jpg",
+      "title": "Rebeca da agua a los camellos",
+      "source": "La Atalaya, núm. 3 de 2016, “Estoy dispuesta a ir”, pág. 13.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/2016091",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    }
+  ]
+}

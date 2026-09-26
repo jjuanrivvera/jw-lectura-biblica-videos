@@ -1,0 +1,82 @@
+{
+  "project": "genesis-14-18",
+  "assets": [
+    {
+      "path": "assets/img/abrahan-sodoma.jpg",
+      "title": "Abrahán habla con Jehová sobre Sodoma",
+      "source": "La Atalaya (estudio), abril de 2017, “‘El Juez de toda la tierra’ siempre hace lo que es recto”.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/2017362",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/agar-ismael-se-van.jpg",
+      "title": "Agar e Ismael se van",
+      "source": "Lecciones que aprendo de la Biblia, lección 9.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1102016019",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/ataque-noche.jpg",
+      "title": "El ataque nocturno de Abrahán",
+      "source": "Seamos valientes al andar con Dios, cap. 4, pág. 29.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1102025904",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/estrellas.jpg",
+      "title": "Abrahán mira las estrellas",
+      "source": "Mi libro de historias bíblicas, historia 13, “Abrahán... amigo de Dios”.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1101978066",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/hospitalidad.jpg",
+      "title": "Sara muestra hospitalidad",
+      "source": "La Atalaya, núm. 5 de 2017, “Dios la llamó ‘Princesa’”.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/2017172",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/lot-zoar.jpg",
+      "title": "Lot y sus hijas llegan a Zóar",
+      "source": "Acerquémonos a Jehová, cap. 12.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1102002035",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/mapa-agar.jpg",
+      "title": "Mapa del recorrido de Agar",
+      "source": "Veamos “la buena tierra”, págs. 6 y 7, “El mundo de los patriarcas”; ruta, rótulos y distancias añadidos por la investigación.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1102003104",
+      "rights": "Titular del mapa base: Watch Tower Bible and Tract Society of Pennsylvania; rótulos, rutas o marcas añadidos por la investigación."
+    },
+    {
+      "path": "assets/img/mapa-b2-rutas.jpg",
+      "title": "Mapa de Canaán y las rutas de Génesis 14",
+      "source": "Traducción del Nuevo Mundo (edición de estudio), apéndice B2, “Génesis y los viajes de los patriarcas”; rutas, números y distancias añadidos por la investigación.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1001070222",
+      "rights": "Titular del mapa base: Watch Tower Bible and Tract Society of Pennsylvania; rótulos, rutas o marcas añadidos por la investigación."
+    },
+    {
+      "path": "assets/img/melquisedec-diezmo.jpg",
+      "title": "Abrahán entrega el diezmo a Melquisedec",
+      "source": "Seamos valientes al andar con Dios, cap. 4, pág. 30, imagen B.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1102025904",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/sara-escucha.jpg",
+      "title": "Sara escucha desde la tienda",
+      "source": "Lecciones que aprendo de la Biblia, lección 9, “¡Por fin tienen un hijo!”.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/1102016019",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    },
+    {
+      "path": "assets/img/sara-princesa.jpg",
+      "title": "Sara, “Princesa”",
+      "source": "La Atalaya, núm. 5 de 2017, “Dios la llamó ‘Princesa’”.",
+      "source_url": "https://wol.jw.org/es/wol/d/r4/lp-s/2017172",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania."
+    }
+  ]
+}

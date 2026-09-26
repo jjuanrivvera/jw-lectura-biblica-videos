@@ -4,21 +4,75 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const manifest = JSON.parse(await fs.readFile(path.join(root, 'assets.json'), 'utf8'));
-const entries = manifest.assets ?? [];
-if (!Array.isArray(entries)) throw new Error('assets.json: "assets" debe ser una lista.');
-for (const asset of entries) {
-  if (typeof asset.url !== 'string' || !asset.url.startsWith('https://')) {
-    throw new Error(`URL HTTPS no válida para ${asset.path ?? 'recurso sin ruta'}`);
+const projects = ['genesis-14-18', 'genesis-19-23', 'genesis-24-28', 'jeremias-36-37'];
+const headers = {
+  'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+  'Referer': 'https://wol.jw.org/es/wol/h/r4/lp-s',
+  'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0',
+};
+const maxBytes = 25 * 1024 * 1024;
+let downloaded = 0;
+let manual = 0;
+
+for (const project of projects) {
+  const videoRoot = path.join(root, project, 'video');
+  const manifestPath = path.join(videoRoot, 'assets.json');
+  const manifest = JSON.parse(await fs.readFile(manifestPath, 'utf8'));
+  if (!Array.isArray(manifest.assets)) {
+    throw new Error(manifestPath + ': "assets" debe ser una lista.');
   }
-  const target = path.resolve(root, asset.path);
-  if (!target.startsWith(root + path.sep)) throw new Error(`Ruta fuera del repositorio: ${asset.path}`);
-  const response = await fetch(asset.url);
-  if (!response.ok) throw new Error(`Descarga fallida (${response.status}): ${asset.url}`);
-  const data = Buffer.from(await response.arrayBuffer());
-  if (data.length > 5 * 1024 * 1024) throw new Error(`El recurso supera 5 MB: ${asset.path}`);
-  await fs.mkdir(path.dirname(target), { recursive: true });
-  await fs.writeFile(target, data);
-  console.log(`${asset.path}: ${data.length} bytes`);
+
+  for (const asset of manifest.assets) {
+    if (!asset.path || !asset.title || !asset.source || !asset.rights) {
+      throw new Error(manifestPath + ': cada entrada necesita path, title, source y rights.');
+    }
+    const target = path.resolve(videoRoot, asset.path);
+    if (!target.startsWith(videoRoot + path.sep)) {
+      throw new Error('Ruta fuera del proyecto: ' + project + '/' + asset.path);
+    }
+
+    if (typeof asset.url !== 'string' || !asset.url.trim()) {
+      manual += 1;
+      const sourceUrl = asset.source_url ? ' (' + asset.source_url + ')' : '';
+      process.stdout.write(
+        'Consíguela manualmente: ' + project + '/' + asset.path + ' — ' +
+        asset.title + '. Fuente: ' + asset.source + sourceUrl + '\n',
+      );
+      continue;
+    }
+    if (!asset.url.startsWith('https://')) {
+      throw new Error('La URL directa debe usar HTTPS: ' + project + '/' + asset.path);
+    }
+
+    if (downloaded > 0) await new Promise((resolve) => setTimeout(resolve, 2000));
+    const response = await fetch(asset.url, { headers });
+    if (response.status !== 200) {
+      throw new Error('Descarga fallida (HTTP ' + response.status + '): ' + asset.url);
+    }
+    const data = Buffer.from(await response.arrayBuffer());
+    if (data.length === 0) throw new Error('La descarga llegó vacía: ' + asset.url);
+    if (data.length > maxBytes) throw new Error('La descarga supera 25 MB: ' + project + '/' + asset.path);
+
+    const rawContentLength = response.headers.get('content-length');
+    const contentLength = Number(rawContentLength);
+    const isEncoded = Boolean(response.headers.get('content-encoding'));
+    if (
+      !isEncoded && rawContentLength !== null &&
+      Number.isFinite(contentLength) && contentLength !== data.length
+    ) {
+      throw new Error(
+        'El tamaño descargado no coincide con Content-Length (' + data.length + ' / ' +
+        contentLength + ' bytes): ' + asset.url,
+      );
+    }
+
+    await fs.mkdir(path.dirname(target), { recursive: true });
+    await fs.writeFile(target, data);
+    downloaded += 1;
+    process.stdout.write(project + '/' + asset.path + ': HTTP 200, ' + data.length + ' bytes\n');
+  }
 }
-if (entries.length === 0) console.log('El manifiesto no contiene recursos externos.');
+
+process.stdout.write(
+  'Descargas directas: ' + downloaded + '; imágenes para conseguir manualmente: ' + manual + '.\n',
+);

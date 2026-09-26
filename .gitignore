@@ -6,6 +6,13 @@
 *.mov
 *.webm
 
+# Imágenes publicadas o externas: se obtienen localmente y no se versionan
+**/video/assets/img/*.jpg
+**/video/assets/img/*.jpeg
+**/video/assets/img/*.png
+**/video/assets/img/*.webp
+**/video/assets/img/*.avif
+
 # Salidas y cachés
 **/video/audio/
 **/video/renders/

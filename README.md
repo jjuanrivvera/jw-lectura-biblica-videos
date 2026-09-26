@@ -24,15 +24,17 @@ Cada video sigue este orden: `GUION.md` → `NARRACION.md` → audio por escena 
 
 Instala la dependencia de voz con `python3 -m pip install -r tools/requirements.txt`.
 
-## Recursos visuales
+## Imágenes
 
-Los gráficos que acompañan las escenas son SVG editables incluidos en cada proyecto. No se guardan en el repositorio fotografías, mapas ni ilustraciones descargados de publicaciones. El manifiesto `assets.json` enumera los recursos externos si se añaden en el futuro; para descargarlos, ejecuta:
+Las ilustraciones y los mapas de las publicaciones de los testigos de Jehová, y las fotografías de terceros, no se incluyen en este repositorio por derechos de autor. Cada proyecto mantiene un `video/assets.json` con la ruta de destino, el título, la referencia bibliográfica, el enlace a la fuente cuando está disponible y el titular de derechos.
+
+Desde la raíz, ejecuta:
 
 ```sh
 node tools/fetch-assets
 ```
 
-El manifiesto actual no requiere descargas externas.
+La herramienta descarga las entradas que tienen una URL directa y muestra las demás como **“Consíguela manualmente”**, con su referencia y enlace a la publicación. Coloca cada archivo en la ruta indicada por su manifiesto. Las imágenes descargadas o copiadas quedan fuera del control de versiones. Sin ellas, el render falla con la lista de imágenes que faltan y el video no se renderiza completo.
 
 ## Generar audio y renderizar
 
@@ -44,7 +46,7 @@ node genesis-14-18/herramientas/construir.mjs
 node tools/fetch-assets
 cd genesis-14-18/video
 npx --yes hyperframes@0.8.72 lint
-npx --yes hyperframes@0.8.72 render
+npm run render
 ```
 
 Para una narración manual de una escena, el comando base es `edge-tts --voice es-US-AlonsoNeural --text "Texto de la escena" --write-media video/audio/escena-00.mp3`. Cambia el número de escena según corresponda. El script común extrae el texto de `NARRACION.md`, genera un MP3 por escena y guarda los tiempos por palabra que necesita el constructor.
@@ -60,7 +62,6 @@ También puedes ejecutar el render con `tools/render.sh genesis-14-18`. Sustituy
 ├── genesis-24-28/
 ├── jeremias-36-37/
 ├── tools/               # Voz, descarga de recursos y render
-├── assets.json
 ├── .gitignore
 ├── LICENSE
 ├── METODO.md
