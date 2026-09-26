@@ -1,0 +1,97 @@
+<style>
+.oficial { position: absolute; left: 40px; right: 40px; top: 170px; height: 1037px; }
+.oficial img { object-fit: contain; background: #17212b; }
+.ofi-pie { position: absolute; left: 60px; right: 60px; top: 1230px; text-align: center; }
+.mapa { overflow: hidden; position: absolute; left: 0; top: 200px; width: 1080px; height: 640px; border-top: 2px solid rgba(239,231,214,0.15); border-bottom: 2px solid rgba(239,231,214,0.15); }
+.mapa .agua { fill: #1e3350; stroke: #56789f; stroke-width: 0.7; }
+.mapa .rio { fill: none; stroke: #56789f; stroke-width: 1.3; }
+.mapa .reg { font-family: "Arial", sans-serif; font-size: 7px; fill: #aab4bf; letter-spacing: 1.2px; text-anchor: middle; }
+.mapa .lug { font-family: "Arial", sans-serif; font-weight: 700; font-size: 8.5px; fill: #efe7d6; stroke: #17212b; stroke-width: 2.6; paint-order: stroke; }
+.mapa .km { font-family: "cursive", cursive; font-weight: 700; font-size: 10px; fill: #e7a8c9; stroke: #17212b; stroke-width: 2.4; paint-order: stroke; }
+.b { position: absolute; left: 72px; right: 72px; top: 900px; }
+.b .m { font-family: "cursive", cursive; font-weight: 700; font-size: 62px; line-height: 1.05; }
+.b .s { font-family: "Arial", sans-serif; font-size: 28px; color: var(--tenue); margin-top: 12px; }
+.b .cita { font-size: 62px; }
+.b .propio { font-size: 42px; margin-top: 16px; }
+.nombre { display: flex; align-items: baseline; gap: 30px; }
+.nombre .w { font-family: "Georgia", serif; font-weight: 700; font-size: 110px; color: var(--rosa); }
+.nombre .d { font-family: "cursive", cursive; font-weight: 700; font-size: 70px; color: var(--oro); }
+.ve { text-align: center; }
+.ve .q { font-family: "Georgia", serif; font-weight: 600; font-size: 96px; color: var(--oro); line-height: 1.08; }
+.ve .r { font-family: "Arial", sans-serif; font-weight: 700; font-size: 32px; color: var(--tenue); margin-top: 16px; }
+.ve .pozo { font-family: "cursive", cursive; font-weight: 700; font-size: 58px; margin-top: 40px; line-height: 1.05; }
+.leccion { position: absolute; left: 72px; right: 72px; top: 1450px; text-align: center; font-size: 68px; color: var(--oro); }
+</style>
+
+<div class="fase fmap">
+<svg class="mapa" viewBox="20 40 270 160">
+  <rect x="-100" y="-100" width="600" height="400" fill="#17212b" />
+  <path class="agua" d="M-16.0 66.8 L19.2 92.5 L45.6 114.0 L80.8 110.9 L116.0 105.8 L151.2 107.8 L189.9 90.4 L208.4 67.8 L217.2 52.5 L225.1 39.1 L234.8 13.5 L243.6 -15.2 L330.7 -232.6 L-183.2 -391.6 L-183.2 66.8 Z" />
+  <path class="agua" d="M305.2 42.2 L298.2 47.3 L295.5 61.7 L291.1 74.0 L292.0 89.4 L293.8 102.7 L294.6 115.0 L298.2 120.1 L302.6 116.0 L303.4 100.7 L300.8 93.5 L307.0 84.3 L307.8 69.9 L308.7 49.4 Z" />
+  <path class="agua" d="M41.2 228.9 L45.6 254.5 L63.2 295.5 L107.2 377.6 L54.4 377.6 L28.0 305.8 L23.6 264.8 Z" />
+  <path class="rio" d="M307.0 -54.2 L307.8 -32.7 L306.1 -12.2 L305.2 8.4 L303.4 23.7 L305.2 42.2" />
+  <text class="reg" x="252.4" y="126.3">NÉGUEB</text>
+  <text class="reg r-sur" x="98.4" y="182.7">DESIERTO DE SUR</text>
+  <text class="reg" x="40" y="196">EGIPTO</text>
+  <text class="reg" x="221.6" y="196">DESIERTO DE PARÁN</text>
+  <text class="reg" x="272" y="46">CANAÁN</text>
+  <text x="80.8" y="64.8" style="font-family:Georgia;font-style:italic;font-size:8.5px;fill:#8db4ec" text-anchor="middle">Mar Grande</text>
+  <path class="ruta" d="M265.6 63.7 L238.3 95.5 L212.8 126.3 L195.2 153.0" fill="none" stroke="#e7a8c9" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" />
+  <path class="resto" d="M195.2 153.0 L160.0 149.9 L107.2 146.8 L32.4 160.1" fill="none" stroke="#aab4bf" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+  <g class="l-mam"><circle cx="265.6" cy="63.7" r="3.4" fill="#e6bb5c" /><text class="lug" x="258.6" y="58" text-anchor="end">Mamré (Hebrón)</text></g>
+  <g class="l-beer" data-layout-allow-overlap><circle cx="238.3" cy="95.5" r="3.2" fill="#e6bb5c" /><text class="lug" x="245" y="99.5">Beer-seba</text><text class="km" x="245" y="110">unos 45 km</text></g>
+  <g class="l-man"><circle cx="195.2" cy="153.0" r="7" fill="none" stroke="#e6bb5c" stroke-width="1.2" stroke-dasharray="2 2" /><circle cx="195.2" cy="153.0" r="2" fill="#e6bb5c" /><text class="lug" x="190" y="140" text-anchor="end">Beer-Lahái-Roí ?</text><text class="km" x="160" y="168" text-anchor="middle">unos 125 km</text></g>
+  <g class="l-cad"><circle cx="212.5" cy="172" r="2.6" fill="none" stroke="#e6bb5c" stroke-dasharray="1.5 1.5" /><text class="lug" x="218" y="175" style="font-weight:400">Cadés ?</text></g>
+  <g class="l-egi"><text class="km" x="70" y="140" text-anchor="middle" style="fill:#aab4bf">faltaban unos 180 km</text></g>
+  <g class="agar"><circle r="6" fill="#e7a8c9" fill-opacity="0.35" /><circle r="3.2" fill="#e7a8c9" /></g>
+</svg>
+
+<div class="b b0"><div class="m">Agar, egipcia, “probablemente huía a Egipto”, por “el camino que va hacia Sur”</div><div class="s">Génesis 16:7 · Perspicacia, vol. 2, “Sur, I”, pág. 1075 · Sur significa “Muro”</div></div>
+<div class="b b1"><div class="m">Pasa por Beer-seba y entra en el Négueb</div><div class="s">distancias en línea recta por tramos</div><span class="propio">cálculo propio</span></div>
+<div class="b b2"><div class="primera"><span class="rotulo">Primera vez en la Biblia · para una esclava extranjera</span><span class="palabra">“el ángel de Jehová”</span></div><div class="s">Génesis 16:7 · nota de 16:7 en la TNM de 1987</div></div>
+<div class="b b3"><div class="cita">“Agar, sierva de Sarái, ¿de dónde vienes y adónde vas?”<span class="ref">Génesis 16:8</span></div></div>
+<div class="b b4"><div class="m">Vuelve con tu ama · tendrás una descendencia incontable</div><div class="nombre" style="margin-top:20px"><div class="w">Ismael</div><div class="d">“Dios escucha”</div></div><div class="m" style="font-size:54px">“porque Jehová ha escuchado tu llanto de dolor”</div><div class="s">Génesis 16:9-11</div></div>
+<div class="b b5 ve"><div class="q">“Tú eres un Dios que ve”</div><div class="r">GÉNESIS 16:13</div><div class="pozo">Beer-Lahái-Roí: posiblemente, “pozo del Viviente que me ve”</div><div class="s">Nota de la TNM en 16:14 · ubicación incierta: “entre Cadés y Bered”</div></div>
+<div class="b b6"><div class="m">Si hubiera seguido: unos 180 km más de desierto</div><span class="propio">cálculo propio</span></div>
+<div class="b b7"><div class="m">Obedeció y volvió. Ismael “pudo nacer en el ambiente seguro del campamento de Abrahán”</div><div class="s">La Atalaya, 15 de abril de 2008, pág. 10 · Génesis 16:15</div></div>
+<div class="leccion mano">Nadie está tan lejos que Jehová no lo vea, ni tan equivocado que no lo busque</div>
+</div>
+
+<div class="fase foficial">
+  <div class="oficial ilus"><div class="kb"><img src="assets/img/mapa-agar.svg" /></div></div>
+  <div class="ofi-pie pie">Mapa: <i>Veamos “la buena tierra”</i>, págs. 6, 7 · ruta, rótulos y distancias añadidos por la investigación</div>
+</div>
+
+<script>
+kb(".oficial .kb", 0, at("Sale de Mamré") + 1.5, { s: 1.0 }, { s: 1.06 });
+sale(".foficial", at("Sale de Mamré") + 1.5, { d: 0.6 });
+
+const bloques = [[".b0", at("Era egipcia")], [".b1", at("A unos cuarenta")], [".b2", at("Es la primera")], [".b3", at("Le pregunta")], [".b4", at("Le manda")], [".b5", at("Ella llama")], [".b6", at("Si hubiera")], [".b7", at("Pero obedeció")]];
+bloques.forEach(([s, t], i) => { entra(s, t, { y: 24 }); if (i < bloques.length - 1) sale(s, bloques[i + 1][1] - 0.4, { d: 0.35 }); });
+sale(".b7", at("Nadie está") - 0.4);
+escribe(".leccion", at("Nadie está"), 2.6);
+
+// Agar avanza por el camino; la ruta se dibuja detrás de ella.
+const ruta = medirCamino(".mapa .ruta");
+const resto = medirCamino(".mapa .resto");
+aparece(".mapa .agar", at("Sale de Mamré"), 0.3);
+preparaTrazos(".mapa .ruta");
+const L = _largos.get($(".mapa .ruta"));
+// La ruta es de 123 km: Beer-seba cae en el 37 % del trazo.
+const kBeer = 45.3 / 123.3;
+tl.fromTo(inicial([$(".mapa .ruta")], { opacity: 0 }), { strokeDashoffset: L, opacity: 1 }, { strokeDashoffset: L * (1 - kBeer), opacity: 1, duration: 3.0, ease: "power1.inOut", immediateRender: false }, at("A unos cuarenta"));
+recorre(".mapa .agar", ruta, at("A unos cuarenta"), 3.0, { desde: 0, hasta: kBeer });
+salta(".mapa .l-beer", at("Beerseba"));
+tl.to($(".mapa .ruta"), { strokeDashoffset: 0, duration: 3.4, ease: "power1.inOut" }, at("A unos ciento"));
+recorre(".mapa .agar", ruta, at("A unos ciento"), 3.4, { desde: kBeer, hasta: 1 });
+salta(".mapa .l-man", at("manantial"));
+salta(".mapa .l-cad", at("manantial") + 0.4);
+tl.fromTo($(".mapa .l-man circle"), { scale: 1 }, { scale: 1.8, svgOrigin: "195.2 153", yoyo: true, repeat: 5, duration: 0.4, immediateRender: false }, at("la encuentra"));
+
+// Lo que no recorrió: el tramo a Egipto, punteado.
+traza(".mapa .resto", at("Si hubiera"), 2.0, { ease: "none" });
+tl.set($(".mapa .resto"), { strokeDasharray: "4 3", strokeDashoffset: 0 }, at("Si hubiera") + 2.05);
+salta(".mapa .l-egi", at("ciento ochenta"));
+// Obedece y vuelve a Mamré.
+recorre(".mapa .agar", ruta, at("Pero obedeció"), 2.6, { desde: 1, hasta: 0 });
+</script>

@@ -1,0 +1,32 @@
+<style>
+.ilus.img-r { left: 60px; top: 150px; width: 1120px; height: 630px; }
+.pie-r { left: 60px; top: 796px; width: 1120px; }
+.col { width: 640px; right: 60px; top: 120px; }
+.linea-t { position: absolute; left: 60px; top: 890px; width: 1120px; height: 140px; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 20px; }
+.linea-t .dato { padding: 14px 22px; }
+.linea-t .dato .v { font-size: 56px; }
+.linea-t .dato .k { font-size: 38px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 24</span><span>versículos 61 al 67</span></div>
+<div class="ilus img-r"><div class="kb"><img src="assets/img/rebeca-isaac.svg" /></div></div>
+<div class="pie-img pie-r">Rebeca, con el velo, ve a Isaac a lo lejos. Ilustración: <i>Seamos valientes al andar con Dios</i>, cap. 6, pág. 37</div>
+<div class="linea-t">
+  <div class="dato t1"><div class="v">3 semanas</div><div class="k">de regreso, en camello</div></div>
+  <div class="dato t2"><div class="v">40 años</div><div class="k">tenía Isaac</div></div>
+  <div class="dato t3"><div class="v">1878</div><div class="k">antes de nuestra era</div></div>
+</div>
+<div class="col">
+  <div class="b a1"><div class="cita md">“Isaac estaba paseando por el campo al anochecer <b>para meditar</b>”<span class="ref">GÉNESIS 24:63</span></div><div class="s">el regreso: La Atalaya, núm. 3 de 2016, pág. 15</div></div>
+  <div class="b a2"><div class="def"><div class="t">el velo</div><div class="x">no era timidez: la sumisión de la novia a la autoridad del novio</div><div class="s">Perspicacia, vol. 2, “Matrimonio”, pág. 344</div></div></div>
+  <div class="b a3"><div class="m">ningún rito religioso</div><div class="m oro">el novio llevaba a la novia a su casa</div><div class="s">“y el matrimonio ya era válido” · Perspicacia, “Matrimonio”, pág. 343</div><div class="m rosa">la tienda de Sara</div></div>
+  <div class="b a4"><div class="cita">“Isaac se enamoró de ella y <b>sintió consuelo</b> tras la pérdida de su madre”<span class="ref">GÉNESIS 24:67</span></div></div>
+</div>
+
+<script>
+kb(".img-r .kb", 0, DUR, { s: 1.16, x: 3, y: 1 }, { s: 1.0, x: -2, y: 0 });
+entra(".t1", 0.6, { y: 20 });
+secuencia([[".a1", at("Al anochecer")], [".a2", at("se cubre con el velo")], [".a3", at("La boda no tuvo")], [".a4", at("Y dice el relato")]]);
+entra(".t2", at("Tenía cuarenta años"), { y: 20 });
+entra(".t3", at("Tenía cuarenta años") + 0.4, { y: 20 });
+</script>

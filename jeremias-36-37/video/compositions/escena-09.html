@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="UTF-8" /><title>El rey quema el rollo</title></head>
+<body>
+<template>
+<style>
+#escena-09 {
+/* Estilo común de todas las escenas. El constructor lo anida bajo #escena-NN. */
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+color: var(--tiza);
+font-family: "Arial", sans-serif;
+--pizarra: #17212b;
+--tiza: #efe7d6;
+--tenue: #aab4bf;
+--oro: #e6bb5c;
+--rojo: #e8805f;
+--verde: #92d193;
+--cielo: #8db4ec;
+--rosa: #e7a8c9;
+--agua: #1e3350;
+--agua-borde: #56789f;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.capa { position: absolute; inset: 0; }
+.contenido { position: absolute; inset: 0; }
+
+/* Tipografía por registro: la Biblia, la pizarra, las referencias. */
+.biblia { font-family: "Georgia", serif; font-weight: 500; line-height: 1.18; letter-spacing: -0.01em; }
+.biblia em { font-style: italic; }
+.mano { font-family: "cursive", cursive; font-weight: 600; line-height: 1.05; }
+.rotulo { font-family: "Arial", sans-serif; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+
+/* Cabecera: capítulo y versículos. */
+.cab {
+  position: absolute; left: 72px; right: 72px; top: 84px;
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: "Arial", sans-serif; font-weight: 700; font-size: 34px;
+  color: var(--tenue); letter-spacing: 0.08em; text-transform: uppercase;
+}
+.cab .cap { color: var(--oro); }
+
+/* Línea de fuente al pie. */
+.fuente {
+  position: absolute; left: 72px; right: 72px; bottom: 96px;
+  font-family: "Arial", sans-serif; font-weight: 400; font-size: 30px; line-height: 1.3;
+  color: var(--tenue); text-align: left;
+}
+.fuente b { color: var(--tiza); font-weight: 700; }
+
+/* Etiqueta para lo que la investigación marca como propio. */
+.propio {
+  display: inline-block; padding: 8px 22px 6px; border: 3px dashed var(--cielo); border-radius: 14px;
+  font-family: "cursive", cursive; font-weight: 700; font-size: 46px; color: var(--cielo);
+  transform: rotate(-2deg);
+}
+
+/* Cita bíblica grande. */
+.cita {
+  font-family: "Georgia", serif; font-weight: 500; font-size: 68px; line-height: 1.2; color: var(--tiza);
+}
+.cita .ref { display: block; margin-top: 22px; font-family: "Arial", sans-serif; font-weight: 700;
+  font-size: 34px; letter-spacing: 0.08em; color: var(--oro); }
+
+/* Tarjeta "primera vez". */
+.primera {
+  display: inline-flex; flex-direction: column; gap: 6px; padding: 26px 34px;
+  border: 3px solid var(--oro); border-radius: 22px; background: rgba(23, 33, 43, 0.86);
+}
+.primera .rotulo { font-size: 28px; color: var(--oro); }
+.primera .palabra { font-family: "Georgia", serif; font-size: 76px; font-weight: 600; color: var(--tiza); line-height: 1.05; }
+
+/* Ilustraciones de la JW: marco sencillo y pie con la fuente. */
+.ilus { position: absolute; overflow: hidden; border-radius: 26px; box-shadow: 0 24px 60px rgba(0,0,0,0.45); }
+.ilus .kb { position: absolute; inset: 0; }
+.ilus img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pie {
+  font-family: "Arial", sans-serif; font-size: 28px; line-height: 1.3; color: var(--tenue);
+}
+
+/* SVG de pizarra. */
+svg { overflow: visible; }
+.trazo { fill: none; stroke: var(--tiza); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Tablero de la promesa. */
+.tablero { position: absolute; left: 60px; right: 60px; }
+.tablero .titulo { font-family: "cursive", cursive; font-weight: 700; font-size: 104px; color: var(--oro); text-align: center; line-height: 1; }
+.tablero .rejilla { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; }
+.tablero .casilla {
+  position: relative; min-height: 196px; padding: 20px 24px 18px; border-radius: 20px;
+  border: 3px dashed rgba(239, 231, 214, 0.35);
+}
+.tablero .casilla .et { font-family: "Arial", sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tenue); }
+.tablero .casilla .val { font-family: "cursive", cursive; font-weight: 700; font-size: 60px; line-height: 1; color: var(--oro); margin-top: 12px; }
+.tablero .casilla .vs { font-family: "Arial", sans-serif; font-weight: 700; font-size: 26px; color: var(--tenue); margin-top: 10px; }
+.tablero .casilla .marco { position: absolute; inset: -3px; border: 3px solid var(--oro); border-radius: 20px; opacity: 0; }
+
+/* Tarjeta de capítulo. */
+.capcard { position: absolute; left: 60px; right: 60px; top: 600px; text-align: center; }
+.capcard .num { font-family: "Georgia", serif; font-weight: 700; font-size: 190px; line-height: 1; letter-spacing: -0.02em; }
+.capcard svg { display: block; margin: 20px auto 0; width: 620px; height: 40px; }
+.capcard svg path { fill: none; stroke: var(--oro); stroke-width: 7; stroke-linecap: round; }
+.capcard .sub { font-family: "cursive", cursive; font-weight: 700; font-size: 88px; line-height: 1.05; color: var(--oro); margin-top: 26px; }
+.capcard .edad { font-family: "Arial", sans-serif; font-weight: 700; font-size: 36px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tenue); margin-top: 36px; }
+.fase { position: absolute; inset: 0; }
+
+/* ---- Jeremías 36 y 37: legibilidad en el celular ---- */
+.cab { top: 70px; font-size: 36px; }
+/* Zona de texto: el bloque se centra en el espacio de abajo, para no dejar media pantalla vacía. */
+.zt { position: absolute; left: 64px; right: 64px; top: 1070px; bottom: 110px; }
+.zt > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.zt.alta { top: 180px; }
+.m { font-family: "cursive", cursive; font-weight: 700; font-size: 80px; line-height: 1.04; color: var(--tiza); }
+.m.oro { color: var(--oro); }
+.cita { font-size: 64px; line-height: 1.18; }
+.cita .ref { font-size: 36px; margin-top: 18px; }
+.s { font-family: "Arial", sans-serif; font-weight: 500; font-size: 36px; line-height: 1.3; color: var(--tenue); }
+.s b { color: var(--tiza); }
+.propio { font-size: 48px; align-self: flex-start; }
+.grande { font-family: "Georgia", serif; font-weight: 700; font-size: 150px; line-height: 1; letter-spacing: -0.02em; }
+.def { border: 4px solid var(--cielo); border-radius: 26px; padding: 30px 38px; background: rgba(23, 33, 43, 0.9); }
+.def .t { font-family: "Arial", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cielo); }
+.def .x { font-family: "cursive", cursive; font-weight: 700; font-size: 70px; line-height: 1.05; margin-top: 10px; }
+.zv { position: absolute; left: 0; right: 0; top: 150px; height: 900px; }
+.zv svg { width: 100%; height: 100%; display: block; }
+/* Rótulo de sección de lecciones: tiene que verse distinto al resto. */
+.seccion { position: absolute; left: 60px; right: 60px; top: 90px; text-align: center; }
+.seccion .r { font-family: "Arial", sans-serif; font-weight: 800; font-size: 38px; letter-spacing: 0.2em; color: var(--verde); text-transform: uppercase; }
+.seccion .t { font-family: "Georgia", serif; font-weight: 700; font-size: 104px; line-height: 1.02; margin-top: 12px; }
+.seccion svg { display: block; margin: 18px auto 0; width: 700px; height: 30px; }
+.seccion svg path { fill: none; stroke: var(--verde); stroke-width: 7; stroke-linecap: round; }
+.leccion { position: absolute; left: 64px; right: 64px; top: 470px; bottom: 150px; display: flex; flex-direction: column; justify-content: center; gap: 44px; }
+.leccion .n { font-family: "Georgia", serif; font-weight: 700; font-size: 60px; color: var(--verde); }
+.leccion .l { font-family: "cursive", cursive; font-weight: 700; font-size: 88px; line-height: 1.04; }
+.leccion .p { border-left: 8px solid var(--oro); padding: 6px 0 6px 34px; font-family: "Georgia", serif; font-style: italic; font-weight: 500; font-size: 60px; line-height: 1.2; color: var(--oro); }
+.leccion .p .k { display: block; font-family: "Arial", sans-serif; font-style: normal; font-weight: 800; font-size: 30px; letter-spacing: 0.16em; color: var(--tenue); margin-bottom: 10px; }
+.leccion .s { margin-top: -10px; }
+.zt > .b.def { height: fit-content; margin: auto 0; gap: 0; }
+.m { font-size: 86px; }
+.cita { font-size: 68px; }
+.def .x { font-size: 80px; }
+.zt { top: 1040px; }
+
+
+.zv { top: 150px; height: 900px; }
+.parte { position: absolute; font-family: "cursive", cursive; font-weight: 700; font-size: 54px; line-height: 1; color: var(--oro); }
+.pa { left: 30px; top: 720px; width: 300px; text-align: right; }
+.pb { left: 30px; top: 930px; width: 300px; text-align: right; }
+.pc { left: 790px; top: 850px; width: 270px; }
+.pd { left: 790px; top: 690px; width: 270px; }
+.nombres { position: absolute; left: 40px; right: 40px; top: 190px; display: flex; justify-content: center; gap: 26px; }
+.nombres div { padding: 16px 30px; border: 4px solid var(--verde); border-radius: 22px; font-family: "Georgia", serif; font-weight: 700; font-size: 56px; background: rgba(23,33,43,0.9); }
+.nombres .r { position: absolute; left: 0; right: 0; top: 118px; text-align: center; border: 0; background: none; font-family: "cursive", cursive; font-size: 58px; color: var(--rojo); padding: 0; }
+.ocultos { position: absolute; left: 40px; right: 40px; top: 230px; text-align: center; font-family: "Georgia", serif; font-weight: 700; font-size: 82px; line-height: 1.05; color: var(--verde); }
+.col-marca { fill: rgba(230,187,92,0.28); }
+
+}
+</style>
+<div id="escena-09" data-composition-id="escena-09" data-width="1080" data-height="1920">
+<div class="contenido">
+<div class="cab"><span class="cap">Jeremías 36</span><span>versículos 20 al 26</span></div>
+<div class="zv"><svg viewBox="0 0 1080 900"><g class="dib"></g></svg></div>
+<div class="parte pa">redondo, poco profundo</div>
+<div class="parte pb">sobre patas</div>
+<div class="parte pc">de metal</div>
+<div class="parte pd">las brasas</div>
+<div class="nombres"><div>Elnatán</div><div>Delayá</div><div>Guemarías</div><div class="r">“él no les hizo caso”</div></div>
+<div class="ocultos">“pero Jehová los mantuvo ocultos”</div>
+
+<div class="zt">
+  <div class="b b1"><div class="m">La casa de invierno, en el noveno mes</div><div class="s">Nota de 36:22: de mediados de noviembre a mediados de diciembre</div></div>
+  <div class="b b2 def"><div class="t">Brasero</div><div class="x">recipiente redondo, poco profundo, sobre patas, probablemente de metal</div><div class="s" style="margin-top:14px">Perspicacia, “Brasero”</div></div>
+  <div class="b b3"><div class="m">Jehudí lee. Cada 3 o 4 columnas…</div><div class="s">Jeremías 36:23</div></div>
+  <div class="b b4"><div class="m">…un corte <span style="color:var(--oro)">“con un cuchillo de secretario”</span>, y al fuego</div><div class="s">Jeremías 36:23 · una herramienta del oficio de escribir</div></div>
+  <div class="b b5"><div class="m">Pedazo por pedazo, hasta acabar con el rollo</div></div>
+  <div class="b b6"><div class="cita">“Aunque Elnatán, Delayá y Guemarías le rogaron al rey que no quemara el rollo, él no les hizo caso”<span class="ref">JEREMÍAS 36:25</span></div></div>
+  <div class="b b7"><div class="cita">“ni el rey ni ninguno de los siervos de él que oyeron todas esas palabras sintieron ningún miedo ni se rasgaron la ropa”<span class="ref">JEREMÍAS 36:24</span></div></div>
+  <div class="b b8"><div class="m">El rey manda capturar a Baruc y a Jeremías…</div><div class="s">Jeremías 36:26</div></div>
+</div>
+</div>
+</div>
+<script>
+(function () {
+const ID = "escena-09";
+const DUR = 64.152;
+const LEAD = 0.6;
+const W = [{"w":"Ahora","t":0.703,"d":0.474},{"w":"la","t":1.532,"d":0.105},{"w":"casa","t":1.65,"d":0.316},{"w":"de","t":1.979,"d":0.092},{"w":"invierno","t":2.084,"d":0.579},{"w":"Es","t":3.574,"d":0.224},{"w":"el","t":3.811,"d":0.105},{"w":"noveno","t":3.929,"d":0.368},{"w":"mes","t":4.311,"d":0.316},{"w":"de","t":4.903,"d":0.092},{"w":"mediados","t":5.008,"d":0.487},{"w":"de","t":5.508,"d":0.079},{"w":"noviembre","t":5.6,"d":0.474},{"w":"a","t":6.087,"d":0.039},{"w":"mediados","t":6.139,"d":0.487},{"w":"de","t":6.639,"d":0.066},{"w":"diciembre","t":6.718,"d":0.632},{"w":"El","t":8.258,"d":0.211},{"w":"rey","t":8.482,"d":0.237},{"w":"está","t":8.732,"d":0.263},{"w":"frente","t":9.008,"d":0.303},{"w":"al","t":9.324,"d":0.092},{"w":"fuego","t":9.429,"d":0.342},{"w":"de","t":9.784,"d":0.118},{"w":"un","t":9.916,"d":0.158},{"w":"brasero","t":10.087,"d":0.539},{"w":"Perspicacia","t":11.534,"d":0.737},{"w":"lo","t":12.284,"d":0.092},{"w":"describe","t":12.389,"d":0.526},{"w":"como","t":12.929,"d":0.237},{"w":"un","t":13.179,"d":0.145},{"w":"recipiente","t":13.337,"d":0.605},{"w":"redondo","t":13.955,"d":0.526},{"w":"poco","t":14.758,"d":0.289},{"w":"profundo","t":15.061,"d":0.539},{"w":"levantado","t":15.942,"d":0.553},{"w":"del","t":16.508,"d":0.171},{"w":"suelo","t":16.692,"d":0.342},{"w":"por","t":17.047,"d":0.211},{"w":"medio","t":17.271,"d":0.289},{"w":"de","t":17.574,"d":0.118},{"w":"patas","t":17.705,"d":0.487},{"w":"probablemente","t":18.429,"d":0.763},{"w":"de","t":19.205,"d":0.092},{"w":"metal","t":19.311,"d":0.474},{"w":"Allí","t":20.692,"d":0.368},{"w":"ardían","t":21.074,"d":0.408},{"w":"las","t":21.495,"d":0.184},{"w":"brasas","t":21.692,"d":0.421},{"w":"que","t":22.126,"d":0.132},{"w":"calentaban","t":22.271,"d":0.684},{"w":"el","t":22.968,"d":0.118},{"w":"cuarto","t":23.1,"d":0.487},{"w":"Jehudí","t":24.494,"d":0.447},{"w":"lee","t":24.955,"d":0.355},{"w":"Y","t":26.232,"d":0.145},{"w":"cada","t":26.389,"d":0.263},{"w":"vez","t":26.666,"d":0.224},{"w":"que","t":26.903,"d":0.132},{"w":"termina","t":27.047,"d":0.434},{"w":"tres","t":27.495,"d":0.303},{"w":"o","t":27.811,"d":0.066},{"w":"cuatro","t":27.889,"d":0.342},{"w":"columnas","t":28.245,"d":0.579},{"w":"el","t":29.113,"d":0.184},{"w":"rey","t":29.311,"d":0.224},{"w":"corta","t":29.547,"d":0.421},{"w":"ese","t":29.982,"d":0.211},{"w":"pedazo","t":30.205,"d":0.474},{"w":"con","t":30.692,"d":0.197},{"w":"un","t":30.903,"d":0.132},{"w":"cuchillo","t":31.047,"d":0.487},{"w":"de","t":31.547,"d":0.105},{"w":"secretario","t":31.666,"d":0.829},{"w":"y","t":32.508,"d":0.092},{"w":"lo","t":32.613,"d":0.197},{"w":"echa","t":32.824,"d":0.289},{"w":"al","t":33.126,"d":0.092},{"w":"fuego","t":33.232,"d":0.461},{"w":"Otras","t":34.6,"d":0.408},{"w":"tres","t":35.021,"d":0.276},{"w":"o","t":35.311,"d":0.066},{"w":"cuatro","t":35.389,"d":0.342},{"w":"columnas","t":35.745,"d":0.579},{"w":"otro","t":36.6,"d":0.25},{"w":"corte","t":36.863,"d":0.447},{"w":"otro","t":37.6,"d":0.263},{"w":"pedazo","t":37.876,"d":0.421},{"w":"al","t":38.311,"d":0.092},{"w":"fuego","t":38.416,"d":0.447},{"w":"Así","t":39.771,"d":0.434},{"w":"hasta","t":40.468,"d":0.25},{"w":"acabar","t":40.732,"d":0.395},{"w":"con","t":41.139,"d":0.171},{"w":"el","t":41.324,"d":0.105},{"w":"rollo","t":41.442,"d":0.421},{"w":"Elnatán","t":42.771,"d":0.671},{"w":"Delayá","t":43.745,"d":0.461},{"w":"y","t":44.218,"d":0.066},{"w":"Guemarías","t":44.297,"d":0.605},{"w":"le","t":44.916,"d":0.092},{"w":"rogaron","t":45.021,"d":0.474},{"w":"que","t":45.508,"d":0.145},{"w":"no","t":45.666,"d":0.197},{"w":"lo","t":45.876,"d":0.105},{"w":"quemara","t":45.995,"d":0.447},{"w":"pero","t":46.771,"d":0.237},{"w":"él","t":47.021,"d":0.118},{"w":"no","t":47.153,"d":0.145},{"w":"les","t":47.311,"d":0.211},{"w":"hizo","t":47.534,"d":0.25},{"w":"caso","t":47.797,"d":0.434},{"w":"Y","t":49.139,"d":0.171},{"w":"el","t":49.324,"d":0.105},{"w":"versículo","t":49.442,"d":0.592},{"w":"veinticuatro","t":50.047,"d":0.645},{"w":"dice","t":50.705,"d":0.355},{"w":"ni","t":51.429,"d":0.145},{"w":"el","t":51.587,"d":0.118},{"w":"rey","t":51.718,"d":0.25},{"w":"ni","t":51.982,"d":0.132},{"w":"ninguno","t":52.126,"d":0.474},{"w":"de","t":52.613,"d":0.105},{"w":"los","t":52.732,"d":0.145},{"w":"siervos","t":52.889,"d":0.447},{"w":"de","t":53.35,"d":0.092},{"w":"él","t":53.455,"d":0.079},{"w":"sintieron","t":53.547,"d":0.526},{"w":"ningún","t":54.087,"d":0.382},{"w":"miedo","t":54.482,"d":0.329},{"w":"ni","t":54.824,"d":0.132},{"w":"se","t":54.968,"d":0.171},{"w":"rasgaron","t":55.153,"d":0.539},{"w":"la","t":55.705,"d":0.092},{"w":"ropa","t":55.811,"d":0.434},{"w":"El","t":57.153,"d":0.211},{"w":"rey","t":57.376,"d":0.224},{"w":"manda","t":57.613,"d":0.316},{"w":"capturar","t":57.942,"d":0.526},{"w":"a","t":58.482,"d":0.026},{"w":"Baruc","t":58.521,"d":0.382},{"w":"y","t":58.916,"d":0.092},{"w":"a","t":59.021,"d":0.053},{"w":"Jeremías","t":59.087,"d":0.684},{"w":"pero","t":60.021,"d":0.224},{"w":"Jehová","t":60.258,"d":0.342},{"w":"los","t":60.613,"d":0.211},{"w":"mantuvo","t":60.837,"d":0.487},{"w":"ocultos","t":61.337,"d":0.711}];
+// Librería común de las escenas. El constructor la pega dentro de una función que ya
+// define ID (id de la composición), DUR (duración de la escena), LEAD (silencio antes de la
+// voz) y W (palabras de la voz con su tiempo, ya desplazadas por LEAD).
+const root = document.getElementById(ID);
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+// Acepta un selector, un elemento, una NodeList o una lista mezclada de cualquiera de ellos.
+const el = (x) => (typeof x === "string" ? $$(x) : Array.isArray(x) ? x.flatMap((y) => el(y)) : x instanceof NodeList ? Array.from(x) : [x]);
+const tl = gsap.timeline({ paused: true });
+
+// ---------- sincronía con la voz ----------
+const norm = (s) =>
+  s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9ñ]/g, "");
+const WN = W.map((w) => norm(w.w));
+const trozos = (frase) => frase.split(/[\s\-]+/).map(norm).filter(Boolean);
+function buscar(frase, despues) {
+  const p = trozos(frase);
+  for (let i = 0; i < WN.length; i++) {
+    if (W[i].t < (despues || 0) - 0.001) continue;
+    let ok = true;
+    for (let k = 0; k < p.length; k++) if (WN[i + k] !== p[k]) { ok = false; break; }
+    if (ok) return i;
+  }
+  throw new Error(ID + ': no encuentro "' + frase + '" después de ' + despues);
+}
+// Momento en que la voz empieza a decir la frase (primera vez después de `despues`).
+function at(frase, despues) { return W[buscar(frase, despues)].t; }
+// Momento en que la voz termina de decir la frase.
+function fin(frase, despues) {
+  const i = buscar(frase, despues);
+  const w = W[i + trozos(frase).length - 1];
+  return w.t + w.d;
+}
+const FIN_VOZ = W.length ? W[W.length - 1].t + W[W.length - 1].d : DUR;
+
+// ---------- movimientos ----------
+// Todos los elementos que se revelan empiezan ocultos por CSS (.oc, .esc, trazos) y se
+// animan con immediateRender:false, así cada cuadro depende solo del tiempo.
+const IR = { immediateRender: false };
+// El primer movimiento que revela un elemento lo deja oculto desde el cuadro cero.
+const _ocultos = new WeakSet();
+function inicial(els, props) {
+  els.forEach((e) => { if (!_ocultos.has(e)) { _ocultos.add(e); gsap.set(e, props); } });
+  return els;
+}
+function entra(x, t, o = {}) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0, y: o.y ?? 36, x: o.x ?? 0, scale: o.s ?? 1 },
+    { opacity: 1, y: 0, x: 0, scale: 1, duration: o.d ?? 0.6, ease: o.ease ?? "power3.out", stagger: o.st ?? 0, ...IR }, t);
+}
+function sale(x, t, o = {}) {
+  tl.fromTo(el(x), { opacity: 1 }, { opacity: 0, y: o.y ?? -24, duration: o.d ?? 0.45, ease: "power2.in", stagger: o.st ?? 0, ...IR }, t);
+}
+function aparece(x, t, d = 0.5, hasta = 1) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0 }, { opacity: hasta, duration: d, ease: "none", ...IR }, t);
+}
+function atenua(x, t, hasta = 0.25, d = 0.5) {
+  tl.to(el(x), { opacity: hasta, duration: d, ease: "power1.inOut" }, t);
+}
+function desaparece(x, t, d = 0.45) {
+  tl.to(el(x), { opacity: 0, duration: d, ease: "none" }, t);
+}
+function salta(x, t, o = {}) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0, scale: o.desde ?? 0.4, rotation: o.r ?? 0 },
+    { opacity: 1, scale: 1, rotation: 0, duration: o.d ?? 0.55, ease: o.ease ?? "back.out(1.8)", stagger: o.st ?? 0, ...IR }, t);
+}
+// Escritura a mano: se descubre de izquierda a derecha, como si la tiza avanzara.
+function escribe(x, t, d = 0.8, o = {}) {
+  tl.fromTo(inicial(el(x), { clipPath: "inset(-30% 103% -30% -3%)" }), { opacity: 1, clipPath: "inset(-30% 103% -30% -3%)" },
+    { clipPath: "inset(-30% -3% -30% -3%)", opacity: 1, duration: d, ease: "none", stagger: o.st ?? 0, ...IR }, t);
+}
+// Trazo de tiza: la línea se dibuja en vivo.
+const _largos = new Map();
+// Las escenas que no están en pantalla al cargar están ocultas, y ahí getTotalLength()
+// devuelve 0. Se mide una copia del trazo dentro de un SVG auxiliar que sí se dibuja.
+function sonda(p) {
+  let s = document.getElementById("sonda-trazos");
+  if (!s) {
+    s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    s.id = "sonda-trazos";
+    s.setAttribute("style", "position:fixed;left:0;top:0;width:10px;height:10px;visibility:hidden;pointer-events:none");
+    document.body.appendChild(s);
+  }
+  const c = p.cloneNode(false);
+  s.appendChild(c);
+  return c;
+}
+function largo(p) {
+  const c = sonda(p);
+  const L = c.getTotalLength();
+  c.remove();
+  return L;
+}
+function preparaTrazos(x) {
+  el(x).forEach((p) => {
+    if (_largos.has(p)) return;
+    const L = largo(p);
+    _largos.set(p, L);
+    p.style.strokeDasharray = L + " " + (L + 2);
+    p.style.strokeDashoffset = L;
+  });
+}
+function traza(x, t, d = 1, o = {}) {
+  const ps = inicial(el(x), { opacity: 0 });
+  preparaTrazos(ps);
+  tl.fromTo(ps, { strokeDashoffset: (i, p) => _largos.get(p), opacity: 1 },
+    { strokeDashoffset: 0, opacity: 1, duration: d, ease: o.ease ?? "power1.inOut", stagger: o.st ?? 0, ...IR }, t);
+}
+// Un objeto que recorre un trazo mientras se dibuja (Agar, los reyes, Abrán).
+// Los puntos del camino se miden una sola vez al construir; durante el render solo se interpola.
+function medirCamino(path, N = 400) {
+  const p = sonda(el(path)[0]);
+  const L = p.getTotalLength();
+  const pts = [];
+  for (let i = 0; i <= N; i++) { const q = p.getPointAtLength((L * i) / N); pts.push([q.x, q.y]); }
+  p.remove();
+  return pts;
+}
+function ponEnCamino(objs, pts, k) {
+  const N = pts.length - 1;
+  const f = Math.min(N, Math.max(0, k * N)), i = Math.floor(f), r = f - i, j = Math.min(N, i + 1);
+  const x = pts[i][0] + (pts[j][0] - pts[i][0]) * r, y = pts[i][1] + (pts[j][1] - pts[i][1]) * r;
+  objs.forEach((e) => e.setAttribute("transform", "translate(" + x.toFixed(2) + " " + y.toFixed(2) + ")"));
+}
+// Solo el primer recorrido de un objeto fija su posición inicial; los siguientes
+// arrancan donde terminó el anterior.
+const _colocados = new WeakSet();
+function recorre(obj, path, t, d, o = {}) {
+  const pts = typeof path === "string" || path instanceof Element ? medirCamino(path) : path;
+  const objs = el(obj);
+  const st = { k: o.desde ?? 0 };
+  if (!objs.some((e) => _colocados.has(e))) { objs.forEach((e) => _colocados.add(e)); ponEnCamino(objs, pts, st.k); }
+  tl.to(st, { k: o.hasta ?? 1, duration: d, ease: o.ease ?? "power1.inOut", onUpdate: () => ponEnCamino(objs, pts, st.k) }, t);
+}
+function cuenta(x, desde, hasta, t, d, fmt = (v) => Math.round(v).toString()) {
+  const e = el(x)[0];
+  const st = { v: desde };
+  if (!_colocados.has(e)) { _colocados.add(e); e.textContent = fmt(desde); }
+  tl.to(st, { v: hasta, duration: d, ease: "power1.out", onUpdate: () => (e.textContent = fmt(st.v)) }, t);
+}
+function camara(x, t, d, props, ease = "power2.inOut") {
+  tl.to(el(x), { ...props, duration: d, ease }, t);
+}
+// Paneo lento sobre una ilustración (Ken Burns), sin salirse del marco.
+function kb(x, t0, t1, desde, hasta) {
+  tl.fromTo(el(x), { scale: desde.s ?? 1.08, xPercent: desde.x ?? 0, yPercent: desde.y ?? 0 },
+    { scale: hasta.s ?? 1.0, xPercent: hasta.x ?? 0, yPercent: hasta.y ?? 0, duration: Math.max(0.1, t1 - t0), ease: "none" }, t0);
+}
+const fmtMiles = (v) => Math.round(v).toLocaleString("es-CO");
+
+// ---------- piezas repetidas ----------
+// Filtro de tiza para los trazos: borde levemente irregular.
+root.insertAdjacentHTML("afterbegin",
+  '<svg width="0" height="0" style="position:absolute"><defs>' +
+  '<filter id="tz-' + ID + '" x="-5%" y="-5%" width="110%" height="110%">' +
+  '<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>' +
+  '<feDisplacementMap in="SourceGraphic" scale="3"/></filter></defs></svg>');
+const TIZA = "url(#tz-" + ID + ")";
+
+// Tarjeta de capítulo: "Jeremías 37" y su subtítulo.
+function capitulo(x, t0, t1) {
+  const c = el(x)[0];
+  entra(c.querySelector(".num"), t0, { y: 60, d: 0.8 });
+  escribe(c.querySelector(".sub"), t0 + 0.5, 0.9);
+  traza(c.querySelectorAll("path"), t0 + 0.3, 0.8);
+  if (c.querySelector(".edad")) entra(c.querySelector(".edad"), t0 + 0.9, { y: 20 });
+  sale(c, t1, { y: -60, d: 0.6 });
+}
+
+// Entrada y salida de toda la escena: el fondo es común, solo se funde el contenido.
+function marco() {
+  tl.fromTo($(".contenido"), { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none" }, 0);
+  tl.to($(".contenido"), { opacity: 0, duration: 0.5, ease: "none" }, DUR - 0.55);
+}
+
+// Bloques de texto que se reemplazan en el mismo lugar: cada uno entra en su momento y sale
+// justo antes del siguiente. Si `hasta` es null, el último se queda.
+function secuencia(lista, hasta = null, o = {}) {
+  lista.forEach(([s, t], i) => {
+    entra(s, t, { y: o.y ?? 26, d: o.d ?? 0.55 });
+    const sig = i < lista.length - 1 ? lista[i + 1][1] : hasta;
+    if (sig != null) sale(s, sig - 0.4, { d: 0.35 });
+  });
+}
+// Pone marcado SVG dentro de un elemento de la escena.
+function pinta(sel, svg) { $(sel).innerHTML = svg; }
+
+
+// Dibujos compartidos: el rollo, el brasero, la bula y el pan.
+// Cada función devuelve el marcado SVG de un <g>; la escena lo pone con innerHTML antes de armar
+// la línea de tiempo. Los degradados llevan el ID de la escena para no chocar en la página armada.
+const G = (n) => n + "-" + ID;
+const url = (n) => "url(#" + G(n) + ")";
+
+// Azar con semilla: las líneas de texto del rollo salen iguales en cada cuadro del render.
+function azar(seed) {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function defsDibujos() {
+  return `<defs>
+  <linearGradient id="${G("perg")}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3e6c4"/><stop offset="0.55" stop-color="#e7d3a3"/><stop offset="1" stop-color="#c8ab70"/></linearGradient>
+  <linearGradient id="${G("perg-h")}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a88a55"/><stop offset="0.35" stop-color="#f1e2bb"/><stop offset="0.6" stop-color="#e2cb95"/><stop offset="1" stop-color="#8f7243"/></linearGradient>
+  <linearGradient id="${G("perg-v")}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a88a55"/><stop offset="0.35" stop-color="#f1e2bb"/><stop offset="0.6" stop-color="#e2cb95"/><stop offset="1" stop-color="#8f7243"/></linearGradient>
+  <linearGradient id="${G("mad")}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4a2a12"/><stop offset="0.45" stop-color="#a26a36"/><stop offset="0.62" stop-color="#bf884e"/><stop offset="1" stop-color="#3f230e"/></linearGradient>
+  <linearGradient id="${G("bronce")}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2ae62"/><stop offset="0.45" stop-color="#a8722f"/><stop offset="1" stop-color="#4f3212"/></linearGradient>
+  <linearGradient id="${G("bronce-h")}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5a3a16"/><stop offset="0.3" stop-color="#d49b52"/><stop offset="0.55" stop-color="#f0c27a"/><stop offset="1" stop-color="#4f3212"/></linearGradient>
+  <radialGradient id="${G("brasa")}" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#fff0a0"/><stop offset="0.35" stop-color="#ff9b3d"/><stop offset="1" stop-color="#8e2410"/></radialGradient>
+  <linearGradient id="${G("llama")}" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff2a6"/><stop offset="0.3" stop-color="#ffc34d"/><stop offset="0.7" stop-color="#ff7a26"/><stop offset="1" stop-color="#d9371a" stop-opacity="0.15"/></linearGradient>
+  <linearGradient id="${G("llama2")}" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset="0.5" stop-color="#ffe27a"/><stop offset="1" stop-color="#ffb13b" stop-opacity="0"/></linearGradient>
+  <radialGradient id="${G("brillo")}"><stop offset="0" stop-color="#ffac40" stop-opacity="0.55"/><stop offset="0.6" stop-color="#ff8a2a" stop-opacity="0.15"/><stop offset="1" stop-color="#ff8a2a" stop-opacity="0"/></radialGradient>
+  <radialGradient id="${G("pan")}" cx="0.42" cy="0.36" r="0.72"><stop offset="0" stop-color="#f6d08a"/><stop offset="0.55" stop-color="#cf9143"/><stop offset="1" stop-color="#7a461a"/></radialGradient>
+  <radialGradient id="${G("arcilla")}" cx="0.4" cy="0.35" r="0.75"><stop offset="0" stop-color="#dba077"/><stop offset="0.7" stop-color="#a5643c"/><stop offset="1" stop-color="#6a381d"/></radialGradient>
+  <radialGradient id="${G("piedra")}" cx="0.4" cy="0.3" r="0.8"><stop offset="0" stop-color="#8d9aa8"/><stop offset="1" stop-color="#3c4652"/></radialGradient>
+  <filter id="${G("sombra")}" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity="0.45"/></filter>
+  <filter id="${G("difusa")}" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+  </defs>`;
+}
+
+// Columnas de texto: renglones alineados a la derecha, como el hebreo, que se escribe de derecha a izquierda.
+function columnas(x, y, w, h, n, seed, clase = "col") {
+  const r = azar(seed), cw = w / n;
+  let s = "";
+  for (let c = 0; c < n; c++) {
+    s += `<g class="${clase}">`;
+    const x2 = x + c * cw + cw * 0.88, ww = cw * 0.76;
+    for (let yy = y + h * 0.1; yy < y + h * 0.9; yy += 15) {
+      const L = ww * (0.55 + 0.45 * r());
+      s += `<line x1="${(x2 - L).toFixed(1)}" y1="${yy.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${yy.toFixed(1)}" stroke="#3f2c1a" stroke-width="4.5" stroke-linecap="round" opacity="0.78"/>`;
+    }
+    s += `</g>`;
+  }
+  return s;
+}
+
+// Una hoja de pergamino abierta, con costuras cada `cada` columnas (los pedazos pegados).
+function hoja(x, y, w, h, n, seed, o = {}) {
+  const cw = w / n;
+  let costuras = "";
+  const cada = o.cada ?? 2;
+  for (let c = cada; c < n; c += cada)
+    costuras += `<line x1="${x + c * cw}" y1="${y + 3}" x2="${x + c * cw}" y2="${y + h - 3}" stroke="#a88a55" stroke-width="3" opacity="0.7"/>`;
+  return `<g class="${o.clase ?? "hoja"}">
+    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="5" fill="${url("perg")}" filter="${url("sombra")}"/>
+    <rect x="${x}" y="${y}" width="${w}" height="10" fill="#fff6dc" opacity="0.35"/>
+    <rect x="${x}" y="${y + h - 12}" width="${w}" height="12" fill="#8f7243" opacity="0.35"/>
+    ${costuras}
+    ${o.sinTexto ? "" : columnas(x, y, w, h, n, seed, o.col ?? "col")}
+  </g>`;
+}
+
+// El palo con la parte enrollada del pergamino: un cilindro de pergamino y las puntas de madera.
+function palo(cx, y, h, grosor = 56, clase = "palo") {
+  const r = grosor / 2;
+  return `<g class="${clase}">
+    <rect x="${cx - 9}" y="${y - 46}" width="18" height="${h + 92}" rx="9" fill="${url("mad")}"/>
+    <ellipse cx="${cx}" cy="${y - 50}" rx="20" ry="11" fill="#8a5a2b"/><ellipse cx="${cx}" cy="${y + h + 50}" rx="20" ry="11" fill="#6b4220"/>
+    <rect x="${cx - r}" y="${y - 6}" width="${grosor}" height="${h + 12}" rx="${r * 0.45}" fill="${url("perg-h")}" filter="${url("sombra")}"/>
+    <line x1="${cx - r * 0.35}" y1="${y}" x2="${cx - r * 0.35}" y2="${y + h}" stroke="#fff8e0" stroke-width="3" opacity="0.5"/>
+    <line x1="${cx + r * 0.5}" y1="${y}" x2="${cx + r * 0.5}" y2="${y + h}" stroke="#7a5c30" stroke-width="2" opacity="0.5"/>
+  </g>`;
+}
+
+// Rollo abierto: dos palos y la hoja entre ellos.
+function rollo(x, y, w, h, n, seed, o = {}) {
+  return `<g class="${o.clase ?? "rollo"}">${hoja(x, y, w, h, n, seed, o)}${palo(x - 8, y, h, o.grosor ?? 56, "palo palo-i")}${palo(x + w + 8, y, h, o.grosor ?? 56, "palo palo-d")}</g>`;
+}
+
+// Rollo cerrado, visto de lado (para iconos y para "otro rollo").
+function rolloCerrado(cx, cy, largo = 260, grosor = 70, clase = "rollo-c") {
+  const r = grosor / 2;
+  return `<g class="${clase}">
+    <rect x="${cx - 7}" y="${cy - largo / 2 - 40}" width="14" height="${largo + 80}" rx="7" fill="${url("mad")}"/>
+    <rect x="${cx - r}" y="${cy - largo / 2}" width="${grosor}" height="${largo}" rx="${r * 0.4}" fill="${url("perg-h")}" filter="${url("sombra")}"/>
+    <path d="M ${cx + r} ${cy - largo / 2 + 20} q 26 12 20 60 l -20 0 z" fill="#e7d3a3"/>
+    <line x1="${cx - r * 0.3}" y1="${cy - largo / 2 + 6}" x2="${cx - r * 0.3}" y2="${cy + largo / 2 - 6}" stroke="#fff8e0" stroke-width="3" opacity="0.55"/>
+  </g>`;
+}
+
+// Llama: forma de gota con punta; `k` la escala. El origen está en la base.
+function llama(x, y, k = 1, clase = "llama") {
+  return `<g class="${clase}" transform="translate(${x} ${y})"><g class="ll">
+    <path d="M0 0 C ${-44 * k} ${-24 * k} ${-34 * k} ${-84 * k} ${-6 * k} ${-128 * k} C ${-2 * k} ${-92 * k} ${22 * k} ${-86 * k} ${14 * k} ${-150 * k} C ${50 * k} ${-100 * k} ${46 * k} ${-26 * k} 0 0 Z" fill="${url("llama")}"/>
+    <path d="M0 -4 C ${-20 * k} ${-18 * k} ${-16 * k} ${-52 * k} ${2 * k} ${-82 * k} C ${18 * k} ${-50 * k} ${22 * k} ${-18 * k} 0 -4 Z" fill="${url("llama2")}"/>
+  </g></g>`;
+}
+
+// Brasero: recipiente redondo, poco profundo, sobre patas, de metal (Perspicacia, "Brasero").
+function brasero(cx, cy, s = 1) {
+  const L = (x, y) => `${cx + x * s} ${cy + y * s}`;
+  let brasas = "";
+  const r = azar(7);
+  for (let i = 0; i < 16; i++) {
+    const x = (r() * 2 - 1) * 115, y = (r() * 2 - 1) * 12;
+    brasas += `<ellipse class="brasa" cx="${cx + x * s}" cy="${cy + y * s - 4 * s}" rx="${(14 + r() * 12) * s}" ry="${(8 + r() * 5) * s}" fill="${url("brasa")}"/>`;
+  }
+  const llamas = [[-80, 0.7], [-38, 1.0], [0, 1.35], [42, 1.05], [84, 0.75]]
+    .map(([x, k], i) => llama(cx + x * s, cy - 6 * s, k * s, "llama l" + i)).join("");
+  return `<g class="brasero">
+    <ellipse class="resplandor" cx="${cx}" cy="${cy - 60 * s}" rx="${300 * s}" ry="${230 * s}" fill="${url("brillo")}"/>
+    <ellipse cx="${cx}" cy="${cy + 205 * s}" rx="${190 * s}" ry="${22 * s}" fill="#000" opacity="0.35"/>
+    <path d="M ${L(-110, 60)} L ${L(-150, 200)} L ${L(-128, 200)} L ${L(-84, 66)} Z" fill="${url("bronce-h")}"/>
+    <path d="M ${L(110, 60)} L ${L(150, 200)} L ${L(128, 200)} L ${L(84, 66)} Z" fill="${url("bronce-h")}"/>
+    <path d="M ${L(-12, 88)} L ${L(-14, 212)} L ${L(14, 212)} L ${L(12, 88)} Z" fill="${url("bronce-h")}"/>
+    <path d="M ${L(-170, 0)} Q ${L(-160, 92)} ${L(0, 96)} Q ${L(160, 92)} ${L(170, 0)} Z" fill="${url("bronce")}"/>
+    <path d="M ${L(-150, 26)} Q ${L(-120, 70)} ${L(-40, 82)}" fill="none" stroke="#f3c77f" stroke-width="${5 * s}" opacity="0.5" stroke-linecap="round"/>
+    <ellipse cx="${cx}" cy="${cy}" rx="${170 * s}" ry="${28 * s}" fill="#5c3915"/>
+    <ellipse cx="${cx}" cy="${cy}" rx="${158 * s}" ry="${22 * s}" fill="#2a1508"/>
+    ${brasas}
+    <g class="llamas">${llamas}</g>
+    <ellipse cx="${cx}" cy="${cy}" rx="${170 * s}" ry="${28 * s}" fill="none" stroke="#e4b066" stroke-width="${4 * s}" opacity="0.8"/>
+  </g>`;
+}
+
+// Las llamas bailan: escalas y giros pequeños, con repeticiones finitas.
+function llamear(t0, t1, sel = ".llama .ll") {
+  el(sel).forEach((f, i) => {
+    const d = 0.32 + (i % 3) * 0.07;
+    const n = Math.max(1, Math.floor((t1 - t0) / d));
+    tl.fromTo(f, { scaleY: 0.86, scaleX: 1.04, rotation: -3 + (i % 2) * 6, transformOrigin: "50% 100%" },
+      { scaleY: 1.14, scaleX: 0.94, rotation: 3 - (i % 2) * 6, transformOrigin: "50% 100%", duration: d, yoyo: true, repeat: n, ease: "sine.inOut", immediateRender: true }, t0 + i * 0.05);
+  });
+}
+
+// Pan redondo, dorado, con cortes.
+function pan(cx, cy, r = 90, clase = "pan") {
+  return `<g class="${clase}">
+    <ellipse cx="${cx}" cy="${cy + r * 0.78}" rx="${r * 1.02}" ry="${r * 0.2}" fill="#000" opacity="0.35"/>
+    <ellipse cx="${cx}" cy="${cy + r * 0.12}" rx="${r}" ry="${r * 0.72}" fill="#6e3f17"/>
+    <ellipse cx="${cx}" cy="${cy}" rx="${r}" ry="${r * 0.7}" fill="${url("pan")}"/>
+    <path d="M ${cx - r * 0.55} ${cy - r * 0.18} Q ${cx} ${cy - r * 0.42} ${cx + r * 0.55} ${cy - r * 0.18}" fill="none" stroke="#8a5220" stroke-width="${r * 0.07}" stroke-linecap="round" opacity="0.75"/>
+    <path d="M ${cx - r * 0.62} ${cy + r * 0.1} Q ${cx} ${cy - r * 0.12} ${cx + r * 0.62} ${cy + r * 0.1}" fill="none" stroke="#8a5220" stroke-width="${r * 0.07}" stroke-linecap="round" opacity="0.75"/>
+    <path d="M ${cx - r * 0.5} ${cy + r * 0.36} Q ${cx} ${cy + r * 0.18} ${cx + r * 0.5} ${cy + r * 0.36}" fill="none" stroke="#8a5220" stroke-width="${r * 0.07}" stroke-linecap="round" opacity="0.75"/>
+    <ellipse cx="${cx - r * 0.3}" cy="${cy - r * 0.34}" rx="${r * 0.3}" ry="${r * 0.12}" fill="#fff4d6" opacity="0.28"/>
+  </g>`;
+}
+
+// Bula: pedacito de arcilla sobre el nudo del cordel, con la marca del sello.
+function bula(cx, cy, s = 1, clase = "bula") {
+  const P = (x, y) => `${cx + x * s} ${cy + y * s}`;
+  return `<g class="${clase}">
+    <path d="M ${P(-118, 6)} C ${P(-128, -70)} ${P(-40, -104)} ${P(18, -98)} C ${P(96, -92)} ${P(134, -40)} ${P(122, 18)} C ${P(112, 84)} ${P(40, 104)} ${P(-24, 98)} C ${P(-90, 92)} ${P(-112, 58)} ${P(-118, 6)} Z" fill="${url("arcilla")}" filter="${url("sombra")}"/>
+    <g class="marca" opacity="0.9">
+      <ellipse cx="${cx}" cy="${cy}" rx="${88 * s}" ry="${70 * s}" fill="none" stroke="#5a2c12" stroke-width="${4 * s}"/>
+      <line x1="${cx - 78 * s}" y1="${cy - 16 * s}" x2="${cx + 78 * s}" y2="${cy - 16 * s}" stroke="#5a2c12" stroke-width="${3 * s}"/>
+      <line x1="${cx - 78 * s}" y1="${cy + 18 * s}" x2="${cx + 78 * s}" y2="${cy + 18 * s}" stroke="#5a2c12" stroke-width="${3 * s}"/>
+      ${[-40, 1, 38].map((yy) => [...Array(7)].map((_, i) => `<path d="M ${P(-54 + i * 18, yy - 9)} l ${6 * s} ${14 * s} l ${6 * s} ${-12 * s}" fill="none" stroke="#4c240f" stroke-width="${3.5 * s}" stroke-linecap="round"/>`).join("")).join("")}
+    </g>
+    <path d="M ${P(-80, -60)} Q ${P(-40, -84)} ${P(10, -80)}" fill="none" stroke="#f0c6a0" stroke-width="${6 * s}" opacity="0.35" stroke-linecap="round"/>
+  </g>`;
+}
+
+root.insertAdjacentHTML("afterbegin", '<svg width="0" height="0" style="position:absolute">' + defsDibujos() + "</svg>");
+// El rollo arriba: el palo izquierdo guarda lo que falta por leer; a la derecha, el pedazo que se lee.
+const RX = 250, RY = 60, RW = 400, RH = 270;
+let piezas = "";
+for (let k = 0; k < 3; k++) piezas += hoja(RX, RY, RW, RH, 4, 40 + k, { clase: "pz pz" + k, cada: 99 });
+const cuchillo = `<g class="cuchillo"><rect x="-11" y="-150" width="22" height="80" rx="8" fill="${url("mad")}"/>
+  <path d="M -9 -70 L 9 -70 L 9 40 L 0 70 L -9 40 Z" fill="#d7dde3"/><path d="M 0 -70 L 9 -70 L 9 40 L 0 70 Z" fill="#9aa5b1"/></g>`;
+// El rollo va detrás del brasero: los pedazos caen dentro del recipiente y las llamas los tapan.
+pinta(".dib", `<g class="rolloarr">${piezas}${palo(RX - 16, RY, RH, 96, "palo pi")}</g>` + brasero(540, 640, 1.15) + cuchillo);
+llamear(0.3, DUR);
+const CX = RX + RW / 2, CY = RY + RH / 2;
+
+entra(".brasero", 0.8, { y: 30, d: 0.9 });
+entra(".pa", at("redondo"), { x: -20, y: 0 });
+entra(".pb", at("patas"), { x: -20, y: 0 });
+entra(".pc", at("metal"), { x: 20, y: 0 });
+entra(".pd", at("brasas"), { x: 20, y: 0 });
+tl.fromTo($$(".brasa"), { opacity: 1 }, { opacity: 0.55, duration: 0.3, yoyo: true, repeat: 3, stagger: 0.03, immediateRender: false }, at("brasas"));
+sale([".pa", ".pb", ".pc", ".pd"], at("Jehudí lee") - 0.3, { d: 0.4 });
+
+// El rollo aparece y se lee el primer pedazo.
+entra(".rolloarr .pi", at("Jehudí lee") - 0.2, { x: -40, y: 0 });
+const nace = (k, t) => tl.fromTo(inicial([$(".pz" + k)], { opacity: 0 }), { opacity: 1, scaleX: 0, svgOrigin: `${RX} ${CY}` },
+  { opacity: 1, scaleX: 1, svgOrigin: `${RX} ${CY}`, duration: 0.8, ease: "power2.out", immediateRender: false }, t);
+// Corte: el cuchillo baja pegado al palo; el pedazo cae al brasero, se oscurece y se consume.
+const corta = (t) => {
+  tl.fromTo($(".cuchillo"), { x: RX + 6, y: RY - 90, opacity: 0 }, { x: RX + 6, y: RY + 10, opacity: 1, duration: 0.25, immediateRender: false }, t);
+  tl.to($(".cuchillo"), { y: RY + RH + 60, duration: 0.55, ease: "power1.in" }, t + 0.25);
+  tl.to($(".cuchillo"), { opacity: 0, duration: 0.2 }, t + 0.8);
+};
+const cae = (k, t) => {
+  tl.to($(".pz" + k), { x: 540 - CX, y: 610 - CY, rotation: 28, scale: 0.32, svgOrigin: `${CX} ${CY}`, duration: 0.9, ease: "power2.in" }, t);
+  tl.to($(".pz" + k), { filter: "sepia(1) saturate(4) brightness(0.55)", opacity: 0, duration: 0.5, ease: "power1.in" }, t + 0.7);
+  tl.to($(".llamas"), { scale: 1.45, svgOrigin: "540 634", duration: 0.35, yoyo: true, repeat: 1, ease: "power2.out" }, t + 0.85);
+};
+tl.set($(".cuchillo"), { x: RX + 6, y: RY - 90, opacity: 0 }, 0);
+nace(0, at("Jehudí lee"));
+// Mientras se lee, las columnas se marcan una tras otra, de derecha a izquierda.
+$$(".pz0 .col").reverse().forEach((c, i) => tl.fromTo(c, { opacity: 0.78 }, { opacity: 0.25, duration: 0.3, immediateRender: false }, at("cada vez") + i * 0.45));
+corta(at("corta ese pedazo"));
+cae(0, at("lo echa al fuego"));
+nace(1, at("Otras tres"));
+corta(at("otro corte"));
+cae(1, at("otro pedazo"));
+nace(2, at("Así hasta") - 0.2);
+corta(at("Así hasta") + 0.7);
+cae(2, at("acabar"));
+tl.to($(".rolloarr .pi"), { x: 540 - (RX - 16), y: 600 - CY, rotation: -40, scale: 0.4, svgOrigin: `${RX - 16} ${CY}`, duration: 0.9, ease: "power2.in" }, at("con el rollo"));
+tl.to($(".rolloarr .pi"), { filter: "sepia(1) saturate(4) brightness(0.55)", opacity: 0, duration: 0.5 }, at("con el rollo") + 0.7);
+tl.to($(".llamas"), { scale: 1.6, svgOrigin: "540 634", duration: 0.4, yoyo: true, repeat: 1 }, at("con el rollo") + 0.85);
+
+entra(".nombres div:not(.r)", at("Elnatán"), { y: -20, st: 0.6 });
+escribe(".nombres .r", at("pero él no"), 1.2);
+sale(".nombres", at("Y el versículo veinticuatro") - 0.4);
+escribe(".ocultos", at("pero Jehová"), 1.4);
+
+secuencia([[".b1", 0.6], [".b2", at("Perspicacia lo describe")], [".b3", at("Jehudí lee")], [".b4", at("corta ese pedazo")], [".b5", at("Así hasta")], [".b6", at("Elnatán")], [".b7", at("Y el versículo veinticuatro")], [".b8", at("El rey manda")]]);
+
+marco();
+window.__timelines[ID] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

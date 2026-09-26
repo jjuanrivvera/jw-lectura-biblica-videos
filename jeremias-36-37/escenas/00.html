@@ -1,0 +1,102 @@
+<style>
+.tit { position: absolute; left: 60px; right: 60px; top: 96px; text-align: center; }
+.tit .a { font-family: "Arial", sans-serif; font-weight: 800; font-size: 36px; letter-spacing: 0.22em; color: var(--tenue); }
+.tit .t { font-family: "Georgia", serif; font-weight: 700; font-size: 132px; line-height: 1; margin-top: 10px; }
+.tit .t b { color: var(--oro); }
+.panel { position: absolute; left: 40px; right: 40px; height: 690px; border-radius: 34px; border: 3px solid rgba(239,231,214,0.18); background: rgba(10, 16, 22, 0.25); }
+.p36 { top: 350px; }
+.p37 { top: 1080px; }
+.panel .cap { position: absolute; left: 36px; top: 26px; font-family: "Georgia", serif; font-weight: 700; font-size: 64px; }
+.panel .cap span { font-family: "cursive", cursive; font-size: 66px; color: var(--oro); margin-left: 18px; }
+.p37 .cap span { color: var(--cielo); }
+.panel svg { position: absolute; left: 10px; top: 120px; width: 340px; height: 560px; }
+.panel ul { position: absolute; left: 370px; right: 24px; top: 124px; bottom: 26px; list-style: none; display: flex; flex-direction: column; justify-content: space-around; }
+.panel li { font-family: "cursive", cursive; font-weight: 700; font-size: 60px; line-height: 1; }
+.panel li b { color: var(--oro); }
+.p37 li b { color: var(--cielo); }
+.muro { fill: none; stroke: #c9c2b3; stroke-width: 16; stroke-linejoin: round; }
+.almena { fill: #c9c2b3; }
+.tienda { fill: #e8805f; }
+.lugar { font-family: "Georgia", serif; font-style: italic; font-size: 34px; fill: var(--tiza); text-anchor: middle; }
+.final { position: absolute; left: 70px; right: 70px; top: 760px; padding: 60px 50px; border-radius: 34px; border: 4px solid var(--verde); background: #17212b; text-align: center; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+.final .r { font-family: "Arial", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.18em; color: var(--verde); }
+.final .m { font-size: 92px; margin-top: 18px; }
+</style>
+
+<div class="tit"><div class="a">LECTURA BÍBLICA DE LA SEMANA</div><div class="t">Jeremías <b>36</b> y <b>37</b></div></div>
+
+<div class="panel p36">
+  <div class="cap">36 <span>El rollo</span></div>
+  <svg viewBox="0 0 340 560"><g class="dib36"></g></svg>
+  <ul>
+    <li class="k1">un <b>rollo</b></li>
+    <li class="k2"><b>23 años</b> de advertencias</li>
+    <li class="k3">Baruc lo lee en el templo</li>
+    <li class="k4" data-layout-allow-overlap>el rey lo echa al <b>fuego</b></li>
+    <li class="k5" data-layout-allow-overlap>otro rollo, <b>más largo</b></li>
+  </ul>
+</div>
+
+<div class="panel p37">
+  <div class="cap">37 <span>El profeta preso</span></div>
+  <svg viewBox="0 0 340 560">
+    <g class="ciudad">
+      <path class="muro" d="M 90 70 L 230 58 L 282 130 L 268 236 L 176 272 L 80 232 L 58 140 Z"/>
+      <text class="lugar" x="170" y="178">Jerusalén</text>
+    </g>
+    <g class="tiendas"></g>
+    <g class="dib37"></g>
+  </svg>
+  <ul>
+    <li class="c1">Jerusalén <b>cercada</b></li>
+    <li class="c2">pide oración, no hace caso</li>
+    <li class="c3">acusado y <b>encerrado</b></li>
+    <li class="c4">dice lo mismo de siempre</li>
+    <li class="c5">un <b>pan</b> cada día</li>
+  </ul>
+</div>
+
+<div class="final" data-layout-allow-overlap><div class="r">AL FINAL DE CADA CAPÍTULO</div><div class="m">las lecciones y unas preguntas para pensar</div></div>
+
+<script>
+/*incluir:_dibujos.js*/
+root.insertAdjacentHTML("afterbegin", '<svg width="0" height="0" style="position:absolute">' + defsDibujos() + "</svg>");
+pinta(".dib36", rollo(62, 30, 216, 250, 3, 11, { grosor: 44 }) + brasero(170, 420, 0.62));
+// Tiendas de los caldeos alrededor de la muralla.
+let tiendas = "";
+for (let i = 0; i < 12; i++) {
+  const a = (i / 12) * Math.PI * 2, x = 170 + Math.cos(a) * 158, y = 165 + Math.sin(a) * 138;
+  tiendas += `<path class="tienda" d="M ${x - 16} ${y + 12} L ${x} ${y - 16} L ${x + 16} ${y + 12} Z"/>`;
+}
+pinta(".tiendas", tiendas);
+pinta(".dib37", pan(170, 430, 92));
+
+entra(".tit .a", 0.3, { y: 12 });
+entra(".tit .t", at("Vamos"), { y: 40, d: 0.8 });
+
+entra(".p36", at("El capítulo treinta y seis") - 0.3, { y: 40 });
+entra(".p36 .cap", at("El capítulo treinta y seis"), { x: -20, y: 0 });
+entra(".p36 .rollo", at("rollo"), { y: 20 });
+entra(".p36 .k1", at("rollo"), { x: 30, y: 0 });
+entra(".p36 .k2", at("veintitrés"), { x: 30, y: 0 });
+entra(".p36 .k3", at("Baruc"), { x: 30, y: 0 });
+entra(".p36 .brasero", at("lo corta"), { y: 20 });
+llamear(at("lo corta"), DUR);
+entra(".p36 .k4", at("echa al fuego"), { x: 30, y: 0 });
+entra(".p36 .k5", at("otra vez"), { x: 30, y: 0 });
+
+entra(".p37", at("El capítulo treinta y siete") - 0.3, { y: 40 });
+entra(".p37 .cap", at("El capítulo treinta y siete"), { x: -20, y: 0 });
+traza(".p37 .muro", at("babilonios"), 1.2);
+aparece(".p37 .lugar", at("babilonios") + 0.6);
+salta(".p37 .tienda", at("cercada"), { st: 0.06 });
+entra(".p37 .c1", at("cercada"), { x: 30, y: 0 });
+entra(".p37 .c2", at("pide oración"), { x: 30, y: 0 });
+entra(".p37 .c3", at("acusan"), { x: 30, y: 0 });
+entra(".p37 .c4", at("dice lo mismo"), { x: 30, y: 0 });
+salta(".p37 .pan", at("un pan"), { desde: 0.5 });
+entra(".p37 .c5", at("un pan"), { x: 30, y: 0 });
+
+atenua([".p36", ".p37"], at("Al final") - 0.3, 0.22);
+salta(".final", at("Al final"), { desde: 0.85, ease: "power3.out" });
+</script>

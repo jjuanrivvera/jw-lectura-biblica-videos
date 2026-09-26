@@ -1,0 +1,65 @@
+<style>
+.dib { position: absolute; left: 30px; top: 170px; width: 1060px; height: 829px; }
+.dib svg { width: 1060px; height: 829px; }
+.et { font-family: "cursive", cursive; font-weight: 700; }
+.gente circle { fill: #c9bfae; }
+.campo { position: absolute; left: 50px; top: 130px; width: 1040px; height: 832px; }
+.campo svg { width: 1040px; height: 832px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 23</span><span>versículos 10 al 16</span></div>
+
+<div class="fase fa">
+  <div class="dib"><svg viewBox="0 0 1100 860">
+    <g class="puerta"></g>
+    <g class="gente"></g>
+    <g class="p-abr"><circle cx="420" cy="760" r="18" fill="var(--oro)" stroke="#17212b" stroke-width="4"/><text class="et halo-o" x="420" y="728" font-size="50" fill="var(--oro)" text-anchor="middle" stroke-width="10">Abrahán</text></g>
+    <g class="p-efr"><circle cx="680" cy="760" r="18" fill="var(--rojo)" stroke="#17212b" stroke-width="4"/><text class="et halo-o" x="680" y="728" font-size="50" fill="var(--rojo)" text-anchor="middle" stroke-width="10">Efrón</text></g>
+    <text class="et t-test halo-o" x="550" y="850" font-size="54" fill="var(--tiza)" text-anchor="middle" stroke-width="10">los hombres del lugar, como testigos</text>
+  </svg></div>
+</div>
+
+<div class="fase fb">
+  <div class="campo"><svg viewBox="0 0 1000 800"><g class="plano"></g>
+    <text class="et t-cue halo-o" x="830" y="500" font-size="54" fill="var(--oro)" text-anchor="middle" stroke-width="10">la cueva</text>
+    <text class="et t-cam halo-o" x="500" y="60" font-size="58" fill="var(--oro)" text-anchor="middle" stroke-width="10">la cueva... y también el campo</text>
+  </svg></div>
+</div>
+
+<div class="col">
+  <div class="b b1"><div class="m">la misma clase de lugar donde Lot estaba sentado en Sodoma</div><div class="s">“Prácticamente todas las transacciones públicas se realizaban en las puertas de la ciudad” · La Atalaya, 1 de junio de 2010, pág. 15</div></div>
+  <div class="b b2"><div class="m">Efrón: “te doy” la cueva... <span style="color:var(--oro)">y el campo</span></div><div class="s">¿Cortesía de la época, o ya estaba vendiendo? No se sabe. Lo seguro: insistió en que el trato incluyera las dos cosas · Perspicacia, “Compra”, pág. 518</div></div>
+  <div class="b b3"><div class="m xl oro">“el precio completo”</div><div class="s">Génesis 23:13</div><div class="m" style="font-size:60px">un regalo se podía discutir después</div><div class="s">¡Despertad!, 22 de agosto de 1983, pág. 21</div></div>
+  <div class="b b4"><div class="m">el mismo hombre que no quiso <span style="color:var(--oro)">“ni un hilo”</span> del rey de Sodoma</div><div class="s">Génesis 14:23 · la TNM de 1987 relaciona 23:13 con 14:23 y Romanos 13:8</div></div>
+  <div class="b b5"><div class="cita">“Este terreno vale <b>400 siclos de plata</b>, pero ¿qué es eso entre tú y yo?”<span class="ref">GÉNESIS 23:15 · EFRÓN</span></div></div>
+  <div class="b b6"><div class="cita" style="font-size:46px">“Este no fue un contrato privado entre caballeros. Fue un <b>contrato formal, confirmado en presencia de testigos</b>.”<span class="ref">LA ATALAYA, 15 DE NOVIEMBRE DE 1986, PÁG. 16</span></div></div>
+</div>
+
+<script>
+/*incluir:_puerta.js*/
+/*incluir:_campo.js*/
+pinta(".puerta", puertaSVG("p32"));
+pinta(".plano", campoSVG("c32"));
+let semilla = 17;
+const azar = () => (semilla = (semilla * 16807) % 2147483647) / 2147483647;
+let g = "";
+for (let i = 0; i < 34; i++) { const x = 90 + azar() * 920, y = 690 + azar() * 130; if (x > 380 && x < 720 && y > 720) continue; g += `<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${(10 + azar() * 5).toFixed(1)}"/>`; }
+pinta(".gente", g);
+aparece(".fa", 0.3, 0.6);
+tl.set([$(".gente"), $(".p-abr"), $(".p-efr"), $(".t-test")], { opacity: 0 }, 0);
+tl.fromTo($$(".gente circle"), { opacity: 0 }, { opacity: 1, duration: 0.3, stagger: 0.04, immediateRender: false }, at("con los hombres"));
+tl.set($(".gente"), { opacity: 1 }, at("con los hombres") - 0.01);
+aparece(".t-test", at("como testigos"), 0.5);
+aparece(".p-efr", at("Efrón dice", 0), 0.4);
+aparece(".p-abr", at("Efrón dice", 0) + 0.5, 0.4);
+tl.to($(".fa"), { opacity: 0, duration: 0.5 }, at("le da la cueva") - 0.2);
+aparece(".fb", at("le da la cueva"), 0.5);
+tl.set([$(".limite"), $(".marco-cueva"), $(".t-cue"), $(".t-cam")], { opacity: 0 }, 0);
+traza(".marco-cueva", at("le da la cueva") + 0.3, 1.0);
+aparece(".t-cue", at("le da la cueva") + 0.5, 0.4);
+traza(".limite", at("y también el campo"), 1.6);
+aparece(".t-cam", at("y también el campo") + 0.6, 0.5);
+tl.set($(".limite"), { strokeDasharray: "30 18", strokeDashoffset: 0 }, at("y también el campo") + 1.65);
+late(".cueva", at("Abrahán no acepta"), { s: 1.03, n: 2 });
+secuencia([[".b1", 0.4], [".b2", at("Efrón dice", 0)], [".b3", at("Abrahán no acepta")], [".b4", at("Es el mismo hombre")], [".b5", at("Efrón dice el precio")], [".b6", at("No fue un trato")]]);
+</script>

@@ -1,0 +1,40 @@
+<style>
+.tit { position: absolute; left: 90px; right: 90px; top: 100px; text-align: center; }
+.tit .m { font-size: 78px; }
+.tabla { position: absolute; left: 90px; right: 90px; top: 240px; bottom: 70px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 70px; }
+.colu { display: flex; flex-direction: column; gap: 26px; }
+.colu .h { font-family: "Arial", sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.16em; padding-bottom: 12px; border-bottom: 5px solid; }
+.si .h { color: var(--oro); border-color: var(--oro); }
+.no .h { color: var(--rojo); border-color: var(--rojo); }
+.fila { border-radius: 20px; background: rgba(10,16,22,0.32); border: 3px solid rgba(239,231,214,0.14); padding: 18px 26px 20px; }
+.fila .x { font-family: "cursive", cursive; font-weight: 700; font-size: 58px; line-height: 1.05; }
+.fila .s { font-size: 24px; margin-top: 6px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 22</span><span>una imagen del sacrificio de Jesús</span></div>
+<div class="tit"><div class="m">¿Hasta dónde llega la comparación?</div></div>
+<div class="tabla">
+  <div class="colu si">
+    <div class="h">LO QUE SÍ SE COMPARA</div>
+    <div class="fila s1"><div class="x">un padre que entrega a su hijo amado</div><div class="s">Génesis 22:2; Juan 3:16 · Seamos valientes al andar con Dios, cap. 5, pág. 33</div></div>
+    <div class="fila s2"><div class="x">el dolor del padre: ayudó a millones a entender cómo se sintió Jehová</div><div class="s">La Atalaya (estudio), febrero de 2016, pág. 12</div></div>
+    <div class="fila s3"><div class="x">la resurrección: Isaac, “de manera simbólica”; Jesús, de verdad</div><div class="s">Hebreos 11:19</div></div>
+  </div>
+  <div class="colu no">
+    <div class="h">DÓNDE TERMINA</div>
+    <div class="fila n1"><div class="x">Isaac no murió; a su Hijo, Jehová “lo entregó por todos nosotros”</div><div class="s">Romanos 8:32 · La Atalaya, 1 de enero de 2012, pág. 23</div></div>
+    <div class="fila n2"><div class="x">si la Biblia no dice que algo tiene cumplimiento profético, no hay razones para buscarlo</div><div class="s">La Atalaya, 15 de marzo de 2015, pág. 18</div></div>
+    <div class="fila n3"><div class="x">ni la leña, ni el carnero, ni el matorral: ninguna publicación les da un significado</div></div>
+  </div>
+</div>
+<script>
+entra(".tit", 0.4, { y: -20 });
+entra(".si .h", at("Lo que sí"), { y: 10 });
+entra(".s1", at("un padre que entrega"), { y: 26 });
+entra(".s2", at("El dolor del padre"), { y: 26 });
+entra(".s3", at("Y la resurrección"), { y: 26 });
+entra(".no .h", at("Dónde termina"), { y: 10 });
+entra(".n1", at("Jehová libró"), { y: 26 });
+entra(".n2", at("Y no hay que"), { y: 26 });
+entra(".n3", at("Ninguna publicación"), { y: 26 });
+</script>

@@ -1,0 +1,170 @@
+<style>
+.mapa { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 2862px; height: 3366px; }
+.ovalo { fill: rgba(200, 50, 40, 0.10); stroke: #b3261e; stroke-width: 12; stroke-dasharray: 34 22; }
+.ruta-h { fill: none; stroke: #fff; stroke-width: 30; stroke-linecap: round; opacity: 0.85; }
+.ruta { fill: none; stroke: #b8860b; stroke-width: 16; stroke-linecap: round; }
+.fam circle { fill: #e6bb5c; stroke: #3b2a10; stroke-width: 5; }
+.cielo { position: absolute; left: 1190px; top: 96px; width: 660px; height: 112px; border-radius: 18px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+.fa .col { top: 230px; bottom: 90px; right: 70px; width: 660px; }
+.pie-mapa { position: absolute; left: 24px; bottom: 18px; padding: 8px 16px; border-radius: 10px; background: rgba(15,22,30,0.82); font-size: 22px; color: var(--tiza); }
+.tarjetas { position: absolute; left: 80px; right: 80px; top: 130px; bottom: 60px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; }
+.tarjeta { position: relative; border-radius: 28px; background: rgba(10, 16, 22, 0.35); border: 3px solid rgba(239,231,214,0.14); padding: 26px 40px; display: flex; flex-direction: column; }
+.tarjeta .t { font-family: "Arial", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.2em; }
+.tarjeta svg { width: 100%; height: 480px; margin-top: 6px; }
+.tarjeta ul { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.tarjeta li { font-family: "cursive", cursive; font-weight: 700; font-size: 60px; line-height: 1.05; }
+.tarjeta .s { font-size: 24px; margin-top: auto; }
+.ilus.img-h { left: 70px; top: 170px; width: 1020px; height: 510px; }
+.pie-img { position: absolute; left: 70px; top: 696px; width: 1020px; font-size: 24px; color: var(--tenue); }
+.fc .col { top: 120px; }
+.fc .m.gr { font-size: 64px; }
+</style>
+
+<div class="fase fa">
+  <div class="mapa">
+    <div class="cam">
+      <img src="assets/img/mapa-recuadro.svg" />
+      <svg viewBox="0 0 2862 3366">
+        <defs>
+          <radialGradient id="e05-fuego"><stop offset="0" stop-color="#fff2a8"/><stop offset="0.35" stop-color="#ffb347" stop-opacity="0.95"/><stop offset="0.7" stop-color="#e2541e" stop-opacity="0.6"/><stop offset="1" stop-color="#b3200e" stop-opacity="0"/></radialGradient>
+          <radialGradient id="e05-humo"><stop offset="0" stop-color="#555" stop-opacity="0.75"/><stop offset="1" stop-color="#555" stop-opacity="0"/></radialGradient>
+        </defs>
+        <ellipse class="ovalo" cx="1545" cy="2850" rx="175" ry="130"/>
+        <path class="ruta-h" d="M 1545 2860 C 1565 2950 1505 3030 1522 3118"/>
+        <path class="ruta" d="M 1545 2860 C 1565 2950 1505 3030 1522 3118"/>
+        <g class="humo"></g>
+        <g class="fuego"></g>
+        <g class="bolas"></g>
+        <g class="fam" transform="translate(1522 3118)"><circle cx="-34" cy="-10" r="24"/><circle cx="6" cy="10" r="24"/><circle cx="40" cy="-14" r="21"/><circle cx="-6" cy="-44" r="21"/></g>
+      </svg>
+    </div>
+    <div class="pie-mapa">Mapa esquemático original; las ubicaciones son orientativas.</div>
+  </div>
+  <div class="panel"></div>
+  <div class="cab sobre"><span class="cap">Génesis 19</span><span>versículos 23 al 25</span></div>
+  <div class="cielo"></div>
+  <div class="col">
+    <div class="b a1"><div class="cita">“Ya había salido el sol en la región cuando Lot llegó a Zóar. Entonces Jehová hizo llover <b>fuego y azufre</b> sobre Sodoma y Gomorra.”<span class="ref">GÉNESIS 19:23, 24</span></div></div>
+    <div class="b a2"><div class="m oro">Jehová esperó a que Lot estuviera a salvo</div></div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="cab"><span class="cap">Génesis 19</span><span>¿de qué estaba hecha la zona?</span></div>
+  <div class="tarjetas">
+    <div class="tarjeta t-az">
+      <div class="t" style="color:#f2d24b">AZUFRE</div>
+      <svg viewBox="0 0 760 420">
+        <defs>
+          <linearGradient id="e05-cr1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff4a0"/><stop offset="1" stop-color="#d9b21c"/></linearGradient>
+          <linearGradient id="e05-cr2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7e05c"/><stop offset="1" stop-color="#a8850d"/></linearGradient>
+          <linearGradient id="e05-roca" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d7466"/><stop offset="1" stop-color="#4c463d"/></linearGradient>
+          <linearGradient id="e05-azul" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#1f4fd1"/><stop offset="0.6" stop-color="#58a0ff"/><stop offset="1" stop-color="#bfe0ff" stop-opacity="0.2"/></linearGradient>
+        </defs>
+        <ellipse cx="250" cy="370" rx="220" ry="34" fill="#000" opacity="0.3"/>
+        <path d="M 60 360 C 70 300 150 270 250 272 C 360 270 430 300 440 360 Z" fill="url(#e05-roca)"/>
+        <g class="cristales">
+          <path d="M 150 300 L 170 170 L 215 150 L 235 290 Z" fill="url(#e05-cr1)"/><path d="M 170 170 L 215 150 L 200 120 Z" fill="#fff8c4"/>
+          <path d="M 220 300 L 250 110 L 300 95 L 320 295 Z" fill="url(#e05-cr2)"/><path d="M 250 110 L 300 95 L 272 60 Z" fill="#fffbd6"/>
+          <path d="M 300 305 L 330 190 L 372 200 L 380 300 Z" fill="url(#e05-cr1)"/><path d="M 330 190 L 372 200 L 356 165 Z" fill="#fff8c4"/>
+          <path d="M 110 320 L 118 250 L 150 240 L 170 318 Z" fill="url(#e05-cr2)"/>
+        </g>
+        <g class="llama" transform="translate(600 330)">
+          <ellipse cx="0" cy="18" rx="80" ry="16" fill="#3a3430"/>
+          <path class="ll1" d="M -48 10 C -60 -60 -10 -90 0 -170 C 20 -100 70 -70 48 10 Z" fill="url(#e05-azul)"/>
+          <path class="ll2" d="M -22 10 C -30 -40 0 -60 4 -110 C 18 -60 40 -40 24 10 Z" fill="#9fd0ff" opacity="0.9"/>
+        </g>
+        <g class="olor" fill="none" stroke="#c9c7b8" stroke-width="5" stroke-linecap="round" opacity="0.8">
+          <path d="M 560 120 c 20 -20 -20 -40 0 -60 c 20 -20 -20 -40 0 -60"/><path d="M 640 130 c 20 -20 -20 -40 0 -60 c 20 -20 -20 -40 0 -60"/>
+        </g>
+      </svg>
+      <ul><li class="az1">un mineral amarillo que <b style="color:#f2d24b">arde con facilidad</b></li><li class="az2">su llama es <b style="color:#8db4ec">azul</b>; su olor, acre: pica en la nariz</li></ul>
+      <div class="s">Perspicacia, “Azufre”, pág. 263</div>
+    </div>
+    <div class="tarjeta t-be">
+      <div class="t" style="color:#c9b89a">BETÚN</div>
+      <svg viewBox="0 0 760 420">
+        <defs>
+          <radialGradient id="e05-brea" cx="45%" cy="40%" r="60%"><stop offset="0" stop-color="#3b3a3f"/><stop offset="0.5" stop-color="#141417"/><stop offset="1" stop-color="#050506"/></radialGradient>
+          <linearGradient id="e05-tierra" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9c8660"/><stop offset="1" stop-color="#6e5c40"/></linearGradient>
+        </defs>
+        <path d="M 20 150 L 740 150 L 740 400 L 20 400 Z" fill="url(#e05-tierra)" opacity="0.9"/>
+        <ellipse cx="380" cy="270" rx="300" ry="100" fill="#4d3f2c"/>
+        <ellipse cx="380" cy="266" rx="270" ry="84" fill="url(#e05-brea)"/>
+        <ellipse cx="300" cy="238" rx="110" ry="18" fill="#fff" opacity="0.12"/>
+        <g class="burbujas" fill="none" stroke="#6b6a72" stroke-width="4"><circle cx="460" cy="280" r="16"/><circle cx="250" cy="300" r="11"/><circle cx="520" cy="250" r="9"/></g>
+        <g fill="#6e5c40"><ellipse cx="120" cy="190" rx="46" ry="16"/><ellipse cx="660" cy="200" rx="56" ry="18"/></g>
+        <ellipse cx="120" cy="186" rx="30" ry="9" fill="#141417"/><ellipse cx="660" cy="196" rx="38" ry="11" fill="#141417"/>
+      </svg>
+      <ul><li class="be1">el asfalto natural, que <b style="color:#e8805f">también arde</b></li><li class="be2">“pozo tras pozo de betún” en ese valle</li></ul>
+      <div class="s">Perspicacia, “Betún”, pág. 350 · Génesis 14:10</div>
+    </div>
+  </div>
+</div>
+
+<div class="fase fc">
+  <div class="cab"><span class="cap">Génesis 19</span><span>versículos 24 y 25</span></div>
+  <div class="ilus img-h"><div class="kb"><img src="assets/img/huida-sodoma.svg" /></div></div>
+  <div class="pie-img">Gráfico vectorial original.</div>
+  <div class="col">
+    <div class="b c1"><div class="m">¿Un volcán? ¿Un terremoto?</div><div class="s">Perspicacia recoge las dos explicaciones: “Azufre”, pág. 263 · “Arqueología”, págs. 200, 201</div></div>
+    <div class="b c2"><div class="m gr">La Biblia no dice <span style="color:var(--tenue)">cómo</span>; dice <span style="color:var(--oro)">quién</span></div><div class="cita">“Esto vino de Jehová, vino de los cielos.”<span class="ref">GÉNESIS 19:24</span></div></div>
+    <div class="b c3"><div class="def"><div class="t">“Fuego eterno” · Judas 7</div><div class="x">no sigue ardiendo: lo que no tiene fin es la destrucción</div><div class="s">¡Despertad!, 22 de noviembre de 1977, pág. 28</div></div></div>
+  </div>
+</div>
+
+<script>
+/*incluir:_cielo.js*/
+pinta(".cielo", cieloHTML());
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 880, y: 2200, w: 1500, h: 1150 }, V), 0);
+hora("amanecer", 0);
+hora("sol", 0.4, 1.4);
+// Fuego sobre la zona de las ciudades: llamas que laten, bolas que caen y humo que sube.
+let semilla = 5;
+const azar = () => (semilla = (semilla * 16807) % 2147483647) / 2147483647;
+let f = "", b = "", h = "";
+for (let i = 0; i < 9; i++) f += `<circle class="fl" cx="${1440 + azar() * 210}" cy="${2780 + azar() * 150}" r="${70 + azar() * 70}" fill="url(#e05-fuego)"/>`;
+for (let i = 0; i < 14; i++) { const x = 1400 + azar() * 290; b += `<g class="bo" data-x="${x.toFixed(0)}"><line x1="0" y1="-90" x2="0" y2="0" stroke="#ffcf6b" stroke-width="10" stroke-linecap="round" opacity="0.7"/><circle r="16" fill="#fff0b0"/></g>`; }
+for (let i = 0; i < 8; i++) h += `<circle class="hu" cx="${1460 + azar() * 180}" cy="2760" r="90" fill="url(#e05-humo)"/>`;
+pinta(".fuego", f); pinta(".bolas", b); pinta(".humo", h);
+const tF = at("hizo llover fuego");
+const bolas = $$(".bo");
+bolas.forEach((g, i) => {
+  const x = +g.dataset.x, y1 = 2740 + azar() * 180;
+  tl.fromTo(g, { attr: { transform: `translate(${x} 2200)` }, opacity: 0 }, { attr: { transform: `translate(${x} ${y1.toFixed(0)})` }, opacity: 1, duration: 0.9, ease: "power2.in", immediateRender: false }, tF + i * 0.28);
+  tl.to(g, { opacity: 0, duration: 0.2 }, tF + i * 0.28 + 0.9);
+});
+tl.set($$(".bo"), { opacity: 0 }, 0);
+const fl = $$(".fl");
+tl.fromTo(fl, { opacity: 0, scale: 0.3, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 1.2, stagger: 0.25, ease: "power2.out", immediateRender: false }, tF + 0.8);
+tl.set(fl, { opacity: 0 }, 0);
+fl.forEach((c, i) => tl.to(c, { scale: 1.18, duration: 0.45 + (i % 3) * 0.12, yoyo: true, repeat: 7, ease: "sine.inOut" }, tF + 2.2 + i * 0.1));
+const hu = $$(".hu");
+tl.set(hu, { opacity: 0 }, 0);
+hu.forEach((c, i) => tl.fromTo(c, { opacity: 0, attr: { cy: 2760, r: 60 } }, { opacity: 0.9, attr: { cy: 2380 - i * 30, r: 190 }, duration: 5, ease: "power1.out", immediateRender: false }, tF + 1.5 + i * 0.5));
+late(".fam", at("cuando Lot llegó"), { s: 1.25, n: 2 });
+secuencia([[".a1", 0.5], [".a2", at("Esperó a que")]], at("El azufre") - 0.2);
+
+// Cambio de fase: muestras de azufre y betún.
+const tB = at("El azufre") - 0.4;
+tl.to($(".fa"), { opacity: 0, duration: 0.5 }, tB);
+aparece(".fb", tB + 0.3, 0.5);
+entra(".t-az", tB + 0.4, { y: 40 });
+entra(".az1", at("mineral amarillo"), { y: 16 });
+entra(".az2", at("Su llama es azul"), { y: 16 });
+tl.fromTo($$(".llama path"), { scaleY: 0.9, transformOrigin: "50% 100%" }, { scaleY: 1.08, duration: 0.35, yoyo: true, repeat: 23, ease: "sine.inOut", immediateRender: false }, at("Su llama"));
+traza(".olor path", at("olor acre"), 1.2);
+entra(".t-be", at("la zona estaba llena"), { y: 40 });
+entra(".be1", at("el asfalto natural"), { y: 16 });
+entra(".be2", at("pozo tras pozo"), { y: 16 });
+late(".burbujas circle", at("pozo tras pozo"), { s: 1.4, n: 5 });
+
+// Cambio de fase: la ilustración y quién lo hizo.
+const tC = at("Fue un volcán") - 0.4;
+tl.to($(".fb"), { opacity: 0, duration: 0.5 }, tC);
+aparece(".fc", tC + 0.3, 0.5);
+kb(".img-h .kb", tC, DUR, { s: 1.12, x: 2, y: 2 }, { s: 1.0 });
+secuencia([[".c1", tC + 0.4], [".c2", at("La Biblia no dice")], [".c3", at("Y el fuego eterno")]]);
+</script>

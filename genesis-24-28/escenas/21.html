@@ -1,0 +1,86 @@
+<style>
+.fa .mapa { left: 0; top: 0; width: 1920px; height: 1080px; }
+.fa .mapa .cam img, .fa .mapa .cam svg { width: 5000px; height: 3800px; }
+.anillo { fill: none; stroke: #c0392b; stroke-width: 10; }
+.col { top: 110px; bottom: 100px; right: 60px; width: 740px; }
+.fb .tel { position: absolute; left: 30px; top: 150px; width: 1140px; height: 820px; }
+.fb .tel svg { width: 1140px; height: 820px; }
+.capa-t { font-family: "Arial", sans-serif; font-weight: 700; font-size: 26px; fill: rgba(255,255,255,0.85); }
+.rot { font-family: "cursive", cursive; font-weight: 700; font-size: 58px; fill: var(--tiza); }
+.fb .col { width: 700px; }
+</style>
+
+<div class="fase fa">
+  <div class="mapa">
+    <div class="cam">
+      <img src="assets/img/mapa-rutas.svg" />
+      <svg viewBox="0 0 5000 3800"><circle class="anillo a-g" cx="1066" cy="3021" r="48"/><circle class="anillo a-z" cx="1010" cy="2968" r="34" style="stroke:#1b2733;stroke-width:7"/></svg>
+    </div>
+    <div class="pie-mapa">Mapa esquemático original; las ubicaciones son orientativas.</div>
+  </div>
+  <div class="panel"></div>
+  <div class="cab sobre"><span class="cap">Guerar hoy</span><span>Génesis 20:1 · 26:1-17</span></div>
+  <div class="col">
+    <div class="b a1"><div class="m">antes: <b>Tell Jemmeh</b></div><div class="s">(Tel Gamma), unos 12 km al sur de la moderna Gaza</div><div class="m oro">hoy, para muchos geógrafos: Tell Abu Hureirah</div><div class="s">(Tel Haror), unos 19 km al sureste de Gaza · Perspicacia, vol. 1, “Guerar”, pág. 1057</div><div class="m rosa">sin certeza total</div></div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="cab"><span class="cap">Guerar hoy</span><span>qué es un tel</span></div>
+  <div class="tel"><svg viewBox="0 0 1140 820">
+    <defs>
+      <linearGradient id="e21-cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fb7d9"/><stop offset="1" stop-color="#e3d6b6"/></linearGradient>
+      <clipPath id="e21-monte"><path d="M 40 700 C 160 690 250 330 420 300 C 520 284 640 284 740 300 C 910 330 990 690 1100 700 Z"/></clipPath>
+    </defs>
+    <rect x="0" y="0" width="1140" height="700" rx="24" fill="url(#e21-cielo)"/>
+    <rect x="0" y="700" width="1140" height="120" fill="#6b4f33"/>
+    <g clip-path="url(#e21-monte)">
+      <rect class="capa c1" x="0" y="600" width="1140" height="100" fill="#6e5236"/>
+      <rect class="capa c2" x="0" y="520" width="1140" height="80" fill="#8a6a45"/>
+      <rect class="capa c3" x="0" y="450" width="1140" height="70" fill="#a07c50"/>
+      <rect class="capa c4" x="0" y="390" width="1140" height="60" fill="#b58d5c"/>
+      <rect class="capa c5" x="0" y="330" width="1140" height="60" fill="#c49c69"/>
+      <rect class="capa c6" x="0" y="270" width="1140" height="60" fill="#8f9a5a"/>
+      <g class="muros" fill="#4a3522" opacity="0.8">
+        <rect x="330" y="560" width="14" height="40"/><rect x="620" y="560" width="14" height="40"/><rect x="820" y="570" width="14" height="30"/>
+        <rect x="380" y="486" width="12" height="34"/><rect x="700" y="486" width="12" height="34"/>
+        <rect x="430" y="420" width="12" height="30"/><rect x="650" y="420" width="12" height="30"/>
+        <rect x="470" y="360" width="10" height="30"/><rect x="600" y="360" width="10" height="30"/>
+      </g>
+    </g>
+    <path d="M 40 700 C 160 690 250 330 420 300 C 520 284 640 284 740 300 C 910 330 990 690 1100 700" fill="none" stroke="#4d6b2e" stroke-width="6"/>
+    <text class="capa-t tc1" x="560" y="660" text-anchor="middle">la primera ciudad</text>
+    <text class="capa-t tc3" x="560" y="495" text-anchor="middle">otra encima…</text>
+    <text class="capa-t tc5" x="560" y="370" text-anchor="middle">… y otra</text>
+    <text class="rot r-hoy" x="560" y="220" text-anchor="middle">hoy: una colina en medio del campo</text>
+    <text class="rot r-cer" x="900" y="770" text-anchor="middle" style="fill:var(--oro);font-size:46px">cerámica del tiempo de los patriarcas</text>
+  </svg></div>
+  <div class="col">
+    <div class="b b1"><div class="def"><div class="t">tel</div><div class="x">una colina artificial: ruinas de ciudades construidas <b>una encima de otra</b> durante siglos</div></div><div class="s">“se han encontrado muchos fragmentos de cerámica que se cree que datan del tiempo de los patriarcas” · Perspicacia, “Guerar”, pág. 1057</div></div>
+    <div class="b b2"><span class="externa">fuente externa: “Tel Haror”, Wikipedia</span><div class="m">Israel, oeste del Négueb</div><div class="m">excavado de <b>1982 a 1992</b></div><div class="m oro">murallas, un templo y mucha cerámica filistea</div></div>
+  </div>
+</div>
+
+<script>
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 350, y: 2350, w: 1500, h: 1370 }, V), 0);
+tl.to($(".cam"), { ...encuadre({ x: 450, y: 2450, w: 1250, h: 1145 }, V), duration: 10, ease: "sine.inOut" }, 0.5);
+traza(".a-z", at("al sur de Gaza"), 0.6);
+traza(".a-g", at("Hoy muchos geógrafos"), 0.8);
+late(".a-g", at("Hoy muchos geógrafos") + 1.0, { s: 1.3, n: 3 });
+entra(".a1", 0.5, { y: 20 });
+
+const tB = at("Un tel es") - 0.3;
+desaparece(".fa", tB, 0.4);
+aparece(".fb", tB + 0.3, 0.4);
+const capas = $$(".capa");
+tl.set(capas, { opacity: 0 }, 0);
+capas.forEach((c, i) => tl.fromTo(c, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, immediateRender: false }, at("Un tel es") + 0.3 + i * 0.55));
+aparece(".muros", at("Un tel es") + 3.0, 0.5);
+aparece(".tc1", at("Un tel es") + 0.6, 0.3);
+aparece(".tc3", at("una encima de otra"), 0.3);
+aparece(".tc5", at("durante siglos"), 0.3);
+aparece(".r-cer", at("En Tel Haror se ha"), 0.4);
+aparece(".r-hoy", at("Hoy está en Israel"), 0.4);
+secuencia([[".b1", tB + 0.4], [".b2", at("Hoy está en Israel")]]);
+</script>

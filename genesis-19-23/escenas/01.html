@@ -1,0 +1,109 @@
+<style>
+.intro { position: absolute; left: 90px; right: 90px; top: 110px; height: 230px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; align-items: center; }
+.intro .g18 { display: flex; flex-direction: column; gap: 10px; }
+.intro .g18 .k { font-family: "Arial", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.16em; color: var(--tenue); }
+.intro .g18 .m { font-size: 58px; }
+.intro .anos { text-align: right; }
+.intro .anos .grande { color: var(--oro); font-size: 130px; }
+.intro .anos .s { font-size: 34px; color: var(--tiza); margin-top: 6px; }
+.linea { position: absolute; left: 60px; top: 380px; width: 1800px; height: 600px; }
+.linea svg { width: 1800px; height: 600px; }
+.nom { font-family: "cursive", cursive; font-weight: 700; font-size: 50px; }
+.fondo-barra { opacity: 0.14; }
+.edad { font-family: "Arial", sans-serif; font-weight: 800; font-size: 40px; }
+.eje { stroke: #56657a; stroke-width: 3; }
+.tick { font-family: "Arial", sans-serif; font-weight: 600; font-size: 26px; fill: var(--tenue); text-anchor: middle; }
+.ev line { stroke: var(--oro); stroke-width: 3; }
+.ev rect { fill: #17212b; stroke: var(--oro); stroke-width: 3; }
+.ev text { font-family: "Arial", sans-serif; font-weight: 800; font-size: 24px; fill: var(--oro); text-anchor: middle; }
+.cursor line { stroke: var(--tiza); stroke-width: 3; stroke-dasharray: 8 7; }
+.cursor text { font-family: "Arial", sans-serif; font-weight: 800; font-size: 30px; fill: var(--tiza); text-anchor: middle; }
+.nota { position: absolute; left: 90px; right: 90px; bottom: 34px; }
+</style>
+
+<div class="intro">
+  <div class="g18">
+    <div class="k k1">GÉNESIS 18 TERMINA</div>
+    <div class="m m1">Abrahán, cerca de Mamré, <span style="color:var(--oro)">rogando por Sodoma</span></div>
+    <div class="m m2" style="color:var(--rojo)">Génesis 19 empieza esa misma tarde</div>
+  </div>
+  <div class="anos"><div class="grande">38 años</div><div class="s">de 1919 a 1881 antes de nuestra era</div></div>
+</div>
+
+<div class="linea"><svg viewBox="0 0 1800 600">
+  <g class="filas"></g>
+  <line class="eje" x1="240" y1="500" x2="1720" y2="500"/>
+  <g class="ticks"></g>
+  <g class="evs"></g>
+  <g class="cursor"><line x1="0" y1="10" x2="0" y2="500"/><text class="cy" x="0" y="0">1919</text></g>
+</svg></div>
+
+<div class="nota s">Edades: Génesis 16:16; 17:17; 21:5; 23:1 y Perspicacia, “Abrahán”, “Isaac”, “Ismael”. La fecha de Moria es aproximada.</div>
+
+<script>
+const X0 = 240, X1 = 1680;
+const xa = (y) => X0 + ((1919 - y) * (X1 - X0)) / 38;
+// Edad de cada uno en 1919 (Isaac nace en 1918).
+const P = [
+  { k: "ab", n: "Abrahán", c: "var(--oro)", e0: 99, y0: 1919 },
+  { k: "sa", n: "Sara", c: "var(--rosa)", e0: 89, y0: 1919 },
+  { k: "is", n: "Ismael", c: "var(--cielo)", e0: 13, y0: 1919 },
+  { k: "ic", n: "Isaac", c: "var(--tiza)", e0: 0, y0: 1918 },
+];
+let f = "";
+P.forEach((p, i) => {
+  const y = 30 + i * 108;
+  f += `<text class="nom n-${p.k}" x="0" y="${y + 44}" fill="${p.c}">${p.n}</text>`;
+  f += `<rect class="fondo-barra fb-${p.k}" x="${xa(p.y0)}" y="${y}" width="${X1 - xa(p.y0)}" height="58" rx="10" fill="${p.c}"/>`;
+  f += `<rect class="barra b-${p.k}" x="${xa(p.y0)}" y="${y}" width="0" height="58" rx="10" fill="${p.c}"/>`;
+  f += `<text class="edad e-${p.k}" x="${xa(p.y0) + 14}" y="${y + 43}" fill="#17212b"></text>`;
+});
+pinta(".filas", f);
+let tk = "";
+[1919, 1910, 1900, 1890, 1881].forEach((y) => { tk += `<line class="eje" x1="${xa(y)}" y1="500" x2="${xa(y)}" y2="514"/><text class="tick" x="${xa(y)}" y="550">${y}</text>`; });
+$(".ticks").innerHTML = tk + `<text class="tick" x="1720" y="590" style="text-anchor:end;font-size:24px">años antes de nuestra era</text>`;
+const EV = [["19·20", 1919, 452, 70], ["21", 1918, 412, 46], ["21", 1913, 452, 46], ["22", 1893, 452, 46], ["23", 1881, 452, 46]];
+let ev = "";
+EV.forEach(([t, y, yy, w], i) => {
+  const dash = y === 1893 ? ' stroke-dasharray="7 6"' : "";
+  ev += `<g class="ev ev${i}"><line x1="${xa(y)}" y1="${yy + 30}" x2="${xa(y)}" y2="500"${dash}/><rect x="${xa(y) - w / 2}" y="${yy}" width="${w}" height="32" rx="16"${dash}/><text x="${xa(y)}" y="${yy + 24}">${t}</text></g>`;
+});
+pinta(".evs", ev);
+
+// El cursor recorre los años; cada barra llega hasta él y muestra la edad.
+const st = { y: 1919 };
+const cur = $(".cursor"), cy = $(".cy");
+function dibuja() {
+  const x = xa(st.y);
+  cur.setAttribute("transform", `translate(${x.toFixed(1)} 0)`);
+  cy.textContent = Math.round(st.y);
+  P.forEach((p) => {
+    const w = Math.max(0, x - xa(p.y0));
+    $(".b-" + p.k).setAttribute("width", w.toFixed(1));
+    const e = $(".e-" + p.k);
+    const edad = p.e0 + (p.y0 - st.y);
+    e.textContent = w > 60 || p.k !== "ic" ? Math.round(edad) : "";
+    e.setAttribute("x", (xa(p.y0) + Math.max(w, 0) + 14).toFixed(1));
+    e.setAttribute("fill", p.c);
+  });
+}
+dibuja();
+function viaja(y, t, d = 1.6) { tl.to(st, { y, duration: d, ease: "power2.inOut", onUpdate: dibuja }, t); }
+
+entra(".k1", 0.5, { y: 20 });
+escribe(".m1", 0.8, 1.6);
+escribe(".m2", at("El diecinueve empieza"), 1.2);
+salta(".anos", at("treinta y ocho años"), { desde: 0.7 });
+aparece(".linea", at("treinta y ocho años") + 0.3, 0.8);
+// Antes de "Cuando cae Sodoma" solo se ven el eje y los fondos de las barras.
+aparece([".cursor", ".edad"], at("Cuando cae Sodoma"), 0.4);
+aparece([".ev0", ".ev1", ".ev2", ".ev3", ".ev4"], at("del mil novecientos") , 0.8);
+viaja(1918.99, at("Cuando cae Sodoma"), 0.4);
+viaja(1918, at("Al año siguiente"), 1.0);
+viaja(1913, at("Cinco años después"), 1.4);
+late(".ev2 rect", at("Ismael tiene"), { n: 3 });
+viaja(1893, at("Unos veinte años"), 2.2);
+viaja(1881, at("Y al final"), 1.6);
+late(".ev4 rect", at("ciento veintisiete"), { n: 3 });
+entra(".nota", at("Cuando cae Sodoma"), { y: 10 });
+</script>

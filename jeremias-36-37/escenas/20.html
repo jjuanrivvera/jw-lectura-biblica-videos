@@ -1,0 +1,30 @@
+<style>
+.intro { position: absolute; left: 70px; right: 70px; top: 700px; text-align: center; font-family: "cursive", cursive; font-weight: 700; font-size: 96px; line-height: 1.05; }
+.leccion .l.q { font-family: "Georgia", serif; font-weight: 600; font-size: 78px; line-height: 1.12; color: var(--oro); }
+</style>
+
+<div class="seccion"><div class="r">Lecciones y preguntas para pensar</div><div class="t">Jeremías 37</div><svg viewBox="0 0 700 30"><path d="M 10 18 C 200 4 480 28 690 12"/></svg></div>
+<div class="intro">Lo que nos deja el capítulo, para conversar en familia</div>
+
+<div class="leccion l1"><div class="n">1</div><div class="l">Un alivio en las noticias no cambia lo que Jehová ha dicho.</div><div class="p"><span class="k">PARA PENSAR</span>Cuando el problema afloja, ¿mantengo las decisiones que tomé en el apuro?</div><div class="s">Jeremías 37:5, 9 · 34:11</div></div>
+<div class="leccion l2"><div class="n">2</div><div class="l">Sedequías quería la oración, pero no el mensaje.</div><div class="p"><span class="k">PARA RECORDAR</span>La oración acompaña los pasos; no los reemplaza.</div><div class="s">Jeremías 37:2, 3</div></div>
+<div class="leccion l3"><div class="n">3</div><div class="l">Ser neutrales: no ponernos de parte de ningún bando, porque apoyamos el Reino de Dios.</div><div class="p"><span class="k">PARA PENSAR</span>¿Tengo lista mi frase, corta y amable? “Yo ya escogí gobierno: el Reino de Dios”.</div><div class="s">Jeremías 37:13, 14 · La Atalaya, diciembre de 2026</div></div>
+<div class="leccion l4"><div class="n">4</div><div class="l q">“Temblar ante los hombres es una trampa”</div><div class="p"><span class="k">EL REY</span>tenía el trono, y vivía atrapado por el qué dirán.</div><div class="s">Proverbios 29:25 · Jeremías 38:5</div></div>
+<div class="leccion l5"><div class="n">5</div><div class="l">Un pan por día, no una despensa… y le alcanzó.</div><div class="p"><span class="k">PARA PENSAR</span>¿Qué “pan de hoy” me dio Jehová esta semana que di por sentado?</div><div class="s">Jeremías 37:21</div></div>
+
+<script>
+entra(".seccion .r", 0.4, { y: -10 });
+entra(".seccion .t", 0.7, { y: 30, d: 0.8 });
+traza(".seccion path", 1.2, 1.0);
+escribe(".intro", 1.6, 2.4);
+sale(".intro", at("Primera") - 0.4);
+const L = [["l1", "Primera"], ["l2", "Segunda"], ["l3", "Tercera"], ["l4", "Cuarta"], ["l5", "Y quinta"]];
+L.forEach(([c, w], i) => {
+  const t = at(w);
+  entra("." + c + " .n", t, { x: -20, y: 0 });
+  escribe("." + c + " .l", t + 0.4, 1.6);
+  entra("." + c + " .p", t + 2.4, { y: 20 });
+  aparece("." + c + " .s", t + 2.8);
+  if (i < L.length - 1) sale("." + c, at(L[i + 1][1]) - 0.4, { d: 0.35 });
+});
+</script>

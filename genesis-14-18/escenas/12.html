@@ -1,0 +1,75 @@
+<style>
+.mapa { overflow: hidden; position: absolute; left: 0; top: 170px; width: 1080px; height: 1094px; }
+.mapa .agua { fill: #1e3350; stroke: #56789f; stroke-width: 0.6; }
+.mapa .rio { fill: none; stroke: #56789f; stroke-linejoin: round; }
+.mapa .lug { font-family: "Arial", sans-serif; font-weight: 700; font-size: 10px; fill: #efe7d6; stroke: #17212b; stroke-width: 3; paint-order: stroke; }
+.mapa .aguat { font-family: "Georgia", serif; font-style: italic; font-size: 10px; fill: #8db4ec; }
+.b { position: absolute; left: 72px; right: 72px; top: 1320px; }
+.b .q { font-family: "Georgia", serif; font-size: 56px; line-height: 1.18; }
+.b .ref { font-family: "Arial", sans-serif; font-weight: 700; font-size: 30px; color: var(--oro); margin-top: 10px; }
+.b .m { font-family: "cursive", cursive; font-weight: 700; font-size: 58px; line-height: 1.05; }
+.b .s { font-family: "Arial", sans-serif; font-size: 28px; color: var(--tenue); margin-top: 10px; }
+.pueblos { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.pueblos span { font-family: "cursive", cursive; font-weight: 700; font-size: 44px; padding: 2px 18px; border: 2px solid rgba(239,231,214,0.4); border-radius: 30px; }
+.tab { top: 230px; }
+</style>
+
+<svg class="mapa" viewBox="6 34 308 312">
+  <rect x="-100" y="-100" width="600" height="600" fill="#17212b" />
+  <path class="agua" d="M-40.5 262.9 L-11.4 249.0 L17.6 242.1 L55.4 256.0 L90.3 259.5 L110.6 252.5 L119.3 242.1 L128.0 221.3 L133.8 200.5 L136.8 190.1 L148.4 162.3 L160.0 138.1 L157.1 106.8 L162.9 89.5 L168.7 68.7 L157.1 61.7 L122.2 61.7 L90.3 82.6 L46.7 68.7 L3.1 61.7 L-40.5 65.2 L-40.5 34.0 L-40.5 262.9 Z" />
+  <path class="agua" d="M62.7 299.3 L67.0 311.5 L75.7 332.3 L93.2 367.0 L72.8 367.0 L58.3 325.4 Z" />
+  <path class="agua" d="M133.8 313.2 L130.9 332.3 L122.2 367.0 L116.4 367.0 L122.2 335.8 L129.5 315.0 Z" />
+  <path class="agua" d="M149.8 236.2 L151.3 245.6 L149.0 259.5 L145.5 256.0 L146.1 242.1 Z" />
+  <path class="agua" d="M151.3 197.7 L152.7 200.5 L150.7 204.0 L149.0 200.5 Z" />
+  <path class="rio euf" style="stroke-width:1.8" d="M229.7 23.6 L221.0 54.8 L222.5 61.7 L226.8 89.5 L244.3 91.2 L267.5 96.4 L282.0 113.8 L302.4 138.1 L319.8 145.0 L337.2 155.4 L354.7 172.7" />
+  <path class="rio" style="stroke-width:1.2" d="M284.9 20.1 L314.0 40.9 L348.9 51.3 L369.2 77.4" />
+  <path class="rio" style="stroke-width:0.8" d="M251.5 56.5 L253.0 72.2 L250.1 91.2" />
+  <path class="rio" style="stroke-width:1" d="M151.3 203.3 L150.4 217.8 L149.8 236.2" />
+  <path class="rio" style="stroke-width:1.4" d="M26.3 367.0 L24.9 315.0 L23.4 292.4 M23.4 292.4 L8.9 269.9 L0.2 249.0 M23.4 292.4 L35.1 269.9 L40.9 247.3" />
+  <path class="euf-oro" d="M229.7 23.6 L221.0 54.8 L222.5 61.7 L226.8 89.5 L244.3 91.2 L267.5 96.4 L282.0 113.8 L302.4 138.1 L319.8 145.0" fill="none" stroke="#e6bb5c" stroke-width="2.6" stroke-linecap="round" />
+  <path class="zona" d="M99.0 258.4 L113.5 280.3 L133.8 311.5 L151.3 290.7 L174.5 256.0 L197.8 207.4 L232.6 158.9 L258.8 117.2 L247.2 75.6 L221.0 61.7 L180.3 79.1 L160.0 106.8 L160.0 138.1 L148.4 162.3 L133.8 193.6 L128.0 221.3 L113.5 252.5 Z" fill="#e6bb5c" fill-opacity="0" stroke="#e6bb5c" stroke-width="1.4" />
+  <text class="aguat" x="30" y="152">Mar Grande</text>
+  <text class="aguat euf-t" x="262" y="130" style="font-weight:700">Éufrates</text>
+  <text class="lug" x="10" y="312" style="fill:#aab4bf;font-weight:400">EGIPTO</text>
+  <g class="l-rio"><circle cx="99.0" cy="258.4" r="5" fill="none" stroke="#e8805f" stroke-width="1.6" /><text class="lug" x="95" y="275" text-anchor="middle" style="fill:#e8805f">río de Egipto ?</text></g>
+  <g class="l-heb"><circle cx="136.8" cy="244.5" r="3.2" fill="#e6bb5c" /><text class="lug" x="142.8" y="248.5">Hebrón</text></g>
+  <g class="l-dam"><circle cx="171.3" cy="175.9" r="3.2" fill="#e6bb5c" /><text class="lug" x="177.3" y="179.9">Damasco</text></g>
+  <g class="l-gaza"><circle cx="117.9" cy="245.6" r="3.2" fill="#e6bb5c" /><text class="lug" x="111.9" y="241.6" text-anchor="end">Gaza</text></g>
+  <g class="l-tif"><circle cx="226.8" cy="93.0" r="3.2" fill="#e6bb5c" /><text class="lug" x="232.8" y="97.0">Tifsá ?</text></g>
+  <g class="l-har"><circle cx="250.9" cy="59.3" r="3.2" fill="#aab4bf" /><text class="lug" x="256.9" y="56.3" style="fill:#aab4bf">Harán</text></g>
+</svg>
+
+<div class="b b1"><div class="q">“desde el río de Egipto hasta el gran río, el río Éufrates”</div><div class="ref">Génesis 15:18</div>
+  <div class="pueblos"><span>quenitas</span><span>quenizitas</span><span>cadmonitas</span><span>hititas</span><span>perizitas</span><span>refaím</span><span>amorreos</span><span>cananeos</span><span>guirgaseos</span><span>jebuseos</span></div></div>
+<div class="b b2"><div class="m">¿El río de Egipto? Por lo general, el uadi el-Arish. Perspicacia no descarta un brazo del Nilo.</div><div class="s">La Atalaya, 1 de octubre de 2005, pág. 10 · Perspicacia, vol. 2, “Sihor”, pág. 1024</div></div>
+<div class="b b3"><div class="m">Se cumplió a plenitud con David y Salomón: “desde Tifsá hasta Gaza”</div><div class="s">1 Reyes 4:24 · Perspicacia, vol. 1, “Éufrates”, pág. 883 · zona dorada aproximada</div></div>
+<div class="b b4"><div class="m">El Éufrates: el río que Abrán cruzó sin hijos, a los 75 años</div></div>
+<div class="b b5"><div class="m" style="color:var(--oro);text-align:center">Las promesas de Jehová pueden tardar siglos, pero se cumplen hasta en los mapas</div></div>
+<div class="tab"></div>
+
+<script>
+aparece(".mapa", 0.5, 0.8);
+const bloques = [[".b1", at("La última")], [".b2", at("Qué es el río")], [".b3", at("Cuándo")], [".b4", at("El Éufrates además")], [".b5", at("Las promesas")]];
+bloques.forEach(([s, t], i) => { entra(s, t, { y: 24 }); if (i < bloques.length - 1) sale(s, bloques[i + 1][1] - 0.4, { d: 0.35 }); });
+entra(".pueblos span", at("Diez pueblos"), { y: 12, st: 0.12 });
+
+salta(".mapa .l-rio", at("río de Egipto"));
+traza(".mapa .euf-oro", at("gran río"), 1.4);
+tl.fromTo(root.querySelector(".mapa .l-rio circle"), { scale: 1 }, { scale: 1.8, svgOrigin: "99 258.4", yoyo: true, repeat: 3, duration: 0.35, immediateRender: false }, at("Qué es el río"));
+
+// La franja dorada: lo que dominaron David y Salomón.
+traza(".mapa .zona", at("Siglos después"), 2.2);
+tl.to(root.querySelector(".mapa .zona"), { attr: { "fill-opacity": 0.22 }, duration: 1.2 }, at("David"));
+salta(".mapa .l-tif", at("Tifsá"));
+salta(".mapa .l-gaza", at("Gaza"));
+salta(".mapa .l-dam", at("Salomón dominaba"));
+salta(".mapa .l-har", at("El Éufrates además"));
+salta(".mapa .l-heb", at("había cruzado"));
+
+// Cuatro piezas en el tablero.
+sale(".mapa", at("Ya tenemos") - 0.4, { d: 0.4 });
+const T = tablero(".tab", [0, 1]);
+entra(".tab", at("Ya tenemos"), { y: 30 });
+T.llenar(2, at("el tiempo"));
+T.llenar(3, at("y la tierra"));
+</script>

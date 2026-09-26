@@ -1,0 +1,96 @@
+<style>
+.mapa { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 2862px; height: 3366px; }
+.anillo { fill: none; stroke: #1f5fa8; stroke-width: 10; }
+.a-cueva { fill: none; stroke: #7a3f10; stroke-width: 14; stroke-dasharray: 30 20; stroke-linecap: round; }
+.et { font-family: "cursive", cursive; font-weight: 700; }
+.pie-mapa { position: absolute; left: 24px; bottom: 18px; padding: 8px 16px; border-radius: 10px; background: rgba(15,22,30,0.82); font-size: 22px; color: var(--tiza); }
+.arbol { position: absolute; left: 60px; top: 120px; width: 1100px; height: 900px; }
+.arbol svg { width: 1100px; height: 900px; }
+.nodo rect { fill: #232f3b; stroke: rgba(239,231,214,0.35); stroke-width: 3; }
+.nodo text { font-family: "cursive", cursive; font-weight: 700; font-size: 62px; fill: var(--tiza); text-anchor: middle; }
+.nodo .sig { font-family: "Georgia", serif; font-style: italic; font-weight: 500; font-size: 34px; fill: var(--oro); }
+.nodo .pue { font-family: "Arial", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; fill: var(--rosa); }
+.rama { fill: none; stroke: var(--tenue); stroke-width: 5; }
+.fondo-panel { position: absolute; inset: 0; background: #17212b; }
+.cadena { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.cadena .m { font-size: 66px; }
+.cadena .fl { font-family: "Arial", sans-serif; font-weight: 800; font-size: 40px; color: var(--tenue); }
+</style>
+
+<div class="fase fmapa">
+  <div class="mapa">
+    <div class="cam">
+      <img src="assets/img/mapa-recuadro.svg" />
+      <svg viewBox="0 0 2862 3366">
+        <circle class="anillo a-zoar" cx="1524" cy="3136" r="60"/>
+        <path class="a-cueva" d="M 1560 3120 C 1680 3060 1800 3030 1930 2990"/>
+        <path class="a-cueva" d="M 1890 2960 L 1935 2988 L 1895 3030"/>
+        <text data-layout-allow-overlap class="et t-cueva halo" x="1960" y="3010" font-size="92" fill="#7a3f10" stroke-width="16">¿cueva?</text>
+        <g class="moab"><text class="et halo" x="2480" y="2470" font-size="120" fill="#a0306e" text-anchor="middle" stroke-width="18">moabitas</text>
+          <text class="et halo" x="2480" y="2560" font-size="60" fill="#5b4a3a" text-anchor="middle" stroke-width="12">meseta al este del mar</text></g>
+        <g class="ammon"><path d="M 2480 2120 L 2480 1800 M 2420 1870 L 2480 1800 L 2540 1870" fill="none" stroke="#a0306e" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+          <text class="et halo" x="2480" y="2220" font-size="100" fill="#a0306e" text-anchor="middle" stroke-width="16">ammonitas</text>
+          <text class="et halo" x="2480" y="2300" font-size="60" fill="#5b4a3a" text-anchor="middle" stroke-width="12">más al norte</text></g>
+      </svg>
+    </div>
+    <div class="pie-mapa">Mapa esquemático original; las ubicaciones son orientativas.</div>
+  </div>
+  <div class="panel"></div>
+</div>
+
+<div class="fase farbol" data-layout-allow-overlap>
+  <div class="fondo-panel"></div>
+  <div class="arbol"><svg viewBox="100 40 900 720">
+    <path class="rama r1" d="M 550 190 C 550 300 300 300 300 400"/>
+    <path class="rama r1" d="M 550 190 C 550 300 800 300 800 400"/>
+    <path class="rama r2" d="M 300 540 L 300 650"/>
+    <path class="rama r2" d="M 800 540 L 800 650"/>
+    <g class="nodo n-lot"><rect x="430" y="70" width="240" height="120" rx="22"/><text x="550" y="150">Lot</text></g>
+    <g class="nodo n-moab"><rect x="130" y="400" width="340" height="140" rx="22"/><text x="300" y="468">Moab</text><text class="sig" x="300" y="516">“De Padre”</text></g>
+    <g class="nodo n-ben"><rect x="610" y="400" width="380" height="140" rx="22"/><text x="800" y="468">Ben-Ammí</text><text class="sig" x="800" y="516">“Hijo de Mi Pueblo”</text></g>
+    <g class="nodo p-moab"><text class="pue" x="300" y="700">LOS MOABITAS</text></g>
+    <g class="nodo p-amm"><text class="pue" x="800" y="700">LOS AMMONITAS</text></g>
+  </svg></div>
+  <div class="col">
+    <div class="b f1"><div class="m">algo malo que <span style="color:var(--rojo)">Jehová no aprueba</span></div><div class="s">La Atalaya, 15 de enero de 2004, pág. 27</div></div>
+    <div class="b f2"><div class="s" style="font-size:28px">Nombres: notas de la TNM de 1987 en Génesis 19:37, 38</div><div class="m">la Biblia lo cuenta <span style="color:var(--oro)">sin aprobarlo</span></div><div class="s">“para revelar el parentesco” de moabitas y ammonitas con Israel · La Atalaya, 15 de enero de 2004, pág. 27</div></div>
+  </div>
+</div>
+
+<div class="cab sobre"><span class="cap">Génesis 19</span><span>versículos 30 al 38</span></div>
+
+<div class="col cmapa" style="width:680px;right:70px">
+  <div class="b a1"><div class="cita">“A Lot le dio miedo vivir en Zóar”<span class="ref">GÉNESIS 19:30</span></div><div class="m" style="font-size:60px">terminó en la región montañosa, en una cueva</div></div>
+  <div class="b a2"><div class="def"><div class="t">Cueva</div><div class="x">la gente se refugiaba en ellas cuando había peligro</div><div class="s">Perspicacia, “Cueva”, pág. 612</div></div></div>
+  <div class="b a2b"><div class="m rosa">moabitas</div><div class="m" style="font-size:58px">en la meseta al este del mar Salado</div><div class="m rosa">ammonitas</div><div class="m" style="font-size:58px">más al norte</div><div class="s">Perspicacia, “Moab, moabitas”, pág. 408</div></div>
+  <div class="b a3"><div class="cita">“les he dado Ar en propiedad a los descendientes de Lot”<span class="ref">DEUTERONOMIO 2:9</span></div></div>
+  <div class="b a4"><div class="s" style="font-size:28px">De Moab salió...</div><div class="cadena"><span class="m rosa">Rut</span><span class="fl">→</span><span class="m">David</span><span class="fl">→</span><span class="m oro">Jesús</span></div><div class="s">Perspicacia, “Moab, moabitas”, pág. 409 · Rut 4:13, 17</div></div>
+</div>
+
+<script>
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+const CAM = { zoar: encuadre({ x: 1000, y: 2150, w: 1600, h: 1200 }, V), este: encuadre({ x: 1150, y: 1650, w: 1650, h: 1700 }, V) };
+tl.set($(".cam"), CAM.zoar, 0);
+tl.set([$(".moab"), $(".ammon"), $(".t-cueva")], { opacity: 0 }, 0);
+traza(".a-zoar", 0.4, 0.7);
+traza(".a-cueva", at("se fue a una cueva") - 0.3, 1.4);
+aparece(".t-cueva", at("se fue a una cueva") + 0.8, 0.4);
+// El árbol tapa el mapa mientras se explica el parentesco.
+const tB = at("Allí, sus hijas") - 0.3;
+aparece(".farbol", tB, 0.6);
+traza(".r1", at("nacieron dos hijos"), 0.9);
+salta(".n-lot", tB + 0.4);
+salta(".n-moab", at("Moab"), { desde: 0.6 });
+salta(".n-ben", at("Ben-Ammí"), { desde: 0.6 });
+traza(".r2", at("dos pueblos vecinos"), 0.6);
+aparece([".p-moab", ".p-amm"], at("dos pueblos vecinos") + 0.4, 0.5);
+secuencia([[".f1", tB + 0.4], [".f2", at("La Biblia lo cuenta")]], at("los moabitas, al este") - 0.2);
+const tC = at("los moabitas, al este") - 0.3;
+tl.to($(".farbol"), { opacity: 0, duration: 0.6 }, tC);
+camara(".cam", tC, 2.0, CAM.este);
+aparece(".moab", at("los moabitas"), 0.6);
+aparece(".ammon", at("los ammonitas"), 0.6);
+secuencia([[".a1", 0.5], [".a2", at("La gente se refugiaba")]], tB);
+secuencia([[".a2b", tC + 0.3], [".a3", at("Por ese parentesco")], [".a4", at("Y de Moab")]]);
+</script>

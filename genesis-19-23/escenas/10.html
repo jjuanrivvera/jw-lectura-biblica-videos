@@ -1,0 +1,74 @@
+<style>
+.mapa { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 3840px; height: 2080px; }
+.pie-mapa { position: absolute; left: 24px; bottom: 18px; padding: 8px 16px; border-radius: 10px; background: rgba(15,22,30,0.82); font-size: 22px; color: var(--tiza); }
+.mudanza { fill: none; stroke: #b8860b; stroke-width: 12; stroke-linecap: round; stroke-dasharray: 26 18; }
+.flecha-m { fill: none; stroke: #b8860b; stroke-width: 12; stroke-linecap: round; stroke-linejoin: round; }
+.entre { fill: none; stroke: #1f5fa8; stroke-width: 9; stroke-dasharray: 20 14; }
+.anillo { fill: none; stroke: #1f5fa8; stroke-width: 9; }
+.anillo.g { stroke: #b3261e; stroke-width: 11; }
+.negueb { fill: rgba(230, 170, 60, 0.18); stroke: #b8860b; stroke-width: 6; stroke-dasharray: 14 12; }
+.et { font-family: "cursive", cursive; font-weight: 700; }
+.foto { position: relative; width: 100%; height: 250px; border-radius: 18px; overflow: hidden; box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
+.foto img { width: 100%; height: 100%; object-fit: cover; }
+.col { width: 680px; right: 70px; top: 110px; bottom: 80px; }
+</style>
+
+<div class="mapa">
+  <div class="cam">
+    <img src="assets/img/mapa-sur.svg" />
+    <svg viewBox="0 0 3840 2080">
+      <ellipse class="negueb" cx="2430" cy="930" rx="330" ry="230"/>
+      <path class="mudanza" d="M 2640 585 C 2560 560 2440 600 2372 652"/>
+      <path class="flecha-m" d="M 2400 600 L 2370 655 L 2430 660"/>
+      <path class="entre" d="M 1300 1110 C 1700 1190 1980 1250 2240 1255"/>
+      <circle class="anillo a-sur" cx="1245" cy="1105" r="95"/>
+      <circle class="anillo a-cad" cx="2267" cy="1255" r="42"/>
+      <text class="et t-entre halo" x="1760" y="1320" font-size="100" fill="#1f5fa8" text-anchor="middle" stroke-width="14">entre Cadés y Sur</text>
+      <circle class="anillo g a-gue" cx="2345" cy="670" r="46"/>
+      <text class="et t-fil halo" x="2330" y="500" font-size="62" fill="#9c1f16" text-anchor="middle" stroke-width="12">ya vivían filisteos</text>
+    </svg>
+  </div>
+  <div class="pie-mapa">Mapa esquemático original; las ubicaciones son orientativas.</div>
+</div>
+<div class="panel"></div>
+<div class="cab sobre"><span class="cap">Génesis 20</span><span>versículos 1 y 2</span></div>
+
+<div class="col">
+  <div class="b b1"><div class="cita" style="font-size:50px">“Abrahán mudó su campamento de allí a la tierra del Négueb y empezó a vivir entre Cadés y Sur. Mientras vivía en Guerar...”<span class="ref">GÉNESIS 20:1</span></div></div>
+  <div class="b b2"><div class="foto"><img src="assets/img/negueb.svg" /></div><div class="def" style="padding:20px 28px"><div class="t">El Négueb</div><div class="x" style="font-size:54px">la tierra seca al sur de Judá</div><div class="s">Foto y datos: Perspicacia, “Négueb”, pág. 476</div></div></div>
+  <div class="b b3"><div class="def"><div class="t">Sur</div><div class="x">“Muro”: ya casi en Egipto</div><div class="s">Perspicacia, “Sur, I”, pág. 1075</div></div></div>
+  <div class="b b4"><div class="m">Guerar</div><div class="m oro" style="font-size:58px">una colina de ruinas, a unos 19 km al sureste de la actual Gaza</div><div class="def" style="padding:18px 28px"><div class="t">Tell</div><div class="x" style="font-size:52px">colina de ciudades construidas una encima de otra</div></div><div class="s">Perspicacia, “Guerar”, pág. 1057 · “Filistea, filisteos”, pág. 942</div></div>
+  <div class="b b5"><div class="m">“vivía como extranjero”</div><div class="m oro" style="font-size:60px">nunca tuvo ciudad propia: vivía en tiendas, con permiso de los reyes del lugar</div><div class="s">Nota de la TNM en Génesis 20:1</div></div>
+  <div class="b b6"><div class="def"><div class="t">Abimélec</div><div class="x">“Mi Padre Es Rey”</div><div class="s">Quizás un título, como “faraón” en Egipto o “césar” en Roma · Perspicacia, “Abimélec”, pág. 25</div></div></div>
+</div>
+
+<div class="fase f-cap" style="background:#17212b"><div class="capcard"><div class="num">Génesis <b style="color:var(--oro)">20</b></div><svg viewBox="0 0 760 40"><path d="M 10 24 C 200 8 520 36 750 18"/></svg><div class="sub">Abrahán y Sara en Guerar</div><div class="edad">1919 antes de nuestra era</div></div></div>
+
+<script>
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+const CAM = {
+  todo: encuadre({ x: 900, y: 330, w: 2300, h: 1500 }, V),
+  guerar: encuadre({ x: 1850, y: 330, w: 1100, h: 900 }, V),
+};
+tl.set($(".cam"), CAM.todo, 0);
+tl.set([$(".t-entre"), $(".t-fil"), $(".negueb")], { opacity: 0 }, 0);
+traza(".mudanza", at("se muda"), 1.4, { ease: "none" });
+traza(".flecha-m", at("se muda") + 1.3, 0.4);
+aparece(".negueb", at("al Négueb"), 0.8);
+traza(".a-cad", at("entre Cadés"), 0.6);
+traza(".a-sur", at("y Sur"), 0.6);
+traza(".entre", at("y Sur") + 0.3, 1.2);
+aparece(".t-entre", at("y Sur") + 1.0, 0.5);
+late(".a-sur", at("significa Muro"), { s: 1.1, n: 3 });
+traza(".a-gue", at("vive en Guerar"), 0.6);
+camara(".cam", at("Y Guerar"), 1.8, CAM.guerar);
+atenua([".entre", ".t-entre", ".a-sur", ".a-cad"], at("Y Guerar"), 0, 0.6);
+late(".a-gue", at("colina de ruinas"), { s: 1.2, n: 3 });
+aparece(".t-fil", at("ya vivían filisteos"), 0.5);
+camara(".cam", at("La nota dice"), 2.0, CAM.todo);
+atenua(".t-fil", at("La nota dice"), 0, 0.5);
+capitulo(".f-cap .capcard", 0.2, at("se muda") - 0.5);
+tl.to($(".f-cap"), { opacity: 0, duration: 0.5 }, at("se muda") - 0.5);
+secuencia([[".b1", at("se muda")], [".b2", at("El Négueb es")], [".b3", at("Sur, que significa")], [".b4", at("Y Guerar")], [".b5", at("La nota dice")], [".b6", at("El rey de Guerar")]]);
+</script>

@@ -1,0 +1,88 @@
+<style>
+.arr { position: absolute; left: 72px; right: 72px; top: 200px; }
+.arr .q { font-family: "Georgia", serif; font-size: 58px; line-height: 1.15; }
+.arr .q b { color: var(--rojo); font-weight: 700; }
+.arr .ref { font-family: "Arial", sans-serif; font-weight: 700; font-size: 30px; color: var(--oro); margin-top: 10px; }
+.arr2 .q b { color: var(--oro); }
+.et { position: absolute; font-family: "Arial", sans-serif; font-weight: 700; font-size: 34px; }
+.barra { position: absolute; height: 84px; border-radius: 14px; display: flex; align-items: center; justify-content: center;
+  font-family: "Arial", sans-serif; font-weight: 700; font-size: 34px; color: #17212b; transform-origin: 0 50%; }
+.b430a { left: 80px; width: 460px; top: 560px; background: #a8894a; }
+.b430b { left: 540px; width: 460px; top: 560px; background: var(--oro); }
+.b400 { left: 144px; width: 856px; top: 800px; background: var(--rojo); }
+.eje { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+.eje path { fill: none; stroke: var(--tenue); stroke-width: 4; stroke-linecap: round; }
+.hito { position: absolute; font-family: "cursive", cursive; font-weight: 700; font-size: 46px; line-height: 1; }
+.gen { position: absolute; left: 60px; right: 60px; top: 1150px; }
+.gen .t { font-family: "Arial", sans-serif; font-weight: 700; font-size: 32px; color: var(--rosa); text-align: center; letter-spacing: 0.06em; }
+.gen .fila { display: flex; gap: 16px; justify-content: center; margin-top: 16px; }
+.gen .g { width: 225px; padding: 16px 0; border: 3px solid var(--rosa); border-radius: 16px; text-align: center; font-family: "Georgia", serif; font-weight: 600; font-size: 46px; }
+.gen .s { font-family: "Arial", sans-serif; font-size: 26px; color: var(--tenue); text-align: center; margin-top: 12px; }
+.abajo { position: absolute; left: 72px; right: 72px; top: 1440px; }
+.abajo .m { font-family: "cursive", cursive; font-weight: 700; font-size: 60px; line-height: 1.05; }
+.abajo .s { font-family: "Arial", sans-serif; font-size: 28px; color: var(--tenue); margin-top: 10px; }
+</style>
+
+<div class="arr arr1"><div class="q">Sus descendientes serán esclavos <b>400 años</b>, pero saldrán “con muchos bienes”</div><div class="ref">Génesis 15:13, 14</div></div>
+<div class="arr arr2"><div class="q">Éxodo 12:40 dice <b>430 años</b>. ¿Cuál es? Los dos.</div><div class="ref">Éxodo 12:40, 41 · Gálatas 3:17</div></div>
+
+<div class="et e430" style="left:80px;top:500px;color:var(--oro)">430 años · desde el pacto</div>
+<div class="barra b430a">215 en Canaán</div>
+<div class="barra b430b">215 en Egipto</div>
+<div class="et e400" style="left:144px;top:740px;color:var(--rojo)">400 años de aflicción</div>
+<div class="barra b400">de 1913 a 1513</div>
+<svg class="eje" viewBox="0 0 1080 1920">
+  <path class="ln" d="M80 960 L1000 960" />
+  <path class="tk" d="M80 944 L80 976 M540 944 L540 976 M1000 944 L1000 976 M144 944 L144 976" />
+  <path class="fin" d="M1000 540 L1000 900" style="stroke:var(--oro); stroke-dasharray: 10 10; stroke-width:5" />
+</svg>
+<div class="hito h1943" style="left:60px;top:990px">1943 · cruza el Éufrates</div>
+<div class="hito h1913" style="left:110px;top:1040px;color:var(--rojo)">1913 · Ismael se burla de Isaac en su destete</div>
+<div class="hito h1728" style="left:470px;top:1090px;color:var(--tenue)">1728 · Jacob entra en Egipto</div>
+<div class="hito h1513" style="right:40px;top:990px;color:var(--oro)">1513 · el éxodo</div>
+
+<div class="gen">
+  <div class="t">“LA CUARTA GENERACIÓN” (15:16), DESDE LA LLEGADA A EGIPTO</div>
+  <div class="fila"><div class="g g1">Leví</div><div class="g g2">Qohat</div><div class="g g3">Amram</div><div class="g g4">Moisés</div></div>
+  <div class="s">Éxodo 6:16-20 · Perspicacia, vol. 1, “Éxodo”, pág. 891</div>
+</div>
+
+<div class="abajo a1"><div class="m">Isaac “fue el primero de los descendientes de Abrahán que sufrió el maltrato predicho”</div><div class="s">Nota de estudio de la TNM en Hechos 7:6 · Perspicacia, vol. 1, “Cronología”, pág. 597</div></div>
+<div class="abajo a2"><div class="m" style="color:var(--oro)">Los dos terminan el mismo año: 1513 antes de nuestra era</div></div>
+<div class="abajo a3"><div class="m">“el error de los amorreos todavía no ha llegado al límite” (15:16). Jehová “esperó hasta que no hubo ninguna posibilidad de mejora”</div><div class="s">La Atalaya, 15 de enero de 2004, pág. 28</div></div>
+<div class="abajo a4"><div class="m" style="color:var(--oro);text-align:center">La paciencia de Jehová tiene un límite, y también un propósito</div></div>
+
+<script>
+escribe(".arr1 .q", at("sus descendientes"), 4.2);
+entra(".arr1 .ref", at("sus descendientes"), { y: 10 });
+sale(".arr1", at("Éxodo doce") - 0.4);
+entra(".arr2", at("Éxodo doce"), { y: 20 });
+
+traza(".eje .ln", at("Éxodo doce"), 1.2);
+// Las dos barras crecen desde su año de partida.
+entra(".e430", at("Los cuatrocientos treinta"), { y: 10 });
+tl.fromTo(inicial([$(".b430a")], { scaleX: 0 }), { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: "power2.inOut", immediateRender: false }, at("se cuentan desde"));
+tl.fromTo(inicial([$(".b430b")], { scaleX: 0 }), { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: "power2.inOut", immediateRender: false }, at("Doscientos quince") + 1.2);
+traza(".eje .tk", at("mil novecientos cuarenta"), 0.6);
+entra(".h1943", at("cuando Abrán cruzó"), { y: 10 });
+entra(".h1728", at("en Egipto"), { y: 10 });
+entra(".e400", at("Los cuatrocientos de aflicción"), { y: 10 });
+tl.fromTo(inicial([$(".b400")], { scaleX: 0 }), { scaleX: 0 }, { scaleX: 1, duration: 1.6, ease: "power2.inOut", immediateRender: false }, at("empiezan en"));
+entra(".h1913", at("cuando Ismael"), { y: 10 });
+entra(".a1", at("Isaac fue"), { y: 20 });
+sale(".a1", at("Los dos períodos") - 0.4);
+traza(".eje .fin", at("Los dos períodos"), 0.8);
+entra(".h1513", at("mil quinientos trece"), { y: 10 });
+entra(".a2", at("Los dos períodos") + 0.4, { y: 20 });
+sale(".a2", at("la cuarta generación") - 0.3);
+
+entra(".gen .t", at("la cuarta generación"), { y: 16 });
+salta(".g1", at("Leví", 56));
+salta(".g2", at("Kohat"));
+salta(".g3", at("Amram"));
+salta(".g4", at("Moisés"));
+entra(".gen .s", at("Moisés"), { y: 10 });
+entra(".a3", at("Por qué tanto"), { y: 20 });
+sale(".a3", at("La paciencia") - 0.4);
+escribe(".a4 .m", at("La paciencia"), 2.2);
+</script>

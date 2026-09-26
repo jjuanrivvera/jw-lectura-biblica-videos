@@ -1,0 +1,32 @@
+<style>
+/*incluir:_arbol.css*/
+.arbol-t { position: absolute; left: 50px; top: 110px; width: 1060px; height: 920px; }
+.arbol-t svg { width: 1060px; height: 920px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 22</span><span>versículos 20 al 24</span></div>
+<div class="arbol-t"><svg viewBox="-20 20 1040 860"><g class="dibujo"></g></svg></div>
+<div class="col">
+  <div class="b b1"><div class="m">noticias de Nacor, el hermano de Abrahán</div><div class="s">Se había quedado en Mesopotamia · tuvo doce hijos · Perspicacia, “Nacor”, pág. 456</div></div>
+  <div class="b b2"><div class="cita">“Betuel fue el padre de <b>Rebeca</b>”<span class="ref">GÉNESIS 22:23</span></div></div>
+  <div class="b b3"><div class="m">la futura esposa de Isaac: <span style="color:var(--oro)">de la familia, no cananea</span></div><div class="s">Génesis 24:3, 4</div><span class="propio">observación propia</span></div>
+</div>
+<script>
+/*incluir:_arbol.js*/
+pinta(".dibujo", arbolSVG());
+const fuera = [".n-lot", ".n-agar", ".n-moab", ".n-benammi", ".n-ismael", ".e-haran-lot", ".e-lot-moab", ".e-lot-benammi", ".e-abrahan-ismael", ".e-agar-ismael", ".e-tare-sara"];
+tl.set(fuera.flatMap((s) => $$(s)), { opacity: 0 }, 0);
+const tenues = [".n-haran", ".n-sara", ".n-abrahan", ".n-isaac", ".e-tare-haran", ".e-tare-abrahan", ".e-haran-milca", ".e-abrahan-sara", ".e-pareja-isaac"];
+tl.set(tenues.flatMap((s) => $$(s)), { opacity: 0.35 }, 0);
+tl.set([".n-nacor", ".n-milca", ".n-betuel", ".n-rebeca", ".e-tare-nacor", ".e-nacor-milca", ".e-pareja-betuel", ".e-betuel-rebeca", ".e-rebeca-isaac"].flatMap((s) => $$(s)), { opacity: 0 }, 0);
+aparece(".arbol-t", 0.3, 0.6);
+aparece([".n-nacor", ".e-tare-nacor"], at("noticias de Nacor"), 0.5);
+aparece([".n-milca", ".e-nacor-milca"], at("Mesopotamia"), 0.5);
+aparece([".n-betuel", ".e-pareja-betuel"], at("Uno de sus hijos"), 0.5);
+aparece([".n-rebeca", ".e-betuel-rebeca"], at("el padre de Rebeca"), 0.5);
+tl.to(["path.e-rebeca-isaac", "text.e-rebeca-isaac"].flatMap((s) => $$(s)), { opacity: 1, duration: 0.6 }, at("se casará con Isaac"));
+tl.to([".n-isaac", ".n-abrahan"].flatMap((s) => $$(s)), { opacity: 1, duration: 0.5 }, at("se casará con Isaac"));
+tl.set($(".n-rebeca"), { className: "nodo n-rebeca" }, 0);
+tl.set($(".n-rebeca"), { className: "nodo n-rebeca luz" }, at("el padre de Rebeca") + 0.4);
+secuencia([[".b1", 0.5], [".b2", at("Uno de sus hijos")], [".b3", at("Justo después")]]);
+</script>

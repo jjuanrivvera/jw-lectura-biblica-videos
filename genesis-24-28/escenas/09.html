@@ -1,0 +1,31 @@
+<style>
+.ilus.img-h { left: 60px; top: 150px; width: 1140px; height: 623px; }
+.pie-h { left: 60px; top: 790px; width: 1140px; }
+.col { width: 620px; right: 60px; top: 120px; }
+.hoy { position: absolute; left: 60px; top: 880px; width: 1140px; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 20px; }
+.hoy .dato { padding: 12px 20px; border-color: rgba(233,173,204,0.35); }
+.hoy .dato .v { font-size: 48px; color: var(--rosa); }
+.hoy .dato .k { font-size: 34px; }
+</style>
+
+<div class="cab"><span class="cap">Harán hoy</span><span>Génesis 24:10 · 27:43 · 28:10</span></div>
+<div class="ilus img-h"><div class="kb"><img src="assets/img/haran-hoy.svg" /></div></div>
+<div class="pie-img pie-h">“La moderna Harrán perpetúa el nombre de la ciudad en cuyas inmediaciones el siervo de Abrahán encontró esposa para Isaac”. Foto: Perspicacia, “Harán”, pág. 1088</div>
+<div class="hoy">
+  <div class="dato h1"><div class="v">siglo VIII</div><div class="k">el minarete de la Gran Mezquita</div></div>
+  <div class="dato h2"><div class="v">siglo XX</div><div class="k">casas de adobe en forma de colmena</div></div>
+  <div class="dato h3"><div class="v">2024</div><div class="k">hallazgo de una iglesia del siglo V</div></div>
+</div>
+<div class="col">
+  <div class="b a1"><div class="cita md">“Es uno de los poquísimos lugares que <b>conservan su nombre</b> de tiempos bíblicos”</div><div class="m oro">un pequeño poblado cerca de Sanliurfa, en el este de Turquía</div><div class="s">La Atalaya, 15 de mayo de 2010, pág. 20</div></div>
+  <div class="b a2"><div class="m">comercio y culto a <b>Sin</b>, el dios de la luna</div><div class="cita md">“Su familia no era como la gente de Harán [...]. Su Dios era <b>Jehová</b>”</div><div class="s">La Atalaya, núm. 3 de 2016, pág. 12</div></div>
+  <div class="b a3"><span class="externa">fuente externa</span><div class="m">lo que se ve hoy</div><div class="s">“Harran”, Wikipedia · Daily Sabah, 3 de julio de 2024 · consultados el 26 de septiembre de 2026</div></div>
+</div>
+
+<script>
+kb(".img-h .kb", 0, DUR, { s: 1.14, x: -3, y: 1 }, { s: 1.0, x: 2, y: 0 });
+secuencia([[".a1", 0.5], [".a2", at("Fue un gran centro")], [".a3", at("Hoy quedan")]]);
+entra(".h1", at("el minarete"), { y: 20 });
+entra(".h2", at("estas casas"), { y: 20 });
+entra(".h3", at("en dos mil veinticuatro"), { y: 20 });
+</script>

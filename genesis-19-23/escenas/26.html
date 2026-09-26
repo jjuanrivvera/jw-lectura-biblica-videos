@@ -1,0 +1,76 @@
+<style>
+.vis { position: absolute; left: 70px; top: 120px; width: 1040px; height: 880px; }
+.vis svg { width: 1040px; height: 880px; }
+.et { font-family: "cursive", cursive; font-weight: 700; }
+.caja rect { fill: #232f3b; stroke-width: 4; }
+.fl { fill: none; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.promesa { position: absolute; left: 120px; right: 120px; top: 150px; bottom: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 40px; }
+.promesa .cita { font-size: 66px; }
+.puerta { position: absolute; left: 60px; top: 170px; width: 1040px; height: 815px; }
+.puerta svg { width: 1040px; height: 815px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 22</span><span>versículos 15 al 19</span></div>
+
+<div class="vis va"><svg viewBox="0 0 1040 880"><g transform="translate(0 90)">
+  <text class="et" x="260" y="70" font-size="56" fill="var(--tenue)" text-anchor="middle">entre personas</text>
+  <g class="caja c-mayor"><rect x="110" y="120" width="300" height="100" rx="22" stroke="var(--tenue)"/><text class="et" x="260" y="186" font-size="52" fill="var(--tiza)" text-anchor="middle">alguien mayor</text></g>
+  <path class="fl f-arriba" d="M 260 470 L 260 250 M 230 280 L 260 244 L 290 280" stroke="var(--tenue)"/>
+  <text class="et t-test" x="290" y="370" font-size="44" fill="var(--tenue)">por testigo</text>
+  <g class="caja c-per"><rect x="110" y="480" width="300" height="100" rx="22" stroke="var(--tiza)"/><text class="et" x="260" y="546" font-size="52" fill="var(--tiza)" text-anchor="middle">el que jura</text></g>
+  <text class="et" x="780" y="70" font-size="56" fill="var(--oro)" text-anchor="middle">cuando jura Jehová</text>
+  <g class="caja c-jeh"><rect x="630" y="300" width="300" height="110" rx="22" stroke="var(--oro)"/><text class="et" x="780" y="372" font-size="56" fill="var(--oro)" text-anchor="middle">Jehová</text></g>
+  <path class="fl f-si" d="M 900 300 C 1000 200 1000 100 780 110 C 560 100 560 200 660 300 M 632 268 L 660 302 L 674 262" stroke="var(--oro)"/>
+  <text class="et t-nadie" x="780" y="490" font-size="54" fill="var(--oro)" text-anchor="middle">no hay nadie mayor:</text>
+  <text class="et t-nadie" x="780" y="552" font-size="54" fill="var(--oro)" text-anchor="middle">jura por sí mismo</text>
+  <text class="et t-doble" x="520" y="700" font-size="64" fill="var(--tiza)" text-anchor="middle">su nombre ya garantiza... y añade un juramento</text>
+</g></svg></div>
+
+<div class="fase fb">
+  <div class="promesa">
+    <div class="cita">“todas las naciones de la tierra conseguirán una bendición para ellas mismas <b>mediante tu descendencia</b>”<span class="ref">GÉNESIS 22:18</span></div>
+    <div class="m p2">descendencia: literalmente, <span style="color:var(--oro)">“simiente”</span></div>
+    <div class="m p3">su parte principal: <span style="color:var(--oro)">Jesucristo</span></div>
+    <div class="s p4">Notas de la TNM en 22:17 · nota de estudio de la TNM en Gálatas 3:16</div>
+  </div>
+</div>
+
+<div class="fase fc">
+  <div class="puerta"><svg viewBox="0 0 1100 860"><g class="dib-p"></g></svg></div>
+</div>
+
+<div class="col">
+  <div class="b b1"><div class="cita">“<b>Juro por mí mismo</b>”<span class="ref">GÉNESIS 22:16</span></div><div class="m">¿por qué jurar?</div></div>
+  <div class="b b2"><div class="m">por amor a sus siervos, <span style="color:var(--oro)">añade un juramento</span></div><div class="s">Nota de estudio de la TNM en Hebreos 6:13 · Perspicacia, “Juramento”, pág. 166 · la Biblia registra más de 40 juramentos de Jehová (La Atalaya, 15 de octubre de 2012, pág. 23)</div></div>
+  <div class="b b3"><div class="cita">“conquistará las ciudades de sus enemigos”<span class="ref">GÉNESIS 22:17</span></div><div class="m">literalmente: <span style="color:var(--oro)">“tomará posesión de la puerta”</span></div><div class="s">Nota de la TNM en 22:17</div></div>
+  <div class="b b4"><div class="m">quien tomaba la puerta se quedaba con la ciudad</div></div>
+  <div class="b b5"><div class="cita">“todos juntos regresaron a Beer-Seba”<span class="ref">GÉNESIS 22:19</span></div><div class="m oro" style="font-size:60px">como Abrahán había dicho</div></div>
+</div>
+
+<script>
+/*incluir:_puerta.js*/
+pinta(".dib-p", puertaSVG("p26"));
+aparece(".va", 0.3, 0.5);
+tl.set([$(".c-mayor"), $(".f-arriba"), $(".t-test"), $(".c-per"), $(".c-jeh"), $(".f-si"), $$(".t-nadie"), $(".t-doble")].flat(), { opacity: 0 }, 0);
+entra(".c-per", at("El que jura"), { y: 20 });
+traza(".f-arriba", at("pone por testigo"), 0.8);
+aparece(".t-test", at("pone por testigo"), 0.4);
+entra(".c-mayor", at("alguien mayor"), { y: -20 });
+entra(".c-jeh", at("y Jehová no tiene"), { y: 20 });
+traza(".f-si", at("nadie mayor"), 1.2);
+tl.to($$(".t-nadie"), { opacity: 1, duration: 0.5, stagger: 0.3 }, at("nadie mayor") + 0.6);
+escribe(".t-doble", at("Su nombre ya"), 2.0);
+tl.to($(".va"), { opacity: 0, duration: 0.5 }, at("La promesa llega") - 0.4);
+aparece(".fb", at("La promesa llega"), 0.5);
+tl.set([$(".p2"), $(".p3"), $(".p4")], { opacity: 0 }, 0);
+entra(".p2", at("Descendencia es"), { y: 20 });
+entra(".p3", at("su parte principal"), { y: 20 });
+entra(".p4", at("su parte principal") + 0.6, { y: 10 });
+tl.to($(".fb"), { opacity: 0, duration: 0.5 }, at("Y conquistará") - 0.4);
+aparece(".fc", at("Y conquistará"), 0.5);
+tl.to($(".fc"), { opacity: 0.25, duration: 0.5 }, at("Luego, todos"));
+tl.set($(".col"), { opacity: 1 }, 0);
+tl.to($(".col"), { opacity: 0, duration: 0.4 }, at("La promesa llega") - 0.4);
+tl.to($(".col"), { opacity: 1, duration: 0.4 }, at("Y conquistará"));
+secuencia([[".b1", 0.4], [".b2", at("Su nombre ya")], [".b3", at("Y conquistará")], [".b4", at("Quien tomaba")], [".b5", at("Luego, todos")]]);
+</script>

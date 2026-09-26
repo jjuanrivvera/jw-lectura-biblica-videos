@@ -1,0 +1,26 @@
+# Medios generados
+*.mp4
+*.mp3
+*.wav
+*.m4a
+*.mov
+*.webm
+
+# Salidas y cachés
+**/video/audio/
+**/video/renders/
+**/video/snapshots/
+**/renders/
+node_modules/
+.venv/
+venv/
+.cache/
+.npm/
+__pycache__/
+*.py[cod]
+*.log
+.firecrawl/
+.DS_Store
+Thumbs.db
+.env
+.env.*

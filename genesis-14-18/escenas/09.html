@@ -1,0 +1,85 @@
+<style>
+.b { position: absolute; left: 72px; right: 72px; }
+.q6 { top: 260px; }
+.q6 .cita { font-size: 76px; }
+.chips { top: 720px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+.chips .primera .palabra { font-size: 58px; }
+.chips .c { font-family: "Arial", sans-serif; font-weight: 700; font-size: 32px; padding: 10px 22px; border: 3px solid var(--cielo); color: var(--cielo); border-radius: 40px; }
+.justo { top: 1020px; }
+.justo .p { font-family: "Georgia", serif; font-size: 58px; line-height: 1.15; }
+.justo .r { font-family: "cursive", cursive; font-weight: 700; font-size: 66px; color: var(--oro); margin-top: 20px; line-height: 1.05; }
+.justo .s { font-family: "Arial", sans-serif; font-size: 30px; color: var(--tenue); margin-top: 14px; }
+.libro { position: absolute; left: 90px; top: 360px; width: 900px; height: 700px; }
+.libro path, .libro rect { fill: none; stroke: var(--tiza); stroke-width: 5; stroke-linecap: round; }
+.col { position: absolute; top: 400px; width: 400px; text-align: center; font-family: "cursive", cursive; font-weight: 700; font-size: 72px; color: var(--tenue); }
+.lit { top: 230px; text-align: center; font-family: "Georgia", serif; font-style: italic; font-size: 60px; }
+.logi { top: 1110px; text-align: center; }
+.logi .w { font-family: "Georgia", serif; font-weight: 700; font-size: 96px; color: var(--cielo); }
+.logi .d { font-family: "cursive", cursive; font-weight: 700; font-size: 60px; margin-top: 6px; line-height: 1.05; }
+.logi .s { font-family: "Arial", sans-serif; font-size: 30px; color: var(--tenue); margin-top: 12px; }
+.asiento { position: absolute; left: 180px; top: 640px; width: 720px; text-align: center; font-family: "cursive", cursive; font-weight: 700; font-size: 76px; color: var(--oro); transform: rotate(-3deg); }
+.sincera { top: 700px; text-align: center; }
+.sincera .t { font-family: "Georgia", serif; font-size: 64px; line-height: 1.15; }
+.sincera .l { font-family: "cursive", cursive; font-weight: 700; font-size: 72px; color: var(--oro); margin-top: 60px; line-height: 1.05; }
+.tab { top: 230px; }
+</style>
+
+<div class="fase fa">
+  <div class="b q6"><div class="cita">“Abrán puso su fe en Jehová, y él lo consideró alguien justo”<span class="ref">Génesis 15:6</span></div></div>
+  <div class="b chips">
+    <div class="primera pv"><span class="rotulo">Primera vez en la Biblia</span><span class="palabra">“puso fe”</span></div>
+    <div class="c c1">Romanos 4:3</div><div class="c c2">Gálatas 3:6</div><div class="c c3">Santiago 2:23</div>
+  </div>
+  <div class="b justo">
+    <div class="p">¿Qué quiere decir que lo consideró justo?</div>
+    <div class="r">“está contento con ella y la considera intachable, libre de culpa”, aunque era imperfecto</div>
+    <div class="s">La Atalaya (estudio), diciembre de 2023, págs. 2, 3 · nota de 15:6 en la TNM de 1987</div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="b lit">“se lo contó como justicia”</div>
+  <svg class="libro" viewBox="0 0 900 700">
+    <rect x="10" y="10" width="880" height="680" rx="26" />
+    <path d="M450 10 L450 690 M10 140 L890 140 M60 260 L400 260 M500 260 L840 260 M60 380 L400 380 M500 380 L840 380 M60 500 L400 500 M500 500 L840 500" />
+  </svg>
+  <div class="col cd" style="left:95px">debe</div>
+  <div class="col ch" style="left:585px">haber</div>
+  <div class="asiento">la fe de Abrán, anotada</div>
+  <div class="b logi"><div class="w">lo·guí·zo·mai</div><div class="d">verbo griego de la contabilidad: anotar en la columna del debe o del haber</div><div class="s">Perspicacia, vol. 1, “Declarar justo”, pág. 646 · Romanos 4:3</div></div>
+</div>
+
+<div class="fase fc">
+  <div class="b sincera"><div class="t">Abrán le dijo a Jehová exactamente lo que le preocupaba, y Jehová no se molestó</div><div class="l">Nuestra oración en familia puede ser así de sincera</div></div>
+</div>
+
+<div class="tab"></div>
+
+<script>
+escribe(".q6 .cita", at("Abrán puso"), 3.2);
+salta(".pv", at("Es la primera"));
+salta(".chips .c", at("Pablo y Santiago"), { st: 0.3 });
+entra(".justo .p", at("Qué quiere"), { y: 20 });
+escribe(".justo .r", at("Que estaba contento"), 5.2);
+entra(".justo .s", at("Que estaba contento"), { y: 10 });
+sale(".fa", at("La nota da") - 0.4);
+
+escribe(".lit", at("se lo contó") - 0.2, 1.4);
+traza(".libro rect, .libro path", at("La nota da"), 1.8, { st: 0.1 });
+salta(".logi .w", at("loguízomai"));
+escribe(".logi .d", at("venía de la contabilidad"), 3.6);
+entra(".logi .s", at("venía de la contabilidad"), { y: 10 });
+escribe(".cd", at("debe"), 0.5);
+escribe(".ch", at("haber"), 0.5);
+escribe(".asiento", at("Como en un libro"), 2.4);
+sale(".fb", at("Y fíjense") - 0.4);
+
+escribe(".sincera .t", at("Abrán le dijo"), 4.0);
+escribe(".sincera .l", at("Nuestra oración"), 2.2);
+sale(".fc", at("Ya tenemos") - 0.4);
+
+const T = tablero(".tab");
+entra(".tab", at("Ya tenemos"), { y: 30 });
+T.llenar(0, at("heredero"));
+T.llenar(1, at("descendencia"));
+</script>

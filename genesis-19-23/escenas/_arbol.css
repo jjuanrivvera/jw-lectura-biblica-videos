@@ -1,0 +1,10 @@
+/* Árbol de la familia de Taré (va con _arbol.js). */
+.arbol-t .rama { fill: none; stroke: var(--tenue); stroke-width: 5; }
+.arbol-t .boda { fill: none; stroke: var(--rosa); stroke-width: 7; }
+.arbol-t .futuro { fill: none; stroke: var(--oro); stroke-width: 5; stroke-dasharray: 10 10; }
+.arbol-t .nota { font-family: "Arial", sans-serif; font-weight: 700; font-size: 24px; fill: var(--rosa); }
+.arbol-t .futuro-t { fill: var(--oro); }
+.arbol-t .otra { fill: var(--rosa); font-size: 26px; }
+.arbol-t .nodo rect { fill: #232f3b; stroke: rgba(239,231,214,0.35); stroke-width: 3; }
+.arbol-t .nodo text { font-family: "cursive", cursive; font-weight: 700; font-size: 52px; fill: var(--tiza); text-anchor: middle; }
+.arbol-t .nodo.luz rect { stroke: var(--oro); stroke-width: 5; fill: #2c3a48; }

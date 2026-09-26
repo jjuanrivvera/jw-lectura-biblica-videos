@@ -1,0 +1,98 @@
+<style>
+.ecuacion { position: absolute; left: 60px; right: 60px; top: 130px; height: 520px; display: grid; grid-template-columns: 1fr 90px 1.25fr 90px 1fr; align-items: center; }
+.pieza { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; }
+.pieza svg { width: 400px; height: 300px; }
+.pieza .m { font-size: 62px; }
+.pieza .v { font-family: "Georgia", serif; font-weight: 700; font-size: 76px; color: var(--oro); line-height: 1; }
+.signo { font-family: "Georgia", serif; font-weight: 700; font-size: 110px; color: var(--tenue); text-align: center; }
+.total .v { font-size: 130px; }
+.abajo-a { position: absolute; left: 80px; right: 80px; top: 700px; bottom: 60px; display: grid; grid-template-columns: 1.2fr 1fr; column-gap: 50px; align-items: center; }
+.abajo-a .def { align-self: center; }
+.cuentas { display: flex; flex-direction: column; gap: 10px; }
+.cuentas .m { font-size: 62px; }
+.fb .familia { position: absolute; left: 60px; top: 140px; width: 1000px; height: 800px; }
+.fb .familia svg { width: 1000px; height: 800px; }
+.nodo rect { fill: rgba(10,16,22,0.55); stroke: rgba(241,233,216,0.3); stroke-width: 3; }
+.nodo text { font-family: "cursive", cursive; font-weight: 700; font-size: 60px; fill: var(--tiza); text-anchor: middle; }
+.nodo.or rect { stroke: var(--oro); }
+.nodo.or text { fill: var(--oro); }
+.nodo .mini { font-family: "Arial", sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.12em; fill: var(--tenue); }
+.don { fill: none; stroke: var(--oro); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 2 16; }
+.fb .col { width: 760px; right: 70px; }
+</style>
+
+<div class="fase fa">
+  <div class="cab"><span class="cap">Génesis 24</span><span>versículo 22</span></div>
+  <div class="ecuacion">
+    <div class="pieza p1">
+      <svg viewBox="0 0 400 300">
+        <defs>
+          <linearGradient id="e06-oro" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0b0"/><stop offset="0.35" stop-color="#f1c453"/><stop offset="0.7" stop-color="#b8860b"/><stop offset="1" stop-color="#ffe08a"/></linearGradient>
+          <linearGradient id="e06-oro2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9a0"/><stop offset="0.5" stop-color="#d4a12c"/><stop offset="1" stop-color="#8e6508"/></linearGradient>
+        </defs>
+        <ellipse cx="200" cy="262" rx="120" ry="16" fill="#000" opacity="0.3"/>
+        <circle cx="200" cy="150" r="92" fill="none" stroke="url(#e06-oro)" stroke-width="26"/>
+        <circle cx="200" cy="150" r="92" fill="none" stroke="#fff6cf" stroke-width="4" stroke-dasharray="60 520" stroke-dashoffset="-40" opacity="0.9"/>
+        <circle cx="200" cy="58" r="18" fill="url(#e06-oro2)"/>
+      </svg>
+      <div class="m">una nariguera</div><div class="v">½ siclo</div>
+    </div>
+    <div class="signo s1">+</div>
+    <div class="pieza p2">
+      <svg viewBox="0 0 400 300">
+        <ellipse cx="200" cy="270" rx="170" ry="16" fill="#000" opacity="0.3"/>
+        <g transform="translate(128 150)"><ellipse rx="92" ry="110" fill="none" stroke="url(#e06-oro2)" stroke-width="34"/><ellipse rx="92" ry="110" fill="none" stroke="#fff3c4" stroke-width="4" stroke-dasharray="70 600" stroke-dashoffset="-30"/></g>
+        <g transform="translate(272 150)"><ellipse rx="92" ry="110" fill="none" stroke="url(#e06-oro)" stroke-width="34"/><ellipse rx="92" ry="110" fill="none" stroke="#fff3c4" stroke-width="4" stroke-dasharray="70 600" stroke-dashoffset="-30"/></g>
+      </svg>
+      <div class="m">dos brazaletes</div><div class="v">10 siclos</div>
+    </div>
+    <div class="signo s2">=</div>
+    <div class="pieza total p3"><div class="v">≈ 120 g</div><div class="m oro">de oro</div><span class="propio">cálculo propio</span></div>
+  </div>
+  <div class="abajo-a">
+    <div class="def d1"><div class="t">siclo</div><div class="x">no era una moneda, sino <b>un peso</b>: se pagaba pesando el metal</div></div>
+    <div class="cuentas c1"><div class="m">1 siclo = <b>11,4 g</b></div><div class="s">nota de la TNM en 24:22</div><div class="m">10½ × 11,4 g ≈ <b>120 g</b></div></div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="cab"><span class="cap">Génesis 24</span><span>versículos 28 al 53</span></div>
+  <div class="familia"><svg viewBox="0 0 1000 800">
+    <g class="nodo or n-s"><rect x="300" y="30" width="400" height="120" rx="24"/><text x="500" y="108">el siervo</text><text class="mini" x="500" y="-6" text-anchor="middle">LA FAMILIA DEL NOVIO</text></g>
+    <path class="don d-r" d="M 420 150 C 300 260 200 380 170 520"/>
+    <path class="don d-m" d="M 500 150 C 500 280 500 400 500 520"/>
+    <path class="don d-l" d="M 580 150 C 700 260 800 380 830 520"/>
+    <g class="nodo n-r"><rect x="40" y="530" width="270" height="120" rx="24"/><text x="175" y="610">Rebeca</text></g>
+    <g class="nodo n-m"><rect x="365" y="530" width="270" height="120" rx="24"/><text x="500" y="610">su madre</text></g>
+    <g class="nodo n-l"><rect x="690" y="530" width="270" height="120" rx="24"/><text x="825" y="610">Labán</text></g>
+    <text class="mini-l" x="825" y="700" text-anchor="middle" style="font-family:Arial,sans-serif;font-weight:600;font-size:24px;fill:var(--tenue)">llevó las negociaciones</text>
+    <text x="500" y="770" text-anchor="middle" style="font-family:Arial,sans-serif;font-weight:600;font-size:24px;fill:var(--tenue)">“artículos de oro y plata y ropa” · regalos valiosos (24:53)</text>
+  </svg></div>
+  <div class="col">
+    <div class="b b1"><div class="def"><div class="t">la dote<i>mó·har</i></div><div class="x">lo que la familia del novio pagaba a los padres de la novia</div><div class="s">“una compensación por la pérdida de los servicios de la hija” · Perspicacia, “Matrimonio”, pág. 343; “Esponsales”, pág. 866</div></div></div>
+    <div class="b b2"><div class="cita md">“Esta transacción constituyó un <b>contrato matrimonial</b> honorable”</div><div class="m oro">desde ese momento, Rebeca era su esposa “a todos los efectos”</div><div class="s">Perspicacia, vol. 2, “Rebeca”, pág. 790</div></div>
+  </div>
+</div>
+
+<script>
+salta(".p1 svg", 0.6, { desde: 0.6 });
+entra([".p1 .m", ".p1 .v"], 1.0, { y: 20, st: 0.2 });
+salta(".s1", at("y dos brazaletes"), { desde: 0.5 });
+salta(".p2 svg", at("y dos brazaletes"), { desde: 0.6 });
+entra([".p2 .m", ".p2 .v"], at("y dos brazaletes") + 0.3, { y: 20, st: 0.2 });
+entra(".d1", at("Un siclo no era"), { y: 30 });
+entra(".c1", at("Equivalía a"), { y: 30 });
+salta(".s2", at("Así que eran"), { desde: 0.5 });
+salta(".p3", at("Así que eran"), { desde: 0.6 });
+
+const tB = at("Después, en la casa") - 0.3;
+desaparece(".fa", tB, 0.4);
+aparece(".fb", tB + 0.3, 0.4);
+entra(".n-s", tB + 0.4, { y: -20 });
+entra([".n-r", ".n-m", ".n-l"], at("da regalos a Rebeca"), { y: 30, st: 0.35 });
+traza([".d-r", ".d-m", ".d-l"], at("da regalos a Rebeca"), 1.0, { st: 0.35 });
+// traza() pisa el punteado: se devuelve al terminar.
+tl.set($$(".don"), { strokeDasharray: "2 16", strokeDashoffset: 0 }, at("da regalos a Rebeca") + 1.8);
+aparece(".mini-l", at("que llevó las negociaciones"), 0.4);
+secuencia([[".b1", at("Perspicacia los relaciona")], [".b2", at("Era un contrato")]]);
+</script>

@@ -1,0 +1,86 @@
+<!--lead:2.6-->
+<style>
+.fa .vida { position: absolute; left: 80px; right: 80px; top: 420px; height: 300px; }
+.fa .vida svg { width: 1760px; height: 300px; }
+.vt { font-family: "Arial", sans-serif; font-weight: 700; font-size: 30px; fill: var(--tenue); text-anchor: middle; }
+.vg { font-family: "cursive", cursive; font-weight: 700; font-size: 60px; text-anchor: middle; }
+.fa .arriba { position: absolute; left: 80px; right: 80px; top: 130px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; align-items: center; }
+.fa .abajo { position: absolute; left: 80px; right: 80px; top: 770px; display: flex; gap: 30px; align-items: center; }
+.fb .centro { position: absolute; left: 90px; right: 90px; top: 150px; bottom: 90px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; align-items: center; }
+.fb .centro > div { display: flex; flex-direction: column; gap: 24px; }
+.fc .razones { position: absolute; left: 80px; right: 80px; top: 170px; height: 480px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 50px; }
+.fc .razon { border-radius: 30px; padding: 30px 40px; border: 4px solid var(--oro); background: rgba(10,16,22,0.45); display: flex; flex-direction: column; gap: 16px; justify-content: center; }
+.fc .razon .nn { font-family: "Georgia", serif; font-weight: 700; font-size: 90px; color: var(--oro); line-height: 1; }
+.fc .abajo { position: absolute; left: 80px; right: 80px; top: 700px; bottom: 60px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 50px; align-items: center; }
+</style>
+
+<div class="capcard cc"><div class="num">Génesis 27</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">la bendición</div><div class="edad">1781 antes de nuestra era</div></div>
+
+<div class="fase fa">
+  <div class="cab"><span class="cap">Génesis 27</span><span>versículos 1 al 4</span></div>
+  <div class="arriba">
+    <div class="m xl a1">Isaac, <b>≈ 137 años</b></div>
+    <div class="cita md a2">“no sé cuánto tiempo me queda de vida”<span class="ref">GÉNESIS 27:2</span></div>
+  </div>
+  <div class="vida"><svg viewBox="0 0 1760 300">
+    <rect x="40" y="110" width="1680" height="70" rx="14" fill="rgba(241,233,216,0.08)"/>
+    <rect class="vv1" x="40" y="110" width="1283" height="70" rx="14" fill="var(--verde)"/>
+    <rect class="vv2" x="1323" y="110" width="397" height="70" rx="14" fill="none" stroke="var(--verde)" stroke-width="4" stroke-dasharray="14 10"/>
+    <text class="vt" x="40" y="240">1918</text><text class="vt" x="1323" y="240">1781</text><text class="vt" x="1720" y="240">1738</text>
+    <text class="vg g1" x="660" y="160" style="fill:#17212b">137 años</text>
+    <text class="vg g2" x="1522" y="80" style="fill:var(--oro)">vivió 43 años más</text>
+    <text class="vt" x="880" y="290" style="font-size:24px">años antes de nuestra era · Perspicacia, “Isaac”, págs. 1251, 1253</text>
+  </svg></div>
+  <div class="abajo"><div class="m">ciego, le pide a Esaú una comida sabrosa… para bendecirlo</div><span class="propio">la edad: cálculo propio</span></div>
+</div>
+
+<div class="fase fb">
+  <div class="cab"><span class="cap">Génesis 27</span><span>¿qué era esa bendición?</span></div>
+  <div class="centro">
+    <div><div class="m xl oro b1">no era un simple deseo</div><div class="m b2">transmitía la <b>jefatura</b> de la familia</div><div class="m b3">y la <b>promesa</b> hecha a Abrahán</div><div class="s b3b">La Atalaya, 1 de octubre de 2007, pág. 31</div></div>
+    <div><div class="def b4"><div class="t">profética</div><div class="x">“los resultados prueban que se había hablado proféticamente”</div><div class="s">Perspicacia, vol. 1, “Bendición”, pág. 311</div></div><div class="m rojo b5">una vez dicha, no se podía deshacer</div></div>
+  </div>
+</div>
+
+<div class="fase fc">
+  <div class="cab"><span class="cap">Génesis 27</span><span>¿de quién era?</span></div>
+  <div class="razones">
+    <div class="razon r1"><div class="nn">1</div><div class="cita">“el mayor servirá al más joven”<span class="ref">GÉNESIS 25:23 · LO DIJO JEHOVÁ ANTES DEL PARTO</span></div></div>
+    <div class="razon r2"><div class="nn">2</div><div class="m">Esaú le había vendido el derecho <b>con juramento</b></div><div class="s">Génesis 25:33</div></div>
+  </div>
+  <div class="abajo">
+    <div class="r3"><div class="m">¿Isaac lo había olvidado?</div><div class="m rosa">“No se sabe”</div><div class="s">Perspicacia, vol. 1, “Isaac”, pág. 1253</div></div>
+    <div class="r4"><div class="m oro">Rebeca sí lo sabía</div><div class="s">La Atalaya, 15 de abril de 2004, pág. 11</div></div>
+  </div>
+</div>
+
+<script>
+capitulo(".cc", 0.3, at("Isaac tiene unos") - 0.2);
+const tA = at("Isaac tiene unos") + 0.45;
+aparece(".fa", tA, 0.4);
+entra(".a1", tA + 0.2, { y: 20 });
+tl.set($(".vv1"), { scaleX: 0, transformOrigin: "0% 50%" }, 0);
+tl.to($(".vv1"), { scaleX: 1, duration: 1.4, ease: "power2.out" }, tA + 0.4);
+aparece(".g1", tA + 1.6, 0.4);
+entra(".a2", at("cree que va a morir"), { y: 20 });
+aparece(".vv2", at("en realidad vivió"), 0.6);
+aparece(".g2", at("en realidad vivió") + 0.4, 0.4);
+entra(".abajo", at("Le pide a Esaú"), { y: 20 });
+
+const tB = at("Esa bendición no era") - 0.3;
+desaparece(".fa", tB, 0.4);
+aparece(".fb", tB + 0.3, 0.4);
+escribe(".b1", tB + 0.4, 1.0);
+entra(".b2", at("transmitía la jefatura"), { y: 20 });
+entra([".b3", ".b3b"], at("y la promesa"), { y: 20 });
+entra(".b4", at("Era profética"), { y: 20 });
+entra(".b5", at("y una vez dicha"), { y: 20 });
+
+const tC = at("Y le correspondía") - 0.3;
+desaparece(".fb", tC, 0.4);
+aparece(".fc", tC + 0.3, 0.4);
+entra(".r1", at("Jehová había dicho"), { y: 30 });
+entra(".r2", at("y Esaú le había vendido"), { y: 30 });
+entra(".r3", at("Isaac lo había olvidado"), { y: 20 });
+entra(".r4", at("Rebeca sí lo sabía"), { y: 20 });
+</script>

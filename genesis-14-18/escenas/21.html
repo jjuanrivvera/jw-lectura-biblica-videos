@@ -1,0 +1,54 @@
+<style>
+.dib { position: absolute; left: 0; top: 180px; width: 1080px; height: 560px; }
+.dib path, .dib rect { fill: none; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.dib text { font-family: "cursive", cursive; font-weight: 700; font-size: 52px; }
+.b { position: absolute; left: 72px; right: 72px; top: 800px; }
+.b .cita { font-size: 64px; }
+.b .m { font-family: "cursive", cursive; font-weight: 700; font-size: 60px; line-height: 1.05; }
+.b .s { font-family: "Arial", sans-serif; font-size: 28px; color: var(--tenue); margin-top: 10px; }
+.razones { display: flex; flex-direction: column; gap: 26px; }
+.leccion { position: absolute; left: 72px; right: 72px; top: 1560px; text-align: center; font-size: 66px; color: var(--oro); }
+</style>
+
+<svg class="dib" viewBox="0 0 1080 560">
+  <path class="tienda" style="stroke:var(--verde)" d="M110 300 L200 160 L290 300 Z M200 160 L200 300" />
+  <text x="130" y="360" style="fill:var(--verde)">Mamré</text>
+  <path class="camino" style="stroke:var(--tenue); stroke-dasharray: 14 12" d="M300 280 Q560 200 760 380" />
+  <rect class="ciudad" x="760" y="330" width="230" height="170" rx="16" style="stroke:var(--rojo)" />
+  <path class="casas" style="stroke:var(--rojo)" d="M800 500 L800 420 L840 390 L880 420 L880 500 M900 500 L900 440 L950 440 L950 500" />
+  <text x="790" y="310" style="fill:var(--rojo)">Sodoma</text>
+  <g class="v1"><circle r="14" fill="#efe7d6" /></g>
+  <g class="v2"><circle r="14" fill="#efe7d6" /></g>
+</svg>
+
+<div class="b b1"><div class="cita">“¿Acaso voy a ocultarle a Abrahán lo que voy a hacer?”<span class="ref">Génesis 18:17</span></div></div>
+<div class="b b2 razones">
+  <div class="m r1">porque era su amigo</div>
+  <div class="m r2">porque tenía que enseñar a sus hijos “el camino de Jehová haciendo lo que es justo y recto” (18:19)</div>
+  <div class="m r3" style="color:var(--oro)">y así “le estaba dando la oportunidad de expresar su opinión”</div>
+  <div class="s">La Atalaya, 1 de enero de 2009, pág. 24</div>
+</div>
+<div class="b b3"><div class="cita">“Yo he llegado a conocerlo”<span class="ref">Génesis 18:19</span></div><div class="m" style="margin-top:26px">“estaba bien familiarizado con él, pues había observado por muchos años ya su obediencia”</div><div class="s">Perspicacia, vol. 1, “Conocimiento”, pág. 527</div></div>
+<div class="b b4"><div class="cita">“Voy a bajar para ver”<span class="ref">Génesis 18:21</span></div><div class="m m1" style="margin-top:26px">¿No podía saberlo sin la ayuda de nadie? “¡Pues claro que sí! Pero, como es humilde, delegó en unos ángeles la tarea”</div><div class="s">Acerquémonos a Jehová, cap. 20, pág. 202</div></div>
+<div class="leccion mano">Jehová confía en los padres para que enseñen su camino en casa</div>
+
+<script>
+traza(".dib .tienda", 0.5, 1.0);
+aparece(".dib text", 0.6, 0.6);
+traza(".dib .ciudad, .dib .casas", 0.9, 1.0);
+traza(".dib .camino", at("siguen"), 1.4);
+const cam = medirCamino(".dib .camino");
+aparece(".dib .v1, .dib .v2", at("Dos de"), 0.4);
+recorre(".dib .v1", cam, at("siguen"), 5.0, { desde: 0, hasta: 0.62 });
+recorre(".dib .v2", cam, at("siguen") + 0.4, 5.0, { desde: 0, hasta: 0.52 });
+
+const bloques = [[".b1", at("Y Jehová dice")], [".b2", at("Se lo cuenta")], [".b3", at("Yo he llegado")], [".b4", at("Luego dice")]];
+bloques.forEach(([s, t], i) => { entra(s, t, { y: 24 }); if (i < bloques.length - 1) sale(s, bloques[i + 1][1] - 0.4, { d: 0.35 }); });
+sale(".b4", at("Jehová confía") - 0.4);
+escribe(".b1 .cita", at("Acaso"), 2.2);
+escribe(".r1", at("porque es su amigo"), 1.0);
+escribe(".r2", at("Y porque"), 4.0);
+escribe(".r3", at("Al contárselo"), 3.2);
+entra(".m1", at("Es que no podía"), { y: 16 });
+escribe(".leccion", at("Jehová confía"), 2.4);
+</script>

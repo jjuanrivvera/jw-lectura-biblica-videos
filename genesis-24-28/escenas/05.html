@@ -1,0 +1,99 @@
+<style>
+.ilus.img-c { left: 70px; top: 130px; width: 640px; height: 850px; }
+.pie-c { left: 70px; top: 990px; width: 700px; font-size: 22px; }
+.fa .col { left: 790px; right: 80px; width: auto; top: 130px; }
+.perd { display: flex; flex-direction: column; gap: 18px; }
+.perd .fila { display: grid; grid-template-columns: 220px 1fr; align-items: center; column-gap: 20px; }
+.perd .nom { font-family: "cursive", cursive; font-weight: 700; font-size: 60px; }
+.perd .barra { height: 64px; border-radius: 14px; background: rgba(241,233,216,0.08); position: relative; overflow: hidden; }
+.perd .barra .v { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 14px; transform-origin: 0 50%; }
+.perd .barra .n { position: absolute; left: 20px; top: 8px; font-family: "Arial", sans-serif; font-weight: 800; font-size: 40px; color: #17212b; }
+.fb .arriba { position: absolute; left: 80px; right: 80px; top: 110px; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 26px; }
+.fb .dato .v { font-size: 88px; }
+.fb .dato .k { font-size: 46px; }
+.hilera { position: absolute; left: 60px; top: 350px; width: 1800px; height: 520px; }
+.hilera svg { width: 1800px; height: 520px; }
+.tanque { fill: rgba(241,233,216,0.06); stroke: rgba(241,233,216,0.25); stroke-width: 3; }
+.nivel { fill: url(#e05-agua); }
+.lts { font-family: "Arial", sans-serif; font-weight: 800; font-size: 30px; fill: var(--tiza); text-anchor: middle; }
+.fb .abajo { position: absolute; left: 80px; right: 80px; bottom: 34px; display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; }
+.fb .abajo .m { font-size: 58px; max-width: 1100px; }
+</style>
+
+<div class="fase fa">
+  <div class="cab"><span class="cap">Génesis 24</span><span>versículos 19 y 20</span></div>
+  <div class="ilus img-c"><div class="kb"><img src="assets/img/camello.svg" /></div></div>
+  <div class="pie-img pie-c">“Camello árabe, bien preparado para la vida en el desierto”. Foto: Perspicacia, “Camello”, pág. 400</div>
+  <div class="col">
+    <div class="b a1"><div class="m oro">probablemente el dromedario</div><div class="m">no guarda el agua en la giba</div><div class="s">Perspicacia, vol. 1, “Camello”, págs. 399, 400</div></div>
+    <div class="b a2">
+      <div class="rotulo" style="font-size:28px;color:var(--tenue)">AGUA QUE PUEDE PERDER, SEGÚN SU PESO</div>
+      <div class="perd">
+        <div class="fila"><div class="nom" style="color:var(--oro)">el camello</div><div class="barra"><div class="v v1" style="width:100%;background:var(--oro)"></div><div class="n">25 %</div></div></div>
+        <div class="fila"><div class="nom">el hombre</div><div class="barra"><div class="v v2" style="width:48%;background:var(--tiza)"></div><div class="n">12 %</div></div></div>
+      </div>
+      <div class="m cielo">en el pozo, bebe de una vez todo lo que perdió: <b>unos 95 litros</b></div>
+      <div class="s">La Atalaya, núm. 3 de 2016, págs. 12, 13 · Perspicacia: “tanto como 135 l. en diez minutos”</div>
+    </div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="cab"><span class="cap">Génesis 24</span><span>diez camellos sedientos</span></div>
+  <div class="arriba">
+    <div class="dato d1"><div class="v"><span class="c-l">0</span> <small>L</small></div><div class="k">litros</div></div>
+    <div class="dato d2"><div class="v">15 <small>L</small></div><div class="k">un jarro</div><span class="propio">supuesto</span></div>
+    <div class="dato d3"><div class="v"><span class="c-v">0</span></div><div class="k">viajes al agua</div></div>
+    <div class="dato d4"><div class="v"><span class="c-m">0</span> <small>min</small></div><div class="k">a 2 min por viaje</div><span class="propio">supuesto</span></div>
+  </div>
+  <div class="hilera"><svg viewBox="0 0 1800 520">
+    <defs>
+      <linearGradient id="e05-agua" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd0ff"/><stop offset="1" stop-color="#2d6fb6"/></linearGradient>
+      <linearGradient id="e05-piel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9b27a"/><stop offset="1" stop-color="#a47a45"/></linearGradient>
+    </defs>
+    <g class="cams"></g>
+    <rect x="20" y="470" width="1760" height="34" rx="12" fill="#6d5b43"/>
+    <text x="900" y="516" text-anchor="middle" style="font-family:Arial,sans-serif;font-weight:600;font-size:22px;fill:#e9dcc2">bebedero (24:20)</text>
+  </svg></div>
+  <div class="abajo">
+    <div class="m oro ab1">parece que no tenían tanta sed… pero ella no lo sabía</div>
+    <div class="s ab2" style="text-align:right;max-width:640px">“no hay duda de que las mujeres de aquel tiempo sabían cuánta agua podía beber un camello” · La Atalaya, 1 de julio de 1989, pág. 25</div>
+  </div>
+</div>
+
+<script>
+kb(".img-c .kb", 0, at("Hagamos la cuenta"), { s: 1.1, x: 2, y: -2 }, { s: 1.0 });
+secuencia([[".a1", 0.5], [".a2", at("aguanta porque")]], at("Hagamos la cuenta") - 0.2);
+tl.fromTo($$(".perd .v"), { scaleX: 0 }, { scaleX: 1, duration: 1.2, stagger: 0.5, ease: "power2.out", immediateRender: false }, at("aguanta porque") + 0.5);
+tl.set($$(".perd .v"), { scaleX: 0 }, 0);
+
+// Diez camellos con su "tanque" encima: cada uno se llena hasta 95 litros.
+let c = "";
+for (let i = 0; i < 10; i++) {
+  const x = 40 + i * 174;
+  c += `<g transform="translate(${x} 0)">
+    <rect class="tanque" x="44" y="20" width="70" height="250" rx="12"/>
+    <rect class="nivel nv${i}" x="44" y="20" width="70" height="250" rx="12"/>
+    <text class="lts lt${i}" x="79" y="300">95 L</text>
+    <g transform="translate(0 330)">
+      <path d="M 20 70 C 18 42 46 30 64 32 C 80 6 110 6 122 30 C 132 36 138 42 142 48 L 148 20 C 150 8 160 4 170 8 L 180 14 L 178 22 L 164 22 C 160 32 158 48 156 60 C 154 72 146 80 138 82 L 136 128 L 128 128 L 126 88 L 118 88 L 116 128 L 108 128 L 106 88 L 72 88 L 70 128 L 62 128 L 60 88 L 52 88 L 50 128 L 42 128 L 40 86 C 30 84 22 80 20 70 Z" fill="url(#e05-piel)" stroke="#6d4a22" stroke-width="3"/>
+    </g></g>`;
+}
+pinta(".cams", c);
+const tB = at("Hagamos la cuenta") - 0.3;
+desaparece(".fa", tB, 0.4);
+aparece(".fb", tB + 0.3, 0.4);
+entra(".d1", at("Diez camellos"), { y: 20 });
+const niveles = $$(".nivel");
+tl.set(niveles, { scaleY: 0, transformOrigin: "50% 100%" }, 0);
+tl.to(niveles, { scaleY: 1, duration: 0.6, stagger: 0.28, ease: "power1.inOut" }, at("Diez camellos") + 0.2);
+aparece($$(".lts"), at("Diez camellos") + 0.4, 0.4);
+cuenta(".c-l", 0, 950, at("Diez camellos") + 0.2, 3.1, (v) => Math.round(v).toLocaleString("es-CO"));
+entra(".d2", at("Supongamos"), { y: 20 });
+entra(".d3", at("más de sesenta"), { y: 20 });
+cuenta(".c-v", 0, 64, at("más de sesenta"), 1.2);
+entra(".d4", at("y más de dos horas"), { y: 20 });
+cuenta(".c-m", 0, 128, at("y más de dos horas"), 1.2);
+entra(".ab1", at("Parece que los camellos"), { y: 20 });
+entra(".ab2", at("Y las mujeres"), { y: 20 });
+</script>

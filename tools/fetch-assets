@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const manifest = JSON.parse(await fs.readFile(path.join(root, 'assets.json'), 'utf8'));
+const entries = manifest.assets ?? [];
+if (!Array.isArray(entries)) throw new Error('assets.json: "assets" debe ser una lista.');
+for (const asset of entries) {
+  if (typeof asset.url !== 'string' || !asset.url.startsWith('https://')) {
+    throw new Error(`URL HTTPS no válida para ${asset.path ?? 'recurso sin ruta'}`);
+  }
+  const target = path.resolve(root, asset.path);
+  if (!target.startsWith(root + path.sep)) throw new Error(`Ruta fuera del repositorio: ${asset.path}`);
+  const response = await fetch(asset.url);
+  if (!response.ok) throw new Error(`Descarga fallida (${response.status}): ${asset.url}`);
+  const data = Buffer.from(await response.arrayBuffer());
+  if (data.length > 5 * 1024 * 1024) throw new Error(`El recurso supera 5 MB: ${asset.path}`);
+  await fs.mkdir(path.dirname(target), { recursive: true });
+  await fs.writeFile(target, data);
+  console.log(`${asset.path}: ${data.length} bytes`);
+}
+if (entries.length === 0) console.log('El manifiesto no contiene recursos externos.');

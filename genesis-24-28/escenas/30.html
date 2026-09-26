@@ -1,0 +1,58 @@
+<style>
+.fa .centro { position: absolute; left: 90px; right: 90px; top: 140px; bottom: 90px; display: grid; grid-template-columns: 1.1fr 1fr; column-gap: 70px; align-items: center; }
+.fa .centro > div { display: flex; flex-direction: column; gap: 26px; }
+.ilus.img-v { left: 60px; top: 140px; width: 1120px; height: 444px; }
+.ilus.img-v img { position: absolute; width: 1120px; height: 994px; left: 0; top: -552px; object-fit: fill; }
+.pie-v { left: 60px; top: 598px; width: 1120px; }
+.fb .col { width: 640px; right: 60px; }
+.fb .bajo { position: absolute; left: 60px; top: 690px; width: 1120px; bottom: 60px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 26px; }
+.fb .bajo .dato .v { font-size: 64px; }
+</style>
+
+<div class="fase fa">
+  <div class="cab"><span class="cap">Génesis 27</span><span>versículos 34 al 38 · Hebreos 12:17</span></div>
+  <div class="centro">
+    <div>
+      <div class="m xl rojo a0">Esaú lloró mucho</div>
+      <div class="cita md a1">“Aunque con lágrimas se esforzó por <b>cambiar la decisión</b>, no le sirvió de nada”<span class="ref">HEBREOS 12:17</span></div>
+      <div class="def a2"><div class="t">la nota</div><div class="x">“Es decir, la decisión <b>de su padre</b>”</div></div>
+    </div>
+    <div>
+      <div class="def a3"><div class="t">cambio de parecer<i>me·tá·noi·a</i></div><div class="x">el que buscaba no era el suyo, sino el de Isaac</div><div class="s">Perspicacia, vol. 1, “Arrepentimiento”, pág. 211</div></div>
+      <div class="cita md a4">“Sintió pesar por la pérdida, no por la actitud materialista que le hizo ‘despreciar la primogenitura’”</div>
+    </div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="cab"><span class="cap">Génesis 27</span><span>versículos 41 y 42</span></div>
+  <div class="ilus img-v"><div class="kb"><img src="assets/img/jacob-esau-historia.svg" /></div></div>
+  <div class="pie-img pie-v">“Esaú decidió que algún día se vengaría de su hermano”. Historia bíblica ilustrada “Jacob y Esaú”, pág. 1</div>
+  <div class="bajo">
+    <div class="dato d1"><div class="v">+ de 40 años</div><div class="k">vivió todavía Isaac</div></div>
+    <div class="dato d2" style="border-color:rgba(146,209,147,0.5)"><div class="v" style="color:var(--verde)">20 años después</div><div class="k">“Esaú tuvo un cambio de corazón”</div><div class="s">La Atalaya, 1 de junio de 1973, pág. 323</div></div>
+  </div>
+  <div class="col">
+    <div class="b">
+      <div class="m">guardó rencor, “al igual que Caín”</div>
+      <div class="s">Perspicacia, vol. 1, “Esaú”, pág. 829</div>
+      <div class="cita md">“Pronto morirá mi padre. Después de los días de duelo mataré a mi hermano Jacob”<span class="ref">GÉNESIS 27:41</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+entra(".a0", 0.4, { y: 20 });
+entra(".a1", at("Hebreos dice"), { y: 20 });
+entra(".a2", at("la nota aclara"), { y: 20 });
+entra(".a3", at("Sintió pesar") - 0.4, { y: 20 });
+entra(".a4", at("Sintió pesar"), { y: 20 });
+
+const tB = at("Y guardó rencor") - 0.3;
+desaparece(".fa", tB, 0.4);
+aparece(".fb", tB + 0.3, 0.4);
+kb(".img-v .kb", tB, DUR, { s: 1.08, x: -1 }, { s: 1.0 });
+entra(".fb .col .b", tB + 0.4, { y: 20 });
+entra(".d1", at("e Isaac vivió"), { y: 20 });
+entra(".d2", at("Cuando los hermanos"), { y: 20 });
+</script>

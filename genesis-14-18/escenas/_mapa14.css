@@ -1,0 +1,10 @@
+.m-agua { fill: #1e3350; stroke: #56789f; stroke-width: 0.7; }
+.m-rio { fill: none; stroke: #56789f; stroke-width: 1.3; stroke-linejoin: round; }
+.m-afl { fill: none; stroke: #56789f; stroke-width: 0.8; }
+.m-reg { font-family: "Arial", sans-serif; font-size: 8px; fill: #aab4bf; letter-spacing: 1.5px; text-anchor: middle; }
+.m-aguat { font-family: "Georgia", serif; font-style: italic; font-size: 8.5px; fill: #8db4ec; text-anchor: middle; }
+.m-lug { font-family: "Arial", sans-serif; font-weight: 700; font-size: 10.5px; fill: #efe7d6; stroke: #17212b; stroke-width: 3; paint-order: stroke; }
+.m-pt { fill: #e6bb5c; stroke: #17212b; stroke-width: 1; }
+.m-inc { fill: none; stroke: #e6bb5c; stroke-width: 1.3; stroke-dasharray: 2 2; }
+.m-r { fill: none; stroke: #e8805f; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
+.m-g { fill: none; stroke: #92d193; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }

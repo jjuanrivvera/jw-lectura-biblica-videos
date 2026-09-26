@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="UTF-8" /><title>Diez camellos sedientos</title></head>
+<body>
+<template>
+<style>
+#escena-05 {
+/* Estilo común de todas las escenas (1920x1080). El constructor lo anida bajo #escena-NN. */
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+color: var(--tiza);
+font-family: "Arial", sans-serif;
+--pizarra: #17212b;
+--pizarra2: #1d2a36;
+--tiza: #f1e9d8;
+--tenue: #b3bdc8;
+--oro: #e9bf60;
+--rojo: #ec8a67;
+--verde: #92d193;
+--cielo: #93bbef;
+--rosa: #e9adcc;
+--agua: #5f9fd8;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.contenido { position: absolute; inset: 0; }
+.fase { position: absolute; inset: 0; }
+svg { overflow: visible; }
+
+/* Tipografía por registro: la Biblia, la pizarra, los rótulos. */
+.biblia { font-family: "Georgia", serif; font-weight: 500; line-height: 1.18; }
+.mano { font-family: "cursive", cursive; font-weight: 700; line-height: 1.05; }
+.rotulo { font-family: "Arial", sans-serif; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+
+/* Cabecera: capítulo a la izquierda, versículos a la derecha. */
+.cab {
+  position: absolute; left: 80px; right: 80px; top: 38px;
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: "Arial", sans-serif; font-weight: 700; font-size: 30px;
+  color: var(--tenue); letter-spacing: 0.1em; text-transform: uppercase;
+}
+.cab .cap { color: var(--oro); }
+.cab.sobre span { padding: 6px 18px; border-radius: 12px; background: rgba(15, 22, 30, 0.86); }
+
+/* Pie con la fuente de la imagen o del mapa. */
+.fuente {
+  position: absolute; left: 80px; right: 80px; bottom: 28px;
+  font-family: "Arial", sans-serif; font-weight: 500; font-size: 24px; line-height: 1.3;
+  color: var(--tenue);
+}
+.fuente b { color: var(--tiza); font-weight: 700; }
+.pie-mapa { position: absolute; left: 24px; bottom: 20px; padding: 8px 16px; border-radius: 10px;
+  background: rgba(15, 22, 30, 0.84); font-size: 22px; color: var(--tiza); }
+
+/* Columna de texto: el bloque activo se centra en el alto disponible. */
+.col { position: absolute; top: 120px; bottom: 96px; right: 80px; width: 740px; }
+.col.izq { left: 80px; right: auto; }
+.col > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+
+/* Palabras clave a mano, citas y rótulos. */
+.m { font-family: "cursive", cursive; font-weight: 700; font-size: 78px; line-height: 1.04; color: var(--tiza); }
+.m.oro { color: var(--oro); }
+.m.rojo { color: var(--rojo); }
+.m.cielo { color: var(--cielo); }
+.m.rosa { color: var(--rosa); }
+.m.verde-no { color: var(--verde); }
+.m.xl { font-size: 112px; }
+.m.md { font-size: 64px; }
+.m b { color: var(--oro); font-weight: 700; }
+.cita { font-family: "Georgia", serif; font-weight: 500; font-size: 54px; line-height: 1.2; color: var(--tiza); }
+.cita b { color: var(--oro); font-weight: 700; }
+.cita.md { font-size: 46px; }
+.cita .ref { display: block; margin-top: 18px; font-family: "Arial", sans-serif; font-weight: 700;
+  font-size: 28px; letter-spacing: 0.1em; color: var(--oro); }
+.s { font-family: "Arial", sans-serif; font-weight: 500; font-size: 30px; line-height: 1.35; color: var(--tenue); }
+.s b { color: var(--tiza); font-weight: 700; }
+.grande { font-family: "Georgia", serif; font-weight: 700; font-size: 150px; line-height: 1; letter-spacing: -0.02em; }
+
+/* Lo que la investigación marca como propio, y lo que viene de fuera de la JW. */
+.propio, .externa {
+  display: inline-block; align-self: flex-start; padding: 5px 20px 3px; border-radius: 14px;
+  font-family: "cursive", cursive; font-weight: 700; font-size: 40px; line-height: 1.1;
+}
+.propio { border: 3px dashed var(--cielo); color: var(--cielo); }
+.externa { border: 3px dotted var(--rosa); color: var(--rosa); }
+
+/* Tarjeta de definición: el término y qué es. */
+.def { align-self: stretch; border: 4px solid var(--cielo); border-radius: 26px; padding: 24px 34px 28px; background: rgba(23, 33, 43, 0.93); }
+.def .t { font-family: "Arial", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cielo); }
+.def .t i { font-family: "Georgia", serif; font-style: italic; font-weight: 600; letter-spacing: 0.02em; text-transform: none; color: var(--tiza); margin-left: 12px; font-size: 32px; }
+.def .x { font-family: "cursive", cursive; font-weight: 700; font-size: 62px; line-height: 1.05; margin-top: 8px; }
+.def .x b { color: var(--oro); }
+.def .s { margin-top: 12px; }
+
+/* Ilustraciones y fotos de la JW: marco sencillo. */
+.ilus { position: absolute; overflow: hidden; border-radius: 22px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
+.ilus .kb { position: absolute; inset: 0; }
+.ilus img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pie-img { position: absolute; font-size: 24px; line-height: 1.3; color: var(--tenue); }
+.pie-img i { color: var(--tiza); }
+
+/* Mapas: cámara sobre la imagen real y trazos encima, en coordenadas de la imagen. */
+.mapa { position: absolute; overflow: hidden; background: #cfd9c4; }
+.mapa .cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.mapa .cam img, .mapa .cam svg { position: absolute; left: 0; top: 0; display: block; }
+/* Panel translúcido sobre el mapa. */
+.panel { position: absolute; top: 0; bottom: 0; right: 0; width: 910px;
+  background: linear-gradient(90deg, rgba(23, 33, 43, 0) 0%, rgba(23, 33, 43, 0.93) 9%, rgba(23, 33, 43, 0.97) 100%); }
+/* Rótulos que se leen sobre el mapa. */
+.halo { paint-order: stroke; stroke: rgba(255, 255, 255, 0.94); stroke-linejoin: round; }
+.halo-o { paint-order: stroke; stroke: rgba(17, 25, 33, 0.92); stroke-linejoin: round; }
+.ruta-h { fill: none; stroke: rgba(255, 255, 255, 0.9); stroke-linecap: round; stroke-linejoin: round; }
+.ruta { fill: none; stroke: #b8430f; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Trazos de pizarra. */
+.trazo { fill: none; stroke: var(--tiza); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Tarjeta de capítulo: "Génesis 24" y su subtítulo, a pantalla completa. */
+.capcard { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.capcard .num { font-family: "Georgia", serif; font-weight: 700; font-size: 190px; line-height: 1; letter-spacing: -0.02em; }
+.capcard svg { display: block; margin: 18px auto 0; width: 820px; height: 40px; }
+.capcard svg path { fill: none; stroke: var(--oro); stroke-width: 7; stroke-linecap: round; }
+.capcard .sub { font-family: "cursive", cursive; font-weight: 700; font-size: 92px; line-height: 1.05; color: var(--oro); margin-top: 22px; }
+.capcard .edad { font-family: "Arial", sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tenue); margin-top: 30px; }
+
+/* Tablas comparativas a lo ancho: una fila entra con la voz. */
+.tabla { position: absolute; left: 80px; right: 80px; display: grid; column-gap: 26px; row-gap: 16px; align-items: stretch; }
+.tabla .h { font-family: "Arial", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--oro); padding: 0 6px 10px; border-bottom: 4px solid rgba(233, 191, 96, 0.5); display: flex; align-items: flex-end; }
+.tabla .rt { font-family: "Arial", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tenue); display: flex; align-items: center; }
+.tabla .c { font-family: "Georgia", serif; font-weight: 500; font-size: 38px; line-height: 1.18; padding: 16px 22px; border-radius: 18px; background: rgba(10, 16, 22, 0.42); border: 3px solid rgba(241, 233, 216, 0.10); display: flex; flex-direction: column; justify-content: center; }
+.tabla .c small { display: block; font-family: "Arial", sans-serif; font-weight: 600; font-size: 22px; color: var(--tenue); margin-top: 6px; letter-spacing: 0.04em; }
+.tabla .c.dif { border-color: var(--rojo); }
+.tabla .c.si { border-color: rgba(233, 191, 96, 0.7); }
+
+/* Tarjetas de dato grande. */
+.dato { border-radius: 26px; background: rgba(10, 16, 22, 0.42); border: 3px solid rgba(241, 233, 216, 0.12); padding: 22px 30px; }
+.dato .v { font-family: "Georgia", serif; font-weight: 700; font-size: 84px; line-height: 1; color: var(--oro); }
+.dato .v small { font-size: 44px; }
+.dato .k { font-family: "cursive", cursive; font-weight: 700; font-size: 50px; line-height: 1.05; margin-top: 8px; }
+.dato .s { font-size: 24px; margin-top: 8px; }
+
+/* Secciones de lecciones: se tienen que ver distintas al resto (el verde solo va aquí). */
+.seccion { position: absolute; left: 90px; right: 90px; top: 50px; display: flex; align-items: baseline; gap: 34px; }
+.seccion .r { font-family: "Arial", sans-serif; font-weight: 800; font-size: 32px; letter-spacing: 0.2em; color: var(--verde); text-transform: uppercase; white-space: nowrap; }
+.seccion .t { font-family: "Georgia", serif; font-weight: 700; font-size: 76px; line-height: 1; }
+.seccion-linea { position: absolute; left: 90px; right: 90px; top: 150px; height: 20px; }
+.seccion-linea path { fill: none; stroke: var(--verde); stroke-width: 6; stroke-linecap: round; }
+.leccion { position: absolute; left: 90px; right: 90px; top: 190px; bottom: 70px; display: grid; grid-template-columns: 190px 1fr; column-gap: 50px; align-content: center; }
+.leccion .n { font-family: "Georgia", serif; font-weight: 700; font-size: 200px; line-height: 0.85; color: var(--verde); text-align: right; }
+.leccion .cuerpo { display: flex; flex-direction: column; gap: 40px; }
+.leccion .l { font-family: "cursive", cursive; font-weight: 700; font-size: 92px; line-height: 1.04; }
+.leccion .l b { color: var(--oro); }
+.leccion .p { border-left: 10px solid var(--oro); padding: 8px 0 10px 40px; font-family: "Georgia", serif; font-style: italic; font-weight: 500; font-size: 58px; line-height: 1.2; color: var(--oro); }
+.leccion .p .k { display: block; font-family: "Arial", sans-serif; font-style: normal; font-weight: 800; font-size: 28px; letter-spacing: 0.18em; color: var(--tenue); margin-bottom: 12px; }
+.leccion .s { font-size: 28px; }
+
+
+.ilus.img-c { left: 70px; top: 130px; width: 640px; height: 850px; }
+.pie-c { left: 70px; top: 990px; width: 700px; font-size: 22px; }
+.fa .col { left: 790px; right: 80px; width: auto; top: 130px; }
+.perd { display: flex; flex-direction: column; gap: 18px; }
+.perd .fila { display: grid; grid-template-columns: 220px 1fr; align-items: center; column-gap: 20px; }
+.perd .nom { font-family: "cursive", cursive; font-weight: 700; font-size: 60px; }
+.perd .barra { height: 64px; border-radius: 14px; background: rgba(241,233,216,0.08); position: relative; overflow: hidden; }
+.perd .barra .v { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 14px; transform-origin: 0 50%; }
+.perd .barra .n { position: absolute; left: 20px; top: 8px; font-family: "Arial", sans-serif; font-weight: 800; font-size: 40px; color: #17212b; }
+.fb .arriba { position: absolute; left: 80px; right: 80px; top: 110px; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 26px; }
+.fb .dato .v { font-size: 88px; }
+.fb .dato .k { font-size: 46px; }
+.hilera { position: absolute; left: 60px; top: 350px; width: 1800px; height: 520px; }
+.hilera svg { width: 1800px; height: 520px; }
+.tanque { fill: rgba(241,233,216,0.06); stroke: rgba(241,233,216,0.25); stroke-width: 3; }
+.nivel { fill: url(#e05-agua); }
+.lts { font-family: "Arial", sans-serif; font-weight: 800; font-size: 30px; fill: var(--tiza); text-anchor: middle; }
+.fb .abajo { position: absolute; left: 80px; right: 80px; bottom: 34px; display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; }
+.fb .abajo .m { font-size: 58px; max-width: 1100px; }
+
+}
+</style>
+<div id="escena-05" data-composition-id="escena-05" data-width="1920" data-height="1080">
+<div class="contenido">
+<div class="fase fa">
+  <div class="cab"><span class="cap">Génesis 24</span><span>versículos 19 y 20</span></div>
+  <div class="ilus img-c"><div class="kb"><img src="assets/img/camello.svg" /></div></div>
+  <div class="pie-img pie-c">“Camello árabe, bien preparado para la vida en el desierto”. Foto: Perspicacia, “Camello”, pág. 400</div>
+  <div class="col">
+    <div class="b a1"><div class="m oro">probablemente el dromedario</div><div class="m">no guarda el agua en la giba</div><div class="s">Perspicacia, vol. 1, “Camello”, págs. 399, 400</div></div>
+    <div class="b a2">
+      <div class="rotulo" style="font-size:28px;color:var(--tenue)">AGUA QUE PUEDE PERDER, SEGÚN SU PESO</div>
+      <div class="perd">
+        <div class="fila"><div class="nom" style="color:var(--oro)">el camello</div><div class="barra"><div class="v v1" style="width:100%;background:var(--oro)"></div><div class="n">25 %</div></div></div>
+        <div class="fila"><div class="nom">el hombre</div><div class="barra"><div class="v v2" style="width:48%;background:var(--tiza)"></div><div class="n">12 %</div></div></div>
+      </div>
+      <div class="m cielo">en el pozo, bebe de una vez todo lo que perdió: <b>unos 95 litros</b></div>
+      <div class="s">La Atalaya, núm. 3 de 2016, págs. 12, 13 · Perspicacia: “tanto como 135 l. en diez minutos”</div>
+    </div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="cab"><span class="cap">Génesis 24</span><span>diez camellos sedientos</span></div>
+  <div class="arriba">
+    <div class="dato d1"><div class="v"><span class="c-l">0</span> <small>L</small></div><div class="k">litros</div></div>
+    <div class="dato d2"><div class="v">15 <small>L</small></div><div class="k">un jarro</div><span class="propio">supuesto</span></div>
+    <div class="dato d3"><div class="v"><span class="c-v">0</span></div><div class="k">viajes al agua</div></div>
+    <div class="dato d4"><div class="v"><span class="c-m">0</span> <small>min</small></div><div class="k">a 2 min por viaje</div><span class="propio">supuesto</span></div>
+  </div>
+  <div class="hilera"><svg viewBox="0 0 1800 520">
+    <defs>
+      <linearGradient id="e05-agua" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd0ff"/><stop offset="1" stop-color="#2d6fb6"/></linearGradient>
+      <linearGradient id="e05-piel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9b27a"/><stop offset="1" stop-color="#a47a45"/></linearGradient>
+    </defs>
+    <g class="cams"></g>
+    <rect x="20" y="470" width="1760" height="34" rx="12" fill="#6d5b43"/>
+    <text x="900" y="516" text-anchor="middle" style="font-family:Arial,sans-serif;font-weight:600;font-size:22px;fill:#e9dcc2">bebedero (24:20)</text>
+  </svg></div>
+  <div class="abajo">
+    <div class="m oro ab1">parece que no tenían tanta sed… pero ella no lo sabía</div>
+    <div class="s ab2" style="text-align:right;max-width:640px">“no hay duda de que las mujeres de aquel tiempo sabían cuánta agua podía beber un camello” · La Atalaya, 1 de julio de 1989, pág. 25</div>
+  </div>
+</div>
+</div>
+</div>
+<script>
+(function () {
+const ID = "escena-05";
+const DUR = 48.744;
+const LEAD = 0.6;
+const W = [{"w":"El","t":0.703,"d":0.197},{"w":"camello","t":0.913,"d":0.408},{"w":"de","t":1.334,"d":0.105},{"w":"la","t":1.453,"d":0.079},{"w":"Biblia","t":1.545,"d":0.395},{"w":"es","t":1.953,"d":0.132},{"w":"probablemente","t":2.097,"d":0.711},{"w":"el","t":2.821,"d":0.079},{"w":"dromedario","t":2.913,"d":0.684},{"w":"No","t":4.508,"d":0.211},{"w":"guarda","t":4.732,"d":0.421},{"w":"agua","t":5.166,"d":0.224},{"w":"en","t":5.403,"d":0.053},{"w":"la","t":5.468,"d":0.079},{"w":"giba","t":5.561,"d":0.395},{"w":"como","t":6.205,"d":0.25},{"w":"se","t":6.468,"d":0.158},{"w":"cree","t":6.639,"d":0.276},{"w":"aguanta","t":7.205,"d":0.474},{"w":"porque","t":7.692,"d":0.316},{"w":"retiene","t":8.021,"d":0.434},{"w":"casi","t":8.468,"d":0.355},{"w":"toda","t":8.837,"d":0.303},{"w":"el","t":9.153,"d":0.118},{"w":"agua","t":9.284,"d":0.237},{"w":"que","t":9.534,"d":0.132},{"w":"bebe","t":9.679,"d":0.329},{"w":"y","t":10.297,"d":0.092},{"w":"puede","t":10.403,"d":0.303},{"w":"perder","t":10.718,"d":0.408},{"w":"agua","t":11.139,"d":0.184},{"w":"equivalente","t":11.337,"d":0.618},{"w":"al","t":11.968,"d":0.079},{"w":"veinticinco","t":12.061,"d":0.684},{"w":"por","t":12.758,"d":0.197},{"w":"ciento","t":12.968,"d":0.368},{"w":"de","t":13.35,"d":0.105},{"w":"su","t":13.468,"d":0.145},{"w":"peso","t":13.626,"d":0.421},{"w":"Por","t":14.955,"d":0.197},{"w":"eso","t":15.166,"d":0.329},{"w":"en","t":15.745,"d":0.145},{"w":"un","t":15.903,"d":0.145},{"w":"pozo","t":16.061,"d":0.408},{"w":"bebe","t":16.811,"d":0.224},{"w":"de","t":17.047,"d":0.132},{"w":"una","t":17.192,"d":0.211},{"w":"vez","t":17.416,"d":0.276},{"w":"todo","t":17.705,"d":0.276},{"w":"lo","t":17.995,"d":0.105},{"w":"que","t":18.113,"d":0.118},{"w":"perdió","t":18.245,"d":0.461},{"w":"unos","t":18.995,"d":0.289},{"w":"noventa","t":19.297,"d":0.342},{"w":"y","t":19.653,"d":0.039},{"w":"cinco","t":19.705,"d":0.382},{"w":"litros","t":20.1,"d":0.461},{"w":"según","t":20.811,"d":0.421},{"w":"La","t":21.245,"d":0.079},{"w":"Atalaya","t":21.337,"d":0.592},{"w":"Hagamos","t":22.837,"d":0.526},{"w":"la","t":23.376,"d":0.079},{"w":"cuenta","t":23.468,"d":0.474},{"w":"Diez","t":24.85,"d":0.316},{"w":"camellos","t":25.179,"d":0.539},{"w":"muy","t":25.732,"d":0.171},{"w":"sedientos","t":25.916,"d":0.605},{"w":"eran","t":26.534,"d":0.263},{"w":"cerca","t":26.811,"d":0.355},{"w":"de","t":27.179,"d":0.118},{"w":"mil","t":27.311,"d":0.211},{"w":"litros","t":27.534,"d":0.566},{"w":"Supongamos","t":29.008,"d":0.75},{"w":"un","t":29.771,"d":0.132},{"w":"jarro","t":29.916,"d":0.303},{"w":"de","t":30.232,"d":0.118},{"w":"quince","t":30.363,"d":0.395},{"w":"litros","t":30.771,"d":0.461},{"w":"y","t":31.245,"d":0.053},{"w":"dos","t":31.311,"d":0.25},{"w":"minutos","t":31.574,"d":0.474},{"w":"por","t":32.061,"d":0.171},{"w":"viaje","t":32.245,"d":0.395},{"w":"más","t":32.982,"d":0.211},{"w":"de","t":33.205,"d":0.079},{"w":"sesenta","t":33.297,"d":0.5},{"w":"viajes","t":33.811,"d":0.487},{"w":"y","t":34.311,"d":0.066},{"w":"más","t":34.389,"d":0.289},{"w":"de","t":34.692,"d":0.066},{"w":"dos","t":34.771,"d":0.263},{"w":"horas","t":35.047,"d":0.474},{"w":"Parece","t":36.429,"d":0.395},{"w":"que","t":36.837,"d":0.105},{"w":"los","t":36.955,"d":0.158},{"w":"camellos","t":37.126,"d":0.539},{"w":"no","t":37.679,"d":0.171},{"w":"tenían","t":37.863,"d":0.421},{"w":"tanta","t":38.297,"d":0.342},{"w":"sed","t":38.653,"d":0.303},{"w":"pero","t":39.258,"d":0.224},{"w":"Rebeca","t":39.495,"d":0.421},{"w":"no","t":39.929,"d":0.211},{"w":"lo","t":40.153,"d":0.092},{"w":"sabía","t":40.258,"d":0.408},{"w":"cuando","t":40.679,"d":0.303},{"w":"se","t":40.995,"d":0.118},{"w":"ofreció","t":41.126,"d":0.539},{"w":"Y","t":42.574,"d":0.132},{"w":"las","t":42.718,"d":0.211},{"w":"mujeres","t":42.942,"d":0.434},{"w":"de","t":43.389,"d":0.066},{"w":"aquel","t":43.468,"d":0.316},{"w":"tiempo","t":43.797,"d":0.355},{"w":"sabían","t":44.166,"d":0.421},{"w":"cuánta","t":44.6,"d":0.408},{"w":"agua","t":45.021,"d":0.25},{"w":"podía","t":45.284,"d":0.382},{"w":"beber","t":45.679,"d":0.303},{"w":"un","t":45.995,"d":0.105},{"w":"camello","t":46.113,"d":0.526}];
+// Librería común de las escenas. El constructor la pega dentro de una función que ya
+// define ID (id de la composición), DUR (duración de la escena), LEAD (silencio antes de la
+// voz) y W (palabras de la voz con su tiempo, ya desplazadas por LEAD).
+const root = document.getElementById(ID);
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+// Acepta un selector, un elemento, una NodeList o una lista mezclada de cualquiera de ellos.
+const el = (x) => (typeof x === "string" ? $$(x) : Array.isArray(x) ? x.flatMap((y) => el(y)) : x instanceof NodeList ? Array.from(x) : [x]);
+const tl = gsap.timeline({ paused: true });
+
+// ---------- sincronía con la voz ----------
+const norm = (s) =>
+  s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9ñ]/g, "");
+const WN = W.map((w) => norm(w.w));
+const trozos = (frase) => frase.split(/[\s\-]+/).map(norm).filter(Boolean);
+function buscar(frase, despues) {
+  const p = trozos(frase);
+  for (let i = 0; i < WN.length; i++) {
+    if (W[i].t < (despues || 0) - 0.001) continue;
+    let ok = true;
+    for (let k = 0; k < p.length; k++) if (WN[i + k] !== p[k]) { ok = false; break; }
+    if (ok) return i;
+  }
+  throw new Error(ID + ': no encuentro "' + frase + '" después de ' + despues);
+}
+// Momento en que la voz empieza a decir la frase (primera vez después de `despues`).
+function at(frase, despues) { return W[buscar(frase, despues)].t; }
+// Momento en que la voz termina de decir la frase.
+function fin(frase, despues) {
+  const i = buscar(frase, despues);
+  const w = W[i + trozos(frase).length - 1];
+  return w.t + w.d;
+}
+const FIN_VOZ = W.length ? W[W.length - 1].t + W[W.length - 1].d : DUR;
+
+// ---------- movimientos ----------
+// Todos los elementos que se revelan empiezan ocultos por CSS (.oc, .esc, trazos) y se
+// animan con immediateRender:false, así cada cuadro depende solo del tiempo.
+const IR = { immediateRender: false };
+// El primer movimiento que revela un elemento lo deja oculto desde el cuadro cero.
+const _ocultos = new WeakSet();
+function inicial(els, props) {
+  els.forEach((e) => { if (!_ocultos.has(e)) { _ocultos.add(e); gsap.set(e, props); } });
+  return els;
+}
+function entra(x, t, o = {}) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0, y: o.y ?? 36, x: o.x ?? 0, scale: o.s ?? 1 },
+    { opacity: 1, y: 0, x: 0, scale: 1, duration: o.d ?? 0.6, ease: o.ease ?? "power3.out", stagger: o.st ?? 0, ...IR }, t);
+}
+function sale(x, t, o = {}) {
+  tl.fromTo(el(x), { opacity: 1 }, { opacity: 0, y: o.y ?? -24, duration: o.d ?? 0.45, ease: "power2.in", stagger: o.st ?? 0, ...IR }, t);
+}
+function aparece(x, t, d = 0.5, hasta = 1) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0 }, { opacity: hasta, duration: d, ease: "none", ...IR }, t);
+}
+function atenua(x, t, hasta = 0.25, d = 0.5) {
+  tl.to(el(x), { opacity: hasta, duration: d, ease: "power1.inOut" }, t);
+}
+function desaparece(x, t, d = 0.45) {
+  tl.to(el(x), { opacity: 0, duration: d, ease: "none" }, t);
+}
+function salta(x, t, o = {}) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0, scale: o.desde ?? 0.4, rotation: o.r ?? 0, transformOrigin: "50% 50%" },
+    { opacity: 1, scale: 1, rotation: 0, duration: o.d ?? 0.55, ease: o.ease ?? "back.out(1.8)", stagger: o.st ?? 0, ...IR }, t);
+}
+// Escritura a mano: se descubre de izquierda a derecha, como si la tiza avanzara.
+function escribe(x, t, d = 0.8, o = {}) {
+  tl.fromTo(inicial(el(x), { clipPath: "inset(-30% 103% -30% -3%)" }), { opacity: 1, clipPath: "inset(-30% 103% -30% -3%)" },
+    { clipPath: "inset(-30% -3% -30% -3%)", opacity: 1, duration: d, ease: "none", stagger: o.st ?? 0, ...IR }, t);
+}
+// Trazo de tiza: la línea se dibuja en vivo.
+const _largos = new Map();
+// Las escenas que no están en pantalla al cargar están ocultas, y ahí getTotalLength()
+// devuelve 0. Se mide una copia del trazo dentro de un SVG auxiliar que sí se dibuja.
+function sonda(p) {
+  let s = document.getElementById("sonda-trazos");
+  if (!s) {
+    s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    s.id = "sonda-trazos";
+    s.setAttribute("style", "position:fixed;left:0;top:0;width:10px;height:10px;visibility:hidden;pointer-events:none");
+    document.body.appendChild(s);
+  }
+  const c = p.cloneNode(false);
+  s.appendChild(c);
+  return c;
+}
+function largo(p) {
+  const c = sonda(p);
+  const L = c.getTotalLength();
+  c.remove();
+  return L;
+}
+function preparaTrazos(x) {
+  el(x).forEach((p) => {
+    if (_largos.has(p)) return;
+    const L = largo(p);
+    _largos.set(p, L);
+    p.style.strokeDasharray = L + " " + (L + 2);
+    p.style.strokeDashoffset = L;
+  });
+}
+function traza(x, t, d = 1, o = {}) {
+  const ps = inicial(el(x), { opacity: 0 });
+  preparaTrazos(ps);
+  tl.fromTo(ps, { strokeDashoffset: (i, p) => _largos.get(p), opacity: 1 },
+    { strokeDashoffset: 0, opacity: 1, duration: d, ease: o.ease ?? "power1.inOut", stagger: o.st ?? 0, ...IR }, t);
+}
+// Un objeto que recorre un trazo mientras se dibuja (Agar, los reyes, Abrán).
+// Los puntos del camino se miden una sola vez al construir; durante el render solo se interpola.
+function medirCamino(path, N = 400) {
+  const p = sonda(el(path)[0]);
+  const L = p.getTotalLength();
+  const pts = [];
+  for (let i = 0; i <= N; i++) { const q = p.getPointAtLength((L * i) / N); pts.push([q.x, q.y]); }
+  p.remove();
+  return pts;
+}
+function ponEnCamino(objs, pts, k) {
+  const N = pts.length - 1;
+  const f = Math.min(N, Math.max(0, k * N)), i = Math.floor(f), r = f - i, j = Math.min(N, i + 1);
+  const x = pts[i][0] + (pts[j][0] - pts[i][0]) * r, y = pts[i][1] + (pts[j][1] - pts[i][1]) * r;
+  objs.forEach((e) => e.setAttribute("transform", "translate(" + x.toFixed(2) + " " + y.toFixed(2) + ")"));
+}
+// Solo el primer recorrido de un objeto fija su posición inicial; los siguientes
+// arrancan donde terminó el anterior.
+const _colocados = new WeakSet();
+function recorre(obj, path, t, d, o = {}) {
+  const pts = typeof path === "string" || path instanceof Element ? medirCamino(path) : path;
+  const objs = el(obj);
+  const st = { k: o.desde ?? 0 };
+  if (!objs.some((e) => _colocados.has(e))) { objs.forEach((e) => _colocados.add(e)); ponEnCamino(objs, pts, st.k); }
+  tl.to(st, { k: o.hasta ?? 1, duration: d, ease: o.ease ?? "power1.inOut", onUpdate: () => ponEnCamino(objs, pts, st.k) }, t);
+}
+function cuenta(x, desde, hasta, t, d, fmt = (v) => Math.round(v).toString()) {
+  const e = el(x)[0];
+  const st = { v: desde };
+  if (!_colocados.has(e)) { _colocados.add(e); e.textContent = fmt(desde); }
+  tl.to(st, { v: hasta, duration: d, ease: "power1.out", onUpdate: () => (e.textContent = fmt(st.v)) }, t);
+}
+function camara(x, t, d, props, ease = "power2.inOut") {
+  tl.to(el(x), { ...props, duration: d, ease }, t);
+}
+// Paneo lento sobre una ilustración (Ken Burns), sin salirse del marco.
+function kb(x, t0, t1, desde, hasta) {
+  tl.fromTo(el(x), { scale: desde.s ?? 1.08, xPercent: desde.x ?? 0, yPercent: desde.y ?? 0 },
+    { scale: hasta.s ?? 1.0, xPercent: hasta.x ?? 0, yPercent: hasta.y ?? 0, duration: Math.max(0.1, t1 - t0), ease: "none" }, t0);
+}
+const fmtMiles = (v) => Math.round(v).toLocaleString("es-CO");
+
+// ---------- piezas repetidas ----------
+// Filtro de tiza para los trazos: borde levemente irregular.
+root.insertAdjacentHTML("afterbegin",
+  '<svg width="0" height="0" style="position:absolute"><defs>' +
+  '<filter id="tz-' + ID + '" x="-5%" y="-5%" width="110%" height="110%">' +
+  '<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>' +
+  '<feDisplacementMap in="SourceGraphic" scale="3"/></filter></defs></svg>');
+const TIZA = "url(#tz-" + ID + ")";
+
+// Tarjeta de capítulo: "Jeremías 37" y su subtítulo.
+function capitulo(x, t0, t1) {
+  const c = el(x)[0];
+  entra(c.querySelector(".num"), t0, { y: 60, d: 0.8 });
+  escribe(c.querySelector(".sub"), t0 + 0.5, 0.9);
+  traza(c.querySelectorAll("path"), t0 + 0.3, 0.8);
+  if (c.querySelector(".edad")) entra(c.querySelector(".edad"), t0 + 0.9, { y: 20 });
+  sale(c, t1, { y: -60, d: 0.6 });
+}
+
+// Entrada y salida de toda la escena: el fondo es común, solo se funde el contenido.
+function marco() {
+  tl.fromTo($(".contenido"), { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none" }, 0);
+  tl.to($(".contenido"), { opacity: 0, duration: 0.5, ease: "none" }, DUR - 0.55);
+}
+
+// Bloques de texto que se reemplazan en el mismo lugar: cada uno entra en su momento y sale
+// justo antes del siguiente. Si `hasta` es null, el último se queda.
+function secuencia(lista, hasta = null, o = {}) {
+  lista.forEach(([s, t], i) => {
+    entra(s, t, { y: o.y ?? 26, d: o.d ?? 0.55 });
+    const sig = i < lista.length - 1 ? lista[i + 1][1] : hasta;
+    if (sig != null) sale(s, sig - 0.4, { d: 0.35 });
+  });
+}
+// Pone marcado SVG dentro de un elemento de la escena.
+function pinta(sel, svg) { $(sel).innerHTML = svg; }
+
+// ---------- mapas ----------
+// Encuadre de cámara: lleva la región {x, y, w, h} de la imagen del mapa a la ventana
+// {x, y, w, h} de la pantalla (relativa al contenedor .mapa), sin deformarla.
+function encuadre(r, v) {
+  const s = Math.min(v.w / r.w, v.h / r.h);
+  return { scale: +s.toFixed(4), x: +(v.x + (v.w - r.w * s) / 2 - r.x * s).toFixed(1), y: +(v.y + (v.h - r.h * s) / 2 - r.y * s).toFixed(1) };
+}
+// Latido de un marcador: crece y vuelve, un número finito de veces.
+function late(x, t, o = {}) {
+  tl.fromTo(el(x), { scale: 1 }, { scale: o.s ?? 1.35, transformOrigin: "50% 50%", duration: o.d ?? 0.35, yoyo: true, repeat: o.n ?? 3, ease: "power1.inOut", immediateRender: false }, t);
+}
+
+// ---------- lecciones ----------
+// Cada lección entra en su momento y sale antes de la siguiente; el número cuenta.
+function lecciones(lista) {
+  const cab = $(".seccion");
+  if (cab) { entra(cab, 0.3, { y: -20 }); traza(".seccion-linea path", 0.6, 1.0); }
+  secuencia(lista, null, { y: 30, d: 0.6 });
+}
+
+
+kb(".img-c .kb", 0, at("Hagamos la cuenta"), { s: 1.1, x: 2, y: -2 }, { s: 1.0 });
+secuencia([[".a1", 0.5], [".a2", at("aguanta porque")]], at("Hagamos la cuenta") - 0.2);
+tl.fromTo($$(".perd .v"), { scaleX: 0 }, { scaleX: 1, duration: 1.2, stagger: 0.5, ease: "power2.out", immediateRender: false }, at("aguanta porque") + 0.5);
+tl.set($$(".perd .v"), { scaleX: 0 }, 0);
+
+// Diez camellos con su "tanque" encima: cada uno se llena hasta 95 litros.
+let c = "";
+for (let i = 0; i < 10; i++) {
+  const x = 40 + i * 174;
+  c += `<g transform="translate(${x} 0)">
+    <rect class="tanque" x="44" y="20" width="70" height="250" rx="12"/>
+    <rect class="nivel nv${i}" x="44" y="20" width="70" height="250" rx="12"/>
+    <text class="lts lt${i}" x="79" y="300">95 L</text>
+    <g transform="translate(0 330)">
+      <path d="M 20 70 C 18 42 46 30 64 32 C 80 6 110 6 122 30 C 132 36 138 42 142 48 L 148 20 C 150 8 160 4 170 8 L 180 14 L 178 22 L 164 22 C 160 32 158 48 156 60 C 154 72 146 80 138 82 L 136 128 L 128 128 L 126 88 L 118 88 L 116 128 L 108 128 L 106 88 L 72 88 L 70 128 L 62 128 L 60 88 L 52 88 L 50 128 L 42 128 L 40 86 C 30 84 22 80 20 70 Z" fill="url(#e05-piel)" stroke="#6d4a22" stroke-width="3"/>
+    </g></g>`;
+}
+pinta(".cams", c);
+const tB = at("Hagamos la cuenta") - 0.3;
+desaparece(".fa", tB, 0.4);
+aparece(".fb", tB + 0.3, 0.4);
+entra(".d1", at("Diez camellos"), { y: 20 });
+const niveles = $$(".nivel");
+tl.set(niveles, { scaleY: 0, transformOrigin: "50% 100%" }, 0);
+tl.to(niveles, { scaleY: 1, duration: 0.6, stagger: 0.28, ease: "power1.inOut" }, at("Diez camellos") + 0.2);
+aparece($$(".lts"), at("Diez camellos") + 0.4, 0.4);
+cuenta(".c-l", 0, 950, at("Diez camellos") + 0.2, 3.1, (v) => Math.round(v).toLocaleString("es-CO"));
+entra(".d2", at("Supongamos"), { y: 20 });
+entra(".d3", at("más de sesenta"), { y: 20 });
+cuenta(".c-v", 0, 64, at("más de sesenta"), 1.2);
+entra(".d4", at("y más de dos horas"), { y: 20 });
+cuenta(".c-m", 0, 128, at("y más de dos horas"), 1.2);
+entra(".ab1", at("Parece que los camellos"), { y: 20 });
+entra(".ab2", at("Y las mujeres"), { y: 20 });
+
+marco();
+window.__timelines[ID] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

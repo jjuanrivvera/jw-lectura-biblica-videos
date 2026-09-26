@@ -1,0 +1,109 @@
+<style>
+.odre { position: absolute; left: 60px; top: 110px; width: 1060px; height: 900px; }
+.odre svg { width: 1060px; height: 900px; }
+.et { font-family: "cursive", cursive; font-weight: 700; }
+.guia { fill: none; stroke: var(--tiza); stroke-width: 3; }
+.mapa { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 3840px; height: 2080px; }
+.pie-mapa { position: absolute; left: 24px; bottom: 18px; padding: 8px 16px; border-radius: 10px; background: rgba(15,22,30,0.82); font-size: 22px; color: var(--tiza); }
+.ruta { fill: none; stroke: #b3261e; stroke-width: 12; stroke-linecap: round; stroke-dasharray: 2 22; }
+.ruta2 { fill: none; stroke: #1f5fa8; stroke-width: 12; stroke-linecap: round; stroke-dasharray: 26 18; }
+.anillo { fill: none; stroke: #1f5fa8; stroke-width: 10; }
+.tiro { position: absolute; left: 40px; bottom: 70px; width: 620px; height: 300px; border-radius: 24px; background: rgba(23,33,43,0.94); box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
+.tiro svg { width: 620px; height: 300px; }
+.col { width: 680px; right: 70px; }
+</style>
+
+<div class="fase fa">
+  <div class="cab"><span class="cap">Génesis 21</span><span>versículos 14 al 21</span></div>
+  <div class="odre"><svg viewBox="0 0 1060 900">
+    <defs>
+      <radialGradient id="e18-piel" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#b98a58"/><stop offset="0.6" stop-color="#8a5f36"/><stop offset="1" stop-color="#5a3b20"/></radialGradient>
+      <linearGradient id="e18-cuello" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7a5230"/><stop offset="1" stop-color="#9c6d40"/></linearGradient>
+    </defs>
+    <ellipse cx="520" cy="800" rx="330" ry="36" fill="#000" opacity="0.3"/>
+    <path class="cuerpo" d="M 250 470 C 230 330 360 250 520 262 C 700 250 820 340 800 480 C 790 620 700 760 520 770 C 350 776 262 640 250 470 Z" fill="url(#e18-piel)" stroke="#4a3018" stroke-width="5"/>
+    <path d="M 300 400 C 360 340 470 320 560 330" fill="none" stroke="#d9b184" stroke-width="10" stroke-linecap="round" opacity="0.35"/>
+    <g class="patas" fill="#6e4a2a" stroke="#4a3018" stroke-width="4"><path d="M 300 330 C 250 300 220 270 214 236 L 246 226 C 262 262 292 282 330 300 Z"/><path d="M 760 340 C 810 300 836 266 842 232 L 810 224 C 794 262 768 282 736 304 Z"/><path d="M 330 720 C 290 760 268 790 262 820 L 296 826 C 306 796 330 770 362 744 Z"/><path d="M 730 720 C 770 760 792 790 798 820 L 764 826 C 754 796 730 770 698 744 Z"/></g>
+    <g fill="#c9a26e"><circle cx="228" cy="232" r="10"/><circle cx="828" cy="228" r="10"/><circle cx="279" cy="823" r="10"/><circle cx="781" cy="823" r="10"/></g>
+    <path class="costura" d="M 520 268 C 530 400 526 600 520 764" fill="none" stroke="#e8d3ad" stroke-width="5" stroke-dasharray="14 12"/>
+    <path d="M 470 272 C 460 220 470 170 490 130 L 550 130 C 570 170 580 220 570 272 Z" fill="url(#e18-cuello)" stroke="#4a3018" stroke-width="5"/>
+    <rect x="478" y="108" width="84" height="30" rx="10" fill="#caa46c" stroke="#4a3018" stroke-width="4"/>
+    <path d="M 470 160 C 500 170 540 170 572 160" fill="none" stroke="#e8d3ad" stroke-width="7"/>
+    <path class="correa" d="M 300 330 C 330 120 700 110 740 340" fill="none" stroke="#3b2a18" stroke-width="12" stroke-linecap="round"/>
+    <g class="e1"><path class="guia" d="M 800 520 L 900 520"/><text class="et" x="910" y="534" font-size="52" fill="var(--tiza)">piel entera</text></g>
+    <g class="e2"><path class="guia" d="M 526 600 L 900 640"/><text class="et" x="910" y="656" font-size="52" fill="var(--tiza)">cosida</text></g>
+    <g class="e3"><path class="guia" d="M 562 122 L 700 80"/><text class="et" x="710" y="92" font-size="52" fill="var(--tiza)">se tapaba</text></g>
+  </svg></div>
+</div>
+
+<div class="fase fb">
+  <div class="mapa">
+    <div class="cam">
+      <img src="assets/img/mapa-sur.svg" />
+      <svg viewBox="0 0 3840 2080">
+        <path class="ruta" d="M 2488 790 C 2440 870 2530 920 2460 990 C 2400 1050 2330 1030 2360 1110 C 2380 1160 2300 1180 2280 1130"/>
+        <text class="et t-sin halo" x="2560" y="1175" font-size="78" fill="#9c1f16" stroke-width="14">sin rumbo</text>
+        <path class="ruta2 r-paran" d="M 2270 1150 C 2200 1300 2120 1440 2040 1560"/>
+        <ellipse class="anillo a-paran" cx="1985" cy="1665" rx="250" ry="120"/>
+        <path class="ruta2 r-egipto" d="M 1760 1700 C 1400 1800 1000 1900 760 1960"/>
+        <text class="et t-esp halo" x="1250" y="1760" font-size="70" fill="#1f5fa8" text-anchor="middle" stroke-width="12">una esposa de Egipto</text>
+      </svg>
+    </div>
+    <div class="pie-mapa">Mapa esquemático original; las ubicaciones son orientativas.</div>
+  </div>
+  <div class="tiro"><svg viewBox="0 0 620 300">
+    <g transform="translate(90 170)"><circle cx="-24" cy="0" r="34" fill="#6f8f5a"/><circle cx="18" cy="-12" r="40" fill="#7fa066"/><circle cx="40" cy="14" r="28" fill="#5f7f4c"/><circle cx="10" cy="30" r="12" fill="var(--cielo)"/></g>
+    <path d="M 150 200 L 500 200" stroke="var(--oro)" stroke-width="6" stroke-dasharray="4 12" stroke-linecap="round"/>
+    <path d="M 480 186 L 504 200 L 480 214" fill="none" stroke="var(--oro)" stroke-width="6"/>
+    <circle cx="530" cy="200" r="14" fill="var(--rosa)"/>
+    <text class="et" x="330" y="160" font-size="50" fill="var(--oro)" text-anchor="middle">un tiro de arco</text>
+    <text class="et" x="90" y="270" font-size="36" fill="var(--tenue)" text-anchor="middle">el arbusto</text>
+    <text class="et" x="530" y="260" font-size="36" fill="var(--rosa)" text-anchor="middle">Agar</text>
+    <text x="310" y="60" font-family="Arial" font-weight="700" font-size="22" fill="var(--tenue)" text-anchor="middle">LA BIBLIA NO LA DA EN METROS</text>
+  </svg></div>
+  <div class="panel"></div>
+  <div class="cab sobre"><span class="cap">Génesis 21</span><span>versículos 14 al 21</span></div>
+</div>
+
+<div class="col">
+  <div class="b b1"><div class="cita">“pan y un odre de agua”<span class="ref">GÉNESIS 21:14</span></div><div class="s">La TNM aclara que Abrahán le puso “todas las cosas al hombro”</div></div>
+  <div class="b b2"><div class="def"><div class="t">Odre</div><div class="x">la piel entera de un animal, curtida y cosida, menos una abertura que se tapaba</div><div class="s">“El recipiente más generalizado en la antigüedad” · Perspicacia, “Odre”, pág. 518</div></div></div>
+  <div class="b b3"><div class="cita">“sin rumbo por el desierto de Beer-Seba”<span class="ref">GÉNESIS 21:14</span></div><div class="s">Allí caen “solo de 150 a 200 mm. de lluvia al año” · Perspicacia, “Beer-seba”, pág. 299</div></div>
+  <div class="b b4"><div class="m">“a una distancia de un tiro de arco”</div><div class="s">Génesis 21:16 · la distancia a la que los arqueros ponían los blancos · Perspicacia, “Agar”, pág. 64</div></div>
+  <div class="b b5"><div class="def"><div class="t">“El muchacho”</div><div class="x">tenía unos 19 años: la palabra hebrea se usa también para un joven</div><div class="s">Perspicacia, “Ismael”, pág. 1261</div></div></div>
+  <div class="b b6"><div class="cita">“Entonces <b>Dios oyó</b> al muchacho”<span class="ref">GÉNESIS 21:17</span></div><div class="def" style="padding:16px 26px"><div class="t">Ismael</div><div class="x" style="font-size:56px">“Dios Oye”</div></div></div>
+  <div class="b b7"><div class="m">Dios le abrió los ojos: <span style="color:var(--cielo)">un pozo de agua</span></div><div class="s">Génesis 21:19</div></div>
+  <div class="b b8"><div class="m">el desierto de Parán</div><div class="m oro" style="font-size:58px">arquero, con una esposa de Egipto</div><div class="s">Génesis 21:20, 21 · Parán: “una accidentada región montañosa de piedra caliza” · Perspicacia, “Parán”, pág. 597</div></div>
+</div>
+
+<script>
+// Fase A: el odre.
+aparece(".fa", 0.3, 0.6);
+tl.set([$(".e1"), $(".e2"), $(".e3")], { opacity: 0 }, 0);
+aparece(".e1", at("la piel entera"), 0.5);
+traza(".costura", at("cosida"), 1.2);
+aparece(".e2", at("cosida"), 0.5);
+aparece(".e3", at("se tapaba"), 0.5);
+tl.to($(".fa"), { opacity: 0, duration: 0.5 }, at("Agar e Ismael anduvieron") - 0.4);
+// Fase B: el desierto en el mapa.
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+const CAM = { beer: encuadre({ x: 1700, y: 400, w: 1500, h: 1300 }, V), sur: encuadre({ x: 520, y: 250, w: 2000, h: 1830 }, V) };
+tl.set($(".cam"), CAM.beer, 0);
+aparece(".fb", at("Agar e Ismael anduvieron") - 0.2, 0.6);
+tl.set([$(".t-sin"), $(".t-esp"), $(".tiro")], { opacity: 0 }, 0);
+traza(".ruta", at("sin rumbo"), 4.0, { ease: "none" });
+tl.set($(".ruta"), { strokeDasharray: "2 22", strokeDashoffset: 0 }, at("sin rumbo") + 4.05);
+aparece(".t-sin", at("sin rumbo") + 1.0, 0.5);
+entra(".tiro", at("un tiro de arco"), { y: 30 });
+tl.to($(".tiro"), { opacity: 0, duration: 0.5 }, at("El muchacho tenía") + 1.5);
+camara(".cam", at("Ismael creció") - 0.6, 2.2, CAM.sur);
+atenua(".t-sin", at("Ismael creció") - 0.6, 0, 0.5);
+traza(".r-paran", at("Ismael creció"), 1.4);
+tl.set($(".r-paran"), { strokeDasharray: "26 18", strokeDashoffset: 0 }, at("Ismael creció") + 1.45);
+traza(".a-paran", at("de Parán"), 0.8);
+traza(".r-egipto", at("le buscó esposa"), 1.4);
+tl.set($(".r-egipto"), { strokeDasharray: "26 18", strokeDashoffset: 0 }, at("le buscó esposa") + 1.45);
+aparece(".t-esp", at("en Egipto"), 0.5);
+secuencia([[".b1", 0.4], [".b2", at("Un odre era")], [".b3", at("Agar e Ismael anduvieron")], [".b4", at("un tiro de arco")], [".b5", at("El muchacho tenía")], [".b6", at("Entonces Dios oyó")], [".b7", at("Dios le abrió")], [".b8", at("Ismael creció")]]);
+</script>

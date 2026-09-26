@@ -1,0 +1,48 @@
+<style>
+.mapa { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 2862px; height: 3366px; }
+.pie-mapa { position: absolute; left: 24px; bottom: 18px; padding: 8px 16px; border-radius: 10px; background: rgba(15,22,30,0.82); font-size: 22px; color: var(--tiza); }
+.anillo { fill: none; stroke: #b8860b; stroke-width: 10; }
+.anillo.m { stroke: #1f5fa8; }
+.medida { stroke: #1f5fa8; stroke-width: 8; stroke-dasharray: 16 12; }
+.et { font-family: "cursive", cursive; font-weight: 700; }
+.col { width: 680px; right: 70px; }
+</style>
+
+<div class="mapa">
+  <div class="cam">
+    <img src="assets/img/mapa-recuadro.svg" />
+    <svg viewBox="0 0 2862 3366">
+      <circle class="anillo a-mac" cx="843" cy="1974" r="46"/>
+      <circle class="anillo m a-mam" cx="807" cy="1908" r="34"/>
+      <line class="medida" x1="815" y1="1935" x2="838" y2="1950"/>
+      <text class="et t-mam halo" x="620" y="1850" font-size="60" fill="#1f5fa8" text-anchor="end" stroke-width="12">unos 3 km al norte</text>
+    </svg>
+  </div>
+  <div class="pie-mapa">Mapa esquemático original; las ubicaciones son orientativas.</div>
+</div>
+<div class="panel"></div>
+<div class="cab sobre"><span class="cap">Génesis 23</span><span>versículos 3 al 9</span></div>
+
+<div class="col">
+  <div class="b b1"><div class="m">más de 60 años en Canaán...</div><div class="m oro">y no era dueño de nada</div><span class="propio">cálculo propio</span><div class="s">Perspicacia, “Abrahán”, pág. 31</div></div>
+  <div class="b b2"><div class="cita">“Yo soy <b>un extranjero e inmigrante</b> entre ustedes. Denme una propiedad de su territorio para usarla como lugar de sepultura.”<span class="ref">GÉNESIS 23:4</span></div></div>
+  <div class="b b3"><div class="def"><div class="t">Residente forastero</div><div class="x">vivía fuera de su tierra natal, con derechos civiles limitados</div><div class="s">Perspicacia, “Residente forastero”, pág. 825</div></div></div>
+  <div class="b b4"><div class="def"><div class="t">Los hijos de Het</div><div class="x">los hititas: descendientes de Het, hijo de Canaán</div><div class="s">Génesis 10:15 · Perspicacia, “Hititas”, pág. 1158</div></div><div class="cita" style="font-size:46px">“eres un <b>jefe escogido por Dios</b>”<span class="ref">GÉNESIS 23:6</span></div></div>
+  <div class="b b5"><div class="cita">“la cueva de Macpelá [...] está <b>al final de su campo</b>”<span class="ref">GÉNESIS 23:9</span></div></div>
+  <div class="b b6"><div class="def"><div class="t">Macpelá</div><div class="x">“La Duplicación”</div><div class="s">Quizás tenía una entrada doble o dos concavidades · Perspicacia, “Macpelá”, pág. 268</div></div></div>
+  <div class="b b7"><div class="m">la cueva, junto a Hebrón</div><div class="m cielo">Mamré, unos 3 km al norte</div><div class="s">Perspicacia, “Mamré”, pág. 287</div></div>
+</div>
+
+<script>
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+const CAM = { amplio: encuadre({ x: 150, y: 1150, w: 1600, h: 1600 }, V), cerca: encuadre({ x: 380, y: 1560, w: 1000, h: 800 }, V) };
+tl.set($(".cam"), CAM.amplio, 0);
+tl.set([$(".t-mam"), $(".medida")], { opacity: 0 }, 0);
+traza(".a-mac", at("la cueva de Macpelá"), 0.8);
+late(".a-mac", at("La Duplicación"), { s: 1.2, n: 3 });
+camara(".cam", at("En el mapa") - 0.4, 1.8, CAM.cerca);
+traza(".a-mam", at("y Mamré"), 0.6);
+aparece([".medida", ".t-mam"], at("tres kilómetros"), 0.5);
+secuencia([[".b1", 0.4], [".b2", at("Por eso les dice")], [".b3", at("Un residente")], [".b4", at("Los hijos de Het", 20)], [".b5", at("Abrahán pide")], [".b6", at("Macpelá significa")], [".b7", at("En el mapa")]]);
+</script>

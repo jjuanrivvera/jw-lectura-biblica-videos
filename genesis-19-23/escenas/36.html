@@ -1,0 +1,64 @@
+<style>
+.tit { position: absolute; left: 90px; right: 90px; top: 40px; display: flex; justify-content: space-between; align-items: baseline; }
+.tit .t { font-family: "Georgia", serif; font-weight: 700; font-size: 60px; }
+.tit .r { font-family: "Arial", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.18em; color: var(--tenue); }
+.tablero { position: absolute; left: 40px; top: 130px; width: 1840px; height: 930px; }
+.tablero svg { width: 1840px; height: 930px; }
+.cap-c { fill: #232f3b; stroke: rgba(239,231,214,0.3); stroke-width: 4; }
+.cap-n { font-family: "Georgia", serif; font-weight: 700; font-size: 50px; fill: var(--oro); text-anchor: middle; }
+.cap-k { font-family: "cursive", cursive; font-weight: 700; font-size: 40px; fill: var(--tiza); text-anchor: middle; }
+.guia-v { stroke: rgba(239,231,214,0.10); stroke-width: 3; }
+.hilo path { fill: none; stroke-width: 9; stroke-linecap: round; }
+.hilo circle { stroke: #17212b; stroke-width: 4; }
+.hilo text { font-family: "cursive", cursive; font-weight: 700; font-size: 48px; }
+.hilo .p { font-family: "Arial", sans-serif; font-weight: 700; font-size: 22px; fill: var(--cielo); letter-spacing: 0.08em; }
+.fin { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 20px; background: rgba(23,33,43,0.92); }
+.fin .t { font-family: "Georgia", serif; font-weight: 700; font-size: 120px; }
+.fin .t b { color: var(--oro); }
+.fin .s { font-size: 28px; }
+</style>
+
+<div class="tit"><div class="t">Los hilos que unen los cinco capítulos</div><div class="r">DE GÉNESIS 19 AL 23</div></div>
+<div class="tablero"><svg viewBox="0 0 1840 930">
+  <g class="cols"></g>
+  <g class="hilos"></g>
+</svg></div>
+<div class="fin"><div class="t">Génesis <b>19</b> al <b>23</b></div><div class="s">Textos bíblicos: Traducción del Nuevo Mundo (2019) · publicaciones leídas en wol.jw.org</div></div>
+
+<script>
+const X = { 19: 230, 20: 570, 21: 910, 22: 1250, 23: 1590 };
+const K = { 19: "Sodoma", 20: "Guerar", 21: "Beer-Seba", 22: "Moria", 23: "Hebrón" };
+let c = "";
+for (const n of [19, 20, 21, 22, 23]) c += `<line class="guia-v" x1="${X[n]}" y1="120" x2="${X[n]}" y2="910"/><g class="capc cc${n}"><circle class="cap-c" cx="${X[n]}" cy="60" r="56"/><text class="cap-n" x="${X[n]}" y="78">${n}</text><text class="cap-k" x="${X[n]}" y="160">${K[n]}</text></g>`;
+pinta(".cols", c);
+// Cada hilo une los capítulos en que aparece; la fila baja con cada uno.
+const H = [
+  ["h1", [19, 21, 22], "var(--oro)", "Lot “seguía tardándose”; Abrahán madrugó tres veces", "19:16, 27; 21:14; 22:3"],
+  ["h2", [19, 20], "var(--cielo)", "oró por otros, y Jehová respondió", "observación propia"],
+  ["h3", [19, 21], "var(--rosa)", "tsa·jáq: bromear, reír, burlarse", "19:14; 21:6, 9"],
+  ["h4", [21, 22], "var(--tiza)", "un ángel llama desde los cielos; unos ojos se abren", "observación sobre el texto"],
+  ["h5", [21, 22], "var(--oro)", "dos juramentos: entre vecinos, y de Jehová", "21:31; 22:16"],
+  ["h6", [20, 21, 23], "var(--cielo)", "extranjero en la tierra de la promesa: lo primero que tuvo fue una tumba", "Hebreos 11:9"],
+  ["h7", [19, 21, 22], "var(--rosa)", "el cuidado de Jehová: Moab y Ammón, Ismael, Nacor", "Deuteronomio 2:9; Génesis 21:13"],
+];
+let h = "";
+H.forEach(([k, caps, col, txt, ref], i) => {
+  const y = 250 + i * 100;
+  const xs = caps.map((n) => X[n]);
+  let d = `M ${xs[0]} ${y}`;
+  for (let j = 1; j < xs.length; j++) d += ` C ${(xs[j - 1] + xs[j]) / 2} ${y - 34} ${(xs[j - 1] + xs[j]) / 2} ${y + 34} ${xs[j]} ${y}`;
+  h += `<g class="hilo ${k}"><path d="${d}" stroke="${col}"/>${xs.map((x) => `<circle cx="${x}" cy="${y}" r="15" fill="${col}"/>`).join("")}
+    <text x="${xs[0] - 10}" y="${y - 26}" fill="${col}">${txt}<tspan class="p" dx="18">${ref}</tspan></text></g>`;
+});
+pinta(".hilos", h);
+entra(".tit", 0.3, { y: -20 });
+tl.set([...$$(".capc"), ...$$(".hilo")], { opacity: 0 }, 0);
+tl.to($$(".capc"), { opacity: 1, duration: 0.4, stagger: 0.5 }, at("un incendio") - 0.2);
+const T = [at("Lot seguía"), at("Oró por otros"), at("Y una misma"), at("Dos hijos"), at("Dos juramentos"), at("Abrahán vivió como"), at("Y aunque la promesa")];
+H.forEach(([k], i) => {
+  tl.to($("." + k), { opacity: 1, duration: 0.3 }, T[i]);
+  traza("." + k + " path", T[i], 1.2);
+});
+tl.set($(".fin"), { opacity: 0 }, 0);
+tl.to($(".fin"), { opacity: 1, duration: 1.0 }, FIN_VOZ + 0.6);
+</script>

@@ -1,0 +1,28 @@
+<style>
+.cierre { position: absolute; left: 160px; right: 160px; top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 30px; }
+.cierre .cita { font-size: 84px; line-height: 1.15; }
+.cierre .ref { font-size: 36px; }
+.cierre svg { width: 700px; height: 40px; }
+.cierre svg path { fill: none; stroke: var(--oro); stroke-width: 7; stroke-linecap: round; }
+.estr { position: absolute; inset: 0; }
+.estr svg { width: 1920px; height: 1080px; }
+</style>
+
+<div class="estr"><svg viewBox="0 0 1920 1080"><g fill="#fff"></g></svg></div>
+<div class="cierre">
+  <div class="cita c1">“Yo estoy contigo y te protegeré <b>adondequiera que vayas</b>”</div>
+  <svg viewBox="0 0 700 40"><path d="M 6 22 C 200 8 480 34 694 16"/></svg>
+  <div class="cita"><span class="ref r1">GÉNESIS 28:15</span></div>
+</div>
+
+<script>
+let sem = 9;
+const az = () => (sem = (sem * 16807) % 2147483647) / 2147483647;
+let es = "";
+for (let i = 0; i < 90; i++) es += `<circle class="st" cx="${(az() * 1920).toFixed(0)}" cy="${(az() * 1080).toFixed(0)}" r="${(1 + az() * 2.4).toFixed(1)}" opacity="${(0.25 + az() * 0.5).toFixed(2)}"/>`;
+$(".estr g").innerHTML = es;
+aparece(".estr", 0.2, 2.0);
+entra(".c1", 0.5, { y: 30, d: 1.0 });
+traza(".cierre path", 1.4, 1.0);
+entra(".r1", at("Génesis veintiocho"), { y: 10 });
+</script>

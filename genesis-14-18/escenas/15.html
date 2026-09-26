@@ -1,0 +1,47 @@
+<style>
+.b { position: absolute; left: 72px; right: 72px; }
+.q12 { top: 240px; }
+.q12 .cita { font-size: 64px; }
+.nota { top: 640px; }
+.nota .m { font-family: "cursive", cursive; font-weight: 700; font-size: 58px; line-height: 1.05; }
+.nota .s { font-family: "Arial", sans-serif; font-size: 28px; color: var(--tenue); margin-top: 10px; }
+.caras { top: 980px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.cara { border-radius: 22px; padding: 26px; border: 3px solid; }
+.cara .et { font-family: "Arial", sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.1em; }
+.cara .t { font-family: "cursive", cursive; font-weight: 700; font-size: 52px; line-height: 1.05; margin-top: 12px; }
+.cara .s { font-family: "Arial", sans-serif; font-size: 24px; color: var(--tenue); margin-top: 12px; }
+.c1 { border-color: var(--rojo); } .c1 .et { color: var(--rojo); }
+.c2 { border-color: var(--verde); } .c2 .et { color: var(--verde); }
+.doce { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-top: 18px; }
+.doce i { display: block; width: 36px; height: 36px; border-radius: 50%; background: var(--verde); }
+.foto { position: absolute; left: 40px; right: 40px; top: 260px; height: 600px; }
+.pie2 { top: 900px; }
+.pie2 .m { font-family: "cursive", cursive; font-weight: 700; font-size: 60px; line-height: 1.05; }
+.pie2 .s { font-family: "Arial", sans-serif; font-size: 28px; color: var(--tenue); margin-top: 14px; }
+</style>
+
+<div class="fase fa">
+  <div class="b q12"><div class="cita">“Él será como un asno salvaje. Luchará contra todos y todos lucharán contra él”<span class="ref">Génesis 16:12</span></div></div>
+  <div class="b nota"><div class="m">“O ‘un onagro’, un tipo de asno salvaje. [...] Es probable que aluda a su carácter independiente”</div><div class="s">Nota de la TNM en Génesis 16:12</div></div>
+  <div class="b caras">
+    <div class="cara c1"><div class="et">ASÍ FUE</div><div class="t">“un nómada incansable” que vivía “de su arco y flechas”; sus descendientes, “un pueblo fiero y guerrero”</div><div class="s">Perspicacia, vol. 1, “Ismaelitas”, pág. 1262</div></div>
+    <div class="cara c2"><div class="et">Y TAMBIÉN LO BUENO</div><div class="t">Jehová lo bendijo: doce jefes</div><div class="doce"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="s">Génesis 17:20; 25:13-16</div></div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="foto ilus"><div class="kb"><img src="assets/img/agar-ismael-se-van.svg" /></div></div>
+  <div class="b pie2"><div class="m">La única ilustración de Agar en las publicaciones: unos diecinueve años después, Agar e Ismael se van</div><div class="s">Génesis 21:9-14 · Imagen: <i>Lecciones que aprendo de la Biblia</i>, lección 9</div></div>
+</div>
+
+<script>
+escribe(".q12 .cita", at("Él será"), 5.4);
+entra(".nota", at("La nota"), { y: 20 });
+entra(".c1", at("Y así fue"), { x: -30, y: 0 });
+entra(".c2", at("Pero también"), { x: 30, y: 0 });
+salta(".doce i", at("doce jefes") - 0.3, { st: 0.07, d: 0.3 });
+sale(".fa", at("Esta es") - 0.4);
+aparece(".fb", at("Esta es"), 0.6);
+kb(".fb .kb", at("Esta es"), DUR, { s: 1.1, x: 2 }, { s: 1.0, x: -1 });
+escribe(".pie2 .m", at("Esta es") + 0.4, 5.0);
+</script>

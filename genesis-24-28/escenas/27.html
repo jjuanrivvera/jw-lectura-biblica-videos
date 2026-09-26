@@ -1,0 +1,22 @@
+<style>
+.ilus.img-h { left: 60px; top: 150px; width: 1120px; height: 540px; }
+.ilus.img-h img { object-position: 50% 4%; }
+.pie-h { left: 60px; top: 704px; width: 1120px; }
+.col { width: 640px; right: 60px; top: 110px; }
+.bajo { position: absolute; left: 60px; top: 800px; width: 1120px; bottom: 60px; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 27</span><span>cómo lo tratan las publicaciones</span></div>
+<div class="ilus img-h"><div class="kb"><img src="assets/img/jacob-esau-historia.svg" /></div></div>
+<div class="pie-img pie-h">“Un día, mientras Esaú estaba fuera de casa, su padre, Isaac, bendijo a Jacob”. Ilustración: historia bíblica ilustrada “Jacob y Esaú”, pág. 1</div>
+<div class="bajo"><div class="cita md b1">“Si Jehová no hubiera querido que Jacob recibiera la bendición, <b>habría intervenido</b> de alguna forma”</div><div class="s b2">La Atalaya, 1 de octubre de 2007, pág. 31</div></div>
+<div class="col">
+  <div class="b a1"><div class="m xl oro">con equilibrio</div><div class="cita md">“ni justifica ni condena lo que ellos hicieron, por lo que <b>no establece ningún precedente</b> para mentir o engañar”</div><div class="s">La Atalaya, 1 de octubre de 2007, pág. 31</div></div>
+  <div class="b a2"><div class="cita md">“No sabemos por qué Rebeca y Jacob obraron como lo hicieron, aunque ambos eran conscientes de que la bendición <b>le pertenecía a Jacob</b>”</div><div class="s">Perspicacia, vol. 2, “Jacob”, pág. 8</div></div>
+</div>
+
+<script>
+kb(".img-h .kb", 0, DUR, { s: 1.1, x: 2 }, { s: 1.0 });
+secuencia([[".a1", 0.4], [".a2", at("Perspicacia reconoce")]]);
+entra([".b1", ".b2"], at("Y si Jehová"), { y: 20, st: 0.3 });
+</script>

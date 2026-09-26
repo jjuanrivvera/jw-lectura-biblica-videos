@@ -1,0 +1,61 @@
+<style>
+.mapa { left: 0; top: 0; width: 1060px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 800px; height: 820px; }
+.anillo { fill: none; stroke: #ffd35c; stroke-width: 6; }
+.sombra-der { position: absolute; left: 980px; top: 0; width: 120px; height: 1080px; background: linear-gradient(90deg, rgba(23,33,43,0), #17212b); }
+.col { width: 760px; right: 60px; top: 110px; }
+.pozos { display: flex; flex-direction: column; gap: 16px; }
+.pz { display: grid; grid-template-columns: 250px 1fr; align-items: baseline; column-gap: 20px; padding: 12px 22px; border-radius: 18px; background: rgba(10,16,22,0.42); border: 3px solid rgba(241,233,216,0.12); }
+.pz .n { font-family: "Georgia", serif; font-weight: 700; font-size: 64px; }
+.pz .m { font-size: 64px; }
+</style>
+
+<div class="mapa">
+  <div class="cam">
+    <img src="assets/img/mapa-pozos.svg" />
+    <svg viewBox="0 0 800 820">
+      <circle class="anillo a1" cx="110" cy="640" r="40"/>
+      <circle class="anillo a2" cx="297" cy="42" r="40"/>
+      <circle class="anillo a3" cx="445" cy="265" r="40"/>
+      <circle class="anillo a4" cx="250" cy="410" r="40"/>
+      <circle class="anillo a5" cx="612" cy="160" r="40"/>
+    </svg>
+  </div>
+  <div class="pie-mapa">Mapa esquemático original; las ubicaciones son orientativas.</div>
+</div>
+<div class="sombra-der"></div>
+<div class="cab sobre"><span class="cap">Génesis 26</span><span>versículos 17 al 23</span></div>
+<div class="col">
+  <div class="b b1"><div class="m">1 · cerca de <b>Beer-Lahái-Roí</b></div><div class="m">2 · a <b>Guerar</b></div><div class="m">3 · el <b>valle</b> de Guerar</div><div class="s">la zona punteada: no se sabe dónde estaban los pozos · Perspicacia, “Éseq”, pág. 848; “Sitná”, pág. 1043</div></div>
+  <div class="b b2">
+    <div class="cita md">“¡El agua es nuestra!”<span class="ref">GÉNESIS 26:20 · LOS PASTORES DE GUERAR</span></div>
+    <div class="pozos">
+      <div class="pz p1"><div class="n" style="color:var(--rojo)">Ésec</div><div class="m">“discusión”</div></div>
+      <div class="pz p2"><div class="n" style="color:var(--rojo)">Sitná</div><div class="m">“acusación”</div></div>
+    </div>
+    <div class="s">notas de la TNM en 26:20, 21</div>
+  </div>
+  <div class="b b3"><div class="cita md">“¿Podría haber luchado Isaac para defender sus pozos? <b>Sin duda alguna.</b>”</div><div class="m oro">prefirió mudarse, “para evitar la confrontación”</div><div class="s">La Atalaya, 15 de agosto de 2011, pág. 26</div></div>
+  <div class="b b4"><div class="pz p3" style="border-color:var(--oro)"><div class="n" style="color:var(--oro)">Rehobot</div><div class="m">“lugares anchos”</div></div><div class="cita md">“Jehová [...] nos ha dado <b>suficiente espacio</b>”<span class="ref">GÉNESIS 26:22</span></div><div class="m">5 · y de allí, a <b>Beer-Seba</b></div></div>
+</div>
+
+<script>
+const V = { x: 0, y: 0, w: 1060, h: 1080 };
+const cam = $(".cam");
+tl.set(cam, encuadre({ x: 0, y: 0, w: 800, h: 820 }, V), 0);
+const focos = { 1: { x: 0, y: 150, w: 660, h: 670 }, 2: { x: 0, y: 0, w: 660, h: 670 }, 3: { x: 110, y: 0, w: 660, h: 670 }, 4: { x: 0, y: 90, w: 660, h: 670 }, 5: { x: 140, y: 0, w: 660, h: 670 } };
+const paso = (n, t) => {
+  tl.to(cam, { ...encuadre(focos[n], V), duration: 1.4, ease: "power2.inOut" }, t - 0.3);
+  traza(".a" + n, t, 0.6);
+  late(".a" + n, t + 0.7, { s: 1.2, n: 2 });
+};
+paso(1, at("Vivía cerca"));
+paso(2, at("Se fue a Guerar"));
+paso(3, at("y acampó en el valle"));
+tl.to(cam, { ...encuadre({ x: 0, y: 0, w: 800, h: 820 }, V), duration: 1.6, ease: "power2.inOut" }, at("Podría haber luchado") - 0.3);
+paso(4, at("Por el tercero"));
+paso(5, at("Y de allí subió"));
+secuencia([[".b1", at("Vivía cerca")], [".b2", at("Por el primer pozo")], [".b3", at("Podría haber luchado")], [".b4", at("Por el tercero")]]);
+entra(".p1", at("Isaac lo llamó Ésec"), { x: 30, y: 0 });
+entra(".p2", at("Por el segundo"), { x: 30, y: 0 });
+</script>

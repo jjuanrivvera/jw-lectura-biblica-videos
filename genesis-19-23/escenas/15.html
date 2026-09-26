@@ -1,0 +1,44 @@
+<style>
+.ilus.img-i { left: 90px; top: 150px; width: 820px; height: 820px; }
+.pie-img { position: absolute; left: 90px; top: 990px; width: 820px; font-size: 24px; color: var(--tenue); }
+.col { width: 820px; right: 80px; }
+.edades { display: flex; gap: 60px; align-items: baseline; }
+.edades .g { font-family: "Georgia", serif; font-weight: 700; font-size: 150px; line-height: 1; }
+.edades .n { font-family: "cursive", cursive; font-weight: 700; font-size: 60px; }
+.risas { display: grid; grid-template-columns: 1fr; gap: 26px; }
+.risa { border-left: 8px solid; padding: 6px 0 6px 28px; }
+.risa .k { font-family: "Arial", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; }
+.risa.r18 { border-color: var(--tenue); }
+.risa.r18 .k { color: var(--tenue); }
+.risa.r21 { border-color: var(--oro); }
+.risa.r21 .k { color: var(--oro); }
+</style>
+
+<div class="fase f-cap"><div class="capcard"><div class="num">Génesis <b style="color:var(--oro)">21</b></div><svg viewBox="0 0 760 40"><path d="M 10 24 C 200 8 520 36 750 18"/></svg><div class="sub">Isaac, Agar e Ismael, y el pozo del juramento</div><div class="edad">de 1918 a 1913 antes de nuestra era</div></div></div>
+
+<div class="fase f-a">
+  <div class="cab"><span class="cap">Génesis 21</span><span>versículos 1 al 7</span></div>
+  <div class="ilus img-i"><div class="kb"><img src="assets/img/nace-isaac.svg" /></div></div>
+  <div class="pie-img">Gráfico vectorial original.</div>
+  <div class="col">
+    <div class="b b1"><div class="cita">“Jehová hizo por Sara lo que había prometido”<span class="ref">GÉNESIS 21:1</span></div><div class="cita">“justo para la época que Dios le había prometido”<span class="ref">GÉNESIS 21:2</span></div></div>
+    <div class="b b2"><div class="edades"><div><div class="g" style="color:var(--oro)">100</div><div class="n">Abrahán</div></div><div><div class="g" style="color:var(--rosa)">90</div><div class="n">Sara</div></div></div><div class="s">Génesis 17:17; 21:5 · nació en 1918 antes de nuestra era (Perspicacia, “Abrahán”, pág. 31)</div></div>
+    <div class="b b3"><div class="cita">“su cuerpo ya estaba como muerto” · “la matriz de Sara también estaba muerta”<span class="ref">ROMANOS 4:19</span></div></div>
+    <div class="b b4"><div class="def"><div class="t">“Una especie de resurrección”</div><div class="x">Dios les devolvió la capacidad de tener hijos</div><div class="s">Nota de estudio de la TNM en Romanos 4:19</div></div></div>
+    <div class="b b5"><div class="def"><div class="t">Isaac</div><div class="x">“Risa”</div><div class="s">Perspicacia, “Isaac”, pág. 1250 · circuncidado al octavo día (21:4; 17:12)</div></div></div>
+    <div class="b b6"><div class="risas">
+      <div class="risa r18"><div class="k">GÉNESIS 18</div><div class="m" style="font-size:60px">Sara se ríe de lo increíble de la promesa</div></div>
+      <div class="risa r21"><div class="k">GÉNESIS 21:6</div><div class="cita" style="font-size:50px">“Dios me ha hecho reír, y todo el que oiga esto reirá conmigo”</div></div>
+    </div><div class="s">Nota de la TNM: “reír de alegría”</div></div>
+  </div>
+</div>
+
+<script>
+const t0 = at("Jehová hizo") - 0.4;
+capitulo(".f-cap .capcard", 0.2, t0 - 0.3);
+tl.to($(".f-cap"), { opacity: 0, duration: 0.4 }, t0 - 0.3);
+aparece(".f-a", t0, 0.6);
+kb(".img-i .kb", t0, DUR, { s: 1.14, x: -2, y: 2 }, { s: 1.0 });
+entra(".risa.r21", at("Ahora la risa"), { y: 20 });
+secuencia([[".b1", t0 + 0.2], [".b2", at("Abrahán tenía cien")], [".b3", at("Pablo dice")], [".b4", at("La nota de estudio")], [".b5", at("Le pusieron")], [".b6", at("En el capítulo dieciocho")]]);
+</script>

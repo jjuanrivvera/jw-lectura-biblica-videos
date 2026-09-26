@@ -1,0 +1,140 @@
+<style>
+.escena { position: absolute; left: 0; top: 200px; width: 1080px; height: 1260px; }
+.escena .tr { fill: none; stroke: var(--tiza); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.escena .et { font-family: "cursive", cursive; font-weight: 700; font-size: 44px; fill: var(--tiza); text-anchor: middle; }
+.escena .et.oro { fill: var(--oro); }
+.vista { position: absolute; left: 72px; top: 150px; font-family: "Arial", sans-serif; font-size: 28px; color: var(--tenue); }
+.t { position: absolute; left: 72px; right: 72px; top: 1470px; }
+.t .q { font-family: "Georgia", serif; font-size: 54px; line-height: 1.18; }
+.t .q .ref { display: block; font-family: "Arial", sans-serif; font-weight: 700; font-size: 30px; color: var(--oro); margin-top: 10px; }
+.t .m { font-family: "cursive", cursive; font-weight: 700; font-size: 60px; line-height: 1.05; }
+.t .s { font-family: "Arial", sans-serif; font-size: 28px; color: var(--tenue); margin-top: 10px; }
+.t .propio { font-size: 42px; margin-top: 14px; }
+</style>
+
+<div class="vista">dibujo esquemático, visto desde arriba</div>
+<svg class="escena" viewBox="0 0 1080 1260">
+  <defs>
+    <radialGradient id="fuego10"><stop offset="0" stop-color="#ffcf73" stop-opacity="0.9" /><stop offset="1" stop-color="#e8805f" stop-opacity="0" /></radialGradient>
+  </defs>
+  <rect class="suelo" x="60" y="60" width="960" height="1140" rx="30" fill="rgba(239,231,214,0.025)" stroke="rgba(170,180,191,0.35)" stroke-width="3" stroke-dasharray="12 10" />
+  <circle class="sol" cx="900" cy="150" r="55" fill="#e8a45f" />
+  <rect class="noche" x="0" y="0" width="1080" height="1260" fill="#070b11" opacity="0" />
+  <g class="estr" fill="#efe7d6"><circle cx="160" cy="120" r="3" /><circle cx="330" cy="200" r="2.5" /><circle cx="620" cy="110" r="3" /><circle cx="820" cy="240" r="2.5" /><circle cx="960" cy="120" r="3" /><circle cx="480" cy="160" r="2" /></g>
+
+  <!-- tres animales: cada uno en dos mitades que se separan -->
+  <g class="m0L"><path class="tr" d="M0 -45 A80 45 0 0 0 0 45 Z" /><circle class="tr" cx="-100" cy="0" r="22" /></g>
+  <g class="m0R"><path class="tr" d="M0 -45 A80 45 0 0 1 0 45 Z" /><path class="tr" d="M80 0 L104 8" /></g>
+  <g class="m1L"><path class="tr" d="M0 -40 A72 40 0 0 0 0 40 Z" /><circle class="tr" cx="-92" cy="0" r="20" /><path class="tr" d="M-100 -18 L-118 -38 M-86 -18 L-80 -40" /></g>
+  <g class="m1R"><path class="tr" d="M0 -40 A72 40 0 0 1 0 40 Z" /><path class="tr" d="M72 0 L92 -6" /></g>
+  <g class="m2L"><path class="tr" d="M0 -44 A78 44 0 0 0 0 44 Z" /><circle class="tr" cx="-98" cy="0" r="22" /><path class="tr" d="M-110 -16 Q-130 -30 -118 -44 M-88 -16 Q-70 -32 -80 -46" /></g>
+  <g class="m2R"><path class="tr" d="M0 -44 A78 44 0 0 1 0 44 Z" /><path class="tr" d="M78 0 L100 6" /></g>
+  <g class="b0"><path class="tr" d="M-34 0 Q0 -26 34 0 Q0 26 -34 0 Z M34 0 L50 -10 L50 10 Z" /></g>
+  <g class="b1"><path class="tr" d="M-30 0 Q0 -22 30 0 Q0 22 -30 0 Z M30 0 L44 -9 L44 9 Z" /></g>
+  <text class="et e-ter" x="200" y="350">ternera</text>
+  <text class="et e-cab" x="540" y="350">cabra</text>
+  <text class="et e-car" x="880" y="350">carnero</text>
+  <text class="et e-tor" x="400" y="490">tórtola</text>
+  <text class="et e-pic" x="680" y="490">pichón</text>
+  <text class="et e-3" x="540" y="170" style="fill:var(--oro)">de tres años</text>
+
+  <path class="pasillo" d="M540 300 L540 1060" fill="none" stroke="#e6bb5c" stroke-width="4" stroke-dasharray="14 12" />
+  <text class="et oro e-pas" x="540" y="1120">el pasillo</text>
+
+  <g class="rap r0"><path class="tr" style="stroke:#aab4bf" d="M-40 0 Q-20 -18 0 0 Q20 -18 40 0" /></g>
+  <g class="rap r1"><path class="tr" style="stroke:#aab4bf" d="M-40 0 Q-20 -18 0 0 Q20 -18 40 0" /></g>
+  <g class="rap r2"><path class="tr" style="stroke:#aab4bf" d="M-40 0 Q-20 -18 0 0 Q20 -18 40 0" /></g>
+
+  <g class="abr-pie" transform="translate(120 1080)"><circle class="tr" cx="0" cy="-70" r="20" style="stroke:var(--verde)" /><path class="tr" style="stroke:var(--verde)" d="M0 -50 L0 20 M0 20 L-22 70 M0 20 L22 70 M0 -30 L-40 -70 M0 -30 L38 -10" /></g>
+  <g class="abr-duerme" transform="translate(150 1150)"><circle class="tr" cx="-70" cy="0" r="20" style="stroke:var(--verde)" /><path class="tr" style="stroke:var(--verde)" d="M-50 0 L50 0 M50 0 L90 -14 M50 0 L90 14" /><text class="et" x="-30" y="-50" style="fill:#8db4ec">z z z</text></g>
+  <text class="et e-abr" x="150" y="1230" style="fill:var(--verde)">Abrán</text>
+
+  <g class="fuego-g">
+    <circle class="halo" cx="0" cy="0" r="120" fill="url(#fuego10)" />
+  </g>
+  <g class="horno"><rect class="tr" x="-40" y="-34" width="80" height="68" rx="16" style="stroke:#e8805f" /><path class="tr" style="stroke:#aab4bf" d="M-10 -40 Q-24 -64 -6 -80 Q10 -96 -4 -116 M14 -40 Q2 -62 18 -78" /></g>
+  <g class="antorcha"><path class="tr" style="stroke:#c9a06a" d="M0 10 L0 70" /><path d="M0 12 Q-22 -10 -6 -34 Q-2 -18 6 -40 Q24 -12 0 12 Z" fill="#ffcf73" stroke="#e8805f" stroke-width="4" /></g>
+  <text class="et oro e-fuego" x="760" y="700">solo pasa el fuego</text>
+</svg>
+
+<div class="t t1"><div class="q">“¿cómo puedo estar seguro?”<span class="ref">Génesis 15:8</span></div></div>
+<div class="t t2"><div class="m">“Así que él tomó estos animales y los cortó todos por la mitad, menos los pájaros”</div><div class="s">Génesis 15:10</div></div>
+<div class="t t3"><div class="m">aves rapaces: águilas, halcones, milanos o buitres</div><div class="s">Génesis 15:11 · Perspicacia, vol. 2, “Pájaros”, pág. 580</div></div>
+<div class="t t4"><div class="m">“cada uno de los que hacían el pacto pasaba entre los pedazos”: de ahí “cortar un pacto”</div><div class="s">Perspicacia, vol. 2, “Pacto”, pág. 572 · Jeremías 34:18-20</div></div>
+<div class="t t5"><div class="q">“Un sueño profundo cayó sobre Abrán”<span class="ref">Génesis 15:12</span></div></div>
+<div class="t t6"><div class="q">“Apareció un horno del que salía humo, y una antorcha encendida pasó entre los trozos”<span class="ref">Génesis 15:17</span></div></div>
+<div class="t t7"><div class="q">“Ese día, Jehová hizo un pacto con Abrán”<span class="ref">Génesis 15:18</span></div></div>
+<div class="t t8"><div class="m">cumplirlo “dependía exclusivamente de él”, de Jehová</div><div class="s">Ninguna publicación consultada explica por qué solo pasó el fuego · nota de estudio de la TNM en Gálatas 3:20</div><span class="propio">observación propia</span></div>
+<div class="t t9"><div class="m" style="color:var(--oro)">Jehová no nos pide que le creamos a ciegas: le dio a Abrán una garantía que él podía entender</div></div>
+
+<script>
+const S = (sel) => root.querySelector(".escena " + sel);
+// Posiciones de partida: los animales enteros, en fila.
+const inicio = { m0: [200, 260], m1: [540, 260], m2: [880, 260] };
+Object.entries(inicio).forEach(([k, [x, y]]) => { gsap.set([S("." + k + "L"), S("." + k + "R")], { x, y }); });
+gsap.set(S(".b0"), { x: 400, y: 420 });
+gsap.set(S(".b1"), { x: 680, y: 420 });
+gsap.set(S(".horno"), { x: 540, y: 230 });
+gsap.set(S(".antorcha"), { x: 540, y: 170 });
+gsap.set(S(".fuego-g"), { x: 540, y: 220 });
+[[300, -80], [540, -120], [780, -90]].forEach(([x, y], i) => gsap.set(S(".r" + i), { x, y }));
+
+// Textos que se reemplazan abajo.
+const textos = [[".t1", at("Abrán pregunta")], [".t2", at("Abrán corta")], [".t3", at("Las aves")], [".t4", at("En aquel tiempo")], [".t5", at("Un sueño")], [".t6", at("Apareció")], [".t7", at("Ese día")], [".t8", at("Ninguna publicación")], [".t9", at("Jehová no nos pide")]];
+textos.forEach(([s, t], i) => { entra(s, t, { y: 24 }); if (i < textos.length - 1) sale(s, textos[i + 1][1] - 0.4, { d: 0.35 }); });
+
+aparece(".escena .suelo", 0.6, 0.8);
+aparece(".escena .sol", 0.6, 0.8);
+// Los cinco animales, al nombrarlos.
+[["m0", "ternera", ".e-ter"], ["m1", "cabra", ".e-cab"], ["m2", "carnero", ".e-car"]].forEach(([k, w, et]) => {
+  salta([S("." + k + "L"), S("." + k + "R")], at(w));
+  aparece(et, at(w), 0.4);
+});
+salta(".escena .b0", at("tórtola"));
+aparece(".e-tor", at("tórtola"), 0.4);
+salta(".escena .b1", at("pichón"));
+aparece(".e-pic", at("pichón"), 0.4);
+aparece(".e-3", at("de tres años"), 0.5);
+
+// Se cortan por la mitad y cada mitad queda enfrente de la otra.
+const tc = at("corta");
+desaparece(".e-ter, .e-cab, .e-car, .e-tor, .e-pic, .e-3", tc - 0.2, 0.4);
+["m0", "m1", "m2"].forEach((k, i) => {
+  tl.to(S("." + k + "L"), { x: 340, y: 380 + i * 200, duration: 1.4, ease: "power2.inOut" }, tc + 0.5 + i * 0.4);
+  tl.to(S("." + k + "R"), { x: 740, y: 380 + i * 200, duration: 1.4, ease: "power2.inOut" }, tc + 0.5 + i * 0.4);
+});
+tl.to(S(".b0"), { x: 230, y: 980, duration: 1.2, ease: "power2.inOut" }, at("menos los pájaros"));
+tl.to(S(".b1"), { x: 850, y: 980, duration: 1.2, ease: "power2.inOut" }, at("menos los pájaros"));
+traza(".escena .pasillo", at("Queda un pasillo"), 1.0);
+aparece(".e-pas", at("pasillo") + 0.2, 0.5);
+
+// Aves rapaces que bajan, y Abrán que las espanta.
+salta(".escena .abr-pie", at("Las aves"), { d: 0.4 });
+aparece(".e-abr", at("Las aves"), 0.4);
+[0, 1, 2].forEach((i) => {
+  aparece(S(".r" + i), at("Las aves") + i * 0.2, 0.3);
+  tl.to(S(".r" + i), { y: 300 + i * 120, duration: 1.4, ease: "power1.out" }, at("Las aves") + i * 0.2);
+  tl.to(S(".r" + i), { x: -120, y: -150, duration: 1.2, ease: "power2.in" }, at("las espanta") + i * 0.15);
+});
+tl.fromTo(S(".abr-pie"), { rotation: 0 }, { rotation: -8, yoyo: true, repeat: 3, duration: 0.25, svgOrigin: "120 1150", immediateRender: false }, at("las espanta"));
+
+// Se pone el sol; Abrán cae en un sueño profundo.
+tl.to(S(".sol"), { attr: { cy: 420 }, duration: 2.4, ease: "power1.in" }, at("Se pone"));
+tl.to(S(".sol"), { opacity: 0, duration: 1.0 }, at("Se pone") + 1.6);
+tl.to(S(".noche"), { opacity: 0.62, duration: 2.4, ease: "none" }, at("Se pone"));
+aparece(".escena .estr circle", at("Se pone") + 1.8, 1.0);
+desaparece(".escena .abr-pie", at("Un sueño"), 0.4);
+aparece(".escena .abr-duerme", at("Un sueño") + 0.2, 0.6);
+
+// El horno y la antorcha cruzan entre los trozos. Abrán no pasa.
+aparece(".escena .horno", at("un horno") - 0.2, 0.4);
+desaparece(".e-pas", at("un horno"), 0.4);
+aparece(".escena .fuego-g", at("un horno") - 0.2, 0.6);
+aparece(".escena .antorcha", at("antorcha") - 0.2, 0.4);
+tl.to(S(".horno"), { y: 1150, duration: 4.8, ease: "none" }, at("pasó entre") - 0.6);
+tl.to(S(".antorcha"), { y: 1060, duration: 4.8, ease: "none" }, at("pasó entre") - 0.3);
+tl.to(S(".fuego-g"), { y: 1120, duration: 4.8, ease: "none" }, at("pasó entre") - 0.5);
+tl.fromTo(S(".halo"), { scale: 0.9 }, { scale: 1.12, yoyo: true, repeat: 9, duration: 0.5, svgOrigin: "0 0", immediateRender: false }, at("pasó entre") - 0.5);
+tl.to(S(".abr-duerme"), { scale: 1.08, yoyo: true, repeat: 1, duration: 0.4, svgOrigin: "150 1150" }, at("Abrán no pasa"));
+aparece(".e-fuego", at("Solo pasa"), 0.5);
+</script>

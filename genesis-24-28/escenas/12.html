@@ -1,0 +1,48 @@
+<style>
+.mapa { left: 0; top: 0; width: 1020px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 1944px; height: 2292px; }
+.anillo { fill: none; stroke: #c0392b; stroke-width: 9; }
+.sombra-der { position: absolute; left: 940px; top: 0; width: 120px; height: 1080px; background: linear-gradient(90deg, rgba(23,33,43,0), #17212b); }
+.col { width: 780px; right: 60px; top: 110px; }
+.edades { display: flex; flex-direction: column; gap: 16px; }
+.edades .fila { display: grid; grid-template-columns: 230px 1fr; align-items: center; column-gap: 18px; }
+.edades .nom { font-family: "cursive", cursive; font-weight: 700; font-size: 58px; }
+.edades .barra { height: 62px; border-radius: 12px; position: relative; background: rgba(241,233,216,0.06); }
+.edades .barra .v { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 12px; transform-origin: 0 50%; }
+.edades .barra .n { position: absolute; top: 6px; font-family: "Arial", sans-serif; font-weight: 800; font-size: 40px; }
+</style>
+
+<div class="mapa">
+  <div class="cam">
+    <img src="assets/img/mapa-recuadro.svg" />
+    <svg viewBox="0 0 1944 2292"><circle class="anillo a-m" cx="585" cy="1338" r="56"/></svg>
+  </div>
+  <div class="pie-mapa">Mapa esquemático original; las ubicaciones son orientativas.</div>
+</div>
+<div class="sombra-der"></div>
+<div class="cab sobre"><span class="cap">Génesis 25</span><span>versículos 7 al 11</span></div>
+<div class="col">
+  <div class="b a1"><div class="m xl oro">175 años</div><div class="cita md">“murió tras una buena vejez, satisfecho tras una larga vida, y <b>fue reunido con su pueblo</b>”<span class="ref">GÉNESIS 25:8</span></div></div>
+  <div class="b a2"><div class="def"><div class="t">“reunido con su pueblo”</div><div class="x">“una forma poética de referirse a la muerte”</div><div class="s">nota de la TNM en 25:8 · no habla del entierro</div></div><div class="m">con sus antepasados, en el <b>Seol</b>: “la sepultura común de la humanidad”</div><div class="s">La Atalaya, 1 de mayo de 2005, pág. 14</div></div>
+  <div class="b a3"><div class="m oro">la cueva de Macpelá</div><div class="m md">la única tierra que Abrahán tuvo en Canaán</div>
+    <div class="edades">
+      <div class="fila"><div class="nom" style="color:var(--cielo)">Ismael</div><div class="barra"><div class="v v1" style="width:89%;background:var(--cielo)"></div><div class="n" style="left:calc(89% - 80px);color:#17212b">89</div></div></div>
+      <div class="fila"><div class="nom" style="color:var(--verde)">Isaac</div><div class="barra"><div class="v v2" style="width:75%;background:var(--verde)"></div><div class="n" style="left:calc(75% - 80px);color:#17212b">75</div></div></div>
+      <div class="fila"><div class="nom" style="color:var(--rojo)">los gemelos</div><div class="barra"><div class="v v3" style="width:15%;background:var(--rojo)"></div><div class="n" style="left:calc(15% + 16px);color:var(--rojo)">15</div></div></div>
+    </div>
+    <div class="s">Perspicacia, “Ismael”, pág. 1261; “Jacob”, pág. 8</div>
+  </div>
+  <div class="b a4"><div class="cita md">Jacob “tuvo tiempo suficiente de oír por boca de su abuelo [...] acerca del pacto de Dios”</div><div class="s">Perspicacia, vol. 2, “Jacob”, pág. 8</div></div>
+</div>
+
+<script>
+const V = { x: 0, y: 0, w: 1020, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 0, y: 560, w: 1500, h: 1590 }, V), 0);
+tl.to($(".cam"), { ...encuadre({ x: 60, y: 820, w: 1100, h: 1165 }, V), duration: 3, ease: "power2.inOut" }, at("Lo enterraron") - 0.5);
+traza(".a-m", at("Lo enterraron"), 0.8);
+late(".a-m", at("Lo enterraron") + 1.0, { s: 1.25, n: 3 });
+secuencia([[".a1", 0.4], [".a2", at("una forma poética")], [".a3", at("Lo enterraron")], [".a4", at("Jacob alcanzó")]]);
+tl.set($$(".edades .v"), { scaleX: 0 }, 0);
+tl.to($$(".edades .v"), { scaleX: 1, duration: 0.9, stagger: 0.5, ease: "power2.out" }, at("Ismael tenía"));
+aparece($$(".edades .n"), at("Ismael tenía") + 0.6, 0.4);
+</script>

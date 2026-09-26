@@ -1,0 +1,29 @@
+<style>
+.tablero { position: absolute; left: 70px; right: 70px; top: 110px; bottom: 60px; display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 28px; }
+.hilo { border-radius: 28px; padding: 24px 32px; background: rgba(10,16,22,0.45); border: 3px solid rgba(241,233,216,0.16); display: flex; flex-direction: column; gap: 12px; }
+.hilo .m { font-size: 74px; }
+.hilo .s { font-size: 30px; }
+.caps { display: flex; gap: 12px; margin-top: auto; }
+.caps span { width: 66px; height: 66px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: "Arial", sans-serif; font-weight: 800; font-size: 26px; color: #56657a; border: 3px solid #3a4756; }
+.caps span.on { background: var(--oro); color: #17212b; border-color: var(--oro); }
+.hilo.gr { grid-column: span 2; border-color: rgba(233,191,96,0.7); }
+.hilo.gr .m { font-size: 76px; }
+</style>
+
+<div class="cab" style="top:30px"><span class="cap">Los hilos</span><span>de Génesis 24 al 28</span></div>
+<div class="tablero">
+  <div class="hilo h1"><div class="m">casarse con alguien que adore a Jehová</div><div class="s">24:3 · 26:34, 35 · 27:46 · 28:1</div><div class="caps"><span class="on">24</span><span>25</span><span class="on">26</span><span class="on">27</span><span class="on">28</span></div></div>
+  <div class="hilo h2"><div class="m">“el mayor servirá al más joven”</div><div class="s">25:23, 33 · 27:29 · 28:4, 13-15</div><div class="caps"><span>24</span><span class="on">25</span><span>26</span><span class="on">27</span><span class="on">28</span></div></div>
+  <div class="hilo h3"><div class="m">juramentos, pactos y un voto</div><div class="s">24:9 · 25:33 · 26:3, 28 · 28:20</div><span class="propio">la relación: observación propia</span><div class="caps"><span class="on">24</span><span class="on">25</span><span class="on">26</span><span>27</span><span class="on">28</span></div></div>
+  <div class="hilo h4"><div class="m">pozos</div><div class="s">24:11-20, 62 · 26:15-22, 33 · Raquel, “junto a un pozo”</div><div class="caps"><span class="on">24</span><span>25</span><span class="on">26</span><span>27</span><span>28</span></div></div>
+  <div class="hilo gr h5"><div class="m oro">“Yo estoy contigo”</div><div class="s">a Isaac en Guerar y en Beer-Seba (26:3, 24) · los filisteos: “Jehová está contigo” (26:28) · a Jacob en Betel (28:15)</div><div class="caps"><span>24</span><span>25</span><span class="on">26</span><span>27</span><span class="on">28</span></div></div>
+</div>
+
+<script>
+entra(".h1", at("Casarse con alguien"), { y: 30 });
+entra(".h2", at("El mayor servirá"), { y: 30 });
+entra(".h3", at("Los juramentos"), { y: 30 });
+entra(".h4", at("Los pozos"), { y: 30 });
+entra(".h5", at("Y una frase"), { y: 30 });
+late(".h5 .m", at("Yo estoy contigo") + 0.4, { s: 1.06, n: 2 });
+</script>

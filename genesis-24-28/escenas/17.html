@@ -1,0 +1,37 @@
+<style>
+.tabla { top: 110px; grid-template-columns: 250px 1fr 1fr 1fr; row-gap: 12px; }
+.tabla .c { font-size: 36px; padding: 12px 20px; min-height: 104px; }
+.tabla .rt { font-size: 24px; }
+.tabla .h { font-size: 26px; }
+.tabla .c.dif { background: rgba(236,138,103,0.12); }
+.cartel { position: absolute; left: 260px; right: 260px; top: 300px; padding: 40px 60px; border-radius: 30px; background: rgba(23,33,43,0.97); border: 4px solid var(--oro); box-shadow: 0 30px 80px rgba(0,0,0,0.6); display: flex; flex-direction: column; gap: 22px; }
+.fp .pie-t { position: absolute; left: 80px; right: 80px; bottom: 22px; font-size: 22px; }
+</style>
+
+<div class="cab" style="top:30px"><span class="cap">Génesis 26</span><span>versículos 7 al 11</span></div>
+<div class="tabla">
+  <div></div><div class="h h1">Abrahán en Egipto · Gé 12</div><div class="h h2">Abrahán en Guerar · Gé 20</div><div class="h h3" style="color:var(--verde);border-color:rgba(146,209,147,0.6)">Isaac en Guerar · Gé 26</div>
+  <div class="rt f1">¿Por qué fue?</div><div class="c f1">Hambre<small>12:10</small></div><div class="c f1">No se dice</div><div class="c f1">Hambre, “aparte de la primera”<small>26:1</small></div>
+  <div class="rt f2">Qué dijo</div><div class="c f2">“Diles que eres mi hermana”<small>12:13</small></div><div class="c f2">“Ella es mi hermana”<small>20:2</small></div><div class="c f2 si">“Es mi hermana”<small>26:7</small></div>
+  <div class="rt f3">¿Verdad a medias?</div><div class="c f3">Sí<small>20:12</small></div><div class="c f3">Sí: “hijos del mismo padre”<small>20:12</small></div><div class="c f3 dif">No: era su prima</div>
+  <div class="rt f4">¿Tomaron a la esposa?</div><div class="c f4">Sí<small>12:15</small></div><div class="c f4">Sí<small>20:2</small></div><div class="c f4 dif">No</div>
+  <div class="rt f5">Cómo se supo</div><div class="c f5">Castigos de Jehová<small>12:17</small></div><div class="c f5">Un sueño<small>20:3</small></div><div class="c f5 dif">Lo vio el rey, desde una ventana<small>26:8</small></div>
+  <div class="rt f6">Final</div><div class="c f6">“¡Llévatela y vete!”<small>12:19</small></div><div class="c f6">Regalos y tierra<small>20:14, 15</small></div><div class="c f6">Orden de protección<small>26:11</small></div>
+</div>
+<div class="cartel k">
+  <div class="m oro">las publicaciones no lo condenan ni lo ponen como ejemplo: lo llaman <b>“estrategia”</b></div>
+  <div class="s">Perspicacia, vol. 1, “Isaac”, pág. 1252 · vol. 2, “Mentira”, pág. 368</div>
+  <div class="cita">“¿Pero qué nos has hecho?”<span class="ref">GÉNESIS 26:10 · EL RECLAMO DEL REY</span></div>
+</div>
+
+<script>
+entra([".h1", ".h2", ".h3"], 0.4, { y: -16, st: 0.15 });
+entra($$(".f1"), 0.8, { y: 6, st: 0.06 });
+entra($$(".f2"), at("Isaac dice que"), { y: 6, st: 0.06 });
+entra($$(".f3"), at("Pero Sara sí"), { y: 6, st: 0.06 });
+entra($$(".f4"), at("A Rebeca nadie"), { y: 6, st: 0.06 });
+entra($$(".f5"), at("se supo porque"), { y: 6, st: 0.06 });
+entra($$(".f6"), at("se supo porque") + 2.6, { y: 6, st: 0.06 });
+desaparece(".tabla", at("Las publicaciones") - 0.2, 0.5);
+salta(".cartel", at("Las publicaciones"), { desde: 0.9 });
+</script>

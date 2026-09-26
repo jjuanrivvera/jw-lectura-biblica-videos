@@ -1,0 +1,90 @@
+<!--lead:2.6-->
+<style>
+.mapa { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 5000px; height: 3800px; }
+.ruta-h { stroke-width: 34; }
+.ruta { stroke-width: 18; stroke: #6a3d9a; }
+.prohibida { fill: none; stroke: #c0392b; stroke-width: 18; stroke-dasharray: 36 24; stroke-linecap: round; }
+.xg path { fill: none; stroke: #c0392b; stroke-width: 26; stroke-linecap: round; }
+.lugar { font-family: "Arial", sans-serif; font-weight: 800; font-size: 66px; fill: #8a1c10; stroke-width: 16px; }
+.anillo { fill: none; stroke: #6a3d9a; stroke-width: 10; }
+.col { top: 110px; bottom: 100px; right: 60px; width: 740px; }
+.fb .pactos { position: absolute; left: 80px; right: 80px; top: 330px; height: 300px; display: grid; grid-template-columns: 1fr 260px 1fr; align-items: center; }
+.fb .pacto { border-radius: 28px; padding: 26px 36px; background: rgba(10,16,22,0.45); border: 3px solid rgba(241,233,216,0.16); display: flex; flex-direction: column; gap: 10px; }
+.fb .pacto .k { font-family: "Arial", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; color: var(--tenue); }
+.fb .pacto .m { font-size: 84px; }
+.fb .pacto b { display: inline-block; }
+.fb .medio { text-align: center; }
+.fb .medio svg { width: 240px; height: 60px; }
+.fb .medio svg path { fill: none; stroke: var(--oro); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.fb .medio .m { font-size: 56px; color: var(--oro); }
+.fb .titulos { position: absolute; left: 80px; right: 80px; top: 620px; bottom: 70px; display: grid; grid-template-columns: 1.3fr 1fr 1fr; column-gap: 30px; }
+.fb .titulos .dato .v { font-size: 70px; }
+</style>
+
+<div class="capcard cc"><div class="num">Génesis 26</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">Isaac, Guerar y los pozos</div><div class="edad">después de 1843 antes de nuestra era</div></div>
+
+<div class="fase fa">
+  <div class="mapa">
+    <div class="cam">
+      <img src="assets/img/mapa-rutas.svg" />
+      <svg viewBox="0 0 5000 3800">
+        <path class="ruta-h r1" d="M 954 3343 C 960 3240 1010 3120 1066 3021"/>
+        <path class="ruta r1" d="M 954 3343 C 960 3240 1010 3120 1066 3021"/>
+        <circle class="anillo a-g" cx="1066" cy="3021" r="40"/>
+        <path class="prohibida pr" d="M 930 3360 C 800 3420 620 3440 420 3440"/>
+        <g class="xg"><path d="M 560 3360 L 680 3500"/><path d="M 680 3360 L 560 3500"/></g>
+        <text class="lugar halo t-eg" x="330" y="3620">a Egipto</text>
+      </svg>
+    </div>
+    <div class="pie-mapa">Mapa esquemático original; las ubicaciones son orientativas.</div>
+  </div>
+  <div class="panel"></div>
+  <div class="cab sobre"><span class="cap">Génesis 26</span><span>versículos 1 al 6</span></div>
+  <div class="col">
+    <div class="b a0"><div class="m xl oro">hambre</div><div class="m">“aparte de la primera”</div><div class="s">la del tiempo de Abrahán · Génesis 26:1</div></div>
+    <div class="b a1"><div class="cita">“<b>No bajes a Egipto</b> [...]. Cumpliré el juramento que le hice a tu padre Abrahán”<span class="ref">GÉNESIS 26:2, 3</span></div><div class="s">“Jehová confirmó su propósito de cumplir la promesa abrahámica por medio de Isaac” · Perspicacia, “Isaac”, pág. 1252</div></div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="cab"><span class="cap">Génesis 26</span><span>¿el mismo Abimélec?</span></div>
+  <div class="rey m xl" style="position:absolute;left:80px;right:80px;top:130px">en Guerar reina <b>Abimélec</b>, “el rey de los filisteos”</div>
+  <div class="pactos">
+    <div class="pacto p1"><div class="k">CON ABRAHÁN · GÉNESIS 21:22</div><div class="m">Abimélec y <b>Ficol</b></div></div>
+    <div class="medio p2"><svg viewBox="0 0 240 60"><path d="M 10 30 L 226 30 M 204 12 L 228 30 L 204 48"/></svg><div class="m">más de 75 años</div></div>
+    <div class="pacto p3"><div class="k">CON ISAAC · GÉNESIS 26:26</div><div class="m">Abimélec y <b>Ficol</b></div></div>
+  </div>
+  <div class="titulos">
+    <div class="def t1"><div class="t">Abimélec</div><div class="x">“Mi Padre Es Rey”: posiblemente un <b>título</b></div><div class="s">Perspicacia, “Abimélec”, pág. 25; “Ficol”, pág. 927</div></div>
+    <div class="dato t2"><div class="v">faraón</div><div class="k">en Egipto</div></div>
+    <div class="dato t3"><div class="v">césar</div><div class="k">en Roma</div></div>
+  </div>
+</div>
+
+<script>
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 100, y: 2200, w: 1700, h: 1560 }, V), 0);
+tl.to($(".cam"), { ...encuadre({ x: 150, y: 2350, w: 1500, h: 1375 }, V), duration: 8, ease: "sine.inOut" }, 0.5);
+traza([".r1"], at("Isaac va a Guerar"), 1.2);
+traza(".a-g", at("Isaac va a Guerar") + 1.0, 0.6);
+traza(".pr", at("No bajes a Egipto"), 1.0);
+aparece(".t-eg", at("No bajes a Egipto") + 0.6, 0.4);
+traza(".xg path", at("No bajes a Egipto") + 1.1, 0.4, { st: 0.15 });
+capitulo(".cc", 0.3, at("Hay hambre") - 0.1);
+aparece(".fa", at("Hay hambre") + 0.45, 0.4);
+secuencia([[".a0", at("Hay hambre") + 0.2], [".a1", at("Jehová le dice")]], at("En Guerar reina") - 0.2);
+
+const tB = at("En Guerar reina") - 0.3;
+desaparece(".fa", tB, 0.4);
+aparece(".fb", tB + 0.3, 0.4);
+entra(".rey", tB + 0.4, { y: 20 });
+entra(".p1", at("El mismo que conoció"), { x: -30, y: 0 });
+entra(".p2", at("Entre los dos pactos"), { y: 20 });
+traza(".p2 path", at("Entre los dos pactos"), 0.8);
+entra(".p3", at("y en los dos aparece"), { x: 30, y: 0 });
+late([".p1 b", ".p3 b"], at("llamado Ficol"), { s: 1.2, n: 2 });
+entra(".t1", at("y que Abimélec"), { y: 20 });
+entra(".t2", at("como faraón"), { y: 20 });
+entra(".t3", at("como faraón") + 0.5, { y: 20 });
+</script>

@@ -1,0 +1,135 @@
+<style>
+.oficial { position: absolute; left: 40px; right: 40px; top: 170px; height: 1440px; }
+.oficial .pie { position: absolute; left: 0; right: 0; top: 1460px; text-align: center; }
+.cam { position: absolute; left: 0; top: 0; width: 1296px; height: 2592px; transform-origin: 0 0; }
+.cam svg { width: 1296px; height: 2592px; }
+/*incluir:_mapa14.css*/
+.leyenda { position: absolute; left: 60px; top: 170px; font-family: "Arial", sans-serif; font-weight: 700; font-size: 36px; color: var(--rojo); padding: 14px 24px; background: rgba(23,33,43,0.85); border-radius: 14px; }
+.panel { position: absolute; left: 40px; right: 40px; bottom: 60px; height: 400px; border-radius: 28px; background: rgba(15, 22, 30, 0.92); border: 2px solid rgba(239,231,214,0.18); }
+.paso { position: absolute; left: 40px; right: 40px; top: 30px; }
+.paso .lug { font-family: "Georgia", serif; font-weight: 700; font-size: 66px; line-height: 1.05; color: var(--tiza); }
+.paso .det { font-family: "cursive", cursive; font-weight: 700; font-size: 56px; line-height: 1.05; color: var(--oro); margin-top: 12px; }
+.paso .ref { font-family: "Arial", sans-serif; font-weight: 700; font-size: 30px; color: var(--tenue); margin-top: 14px; }
+.paso .km { color: var(--rojo); }
+</style>
+
+<div class="fase fmapa">
+<div class="cam" data-layout-allow-overlap>
+<svg viewBox="0 0 320 640">
+<!--incluir:_mapa14.svg-->
+  <path class="m-r r0" d="M229.6 177.4 L207.9 218.9" />
+  <path class="m-r r1" d="M207.9 218.9 L193.1 348.9" />
+  <path class="m-r r2" d="M193.1 348.9 L185.1 413.2 L177.1 480.2 L114.4 614.2" />
+  <path class="m-r r4" d="M114.4 614.2 L85.9 540.5 L48.2 477.6" />
+  <path class="m-r r5" d="M48.2 477.6 L108.7 399.8 L158.9 358.3" />
+  <path class="m-r r6" d="M158.9 358.3 L166.8 403.9" />
+  <path class="m-r r7" d="M166.8 403.9 L174.8 306.0 L179.4 232.3 L185.1 158.6 L188.5 118.4" style="stroke-width:2.2" />
+
+  <g class="l-ast"><circle class="m-pt" cx="229.6" cy="177.4" r="3.8" /><text class="m-lug" x="222.6" y="170" text-anchor="end">Asterot-Carnaim</text></g>
+  <g class="l-cam"><circle class="m-inc" cx="207.9" cy="218.9" r="5" /><circle cx="207.9" cy="218.9" r="1.8" fill="#e6bb5c" /><text class="m-lug" x="214.9" y="222.9">Cam ?</text></g>
+  <g class="l-save"><circle class="m-inc" cx="193.1" cy="348.9" r="5" /><circle cx="193.1" cy="348.9" r="1.8" fill="#e6bb5c" /><text class="m-lug" x="200.1" y="351.9">Savé-Quiryataim ?</text></g>
+  <g class="l-seir"><circle class="m-pt" cx="177.1" cy="480.2" r="3.8" /><text class="m-lug" x="185.1" y="483.2">Seír</text></g>
+  <g class="l-par"><circle class="m-inc" cx="114.4" cy="614.2" r="5" /><circle cx="114.4" cy="614.2" r="1.8" fill="#e6bb5c" /><text class="m-lug" x="121" y="610">El-Parán ?</text></g>
+  <g class="l-cad"><circle class="m-inc" cx="48.2" cy="477.6" r="5" /><circle cx="48.2" cy="477.6" r="1.8" fill="#e6bb5c" /><text class="m-lug" x="40" y="496">En-Mispat (Cadés) ?</text></g>
+  <g class="l-haz"><circle class="m-inc" cx="158.9" cy="358.3" r="5" /><circle cx="158.9" cy="358.3" r="1.8" fill="#e6bb5c" /><text class="m-lug" x="151.9" y="352" text-anchor="end">Hazazón-Tamar ?</text></g>
+  <g class="l-tam"><circle cx="145.2" cy="440.0" r="4" fill="none" stroke="#aab4bf" stroke-dasharray="2 2" /><text class="m-lug" x="138.2" y="444.0" text-anchor="end" style="font-weight:400;fill:#aab4bf">¿o Tamar?</text></g>
+  <g class="l-sid"><circle class="m-inc" cx="166.8" cy="403.9" r="5" /><circle cx="166.8" cy="403.9" r="1.8" fill="#e6bb5c" /><text class="m-lug" x="159.8" y="416" text-anchor="end">valle de Sidim ?</text></g>
+  <g class="l-pozos"><circle cx="162.8" cy="397.9" r="1.6" fill="#000" stroke="#aab4bf" stroke-width="0.6" /><circle cx="168.8" cy="394.9" r="1.6" fill="#000" stroke="#aab4bf" stroke-width="0.6" /><circle cx="171.8" cy="400.9" r="1.6" fill="#000" stroke="#aab4bf" stroke-width="0.6" /><circle cx="165.8" cy="404.9" r="1.6" fill="#000" stroke="#aab4bf" stroke-width="0.6" /><circle cx="169.8" cy="407.9" r="1.6" fill="#000" stroke="#aab4bf" stroke-width="0.6" /></g>
+  <g class="l-sod"><rect x="161.6" y="418" width="6" height="6" fill="none" stroke="#e8805f" stroke-width="1.2" stroke-dasharray="2 1.5" /><text class="m-lug" x="171" y="431" style="fill:#e8805f">Sodoma ?</text></g>
+  <g class="l-dan"><circle class="m-pt" cx="188.5" cy="118.4" r="3.8" /><text class="m-lug" x="181.5" y="121.4" text-anchor="end">Dan</text></g>
+  <g class="l-mam"><circle class="m-pt" cx="125.8" cy="344.9" r="3.8" /><text class="m-lug" x="118.8" y="341.9" text-anchor="end">Mamré</text></g>
+  <g class="mov"><circle r="6" fill="#e8805f" fill-opacity="0.35" /><circle r="3.2" fill="#e8805f" /></g>
+  <g class="movlot"><circle r="6" fill="#e8805f" fill-opacity="0.35" /><circle r="3.2" fill="#e8805f" /></g>
+</svg>
+</div>
+<div class="leyenda">Reyes del este</div>
+<div class="panel" data-layout-allow-overlap>
+  <div class="paso p0"><div class="lug">Asterot-Carnaim y Cam</div><div class="det">vencen a los refaím y a los zuzim</div><div class="ref">Génesis 14:5 · <span class="km">de uno a otro, unos 40 km</span></div></div>
+  <div class="paso p1"><div class="lug">Savé-Quiryataim</div><div class="det">los emim: “Cosas Espantosas”</div><div class="ref">Génesis 14:5 · <span class="km">unos 110 km más</span> · ubicación tentativa</div></div>
+  <div class="paso p2"><div class="lug">Seír hasta El-Parán</div><div class="det">los horeos · el punto más al sur</div><div class="ref">Génesis 14:6 · <span class="km">unos 235 km</span></div></div>
+  <div class="paso p3"><div class="lug">Media vuelta: En-Mispat, es decir, Cadés</div><div class="det">“todo el territorio de los amalequitas”</div><div class="ref">Génesis 14:7 · <span class="km">unos 125 km</span></div></div>
+  <div class="paso p3b"><div class="lug">¿Amalequitas? Amaleq no había nacido</div><div class="det">Moisés usó el nombre que la región tenía en su tiempo</div><div class="ref">Perspicacia, vol. 1, “Amaleq, amalequitas”, pág. 109</div></div>
+  <div class="paso p4"><div class="lug">Hazazón-Tamar</div><div class="det">vencen a los amorreos</div><div class="ref">Génesis 14:7 · <span class="km">unos 135 km</span> · ¿En-Guedí o Tamar?</div></div>
+  <div class="paso p5"><div class="lug">Valle de Sidim</div><div class="det">“muchos pozos de alquitrán”: literalmente, “betún”</div><div class="ref">Génesis 14:8-10 y nota</div></div>
+  <div class="paso p6"><div class="lug">Saqueo, y Lot cautivo</div><div class="det">“todos los bienes” de Sodoma y Gomorra</div><div class="ref">Génesis 14:11, 12</div></div>
+  <div class="paso p7"><div class="lug">Unos 680 km en línea recta</div><div class="det">desde Asterot-Carnaim, y mucho más por los caminos</div><div class="ref"><span class="propio" style="font-size:40px;padding:2px 16px">cálculo propio</span> &nbsp;? = ubicación incierta</div></div>
+</div>
+</div>
+
+<div class="fase foficial">
+  <div class="oficial ilus"><div class="kb"><img src="assets/img/mapa-rutas.svg" style="object-fit:contain;background:#17212b" /></div></div>
+  <div class="pie" style="position:absolute;left:60px;right:60px;top:1650px;text-align:center">Mapa: <b style="color:#efe7d6">Traducción del Nuevo Mundo</b>, apéndice B2 · rutas, números y cifras añadidos por la investigación</div>
+</div>
+
+<script>
+// Cámara del mapa: el punto (mx, my) del dibujo queda en (540, 700) de la pantalla, con zoom k.
+const S = 1296 / 320;
+const cam = $(".cam");
+const pose = (mx, my, k) => ({ x: 540 - mx * S * k, y: 700 - my * S * k, scale: k });
+gsap.set(cam, { x: (1080 - 1296 * 0.53) / 2, y: 150, scale: 0.53 });
+const mira = (mx, my, k, t, d = 1.4) => camara(cam, t, d, pose(mx, my, k));
+
+// 1. El mapa oficial de la TNM, con las rutas ya dibujadas por la investigación.
+kb(".oficial .kb", 0, at("Sigamos"), { s: 1.0 }, { s: 1.06, y: -1 });
+sale(".foficial", at("Sigamos") + 0.3, { d: 0.6 });
+aparece(".leyenda", at("en rojo") - 0.3, 0.5);
+aparece(".panel", at("Sigamos"), 0.5);
+aparece(".mov", at("En Asterot"), 0.3);
+desaparece(".mov", at("Y se llevan"), 0.3);
+aparece(".movlot", at("Y se llevan"), 0.3);
+
+// 2. El dibujo de la investigación: la ruta de los reyes, tramo por tramo.
+const pasos = [".p0", ".p1", ".p2", ".p3", ".p3b", ".p4", ".p5", ".p6", ".p7"];
+const inicioPaso = [at("En Asterot"), at("Bajan"), at("Siguen por"), at("Suben a"), at("Moisés lo llamó"), at("Luego vencen"), at("Por fin"), at("Se llevan"), at("Desde Asterot")];
+pasos.forEach((p, i) => {
+  entra(p, inicioPaso[i], { y: 24 });
+  if (i < pasos.length - 1) sale(p, inicioPaso[i + 1] - 0.45, { d: 0.35 });
+});
+
+mira(215, 200, 1, at("Empiezan"), 1.6);
+salta(".l-ast", at("Asterot"));
+traza(".r0", at("y en Cam") - 0.3, 0.8, { ease: "none" });
+recorre(".mov", ".r0", at("y en Cam") - 0.3, 0.8, { ease: "none" });
+salta(".l-cam", at("Cam"));
+
+mira(195, 300, 1, at("Bajan"), 1.6);
+traza(".r1", at("Bajan"), 1.6, { ease: "none" });
+recorre(".mov", ".r1", at("Bajan"), 1.6, { ease: "none" });
+salta(".l-save", at("vencen a los emim") );
+
+mira(150, 500, 0.9, at("Siguen por"), 2.2);
+traza(".r2", at("Siguen por"), 2.6, { ease: "none" });
+recorre(".mov", ".r2", at("Siguen por"), 2.6, { ease: "none" });
+salta(".l-seir", at("Seír"));
+salta(".l-par", at("El Parán"));
+
+mira(100, 520, 0.9, at("media vuelta"), 1.6);
+traza(".r4", at("Suben a"), 1.4, { ease: "none" });
+recorre(".mov", ".r4", at("Suben a"), 1.4, { ease: "none" });
+salta(".l-cad", at("En Mispat"));
+
+mira(130, 400, 0.95, at("Luego vencen"), 1.4);
+traza(".r5", at("Luego vencen"), 1.6, { ease: "none" });
+recorre(".mov", ".r5", at("Luego vencen"), 1.6, { ease: "none" });
+salta(".l-haz", at("Hazazón"));
+salta(".l-tam", at("Hazazón") + 0.6);
+
+mira(165, 400, 1.25, at("Por fin"), 1.4);
+traza(".r6", at("Por fin"), 0.9, { ease: "none" });
+recorre(".mov", ".r6", at("Por fin"), 0.9, { ease: "none" });
+salta(".l-sid", at("valle de Sidim"));
+salta(".l-pozos circle", at("pozos de betún"), { st: 0.12 });
+salta(".l-sod", at("Los reyes de Sodoma"));
+
+// Se llevan a Lot hacia el norte (el camino exacto no se conoce: línea punteada).
+mira(178, 250, 0.72, at("Y se llevan"), 2.0);
+traza(".r7", at("Y se llevan"), 2.4, { ease: "none" });
+tl.set(root.querySelector(".r7"), { strokeDasharray: "5 4", strokeDashoffset: 0 }, at("Y se llevan") + 2.45);
+recorre(".movlot", ".r7", at("Y se llevan"), 2.4, { ease: "none" });
+salta(".l-dan", at("Y se llevan") + 2.2);
+salta(".l-mam", at("Y se llevan") + 2.4);
+
+// Vista completa al final, para contar lo recorrido.
+camara(cam, at("Desde Asterot"), 1.8, { x: (1080 - 1296 * 0.53) / 2, y: 150, scale: 0.53 });
+tl.to(root.querySelectorAll(".m-inc"), { scale: 1.8, transformOrigin: "50% 50%", duration: 0.4, yoyo: true, repeat: 3, ease: "power1.inOut" }, at("signos de interrogación"));
+</script>

@@ -1,0 +1,93 @@
+<style>
+.ilus.img-g { left: 60px; top: 150px; width: 1140px; height: 570px; }
+.pie-g { left: 60px; top: 736px; width: 1140px; }
+.fa .col { width: 620px; right: 60px; }
+.fa .bajo { position: absolute; left: 60px; top: 820px; width: 1140px; display: flex; gap: 30px; align-items: baseline; }
+.fb .plato { position: absolute; left: 40px; top: 120px; width: 1100px; height: 900px; }
+.fb .plato svg { width: 1100px; height: 900px; }
+.fb .col { width: 700px; right: 70px; }
+.fc .centro { position: absolute; left: 100px; right: 100px; top: 140px; bottom: 100px; display: flex; flex-direction: column; justify-content: center; gap: 40px; }
+.fc .grita { font-family: "Georgia", serif; font-weight: 700; font-size: 130px; color: var(--oro); line-height: 1; }
+</style>
+
+<div class="fase fa">
+  <div class="cab"><span class="cap">Génesis 25</span><span>versículos 29 y 30</span></div>
+  <div class="ilus img-g"><div class="kb"><img src="assets/img/guisado.svg" /></div></div>
+  <div class="pie-img pie-g">“Jacob le da un plato de comida a Esaú a cambio de su derecho de primogénito”. Ilustración: <i>Lecciones que aprendo de la Biblia</i>, lección 12, pág. 34</div>
+  <div class="bajo"><div class="m md oro b1">“sin fuerzas”</div><div class="s b2">la nota dice: “muy hambriento”</div></div>
+  <div class="col">
+    <div class="b a1"><div class="rotulo" style="font-size:28px;color:var(--tenue)">LITERALMENTE, ESAÚ PIDE</div><div class="m xl rojo">“de lo rojo, esto rojo”</div><div class="s">nota de la TNM en 25:30</div><div class="def"><div class="t">Edom<i>’Edhóhm</i></div><div class="x">“Rojo”</div></div></div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="cab"><span class="cap">Génesis 25</span><span>versículo 34 · el guisado de lentejas</span></div>
+  <div class="plato"><svg viewBox="0 0 1100 900">
+    <defs>
+      <radialGradient id="e14-guiso" cx="0.42" cy="0.4" r="0.7"><stop offset="0" stop-color="#d9642e"/><stop offset="0.55" stop-color="#a8411c"/><stop offset="1" stop-color="#6e2610"/></radialGradient>
+      <linearGradient id="e14-barro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c98a55"/><stop offset="0.5" stop-color="#9c6436"/><stop offset="1" stop-color="#5e3a1d"/></linearGradient>
+      <radialGradient id="e14-lente" cx="0.35" cy="0.35" r="0.8"><stop offset="0" stop-color="#d98a52"/><stop offset="0.6" stop-color="#a85a2a"/><stop offset="1" stop-color="#6e3616"/></radialGradient>
+      <radialGradient id="e14-vapor"><stop offset="0" stop-color="#fff" stop-opacity="0.35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    </defs>
+    <ellipse cx="480" cy="660" rx="380" ry="60" fill="#000" opacity="0.35"/>
+    <path d="M 120 420 C 130 580 280 660 480 660 C 680 660 830 580 840 420 Z" fill="url(#e14-barro)"/>
+    <ellipse cx="480" cy="420" rx="360" ry="96" fill="#7a4a24"/>
+    <ellipse cx="480" cy="424" rx="330" ry="80" fill="url(#e14-guiso)"/>
+    <g class="granos" fill="url(#e14-lente)"></g>
+    <path d="M 160 470 C 220 560 330 610 480 614" fill="none" stroke="#e7b27f" stroke-width="8" stroke-linecap="round" opacity="0.5"/>
+    <g class="vapor"><circle cx="380" cy="300" r="70" fill="url(#e14-vapor)"/><circle cx="520" cy="250" r="90" fill="url(#e14-vapor)"/><circle cx="620" cy="320" r="60" fill="url(#e14-vapor)"/></g>
+    <g class="sueltas"></g>
+    <text x="920" y="780" text-anchor="middle" style="font-family:cursive,cursive;font-weight:700;font-size:50px;fill:var(--tiza)">semillas</text>
+    <path d="M 920 740 L 920 700" stroke="#f1e9d8" stroke-width="4" stroke-linecap="round"/>
+  </svg></div>
+  <div class="col">
+    <div class="b c1"><div class="def"><div class="t">lenteja<i>ʽadha·scháh</i></div><div class="x">una planta pequeña: sus semillas son <b>ricas en proteínas</b></div><div class="s">a veces de color marrón rojizo; “se suelen utilizar en los guisados” · Perspicacia, vol. 2, “Lenteja”, pág. 207</div></div></div>
+  </div>
+</div>
+
+<div class="fase fc">
+  <div class="cab"><span class="cap">Génesis 25</span><span>versículos 31 al 34</span></div>
+  <div class="centro">
+    <div class="m x0">Jacob le pide a cambio su <b>derecho de primogénito</b></div>
+    <div class="grita x1">“¡Júramelo primero!”</div>
+    <div class="m x2">decía que se estaba muriendo… pero <b>se levantó y se fue</b></div>
+    <div class="s x3">“Realmente no estaba a punto de morir” · La Atalaya, 1 de enero de 1974, pág. 17</div>
+    <div class="cita x4">“Así despreció Esaú su derecho de primogénito”<span class="ref">GÉNESIS 25:34</span></div>
+  </div>
+</div>
+
+<script>
+// Granos de lenteja en el guiso y sueltos a un lado (semilla fija: el dibujo sale igual en cada cuadro).
+let sem = 11;
+const az = () => (sem = (sem * 16807) % 2147483647) / 2147483647;
+let g = "", s = "";
+for (let i = 0; i < 70; i++) {
+  const a = az() * Math.PI * 2, r = Math.sqrt(az());
+  const x = 480 + Math.cos(a) * r * 300, y = 424 + Math.sin(a) * r * 70;
+  g += `<ellipse cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" rx="13" ry="8" transform="rotate(${(az() * 180).toFixed(0)} ${x.toFixed(0)} ${y.toFixed(0)})" opacity="0.85"/>`;
+}
+for (let i = 0; i < 14; i++) {
+  const x = 870 + az() * 150, y = 620 + az() * 60;
+  s += `<ellipse cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" rx="22" ry="14" fill="url(#e14-lente)" stroke="#5a2a10" stroke-width="2" transform="rotate(${(az() * 180).toFixed(0)} ${x.toFixed(0)} ${y.toFixed(0)})"/>`;
+}
+pinta(".granos", g);
+pinta(".sueltas", s);
+kb(".img-g .kb", 0, at("Era un guisado") + 0.3, { s: 1.12, x: 2 }, { s: 1.0 });
+entra(".b1", 1.0, { y: 20 });
+entra(".b2", 1.6, { y: 16 });
+entra(".a1", at("literalmente"), { y: 30 });
+
+const tB = at("Era un guisado") - 0.3;
+desaparece(".fa", tB, 0.4);
+aparece(".fb", tB + 0.3, 0.5);
+entra(".c1", at("unas semillas"), { y: 30 });
+tl.fromTo($$(".vapor circle"), { y: 0, opacity: 0.3 }, { y: -60, opacity: 0.9, duration: 2.4, yoyo: true, repeat: 3, stagger: 0.4, ease: "sine.inOut", immediateRender: false }, tB + 0.5);
+
+const tC = at("Jacob le pide") - 0.3;
+desaparece(".fb", tC, 0.4);
+aparece(".fc", tC + 0.3, 0.4);
+entra(".x0", tC + 0.4, { y: 20 });
+salta(".x1", at("Júramelo"), { desde: 0.7 });
+entra([".x2", ".x3"], at("Decía que se estaba"), { y: 20, st: 0.4 });
+entra(".x4", at("Así despreció"), { y: 20 });
+</script>

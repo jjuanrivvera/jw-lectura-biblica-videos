@@ -1,0 +1,70 @@
+<style>
+.tab { top: 230px; }
+.esperas { position: absolute; left: 60px; right: 60px; top: 300px; display: flex; flex-direction: column; gap: 40px; }
+.esp { display: flex; align-items: baseline; gap: 34px; }
+.esp .n { width: 250px; text-align: right; font-family: "Georgia", serif; font-weight: 700; font-size: 150px; line-height: 1; color: var(--oro); }
+.esp .d { font-family: "cursive", cursive; font-weight: 700; font-size: 64px; line-height: 1.05; }
+.familia { position: absolute; left: 72px; right: 72px; top: 1060px; text-align: center; font-family: "cursive", cursive; font-weight: 700; font-size: 70px; line-height: 1.05; color: var(--oro); }
+.mesa { position: absolute; left: 72px; right: 72px; top: 220px; }
+.mesa .t { font-family: "Georgia", serif; font-weight: 700; font-size: 76px; }
+.mesa .l { display: flex; gap: 26px; align-items: baseline; margin-top: 34px; }
+.mesa .l b { flex: 0 0 90px; font-family: "Georgia", serif; font-weight: 700; font-size: 62px; color: var(--oro); }
+.mesa .l span { font-family: "cursive", cursive; font-weight: 700; font-size: 56px; line-height: 1.05; }
+.final { position: absolute; left: 60px; right: 60px; top: 560px; text-align: center; }
+.final .q { font-family: "Georgia", serif; font-weight: 600; font-size: 118px; line-height: 1.1; }
+.final .q b { color: var(--oro); font-weight: 700; }
+.final .r { font-family: "Arial", sans-serif; font-weight: 700; font-size: 36px; letter-spacing: 0.1em; color: var(--oro); margin-top: 28px; }
+.final .t { font-family: "cursive", cursive; font-weight: 700; font-size: 62px; color: var(--tenue); margin-top: 120px; }
+</style>
+
+<div class="tab"></div>
+
+<div class="esperas">
+  <div class="esp e1"><div class="n">10</div><div class="d">años en Canaán sin hijo</div></div>
+  <div class="esp e2"><div class="n">13</div><div class="d">años de silencio</div></div>
+  <div class="esp e3"><div class="n">25</div><div class="d">años, hasta Isaac</div></div>
+</div>
+<div class="familia">la guerra, el pacto, Agar, la circuncisión: la vida de una familia que espera</div>
+
+<div class="mesa">
+  <div class="t">Para conversar en la mesa</div>
+  <div class="l l14"><b>14</b><span>Perdonar de verdad incluye ayudar.</span></div>
+  <div class="l l15"><b>15</b><span>Podemos decirle a Jehová exactamente lo que nos preocupa.</span></div>
+  <div class="l l16"><b>16</b><span>Antes de una decisión grande: ¿estamos esperando en Jehová o adelantándonos?</span></div>
+  <div class="l l17"><b>17</b><span>Hacer hoy lo que sabemos que Jehová pide, sin buscarle vueltas.</span></div>
+  <div class="l l18"><b>18</b><span>Hablarle de lo que no entendemos, con respeto, y confiar en el Juez de toda la tierra.</span></div>
+</div>
+
+<div class="final">
+  <div class="q">“¿Es que hay algo imposible para <b>Jehová</b>?”</div>
+  <div class="r">GÉNESIS 18:14</div>
+  <div class="t">Génesis 14 al 18 · una promesa que se va aclarando</div>
+</div>
+
+<script>
+// El tablero empieza vacío y se llena entero mientras la voz nombra cada pieza.
+const T = tablero(".tab");
+entra(".tab", 0.5, { y: 30 });
+[["heredero", 0], ["descendencia", 1], ["tiempo", 2], ["tierra", 3], ["señal", 4], ["madre", 5], ["nombre", 6], ["fecha", 7]].forEach(([w, i]) => T.llenar(i, at(w)));
+sale(".tab", at("Diez años") - 0.5);
+
+salta(".e1 .n", at("Diez años"));
+escribe(".e1 .d", at("Diez años") + 0.3, 1.2);
+salta(".e2 .n", at("Trece años"));
+escribe(".e2 .d", at("Trece años") + 0.3, 1.0);
+salta(".e3 .n", at("Veinticinco"));
+escribe(".e3 .d", at("Veinticinco") + 0.4, 1.0);
+escribe(".familia", at("Lo que pasa"), 5.0);
+sale([".esperas", ".familia"], at("Para conversar") - 0.5);
+
+entra(".mesa .t", at("Para conversar"), { y: 20 });
+[["l14", "Catorce"], ["l15", "Quince"], ["l16", "Dieciséis"], ["l17", "Diecisiete"], ["l18", "Dieciocho"]].forEach(([c, w]) => {
+  entra(".mesa ." + c + " b", at(w), { x: -20, y: 0 });
+  escribe(".mesa ." + c + " span", at(w) + 0.5, 2.2);
+});
+sale(".mesa", at("Y cuando una promesa") - 0.4);
+
+escribe(".final .q", at("Es que hay"), 2.2);
+entra(".final .r", at("Es que hay") + 1.0, { y: 10 });
+entra(".final .t", at("Jehová", 73) + 0.8, { y: 10 });
+</script>

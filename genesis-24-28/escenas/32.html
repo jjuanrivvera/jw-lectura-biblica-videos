@@ -1,0 +1,68 @@
+<!--lead:2.6-->
+<style>
+.fa .centro { position: absolute; left: 90px; right: 90px; top: 140px; bottom: 90px; display: grid; grid-template-columns: 1fr 1.1fr; column-gap: 70px; align-items: center; }
+.fa .centro > div { display: flex; flex-direction: column; gap: 26px; }
+.ord { display: flex; align-items: center; gap: 22px; }
+.ord svg { width: 64px; height: 64px; flex: none; }
+.ord .m { font-size: 70px; }
+.xm path { fill: none; stroke: var(--rojo); stroke-width: 12; stroke-linecap: round; }
+.ok path { fill: none; stroke: var(--verde); stroke-width: 12; stroke-linecap: round; stroke-linejoin: round; }
+.fb .puente { position: absolute; left: 80px; right: 80px; top: 170px; height: 460px; display: grid; grid-template-columns: 1fr 200px 1fr; align-items: center; }
+.fb .p { border-radius: 30px; padding: 30px 40px; background: rgba(10,16,22,0.45); border: 3px solid rgba(233,191,96,0.5); display: flex; flex-direction: column; gap: 12px; }
+.fb .p .k { font-family: "Arial", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; color: var(--tenue); }
+.fb .flecha svg { width: 200px; height: 80px; }
+.fb .flecha path { fill: none; stroke: var(--oro); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.fb .bajo { position: absolute; left: 80px; right: 80px; top: 690px; bottom: 60px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 50px; align-items: center; }
+</style>
+
+<div class="capcard cc"><div class="num">Génesis 28</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">la escalera de Betel</div><div class="edad">1781 antes de nuestra era</div></div>
+
+<div class="fase fa">
+  <div class="cab"><span class="cap">Génesis 28</span><span>versículos 1 al 5</span></div>
+  <div class="centro">
+    <div>
+      <div class="ord o1"><svg class="xm" viewBox="0 0 64 64"><path d="M 10 10 L 54 54"/><path d="M 54 10 L 10 54"/></svg><div class="m">una cananea</div></div>
+      <div class="ord o2"><svg class="ok" viewBox="0 0 64 64"><path d="M 8 34 L 26 52 L 58 12"/></svg><div class="m">a Padán-Aram, a la casa de <b>Labán</b></div></div>
+      <div class="s o3">Génesis 28:1, 2</div>
+    </div>
+    <div>
+      <div class="cita c1">“El Dios Todopoderoso te bendecirá [...]. Él te dará <b>la bendición de Abrahán</b>”<span class="ref">GÉNESIS 28:3, 4</span></div>
+      <div class="m oro c2">esta vez, sabiendo a quién bendecía</div>
+      <div class="s c3">“Isaac mismo debió reconocer que se había cumplido la voluntad de Jehová” · Perspicacia, vol. 2, “Jacob”, pág. 8</div>
+    </div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="cab"><span class="cap">Génesis 28</span><span>’El Schad·dái</span></div>
+  <div class="puente">
+    <div class="p p1"><div class="k">GÉNESIS 17:1</div><div class="m">Jehová le promete a Abrahán que nacerá <b>Isaac</b></div><div class="m oro">“Dios Todopoderoso”</div></div>
+    <div class="flecha p2"><svg viewBox="0 0 200 80"><path d="M 10 40 L 186 40 M 164 20 L 188 40 L 164 60"/></svg></div>
+    <div class="p p3"><div class="k">GÉNESIS 28:3</div><div class="m">Isaac, el hijo de esa promesa, bendice a <b>Jacob</b></div><div class="m oro">“El Dios Todopoderoso”</div><span class="propio">observación propia</span></div>
+  </div>
+  <div class="bajo">
+    <div class="def d1"><div class="t">Dios Todopoderoso<i>’El Schad·dái</i></div><div class="x">comunica la idea de <b>fuerza o poder</b></div><div class="s">Perspicacia, vol. 2, “Todopoderoso”, págs. 1139, 1140</div></div>
+    <div class="d2"><div class="m rojo">Esaú: además, una hija de Ismael</div><div class="s">Mahalat · “además de las otras esposas que ya tenía” (28:8, 9)</div><span class="propio">no dejó a las otras: observación propia</span></div>
+  </div>
+</div>
+
+<script>
+capitulo(".cc", 0.3, at("Isaac le manda") - 0.2);
+const tA = at("Isaac le manda") + 0.45;
+aparece(".fa", tA, 0.4);
+entra(".o1", at("que no se case"), { x: -20, y: 0 });
+traza(".o1 path", at("que no se case") + 0.3, 0.4, { st: 0.15 });
+entra([".o2", ".o3"], at("sino que vaya"), { x: -20, y: 0 });
+traza(".o2 path", at("sino que vaya") + 0.3, 0.5);
+entra(".c1", at("Y lo bendice"), { y: 20 });
+entra([".c2", ".c3"], at("esta vez sabiendo"), { y: 20 });
+
+const tB = at("Dios Todopoderoso, en hebreo") - 0.3;
+desaparece(".fa", tB, 0.4);
+aparece(".fb", tB + 0.3, 0.4);
+entra(".d1", tB + 0.4, { y: 20 });
+entra(".p1", at("Es el título"), { x: -30, y: 0 });
+traza(".p2 path", at("el nacimiento de Isaac"), 0.6);
+entra(".p3", at("el nacimiento de Isaac") + 0.4, { x: 30, y: 0 });
+entra(".d2", at("Y Esaú"), { y: 20 });
+</script>

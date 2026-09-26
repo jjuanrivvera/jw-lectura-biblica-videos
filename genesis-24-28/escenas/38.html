@@ -1,0 +1,30 @@
+<style>
+.arriba { position: absolute; left: 90px; right: 90px; top: 110px; }
+.dos { position: absolute; left: 90px; right: 90px; top: 420px; height: 420px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; }
+.lado { border-radius: 30px; padding: 26px 36px; background: rgba(10,16,22,0.45); border: 3px solid rgba(241,233,216,0.14); display: grid; grid-template-columns: 120px 1fr; column-gap: 24px; align-items: center; }
+.lado svg { width: 120px; height: 300px; }
+.lado svg path { fill: none; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.lado .k { font-family: "Arial", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; color: var(--tenue); }
+.lado .m { font-size: 60px; }
+.bajo { position: absolute; left: 90px; right: 90px; top: 880px; bottom: 50px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+</style>
+
+<div class="cab"><span class="cap">Juan 1:51</span><span>los ángeles y el Hijo del Hombre</span></div>
+<div class="arriba"><div class="cita a1">“Verán el cielo abierto y a los ángeles de Dios subiendo y bajando <b>hacia el Hijo del Hombre</b>”<span class="ref">JUAN 1:51 · JESÚS A NATANAEL</span></div></div>
+<div class="dos">
+  <div class="lado l1"><svg viewBox="0 0 120 300"><path d="M 40 280 L 40 30 M 20 54 L 40 26 L 60 54" style="stroke:var(--tiza)"/><path d="M 84 30 L 84 280 M 64 256 L 84 284 L 104 256" style="stroke:var(--tiza)"/></svg><div><div class="k">GÉNESIS 28:12, 13 · BETEL</div><div class="m">por una escalera… y <b>Jehová</b> por encima</div></div></div>
+  <div class="lado l2" style="border-color:rgba(233,191,96,0.6)"><svg viewBox="0 0 120 300"><path d="M 40 280 L 40 30 M 20 54 L 40 26 L 60 54" style="stroke:var(--oro)"/><path d="M 84 30 L 84 280 M 64 256 L 84 284 L 104 256" style="stroke:var(--oro)"/></svg><div><div class="k">JUAN 1:51</div><div class="m oro">“hacia el Hijo del Hombre”</div><div class="s">otra traducción: “al servicio del Hijo del Hombre”</div></div></div>
+</div>
+<div class="bajo">
+  <div class="b1"><div class="m md">“puede que estuviera pensando en la visión que tuvo Jacob”</div><div class="s">nota de estudio de Juan 1:51 · probable, no seguro</div></div>
+  <div class="b2" style="text-align:right;max-width:700px"><div class="m md rosa">Natanael: “un israelita en quien no hay engaño”</div><div class="s">Juan 1:47 y nota de estudio</div></div>
+</div>
+
+<script>
+entra(".a1", at("Verán el cielo"), { y: 20 });
+entra(".l1", at("La nota de estudio"), { x: -30, y: 0 });
+entra(".l2", at("La nota de estudio") + 0.6, { x: 30, y: 0 });
+entra(".b1", at("puede que estuviera"), { y: 20 });
+entra(".b2", 0.8, { y: 20 });
+late(".l2 svg", at("pruebas de que"), { s: 1.08, n: 2 });
+</script>

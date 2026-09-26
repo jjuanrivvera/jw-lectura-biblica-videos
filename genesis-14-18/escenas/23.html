@@ -1,0 +1,71 @@
+<style>
+.lienzo { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+.lienzo .c { fill: none; stroke: var(--tiza); stroke-width: 5; }
+.lienzo .arco { fill: none; stroke-width: 8; stroke-linecap: round; }
+.num { position: absolute; top: 290px; width: 160px; text-align: center; font-family: "Georgia", serif; font-weight: 700; font-size: 64px; }
+.et { position: absolute; top: 200px; width: 200px; text-align: center; font-family: "cursive", cursive; font-weight: 700; font-size: 44px; color: var(--tenue); }
+.hilo { position: absolute; left: 72px; right: 72px; top: 760px; }
+.hilo .t { font-family: "Georgia", serif; font-weight: 700; font-size: 80px; line-height: 1.05; }
+.hilo .v { display: flex; flex-direction: column; gap: 18px; margin-top: 30px; }
+.hilo .v div { font-family: "cursive", cursive; font-weight: 700; font-size: 56px; line-height: 1.05; }
+.hilo .v b { font-family: "Arial", sans-serif; font-size: 32px; color: var(--tenue); margin-right: 14px; }
+.hilo .s { font-family: "Arial", sans-serif; font-size: 28px; color: var(--tenue); margin-top: 20px; }
+.hilo .propio { margin-top: 18px; font-size: 42px; }
+.cierre { position: absolute; left: 72px; right: 72px; top: 1300px; text-align: center; }
+.cierre .m { font-family: "cursive", cursive; font-weight: 700; font-size: 62px; line-height: 1.05; }
+</style>
+
+<svg class="lienzo" viewBox="0 0 1080 1920">
+  <path class="c" d="M130 330 m-70 0 a70 70 0 1 0 140 0 a70 70 0 1 0 -140 0" />
+  <path class="c" d="M335 330 m-70 0 a70 70 0 1 0 140 0 a70 70 0 1 0 -140 0" />
+  <path class="c" d="M540 330 m-70 0 a70 70 0 1 0 140 0 a70 70 0 1 0 -140 0" />
+  <path class="c" d="M745 330 m-70 0 a70 70 0 1 0 140 0 a70 70 0 1 0 -140 0" />
+  <path class="c" d="M950 330 m-70 0 a70 70 0 1 0 140 0 a70 70 0 1 0 -140 0" />
+  <path class="arco a1" style="stroke:var(--rojo)" d="M130 405 C 130 640, 950 640, 950 405" />
+  <path class="arco a2" style="stroke:var(--cielo)" d="M540 405 C 540 500, 745 500, 745 405 M745 405 C 760 520, 980 540, 1060 470" />
+  <path class="arco a3" style="stroke:var(--rosa)" d="M540 405 C 540 560, 950 560, 950 405" />
+  <path class="arco a4" style="stroke:var(--oro)" d="M745 405 C 745 470, 950 470, 950 405 M950 405 C 960 460, 1030 480, 1070 440" />
+  <path class="arco a5" style="stroke:var(--verde)" d="M335 405 C 335 520, 540 520, 540 405 M540 405 C 540 680, 950 680, 950 405" />
+</svg>
+<div class="num" style="left:50px">14</div>
+<div class="num" style="left:255px">15</div>
+<div class="num" style="left:460px">16</div>
+<div class="num" style="left:665px">17</div>
+<div class="num" style="left:870px">18</div>
+<div class="et e14" style="left:30px">una guerra</div>
+<div class="et e15" style="left:235px">estrellas</div>
+<div class="et e16" style="left:440px">una huida</div>
+<div class="et e17" style="left:645px">circuncisión</div>
+<div class="et e18" style="left:850px">una comida</div>
+
+<div class="hilo h1"><div class="t" style="color:var(--rojo)">Dos veces por Lot</div><div class="v"><div><b>14</b>lo rescata con la espada</div><div><b>18</b>intercede por él con palabras</div><div><b>19:29</b>Dios “tuvo en cuenta a Abrahán”</div></div><span class="propio">observación propia</span></div>
+<div class="hilo h2"><div class="t" style="color:var(--cielo)">Dios escucha</div><div class="v"><div><b>16:11</b>Ismael: “Dios escucha”</div><div><b>17:20</b>“he oído tu petición”</div><div><b>21:17</b>“Dios oyó” al muchacho</div></div><div class="s">Perspicacia, vol. 1, “Ismael”, pág. 1261</div></div>
+<div class="hilo h3"><div class="t" style="color:var(--rosa)">Un Dios que ve</div><div class="v"><div><b>16:13</b>“Tú eres un Dios que ve”</div><div><b>18:21</b>“Voy a bajar para ver”</div></div><span class="propio">observación propia</span></div>
+<div class="hilo h4"><div class="t" style="color:var(--oro)">Una risa en cuatro capítulos</div><div class="v"><div><b>17:17</b>se ríe Abrahán</div><div><b>18:12</b>se ríe Sara</div><div><b>17:19</b>Isaac, “risa”</div><div><b>21:9</b>Ismael se burla: la misma palabra, tsa·jáq</div></div><div class="s">Perspicacia, vol. 2, “Risa”, pág. 860</div></div>
+<div class="hilo h5"><div class="t" style="color:var(--verde)">El Juez</div><div class="v"><div><b>15:14</b>juzgará a la nación que esclavice a su pueblo</div><div><b>16:5</b>“Que Jehová juzgue entre tú y yo”</div><div><b>18:25</b>“¿El Juez de toda la tierra no hará lo que es justo?”</div></div><span class="propio">observación propia</span></div>
+<div class="cierre"><div class="m">naciones, una familia, una ciudad: siempre con justicia</div></div>
+
+<script>
+traza(".lienzo .c", at("Parecen"), 0.6, { st: 0.15 });
+entra(".num", at("Parecen") + 0.2, { y: 12, st: 0.15 });
+escribe(".e14", at("guerra"), 0.5);
+escribe(".e15", at("estrellas"), 0.5);
+escribe(".e16", at("huida"), 0.5);
+escribe(".e17", at("circuncisión"), 0.6);
+escribe(".e18", at("comida"), 0.5);
+
+const hilos = [[".a1", ".h1", at("Dos veces por Lot")], [".a2", ".h2", at("Dios escucha")], [".a3", ".h3", at("Un Dios que ve")], [".a4", ".h4", at("Una risa")], [".a5", ".h5", at("Y el Juez")]];
+hilos.forEach(([a, h, t], i) => {
+  traza(".lienzo " + a, t, 1.4);
+  entra(h, t, { y: 24 });
+  if (i < hilos.length - 1) { sale(h, hilos[i + 1][2] - 0.4, { d: 0.35 }); atenua(".lienzo " + a, hilos[i + 1][2], 0.3); }
+});
+entra(".h1 .v div", at("En el capítulo catorce"), { y: 14, st: 2.2 });
+entra(".h2 .v div", at("Ismael significa"), { y: 14, st: 4.5 });
+entra(".h3 .v div", at("Agar llama"), { y: 14, st: 3.0 });
+entra(".h4 .v div", at("Se ríe Abrahán"), { y: 14, st: 2.4 });
+entra(".h5 .v div", at("Jehová juzgará"), { y: 14, st: 3.6 });
+escribe(".cierre .m", at("Juzga a las naciones"), 3.0);
+// Al final, todos los hilos juntos.
+tl.to(root.querySelectorAll(".lienzo .arco"), { opacity: 1, duration: 0.6 }, at("Tres de estos"));
+</script>

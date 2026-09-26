@@ -1,0 +1,46 @@
+<style>
+.retrato { position: absolute; left: 40px; top: 170px; width: 540px; height: 751px; }
+.pieret { position: absolute; left: 40px; width: 540px; top: 935px; font-family: "Arial", sans-serif; font-size: 26px; color: var(--tenue); line-height: 1.3; }
+.dialogo { position: absolute; left: 610px; right: 40px; top: 190px; display: flex; flex-direction: column; gap: 30px; }
+.globo { padding: 22px 26px; border-radius: 26px; }
+.globo .k { font-family: "Arial", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.14em; }
+.q1 { border: 3px solid var(--cielo); }
+.q1 .k { color: var(--cielo); }
+.q1 .t { font-family: "Georgia", serif; font-weight: 600; font-size: 50px; line-height: 1.1; margin-top: 8px; }
+.a1 { border: 3px solid var(--oro); }
+.a1 .k { color: var(--oro); }
+.a1 .t { font-family: "Georgia", serif; font-weight: 700; font-size: 150px; line-height: 1; color: var(--oro); }
+.vuelto { font-family: "cursive", cursive; font-weight: 700; font-size: 62px; line-height: 1.02; color: var(--rojo); }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 37</span><span>versículos 17 al 20</span></div>
+<div class="retrato ilus"><div class="kb"><img src="assets/img/sedequias.svg" /></div></div>
+<div class="pieret">Sedequías · libro Dios nos habla mediante Jeremías, recuadro de la pág. 29 · representación artística</div>
+<div class="dialogo">
+  <div class="globo q1"><div class="k">EL REY</div><div class="t">“¿Has recibido alguna palabra de Jehová?”</div></div>
+  <div class="globo a1"><div class="k">JEREMÍAS</div><div class="t">“¡Sí!”</div></div>
+  <div class="vuelto">Y los caldeos habían vuelto</div>
+</div>
+
+<div class="zt">
+  <div class="b b1"><div class="cita">“lo interrogó a escondidas en su casa”<span class="ref">JEREMÍAS 37:17</span></div></div>
+  <div class="b b2"><div class="m">Mirando de reojo, como quien vigila que no lo vean</div></div>
+  <div class="b b3"><div class="m">“un gobernante débil y vacilante, dominado por sus príncipes y sus propios miedos”</div><div class="s">Dios nos habla mediante Jeremías, recuadro de la pág. 29</div></div>
+  <div class="b b4"><div class="cita">“¡Serás entregado en manos del rey de Babilonia!”<span class="ref">JEREMÍAS 37:17</span></div></div>
+  <div class="b b5"><div class="m">Delante del único que podía sacarlo, no cambió ni una palabra</div></div>
+  <div class="b b6"><div class="cita">“¿Dónde están ahora los profetas de ustedes que les profetizaron ‘El rey de Babilonia no vendrá contra ustedes ni contra este país’?”<span class="ref">JEREMÍAS 37:19</span></div></div>
+  <div class="b b7"><div class="cita">“No me mandes de vuelta a la casa del secretario Jehonatán, que allí voy a morir”<span class="ref">JEREMÍAS 37:20</span></div></div>
+  <div class="b b8"><div class="m oro">Firme con el mensaje, humilde con su persona</div></div>
+  <div class="b b9"><div class="m">El que tenía miedo no era el preso, sino el rey</div><div class="s">Jeremías 38:5: “el rey no puede hacer nada para detenerlos a ustedes”</div></div>
+</div>
+
+<script>
+entra(".retrato", 0.6, { x: -30, y: 0 });
+kb(".retrato .kb", 0.6, DUR, { s: 1.0 }, { s: 1.1, x: 2, y: 2 });
+aparece(".pieret", 1.0);
+entra(".q1", at("Has recibido"), { x: 30, y: 0 });
+salta(".a1", at("Sí"), { desde: 0.5 });
+escribe(".vuelto", at("Los caldeos habían"), 1.2);
+
+secuencia([[".b1", 0.6], [".b2", at("El libro de Jeremías")], [".b3", at("Lo describe")], [".b4", at("Serás")], [".b5", at("Tenía delante")], [".b6", at("Luego pregunta")], [".b7", at("Y suplica")], [".b8", at("Firme")], [".b9", at("El que tenía")]]);
+</script>

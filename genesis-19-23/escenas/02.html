@@ -1,0 +1,52 @@
+<style>
+.capcard .num b { color: var(--oro); }
+.dib { position: absolute; left: 30px; top: 170px; width: 1060px; height: 829px; }
+.dib svg { width: 1060px; height: 829px; }
+.et { font-family: "cursive", cursive; font-weight: 700; font-size: 50px; }
+.et-s { font-family: "Arial", sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 0.12em; }
+.flecha { fill: none; stroke: var(--cielo); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 3 16; }
+.guia { fill: none; stroke: var(--tiza); stroke-width: 3; }
+.lot circle { fill: var(--oro); stroke: #17212b; stroke-width: 4; }
+</style>
+
+<div class="fase f-cap"><div class="capcard"><div class="num">Génesis <b>19</b></div><svg viewBox="0 0 760 40"><path d="M 10 24 C 200 8 520 36 750 18"/></svg><div class="sub">Sodoma, la esposa de Lot y la cueva</div><div class="edad">1919 antes de nuestra era</div></div></div>
+
+<div class="fase f-a">
+<div class="cab"><span class="cap">Génesis 19</span><span>versículos 1 al 3</span></div>
+<div class="dib"><svg viewBox="0 0 1100 860">
+  <g class="puerta"></g>
+  <g class="lbl l-plaza"><text class="et" x="550" y="790" fill="var(--oro)" text-anchor="middle">la plaza de la ciudad</text></g>
+  <g class="lbl l-viaj"><path class="flecha fl-viaj" d="M 550 470 L 550 700 M 520 670 L 550 704 L 580 670"/><text class="et" x="592" y="700" fill="var(--cielo)">viajeros</text></g>
+  <g class="lbl l-merc"><path class="guia" d="M 100 488 L 100 430"/><text class="et" x="100" y="420" fill="var(--tiza)" text-anchor="middle">mercado</text><path class="guia" d="M 1005 488 L 1005 430"/><text class="et" x="1005" y="420" fill="var(--tiza)" text-anchor="middle">mercado</text></g>
+  <g class="lbl l-noti"><text class="et" x="380" y="750" fill="var(--tiza)" text-anchor="middle">noticias</text></g>
+  <g class="lbl l-anc"><path class="guia" d="M 232 600 L 232 560" /><path class="guia" d="M 868 600 L 868 560"/><text class="et" x="232" y="552" fill="var(--rojo)" text-anchor="middle" style="font-size:46px">ancianos</text><text class="et" x="868" y="552" fill="var(--rojo)" text-anchor="middle" style="font-size:46px">juzgan</text></g>
+  <g class="lot"><circle cx="210" cy="598" r="14"/><text class="et" x="210" y="700" fill="var(--oro)" text-anchor="middle">Lot</text><path class="guia" d="M 210 616 L 210 660"/></g>
+</svg></div>
+<div class="col">
+  <div class="b b1"><div class="cita">“Lot estaba sentado <b>a la puerta de la ciudad</b>”<span class="ref">GÉNESIS 19:1 · AL ATARDECER</span></div></div>
+  <div class="b b2"><div class="def"><div class="t">La puerta de la ciudad</div><div class="x">la plaza: viajeros, mercado, noticias y juicios</div><div class="s">Perspicacia, “Puerta, paso de entrada”, págs. 757, 758</div></div></div>
+  <div class="b b3"><div class="cita">“Este individuo solitario, un extranjero que vino a vivir aquí, <b>¿cómo se atreve a juzgarnos?</b>”<span class="ref">GÉNESIS 19:9 · LA TURBA</span></div><div class="s">Ninguna publicación dice que Lot fuera juez.</div></div>
+  <div class="b b4"><div class="def"><div class="t">Hospitalidad</div><div class="x">el huésped quedaba bajo la protección del dueño de la casa, “hasta con la vida”</div><div class="s">Perspicacia, “Hospitalidad”, pág. 1179 · La Atalaya, 15 de enero de 2004, pág. 27</div></div></div>
+</div>
+</div>
+
+<script>
+/*incluir:_puerta.js*/
+pinta(".puerta", puertaSVG("p02"));
+capitulo(".f-cap .capcard", 0.3, at("Al atardecer") - 0.2);
+const tA = at("Al atardecer");
+entra(".f-a .cab", tA, { y: -10 });
+aparece(".dib", tA + 0.1, 0.8);
+tl.fromTo($(".dib svg"), { scale: 1.08 }, { scale: 1, duration: 3, ease: "power2.out", transformOrigin: "50% 60%", immediateRender: false }, tA);
+salta(".lot", at("Lot estaba sentado"), { desde: 0.3 });
+aparece(".l-plaza", at("era la plaza"), 0.6);
+traza(".fl-viaj", at("llegaban los viajeros"), 1.0);
+aparece(".l-viaj text", at("llegaban los viajeros"), 0.5);
+aparece(".l-merc", at("los mercados"), 0.6);
+aparece(".l-noti", at("las noticias"), 0.6);
+aparece(".l-anc", at("los ancianos"), 0.6);
+late(".bancos", at("para juzgar"), { s: 1.04, n: 3 });
+atenua([".l-plaza", ".l-viaj", ".l-merc", ".l-noti"], at("Lot insiste"), 0.25);
+late(".lot circle", at("hospedar"), { s: 1.4 });
+secuencia([[".b1", tA + 0.3], [".b2", at("En una ciudad amurallada")], [".b3", at("Ninguna publicación")], [".b4", at("En esa época")]]);
+</script>

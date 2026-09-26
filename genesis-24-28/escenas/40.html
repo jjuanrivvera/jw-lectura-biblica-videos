@@ -1,0 +1,47 @@
+<style>
+.mapa { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 5000px; height: 3800px; }
+.ruta-h { stroke-width: 58; }
+.r-s { fill: none; stroke: #c0392b; stroke-width: 28; stroke-linecap: round; stroke-linejoin: round; }
+.r-j { fill: none; stroke: #1e8c4e; stroke-width: 22; stroke-linecap: round; stroke-linejoin: round; }
+.pt { fill: #fff; stroke: #1b2733; stroke-width: 12; }
+.lugar { font-family: "Arial", sans-serif; font-weight: 800; font-size: 110px; fill: #1b2733; stroke-width: 24px; }
+.pozo-i circle { fill: #2d6fb6; stroke: #fff; stroke-width: 12; }
+.esquina { position: absolute; left: 0; top: 0; width: 700px; height: 460px; background: radial-gradient(ellipse 100% 100% at 0 0, #17212b 38%, rgba(23,33,43,0.85) 55%, rgba(23,33,43,0) 100%); }
+.col { top: 110px; bottom: 100px; right: 60px; width: 740px; }
+.pie-mapa { top: 84px; bottom: auto; max-width: 560px; }
+.lin { display: inline-block; width: 70px; height: 14px; border-radius: 7px; margin-right: 16px; vertical-align: middle; }
+</style>
+
+<div class="mapa">
+  <div class="cam">
+    <img src="assets/img/mapa-rutas.svg" />
+    <svg viewBox="0 0 5000 3800">
+      <path class="ruta-h" d="M 1157 3083 L 1262 2953 L 1299 2873 L 1314 2768 L 1330 2638 L 1360 2480 L 1420 2330 L 1480 2230 L 1600 2110 L 1734 2032 L 1790 1760 L 1880 1480 L 1916 1270 L 1890 1100 L 1928 942 L 2070 738 L 2240 590 L 2410 457 L 2600 425 L 2807 400"/>
+      <path class="r-s" d="M 1157 3083 L 1262 2953 L 1299 2873 L 1314 2768 L 1330 2638 L 1360 2480 L 1420 2330 L 1480 2230 L 1600 2110 L 1734 2032 L 1790 1760 L 1880 1480 L 1916 1270 L 1890 1100 L 1928 942 L 2070 738 L 2240 590 L 2410 457 L 2600 425 L 2807 400"/>
+      <path class="r-j" d="M 1157 3083 L 1262 2953 L 1299 2873 L 1314 2768 L 1330 2638 L 1360 2480 L 1420 2330 L 1480 2230 L 1600 2110 L 1734 2032 L 1790 1760 L 1880 1480 L 1916 1270 L 1890 1100 L 1928 942 L 2070 738 L 2240 590 L 2410 457 L 2600 425 L 2807 400" transform="translate(46 22)"/>
+      <circle class="pt" cx="1157" cy="3083" r="30"/><text class="lugar halo" x="500" y="3110">Beer-Seba</text>
+      <circle class="pt" cx="2807" cy="400" r="34"/><text class="lugar halo" x="2890" y="470">Harán</text>
+      <g class="pozo-i"><circle cx="2860" cy="620" r="46"/></g>
+    </svg>
+  </div>
+  <div class="pie-mapa">Mapa esquemático original; las ubicaciones son orientativas.</div>
+</div>
+<div class="esquina"></div>
+<div class="panel"></div>
+<div class="cab sobre"><span class="cap">Los hilos</span><span>el mismo camino, en dos direcciones</span></div>
+<div class="col">
+  <div class="b a1"><div class="m"><span class="lin" style="background:#c0392b"></span>el siervo de Abrahán</div><div class="m oro">“10 camellos” y “todo tipo de regalos”</div><div class="s">Génesis 24:10</div></div>
+  <div class="b a2"><div class="m"><span class="lin" style="background:#1e8c4e"></span>Jacob, unos cien años después</div><div class="cita md">“Cuando crucé el Jordán, <b>solo tenía mi bastón</b>”<span class="ref">GÉNESIS 32:10</span></div><div class="s">“Jacob llegó con las manos vacías” · La Atalaya, 15 de octubre de 2003, pág. 29</div></div>
+  <div class="b a3"><div class="m">los dos terminan junto a un pozo, con una joven de la familia de Nacor</div><div class="m oro">Rebeca · Raquel</div><div class="s">Génesis 24:15 · 29:9, 10</div><span class="propio">la comparación: observación propia</span></div>
+</div>
+
+<script>
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 700, y: 260, w: 2800, h: 3080 }, V), 0);
+traza([".ruta-h", ".r-s"], at("El siervo de Abrahán"), 3.0, { ease: "none" });
+traza(".r-j", at("Jacob hizo el mismo"), 3.0, { ease: "none" });
+salta(".pozo-i", at("junto a un pozo"), { desde: 0.4 });
+late(".pozo-i circle", at("Rebeca, y después"), { s: 1.3, n: 3 });
+secuencia([[".a1", at("El siervo de Abrahán")], [".a2", at("Unos cien años")], [".a3", at("Y los dos viajes")]]);
+</script>

@@ -1,0 +1,74 @@
+<style>
+.fa .centro { position: absolute; left: 100px; right: 100px; top: 150px; bottom: 110px; display: grid; grid-template-columns: 1fr 1.2fr; column-gap: 70px; align-items: center; }
+.fa .grande { font-size: 230px; color: var(--oro); }
+.fa .grande small { display: block; font-family: "cursive", cursive; font-size: 80px; color: var(--tiza); margin-top: 10px; }
+.fb .dos { position: absolute; left: 80px; right: 80px; top: 340px; height: 500px; height: 560px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 120px; }
+.fb .gem { border-radius: 30px; padding: 30px 40px; background: rgba(10,16,22,0.45); border: 4px solid; display: flex; flex-direction: column; gap: 14px; }
+.fb .gem .nombre { font-family: "Georgia", serif; font-weight: 700; font-size: 110px; line-height: 1; }
+.fb .gem .heb { font-family: "Georgia", serif; font-style: italic; font-size: 34px; color: var(--tenue); }
+.fb .gem .m { font-size: 62px; }
+.fb .gem .nacion { margin-top: auto; font-family: "Arial", sans-serif; font-weight: 800; font-size: 44px; letter-spacing: 0.14em; }
+.fb .arriba { position: absolute; left: 80px; right: 80px; top: 110px; text-align: center; }
+.fb .servira { position: absolute; left: 80px; right: 80px; top: 880px; text-align: center; }
+.fb .flecha { position: absolute; left: 860px; top: 470px; width: 200px; height: 100px; }
+.fb .flecha path { fill: none; stroke: var(--oro); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+.ilus.img-j { left: 70px; top: 120px; width: 660px; height: 880px; }
+.pie-j { left: 70px; top: 1010px; width: 800px; font-size: 22px; }
+.fc .col { left: 820px; right: 80px; width: auto; }
+.fc .dos-c { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+</style>
+
+<div class="fase fa">
+  <div class="cab"><span class="cap">Génesis 25</span><span>versículos 19 al 22</span></div>
+  <div class="centro">
+    <div class="grande g1">20<small>años sin hijos</small></div>
+    <div class="derecha"><div class="cita c1">“Isaac le rogaba a Jehová por su esposa, porque ella era estéril. Entonces Jehová <b>escuchó sus ruegos</b>”<span class="ref">GÉNESIS 25:21</span></div><div class="s c2" style="margin-top:24px">Perspicacia, vol. 1, “Isaac”, pág. 1252</div></div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="cab"><span class="cap">Génesis 25</span><span>versículos 23 al 26</span></div>
+  <div class="arriba b0"><div class="m rosa b00">los niños luchaban dentro de ella · Rebeca “consultó a Jehová” (25:22)</div><div class="cita md b01" style="margin-top:14px">“Hay <b>dos naciones</b> en tu vientre”<span class="ref">GÉNESIS 25:23</span></div></div>
+  <div class="dos">
+    <div class="gem g-e" style="border-color:var(--rojo)"><div class="nombre" style="color:var(--rojo)">Esaú</div><div class="heb">‛E·sáw</div><div class="m">“velludo”</div><div class="s">nació primero, rojizo</div><div class="nacion" style="color:var(--rojo)">EDOM</div></div>
+    <div class="gem g-j" style="border-color:var(--verde)"><div class="nombre" style="color:var(--verde)">Jacob</div><div class="heb">Ya·‛aqóv</div><div class="m">“el que agarra el talón” o “el que suplanta”</div><div class="s">notas de la TNM en 25:25, 26</div><div class="nacion" style="color:var(--verde)">ISRAEL</div></div>
+  </div>
+  <div class="servira"><div class="m oro sv1">“el mayor servirá al más joven”</div><div class="s sv2">saber cómo serían no es fijarles el destino · Perspicacia, “Jacob”, pág. 8</div></div>
+</div>
+
+<div class="fase fc">
+  <div class="cab"><span class="cap">Génesis 25</span><span>versículo 27</span></div>
+  <div class="ilus img-j"><div class="kb"><img src="assets/img/jacob-esau.svg" /></div></div>
+  <div class="pie-img pie-j">“Jacob y Esaú”. Ilustración: <i>Lecciones que aprendo de la Biblia</i>, lección 12, pág. 34</div>
+  <div class="col">
+    <div class="b">
+      <div class="dos-c">
+        <div class="d-e"><div class="m rojo">Esaú</div><div class="cita md">“un hábil cazador al que le gustaba estar en el campo”</div></div>
+        <div class="d-j"><div class="m" style="color:var(--verde)">Jacob</div><div class="cita md">“un hombre sin culpa que vivía en tiendas de campaña”</div></div>
+      </div>
+      <div class="s">Génesis 25:27</div>
+    </div>
+  </div>
+</div>
+
+<script>
+salta(".g1", 0.5, { desde: 0.7 });
+entra([".c1", ".c2"], at("e Isaac le rogaba"), { y: 20, st: 0.3 });
+
+const tB = at("Cuando por fin") - 0.3;
+desaparece(".fa", tB, 0.4);
+aparece(".fb", tB + 0.3, 0.4);
+entra(".b00", at("Cuando por fin") + 0.3, { y: 20 });
+entra(".b01", at("dos naciones"), { y: 20 });
+entra(".sv1", at("y que el mayor"), { y: 20 });
+entra(".sv2", at("Que Jehová supiera"), { y: 16 });
+entra(".g-e", at("Primero nació Esaú"), { x: -40, y: 0 });
+entra(".g-j", at("Después Jacob"), { x: 40, y: 0 });
+
+const tC = at("Esaú llegó a ser") - 0.3;
+desaparece(".fb", tC, 0.4);
+aparece(".fc", tC + 0.3, 0.4);
+kb(".img-j .kb", tC, DUR, { s: 1.1, y: -2 }, { s: 1.0 });
+entra(".d-e", at("Esaú llegó a ser"), { y: 20 });
+entra(".d-j", at("Jacob, un hombre"), { y: 20 });
+</script>

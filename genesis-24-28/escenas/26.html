@@ -1,0 +1,47 @@
+<style>
+.sentidos { position: absolute; left: 0; top: 90px; width: 1920px; height: 960px; }
+.sentidos svg { width: 1920px; height: 960px; }
+.lz { stroke: #3d4b5c; stroke-width: 5; }
+.nd circle { stroke-width: 10; }
+.nd .t { font-family: "Georgia", serif; font-weight: 700; font-size: 50px; fill: var(--tiza); text-anchor: middle; }
+.nd .e { font-family: "Arial", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.1em; text-anchor: middle; text-transform: uppercase; }
+.det { font-family: "cursive", cursive; font-weight: 700; font-size: 46px; fill: var(--tiza); }
+.det.o { fill: var(--oro); }
+.centro-t { font-family: "Georgia", serif; font-weight: 700; font-size: 64px; fill: var(--tiza); text-anchor: middle; }
+.fuente { bottom: 10px; font-size: 20px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 27</span><span>versículos 5 al 27</span></div>
+<div class="sentidos"><svg viewBox="0 0 1920 960">
+  <line class="lz" x1="960" y1="430" x2="960" y2="200"/>
+  <line class="lz" x1="960" y1="430" x2="1470" y2="290"/>
+  <line class="lz" x1="960" y1="430" x2="1310" y2="720"/>
+  <line class="lz" x1="960" y1="430" x2="610" y2="720"/>
+  <line class="lz" x1="960" y1="430" x2="450" y2="290"/>
+  <g class="nd isaac"><circle cx="960" cy="430" r="140" fill="#1c2633" stroke="#b3bdc8" style="stroke-width:5"/><text class="centro-t" x="960" y="430">Isaac</text><text class="e" x="960" y="480" style="fill:var(--tenue);font-size:24px">ciego · ≈ 137 años</text></g>
+  <g class="nd s-vi"><circle cx="960" cy="110" r="100" fill="#262e39" stroke="#8f9bab"/><text class="t" x="960" y="126">Vista</text><text class="e" x="960" y="250" style="fill:#b3bdc8">no veía</text></g>
+  <g class="nd s-ta"><circle cx="1560" cy="260" r="100" fill="#352624" stroke="var(--rojo)"/><text class="t" x="1560" y="276">Tacto</text><text class="e" x="1560" y="400" style="fill:var(--rojo)">engañado</text></g>
+  <g class="nd s-gu"><circle cx="560" cy="760" r="100" fill="#352624" stroke="var(--rojo)"/><text class="t" x="560" y="776">Gusto</text><text class="e" x="560" y="900" style="fill:var(--rojo)">engañado</text></g>
+  <g class="nd s-ol"><circle cx="1360" cy="760" r="100" fill="#352624" stroke="var(--rojo)"/><text class="t" x="1360" y="776">Olfato</text><text class="e" x="1360" y="900" style="fill:var(--rojo)">engañado</text></g>
+  <g class="nd s-oi"><circle cx="360" cy="260" r="100" fill="#352f22" stroke="var(--oro)"/><text class="t" x="360" y="276">Oído</text><text class="e" x="360" y="400" style="fill:var(--oro)">sospechó</text></g>
+  <g class="dt d-ta" text-anchor="middle"><text class="det" x="1560" y="460">pieles de cabrito</text><text class="det" x="1560" y="506" style="font-size:38px;fill:var(--tenue)">la cabra de la zona: pelo largo,</text><text class="det" x="1560" y="548" style="font-size:38px;fill:var(--tenue)">por lo general negro</text></g>
+  <g class="dt d-gu" text-anchor="end"><text class="det" x="430" y="750">dos cabritos guisados</text><text class="det" x="430" y="796" style="font-size:38px;fill:var(--tenue)">“como a él le gusta” (27:9)</text></g>
+  <g class="dt d-ol"><text class="det" x="1490" y="750">la ropa de Esaú</text><text class="det" x="1490" y="796" style="font-size:38px;fill:var(--tenue)">“como el aroma del campo”</text><text class="det" x="1490" y="836" style="font-size:34px;fill:var(--tenue)">(27:27)</text></g>
+  <g class="dt d-oi"><text class="det o" x="60" y="490">“La voz es la de Jacob,</text><text class="det o" x="60" y="538">pero las manos son las de Esaú”</text><text class="det" x="60" y="584" style="font-size:38px;fill:var(--tenue)">Génesis 27:22</text></g>
+</svg></div>
+<div class="fuente">Esquema de la investigación, redibujado · Perspicacia, vol. 1, “Cabra”, pág. 384 · La Atalaya, 1 de septiembre de 1999, pág. 5 · Jacob dijo tres cosas falsas (27:19, 20, 24)</div>
+
+<script>
+entra(".isaac", 0.4, { y: 0, s: 0.9 });
+entra(".s-vi", at("Isaac no veía"), { y: -20 });
+entra(".s-ta", at("El tacto"), { x: 30, y: 0 });
+entra(".d-ta", at("El tacto") + 0.4, { x: 20, y: 0 });
+entra(".s-gu", at("El gusto"), { y: 30 });
+entra(".d-gu", at("El gusto") + 0.3, { y: 20 });
+entra(".s-ol", at("El olfato"), { y: 30 });
+entra(".d-ol", at("El olfato") + 0.3, { y: 20 });
+entra(".s-oi", at("Pero el oído"), { x: -30, y: 0 });
+entra(".d-oi", at("La voz es"), { y: 20 });
+late(".s-oi circle", at("La voz es") + 0.5, { s: 1.12, n: 3 });
+entra(".fuente", 1.0, { y: 10 });
+</script>

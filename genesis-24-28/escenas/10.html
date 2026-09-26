@@ -1,0 +1,46 @@
+<style>
+.mapa { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 5000px; height: 3800px; }
+.anillo { fill: none; stroke: #c0392b; stroke-width: 9; }
+.hueco { fill: none; stroke: #c0392b; stroke-width: 6; stroke-dasharray: 16 12; }
+.lugar { font-family: "Arial", sans-serif; font-weight: 800; font-size: 64px; fill: #1b2733; stroke-width: 12px; }
+.ilus.img-n { left: 40px; top: 560px; width: 760px; height: 428px; border: 5px solid #f1e9d8; }
+.pie-n { left: 40px; top: 510px; width: 900px; font-size: 22px; padding: 4px 12px; border-radius: 8px; background: rgba(15,22,30,0.85); color: var(--tiza); }
+.col { top: 110px; bottom: 100px; right: 60px; width: 740px; }
+</style>
+
+<div class="mapa">
+  <div class="cam">
+    <img src="assets/img/mapa-rutas.svg" />
+    <svg viewBox="0 0 5000 3800">
+      <circle class="anillo a-br" cx="954" cy="3343" r="44"/>
+      <circle class="hueco h-br" cx="954" cy="3343" r="80"/>
+      <circle class="anillo a-bs" cx="1157" cy="3083" r="30"/>
+    </svg>
+  </div>
+  <div class="pie-mapa">Mapa esquemático original; las ubicaciones son orientativas.</div>
+</div>
+<div class="panel"></div>
+<div class="ilus img-n"><div class="kb"><img src="assets/img/negueb.svg" /></div></div>
+<div class="pie-img pie-n">El Négueb. Foto: <i>Seamos valientes al andar con Dios</i>, cap. 6, pág. 38</div>
+<div class="cab sobre"><span class="cap">Beer-Lahái-Roí hoy</span><span>Génesis 16:14 · 24:62 · 25:11</span></div>
+<div class="col">
+  <div class="b a1"><div class="def"><div class="t">Beer-Lahái-Roí</div><div class="x">“Pozo del Viviente <b>Que Me Ve</b>”</div><div class="s">donde el ángel habló con Agar · Perspicacia, “Beer-lahai-roí”, pág. 298</div></div><div class="def"><div class="t">Négueb<i>né·ghev</i></div><div class="x">de una raíz que significa “estar reseco”</div><div class="s">Perspicacia, vol. 2, “Négueb”, pág. 476</div></div></div>
+  <div class="b a2"><div class="m">hoy nadie sabe dónde estaba</div><div class="s">una tradición beduina: ʽAin Muweilih, cerca de ʽAin Qedeis, “la probable ubicación de Qadés-barnea” · Perspicacia, pág. 298</div><div class="m rosa">¿el norte del Sinaí, en Egipto?</div><span class="externa">fuente externa: OpenBible.info</span></div>
+  <div class="b a3"><div class="m oro">círculo hueco en el mapa de la TNM</div><div class="m">= ubicación incierta</div></div>
+</div>
+
+<script>
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 150, y: 2060, w: 1900, h: 1740 }, V), 0);
+tl.to($(".cam"), { ...encuadre({ x: 330, y: 2650, w: 1250, h: 1145 }, V), duration: 3.0, ease: "power2.inOut" }, at("Hoy nadie sabe") - 0.2);
+traza(".a-br", 0.6, 0.8);
+late(".a-br", 1.5, { s: 1.3, n: 3 });
+aparece(".a-bs", 0.8, 0.4);
+aparece([".img-n", ".pie-n"], at("Négueb viene"), 0.6);
+kb(".img-n .kb", at("Négueb viene"), at("Hoy nadie sabe") + 0.5, { s: 1.12 }, { s: 1.0 });
+desaparece([".img-n", ".pie-n"], at("Hoy nadie sabe"), 0.5);
+aparece(".h-br", at("Una tradición beduina"), 0.6);
+late(".h-br", at("círculo hueco"), { s: 1.2, n: 3 });
+secuencia([[".a1", 0.4], [".a2", at("Hoy nadie sabe")], [".a3", at("El mapa de la Traducción")]]);
+</script>

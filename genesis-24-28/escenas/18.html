@@ -1,0 +1,67 @@
+<style>
+.campo { position: absolute; left: 50px; top: 120px; width: 1120px; height: 560px; border-radius: 26px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.45); }
+.campo svg { width: 1120px; height: 560px; }
+.pie-c { position: absolute; left: 60px; top: 690px; width: 1100px; font-size: 24px; color: var(--tenue); }
+.cien { position: absolute; left: 60px; top: 750px; width: 1100px; height: 300px; }
+.cien svg { width: 1100px; height: 300px; }
+.col { width: 660px; right: 60px; top: 120px; }
+.grano { fill: #e9bf60; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 26</span><span>versículos 12 al 14</span></div>
+<div class="campo"><svg viewBox="0 0 1120 560">
+  <defs>
+    <linearGradient id="e18-cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fb7d9"/><stop offset="1" stop-color="#e8d9b4"/></linearGradient>
+    <linearGradient id="e18-tierra" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a47b4b"/><stop offset="1" stop-color="#6b4a2a"/></linearGradient>
+  </defs>
+  <rect width="1120" height="200" fill="url(#e18-cielo)"/>
+  <path d="M 0 200 C 200 180 420 190 600 200 C 800 212 980 196 1120 190 L 1120 560 L 0 560 Z" fill="url(#e18-tierra)"/>
+  <g stroke="#5a3d20" stroke-width="5" fill="none" opacity="0.7">
+    <path d="M 0 260 C 300 250 800 262 1120 252"/><path d="M 0 320 C 300 310 800 324 1120 312"/><path d="M 0 390 C 300 380 800 394 1120 382"/><path d="M 0 470 C 300 460 800 474 1120 462"/><path d="M 0 550 C 300 540 800 554 1120 542"/>
+  </g>
+  <!-- la bolsa de semilla y el arco del voleo -->
+  <g class="bolsa" transform="translate(150 170)"><path d="M -40 0 C -60 60 -40 110 0 116 C 40 110 60 60 40 0 Z" fill="#c9a26a" stroke="#6d4a26" stroke-width="4"/><path d="M -40 0 C -20 -14 20 -14 40 0" fill="none" stroke="#6d4a26" stroke-width="6"/></g>
+  <path class="arco" d="M 200 180 C 380 60 620 90 860 330" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="3" stroke-dasharray="6 10"/>
+  <g class="semillas"></g>
+  <text x="640" y="80" text-anchor="middle" style="font-family:cursive,cursive;font-weight:700;font-size:62px;fill:#2b1e10">al voleo</text>
+</svg></div>
+<div class="pie-c">Esquema propio: “el sembrador llevaba la semilla [...] en un doblez de su prenda de vestir o en una bolsa” · Perspicacia, “Sembrador, siembra”, pág. 993</div>
+<div class="cien"><svg viewBox="0 0 1100 300">
+  <g class="uno"><ellipse class="grano" cx="80" cy="150" rx="26" ry="16"/><text x="80" y="230" text-anchor="middle" style="font-family:Georgia,serif;font-weight:700;font-size:48px;fill:var(--tiza)">1</text></g>
+  <path d="M 160 150 L 300 150 M 280 132 L 302 150 L 280 168" fill="none" stroke="var(--oro)" stroke-width="6" stroke-linecap="round" class="fle"/>
+  <g class="granos"></g>
+  <text class="t100" x="1020" y="170" text-anchor="middle" style="font-family:Georgia,serif;font-weight:700;font-size:80px;fill:var(--oro)">100</text>
+</svg></div>
+<div class="col">
+  <div class="b a1"><div class="m">en su primer año, recogió</div><div class="m xl oro">“100 veces más”</div><div class="cita md">“porque Jehová lo estaba bendiciendo”<span class="ref">GÉNESIS 26:12</span></div><div class="s">la TNM de 1987 decía “cien medidas por una”</div></div>
+  <div class="b a2"><div class="m">el ciento por uno “entra dentro de lo razonable” en buena tierra</div><div class="s">el mejor resultado posible · Perspicacia, “Ilustraciones”, pág. 1204 (sobre Mateo 13:8)</div><div class="m oro">el primer año, en medio de un hambre</div><span class="propio">observación propia</span></div>
+  <div class="b a3"><div class="m xl rojo">envidia</div><div class="cita md">“los filisteos empezaron a envidiarlo”<span class="ref">GÉNESIS 26:14</span></div></div>
+</div>
+
+<script>
+let sem = 7;
+const az = () => (sem = (sem * 16807) % 2147483647) / 2147483647;
+let s = "";
+for (let i = 0; i < 26; i++) s += `<ellipse class="sm" cx="0" cy="0" rx="7" ry="4.5" fill="#f3d27a" data-k="${(0.1 + az() * 0.85).toFixed(3)}" data-dy="${(az() * 60 - 30).toFixed(0)}"/>`;
+pinta(".semillas", s);
+let g = "";
+for (let r = 0; r < 5; r++) for (let k = 0; k < 20; k++) g += `<ellipse class="grano gg" cx="${360 + k * 30}" cy="${70 + r * 40}" rx="11" ry="7"/>`;
+pinta(".granos", g);
+
+// Las semillas vuelan por el arco del voleo y caen en los surcos.
+const pts = medirCamino(".arco");
+const tS = at("Se sembraba al voleo");
+$$(".sm").forEach((e, i) => {
+  const k = +e.dataset.k, dy = +e.dataset.dy;
+  const N = pts.length - 1, p = pts[Math.round(k * N)];
+  tl.fromTo(e, { attr: { cx: 200, cy: 180 }, opacity: 0 }, { attr: { cx: p[0], cy: p[1] + 120 + dy }, opacity: 1, duration: 1.1, ease: "power1.out", immediateRender: false }, tS + 0.3 + (i % 9) * 0.35 + Math.floor(i / 9) * 1.1);
+});
+tl.set($$(".sm"), { opacity: 0 }, 0);
+traza(".arco", tS, 1.0);
+
+secuencia([[".a1", 0.4], [".a2", at("El ciento por uno")], [".a3", at("Entonces los filisteos")]]);
+entra(".uno", at("El ciento por uno"), { y: 10 });
+traza(".fle", at("El ciento por uno") + 0.4, 0.5);
+salta($$(".gg"), at("El ciento por uno") + 0.8, { st: 0.02, d: 0.3 });
+salta(".t100", at("El ciento por uno") + 3.0, { desde: 0.6 });
+</script>

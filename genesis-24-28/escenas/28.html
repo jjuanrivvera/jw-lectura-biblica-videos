@@ -1,0 +1,53 @@
+<style>
+.ilus.img-e { left: 60px; top: 140px; width: 800px; height: 624px; }
+.ilus.img-e img { position: absolute; width: 1412px; height: 1253px; left: -612px; top: -70px; object-fit: fill; }
+.pie-e { left: 60px; top: 776px; width: 800px; }
+.fa .col { left: 940px; right: 70px; width: auto; }
+.tabla { top: 120px; grid-template-columns: 220px 1fr 1fr; row-gap: 14px; }
+.tabla .c { font-size: 40px; min-height: 150px; }
+.tabla .c.j { border-color: rgba(146,209,147,0.55); }
+.tabla .c.e { border-color: rgba(236,138,103,0.55); }
+</style>
+
+<div class="fase fa">
+  <div class="cab"><span class="cap">Génesis 27</span><span>versículos 30 al 33</span></div>
+  <div class="ilus img-e"><div class="kb"><img src="assets/img/jacob-esau-historia.svg" /></div></div>
+  <div class="pie-img pie-e">“Esaú se enteró de que Jacob había recibido la bendición especial”. Historia bíblica ilustrada “Jacob y Esaú”, pág. 1</div>
+  <div class="col">
+    <div class="b">
+      <div class="m a1">Isaac “empezó a temblar violentamente”</div>
+      <div class="cita a2" style="font-size:80px">“¡Él será bendito!”<span class="ref">GÉNESIS 27:33</span></div>
+      <div class="m oro a3">rehusó cambiar “lo que sin duda era la voluntad de Jehová”</div>
+      <div class="s a3b">Perspicacia, vol. 1, “Isaac”, pág. 1253</div>
+    </div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="tabla">
+    <div></div><div class="h" style="color:var(--verde);border-color:rgba(146,209,147,0.6)">A Jacob · 27:28, 29</div><div class="h" style="color:var(--rojo);border-color:rgba(236,138,103,0.6)">A Esaú · 27:39, 40</div>
+    <div class="rt f1">La tierra</div><div class="c j f1">“El rocío de los cielos, los terrenos fértiles”</div><div class="c e f1b">“Lejos de los terrenos fértiles [...] y lejos del rocío”</div>
+    <div class="rt f2">El sustento</div><div class="c j f2">“Cereales y vino nuevo en abundancia”</div><div class="c e f2">“Vivirás de tu espada”</div>
+    <div class="rt f3">Los hermanos</div><div class="c j f3">“Sé el amo de tus hermanos”</div><div class="c e f3b">“Servirás a tu hermano”</div>
+    <div class="rt f4">El final</div><div class="c j f4">“Maldito sea todo el que te maldiga”</div><div class="c e f4b" style="border-color:var(--oro)">“Te librarás de su yugo”</div>
+  </div>
+</div>
+
+<script>
+kb(".img-e .kb", 0, at("Comparemos") , { s: 1.08 }, { s: 1.0 });
+entra(".a1", at("Isaac empieza a temblar"), { y: 20 });
+salta(".a2", at("Él será bendito"), { desde: 0.8 });
+entra([".a3", ".a3b"], at("Rehusó cambiar"), { y: 20 });
+
+const tB = at("Comparemos") - 0.3;
+desaparece(".fa", tB, 0.4);
+aparece(".fb", tB + 0.3, 0.4);
+entra($$(".tabla .h"), tB + 0.4, { y: -16, st: 0.1 });
+entra($$(".f1"), at("A Jacob: el rocío"), { y: 6, st: 0.06 });
+entra($$(".f2"), at("A Jacob: el rocío") + 0.6, { y: 6, st: 0.06 });
+entra(".f1b", at("A Esaú: lejos"), { x: 30, y: 0 });
+entra($$(".f3"), at("A Jacob: sé el amo"), { y: 6, st: 0.06 });
+entra(".f3b", at("A Esaú: servirás"), { x: 30, y: 0 });
+entra($$(".f4"), at("Pero, cuando te impacientes"), { y: 6, st: 0.06 });
+entra(".f4b", at("te librarás de su yugo"), { x: 30, y: 0 });
+</script>

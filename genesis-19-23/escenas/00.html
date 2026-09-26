@@ -1,0 +1,64 @@
+<style>
+.mapa { left: 0; top: 0; width: 1100px; height: 1080px; }
+.mapa .cam img { width: 960px; height: 945px; }
+.mapa .cam svg { width: 960px; height: 945px; }
+.anillo { fill: none; stroke: #ffd35c; stroke-width: 9; }
+.sombra-der { position: absolute; left: 1000px; top: 0; width: 140px; height: 1080px; background: linear-gradient(90deg, rgba(23,33,43,0), #17212b); }
+.pie-mapa { position: absolute; left: 24px; bottom: 18px; padding: 8px 16px; border-radius: 10px; background: rgba(15,22,30,0.82); font-size: 22px; color: var(--tiza); }
+.tit { position: absolute; left: 1150px; right: 70px; top: 70px; }
+.tit .a { font-family: "Arial", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.2em; color: var(--tenue); }
+.tit .t { font-family: "Georgia", serif; font-weight: 700; font-size: 104px; line-height: 1; margin-top: 12px; }
+.tit .t b { color: var(--oro); }
+.tit .m { font-size: 56px; color: var(--oro); margin-top: 10px; }
+.lista { position: absolute; left: 1150px; right: 40px; top: 330px; display: flex; flex-direction: column; gap: 24px; }
+.fila { display: grid; grid-template-columns: 78px 1fr; column-gap: 22px; align-items: center; }
+.fila .c { width: 78px; height: 78px; border-radius: 50%; background: #c8322f; color: #fff; display: flex; align-items: center; justify-content: center; font-family: "Arial", sans-serif; font-weight: 800; font-size: 34px; box-shadow: 0 0 0 4px #fff; }
+.fila.f19 .c { background: #1f4aa8; }
+.fila .x { font-family: "cursive", cursive; font-weight: 700; font-size: 52px; line-height: 1.02; white-space: nowrap; }
+.fila .x b { color: var(--oro); }
+.final { position: absolute; left: 1150px; right: 60px; bottom: 60px; padding: 20px 28px; border: 4px solid var(--verde); border-radius: 24px; background: rgba(23,33,43,0.95); }
+.final .r { font-family: "Arial", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.18em; color: var(--verde); }
+.final .m { font-size: 52px; margin-top: 6px; }
+</style>
+
+<div class="mapa">
+  <div class="cam">
+    <img src="assets/img/mapa-recorrido.svg" />
+    <svg viewBox="0 0 960 945">
+      <circle class="anillo a19" cx="748" cy="541" r="48"/>
+      <circle class="anillo a20" cx="197" cy="347" r="48"/>
+      <circle class="anillo a21" cx="311" cy="516" r="48"/>
+      <circle class="anillo a22" cx="622" cy="213" r="48"/>
+      <circle class="anillo a23" cx="590" cy="370" r="48"/>
+    </svg>
+  </div>
+  <div class="pie-mapa">Mapa esquemático original; las ubicaciones son orientativas.</div>
+</div>
+<div class="sombra-der"></div>
+
+<div class="tit"><div class="a">LECTURA BÍBLICA</div><div class="t">Génesis <b>19</b> al <b>23</b></div><div class="m mano">cinco momentos, cinco lugares</div></div>
+
+<div class="lista">
+  <div class="fila f19"><div class="c">19</div><div class="x"><b>Sodoma</b> · Lot se salva a medias</div></div>
+  <div class="fila f20"><div class="c">20</div><div class="x"><b>Guerar</b> · Jehová protege a Sara</div></div>
+  <div class="fila f21"><div class="c">21</div><div class="x"><b>Beer-Seba</b> · Isaac, Agar, el pozo</div></div>
+  <div class="fila f22"><div class="c">22</div><div class="x"><b>Moria</b> · la prueba de Abrahán</div></div>
+  <div class="fila f23"><div class="c">23</div><div class="x"><b>Hebrón</b> · una cueva para Sara</div></div>
+</div>
+
+<div class="final"><div class="r">AL FINAL DE CADA CAPÍTULO</div><div class="m mano">lecciones y preguntas para pensar</div></div>
+
+<script>
+// El mapa ocupa todo el alto; la cámara se acerca despacio mientras se enumeran los capítulos.
+tl.set($(".cam"), { scale: 1.143, x: -8, y: 0 }, 0);
+tl.to($(".cam"), { scale: 1.2, x: -60, y: -30, duration: DUR, ease: "none" }, 0);
+entra(".tit", 0.4, { y: -30 });
+const caps = [["19", at("el diecinueve")], ["20", at("el veinte")], ["21", at("el veintiuno")], ["22", at("el veintidós")], ["23", at("el veintitrés")]];
+caps.forEach(([n, t]) => {
+  entra(".f" + n, t, { x: 40, y: 0 });
+  traza(".a" + n, t, 0.7);
+});
+// Al pasar al siguiente capítulo, el anillo anterior se queda más tenue.
+caps.forEach(([n], i) => { if (i < caps.length - 1) atenua(".a" + n, caps[i + 1][1], 0.35); });
+salta(".final", at("Al final de cada"), { desde: 0.85 });
+</script>

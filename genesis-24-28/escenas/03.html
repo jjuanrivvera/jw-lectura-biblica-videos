@@ -1,0 +1,108 @@
+<style>
+.mapa { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 5000px; height: 3800px; }
+.lugar { font-family: "Arial", sans-serif; font-weight: 800; font-size: 96px; fill: #1b2733; stroke-width: 22px; }
+.lugar.gr { font-size: 130px; fill: #8a1c10; }
+.pt { fill: #fff; stroke: #1b2733; stroke-width: 12; }
+.recta { fill: none; stroke: #1b2733; stroke-width: 12; stroke-dasharray: 44 30; opacity: 0.85; }
+.recta-t { font-family: "cursive", cursive; font-weight: 700; font-size: 120px; fill: #1b2733; stroke-width: 24px; }
+.desierto { fill: rgba(190, 120, 40, 0.16); stroke: #a0601c; stroke-width: 10; stroke-dasharray: 30 22; }
+.desierto-t { font-family: "cursive", cursive; font-weight: 700; font-size: 130px; fill: #7a4410; stroke-width: 26px; }
+.ruta-h { stroke-width: 58; }
+.ruta { stroke-width: 30; stroke: #c0392b; }
+.seg { fill: none; stroke: none; }
+.car circle { fill: #e9bf60; stroke: #3b2a10; stroke-width: 10; }
+.dia { font-family: "Arial", sans-serif; font-weight: 800; font-size: 90px; fill: #8a1c10; stroke-width: 22px; }
+.rio-t { font-family: "Georgia", serif; font-style: italic; font-weight: 700; font-size: 110px; fill: #1f5fa8; stroke-width: 22px; }
+.esquina { position: absolute; left: 0; top: 0; width: 700px; height: 460px; background: radial-gradient(ellipse 100% 100% at 0 0, #17212b 38%, rgba(23,33,43,0.85) 55%, rgba(23,33,43,0) 100%); opacity: 0; }
+.col { top: 110px; bottom: 100px; right: 60px; width: 740px; }
+.pie-mapa { top: 84px; bottom: auto; max-width: 560px; }
+.cuenta { display: flex; align-items: baseline; gap: 20px; }
+.cuenta .grande { font-size: 170px; color: var(--oro); }
+.cuenta .m { font-size: 80px; }
+</style>
+
+<div class="mapa">
+  <div class="cam">
+    <img src="assets/img/mapa-rutas.svg" />
+    <svg viewBox="0 0 5000 3800">
+      <path class="desierto" d="M 2150 2300 C 2350 1900 2900 1700 3300 1850 C 3500 2250 3200 2750 2700 2900 C 2400 2950 2150 2700 2150 2300 Z"/>
+      <text class="desierto-t halo" x="2420" y="2380">gran desierto sirio</text>
+      <path class="recta" d="M 1157 3083 L 2807 400"/>
+      <text class="recta-t halo" x="1990" y="1500" transform="rotate(-58 1990 1500)">≈ 750 km en línea recta</text>
+      <path class="ruta-h" d="M 1157 3083 L 1262 2953 L 1299 2873 L 1314 2768 L 1330 2638 L 1360 2480 L 1420 2330 L 1480 2230 L 1600 2110 L 1734 2032 L 1790 1760 L 1880 1480 L 1916 1270 L 1890 1100 L 1928 942 L 2070 738 L 2240 590 L 2410 457 L 2600 425 L 2807 400"/>
+      <path class="ruta" d="M 1157 3083 L 1262 2953 L 1299 2873 L 1314 2768 L 1330 2638 L 1360 2480 L 1420 2330 L 1480 2230 L 1600 2110 L 1734 2032 L 1790 1760 L 1880 1480 L 1916 1270 L 1890 1100 L 1928 942 L 2070 738 L 2240 590 L 2410 457 L 2600 425 L 2807 400"/>
+      <path class="seg s1" d="M 1157 3083 L 1262 2953 L 1299 2873 L 1314 2768 L 1330 2638"/>
+      <path class="seg s2" d="M 1330 2638 L 1360 2480 L 1420 2330 L 1480 2230 L 1600 2110 L 1734 2032"/>
+      <path class="seg s3" d="M 1734 2032 L 1790 1760 L 1880 1480 L 1916 1270 L 1890 1100 L 1928 942 L 2070 738 L 2240 590 L 2410 457"/>
+      <path class="seg s4" d="M 2410 457 L 2600 425 L 2807 400"/>
+      <g class="lug l-bs"><circle class="pt" cx="1157" cy="3083" r="30"/><text class="lugar halo" x="560" y="3110">Beer-Seba</text></g>
+      <g class="lug l-si"><text class="lugar halo" x="880" y="2660">Siquem</text></g>
+      <g class="lug l-da"><text class="lugar halo" x="1800" y="2080">Damasco</text></g>
+      <g class="lug l-ca"><text class="lugar halo" x="1940" y="380">Carquemis</text></g>
+      <g class="lug l-ha"><circle class="pt" cx="2807" cy="400" r="34"/><text class="lugar gr halo" x="2890" y="470">Harán</text></g>
+      <text class="rio-t halo r-eu" x="2900" y="1250" transform="rotate(38 2900 1250)">Éufrates</text>
+      <g class="dias">
+        <text class="dia halo d4" x="1380" y="2600">día 4</text>
+        <text class="dia halo d10" x="1790" y="1980">día 10</text>
+        <text class="dia halo d23" x="2440" y="560">día 23</text>
+        <text class="dia halo d26" x="2890" y="590">día 26</text>
+      </g>
+      <g class="car"><circle cx="-22" cy="0" r="30"/><circle cx="30" cy="-6" r="26"/></g>
+    </svg>
+  </div>
+  <div class="pie-mapa">Mapa esquemático original; las ubicaciones son orientativas.</div>
+</div>
+<div class="esquina"></div>
+<div class="panel"></div>
+<div class="cab sobre"><span class="cap">Génesis 24</span><span>versículo 10</span></div>
+<div class="col">
+  <div class="b a1"><div class="m xl oro">10 camellos</div><div class="cita md">“salió hacia la ciudad de Nacor, en Mesopotamia”<span class="ref">GÉNESIS 24:10</span></div><div class="s">“Harán misma o un lugar cercano” · Perspicacia, “Nacor”, pág. 456</div></div>
+  <div class="b a2"><div class="def"><div class="t">Mesopotamia<i>’Arám Na·hará·yim</i></div><div class="x">“Aram de los <b>Dos Ríos</b>”</div><div class="s">el Tigris y el Éufrates · una región, no una ciudad · TNM de 1987, nota en 24:10; Perspicacia, “Aram”, pág. 169</div></div></div>
+  <div class="b a3"><div class="m">≈ 750 km en línea recta</div><span class="propio">cálculo propio</span><div class="m rojo">el desierto: “una barrera prácticamente infranqueable”</div><div class="s"><i>Veamos “la buena tierra”</i>, pág. 6</div></div>
+  <div class="b a4"><div class="m">por la <b>sierra</b></div><div class="m">por <b>Damasco</b></div><div class="m">el vado de <b>Carquemis</b></div><div class="s">donde “normalmente cruzan las caravanas” · ¡Despertad!, 22 de mayo de 1988, pág. 27</div></div>
+  <div class="b a5"><div class="m">4 km por hora</div><div class="m">× 8 horas</div><div class="m oro">= 32 km por día</div><div class="s">velocidad del camello cargado: La Atalaya, 1 de julio de 1989, págs. 26, 27</div><span class="propio">días: cálculo propio</span></div>
+  <div class="b a6"><div class="cuenta"><div class="grande dn">1</div><div class="m">días</div></div><div class="m oro">más de 800 km</div><div class="m">más de 25 días</div><div class="s">La Atalaya, 1 de enero de 1997, pág. 30</div></div>
+</div>
+
+<script>
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+const cam = $(".cam");
+// Empieza cerca de Beer-Seba; se aleja para ver Mesopotamia; luego encuadra todo el camino.
+tl.set(cam, encuadre({ x: 500, y: 2150, w: 2000, h: 1830 }, V), 0);
+tl.to(cam, { ...encuadre({ x: 700, y: 150, w: 4300, h: 3400 }, V), duration: 2.2, ease: "power2.inOut" }, at("Mesopotamia es una región") - 0.3);
+tl.to(cam, { ...encuadre({ x: 700, y: 240, w: 2800, h: 3080 }, V), duration: 2.0, ease: "power2.inOut" }, at("En línea recta") - 0.2);
+aparece(".l-bs", 0.4, 0.5);
+aparece(".esquina", at("Mesopotamia es una región"), 1.2);
+aparece(".l-ha", at("Harán, o un lugar"), 0.5);
+late(".l-ha circle", at("Harán, o un lugar"), { s: 1.5, n: 3 });
+aparece(".r-eu", at("el Tigris y el Éufrates") - 0.4, 0.6);
+traza(".recta", at("En línea recta"), 1.4);
+aparece(".recta-t", at("En línea recta") + 1.0, 0.5);
+aparece([".desierto", ".desierto-t"], at("gran desierto sirio"), 0.8);
+atenua([".recta", ".recta-t"], at("El camino subía"), 0.25);
+traza([".ruta-h", ".ruta"], at("El camino subía"), 5.5, { ease: "none" });
+aparece(".l-si", at("subía por la sierra"), 0.4);
+aparece(".l-da", at("pasaba por Damasco"), 0.4);
+aparece(".l-ca", at("cerca de Carquemis"), 0.4);
+atenua([".desierto", ".desierto-t"], at("Un camello cargado"), 0.35);
+
+// La caravana avanza tramo por tramo con la cuenta de los días.
+const cuentaDias = (d0, d1, t, dur) => cuenta(".dn", d0, d1, t, dur);
+recorre(".car", ".s1", at("Al cuarto día"), 1.2);
+cuentaDias(1, 4, at("Al cuarto día"), 1.2);
+aparece(".d4", at("Al cuarto día") + 1.0, 0.4);
+recorre(".car", ".s2", at("al décimo"), 1.2);
+cuentaDias(4, 10, at("al décimo"), 1.2);
+aparece(".d10", at("al décimo") + 1.0, 0.4);
+recorre(".car", ".s3", at("y al día veintiséis") - 0.2, 1.5);
+cuentaDias(10, 23, at("y al día veintiséis") - 0.2, 1.5);
+aparece(".d23", at("y al día veintiséis") + 1.2, 0.4);
+recorre(".car", ".s4", at("en Harán"), 0.8);
+cuentaDias(23, 26, at("en Harán"), 0.8);
+aparece(".d26", at("en Harán") + 0.7, 0.4);
+tl.set($(".car"), { opacity: 0 }, 0);
+tl.set($(".car"), { opacity: 1 }, at("Al cuarto día"));
+
+secuencia([[".a1", 0.5], [".a2", at("Mesopotamia es una región")], [".a3", at("En línea recta")], [".a4", at("El camino subía")], [".a5", at("Un camello cargado")], [".a6", at("Al cuarto día")]]);
+</script>

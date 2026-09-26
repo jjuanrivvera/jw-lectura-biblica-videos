@@ -1,0 +1,37 @@
+<style>
+.ilus.img-al { left: 90px; top: 150px; width: 820px; height: 820px; }
+.pie-img { position: absolute; left: 90px; top: 986px; width: 820px; font-size: 22px; color: var(--tenue); line-height: 1.3; }
+.ilus.img-ca { left: 70px; top: 220px; width: 900px; height: 450px; }
+.pie-ca { position: absolute; left: 70px; top: 686px; width: 900px; font-size: 24px; color: var(--tenue); }
+.col { width: 820px; right: 80px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 22</span><span>versículos 9 al 14</span></div>
+
+<div class="fase fa">
+  <div class="ilus img-al"><div class="kb"><img src="assets/img/altar-isaac.svg" /></div></div>
+  <div class="pie-img">Gráfico vectorial original.</div>
+</div>
+<div class="fase fb">
+  <div class="ilus img-ca"><div class="kb"><img src="assets/img/carnero.svg" /></div></div>
+  <div class="pie-img">Gráfico vectorial original.</div>
+</div>
+
+<div class="col">
+  <div class="b b0"><div class="m">arriba: el altar, la leña...</div><div class="m oro">y ata a Isaac</div><div class="s">Génesis 22:9</div></div>
+  <div class="b b1"><div class="m">¿Cuántos años tenía Isaac?</div><div class="m oro" style="font-size:62px">la Biblia no lo dice</div><div class="s">La tradición judía habla de 25; Perspicacia lo da con un “quizás” · “Isaac”, pág. 1251</div></div>
+  <div class="b b2"><div class="m">ya era un hombre</div><div class="s">“Tenía suficiente edad y fuerza como para transportar una cantidad considerable de leña subiendo una montaña” · Perspicacia, “Isaac”, pág. 1252</div></div>
+  <div class="b b3"><div class="cita" style="font-size:48px">“Isaac, aunque era más fuerte que su padre, <b>dejó que lo atara</b> de pies y manos y lo pusiera sobre el altar”<span class="ref">SEAMOS VALIENTES AL ANDAR CON DIOS, CAP. 5, PÁG. 33</span></div></div>
+  <div class="b b4"><div class="m">¿Para qué atarlo, si no se resistía?</div><div class="s">“Para impedir o controlar cualquier reacción involuntaria suya en caso de que se hubiera usado el cuchillo de degüello” · La Atalaya, 1 de febrero de 1993, pág. 12</div></div>
+  <div class="b b5"><div class="cita">“No le hagas daño al joven [...]. <b>Ahora sé de veras</b> que eres un hombre que teme a Dios”<span class="ref">GÉNESIS 22:12 · EL ÁNGEL, DESDE LOS CIELOS</span></div></div>
+  <div class="b b6"><div class="cita">un carnero “con los cuernos enredados en un matorral”, ofrecido “en vez de a su hijo”<span class="ref">GÉNESIS 22:13</span></div></div>
+  <div class="b b7"><div class="def"><div class="t">Jehová-Yiré</div><div class="x">“Jehová proveerá” o “Jehová verá”</div><div class="s">Nota de la TNM en 22:14 · no es un nombre de Dios: es el nombre del lugar</div></div><div class="m oro" style="font-size:62px">vio la necesidad, y la cubrió</div></div>
+</div>
+
+<script>
+kb(".img-al .kb", 0, at("Abrahán ve un carnero"), { s: 1.0 }, { s: 1.12, y: -3 });
+tl.to($(".fa"), { opacity: 0, duration: 0.5 }, at("Abrahán ve un carnero") - 0.4);
+aparece(".fb", at("Abrahán ve un carnero"), 0.5);
+kb(".img-ca .kb", at("Abrahán ve un carnero"), DUR, { s: 1.0 }, { s: 1.08 });
+secuencia([[".b0", 0.4], [".b1", at("Cuántos años")], [".b2", at("Lo seguro")], [".b3", at("Aunque era más")], [".b4", at("Para qué atarlo")], [".b5", at("Abrahán toma")], [".b6", at("Abrahán ve un carnero")], [".b7", at("Llamó al lugar")]]);
+</script>

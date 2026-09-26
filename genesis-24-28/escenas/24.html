@@ -1,0 +1,36 @@
+<style>
+.dos { position: absolute; left: 80px; right: 80px; top: 130px; bottom: 90px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 80px; align-items: center; }
+.dos > div { display: flex; flex-direction: column; gap: 26px; }
+.esposas { display: flex; gap: 26px; }
+.esposas .dato { flex: 1; text-align: center; }
+.esposas .dato .v { font-size: 80px; color: var(--rojo); }
+.vs { display: grid; grid-template-columns: 1fr 70px 1fr; align-items: center; }
+.vs .m { font-size: 62px; }
+.vs .tach { color: var(--tenue); text-decoration: line-through; text-decoration-thickness: 5px; }
+.eco { border-left: 8px solid var(--oro); padding: 8px 0 8px 30px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 26</span><span>versículos 34 y 35</span></div>
+<div class="dos">
+  <div class="izq">
+    <div class="m xl i1">Esaú, <b>40 años</b></div>
+    <div class="s i1b">1818 antes de nuestra era · Índice de las publicaciones, “Fechas”</div>
+    <div class="esposas i2"><div class="dato"><div class="v">Judit</div><div class="k">hitita</div></div><div class="dato"><div class="v">Basemat</div><div class="k">hitita</div></div></div>
+    <div class="s i2b">religión “pagana” · Perspicacia, vol. 1, “Hititas”, pág. 1158; “Esaú”, pág. 828</div>
+    <div class="vs i3"><div class="m tach">raza</div><div class="m" style="text-align:center">→</div><div class="m oro">adoración</div></div>
+    <div class="eco i4"><div class="m md">lo que Abrahán había evitado para Isaac</div><div class="s">Génesis 24:3</div></div>
+  </div>
+  <div class="der">
+    <div class="cita d1">“causa de mucha <b>amargura</b> para Isaac y Rebeca”<span class="ref">GÉNESIS 26:35</span></div>
+    <div class="def d2"><div class="t">literalmente</div><div class="x">“amargura de espíritu”</div><div class="s">nota de la TNM en 26:35</div></div>
+  </div>
+</div>
+
+<script>
+entra([".i1", ".i1b"], 0.5, { y: 20, st: 0.2 });
+entra([".i2", ".i2b"], at("dos mujeres hititas"), { y: 20, st: 0.2 });
+entra(".i3", at("No era un asunto"), { y: 20 });
+entra(".i4", at("justo lo que Abrahán"), { y: 20 });
+entra(".d1", at("Esas esposas"), { y: 20 });
+entra(".d2", at("literalmente"), { y: 20 });
+</script>

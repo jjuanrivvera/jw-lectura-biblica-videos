@@ -1,0 +1,60 @@
+<style>
+.frase { position: absolute; left: 120px; right: 120px; top: 170px; text-align: center; font-family: "Georgia", serif; font-weight: 600; font-size: 80px; line-height: 1.22; color: var(--tiza); }
+.frase span { display: inline-block; margin: 0 8px; }
+.frase .oro { color: var(--oro); }
+.frase .ref { display: block; font-family: "Arial", sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 0.12em; color: var(--oro); margin-top: 22px; }
+.bajo { position: absolute; left: 160px; right: 160px; top: 640px; bottom: 70px; }
+.bajo > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 20px; }
+.bajo .def { max-width: 1300px; text-align: left; }
+.dos { position: absolute; left: 90px; right: 90px; top: 150px; bottom: 90px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 80px; align-items: center; }
+.dos .lado { display: flex; flex-direction: column; gap: 26px; }
+</style>
+
+<div class="fase f-cap"><div class="capcard"><div class="num">Génesis <b style="color:var(--oro)">22</b></div><svg viewBox="0 0 760 40"><path d="M 10 24 C 200 8 520 36 750 18"/></svg><div class="sub">La prueba en Moria</div><div class="edad">hacia 1893 antes de nuestra era · fecha aproximada</div></div></div>
+
+<div class="fase fa">
+  <div class="cab"><span class="cap">Génesis 22</span><span>versículos 1 y 2</span></div>
+  <div class="frase"><span class="p1">“Por favor,</span> <span class="p2">toma a tu hijo,</span> <span class="p3">a tu único hijo,</span> <span class="p4">al que amas tanto,</span> <span class="p5">a Isaac,</span> <span class="p6">y viaja a la tierra de Moria.</span> <span class="p7">Allí preséntalo como ofrenda quemada.”</span><span class="ref">GÉNESIS 22:2</span></div>
+  <div class="bajo">
+    <div class="b c1"><div class="def"><div class="t">Ofrenda quemada · ‛o·láh</div><div class="x">un sacrificio que se quemaba entero: el que adoraba no se quedaba con ninguna parte</div><div class="s">Perspicacia, “Ofrendas”, pág. 523</div></div></div>
+    <div class="b c2"><div class="m oro">Jehová sabía el inmenso valor de lo que pedía</div><div class="s">La Atalaya, 1 de enero de 2012, pág. 23</div></div>
+    <div class="b c3"><div class="m">Isaac: el único hijo <span style="color:var(--oro)">de la promesa</span>, y el único <span style="color:var(--rosa)">de Sara</span></div><div class="s">Nota de estudio de la TNM en Juan 3:16</div></div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="cab"><span class="cap">Génesis 22</span><span>¿cómo pudo pedir algo así?</span></div>
+  <div class="dos">
+    <div class="lado l1"><div class="m">una prueba que <span style="color:var(--oro)">nunca iba a dejar terminar</span></div><div class="cita" style="font-size:46px">“Y jamás ha vuelto a pedirle a nadie algo semejante”<span class="ref">LA ATALAYA, 1 DE ENERO DE 2012, PÁG. 23</span></div></div>
+    <div class="lado l2"><div class="s" style="font-size:28px">Siglos después, de los que quemaban a sus hijos:</div><div class="cita">“cosa que yo no había mandado y que <b>ni siquiera me pasó por la mente</b>”<span class="ref">JEREMÍAS 7:31</span></div><span class="propio p-prop">poner juntos los dos textos: observación propia</span></div>
+  </div>
+</div>
+
+<script>
+const t0 = at("Unos veinte") - 0.3;
+capitulo(".f-cap .capcard", 0.2, t0 - 0.2);
+tl.to($(".f-cap"), { opacity: 0, duration: 0.4 }, t0 - 0.2);
+aparece(".fa", t0, 0.4);
+entra(".fa .cab", t0, { y: -10 });
+entra(".p1", at("Por favor"), { y: 20 });
+entra(".p2", at("toma a tu hijo"), { y: 20 });
+entra(".p3", at("a tu único"), { y: 20 });
+entra(".p4", at("al que amas"), { y: 20 });
+entra(".p5", at("a Isaac"), { y: 20 });
+entra(".p6", at("y viaja"), { y: 20 });
+entra(".p7", at("Allí preséntalo"), { y: 20 });
+entra(".frase .ref", at("Allí preséntalo") + 0.8, { y: 10 });
+tl.to([$(".p1"), $(".p4")], { color: "#e6bb5c", duration: 0.5 }, at("Fíjense en cómo"));
+tl.to([$(".p2"), $(".p3"), $(".p5"), $(".p6"), $(".p7")], { opacity: 0.35, duration: 0.5 }, at("Fíjense en cómo"));
+late(".p1", at("Por favor", 24), { s: 1.08, n: 1 });
+late(".p4", at("Al que amas", 26), { s: 1.08, n: 1 });
+tl.to([$(".p3"), $(".p5")], { opacity: 1, color: "#e7a8c9", duration: 0.5 }, at("Isaac era el único"));
+secuencia([[".c1", at("Una ofrenda quemada")], [".c2", at("Jehová sabía")], [".c3", at("Isaac era el único")]], at("Cómo pudo pedir") - 0.3);
+const tB = at("Cómo pudo pedir") - 0.3;
+tl.to($(".fa"), { opacity: 0, duration: 0.5 }, tB);
+aparece(".fb", tB + 0.3, 0.5);
+entra(".l1", at("Era una prueba"), { y: 30 });
+entra(".l2", at("Siglos después"), { y: 30 });
+tl.set($(".p-prop"), { opacity: 0 }, 0);
+tl.to($(".p-prop"), { opacity: 1, duration: 0.5 }, at("Poner juntos"));
+</script>

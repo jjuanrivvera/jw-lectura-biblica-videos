@@ -1,0 +1,47 @@
+<style>
+.ilus.img-d { left: 70px; top: 190px; width: 1000px; height: 600px; }
+.ilus.img-h { left: 70px; top: 190px; width: 1000px; height: 674px; }
+.pie-img { position: absolute; left: 70px; top: 806px; width: 1000px; font-size: 24px; color: var(--tenue); line-height: 1.3; }
+.pie-h { position: absolute; left: 70px; top: 880px; width: 1000px; font-size: 24px; color: var(--tenue); line-height: 1.3; }
+.col { width: 720px; right: 80px; }
+.edades { display: flex; gap: 60px; align-items: baseline; }
+.edades .g { font-family: "Georgia", serif; font-weight: 700; font-size: 130px; line-height: 1; }
+.edades .n { font-family: "cursive", cursive; font-weight: 700; font-size: 56px; }
+</style>
+
+<div class="fase f-cap"><div class="capcard"><div class="num">Génesis <b style="color:var(--oro)">23</b></div><svg viewBox="0 0 760 40"><path d="M 10 24 C 200 8 520 36 750 18"/></svg><div class="sub">La muerte de Sara y la cueva de Macpelá</div><div class="edad">1881 antes de nuestra era</div></div></div>
+
+<div class="fase f-a">
+  <div class="cab"><span class="cap">Génesis 23</span><span>versículos 1 y 2</span></div>
+  <div class="fase fd">
+    <div class="ilus img-d"><div class="kb"><img src="assets/img/duelo-sara.svg" /></div></div>
+    <div class="pie-img">Gráfico vectorial original.</div>
+  </div>
+  <div class="fase fh">
+    <div class="ilus img-h"><div class="kb"><img src="assets/img/hebron-hoy.svg" /></div></div>
+    <div class="pie-img">Gráfico vectorial original.</div>
+  </div>
+  <div class="col">
+    <div class="b b1"><div class="cita">“Sara vivió <b>127 años</b>”<span class="ref">GÉNESIS 23:1</span></div><div class="m" style="font-size:62px">y murió en Quiryat-Arbá, es decir, en Hebrón</div><div class="s">Génesis 23:2</div></div>
+    <div class="b b2"><div class="m oro">la única mujer de quien la Biblia dice la edad al morir</div><div class="s">La Atalaya, núm. 5 de 2017, pág. 15, nota</div></div>
+    <div class="b b3"><div class="edades"><div><div class="g" style="color:var(--oro)">137</div><div class="n">Abrahán</div></div><div><div class="g">37</div><div class="n">Isaac</div></div></div><span class="propio">cálculo propio con las fechas de Perspicacia</span></div>
+    <div class="b b4"><div class="m">Hebrón: a unos 30 km al sursuroeste de Jerusalén</div><div class="def"><div class="t">Quiryat-Arbá</div><div class="x">“Ciudad de Arbá”</div><div class="s">Perspicacia, “Hebrón”, pág. 1112</div></div></div>
+    <div class="b b5"><div class="cita">“Abrahán se puso a <b>llorar y a lamentarse</b> por la muerte de Sara”<span class="ref">GÉNESIS 23:2</span></div></div>
+    <div class="b b6"><div class="m">en esa cultura, el duelo se hacía <span style="color:var(--oro)">en voz alta y durante días</span></div><div class="s">“Los semitas no lloran en silencio, sino en voz alta” · ¡Despertad!, 8 de mayo de 1994, pág. 27</div></div>
+    <div class="b b7"><div class="m">sus lágrimas eran <span style="color:var(--rosa)">prueba de su amor</span></div><div class="s">La Atalaya, 1 de enero de 2012, pág. 10</div></div>
+    <div class="b b8"><div class="m">la fe en la resurrección <span style="color:var(--oro)">no elimina el dolor</span></div><div class="s">La Atalaya (estudio), diciembre de 2016, pág. 18 · tres años después, Isaac “todavía está de duelo por su madre” (La Atalaya, núm. 3 de 2016, pág. 15)</div></div>
+  </div>
+</div>
+
+<script>
+const t0 = at("Sara vivió") - 0.4;
+capitulo(".f-cap .capcard", 0.2, t0 - 0.2);
+tl.to($(".f-cap"), { opacity: 0, duration: 0.4 }, t0 - 0.2);
+aparece(".f-a", t0, 0.5);
+kb(".img-d .kb", t0, DUR, { s: 1.0 }, { s: 1.12, x: 2 });
+tl.set($(".fh"), { opacity: 0 }, 0);
+tl.to($(".fh"), { opacity: 1, duration: 0.6 }, at("Hebrón está") - 0.2);
+tl.to($(".fh"), { opacity: 0, duration: 0.6 }, at("Abrahán se puso") - 0.4);
+kb(".img-h .kb", at("Hebrón está") - 0.2, at("Abrahán se puso"), { s: 1.0 }, { s: 1.1, x: -2 });
+secuencia([[".b1", t0 + 0.2], [".b2", at("Es la única")], [".b3", at("Abrahán tenía ciento")], [".b4", at("Hebrón está")], [".b5", at("Abrahán se puso")], [".b6", at("En esa cultura")], [".b7", at("Llorar no era")], [".b8", at("Tener fe")]]);
+</script>

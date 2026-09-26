@@ -1,0 +1,79 @@
+<style>
+.mapa { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 2862px; height: 3366px; }
+.pie-mapa { position: absolute; left: 24px; bottom: 18px; padding: 8px 16px; border-radius: 10px; background: rgba(15,22,30,0.82); font-size: 22px; color: var(--tiza); }
+.r-h { fill: none; stroke: #fff; stroke-width: 30; stroke-linecap: round; stroke-linejoin: round; opacity: 0.85; }
+.r1, .r2, .r3 { fill: none; stroke: #b8860b; stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; }
+.r3 { stroke: #b3261e; }
+.noche circle { fill: #17212b; stroke: #b8860b; stroke-width: 8; }
+.et { font-family: "cursive", cursive; font-weight: 700; }
+.viajero circle { fill: #e6bb5c; stroke: #3b2a10; stroke-width: 6; }
+.moria { fill: none; stroke: #b3261e; stroke-width: 10; }
+.col { width: 680px; right: 70px; }
+.dia { display: flex; align-items: baseline; gap: 20px; }
+.dia .d { font-family: "Arial", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.16em; color: var(--oro); }
+</style>
+
+<div class="mapa">
+  <div class="cam">
+    <img src="assets/img/mapa-recuadro.svg" />
+    <svg viewBox="0 0 2862 3366">
+      <path class="r-h" d="M 273 2637 L 520 2300 L 789 1974 L 900 1760 L 990 1557 L 1040 1440 L 1059 1340"/>
+      <path class="r1" d=""/><path class="r2" d=""/><path class="r3" d=""/>
+      <g class="noche n1"><circle r="22"/><text class="et halo" x="-40" y="12" font-size="64" fill="#7a5a10" text-anchor="end" stroke-width="12">1.ª noche (?)</text></g>
+      <g class="noche n2"><circle r="22"/><text class="et halo" x="-40" y="12" font-size="64" fill="#7a5a10" text-anchor="end" stroke-width="12">2.ª noche (?)</text></g>
+      <g class="siervos"><circle r="20" fill="#1f5fa8"/><text class="et halo" x="-36" y="12" font-size="58" fill="#1f5fa8" text-anchor="end" stroke-width="12">los sirvientes esperan</text></g>
+      <circle class="moria" cx="1059" cy="1326" r="70"/>
+      <g class="viajero"><circle r="26"/></g>
+      <text class="et t-km halo" x="700" y="2420" font-size="70" fill="#7a5a10" stroke-width="12">unos 80 km de camino</text>
+    </svg>
+  </div>
+  <div class="pie-mapa">Mapa esquemático original; las ubicaciones son orientativas.</div>
+</div>
+<div class="panel"></div>
+<div class="cab sobre"><span class="cap">Génesis 22</span><span>versículos 3 al 5</span></div>
+
+<div class="col">
+  <div class="b b1"><div class="cita">“muy de mañana”<span class="ref">GÉNESIS 22:3</span></div><div class="m" style="font-size:60px">la leña, Isaac, dos sirvientes y un burro</div></div>
+  <div class="b b2"><div class="def"><div class="t">La tierra de Moria</div><div class="x">la región montañosa alrededor de Jerusalén</div><div class="s">Allí se construyó después el templo de Salomón (2 Crónicas 3:1) · Perspicacia, “Moria”, pág. 425 · “Jerusalén”, pág. 68</div></div></div>
+  <div class="b b3"><div class="m oro xl">unos 80 km</div><div class="s">De Beer-Seba, por camino · Perspicacia, “Moria”, pág. 426</div></div>
+  <div class="b b4"><div class="dia"><span class="d">DÍA 1</span><span class="m" style="font-size:60px">incompleto</span></div><div class="dia"><span class="d">DÍA 2</span><span class="m" style="font-size:60px">la única jornada completa</span></div><div class="s">Un día de camino: “quizás” unos 32 km · Perspicacia, “Moria”, pág. 425 · “Pesos y medidas”, pág. 656</div></div>
+  <div class="b b5"><div class="m">¿Dónde durmieron?</div><div class="m oro" style="font-size:60px">la Biblia no lo dice</div><div class="m" style="font-size:60px">casi tres días para pensar... y no se echó atrás</div></div>
+  <div class="b b6"><div class="dia"><span class="d">DÍA 3</span></div><div class="cita">“Abrahán levantó la vista y vio el lugar a lo lejos”<span class="ref">GÉNESIS 22:4</span></div></div>
+  <div class="b b7"><div class="cita">“luego <b>regresaremos</b>”<span class="ref">GÉNESIS 22:5</span></div><div class="cita" style="font-size:44px">“llegó a la conclusión de que Dios podía levantarlo incluso de entre los muertos”<span class="ref">HEBREOS 11:19</span></div></div>
+</div>
+
+<script>
+// La ruta entera se mide una vez y se parte en tres días, como en la figura de la investigación.
+const pts = medirCamino(".r-h", 600);
+const trozo = (a, b) => "M " + pts.slice(Math.round(a * 600), Math.round(b * 600) + 1).map((p) => p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" L ");
+const K1 = 0.27, K2 = 0.66, K3 = 0.92;
+$(".r1").setAttribute("d", trozo(0, K1));
+$(".r2").setAttribute("d", trozo(K1, K2));
+$(".r3").setAttribute("d", trozo(K2, 1));
+const pon = (s, k) => { const p = pts[Math.round(k * 600)]; $(s).setAttribute("transform", `translate(${p[0].toFixed(1)} ${p[1].toFixed(1)})`); };
+pon(".n1", K1); pon(".n2", K2); pon(".siervos", K3);
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 0, y: 1080, w: 1836, h: 1680 }, V), 0);
+tl.set([$(".r-h"), $(".n1"), $(".n2"), $(".siervos"), $(".t-km"), $(".viajero")], { opacity: 0 }, 0);
+ponEnCamino(el(".viajero"), pts, 0);
+aparece(".viajero", 0.5, 0.4);
+traza(".moria", at("La tierra de Moria"), 0.8);
+late(".moria", at("monte Moria"), { s: 1.12, n: 3 });
+aparece(".r-h", at("Desde Beer-Seba"), 0.6);
+aparece(".t-km", at("ochenta kilómetros"), 0.5);
+// Día por día: el punto avanza con cada trazo.
+const D1 = at("El primer día"), D2 = at("El segundo"), D3 = at("Al tercer día");
+traza(".r1", D1, 2.2, { ease: "none" });
+recorre(".viajero", pts, D1, 2.2, { desde: 0, hasta: K1, ease: "none" });
+aparece(".n1", D1 + 2.2, 0.4);
+traza(".r2", D2, 4.0, { ease: "none" });
+recorre(".viajero", pts, D2, 4.0, { desde: K1, hasta: K2, ease: "none" });
+aparece(".n2", D2 + 4.0, 0.4);
+late([".n1 circle", ".n2 circle"], at("Dónde durmieron"), { s: 1.3, n: 3 });
+traza(".r3", D3, 2.4, { ease: "none" });
+recorre(".viajero", pts, D3, 2.4, { desde: K2, hasta: K3, ease: "none" });
+aparece(".siervos", at("Les dice a los sirvientes"), 0.4);
+recorre(".viajero", pts, at("luego regresaremos"), 1.4, { desde: K3, hasta: 1 });
+secuencia([[".b1", 0.4], [".b2", at("La tierra de Moria")], [".b3", at("Desde Beer-Seba")], [".b4", at("El primer día")], [".b5", at("Dónde durmieron")], [".b6", at("Al tercer día")], [".b7", at("Les dice a los sirvientes")]]);
+</script>

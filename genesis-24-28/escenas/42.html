@@ -1,0 +1,41 @@
+<style>
+.portada { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 20px; }
+.portada .r { font-family: "Arial", sans-serif; font-weight: 800; font-size: 36px; letter-spacing: 0.22em; color: var(--verde); }
+.portada .t { font-family: "Georgia", serif; font-weight: 700; font-size: 140px; line-height: 1.02; }
+.portada .m { font-size: 80px; color: var(--oro); }
+.portada svg { width: 900px; height: 40px; }
+.portada svg path { fill: none; stroke: var(--verde); stroke-width: 7; stroke-linecap: round; }
+</style>
+
+<div class="portada pt"><div class="r">AL FINAL, TODO JUNTO</div><div class="t">Lecciones</div><div class="m">y preguntas para pensar</div><svg viewBox="0 0 900 40"><path d="M 6 22 C 260 8 620 34 894 16"/></svg></div>
+
+<div class="seccion"><div class="r">Lecciones y preguntas para pensar</div><div class="t">Génesis 24</div></div>
+<svg class="seccion-linea" viewBox="0 0 1740 20" preserveAspectRatio="none"><path d="M 4 12 C 400 4 1200 18 1736 8"/></svg>
+
+<div class="leccion L1"><div class="n">1</div><div class="cuerpo">
+  <div class="l">Abrahán quería para Isaac una esposa que <b>adorara a Jehová</b>, aunque costara 800 km de viaje</div>
+  <div class="p"><span class="k">PARA PENSAR</span>¿Qué buscamos en un futuro esposo o esposa, y por qué la fe va primero?</div>
+  <div class="s">Deuteronomio 7:3, 4</div>
+</div></div>
+<div class="leccion L2"><div class="n">2</div><div class="cuerpo">
+  <div class="l">Rebeca no sabía que la estaban probando: la bondad que se ve <b>cuando nadie importante está mirando</b> es la que dice quiénes somos</div>
+</div></div>
+<div class="leccion L3"><div class="n">3</div><div class="cuerpo">
+  <div class="l">El siervo oró antes de actuar y <b>dio gracias</b> apenas vio la respuesta</div>
+  <div class="p"><span class="k">PARA PENSAR</span>¿Pedimos y agradecemos en la misma jornada?</div>
+  <div class="s">Génesis 24:12, 26, 27</div>
+</div></div>
+
+<script>
+entra(".pt .r", 0.3, { y: 20 });
+escribe(".pt .t", 0.6, 1.0);
+entra(".pt .m", 1.2, { y: 20 });
+traza(".pt path", 1.4, 0.9);
+sale(".pt", at("Génesis veinticuatro") - 0.2, { y: -40 });
+const t0 = at("Génesis veinticuatro");
+entra(".seccion", t0, { y: -20 });
+traza(".seccion-linea path", t0 + 0.3, 1.0);
+secuencia([[".L1", at("Primera")], [".L2", at("Segunda")], [".L3", at("Tercera")]], null, { y: 30, d: 0.6 });
+entra(".L1 .p", at("Qué buscamos"), { y: 20 });
+entra(".L3 .p", at("Pedimos y agradecemos"), { y: 20 });
+</script>

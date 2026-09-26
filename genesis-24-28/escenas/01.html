@@ -1,0 +1,113 @@
+<style>
+.intro { position: absolute; left: 90px; right: 90px; top: 70px; height: 230px; display: grid; grid-template-columns: 1.15fr 1fr; column-gap: 60px; align-items: center; }
+.intro .g23 { display: flex; flex-direction: column; gap: 10px; }
+.intro .g23 .k { font-family: "Arial", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.16em; color: var(--tenue); }
+.intro .g23 .m { font-size: 64px; }
+.intro .anos { text-align: right; }
+.intro .anos .grande { color: var(--oro); font-size: 150px; }
+.intro .anos .s { font-size: 34px; color: var(--tiza); margin-top: 6px; }
+.linea { position: absolute; left: 60px; top: 330px; width: 1800px; height: 680px; }
+.linea svg { width: 1800px; height: 680px; }
+.nom { font-family: "cursive", cursive; font-weight: 700; font-size: 54px; }
+.fondo-barra { opacity: 0.14; }
+.edad { font-family: "Arial", sans-serif; font-weight: 800; font-size: 40px; }
+.eje { stroke: #56657a; stroke-width: 3; }
+.tick { font-family: "Arial", sans-serif; font-weight: 600; font-size: 28px; fill: var(--tenue); text-anchor: middle; }
+.ev line { stroke: var(--oro); stroke-width: 3; }
+.ev rect { fill: #17212b; stroke: var(--oro); stroke-width: 3; }
+.ev text { font-family: "Arial", sans-serif; font-weight: 800; font-size: 26px; fill: var(--oro); text-anchor: middle; }
+.cursor line { stroke: var(--tiza); stroke-width: 3; stroke-dasharray: 8 7; }
+.cursor text { font-family: "Arial", sans-serif; font-weight: 800; font-size: 32px; fill: var(--tiza); text-anchor: middle; }
+.nota { position: absolute; left: 90px; right: 90px; bottom: 26px; font-size: 24px; }
+</style>
+
+<div class="intro">
+  <div class="g23">
+    <div class="k k1">GÉNESIS 23 TERMINÓ</div>
+    <div class="m m1">Sara, enterrada en <span style="color:var(--oro)">Macpelá</span></div>
+    <div class="m m2" style="color:var(--rosa)">tres años después, Isaac sigue de luto</div>
+  </div>
+  <div class="anos"><div class="grande">97 años</div><div class="s">de 1878 a 1781 antes de nuestra era</div></div>
+</div>
+
+<div class="linea"><svg viewBox="0 0 1800 680">
+  <g class="filas"></g>
+  <line class="eje" x1="300" y1="590" x2="1740" y2="590"/>
+  <g class="ticks"></g>
+  <g class="evs"></g>
+  <g class="cursor"><line x1="0" y1="10" x2="0" y2="590"/><text class="cy" x="0" y="0">1878</text></g>
+</svg></div>
+
+<div class="nota s">Fechas y edades: Perspicacia, “Isaac”, “Jacob”, “Ismael”, “Abrahán”; Índice de las publicaciones, “Fechas”. La edad de Rebeca es aproximada (<i>Seamos valientes</i>, pág. 15). El año de Guerar no es seguro.</div>
+
+<script>
+const X0 = 300, X1 = 1700;
+const xa = (y) => X0 + ((1878 - y) * (X1 - X0)) / 97;
+// Edad de cada uno en 1878 y año en que muere dentro del tramo (si muere).
+const P = [
+  { k: "ab", n: "Abrahán", c: "var(--oro)", e0: 140, y0: 1878, fin: 1843 },
+  { k: "ic", n: "Isaac", c: "var(--verde)", e0: 40, y0: 1878 },
+  { k: "re", n: "Rebeca ≈", c: "var(--rosa)", e0: 22, y0: 1878, aprox: true },
+  { k: "is", n: "Ismael", c: "var(--cielo)", e0: 54, y0: 1878, fin: 1795 },
+  { k: "ej", n: "Esaú y Jacob", c: "var(--rojo)", e0: 0, y0: 1858 },
+];
+let f = "";
+P.forEach((p, i) => {
+  const y = 20 + i * 104;
+  const fin = p.fin ? xa(p.fin) : X1;
+  f += `<text class="nom n-${p.k}" x="0" y="${y + 46}" fill="${p.c}">${p.n}</text>`;
+  f += `<rect class="fondo-barra fb-${p.k}" x="${xa(p.y0)}" y="${y}" width="${fin - xa(p.y0)}" height="60" rx="10" fill="${p.c}"${p.aprox ? ' stroke="' + p.c + '" stroke-width="3" stroke-dasharray="10 8"' : ""}/>`;
+  f += `<rect class="barra b-${p.k}" x="${xa(p.y0)}" y="${y}" width="0" height="60" rx="10" fill="${p.c}"/>`;
+  f += `<text class="edad e-${p.k}" x="${xa(p.y0) + 14}" y="${y + 45}" fill="${p.c}"></text>`;
+});
+pinta(".filas", f);
+let tk = "";
+[1878, 1858, 1843, 1818, 1795, 1781].forEach((y) => { tk += `<line class="eje" x1="${xa(y)}" y1="590" x2="${xa(y)}" y2="606"/><text class="tick" x="${xa(y)}" y="642">${y}</text>`; });
+$(".ticks").innerHTML = tk;
+// Etiquetas de capítulo sobre el eje, como en la figura de la investigación.
+const EV = [["24", 1878, 540, 64], ["25", 1858, 500, 64], ["25", 1843, 540, 64], ["26", 1839, 500, 64], ["26", 1818, 540, 64], ["25", 1795, 500, 64], ["27·28", 1781, 540, 110]];
+let ev = "";
+EV.forEach(([t, y, yy, w], i) => {
+  const dash = i === 3 ? ' stroke-dasharray="7 6"' : "";
+  ev += `<g class="ev ev${i}"><line x1="${xa(y)}" y1="${yy + 34}" x2="${xa(y)}" y2="590"${dash}/><rect x="${xa(y) - w / 2}" y="${yy}" width="${w}" height="36" rx="18"${dash}/><text x="${xa(y)}" y="${yy + 27}">${t}</text></g>`;
+});
+pinta(".evs", ev);
+
+// El cursor recorre los años; cada barra llega hasta él (o hasta la muerte) y muestra la edad.
+const st = { y: 1878 };
+const cur = $(".cursor"), cy = $(".cy");
+function dibuja() {
+  const x = xa(st.y);
+  cur.setAttribute("transform", `translate(${x.toFixed(1)} 0)`);
+  cy.textContent = Math.round(st.y);
+  P.forEach((p) => {
+    const hasta = p.fin ? Math.min(x, xa(p.fin)) : x;
+    const w = Math.max(0, hasta - xa(p.y0));
+    $(".b-" + p.k).setAttribute("width", w.toFixed(1));
+    const e = $(".e-" + p.k);
+    const yr = p.fin ? Math.max(st.y, p.fin) : st.y;
+    const edad = p.e0 + (p.y0 - yr);
+    e.textContent = st.y > p.y0 + 0.5 ? "" : (p.fin && st.y <= p.fin ? "murió, " + Math.round(edad) : Math.round(edad) + "");
+    e.setAttribute("x", (xa(p.y0) + w + 14).toFixed(1));
+  });
+}
+dibuja();
+function viaja(y, t, d = 1.6) { tl.to(st, { y, duration: d, ease: "power2.inOut", onUpdate: dibuja }, t); }
+
+entra(".k1", 0.5, { y: 20 });
+escribe(".m1", 0.8, 1.4);
+escribe(".m2", at("Tres años después"), 1.4);
+salta(".anos", at("noventa y siete años"), { desde: 0.7 });
+aparece(".linea", at("noventa y siete años") + 0.3, 0.8);
+aparece([".ev0", ".ev1", ".ev2", ".ev3", ".ev4", ".ev5", ".ev6"], at("del mil ochocientos"), 0.8);
+aparece([".cursor", ".edad"], at("Isaac se casa"), 0.4);
+late(".ev0 rect", at("Isaac se casa"), { n: 2 });
+viaja(1858, at("Veinte años después"), 1.4);
+viaja(1843, at("Cuando tienen quince"), 1.3);
+viaja(1839, at("por un hambre"), 0.8);
+viaja(1818, at("Esaú se casa"), 1.3);
+viaja(1795, at("Muere Ismael"), 1.3);
+viaja(1781, at("Y en el mil setecientos"), 1.6);
+late(".ev6 rect", at("recibe la bendición"), { n: 3 });
+entra(".nota", at("Isaac se casa"), { y: 10 });
+</script>

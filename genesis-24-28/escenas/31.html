@@ -1,0 +1,57 @@
+<style>
+.fa .centro { position: absolute; left: 90px; right: 90px; top: 130px; bottom: 90px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 70px; align-items: center; }
+.fa .centro > div { display: flex; flex-direction: column; gap: 26px; }
+.fb .tiempo { position: absolute; left: 90px; right: 90px; top: 220px; height: 420px; }
+.fb .tiempo svg { width: 1740px; height: 420px; }
+.tt { font-family: "cursive", cursive; font-weight: 700; font-size: 66px; }
+.fb .bajo { position: absolute; left: 90px; right: 90px; top: 700px; bottom: 70px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; align-items: center; }
+</style>
+
+<div class="fase fa">
+  <div class="cab"><span class="cap">Génesis 27</span><span>versículos 42 al 46</span></div>
+  <div class="centro">
+    <div>
+      <div class="m a1">que huya a Harán, con Labán, <b>“durante un tiempo”</b></div>
+      <div class="cita a2">“¿Por qué voy a perderlos a los dos en un solo día?”<span class="ref">GÉNESIS 27:45</span></div>
+    </div>
+    <div>
+      <div class="m oro a3">a Isaac no le menciona la cólera de Esaú</div>
+      <div class="s a3b">“evita bondadosamente mencionar la cólera de Esaú” · La Atalaya, 15 de abril de 2004, pág. 11</div>
+      <div class="cita md a4">“Las hijas de Het han hecho que odie la vida”<span class="ref">GÉNESIS 27:46</span></div>
+      <div class="def a5"><div class="t">franqueza sin atacar</div><div class="x">“aunque Rebeca expresó sus sentimientos con franqueza, no atacó a Isaac”</div><div class="s">La Atalaya, 1 de agosto de 1993, pág. 8</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="cab"><span class="cap">Génesis 27</span><span>“un tiempo”</span></div>
+  <div class="tiempo"><svg viewBox="0 0 1740 420">
+    <text class="tt t1" x="0" y="70" style="fill:var(--rosa)">lo que pensaba Rebeca: “un tiempo”</text>
+    <rect class="b1" x="0" y="100" width="90" height="80" rx="14" fill="var(--rosa)"/>
+    <text class="tt t2" x="0" y="280" style="fill:var(--oro)">lo que fue: unos 20 años</text>
+    <rect class="b2" x="0" y="310" width="1740" height="80" rx="14" fill="var(--oro)"/>
+  </svg></div>
+  <div class="bajo">
+    <div class="c1"><div class="cita md">“No hay constancia de que Rebeca haya vuelto a ver a Jacob”</div><div class="s">La Atalaya, 15 de abril de 2004, pág. 11 · los 20 años: Perspicacia, “Jacob”, pág. 8</div></div>
+    <div class="c2"><div class="m">al volver Jacob, se menciona la muerte de Débora, su nodriza, no la de Rebeca</div><div class="s">Génesis 35:8 · la enterraron en Macpelá (49:31)</div></div>
+  </div>
+</div>
+
+<script>
+entra(".a1", 0.4, { y: 20 });
+entra(".a2", at("Por qué voy"), { y: 20 });
+entra([".a3", ".a3b"], at("A Isaac no le menciona"), { y: 20 });
+entra(".a4", at("le habla de las mujeres"), { y: 20 });
+entra(".a5", at("Expresó sus sentimientos"), { y: 20 });
+
+const tB = at("Rebeca pensaba") - 0.3;
+desaparece(".fa", tB, 0.4);
+aparece(".fb", tB + 0.3, 0.4);
+entra(".t1", tB + 0.4, { y: 16 });
+tl.set($$(".b1, .b2"), { scaleX: 0, transformOrigin: "0% 50%" }, 0);
+tl.to($(".b1"), { scaleX: 1, duration: 0.6 }, tB + 0.6);
+entra(".t2", at("y fueron unos veinte"), { y: 16 });
+tl.to($(".b2"), { scaleX: 1, duration: 2.2, ease: "power1.inOut" }, at("y fueron unos veinte"));
+entra(".c1", at("No hay constancia"), { y: 20 });
+entra(".c2", at("No hay constancia") + 1.5, { y: 20 });
+</script>

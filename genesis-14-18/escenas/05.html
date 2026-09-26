@@ -1,0 +1,110 @@
+<style>
+.foto { position: absolute; left: 40px; right: 40px; top: 190px; height: 560px; }
+.credito { position: absolute; left: 60px; right: 60px; top: 770px; text-align: center; }
+.b { position: absolute; left: 72px; right: 72px; top: 880px; }
+.reyes { display: flex; flex-direction: column; gap: 30px; }
+.reyes .lugar { font-family: "cursive", cursive; font-weight: 700; font-size: 66px; color: var(--tenue); }
+.reyes .r { font-family: "Georgia", serif; font-weight: 600; font-size: 72px; line-height: 1.05; }
+.reyes .r.sod { color: var(--rojo); }
+.reyes .r.mel { color: var(--oro); }
+.salem { display: flex; align-items: center; justify-content: center; gap: 30px; margin-top: 70px; }
+.salem .w { font-family: "Georgia", serif; font-weight: 700; font-size: 84px; }
+.salem .w small { display: block; font-family: "cursive", cursive; font-size: 56px; color: var(--oro); font-weight: 700; text-align: center; }
+.salem svg { width: 150px; height: 60px; }
+.salem svg path { fill: none; stroke: var(--oro); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.cita .ref { font-size: 32px; }
+.dos { display: flex; gap: 30px; justify-content: center; margin-top: 60px; }
+.dos .primera .palabra { font-size: 64px; }
+.adora { font-family: "cursive", cursive; font-weight: 700; font-size: 62px; color: var(--oro); text-align: center; margin-top: 50px; line-height: 1.05; }
+.preg { font-family: "Georgia", serif; font-size: 66px; line-height: 1.15; }
+.resp { font-family: "cursive", cursive; font-weight: 700; font-size: 68px; color: var(--oro); margin-top: 40px; line-height: 1.05; }
+.decimo { display: flex; align-items: center; gap: 50px; }
+.decimo .frac { font-family: "Georgia", serif; font-weight: 700; font-size: 220px; color: var(--oro); line-height: 1; }
+.decimo .t { font-family: "cursive", cursive; font-weight: 700; font-size: 64px; line-height: 1.05; }
+.merito { font-family: "Georgia", serif; font-style: italic; font-size: 58px; line-height: 1.2; margin-top: 60px; }
+.leccion { position: absolute; left: 72px; right: 72px; top: 1520px; text-align: center; font-size: 68px; color: var(--oro); }
+</style>
+
+<div class="foto ilus"><div class="kb"><img src="assets/img/melquisedec-diezmo.svg" /></div></div>
+<div class="credito pie">Imagen: <i>Seamos valientes al andar con Dios</i>, cap. 4, pág. 30. La publicación no dice cuál de los dos es cada uno.</div>
+
+<div class="b b1">
+  <div class="reyes">
+    <div class="lugar">en el valle del Rey, cerca de Jerusalén, salen dos reyes:</div>
+    <div class="r sod">el rey de Sodoma</div>
+    <div class="r mel">Melquisedec, rey de Salem</div>
+  </div>
+  <div class="salem">
+    <div class="w">Salem<small>“Paz”</small></div>
+    <svg viewBox="0 0 150 60"><path d="M10 30 L135 30 M110 10 L138 30 L110 50" /></svg>
+    <div class="w">Jerusalén<small>Salmo 76:2</small></div>
+  </div>
+</div>
+
+<div class="b b2">
+  <div class="cita">“Melquisedec, el rey de Salem, sacó pan y vino. Él era sacerdote del Dios Altísimo”<span class="ref">Génesis 14:18</span></div>
+  <div class="dos">
+    <div class="primera p1"><span class="rotulo">Primera vez</span><span class="palabra">“sacerdote”</span></div>
+    <div class="primera p2"><span class="rotulo">Primera vez</span><span class="palabra">“Altísimo”</span></div>
+  </div>
+  <div class="adora">La adoración verdadera ya estaba en Canaán antes que Abrán</div>
+</div>
+
+<div class="b b3">
+  <div class="preg">¿Tienen algún significado especial el pan y el vino?</div>
+  <div class="resp">“no hay razón para buscarle significados especiales a este suceso”</div>
+  <div class="pie" style="margin-top:18px">La Atalaya (estudio), 15 de marzo de 2015, págs. 17, 18</div>
+  <div class="resp r2" style="color:var(--tiza)">Eran la comida corriente de la época.</div>
+  <div class="pie p2b" style="margin-top:18px">Perspicacia, vol. 2, “Vino y bebidas alcohólicas”, pág. 1207</div>
+</div>
+
+<div class="b b4">
+  <div class="cita">“¡Alabado sea el Dios Altísimo, que entregó a tus enemigos en tus manos!”<span class="ref">Génesis 14:20</span></div>
+</div>
+
+<div class="b b5">
+  <div class="decimo" data-layout-allow-overlap>
+    <div class="frac">1/10</div>
+    <div class="t"><div>la décima parte</div><div>voluntaria, no una ley</div></div>
+  </div>
+  <div class="pie">Perspicacia, vol. 1, “Diezmo”, págs. 688, 689</div>
+  <div class="merito">“Así reconoció con humildad que el mérito no era suyo, sino de Dios”</div>
+  <div class="pie p5b" style="margin-top:14px">Seamos valientes al andar con Dios, cap. 4, pág. 29</div>
+</div>
+
+<div class="leccion mano">Cuando algo nos sale bien, digamos en voz alta a quién se lo debemos</div>
+
+<script>
+kb(".foto .kb", 0, DUR, { s: 1.14, x: 2 }, { s: 1.0, x: -1 });
+aparece(".credito", 0.8, 0.5);
+// Bloques que se reemplazan bajo la ilustración.
+const bloque = (sel, t0, t1) => { entra(sel, t0, { y: 30 }); if (t1) sale(sel, t1 - 0.45); };
+
+bloque(".b1", 0.6, at("Melquisedec sacó"));
+entra(".reyes .lugar", 0.8, { y: 16 });
+entra(".reyes .sod", at("el rey de Sodoma"), { x: -40, y: 0 });
+entra(".reyes .mel", at("y Melquisedec"), { x: -40, y: 0 });
+entra(".salem .w:first-child", at("Salem significa"), { y: 16 });
+traza(".salem svg path", at("Es la ciudad"), 0.6);
+entra(".salem .w:last-child", at("después fue"), { y: 16 });
+
+bloque(".b2", at("Melquisedec sacó"), at("Tienen algún"));
+escribe(".b2 .cita", at("Melquisedec sacó"), 5.0);
+salta(".p1", at("palabra sacerdote"));
+salta(".p2", at("llama a Dios"));
+escribe(".adora", at("La adoración"), 2.6);
+
+bloque(".b3", at("Tienen algún"), at("Melquisedec bendice"));
+entra(".b3 .resp:not(.r2)", at("La Atalaya contestó"), { y: 16 });
+entra(".r2", at("Eran la comida"), { y: 16 });
+entra(".p2b", at("Eran la comida"), { y: 10 });
+bloque(".b4", at("Melquisedec bendice"), at("Y Abrán le da"));
+escribe(".b4 .cita", at("Alabado"), 3.6);
+
+bloque(".b5", at("Y Abrán le da"), at("Cuando algo"));
+salta(".frac", at("décima parte"));
+escribe(".decimo .t", at("No era una ley"), 1.8);
+entra(".merito", at("Así reconoció"), { y: 20 });
+entra(".p5b", at("Así reconoció"), { y: 10 });
+escribe(".leccion", at("Cuando algo"), 2.4);
+</script>

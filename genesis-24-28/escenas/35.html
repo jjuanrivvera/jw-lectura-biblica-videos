@@ -1,0 +1,29 @@
+<style>
+.tabla { top: 110px; grid-template-columns: 270px 1fr 1fr 1fr; row-gap: 14px; }
+.tabla .c { font-size: 36px; min-height: 150px; }
+.tabla .rt { font-family: "Georgia", serif; font-size: 44px; letter-spacing: 0; text-transform: none; color: var(--tiza); flex-direction: column; align-items: flex-start; justify-content: center; }
+.tabla .rt small { font-family: "Arial", sans-serif; font-size: 20px; color: var(--tenue); letter-spacing: 0.06em; }
+.tabla .c.jb { border-color: rgba(146,209,147,0.7); background: rgba(146,209,147,0.08); }
+.final { position: absolute; left: 80px; right: 80px; top: 740px; bottom: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 8px; }
+.final .cita { font-size: 58px; }
+</style>
+
+<div class="cab" style="top:30px"><span class="cap">Génesis 28</span><span>versículos 13 al 15</span></div>
+<div class="tabla">
+  <div></div><div class="h">La tierra</div><div class="h">La descendencia</div><div class="h">La bendición para todos</div>
+  <div class="rt fa1">Abrahán<small>12:3, 7; 22:17, 18</small></div><div class="c fa1">“Voy a darle esta tierra a tu descendencia”</div><div class="c fa1">“Como las estrellas de los cielos y como los granos de arena”</div><div class="c fa1">“Todas las naciones de la tierra conseguirán una bendición”</div>
+  <div class="rt fi1">Isaac<small>26:3, 4</small></div><div class="c fi1">“Te daré todas estas tierras”</div><div class="c fi1">“Tan numerosa como las estrellas de los cielos”</div><div class="c fi1">“Todas las naciones de la tierra conseguirán una bendición”</div>
+  <div class="rt fj1" style="color:var(--verde)">Jacob<small>28:13-15</small></div><div class="c jb fj1">“La tierra donde estás acostado”</div><div class="c jb fj2">“Como las partículas de polvo que hay en la tierra”</div><div class="c jb fj3">“Todas las familias de la tierra sin falta serán bendecidas”</div>
+</div>
+<div class="final"><div class="m rosa f0">y solo para él, que huía solo:</div><div class="cita f1">“Yo estoy contigo y te protegeré adondequiera que vayas, y te haré volver a este país”<span class="ref">GÉNESIS 28:15</span></div></div>
+
+<script>
+entra($$(".tabla .h"), 0.4, { y: -16, st: 0.1 });
+entra($$(".fa1"), at("que le hizo a Abrahán"), { y: 6, st: 0.08 });
+entra($$(".fi1"), at("y después a Isaac"), { y: 6, st: 0.08 });
+entra($$(".fj1"), at("la tierra donde"), { y: 6, st: 0.08 });
+entra(".fj2", at("una descendencia"), { y: 20 });
+entra(".fj3", at("y que todas"), { y: 20 });
+entra(".f0", at("Y una promesa solo"), { y: 20 });
+entra(".f1", at("Yo estoy contigo"), { y: 20 });
+</script>

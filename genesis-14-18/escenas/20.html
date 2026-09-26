@@ -1,0 +1,55 @@
+<style>
+.foto { position: absolute; left: 40px; right: 40px; top: 190px; height: 500px; }
+.credito { position: absolute; left: 60px; right: 60px; top: 705px; text-align: center; }
+.b { position: absolute; left: 72px; right: 72px; top: 800px; }
+.b .cita { font-size: 60px; }
+.b .cita b { color: var(--oro); font-weight: 600; }
+.b .m { font-family: "cursive", cursive; font-weight: 700; font-size: 62px; line-height: 1.05; }
+.b .s { font-family: "Arial", sans-serif; font-size: 28px; color: var(--tenue); margin-top: 12px; }
+.edades { position: absolute; left: 72px; right: 72px; top: 1330px; display: flex; justify-content: center; gap: 90px; }
+.edades div { text-align: center; font-family: "cursive", cursive; font-weight: 700; font-size: 54px; }
+.edades b { display: block; font-family: "Georgia", serif; font-size: 130px; line-height: 1; }
+.grande { position: absolute; left: 60px; right: 60px; top: 520px; text-align: center; }
+.grande .q { font-family: "Georgia", serif; font-weight: 600; font-size: 118px; line-height: 1.1; }
+.grande .q b { color: var(--oro); font-weight: 700; }
+.grande .r { font-family: "Arial", sans-serif; font-weight: 700; font-size: 36px; color: var(--oro); margin-top: 26px; letter-spacing: 0.1em; }
+.grande .antes { font-family: "Arial", sans-serif; font-size: 28px; color: var(--tenue); margin-top: 20px; }
+.leccion { position: absolute; left: 72px; right: 72px; top: 1320px; text-align: center; font-size: 66px; color: var(--oro); }
+</style>
+
+<div class="fase fimg">
+  <div class="foto ilus"><div class="kb"><img src="assets/img/sara-escucha.svg" /></div></div>
+  <div class="credito pie">Sara escucha desde la tienda · Imagen: <i>Lecciones que aprendo de la Biblia</i>, lección 9</div>
+  <div class="b b0"><div class="cita">“el año que viene por estas fechas”<span class="ref">Génesis 18:10</span></div></div>
+  <div class="b b1"><div class="cita">“Ahora que estoy vieja y <b>mi señor</b> es tan mayor, ¿de veras voy a tener este placer?”<span class="ref">Génesis 18:12</span></div></div>
+  <div class="edades"><div class="e1"><b>89</b>Sara</div><div class="e2"><b>99</b>Abrahán</div></div>
+  <div class="b b2"><div class="m">Lo dijo “para sus adentros”, y aun así la oyeron. Y lo llamó “mi señor”: Pedro la pone de ejemplo para las esposas</div><div class="s">1 Pedro 3:5, 6 · Perspicacia, vol. 2, “Sara”, pág. 965</div></div>
+  <div class="b b3"><div class="m">“¿Se rió Sara por falta de fe? En absoluto”</div><div class="s">La Atalaya núm. 5 de 2017, pág. 14</div><div class="m m2" style="margin-top:30px;color:var(--tiza)">Lo negó porque se asustó. La corrección fue una pregunta: “¿Por qué se rio Sara?”</div><div class="s s2">Génesis 18:13, 15 · Hebreos 11:11 la pone como ejemplo de fe</div></div>
+</div>
+
+<div class="grande">
+  <div class="q">“¿Es que hay algo imposible para <b>Jehová</b>?”</div>
+  <div class="r">GÉNESIS 18:14</div>
+  <div class="antes">La edición de 1987: “¿Hay cosa alguna demasiado extraordinaria para Jehová?”</div>
+</div>
+<div class="leccion mano">A veces las promesas de Jehová nos parecen demasiado buenas para ser verdad</div>
+
+<script>
+aparece(".foto", 0.4, 0.6);
+aparece(".credito", 0.6, 0.5);
+kb(".fimg .kb", 0, at("Y entonces viene"), { s: 1.14, x: -3 }, { s: 1.0, x: 0 });
+const bloques = [[".b0", at("Uno de los")], [".b1", at("Sara escucha")], [".b2", at("Lo dijo")], [".b3", at("Se rio Sara")]];
+bloques.forEach(([s, t], i) => { entra(s, t, { y: 24 }); if (i < bloques.length - 1) sale(s, bloques[i + 1][1] - 0.4, { d: 0.35 }); });
+salta(".e1", at("Tenía ochenta"));
+salta(".e2", at("noventa y nueve"));
+sale(".edades", at("Lo dijo") - 0.4);
+tl.to($(".b1 .cita b"), { color: "#e6bb5c", duration: 0.2 }, at("mi señor", 25));
+entra(".b3 .m2", at("Lo negó"), { y: 16 });
+entra(".b3 .s2", at("Hebreos once"), { y: 10 });
+sale(".fimg", at("Y entonces viene") - 0.2, { d: 0.6 });
+
+escribe(".grande .q", at("Y entonces viene") + 0.5, 3.0);
+entra(".grande .r", at("Es que hay") + 1.0, { y: 10 });
+entra(".grande .antes", at("Jehová", 53) + 0.6, { y: 10 });
+escribe(".leccion", at("A veces"), 3.0);
+</script>

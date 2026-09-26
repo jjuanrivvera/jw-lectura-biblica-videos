@@ -1,0 +1,69 @@
+<style>
+.noche { position: absolute; left: 70px; top: 110px; width: 1030px; height: 880px; border-radius: 34px; overflow: hidden;
+  background: radial-gradient(ellipse 80% 70% at 70% 20%, #24365c 0%, #111a2e 60%, #0b1120 100%); box-shadow: 0 30px 70px rgba(0,0,0,0.5); }
+.noche .luna { position: absolute; right: 90px; top: 70px; width: 110px; height: 110px; border-radius: 50%; box-shadow: -26px 14px 0 0 #f3ecd6; }
+.noche .est { position: absolute; width: 5px; height: 5px; border-radius: 50%; background: #efe7d6; }
+.noche .rot { position: absolute; left: 60px; top: 60px; font-family: "Arial", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.2em; color: var(--cielo); }
+.suenio { position: absolute; left: 60px; right: 60px; top: 170px; bottom: 60px; }
+.suenio > div { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.suenio .q { font-family: "Georgia", serif; font-style: italic; font-weight: 500; font-size: 60px; line-height: 1.2; color: #f3ecd6; }
+.suenio .q b { color: var(--oro); font-style: normal; }
+.suenio .ref { font-family: "Arial", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.1em; color: var(--oro); }
+.anio { position: absolute; left: 70px; top: 110px; width: 1030px; height: 880px; }
+.anio svg { width: 1030px; height: 880px; }
+.t-ano { font-family: "Georgia", serif; font-weight: 700; font-size: 110px; fill: var(--tiza); text-anchor: middle; }
+.t-ev { font-family: "cursive", cursive; font-weight: 700; font-size: 62px; text-anchor: middle; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 20</span><span>versículos 2 al 7 y 17, 18</span></div>
+
+<div class="noche">
+  <div class="luna"></div>
+  <div class="rot r0">EN GUERAR</div><div class="rot r1">UNA NOCHE, EN UN SUEÑO</div>
+  <div class="suenio">
+    <div class="q0"><div class="q" style="font-style:normal">Abrahán vuelve a decir que Sara es su hermana, y el rey <b>la manda traer</b></div><div class="ref">GÉNESIS 20:2</div></div>
+    <div class="q1"><div class="q">“Puedes <b>darte por muerto</b> debido a la mujer que has mandado traer, pues ella está casada.”</div><div class="ref">GÉNESIS 20:3</div></div>
+    <div class="q2"><div class="q">“<b>impedí</b> que pecaras contra mí y no te permití tocarla”</div><div class="ref">GÉNESIS 20:6</div></div>
+  </div>
+</div>
+
+<div class="anio"><svg viewBox="0 0 1030 880">
+  <line x1="120" y1="440" x2="910" y2="440" stroke="#56657a" stroke-width="6"/>
+  <circle cx="240" cy="440" r="24" fill="var(--rosa)"/><circle class="c18" cx="790" cy="440" r="24" fill="var(--oro)"/>
+  <text class="t-ano" x="240" y="360">1919</text><text class="t-ano a18" x="790" y="360">1918</text>
+  <text class="t-ev" x="240" y="540" fill="var(--rosa)">Guerar:</text><text class="t-ev" x="240" y="604" fill="var(--rosa)">Jehová protege a Sara</text>
+  <text class="t-ev e18" x="790" y="540" fill="var(--oro)">nace Isaac</text>
+  <path class="arco" d="M 260 400 C 400 250 640 250 770 400" fill="none" stroke="var(--tiza)" stroke-width="6" stroke-dasharray="14 12"/>
+  <text class="t-ev un" x="515" y="250" fill="var(--tiza)">un año</text>
+</svg></div>
+
+<div class="col">
+  <div class="b b1"><div class="m rosa">Sara: 89 años</div><div class="m">y seguía siendo muy hermosa</div><div class="s">Perspicacia, “Sara”, pág. 965</div></div>
+  <div class="b b2"><div class="m">Abimélec había obrado <span style="color:var(--oro)">de buena fe</span></div><div class="s">Génesis 20:6 · La Atalaya, 15 de octubre de 2008, pág. 4</div></div>
+  <div class="b b3"><div class="m">Jehová había cerrado la matriz de las mujeres de su casa</div><div class="s">Génesis 20:18</div></div>
+  <div class="b b4"><div class="m oro">Jehová cuidaba a la madre del hijo prometido</div><div class="s">Génesis 18:10, 14; 21:1, 2 · Perspicacia, “Abrahán”, pág. 31</div></div>
+  <div class="b b5"><div class="def"><div class="t">“Profeta” · Génesis 20:7</div><div class="x">la primera vez que aparece en la Biblia</div><div class="s">TNM de 1987, nota de 20:7</div></div><div class="m" style="font-size:58px">Dios le había dado <span style="color:var(--oro)">una promesa profética</span></div><div class="s">Perspicacia, “Profeta”, pág. 726</div></div>
+</div>
+
+<script>
+let semilla = 21;
+const azar = () => (semilla = (semilla * 16807) % 2147483647) / 2147483647;
+let e = "";
+for (let i = 0; i < 26; i++) e += `<div class="est" style="left:${(40 + azar() * 950).toFixed(0)}px;top:${(20 + azar() * 820).toFixed(0)}px;opacity:${(0.3 + azar() * 0.6).toFixed(2)}"></div>`;
+$(".noche").insertAdjacentHTML("afterbegin", e);
+tl.set($(".noche"), { opacity: 0 }, 0);
+tl.set($(".anio"), { opacity: 0 }, 0);
+tl.to($(".noche"), { opacity: 1, duration: 0.8 }, 0.3);
+tl.set($(".r1"), { opacity: 0 }, 0);
+tl.to($(".r0"), { opacity: 0, duration: 0.5 }, at("en un sueño") - 0.6);
+tl.to($(".r1"), { opacity: 1, duration: 0.5 }, at("en un sueño") - 0.3);
+secuencia([[".q0", 0.6], [".q1", at("Puedes darte")], [".q2", at("impedí que")]], at("Era el año") - 0.3);
+tl.to($(".noche"), { opacity: 0, duration: 0.6 }, at("Era el año") - 0.4);
+aparece(".anio", at("Era el año"), 0.6);
+tl.set([$(".c18"), $(".a18"), $(".e18"), $(".un")], { opacity: 0 }, 0);
+traza(".arco", at("al nacimiento"), 1.0);
+aparece([".c18", ".a18", ".e18"], at("de Isaac"), 0.5);
+aparece(".un", at("al nacimiento") + 0.6, 0.4);
+atenua(".anio", at("Y en ese sueño"), 0.2);
+secuencia([[".b1", 0.5], [".b2", at("Abimélec había obrado")], [".b3", at("Además")], [".b4", at("Era el año")], [".b5", at("Y en ese sueño")]]);
+</script>

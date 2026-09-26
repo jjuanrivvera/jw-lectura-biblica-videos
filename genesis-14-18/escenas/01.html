@@ -1,0 +1,82 @@
+<style>
+.titulo { position: absolute; left: 72px; top: 150px; font-size: 84px; color: var(--oro); }
+.eje { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+.eje .trazo { stroke-width: 6; }
+.anio { position: absolute; left: 40px; width: 170px; text-align: right; font-family: "Arial", sans-serif; font-weight: 700; font-size: 34px; color: var(--tenue); transform: translateY(-50%); }
+.punto { position: absolute; left: 238px; width: 34px; height: 34px; margin-top: -17px; border-radius: 50%; background: var(--oro); border: 5px solid var(--pizarra); }
+.ev { position: absolute; left: 300px; right: 50px; transform: translateY(-50%); }
+.ev .q { font-family: "cursive", cursive; font-weight: 700; font-size: 62px; line-height: 1; color: var(--tiza); }
+.ev .e { font-family: "Arial", sans-serif; font-weight: 700; font-size: 32px; color: var(--oro); margin-top: 8px; }
+.raya { position: absolute; left: 226px; width: 60px; border-radius: 8px;
+  background: repeating-linear-gradient(135deg, rgba(170,180,191,0.55) 0 5px, transparent 5px 16px); }
+.raya-et { position: absolute; left: 300px; font-family: "cursive", cursive; font-weight: 700; font-size: 52px; color: var(--tenue); transform: translateY(-50%); }
+.pacto { position: absolute; left: 300px; top: 420px; font-size: 44px; color: var(--oro); }
+.nombres { position: absolute; left: 72px; right: 72px; top: 1560px; display: flex; justify-content: space-between; }
+.nombres .n { font-family: "Georgia", serif; font-weight: 600; font-size: 64px; }
+.nombres .n span { color: var(--oro); }
+.nombres .v { font-family: "Arial", sans-serif; font-weight: 700; font-size: 30px; color: var(--tenue); margin-top: 4px; }
+</style>
+
+<div class="titulo mano">Dónde estamos parados</div>
+<svg class="eje" viewBox="0 0 1080 1920"><path class="trazo" d="M255 330 L255 1500" /></svg>
+
+<div class="raya r1" style="top:330px;height:468px"></div>
+<div class="raya-et r1e" style="top:650px">Génesis 14 y 15: sin año</div>
+<div class="raya-et r1b" style="top:720px;font-size:44px">solo se sabe: en los primeros diez años</div>
+<div class="raya r2" style="top:858px;height:582px"></div>
+<div class="raya-et r2e" style="top:1150px">trece años sin registro</div>
+
+<div class="anio a1" style="top:330px">1943</div>
+<div class="punto p1" style="top:330px"></div>
+<div class="ev e1" style="top:330px"><div class="q">Cruza el Éufrates y entra en Canaán</div><div class="e">Abrán 75 · Sarái 65</div></div>
+<div class="pacto p1b mano">empieza a regir el pacto</div>
+
+<div class="anio a2" style="top:845px">1932</div>
+<div class="punto p2" style="top:845px"></div>
+<div class="ev e2" style="top:845px"><div class="q">Nace Ismael</div><div class="e">Abrán 86</div></div>
+
+<div class="anio a3" style="top:1453px">1919</div>
+<div class="punto p3" style="top:1453px"></div>
+<div class="ev e3" style="top:1345px"><div class="q">Nombres nuevos · tres visitantes en Mamré</div><div class="e">Abrahán 99</div></div>
+
+<div class="anio a4" style="top:1510px">1918</div>
+<div class="punto p4" style="top:1510px;background:var(--verde)"></div>
+<div class="ev e4" style="top:1510px"><div class="q" style="color:var(--verde)">Nace Isaac</div><div class="e">Abrahán 100</div></div>
+
+<div class="nombres">
+  <div class="c1"><div class="n">Abrán → <span>Abrahán</span></div><div class="v">Génesis 17:5</div></div>
+  <div class="c2"><div class="n">Sarái → <span>Sara</span></div><div class="v">17:15</div></div>
+</div>
+
+<div class="fuente f1">Años antes de nuestra era: <b>Perspicacia</b>, “Abrahán”, “Ismael”, “Pacto”, “Cronología”. Edades: Génesis 12:4; 16:16; 17:1, 17; 21:5.</div>
+
+<script>
+entra(".titulo", 0.6, { y: 20 });
+traza(".eje path", at("ubiquémonos"), 1.6);
+salta(".p1", at("Abrán cruza"));
+entra(".a1", at("Abrán cruza"), { x: -20, y: 0 });
+escribe(".e1 .q", at("río Éufrates") - 0.2, 1.4);
+entra(".e1 .e", at("Sarái tiene"), { y: 12 });
+escribe(".p1b", at("empezó a regir"), 1.1);
+// Lo que la Biblia no fecha va rayado, como en la línea de tiempo de la investigación.
+aparece(".r1", at("La guerra de los reyes"), 0.8);
+escribe(".r1e", at("no tienen año") - 0.2, 1.0);
+escribe(".r1b", at("Solo se sabe"), 1.3);
+salta(".p2", at("Cuando Abrán tiene"));
+entra(".a2", at("Cuando Abrán tiene"), { x: -20, y: 0 });
+escribe(".e2 .q", at("nace Ismael") - 0.1, 0.7);
+entra(".e2 .e", at("ochenta y seis"), { y: 12 });
+aparece(".r2", at("Luego vienen"), 0.8);
+escribe(".r2e", at("trece años"), 1.0);
+salta(".p3", at("A los noventa"));
+entra(".a3", at("A los noventa"), { x: -20, y: 0 });
+entra(".e3 .e", at("noventa y nueve"), { y: 12 });
+escribe(".e3 .q", at("le cambia el nombre"), 2.2);
+salta(".p4", at("Y a los cien"));
+entra(".a4", at("Y a los cien"), { x: -20, y: 0 });
+escribe(".e4 .q", at("nace Isaac", 42), 0.6);
+entra(".e4 .e", at("nace Isaac", 42), { y: 12 });
+entra(".f1", at("Un detalle"), { y: 12 });
+entra(".nombres .c1", at("Desde ahí"), { y: 20 });
+entra(".nombres .c2", at("Sara", 52), { y: 20 });
+</script>

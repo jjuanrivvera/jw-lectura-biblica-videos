@@ -1,0 +1,59 @@
+<style>
+.mapa { left: 0; top: 0; width: 800px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 960px; height: 1316px; }
+.anillo { fill: none; stroke: #ffd35c; stroke-width: 9; }
+.sombra-der { position: absolute; left: 740px; top: 0; width: 120px; height: 1080px; background: linear-gradient(90deg, rgba(23,33,43,0), #17212b); }
+.tit { position: absolute; left: 880px; right: 70px; top: 64px; }
+.tit .a { font-family: "Arial", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.2em; color: var(--tenue); }
+.tit .t { font-family: "Georgia", serif; font-weight: 700; font-size: 112px; line-height: 1; margin-top: 12px; }
+.tit .t b { color: var(--oro); }
+.tit .m { font-size: 60px; color: var(--oro); margin-top: 14px; }
+.lista { position: absolute; left: 880px; right: 50px; top: 360px; display: flex; flex-direction: column; gap: 22px; }
+.fila { display: grid; grid-template-columns: 86px 1fr; column-gap: 26px; align-items: center; }
+.fila .c { width: 86px; height: 86px; border-radius: 50%; background: #c8322f; color: #fff; display: flex; align-items: center; justify-content: center; font-family: "Arial", sans-serif; font-weight: 800; font-size: 38px; box-shadow: 0 0 0 5px #fff; }
+.fila .x { font-family: "cursive", cursive; font-weight: 700; font-size: 58px; line-height: 1.02; white-space: nowrap; }
+.fila .x b { color: var(--oro); }
+.final { position: absolute; left: 880px; right: 70px; bottom: 56px; padding: 18px 30px; border: 4px solid var(--verde); border-radius: 24px; background: rgba(23,33,43,0.95); }
+.final .r { font-family: "Arial", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.18em; color: var(--verde); }
+.final .m { font-size: 54px; margin-top: 4px; }
+</style>
+
+<div class="mapa">
+  <div class="cam">
+    <img src="assets/img/mapa-capitulos.svg" />
+    <svg viewBox="0 0 960 1316">
+      <circle class="anillo a24" cx="520" cy="480" r="46"/>
+      <circle class="anillo a25" cx="343" cy="1128" r="46"/>
+      <circle class="anillo a26" cx="52" cy="1257" r="46"/>
+      <circle class="anillo a27" cx="220" cy="1263" r="46"/>
+      <circle class="anillo a28" cx="343" cy="1025" r="46"/>
+    </svg>
+  </div>
+  <div class="pie-mapa">Mapa esquemático original; las ubicaciones son orientativas.</div>
+</div>
+<div class="sombra-der"></div>
+
+<div class="tit"><div class="a">LECTURA BÍBLICA</div><div class="t">Génesis <b>24</b> al <b>28</b></div><div class="m mano">la promesa pasa a Isaac y a Jacob</div></div>
+
+<div class="lista">
+  <div class="fila f24"><div class="c">24</div><div class="x"><b>Harán</b> · una esposa para Isaac</div></div>
+  <div class="fila f25"><div class="c">25</div><div class="x"><b>Hebrón</b> · Esaú, Jacob y un guisado</div></div>
+  <div class="fila f26"><div class="c">26</div><div class="x"><b>Guerar</b> · los pozos y la paz</div></div>
+  <div class="fila f27"><div class="c">27</div><div class="x"><b>Beer-Seba</b> · la bendición</div></div>
+  <div class="fila f28"><div class="c">28</div><div class="x"><b>Betel</b> · “Yo estoy contigo”</div></div>
+</div>
+
+<div class="final"><div class="r">AL FINAL DEL VIDEO</div><div class="m mano">lecciones y preguntas para pensar</div></div>
+
+<script>
+tl.set($(".cam"), { scale: 0.8207, x: 0, y: 0 }, 0);
+tl.to($(".cam"), { scale: 0.86, x: -20, y: -40, duration: DUR, ease: "none" }, 0);
+entra(".tit", 0.4, { y: -30 });
+const caps = [["24", at("En el veinticuatro")], ["25", at("En el veinticinco")], ["26", at("En el veintiséis")], ["27", at("En el veintisiete")], ["28", at("en el veintiocho")]];
+caps.forEach(([n, t]) => {
+  entra(".f" + n, t, { x: 40, y: 0 });
+  traza(".a" + n, t, 0.7);
+});
+caps.forEach(([n], i) => { if (i < caps.length - 1) atenua(".a" + n, caps[i + 1][1], 0.35); });
+salta(".final", at("Al final veremos"), { desde: 0.85 });
+</script>

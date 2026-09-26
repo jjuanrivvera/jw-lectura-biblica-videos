@@ -1,0 +1,63 @@
+<style>
+.escala { position: absolute; left: 40px; top: 100px; width: 1140px; height: 960px; }
+.escala svg { width: 1140px; height: 960px; }
+.eje-t { font-family: "Arial", sans-serif; font-weight: 600; font-size: 26px; fill: var(--tenue); text-anchor: end; }
+.rot { font-family: "cursive", cursive; font-weight: 700; font-size: 46px; fill: var(--tiza); }
+.col { width: 680px; right: 60px; top: 110px; }
+</style>
+
+<div class="cab"><span class="cap">Beer-Seba hoy</span><span>Génesis 21:31 · 26:23-33</span></div>
+<div class="escala"><svg viewBox="0 0 1140 960">
+  <defs>
+    <linearGradient id="e23-tierra" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a4630"/><stop offset="1" stop-color="#342a1f"/></linearGradient>
+    <linearGradient id="e23-agua" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7cc0f0"/><stop offset="1" stop-color="#2d6fb6"/></linearGradient>
+  </defs>
+  <g class="base">
+    <rect x="110" y="80" width="1010" height="850" fill="url(#e23-tierra)"/>
+    <line x1="110" y1="80" x2="1120" y2="80" stroke="#b09a72" stroke-width="6"/>
+    <g class="eje"></g>
+  </g>
+  <g class="per"><circle cx="330" cy="50" r="7" fill="#f1e9d8"/><rect x="325" y="58" width="10" height="21" rx="3" fill="#f1e9d8"/><text class="rot" x="350" y="64" style="font-size:40px">una persona</text></g>
+  <g class="mayor"><rect x="200" y="82" width="47" height="58" fill="#15100c" stroke="#93bbef" stroke-width="4"/><text class="rot" x="160" y="200" style="fill:var(--cielo)">pozo mayor: 5 m</text></g>
+  <g class="tel">
+    <rect class="shaft" x="640" y="82" width="22" height="805" fill="#15100c" stroke="#e9bf60" stroke-width="3"/>
+    <rect class="agua" x="630" y="887" width="42" height="26" fill="url(#e23-agua)"/>
+    <text class="rot" x="560" y="40" style="fill:var(--oro)">pozo junto a la puerta del tel</text>
+  </g>
+  <g class="m30"><line x1="600" y1="429" x2="700" y2="429" stroke="#f1e9d8" stroke-width="4" stroke-dasharray="10 8"/><text class="rot" x="580" y="420" text-anchor="end">1993: “sin llegar al fondo”</text><text class="rot" x="580" y="466" text-anchor="end" style="font-size:38px;fill:var(--tenue)">30 m</text></g>
+  <g class="m69"><text class="rot" x="610" y="912" text-anchor="end" style="fill:#9fd4ff;font-size:60px">agua a 69 m</text></g>
+  <g class="pisos"></g>
+  <text class="rot t23" x="960" y="955" text-anchor="middle" style="font-size:44px;fill:var(--tenue)">23 pisos</text>
+</svg></div>
+<div class="col">
+  <div class="b a1"><div class="cita md">“la ciudad se llama Beer-Seba <b>hasta el día de hoy</b>”<span class="ref">GÉNESIS 26:33</span></div><div class="m oro">Tell es-Sabaʽ</div><div class="s">(Tel Beʼer Shevaʽ), a 4 km al este de la moderna Beʼer Shevaʽ · Perspicacia, “Beer-seba”, pág. 299</div><div class="m">“desde Dan hasta Beer-Seba”</div><div class="s">el límite sur del país · Jueces 20:1</div></div>
+  <div class="b a2"><div class="m">todo a la misma escala</div><div class="s">pozo mayor: “4 m. de diámetro [...] hasta una profundidad de 5 m.” · Perspicacia, pág. 299</div><div class="s">pozo del tel: La Atalaya, 1 de julio de 1993, pág. 25 · hasta el agua:</div><span class="externa">fuente externa: NEAEHL, “Beersheba”</span><span class="propio">23 pisos, a 3 m por piso: cálculo propio</span></div>
+  <div class="b a3"><div class="m rosa">de una época posterior a Isaac</div><div class="m">nadie sabe si es el pozo de Génesis</div><span class="externa">hoy: Patrimonio de la Humanidad (UNESCO, 2005)</span></div>
+</div>
+
+<script>
+const PX = 805 / 69;
+const ym = (m) => 82 + m * PX;
+let ej = "";
+[0, 10, 20, 30, 40, 50, 60, 70].forEach((m) => { ej += `<line x1="92" y1="${ym(m)}" x2="110" y2="${ym(m)}" stroke="#b3bdc8" stroke-width="3"/><text class="eje-t" x="84" y="${ym(m) + 9}">${m} m</text>`; });
+pinta(".eje", ej);
+let pi = "";
+for (let i = 0; i < 23; i++) pi += `<rect class="piso" x="880" y="${ym(i * 3).toFixed(1)}" width="160" height="${(3 * PX - 3).toFixed(1)}" fill="none" stroke="#b3bdc8" stroke-width="2" stroke-dasharray="6 5"/>`;
+pinta(".pisos", pi);
+
+secuencia([[".a1", 0.4], [".a2", at("Veamos sus pozos")], [".a3", at("Es de una época")]]);
+aparece(".base", 0.5, 0.6);
+entra(".per", at("Veamos sus pozos"), { y: 10 });
+entra(".mayor", at("un pozo mayor"), { y: 10 });
+entra(".tel text", at("En el tel"), { y: 10 });
+tl.set($(".shaft"), { scaleY: 0, transformOrigin: "50% 0%" }, 0);
+tl.to($(".shaft"), { scaleY: 30 / 69, duration: 1.2, ease: "power1.inOut" }, at("En el tel") + 0.4);
+aparece(".m30", at("En el tel") + 1.4, 0.4);
+tl.to($(".shaft"), { scaleY: 1, duration: 2.0, ease: "power1.inOut" }, at("Las excavaciones llegaron"));
+tl.set($(".agua"), { opacity: 0 }, 0);
+tl.to($(".agua"), { opacity: 1, duration: 0.4 }, at("Las excavaciones llegaron") + 1.9);
+aparece(".m69", at("sesenta y nueve metros"), 0.4);
+tl.set($$(".piso"), { opacity: 0 }, 0);
+tl.to($$(".piso"), { opacity: 1, duration: 0.15, stagger: 0.07 }, at("como un edificio"));
+aparece(".t23", at("veintitrés pisos"), 0.4);
+</script>

@@ -1,0 +1,62 @@
+<style>
+/*incluir:_arbol.css*/
+.arbol-t { position: absolute; left: 50px; top: 120px; width: 1060px; height: 900px; }
+.arbol-t svg { width: 1060px; height: 900px; }
+.dilema { position: absolute; left: 90px; top: 170px; width: 980px; height: 800px; display: flex; flex-direction: column; justify-content: center; gap: 50px; }
+.op { display: grid; grid-template-columns: 330px 90px 1fr; align-items: center; }
+.op .q { font-family: "cursive", cursive; font-weight: 700; font-size: 80px; text-align: center; border-radius: 26px; border: 4px solid; padding: 14px 10px; }
+.op .fl { font-family: "Arial", sans-serif; font-weight: 800; font-size: 56px; text-align: center; color: var(--tenue); }
+.op .r { font-family: "cursive", cursive; font-weight: 700; font-size: 64px; line-height: 1.05; }
+.op.esp .q { color: var(--rosa); border-color: var(--rosa); }
+.op.esp .r { color: var(--rojo); }
+.op.her .q { color: var(--cielo); border-color: var(--cielo); }
+.dilema .s { font-size: 26px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 20</span><span>versículos 8 al 13</span></div>
+
+<div class="dilema">
+  <div class="m" style="font-size:66px">Si veían a Sara...</div>
+  <div class="op esp"><div class="q">¿casada?</div><div class="fl">→</div><div class="r">solo la muerte del esposo permitía quedarse con ella</div></div>
+  <div class="op her"><div class="q">¿hermana?</div><div class="fl">→</div><div class="r">se la podían pedir al hermano “por medios amigables”</div></div>
+  <div class="s">La Atalaya, 1 de febrero de 1992, pág. 31</div>
+</div>
+
+<div class="arbol-t"><svg viewBox="30 10 960 330"><g class="dibujo"></g></svg></div>
+
+<div class="col">
+  <div class="b b1"><div class="cita">“¿Qué nos has hecho?”<span class="ref">GÉNESIS 20:9 · ABIMÉLEC</span></div></div>
+  <div class="b b2"><div class="cita">“la gente de aquí no tiene temor de Dios, así que <b>me matarán a causa de mi esposa</b>”<span class="ref">GÉNESIS 20:11</span></div></div>
+  <div class="b b3"><div class="m">el miedo tenía base</div><div class="s">“Un papiro antiguo habla de un Faraón que encargó a hombres armados que tomaran a una mujer y mataran a su esposo” · Perspicacia, “Sara”, pág. 965</div></div>
+  <div class="b b4"><div class="m oro">estaba en juego la promesa</div><div class="s">“La seguridad del patriarca era de importancia capital” · La Atalaya, núm. 3 de 2017, pág. 15</div></div>
+  <div class="b b5"><div class="m xl">¿Mintió? <span style="color:var(--oro)">No.</span></div><div class="cita">“la verdad es que ella es mi hermana. Somos hijos del mismo padre pero <b>de distintas madres</b>.”<span class="ref">GÉNESIS 20:12</span></div></div>
+  <div class="b b6"><div class="cita">“Demuéstrame, <b>por favor</b>, tu amor leal de esta manera: adondequiera que vayamos, di que soy tu hermano”<span class="ref">GÉNESIS 20:13</span></div><div class="s">“En ninguna parte de las Escrituras se censura a Abrahán por haber hecho esto” · Perspicacia, “Sara”, pág. 965</div></div>
+</div>
+
+<script>
+/*incluir:_arbol.js*/
+pinta(".dibujo", arbolSVG());
+// Solo la parte que responde la pregunta: Taré, sus hijos, y Sara de otra madre.
+const fuera = [".n-lot", ".n-milca", ".n-agar", ".n-moab", ".n-benammi", ".n-betuel", ".n-ismael", ".n-isaac", ".n-rebeca",
+  ".e-haran-lot", ".e-haran-milca", ".e-lot-moab", ".e-lot-benammi", ".e-abrahan-ismael", ".e-agar-ismael", ".e-pareja-isaac",
+  ".e-nacor-milca", ".e-pareja-betuel", ".e-betuel-rebeca", ".e-rebeca-isaac"];
+tl.set(fuera.flatMap((s) => $$(s)), { opacity: 0 }, 0);
+tl.set($$(".dilema > *"), { opacity: 0 }, 0);
+entra(".dilema .m", at("Abrahán explica"), { y: 20 });
+entra(".op.esp", at("me matarán"), { x: -30, y: 0 });
+entra(".op.her", at("El miedo tenía") , { x: -30, y: 0 });
+entra(".dilema .s", at("El miedo tenía") + 0.6, { y: 10 });
+tl.to($(".dilema"), { opacity: 0, duration: 0.5 }, at("Mintió") - 0.4);
+aparece(".arbol-t", at("Mintió"), 0.6);
+tl.set([$(".n-haran"), $(".n-nacor"), $(".e-tare-haran"), $(".e-tare-nacor")], { opacity: 0.3 }, at("Mintió"));
+traza(".e-tare-abrahan", at("del mismo padre"), 0.8);
+traza("path.e-tare-sara", at("de distintas madres"), 1.0);
+tl.set($("path.e-tare-sara"), { strokeDasharray: "16 12", strokeDashoffset: 0 }, at("de distintas madres") + 1.05);
+tl.set($$(".arbol-t .otra"), { opacity: 0 }, 0);
+tl.to($$(".arbol-t .otra"), { opacity: 1, duration: 0.4 }, at("de distintas madres") + 0.6);
+late(".n-tare", at("hija de Taré"), { s: 1.12, n: 3 });
+traza(".e-abrahan-sara.boda", at("un acuerdo de los dos"), 0.7);
+tl.set($$("text.e-abrahan-sara"), { opacity: 0 }, 0);
+tl.to($$("text.e-abrahan-sara"), { opacity: 1, duration: 0.4 }, at("un acuerdo de los dos") + 0.5);
+secuencia([[".b1", 0.5], [".b2", at("Abrahán explica")], [".b3", at("El miedo tenía")], [".b4", at("Y estaba en juego")], [".b5", at("Mintió")], [".b6", at("Y era un acuerdo")]]);
+</script>

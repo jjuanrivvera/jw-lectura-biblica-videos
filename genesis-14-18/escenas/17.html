@@ -1,0 +1,45 @@
+<style>
+.b { position: absolute; left: 72px; right: 72px; }
+.rie { top: 250px; }
+.rie .m { font-family: "cursive", cursive; font-weight: 700; font-size: 70px; line-height: 1.05; }
+.rie .s { font-family: "Arial", sans-serif; font-size: 28px; color: var(--tenue); margin-top: 12px; }
+.q18 { top: 560px; }
+.q18 .cita { font-size: 62px; }
+.q20 { top: 900px; }
+.q20 .cita { font-size: 62px; color: var(--verde); }
+.q20 .s { font-family: "Arial", sans-serif; font-size: 28px; color: var(--tenue); margin-top: 10px; }
+.isaac { top: 1230px; display: flex; align-items: baseline; gap: 28px; }
+.isaac .w { font-family: "Georgia", serif; font-weight: 700; font-size: 130px; color: var(--oro); line-height: 1; }
+.isaac .d { font-family: "cursive", cursive; font-weight: 700; font-size: 76px; }
+.fecha { top: 1420px; }
+.fecha .cita { font-size: 58px; }
+.tab { top: 230px; }
+</style>
+
+<div class="fase fa">
+  <div class="b rie"><div class="m">Abrahán se postró y se rio: “impresionado y muy feliz”</div><div class="s">Génesis 17:17 · La Atalaya núm. 5 de 2017, pág. 14</div></div>
+  <div class="b q18"><div class="cita">“¡Por favor, que Ismael viva con tu bendición!”<span class="ref">Génesis 17:18</span></div></div>
+  <div class="b q20"><div class="cita">“he oído tu petición”<span class="ref">Génesis 17:20</span></div><div class="s">es decir, “actuaría de acuerdo con ella” · Perspicacia, vol. 2, “Obediencia”, pág. 513</div></div>
+  <div class="b isaac"><div class="w">Isaac</div><div class="d">“risa”</div></div>
+  <div class="b fecha"><div class="cita">“por estas mismas fechas el próximo año”<span class="ref">Génesis 17:19, 21</span></div></div>
+</div>
+<div class="tab"></div>
+
+<script>
+escribe(".rie .m", at("Abrahán se postró"), 3.4);
+entra(".rie .s", at("Estaba impresionado"), { y: 10 });
+escribe(".q18 .cita", at("Por favor"), 2.4);
+salta(".q20 .cita", at("he oído"));
+entra(".q20 .s", at("he oído") + 0.6, { y: 10 });
+salta(".isaac .w", at("Isaac"));
+escribe(".isaac .d", at("risa"), 0.6);
+escribe(".fecha .cita", at("por estas mismas"), 2.2);
+sale(".fa", at("Miren el tablero") - 0.4);
+
+const T = tablero(".tab", [0, 1, 2, 3]);
+entra(".tab", at("Miren el tablero"), { y: 30 });
+T.llenar(4, at("señal"));
+T.llenar(5, at("madre"));
+T.llenar(6, at("nombre", 33));
+T.llenar(7, at("fecha", 34));
+</script>
