@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const projects = ['genesis-14-18', 'genesis-19-23', 'genesis-24-28', 'jeremias-36-37'];
+const projects = ['genesis-14-18', 'genesis-19-23', 'genesis-24-28'];
 const cwdProject = path.relative(root, process.cwd()).split(path.sep)[0];
 const project = process.argv[2] || cwdProject;
 

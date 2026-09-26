@@ -4,7 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const projects = ['genesis-14-18', 'genesis-19-23', 'genesis-24-28', 'jeremias-36-37'];
+const projects = ['genesis-14-18', 'genesis-19-23', 'genesis-24-28'];
 const headers = {
   'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
   'Referer': 'https://wol.jw.org/es/wol/h/r4/lp-s',

@@ -9,7 +9,6 @@ Monorepositorio de proyectos audiovisuales que recorren capítulos de la Biblia 
 | `genesis-14-18` | Génesis 14 al 18 | La promesa a Abrahán, el rescate de Lot, el pacto y el nacimiento de Ismael e Isaac. |
 | `genesis-19-23` | Génesis 19 al 23 | Sodoma, la vida de Isaac, la muerte de Sara y la compra de Macpelá. |
 | `genesis-24-28` | Génesis 24 al 28 | Rebeca e Isaac, Jacob y Esaú, la primogenitura y el sueño de Betel. |
-| `jeremias-36-37` | Jeremías 36 y 37 | El rollo de Jeremías, la reacción del rey y el asedio de Jerusalén. |
 
 ## Flujo de producción
 
@@ -60,7 +59,6 @@ También puedes ejecutar el render con `tools/render.sh genesis-14-18`. Sustituy
 ├── genesis-14-18/       # Guion, narración, escenas y proyecto HyperFrames
 ├── genesis-19-23/
 ├── genesis-24-28/
-├── jeremias-36-37/
 ├── tools/               # Voz, descarga de recursos y render
 ├── .gitignore
 ├── LICENSE
