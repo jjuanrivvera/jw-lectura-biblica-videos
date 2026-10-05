@@ -1,0 +1,43 @@
+<style>
+.leccion .l { font-size: 100px; }
+.seccion { gap: 52px; }
+.leccion .fu { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 34px; line-height: 1.3; color: #f1f4f7; margin-top: -10px; }
+.leccion .fu i { color: var(--tiza); }
+.leccion .p { font-size: 60px; }
+.leccion .propio { font-size: 32px; margin-top: -16px; }
+.portada { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.portada .t1 { font-family: "Fraunces", serif; font-weight: 700; font-size: 150px; line-height: 1; }
+.portada .t2 { font-family: "Caveat", cursive; font-weight: 700; font-size: 84px; color: var(--verde); margin-top: 20px; }
+.portada svg { width: 760px; height: 36px; margin-top: 14px; }
+.portada svg path { fill: none; stroke: var(--verde); stroke-width: 7; stroke-linecap: round; }
+.pista.lec { position: absolute; left: 0; right: 0; bottom: 60px; }
+.pista.lec span { color: rgba(241, 233, 216, 0.88); border-color: rgba(241, 233, 216, 0.5); }
+.pista.lec span.hecho { color: rgba(233, 191, 96, 0.95); border-color: rgba(233, 191, 96, 0.6); }
+.pista.lec span.on { color: #17212b; background: var(--verde); border-color: var(--verde); }
+</style>
+
+<div class="portada pt"><div class="t1">Lecciones</div><svg viewBox="0 0 760 36"><path d="M 10 20 C 200 6 480 30 750 14" /></svg><div class="t2">y preguntas para pensar, capítulo por capítulo</div></div>
+<div class="seccion"><span class="r">Lecciones</span><span class="t">Génesis 48</span></div>
+<svg class="seccion-linea" viewBox="0 0 1740 20" preserveAspectRatio="none"><path d="M 4 10 C 400 4 1200 16 1736 8" /></svg>
+<div class="leccion le0"><div class="n">1</div><div class="cuerpo"><div class="l">Escuchar a los mayores <b>mientras aún podemos</b></div><div class="fu">José llevó a sus hijos cuando supo que su padre estaba débil · 48:1-4, 9-11</div><span class="propio chico">observación propia</span><div class="p pr0"><span class="k">PREGUNTA PARA PENSAR</span>¿Qué experiencia de confianza en Jehová nos gustaría que los niños escucharan de sus abuelos?</div></div></div>
+<div class="leccion le1"><div class="n">2</div><div class="cuerpo"><div class="l">No medir el valor de un hijo <b>por su posición</b></div><div class="fu">el menor recibió el primer lugar, y el mayor también fue bendecido · 48:19, 20</div><span class="propio chico">observación propia</span><div class="p pr1"><span class="k">PREGUNTA PARA PENSAR</span>¿Repartimos el cariño según quién nació primero, o según quién destaca más?</div></div></div>
+<div class="leccion le2"><div class="n">3</div><div class="cuerpo"><div class="l">El dolor y la gratitud <b>pueden ir juntos</b></div><div class="fu">Jacob recordó a Raquel y dio gracias por los hijos de José · 48:7, 11</div><span class="propio chico">observación propia</span><div class="p pr2"><span class="k">PREGUNTA PARA PENSAR</span>¿Hablamos con cariño de los que ya no están?</div></div></div>
+<div class="pista lec"><span class="on">48</span><span class="">49</span><span class="">50</span></div>
+
+<script>
+const t0 = at("Primera") - 0.3;
+entra(".pt .t1", 0.3, { y: 40, d: 0.8 });
+traza(".pt svg path", 0.8, 0.9);
+escribe(".pt .t2", 1.2, 1.2);
+sale(".pt", t0 - 0.6, { y: -40 });
+entra(".seccion", t0 - 0.2, { y: -20 });
+traza(".seccion-linea path", t0, 1.0);
+entra(".pista.lec", t0, { y: 16 });
+secuencia([[".le0", at("Primera") - 0.2], [".le1", at("Segunda") - 0.2], [".le2", at("Tercera") - 0.2]], null, { y: 30, d: 0.6 });
+entra(".pr0", at("Qué experiencia de") - 0.3, { x: -30, y: 0 });
+centra([".le0 .cuerpo", ".le0 .n"], 110, at("Qué experiencia de") - 0.9, 0.7);
+entra(".pr1", at("Repartimos el cariño") - 0.3, { x: -30, y: 0 });
+centra([".le1 .cuerpo", ".le1 .n"], 110, at("Repartimos el cariño") - 0.9, 0.7);
+entra(".pr2", at("Hablamos con cariño") - 0.3, { x: -30, y: 0 });
+centra([".le2 .cuerpo", ".le2 .n"], 110, at("Hablamos con cariño") - 0.9, 0.7);
+</script>

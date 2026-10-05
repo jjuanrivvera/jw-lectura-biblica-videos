@@ -1,0 +1,103 @@
+<!--lead:2.4-->
+<style>
+.far34 { position: absolute; left: 80px; top: 110px; width: 840px; }
+.sue34 { position: absolute; left: 40px; right: 40px; top: 480px; height: 560px; }
+.sue34 svg { width: 1840px; height: 560px; display: block; }
+.e34 { font-family: "Caveat", cursive; font-weight: 700; font-size: 48px; fill: var(--tiza); text-anchor: middle; }
+.e34.oro { fill: var(--oro); }
+.e34.gr { fill: #a9b1b9; }
+.mag34 { position: absolute; left: 80px; right: 80px; top: 120px; display: grid; grid-template-columns: 1.3fr 1fr; column-gap: 30px; align-items: center; }
+.cab.c34 { left: 980px; }
+.q34 { position: absolute; left: 980px; right: 80px; top: 120px; }
+.sube34 { position: absolute; inset: 0; }
+</style>
+
+<div class="capcard cc"><div class="num">Génesis 41</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">los sueños del faraón</div><div class="edad">1737 antes de nuestra era · José tiene 30 años</div>
+  <div class="pista"><span class="hecho">37</span><span class="hecho">38</span><span class="hecho">39</span><span class="hecho">40</span><span class="on">41</span></div></div>
+
+<div class="fase fp">
+  <div class="cab"><span class="cap">Génesis 41</span><span>versículos 1 al 8</span></div>
+  <div class="sube34">
+  <div class="far34"><div class="def"><div class="t">faraón</div><div class="x">el título de los reyes de Egipto: de una palabra egipcia que significa “<b>gran casa</b>”</div><div class="s"><i>Perspicacia</i>, vol. 1, “Faraón”, pág. 917</div></div></div>
+    <div class="q34"><div class="m md">dos sueños: <b>siete y siete</b>, dos veces</div><div class="s">Génesis 41:1-7</div></div>
+  </div>
+  <div class="sue34"><svg viewBox="0 0 1840 560">
+    <defs>
+      <linearGradient id="e34-rio" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f93d6"/><stop offset="1" stop-color="#2c5f94"/></linearGradient>
+      <linearGradient id="e34-oro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2cf73"/><stop offset="1" stop-color="#c8923a"/></linearGradient>
+      <linearGradient id="e34-tallo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7c46a"/><stop offset="1" stop-color="#9c7430"/></linearGradient>
+    </defs>
+    <g class="lado-v">
+      <text class="e34 oro" x="450" y="40">las vacas que salen del Nilo</text>
+      <path class="rio34" d="M 0 500 C 200 480 400 520 600 500 C 700 490 800 505 900 498 L 900 560 L 0 560 Z" fill="url(#e34-rio)"/>
+      <g class="gordas"></g><g class="flacas"></g>
+      <text class="e34 t-g" x="230" y="300">siete gordas</text><text class="e34 gr t-f" x="670" y="300">siete flacas</text>
+    </g>
+    <g class="lado-e">
+      <text class="e34 oro" x="1390" y="40">las espigas de un solo tallo</text>
+      <g class="llenas"></g><g class="secas"></g>
+      <text class="e34 t-ll" x="1180" y="540">siete llenas</text><text class="e34 gr t-se" x="1610" y="540">siete delgadas y quemadas</text>
+    </g>
+  </svg></div>
+  <div class="mag34">
+    <div class="def"><div class="t">los sacerdotes-magos</div><div class="x">“aparte del mismo Faraón, <b>los más influyentes</b> del imperio”</div><div class="s"><i>Perspicacia</i>, vol. 2, “Moisés”, pág. 415 · Génesis 41:8</div></div>
+    <div class="m rojo">nadie pudo interpretar los sueños</div>
+  </div>
+</div>
+
+<script>
+// Vaca de perfil, mirando a la derecha; la flaca tiene el cuerpo estrecho y costillas.
+function vaca(x, y, esc, gorda, cls) {
+  const t = gorda ? 16 : 24, b = gorda ? 66 : 54;
+  const cuerpo = `M 18 ${t + 14} C 18 ${t + 2} 32 ${t - 2} 48 ${t} C 64 ${t - 4} 84 ${t - 2} 96 ${t + 4} L 104 ${t - 2} C 108 ${t - 8} 118 ${t - 8} 124 ${t - 2} L 130 ${t - 6} L 127 ${t + 4} C 131 ${t + 10} 129 ${t + 20} 123 ${t + 22} L 112 ${t + 24} C 106 ${t + 26} 102 ${b - 14} 100 ${b - 8} C 98 ${b} 92 ${b + 2} 86 ${b} L 86 86 L 79 86 L 79 ${b + 1} C 64 ${b + 3} 46 ${b + 3} 34 ${b + 1} L 34 86 L 27 86 L 27 ${b - 2} C 20 ${b - 8} 16 ${t + 30} 18 ${t + 14} Z`;
+  const cola = `M 19 ${t + 16} C 10 ${t + 22} 8 ${t + 38} 12 ${t + 48}`;
+  const cost = gorda ? "" : `<path d="M 50 ${t + 6} C 48 ${t + 16} 48 ${t + 24} 50 ${t + 30} M 60 ${t + 5} C 58 ${t + 15} 58 ${t + 23} 60 ${t + 29} M 70 ${t + 5} C 68 ${t + 15} 68 ${t + 23} 70 ${t + 29}" stroke="#6b7179" stroke-width="2.5" fill="none"/>`;
+  const relleno = gorda ? "url(#e34-oro)" : "#8f969d";
+  const borde = gorda ? "#8a5f1c" : "#4c535a";
+  return `<g class="${cls}"><g transform="translate(${x} ${y}) scale(${esc})"><path d="${cola}" stroke="${borde}" stroke-width="4" fill="none" stroke-linecap="round"/><path d="${cuerpo}" fill="${relleno}" stroke="${borde}" stroke-width="3"/>${cost}<circle cx="116" cy="${t + 6}" r="2.6" fill="#1b2733"/></g></g>`;
+}
+let g = "", f = "";
+for (let i = 0; i < 7; i++) {
+  g += vaca(30 + (i % 4) * 100 + (i >= 4 ? 50 : 0), 320 + (i >= 4 ? 80 : 0), 0.95, true, "vg vg" + i);
+  f += vaca(480 + (i % 4) * 100 + (i >= 4 ? 50 : 0), 320 + (i >= 4 ? 80 : 0), 0.95, false, "vf vf" + i);
+}
+pinta(".gordas", g); pinta(".flacas", f);
+// Siete espigas en un solo tallo, y siete delgadas.
+function tallo(cx, base, llena, cls) {
+  let s = `<g class="${cls}"><path d="M ${cx} ${base} C ${cx - 6} ${base - 120} ${cx + 4} ${base - 240} ${cx} ${base - 330}" stroke="url(#e34-tallo)" stroke-width="7" fill="none"/>`;
+  for (let i = 0; i < 7; i++) {
+    const y = base - 170 - i * 24, lado = i % 2 ? 1 : -1, ex = cx + lado * (llena ? 30 : 22), ey = y - 20;
+    s += `<path d="M ${cx} ${y} Q ${cx + lado * 10} ${y - 8} ${ex} ${ey}" stroke="${llena ? "#c99a45" : "#8a6f4a"}" stroke-width="4" fill="none"/>`;
+    s += llena ? `<ellipse cx="${ex}" cy="${ey}" rx="12" ry="26" fill="#e6b957" stroke="#9c7430" stroke-width="2" transform="rotate(${lado * 28} ${ex} ${ey})"/>`
+               : `<ellipse cx="${ex}" cy="${ey}" rx="5" ry="24" fill="#8a6f4a" stroke="#5c4a30" stroke-width="2" transform="rotate(${lado * 48} ${ex} ${ey})"/>`;
+  }
+  return s + "</g>";
+}
+pinta(".llenas", tallo(1180, 500, true, "tl1"));
+pinta(".secas", tallo(1610, 500, false, "tl2"));
+const t0 = at("Ahora sueña");
+capitulo(".cc", 0.3, t0 - 0.45);
+entra(".cc .pista", 0.9, { y: 20 });
+aparece(".fp", t0 - 0.1, 0.6);
+entra(".far34", at("el título"), { y: 20 });
+entra(".q34", t0 + 0.2, { y: 16 });
+// Mientras se explica el título, la tarjeta y el encabezado ocupan el centro; suben cuando empiezan los sueños.
+tl.set($(".sube34"), { y: 230 }, 0);
+tl.to($(".sube34"), { y: 0, duration: 0.8, ease: "power2.inOut" }, at("Del Nilo") - 0.9);
+aparece(".lado-v > text.oro", at("Del Nilo") - 0.3, 0.4);
+aparece(".rio34", at("Del Nilo") - 0.3, 0.5);
+entra(".vg", at("siete vacas gordas") - 0.2, { y: 40, st: 0.12 });
+aparece(".t-g", at("siete vacas gordas") + 0.6, 0.4);
+entra(".vf", at("siete vacas flacas") - 0.2, { y: 40, st: 0.12 });
+aparece(".t-f", at("siete vacas flacas") + 0.6, 0.4);
+tl.to($$(".vg"), { opacity: 0.18, duration: 0.8 }, at("se comían"));
+aparece(".lado-e > text.oro", at("Luego, siete espigas") - 0.3, 0.4);
+entra(".tl1", at("Luego, siete espigas"), { y: 30 });
+aparece(".t-ll", at("un solo tallo"), 0.4);
+entra(".tl2", at("y siete delgadas"), { y: 30 });
+aparece(".t-se", at("quemadas"), 0.4);
+tl.to($(".tl1"), { opacity: 0.2, duration: 0.8 }, at("se tragaban"));
+// Los sueños siguen a la vista: son lo que nadie supo interpretar.
+sale(".sube34", at("El faraón llamó") - 0.5, { y: -16 });
+entra(".mag34", at("El faraón llamó"), { y: 24 });
+</script>

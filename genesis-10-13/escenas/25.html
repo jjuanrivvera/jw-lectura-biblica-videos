@@ -1,0 +1,65 @@
+<style>
+.vi25 { position: absolute; inset: 0; }
+.vi25 svg { width: 1920px; height: 1080px; display: block; }
+.nm25 { font-family: "Fraunces", serif; font-weight: 700; font-size: 34px; fill: var(--tiza); text-anchor: end; }
+.ax25 { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; fill: var(--tenue); text-anchor: middle; }
+.ln25 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.06em; }
+.nt25 { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; }
+.tt25 { position: absolute; left: 90px; top: 30px; display: flex; align-items: baseline; gap: 24px; }
+.tt25 .grande { font-size: 68px; }
+.tt25 .s { font-size: 28px; }
+.ba25 { position: absolute; left: 90px; right: 90px; top: 858px; bottom: 36px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 30px; align-items: stretch; }
+.ba25 .def { display: flex; flex-direction: column; justify-content: center; padding: 14px 26px; }
+.ba25 .def .x { font-size: 50px; }
+.pr25 { position: absolute; right: 60px; top: 36px; }
+.notas { display: block; }
+.notas .nb { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 6px; }
+</style>
+
+<div class="tt25"><div class="grande">Del Diluvio a Abrán, vida por vida</div><div class="s">años antes de nuestra era</div></div>
+<div class="vi25"><svg viewBox="0 0 1920 1080">
+  <g class="ejes"></g>
+  <g class="barras"></g>
+  <g class="hl-noe"><path d="M 1350 188 C 1352 400 1352 600 1354 752" fill="none" stroke="#ec8a67" stroke-width="5" stroke-dasharray="10 8"/></g>
+  <g class="hl-sem"><rect x="1354" y="226" width="356" height="44" rx="10" fill="rgba(146,209,147,0.35)" stroke="#92d193" stroke-width="4"/><text class="nt25" x="1532" y="214" style="fill:#92d193;text-anchor:middle">unos 150 años juntos</text></g>
+  <g class="hl-eber"><path d="M 1769 452 V 790 M 1778 452 V 790" stroke="#93bbef" stroke-width="4"/></g>
+</svg></div>
+<span class="propio chico pr25">las restas y lo de Éber: cálculo propio</span>
+
+<div class="ba25 notas"><div class="nb n1"><div class="m md" style="color:#f7b8a3">Noé muere en 2020, dos años antes de nacer Abrán: <b>no se conocieron</b></div></div><div class="nb n2"><div class="m md" style="color:#92d193">Sem muere en 1868: sus vidas coincidieron <b>unos 150 años</b></div><div class="f"><i>Perspicacia</i>, vol. 1, “Abrahán”, pág. 30</div></div><div class="nb n3"><div class="m md" style="color:#93bbef">Éber muere en 1839: <b>cuatro años después</b> que Abrahán</div></div></div>
+<div class="ba25">
+  <div class="def d1"><div class="t">Éber<i>ʽÉ·ver</i></div><div class="x">de una raíz que significa “<b>cruzar</b>” u “otro lado”: de él viene, muy probablemente, “<b>hebreo</b>”</div></div>
+  <div class="def d2"><div class="t">hebreo<i>ʽiv·rí · Génesis 14:13</i></div><div class="x">el primero en recibir ese nombre fue <b>Abrán</b></div><div class="s"><i>Perspicacia</i>, vol. 1, “Éber”, pág. 728, y “Hebreo, I”, pág. 1097</div></div>
+</div>
+
+<script>
+const X = (y) => 260 + (2480 - y) * (1540 / 650);
+const VID = [["Noé", 2970, 2020], ["Sem", 2468, 1868], ["Arpaksad", 2368, 1930], ["Selá", 2333, 1900], ["Éber", 2303, 1839], ["Péleg", 2269, 2030], ["Reú", 2239, 2000], ["Serug", 2207, 1977], ["Nacor", 2177, 2029], ["Taré", 2148, 1943], ["Abrán", 2018, 1843]];
+let b = "", e = "";
+VID.forEach(([n, a, m], i) => {
+  const y = 170 + i * 58, x0 = Math.max(260, X(a)), x1 = X(m);
+  const col = n === "Abrán" ? "#92d193" : n === "Noé" ? "#8fb3e8" : "#e9bf60";
+  b += `<g class="v v${i}"><text class="nm25" x="244" y="${y + 31}">${n}</text><rect class="br" x="${x0.toFixed(1)}" y="${y}" width="${(x1 - x0).toFixed(1)}" height="40" rx="10" fill="${col}" opacity="0.85"/>`;
+  if (X(a) < 260) b += `<path d="M 286 ${y + 8} L 268 ${y + 20} L 286 ${y + 32}" fill="none" stroke="#17212b" stroke-width="5" stroke-linecap="round"/>`;
+  b += `<text class="ax25" x="${(x1 - 10).toFixed(1)}" y="${y + 29}" style="text-anchor:end;fill:#17212b;font-size:22px">${a - m} años</text></g>`;
+});
+for (let y = 2400; y >= 1900; y -= 100) e += `<path d="M ${X(y)} 160 V 800" stroke="rgba(241,233,216,0.12)" stroke-width="2"/><text class="ax25" x="${X(y)}" y="826">${y}</text>`;
+e += `<path d="M ${X(2370)} 160 V 800" stroke="#ec8a67" stroke-width="4" stroke-dasharray="12 9"/><text class="ln25" x="${X(2370)}" y="150" style="fill:#ec8a67;text-anchor:middle">DILUVIO 2370</text>`;
+e += `<path d="M ${X(1943)} 160 V 800" stroke="#e9bf60" stroke-width="4" stroke-dasharray="12 9"/><text class="ln25" x="${X(1943)}" y="150" style="fill:#e9bf60;text-anchor:middle">1943</text>`;
+pinta(".barras", b); pinta(".ejes", e);
+entra(".tt25", 0.3, { y: -14 });
+aparece(".ejes", 0.4, 0.6);
+tl.fromTo($$(".v .br"), { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.7, stagger: 0.12, ease: "power2.out", immediateRender: false }, 0.6);
+tl.set($$(".v .br"), { scaleX: 0, transformOrigin: "0% 50%" }, 0);
+tl.fromTo($$(".v text, .v path"), { opacity: 0 }, { opacity: 1, duration: 0.4, stagger: 0.04, immediateRender: false }, 0.9);
+tl.set($$(".v text, .v path"), { opacity: 0 }, 0);
+entra(".hl-noe", at("Noé murió") - 0.2, { y: 10 });
+secuencia([[".n1", at("Noé murió") - 0.2], [".n2", at("Pero las vidas") - 0.2], [".n3", at("Éber murió") - 0.2]], at("De Éber viene") - 0.2);
+traza(".hl-noe path", at("Noé murió"), 0.8);
+entra(".hl-sem", at("Pero las vidas") - 0.2, { y: 10 });
+late(".hl-sem rect", at("ciento cincuenta"), { s: 1.03, n: 3 });
+entra(".hl-eber", at("Éber murió") - 0.2, { y: 10 });
+entra(".pr25", at("Éber murió") + 0.4, { y: 10 });
+entra(".d1", at("De Éber viene") - 0.2, { y: 18 });
+entra(".d2", at("El primero al que") - 0.3, { y: 18 });
+</script>

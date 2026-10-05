@@ -1,0 +1,61 @@
+<style>
+.tit45 { position: absolute; left: 80px; top: 100px; display: flex; align-items: baseline; gap: 26px; }
+.tit45 .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.18em; color: var(--tenue); text-transform: uppercase; }
+.tt45 { position: absolute; left: 290px; top: 78px; font-size: 84px; white-space: nowrap; }
+.ropa45 { position: absolute; left: 40px; right: 40px; top: 210px; height: 640px; }
+.ropa45 svg { width: 1840px; height: 640px; display: block; }
+.e45 { font-family: "Caveat", cursive; font-weight: 700; font-size: 42px; fill: var(--tiza); text-anchor: middle; }
+.e45.oro { fill: var(--oro); }
+.v45 { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; fill: var(--tenue); text-anchor: middle; }
+.pr45 { position: absolute; left: 80px; bottom: 60px; }
+.eng45 { position: absolute; left: 80px; right: 80px; top: 230px; display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 26px; }
+.eng45 .tj { min-height: 520px; }
+.eng45 .tj .x { font-size: 38px; }
+.eng45 .tj .big { font-family: "Caveat", cursive; font-weight: 700; font-size: 56px; line-height: 1.05; color: var(--oro); }
+</style>
+
+<div class="tit45"><span class="r">los hilos</span></div>
+<div class="m t1 tt45">la ropa</div><div class="m t2 tt45">el engaño vuelve al engañador</div>
+<div class="ropa45"><svg viewBox="0 0 1840 640" class="rsvg"></svg></div>
+<span class="propio chico pr45">la relación entre las prendas es observación propia de la investigación</span>
+<div class="eng45">
+  <div class="tj e1"><div class="k">Jacob engañó a su padre</div><div class="big">dos cabritos y la ropa de su hermano</div><div class="ref">GÉNESIS 27:9, 15, 16</div></div>
+  <div class="tj e2"><div class="k">sus hijos lo engañan a él</div><div class="big">un macho cabrío y la túnica de su hermano</div><div class="x">“Por favor, <b>comprueba</b> si es la túnica de tu hijo o no”</div><div class="ref">GÉNESIS 37:31, 32</div></div>
+  <div class="tj e3 on"><div class="k">Judá, que ayudó en el engaño</div><div class="big">promete un cabrito</div><div class="x">y oye: “Por favor, <b>comprueba</b> de quién son este anillo de sellar, este cordón y esta vara”</div><div class="ref">GÉNESIS 38:17, 25 · el mismo verbo en la TNM · observación propia</div></div>
+</div>
+
+<script>
+// Cinco prendas: la línea sube y baja con José.
+const TUN = "M -28 0 C -14 14 14 14 28 0 L 70 12 L 120 58 L 100 104 L 66 80 L 76 250 C 30 262 -30 262 -76 250 L -66 80 L -100 104 L -120 58 L -70 12 Z";
+const P = [
+  { x: 200, y: 40, fill: "url(#e45-rayas)", t: "la túnica especial", v: "37:3" },
+  { x: 570, y: 250, fill: "url(#e45-rayas)", t: "mojada en sangre", v: "37:31", mancha: true },
+  { x: 940, y: 250, fill: "#d8ccb2", t: "prueba falsa", v: "39:12" },
+  { x: 1300, y: 110, fill: "#efe6d2", t: "se cambia de ropa", v: "41:14" },
+  { x: 1660, y: 10, fill: "#fbf8f0", t: "lino fino", v: "41:42", collar: true },
+];
+let s = `<defs><pattern id="e45-rayas" width="48" height="30" patternUnits="userSpaceOnUse"><rect width="48" height="30" fill="#2f5d8a"/><rect x="5" width="7" height="30" fill="#d9a441"/><rect x="16" width="4" height="30" fill="#8e4f9e"/><rect x="28" width="8" height="30" fill="#b5562f"/></pattern></defs>`;
+s += `<path class="lin45" d="M ${P.map((p) => `${p.x} ${p.y + 150}`).join(" L ")}" stroke="#93bbef" stroke-width="7" fill="none" stroke-dasharray="14 12"/>`;
+P.forEach((p, i) => {
+  s += `<g class="pr pr${i}"><g transform="translate(${p.x} ${p.y}) scale(0.95)"><path d="${TUN}" fill="${p.fill}" stroke="#1c2a38" stroke-width="5"/>`;
+  if (p.mancha) s += `<path d="M -40 140 C -10 120 30 150 10 190 C -10 230 -60 200 -40 140 Z" fill="#8e1f1f" opacity="0.85"/>`;
+  if (p.collar) s += `<path d="M -30 4 C -14 40 14 40 30 4" stroke="#e9bf60" stroke-width="16" fill="none"/>`;
+  s += `</g><text class="e45 ${i === 4 ? "oro" : ""}" x="${p.x}" y="${p.y + 300}">${p.t}</text><text class="v45" x="${p.x}" y="${p.y + 334}">${p.v}</text></g>`;
+});
+$(".rsvg").innerHTML = s;
+entra(".t1", 0.3, { y: 16 });
+entra(".tit45 .r", 0.3, { y: 16 });
+const tS = [at("La túnica especial"), at("mojada en sangre"), at("prueba falsa"), at("se cambia de ropa"), at("lino fino")];
+tS.forEach((t, i) => entra(".pr" + i, i ? t - 0.2 : at("unos hilos"), { y: 24 }));
+traza(".lin45", at("La ropa marca") - 0.2, 1.6);
+tl.set($(".lin45"), { strokeDasharray: "14 12" }, at("La ropa marca") + 1.65);
+aparece(".pr45", at("La ropa marca"), 0.4);
+const tE = at("Y el engaño");
+sale(".t1", tE - 0.4, { y: -16 });
+sale([".ropa45", ".pr45"], at("Jacob engañó") - 0.5, { y: -16 });
+entra(".t2", tE, { y: 16 });
+entra(".e1", at("Jacob engañó"), { y: 24 });
+entra(".e2", at("sus hijos lo engañan"), { y: 24 });
+entra(".e3", at("Y Judá promete"), { y: 24 });
+late(".e3", at("comprueba"), { s: 1.03, n: 1 });
+</script>

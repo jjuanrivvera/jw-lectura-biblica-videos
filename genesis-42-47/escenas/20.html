@@ -1,0 +1,55 @@
+<style>
+.jud20 { position: absolute; left: 100px; top: 290px; width: 420px; height: 500px; }
+.jud20 .med { width: 400px; left: 0; top: 0; }
+.jud20 .med .n { font-size: 38px; }
+.col20 { position: absolute; left: 580px; right: 80px; top: 110px; bottom: 70px; }
+.col20 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.col20 .cita { font-size: 56px; }
+.dos20 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.dos20 .tj .x { font-size: 54px; }
+.eleg20 { display: grid; grid-template-columns: 1fr 90px 1fr; align-items: center; gap: 12px; }
+.eleg20 .clave { font-size: 52px; text-align: center; }
+.eleg20 .o { font-family: "Fraunces", serif; font-style: italic; font-weight: 600; font-size: 44px; color: var(--tenue); text-align: center; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 44</span><span>versículos 14 al 17</span></div>
+<div class="jud20"></div>
+<div class="col20">
+  <div class="b a1">
+    <div class="m md cs">caen al suelo ante él · 44:14</div>
+    <div class="cita q1">“¿Cómo podemos demostrar nuestra inocencia? <b>El Dios verdadero ha descubierto el error</b> que cometieron tus esclavos”<span class="ref">JUDÁ · GÉNESIS 44:16</span></div>
+  </div>
+  <div class="b a2">
+    <div class="m md">¿qué error?</div>
+    <div class="dos20"><div class="tj t1"><div class="k">del robo de la copa</div><div class="x">inocentes</div></div><div class="tj on t2"><div class="k">de vender a José</div><div class="x"><b>culpables</b></div></div></div>
+    <div class="f fq">“Inocentes del robo por el cual se les acusaba, de la taza de plata de José, ¡pero reos de haber vendido a José a la esclavitud!” · <i>La Atalaya</i>, 15 de enero de 1962, pág.&nbsp;62</div>
+    <div class="cita sm pl">“¡Ahora <b>todos</b>, tanto nosotros como el que tenía la copa, seremos esclavos de mi amo!”<span class="ref">GÉNESIS 44:16</span></div>
+    <span class="propio chico pp">habla en plural: observación propia</span>
+  </div>
+  <div class="b a3">
+    <div class="cita q3">“El hombre que tenía la copa es el que será mi esclavo. <b>Los demás pueden ir en paz</b> y regresar con su padre”<span class="ref">JOSÉ · GÉNESIS 44:17</span></div>
+    <div class="m md oro">la prueba final: elegir</div>
+    <div class="eleg20"><span class="clave e1">su libertad</span><span class="o e0">o</span><span class="clave e2">la de <b>Benjamín</b></span></div>
+  </div>
+</div>
+
+<script>
+$(".jud20").innerHTML = medallon("juda") + medallon("jose");
+const tQ = at("Qué error");
+const tJ = at("José los aprieta");
+salta(".jud20 .r-juda", 0.3, { desde: 0.7 });
+entra(".cs", 0.4, { y: 12 });
+tl.to($(".jud20 .r-juda"), { opacity: 0, duration: 0.5 }, tJ - 0.4);
+salta(".jud20 .r-jose", tJ, { desde: 0.7 });
+secuencia([[".a1", 0.4], [".a2", tQ - 0.3], [".a3", tJ - 0.3]]);
+entra(".t1", tQ + 0.3, { y: 16 });
+entra(".t2", tQ + 0.7, { y: 16 });
+late(".t1", at("eran inocentes"), { s: 1.04, n: 1 });
+late(".t2", at("pero culpables"), { s: 1.06, n: 1 });
+aparece(".fq", at("pero culpables") + 0.6, 0.5);
+entra(".pl", at("habla en plural"), { y: 16 });
+entra(".pp", at("habla en plural") + 0.4, { y: 10 });
+entra(".q3", tJ, { y: 16 });
+entra(".a3 .m", at("Tenían que elegir"), { y: 12 });
+entra([".e1", ".e0", ".e2"], at("Tenían que elegir") + 0.4, { y: 12, st: 0.3 });
+</script>

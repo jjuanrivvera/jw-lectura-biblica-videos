@@ -1,0 +1,53 @@
+<style>
+.mapa.pl { left: 0; top: 0; width: 1120px; height: 1080px; background: #f1e2c6; }
+.mapa.pl .cam img, .mapa.pl .cam svg { width: 1200px; height: 1300px; }
+.col9 { position: absolute; left: 1170px; right: 60px; top: 120px; bottom: 90px; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.col9 .grande { font-size: 92px; }
+.col9 .m { font-size: 64px; }
+.op { display: grid; grid-template-columns: 34px 1fr; column-gap: 18px; align-items: start; }
+.op .pt { width: 30px; height: 30px; border-radius: 50%; margin-top: 16px; }
+.op .m { font-size: 58px; }
+.op .s { font-size: 27px; margin-top: 6px; }
+.misma { border-radius: 22px; padding: 18px 24px; background: rgba(233, 191, 96, 0.1); border: 3px solid rgba(233, 191, 96, 0.6); }
+.misma .m { font-size: 52px; }
+</style>
+
+<div class="mapa pl"><div class="cam"><img src="assets/img/puertas.jpg" />
+  <svg viewBox="0 0 1200 1300">
+    <path class="flecha ame" stroke="#c0392b" stroke-width="14" d="M 900 50 C 890 100 872 150 856 196"/>
+    <path class="flecha amep" stroke="#c0392b" stroke-width="14" d="M 838 168 L 854 202 L 882 178"/>
+    <circle class="anillo oro r-ov" cx="832" cy="243" r="40"/>
+    <circle class="anillo r-in" cx="916" cy="405" r="40" style="stroke:#1f5d99"/>
+    <text class="lugar rojo t-ame halo" x="872" y="112" font-size="34" stroke-width="9" text-anchor="end">el lado más amenazado</text>
+  </svg></div></div>
+<div class="funde-der" style="left:1000px"></div>
+<div class="pie" style="left:24px;bottom:20px"><i>Perspicacia</i>, vol. 2, pág. 759, “Puertas de Jerusalén” · marcas añadidas</div>
+
+<div class="cab" style="left:1170px"><span class="cap">Jeremías 38</span><span>versículo 7</span></div>
+<div class="col9">
+  <div class="grande g9">¿Qué puerta era?</div>
+  <div class="m rojo ns">no se sabe con certeza</div>
+  <div class="op o1"><div class="pt" style="background:#d99a14"></div><div><div class="m">algunos: la Puerta de las Ovejas</div><div class="s">“Es lógico que durante el sitio babilonio el rey estuviera cerca del lugar más vulnerable”</div></div></div>
+  <div class="op o2"><div class="pt" style="background:#1f5d99"></div><div><div class="m">otros: la de la Inspección</div></div></div>
+  <div class="misma mi"><div class="m">la misma puerta: allí lo arrestaron (37:13) y allí se decide su rescate (38:7)</div></div>
+  <div class="f"><i>Perspicacia</i>, «Puerta, paso de entrada»</div>
+</div>
+
+<script>
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 0, y: 20, w: 1200, h: 1157 }, V), 0);
+camara(".cam", at("Algunos creen") - 0.6, 2.6, encuadre({ x: 420, y: 60, w: 780, h: 752 }, V));
+aparece(".cab", 0.2, 0.5);
+entra(".g9", 0.5, { y: 30 });
+entra(".ns", at("No se sabe"), { y: 20 });
+entra(".o1", at("Algunos creen"), { x: 30, y: 0 });
+salta(".r-ov", at("Ovejas"), {});
+late(".r-ov", at("Ovejas") + 0.8, { s: 1.2, n: 3 });
+traza([".ame", ".amep"], at("más amenazado") - 0.3, 0.8);
+aparece(".t-ame", at("más amenazado"), 0.5);
+entra(".o2", at("Otros piensan"), { x: 30, y: 0 });
+salta(".r-in", at("Inspección"), {});
+late(".r-in", at("Inspección") + 0.8, { s: 1.2, n: 3 });
+entra(".mi", at("habían arrestado"), { y: 20 });
+aparece(".f", at("habían arrestado"), 0.5);
+</script>

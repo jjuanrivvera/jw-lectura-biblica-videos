@@ -1,0 +1,378 @@
+{
+  "duration": 2326.824,
+  "assertions": [
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-00-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-01-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-02-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-03-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-04-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-05-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-06-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-07-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-08-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-09-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-10-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-11-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-12-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-13-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-14-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-15-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-16-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-17-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-18-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-19-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-20-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-21-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-22-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-23-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-24-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-25-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-26-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-27-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-28-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-29-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-30-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-31-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-32-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-33-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-34-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-35-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-36-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-37-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-38-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-39-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-40-title"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-41-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-00-title",
+      "b": "#escena-01-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-01-title",
+      "b": "#escena-02-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-02-title",
+      "b": "#escena-03-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-03-title",
+      "b": "#escena-04-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-04-title",
+      "b": "#escena-05-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-05-title",
+      "b": "#escena-06-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-06-title",
+      "b": "#escena-07-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-07-title",
+      "b": "#escena-08-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-08-title",
+      "b": "#escena-09-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-09-title",
+      "b": "#escena-10-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-10-title",
+      "b": "#escena-11-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-11-title",
+      "b": "#escena-12-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-12-title",
+      "b": "#escena-13-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-13-title",
+      "b": "#escena-14-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-14-title",
+      "b": "#escena-15-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-15-title",
+      "b": "#escena-16-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-16-title",
+      "b": "#escena-17-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-17-title",
+      "b": "#escena-18-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-18-title",
+      "b": "#escena-19-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-19-title",
+      "b": "#escena-20-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-20-title",
+      "b": "#escena-21-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-21-title",
+      "b": "#escena-22-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-22-title",
+      "b": "#escena-23-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-23-title",
+      "b": "#escena-24-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-24-title",
+      "b": "#escena-25-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-25-title",
+      "b": "#escena-26-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-26-title",
+      "b": "#escena-27-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-27-title",
+      "b": "#escena-28-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-28-title",
+      "b": "#escena-29-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-29-title",
+      "b": "#escena-30-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-30-title",
+      "b": "#escena-31-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-31-title",
+      "b": "#escena-32-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-32-title",
+      "b": "#escena-33-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-33-title",
+      "b": "#escena-34-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-34-title",
+      "b": "#escena-35-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-35-title",
+      "b": "#escena-36-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-36-title",
+      "b": "#escena-37-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-37-title",
+      "b": "#escena-38-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-38-title",
+      "b": "#escena-39-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-39-title",
+      "b": "#escena-40-title"
+    },
+    {
+      "kind": "before",
+      "a": "#escena-40-title",
+      "b": "#escena-41-title"
+    }
+  ]
+}

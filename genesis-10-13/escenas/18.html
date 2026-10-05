@@ -1,0 +1,46 @@
+<style>
+.arr18 { position: absolute; inset: 0; }
+.iz18 { position: absolute; left: 90px; width: 800px; top: 90px; height: 620px; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.de18 { position: absolute; left: 980px; right: 90px; top: 90px; height: 620px; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.iz18 .cita { font-size: 64px; }
+.de18 .cita { font-size: 46px; }
+.ba18 { position: absolute; left: 90px; right: 90px; top: 760px; bottom: 60px; display: grid; grid-template-columns: 1fr 120px 1fr 1.1fr; align-items: center; gap: 20px; }
+.ba18 .tj { padding: 18px 26px; }
+.ba18 .tj .x { font-size: 64px; font-family: "Caveat", cursive; font-weight: 700; }
+.ba18 .igual { font-family: "Fraunces", serif; font-weight: 700; font-size: 90px; text-align: center; color: var(--oro); }
+.ba18 .m { font-size: 64px; }
+</style>
+
+<div class="arr18">
+  <div class="iz18 a1">
+    <div class="cita">“Jehová <b>bajó para ver</b> la ciudad y la torre”<span class="ref">GÉNESIS 11:5</span></div>
+    <div class="def nt"><div class="t">nota de 11:5</div><div class="x">o “<b>dirigió su atención</b> hacia”</div><div class="s">no le hacía falta acercarse para ver nada</div></div>
+  </div>
+  <div class="de18 a2">
+    <div class="cita">“Como son un solo pueblo y hablan un solo idioma, mira lo que han empezado a hacer. Ahora lograrán hacer <b>cualquier cosa</b> que se propongan”<span class="ref">GÉNESIS 11:6</span></div>
+    <div class="cita pp" style="font-size:40px;color:var(--tenue)">la torre “fue una demostración de las posibilidades y el poder humanos, <b>independientes de Dios</b>” · “esto era solo el principio”<span class="ref">PERSPICACIA, VOL. 2, “PODER, OBRAS PODEROSAS”, PÁGS. 674, 675</span></div>
+  </div>
+</div>
+<div class="ba18">
+  <div class="tj h1"><div class="k">Génesis 1:26</div><div class="x">“<b>Hagamos</b>”</div></div>
+  <div class="igual h2">=</div>
+  <div class="tj h3 on"><div class="k">Génesis 11:7</div><div class="x">“<b>Bajemos</b>”</div></div>
+  <div class="m h4">en plural: Jehová <b>no trabaja solo</b><div class="f" style="margin-top:8px">la TNM une los dos textos en sus referencias</div></div>
+</div>
+
+<script>
+// Primero, un bloque grande al centro; se mueve cuando llega el segundo, y sube cuando llega el tercero.
+tl.set($(".a1"), { x: 470, scale: 1.08, transformOrigin: "50% 50%" }, 0);
+tl.set($(".arr18"), { y: 110 }, 0);
+entra(".a1 .cita", 0.4, { y: 26 });
+entra(".nt", at("La nota") - 0.2, { y: 20 });
+const tB = at("Y dijo");
+tl.to($(".a1"), { x: 0, scale: 1, duration: 0.8, ease: "power2.inOut" }, tB - 0.8);
+entra(".a2 .cita:not(.pp)", tB, { x: 40, y: 0 });
+entra(".pp", at("La torre mostraba") - 0.2, { y: 18 });
+const tC = at("Bajemos");
+tl.to($(".arr18"), { y: 0, duration: 0.8, ease: "power2.inOut" }, tC - 1.2);
+entra(".h3", tC - 0.2, { y: 24 });
+entra([".h1", ".h2"], at("Hagamos") - 0.2, { y: 24, st: 0.2 });
+entra(".h4", at("no trabaja") - 0.4, { y: 18 });
+</script>

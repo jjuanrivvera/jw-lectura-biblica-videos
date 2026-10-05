@@ -1,0 +1,42 @@
+<style>
+.gen { position: absolute; left: 40px; top: 100px; width: 1160px; height: 940px; }
+.pt { font-family: "Caveat"; font-weight: 700; font-size: 48px; fill: var(--tiza); }
+.pt.o { fill: var(--oro); }
+.col { top: 120px; bottom: 90px; right: 64px; width: 640px; }
+.fuente-p { position: absolute; left: 80px; bottom: 16px; font-size: 21px; color: var(--tenue); }
+</style>
+<div class="cab"><span class="cap">Génesis 30</span><span>versículos 39 al 42</span></div>
+<svg class="gen" viewBox="0 0 1160 940"></svg>
+<div class="col">
+  <div class="b a1"><div class="m md">en el rebaño de Labán se habían cruzado animales de colores</div><div class="cita md">“aunque tenían un color uniforme eran híbridos”</div><div class="s">Perspicacia, vol. 2, “Jacob”, pág. 9</div></div>
+  <div class="b a2"><div class="m">un factor <b style="color:var(--oro)">del padre</b></div><div class="m">y otro <b style="color:var(--oro)">de la madre</b></div><div class="m md">el de las manchas se esconde: solo se ve si viene <b>de los dos</b></div><span class="propio">explicación del mecanismo: observación propia</span></div>
+  <div class="b a3"><div class="def"><div class="t">Portador</div><div class="x">negro por fuera, con el factor de las manchas <b>escondido</b></div></div><div class="m md">dos portadores: más o menos <b style="color:var(--oro)">1 de cada 4</b> sale manchada</div><span class="propio">la proporción: observación propia</span><div class="s">las leyes de Mendel · Perspicacia, vol. 2, “Jacob”, pág. 10</div></div>
+  <div class="b a4"><div class="def"><div class="t">Vigor híbrido</div><div class="x">los de padres distintos suelen ser <b>más fuertes</b></div><div class="s">“los híbridos son más fuertes que las razas no cruzadas” · La Atalaya, 15 de marzo de 1951, pág. 192</div></div><div class="m md">por eso las manchadas salían robustas</div><div class="s">Génesis 30:41, 42 · cita de Nahum Sarna en La Atalaya, 15 de octubre de 2003, pág. 30</div></div>
+</div>
+<div class="fuente-p">dibujo propio que explica Perspicacia (vol. 2, “Jacob”, págs. 9, 10) · no es a escala</div>
+<script>
+/*incluir:_dibujos.js*/
+// Dos factores por animal: punto oscuro = color entero; punto claro = manchas (escondido si hay uno oscuro).
+const fac = (x, y, a, b, cls) => '<g class="' + cls + '"><circle cx="' + (x - 26) + '" cy="' + y + '" r="20" fill="' + (a ? "#f4eee0" : "#2e2621") + '" stroke="#e9bf60" stroke-width="4"/><circle cx="' + (x + 26) + '" cy="' + y + '" r="20" fill="' + (b ? "#f4eee0" : "#2e2621") + '" stroke="#e9bf60" stroke-width="4"/></g>';
+let s = defsDibujos();
+s += '<g class="pad">' + cabra(250, 250, 1.35, { portador: true }) + '<text class="pt o" x="250" y="330" text-anchor="middle">portador</text>' + fac(250, 380, 0, 1, "f-pad") + '</g>';
+s += '<g class="mad">' + cabra(880, 250, 1.35, { portador: true, izq: true }) + '<text class="pt o" x="880" y="330" text-anchor="middle">portadora</text>' + fac(880, 380, 1, 0, "f-mad") + '</g>';
+s += '<text class="pt x" x="565" y="220" text-anchor="middle" style="font-size:90px">×</text>';
+s += '<path class="baja" d="M 565 300 L 565 520" stroke="#f1e9d8" stroke-width="5"/><path class="baja" d="M 140 520 L 990 520" stroke="#f1e9d8" stroke-width="5"/>';
+const crias = [[140, 0, 0], [420, 1, 0], [700, 0, 1], [980, 1, 1]];
+crias.forEach(([x, a, b], i) => {
+  const man = a && b;
+  s += '<g class="c' + i + '"><path d="M ' + x + ' 520 L ' + x + ' 580" stroke="#f1e9d8" stroke-width="5"/>' + cabra(x, 760, 1.05, { manchas: man, portador: (a || b) && !man }) + fac(x, 830, a, b, "") + '</g>';
+});
+s += '<g class="uno4"><rect x="860" y="590" width="240" height="300" rx="30" fill="none" stroke="#e9bf60" stroke-width="7" stroke-dasharray="16 12"/><text class="pt o" x="980" y="930" text-anchor="middle">1 de 4</text></g>';
+pinta(".gen", s);
+entra(".pad", 0.5, { y: 20 });
+entra(".mad", 1.0, { y: 20 });
+aparece(".gen .x", 1.4, 0.4);
+secuencia([[".a1", 0.4], [".a2", at("Cada cría recibe")], [".a3", at("Un animal que lo lleva")], [".a4", at("Además los hijos")]]);
+late([".f-pad", ".f-mad"], at("Cada cría recibe"), { s: 1.15, n: 2 });
+traza(".baja", at("solo se ve si"), 0.7);
+[0, 1, 2, 3].forEach((i) => entra(".c" + i, at("solo se ve si") + 0.5 + i * 0.35, { y: 30 }));
+aparece(".uno4", at("una de cada cuatro"), 0.5);
+late(".c3", at("una de cada cuatro") + 0.2, { s: 1.06, n: 2 });
+</script>

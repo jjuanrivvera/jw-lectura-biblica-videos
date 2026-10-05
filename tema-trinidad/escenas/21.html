@@ -1,0 +1,43 @@
+<style>
+.cab2 { position: absolute; left: 90px; top: 40px; font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 0.1em; color: var(--terra); text-transform: uppercase; }
+.cr { position: absolute; left: 90px; right: 760px; top: 120px; }
+.cr .cita { font-size: 56px; }
+.cr .cita b { color: var(--terra); }
+.linea { position: absolute; left: 130px; right: 130px; top: 470px; height: 340px; }
+.linea svg { position: absolute; left: 0; top: 0; width: 1660px; height: 340px; }
+.eje { stroke: var(--papel); stroke-width: 6; fill: none; stroke-linecap: round; }
+.pt { fill: var(--tinta); stroke: var(--terra); stroke-width: 7; }
+.pt.x { stroke: var(--papel); }
+.an { font-family: "Fraunces", serif; font-weight: 700; font-size: 58px; fill: var(--papel); text-anchor: middle; }
+.as { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 28px; fill: var(--tenue); text-anchor: middle; }
+.nom { font-family: "Fraunces", serif; font-style: italic; font-weight: 600; font-size: 44px; fill: var(--terra); text-anchor: middle; }
+.ilus.ima { left: 1240px; top: 110px; width: 590px; height: 330px; }
+.hop { position: absolute; left: 90px; right: 90px; bottom: 80px; }
+.hop .cita { font-size: 44px; }
+.hop .cita b { color: var(--terra); }
+</style>
+
+<div class="cab2">El Credo de Atanasio</div>
+<div class="cr"><div class="cita">“El Padre es Dios, el Hijo es Dios y el Espíritu Santo es Dios; y sin embargo no hay tres dioses, sino <b>un solo Dios</b>”.<span class="ref">Credo de Atanasio, citado en ¿Debería creer usted en la Trinidad?</span></div></div>
+<div class="linea"><svg viewBox="0 0 1660 340">
+  <path class="eje" d="M 20 150 L 1640 150"/>
+  <circle class="pt p1" cx="150" cy="150" r="20"/><text class="an a1" x="150" y="90">373</text><text class="as s1" x="150" y="210">muere Atanasio</text>
+  <circle class="pt x p2" cx="650" cy="150" r="20"/><text class="an a2" x="650" y="90">siglo V</text><text class="as s2" x="650" y="210">se compone el credo,</text><text class="as s2" x="650" y="245">probablemente en el sur de Francia</text>
+  <circle class="pt p3" cx="1150" cy="150" r="20"/><text class="an a3" x="1150" y="90">siglo XII</text><text class="as s3" x="1150" y="210">la Iglesia de Oriente</text><text class="as s3" x="1150" y="245">lo conoce por primera vez</text>
+  <text class="nom nm" x="400" y="330">no lo escribió Atanasio</text>
+</svg></div>
+<div class="ilus ima"><div class="kb"><img src="assets/img/502012486_univ_lsr.jpg" style="object-position: 50% 30%" /></div></div>
+<div class="hop"><div class="cita">“La definición ortodoxa final de la Trinidad fue principalmente <b>un asunto de política eclesiástica</b>”.<span class="ref">E. W. Hopkins, citado en ¿Debería creer usted en la Trinidad?</span></div></div>
+<div class="fuente" style="left:1240px; right:90px; top:450px; bottom:auto; font-size:22px">Imagen: <i>Preguntas sobre la Biblia</i>, “¿Es Dios una trinidad?”</div>
+
+<script>
+entra(".cab2", 0.3, { y: -10 });
+entra(".cr", at("La definición más detallada"), { y: 30 });
+traza(".eje", at("Lleva el nombre"), 1.2);
+aparece(".p1, .a1, .s1", at("Lleva el nombre") + 0.8, 0.5);
+aparece(".p2, .a2, .s2", at("Probablemente se compuso"), 0.5);
+aparece(".nm", at("Pero desde el siglo"), 0.5);
+aparece(".p3, .a3, .s3", at("la Iglesia de Oriente"), 0.5);
+entra(".ima", at("La definición más detallada") + 0.6, { y: 30 });
+entra(".hop", at("Un profesor"), { y: 30 });
+</script>

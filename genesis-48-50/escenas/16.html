@@ -1,0 +1,53 @@
+<style>
+.mapa.B6 { left: 70px; top: 0; width: 790px; height: 1080px; }
+.mapa.B6 .pie-mapa { left: 14px; right: 14px; bottom: 14px; font-size: 22px; }
+.col16 { position: absolute; left: 930px; right: 70px; top: 110px; bottom: 70px; display: flex; flex-direction: column; justify-content: center; gap: 42px; }
+.col16 .tit .m { font-size: 92px; }
+.col16 .tit .f { margin-top: 10px; font-size: 24px; }
+.it16 { display: grid; grid-template-columns: 210px 1fr; column-gap: 30px; align-items: center; }
+.it16 .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 60px; line-height: 1.04; }
+.it16 .x b { color: var(--oro); }
+.sw16 { display: grid; grid-template-columns: repeat(3, 56px); gap: 12px; }
+.sw16 span { width: 56px; height: 56px; border-radius: 12px; border: 3px solid rgba(255, 255, 255, 0.6); }
+.ju16 { width: 110px; height: 110px; border-radius: 50%; background: #1d6d86; border: 6px solid #fff; display: flex; align-items: center; justify-content: center; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 54px; color: #fff; margin-left: 40px; }
+.w16 { display: flex; flex-direction: column; gap: 42px; }
+.pp16 { align-self: flex-start; }
+</style>
+
+<!--incluir:_b6.html-->
+<div class="cab" style="left:930px"><span class="cap">Génesis 49</span><span>cómo se cumplió</span></div>
+<div class="col16">
+  <div class="w16"><div class="tit"><div class="m oro">las tierras de las tribus</div><div class="f">en tiempos de Josué · apéndice B6 de la TNM, “La ocupación de la Tierra Prometida”</div></div>
+  <div class="it16 i1"><div class="sw16"><span style="background:#e9c46f"></span><span style="background:#f1e48f"></span><span style="background:#e9b2a2"></span><span style="background:#9fc6cf"></span><span style="background:#aec2de"></span><span style="background:#9fd5bf"></span></div><div class="x">cada color: <b>la herencia de una tribu</b></div></div>
+  <div class="it16 i2"><div class="ju16">11</div><div class="x">los números: <b>jueces de Israel</b>, no los hijos de Jacob</div></div>
+  <span class="propio pp16">más de dos siglos después: Jacob habla hacia 1711; las tribus reciben sus tierras en 1467 a.&nbsp;e.&nbsp;c. (cálculo propio con las fechas del mapa)</span>
+</div></div>
+
+<script>
+pinta(".marcas", `
+  <g class="an16a">
+    <ellipse class="anillo oro" cx="1024" cy="3092" rx="230" ry="110" style="stroke-width:16"/>
+    <ellipse class="anillo oro" cx="1432" cy="1983" rx="220" ry="100" style="stroke-width:16"/>
+    <ellipse class="anillo oro" cx="2035" cy="2081" rx="170" ry="100" style="stroke-width:16"/>
+    <ellipse class="anillo oro" cx="1733" cy="796" rx="230" ry="100" style="stroke-width:16"/>
+  </g>
+  <g class="an16b">
+    <rect class="hueco" x="290" y="810" width="940" height="960" rx="40" style="stroke-width:18"/>
+    <circle class="anillo" cx="1472" cy="1897" r="90" style="stroke-width:16"/>
+  </g>`);
+const V = { x: 0, y: 0, w: 790, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 0, y: 0, w: 2808, h: 3888 }, V), 0);
+entra(".col16 .tit", 0.4, { y: 20 });
+entra(".pp16", at("más de dos siglos") - 0.2, { y: 16 });
+const tC = at("Cada color");
+centra(".w16", 230, Math.min(at("más de dos siglos") - 0.6, tC - 0.8));
+entra(".i1", tC - 0.2, { x: -24, y: 0 });
+salta(".sw16 span", tC, { st: 0.08, desde: 0.3 });
+traza(".an16a ellipse", tC + 0.2, 0.7, { st: 0.25 });
+const tN = at("Los números son");
+desaparece(".an16a", tN - 0.3, 0.3);
+entra(".i2", tN - 0.2, { x: -24, y: 0 });
+traza(".an16b rect", tN, 0.9);
+traza(".an16b circle", tN + 0.4, 0.6);
+late(".ju16", at("no los hijos"), { s: 1.12, n: 1 });
+</script>

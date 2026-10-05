@@ -1,0 +1,36 @@
+<style>
+.gr26 { position: absolute; left: 80px; top: 96px; width: 1760px; height: 660px; }
+.gr26 svg { width: 1760px; height: 660px; display: block; }
+.fila26 { position: absolute; left: 70px; right: 70px; top: 770px; display: grid; grid-template-columns: 1.15fr 1fr 1fr; column-gap: 24px; }
+.fila26 .tj .x { font-size: 32px; }
+.fin26 { position: absolute; left: 70px; right: 70px; top: 770px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; }
+.f26 { position: absolute; right: 80px; top: 42px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 39</span><span>versículos 2 al 6</span></div>
+<div class="gr26"><svg viewBox="0 0 1760 660" class="gsvg"></svg></div>
+
+<div class="fila26">
+  <div class="tj m1"><div class="k">mayordomo</div><div class="x">dirigía la casa, a los demás siervos y la propiedad; a veces, <b>los negocios</b></div><div class="ref"><i>Perspicacia</i>, vol. 2, “Mayordomo”, pág. 349 · el cargo aparece en los registros egipcios de las casas grandes: “José”, pág. 123</div></div>
+  <div class="tj m2"><div class="k">un esclavo fiel</div><div class="x">el puesto lo ocupaba muchas veces un esclavo “de <b>gran confianza</b>”</div><div class="ref">nota de estudio de Lucas 12:42</div></div>
+  <div class="tj m3"><div class="k">egipcio</div><div class="x">José “seguramente aprendió <b>egipcio</b>” en casa de Potifar</div><div class="ref"><i>Perspicacia</i>, vol. 2, “Lenguaje”, pág. 206</div></div>
+</div>
+<div class="fin26">
+  <div class="tj n1"><div class="x">Potifar “no tenía que preocuparse de nada, únicamente de lo que quería comer”</div><div class="ref">GÉNESIS 39:6</div></div>
+  <div class="tj n2" style="border-color:var(--rojo)"><div class="x">“por muchos privilegios que tuviera, <b>seguía siendo esclavo</b> de un hombre que adoraba a otros dioses”</div><div class="ref"><i>La Atalaya</i> (estudio), enero de 2023, pág. 15</div></div>
+</div>
+
+<script>
+/*incluir:_grafica.js*/
+grafica(".gsvg");
+pasosPrevios(3, 0.3);
+traza(".gr-orol", at("Jehová estaba"), 1.2);
+aparece(".gr-orot", at("Jehová estaba") + 0.3, 0.5);
+paso(3, at("encargado") - 0.4, 0.8);
+entra(".m1", at("mayordomo"), { y: 24 });
+entra(".m2", at("Solía ocuparlo"), { y: 24 });
+entra(".m3", at("aprender egipcio"), { y: 24 });
+sale(".fila26", at("Al final") - 0.4, { y: -16 });
+entra(".n1", at("Al final"), { y: 24 });
+entra(".n2", at("Pero José seguía"), { y: 24 });
+</script>

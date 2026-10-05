@@ -1,0 +1,61 @@
+<style>
+.dia { position: absolute; left: 40px; top: 120px; width: 1100px; height: 900px; border-radius: 26px; overflow: hidden; }
+.rt { font-family: "Caveat", cursive; font-weight: 700; font-size: 48px; paint-order: stroke; stroke-linejoin: round; }
+.rtb { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 3px; }
+.col { top: 120px; bottom: 60px; right: 60px; width: 700px; }
+.col .cita { font-size: 46px; }
+.col .m { font-size: 62px; }
+.col .def .x { font-size: 56px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 7</span><span>versículo 11 · 1:6-8 · 2 Pedro 3:5, 6</span></div>
+<svg class="dia" viewBox="0 0 1100 900">
+  <defs>
+    <linearGradient id="e24-arriba" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d5a8c"/><stop offset="1" stop-color="#4f95c8"/></linearGradient>
+    <linearGradient id="e24-cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fb8d8"/><stop offset="1" stop-color="#dfe9ee"/></linearGradient>
+    <linearGradient id="e24-suelo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a5b38"/><stop offset="1" stop-color="#3a2a1c"/></linearGradient>
+    <linearGradient id="e24-hondo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f78b0"/><stop offset="1" stop-color="#153f63"/></linearGradient>
+    <linearGradient id="e24-mar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b82b8"/><stop offset="1" stop-color="#1c4d78"/></linearGradient>
+  </defs>
+  <rect class="cielo" x="0" y="0" width="1100" height="560" fill="url(#e24-cielo)"/>
+  <g class="arriba"><path d="M 0 0 L 1100 0 L 1100 120 C 1000 135 900 110 800 128 C 700 145 600 118 500 132 C 400 146 300 116 200 130 C 120 140 60 124 0 130 Z" fill="url(#e24-arriba)"/>
+    <text class="rt" x="30" y="80" fill="#f1e9d8" stroke="#123a5c" stroke-width="8">las aguas de arriba</text></g>
+  <text class="rtb exp" x="30" y="200" fill="#2a4a66">LA EXPANSIÓN · GÉNESIS 1:6-8</text>
+  <g class="lluvia" stroke="#2f6fa6" stroke-width="4" stroke-linecap="round"></g>
+  <path class="mar" d="M 0 540 L 380 540 L 380 900 L 0 900 Z" fill="url(#e24-mar)"/>
+  <path class="tierra" d="M 380 560 C 420 520 470 500 520 510 C 590 470 640 440 700 470 C 760 430 820 420 880 460 C 950 440 1030 470 1100 480 L 1100 900 L 380 900 Z" fill="url(#e24-suelo)"/>
+  <path class="hondo" d="M 0 700 C 200 690 400 720 600 705 C 800 690 950 715 1100 700 L 1100 820 C 900 830 700 812 500 826 C 300 838 150 820 0 828 Z" fill="url(#e24-hondo)" opacity="0.92"/>
+  <text class="rt th" x="560" y="780" fill="#f1e9d8" stroke="#10304c" stroke-width="8">las aguas profundas</text>
+  <g class="chorros" stroke="#6fb4ea" stroke-width="12" stroke-linecap="round" fill="none">
+    <path d="M 520 705 C 525 640 515 580 520 430"/>
+    <path d="M 760 700 C 770 620 750 560 760 380"/>
+    <path d="M 960 705 C 965 640 955 580 962 420"/>
+    <path d="M 200 700 C 205 640 195 590 200 470"/>
+  </g>
+  <g class="tapas" fill="#e9bf60"><circle cx="520" cy="430" r="0"/></g>
+</svg>
+<div class="col">
+  <div class="b a1"><div class="def"><div class="t">el Diluvio <i>mab·búl</i></div><div class="x">en griego, <b>ka·ta·kly·smós</b>: un cataclismo</div><div class="s">no una crecida · Perspicacia, vol. 1, “Diluvio”</div></div></div>
+  <div class="b a2"><div class="cita">“<b>reventaron</b> todos los manantiales de las extensas aguas profundas y se abrieron las <b>compuertas de los cielos</b>”<span class="ref">GÉNESIS 7:11</span></div></div>
+  <div class="b a3"><div class="m">no fue solo lluvia</div><div class="dato"><div class="v">&lt; 5 cm</div><div class="k">toda la humedad del aire, si cayera de golpe</div><div class="s">Perspicacia, vol. 1, “Diluvio”</div></div></div>
+  <div class="b a4"><div class="cita">“una tierra mantenida compactamente fuera de agua y en medio de agua”<span class="ref">2 PEDRO 3:5</span></div><div class="m">la misma agua: para <b>separar</b> y para <b>juzgar</b></div></div>
+  <div class="b a5"><div class="duda"><div class="t">¿cómo se sostenían?</div><div class="s">“Se han dado varias explicaciones [...] pero son solo especulaciones. La Biblia dice sencillamente que Dios hizo la expansión y retuvo las aguas” · Perspicacia</div></div></div>
+</div>
+
+<script>
+let s = 5, g = "";
+const rnd = () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
+for (let i = 0; i < 90; i++) { const x = rnd() * 1100, y = 130 + rnd() * 380; g += `<path d="M ${x.toFixed(0)} ${y.toFixed(0)} l -6 30"/>`; }
+$(".lluvia").innerHTML = g;
+entra(".cab", 0.2, { y: -20 });
+aparece(".dia", 0.3, 0.8);
+tl.set($$(".arriba, .exp, .hondo, .th, .lluvia"), { opacity: 0 }, 0);
+secuencia([[".a1", 0.4], [".a2", at("De dónde salió")], [".a3", at("No fue solo")], [".a4", at("Desde el segundo")], [".a5", at("Cómo se sostenían")]]);
+aparece([".hondo", ".th"], at("reventaron"), 0.6);
+traza(".chorros path", at("reventaron") + 0.5, 1.2, { st: 0.15 });
+aparece(".arriba", at("se abrieron las compuertas"), 0.6);
+tl.to($(".lluvia"), { opacity: 1, duration: 0.8 }, at("compuertas de los cielos"));
+tl.fromTo($(".lluvia"), { y: -30 }, { y: 30, duration: DUR, ease: "none", immediateRender: true }, 0);
+aparece(".exp", at("una expansión"), 0.5);
+late(".arriba", at("las de arriba"), { s: 1.02, n: 1 });
+</script>

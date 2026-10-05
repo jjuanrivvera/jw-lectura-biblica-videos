@@ -1,0 +1,48 @@
+<style>
+.mapa .cam img, .mapa .cam svg { width: 1944px; height: 2292px; }
+.par2 { display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; }
+.par2 .tj .x { font-size: 36px; }
+.bal svg { width: 700px; height: 330px; display: block; }
+</style>
+<div class="mapa L">
+  <div class="cam">
+    <img src="assets/img/b2-recuadro.jpg" />
+    <svg viewBox="0 0 1944 2292">
+      <path class="flecha ruta1" stroke-width="12" stroke="#d99a14" d="M 1249 292 C 1180 330 1120 350 1060 330 C 980 300 900 300 797 274"/>
+      <circle class="anillo a-q" cx="797" cy="274" r="46"/>
+    </svg>
+  </div>
+  <div class="pie-mapa">Mapa: apéndice B2 de la TNM, recuadro (wol.jw.org) · marcas añadidas</div>
+</div>
+<div class="sombra-der"></div>
+<div class="cab sobre"><span class="cap">Génesis 33</span><span>versículos 18 al 20</span></div>
+<div class="col der">
+  <div class="b a1"><div class="par2"><div class="tj on"><div class="k">Génesis 33:18</div><div class="x">“llegó <b>sano y salvo</b> a la ciudad de Siquem”</div></div><div class="tj"><div class="k">Betel, 20 años antes · 28:21</div><div class="x">“si vuelvo <b>sano y salvo</b> a la casa de mi padre”</div></div></div><div class="m oro">Jehová había cumplido</div><span class="propio">observación propia</span></div>
+  <div class="b a2"><div class="cita md">“100 piezas de dinero”<span class="ref">GÉNESIS 33:19</span></div><div class="bal"><svg viewBox="0 0 700 330" class="bal-svg"></svg></div><div class="cita md">“el dinero no estaba acuñado en monedas, sino que se pesaba en balanzas”</div><div class="f"><i>Perspicacia</i>, vol. 1, “Compra”, pág. 518</div></div>
+  <div class="b a3"><div class="def"><div class="t">pieza de dinero<i>qesi·táh</i></div><div class="x">“Unidad monetaria de <b>valor desconocido</b>”</div><div class="s">TNM de 1987, nota en 33:19</div></div><div class="cita md">“probablemente supondría un peso considerable de plata”</div><div class="f"><i>Perspicacia</i>, vol. 2, “Jacob”, pág. 11</div><div class="m md">un pedazo propio de la Tierra Prometida</div><span class="propio" style="font-size:26px;padding:0 12px">observación propia</span></div>
+  <div class="b a4"><div class="def"><div class="t">el altar · 33:20</div><div class="x">“<b>Dios, el Dios de Israel</b>”</div><div class="s">con su nombre nuevo · <i>Perspicacia</i>, vol. 1, pág. 700</div></div><div class="cita md">“asentó su campamento fuera de la ciudad de Siquem y cavó su propio pozo”</div><div class="f"><i>La Atalaya</i>, 15 de septiembre de 1995, pág. 21</div></div>
+</div>
+<script>
+$(".bal-svg").innerHTML = `<defs><linearGradient id="e18-met" x1="0" x2="1"><stop offset="0" stop-color="#8a6a3a"/><stop offset="0.5" stop-color="#d8b36a"/><stop offset="1" stop-color="#7a5a2c"/></linearGradient><radialGradient id="e18-pl" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#fbfbfb"/><stop offset="1" stop-color="#9ea5ad"/></radialGradient></defs>
+  <rect x="340" y="60" width="20" height="240" rx="6" fill="url(#e18-met)"/><path d="M 260 312 L 440 312 L 400 290 L 300 290 Z" fill="url(#e18-met)"/>
+  <circle cx="350" cy="60" r="16" fill="#d8b36a"/>
+  <g class="brazo"><rect x="120" y="54" width="460" height="12" rx="6" fill="url(#e18-met)"/>
+    <g class="pl-i"><path d="M 130 60 L 80 200 M 130 60 L 180 200" stroke="#b89a60" stroke-width="3"/><path d="M 60 200 L 200 200 C 190 240 70 240 60 200 Z" fill="url(#e18-met)"/>
+      ${[...Array(9)].map((_, i) => `<ellipse class="plata" cx="${95 + (i % 5) * 18}" cy="${193 - Math.floor(i / 5) * 10}" rx="12" ry="6" fill="url(#e18-pl)" stroke="#6f777f" stroke-width="1.5"/>`).join("")}</g>
+    <g class="pl-d"><path d="M 570 60 L 520 200 M 570 60 L 620 200" stroke="#b89a60" stroke-width="3"/><path d="M 500 200 L 640 200 C 630 240 510 240 500 200 Z" fill="url(#e18-met)"/>
+      <path d="M 545 198 L 553 170 L 587 170 L 595 198 Z" fill="#6a6f73"/><path d="M 556 170 L 560 158 L 580 158 L 584 170 Z" fill="#7d8388"/></g></g>`;
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 500, y: 0, w: 1000, h: 964 }, V), 0);
+traza(".ruta1", 0.4, 1.8);
+traza(".a-q", at("hasta Siquem"), 0.7);
+late(".a-q", at("sano y salvo"), { s: 1.2, n: 3 });
+secuencia([[".a1", 0.4], [".a2", at("Allí compró")], [".a3", at("La pieza")], [".a4", at("Levantó")]]);
+tl.set($(".bal-svg .brazo"), { rotation: -6, svgOrigin: "350 60" }, 0);
+tl.set($$(".bal-svg .pl-i, .bal-svg .pl-d"), { rotation: 6 }, 0);
+tl.set($(".bal-svg .pl-i"), { svgOrigin: "130 60" }, 0);
+tl.set($(".bal-svg .pl-d"), { svgOrigin: "570 60" }, 0);
+tl.fromTo($$(".bal-svg .plata"), { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.3, stagger: 0.18, immediateRender: false }, at("se pesaba") - 1.2);
+tl.set($$(".bal-svg .plata"), { opacity: 0 }, 0);
+tl.to($(".bal-svg .brazo"), { rotation: 0, duration: 1.2, ease: "power2.inOut" }, at("en balanzas"));
+tl.to($$(".bal-svg .pl-i, .bal-svg .pl-d"), { rotation: 0, duration: 1.2, ease: "power2.inOut" }, at("en balanzas"));
+</script>

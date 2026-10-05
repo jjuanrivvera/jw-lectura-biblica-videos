@@ -1,0 +1,62 @@
+<style>
+.parte .t { font-size: 130px; }
+.mapa { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 2592px; height: 1444px; }
+.velo { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,26,36,0.96) 0%, rgba(18,26,36,0.9) 38%, rgba(18,26,36,0.15) 58%, rgba(18,26,36,0) 70%); }
+.mk circle { fill: #c8452f; stroke: #fff; stroke-width: 6; }
+.mk text { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 44px; fill: #1d1a17; }
+.camino { fill: none; stroke: #c8452f; stroke-width: 12; stroke-linecap: round; stroke-linejoin: round; }
+.izq { position: absolute; left: 90px; width: 780px; top: 110px; bottom: 110px; }
+.izq > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.izq .cita { font-size: 52px; }
+.izq .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.16em; color: var(--tenue); }
+.pie-m { left: 1160px; bottom: 26px; }
+</style>
+
+<div class="fase f0">
+  <div class="parte"><div class="n">Parte 3</div><div class="t">¿De dónde salió?</div><svg viewBox="0 0 700 30"><path d="M 10 18 C 200 6 480 28 690 12"/></svg></div>
+</div>
+
+<div class="fase fa">
+  <div class="mapa">
+    <div class="cam">
+      <img src="assets/img/mapa-b13.jpg" />
+      <svg viewBox="0 0 2592 1444">
+        <path class="camino" d="M 2215 1174 C 2420 1060 2120 960 2260 850 S 2020 700 2120 600 S 1800 560 1900 450 S 1640 380 1790 300 S 1660 250 1709 212"/>
+        <g class="mk mk-j"><circle cx="2215" cy="1174" r="18"/><text class="halo" x="2250" y="1240" stroke-width="10">Jerusalén</text></g>
+        <g class="mk mk-n"><circle cx="1709" cy="212" r="18"/><text class="halo" x="1745" y="200" stroke-width="10">Nicea</text></g>
+        <g class="mk mk-e"><circle cx="1495" cy="497" r="16"/><text class="halo" x="1300" y="470" stroke-width="10">Éfeso</text></g>
+      </svg>
+    </div>
+  </div>
+  <div class="velo"></div>
+  <div class="izq">
+    <div class="b c1"><div class="k">LO QUE JESÚS ANTICIPÓ</div><div class="cita">“Mientras los hombres dormían, vino su enemigo, <b class="terra">sembró mala hierba entre el trigo</b> y se fue”.<span class="ref">Mateo 13:25</span></div><div class="s">“Dejen que crezcan juntos hasta la cosecha” (Mateo 13:30)</div></div>
+    <div class="b c2"><div class="k">PABLO, A LOS ANCIANOS DE ÉFESO</div><div class="cita">“De entre ustedes mismos saldrán hombres que dirán <b class="terra">cosas retorcidas</b> para arrastrar a los discípulos”.<span class="ref">Hechos 20:30</span></div></div>
+    <div class="b c3"><div class="cita">“El camino que llevó de Jerusalén a Nicea <b class="terra">difícilmente fue recto</b>”.<span class="ref">The Encyclopedia Americana, citada en Razonamiento, “Trinidad”</span></div></div>
+  </div>
+  <div class="pie-img pie-m">Mapa: TNM, apéndice B13 (sin las rutas de Pablo)</div>
+</div>
+
+<script>
+const tA = at("Jesús lo había anticipado") - 0.3;
+entra(".parte .n", 0.4, { y: -10 });
+entra(".parte .t", 0.6, { y: 30 });
+traza(".parte svg path", 1.0, 0.8);
+tl.to($(".f0"), { opacity: 0, duration: 0.5 }, tA);
+aparece(".fa", tA + 0.2, 0.6);
+const E0 = encuadre({ x: 300, y: 0, w: 2292, h: 1444 }, { x: 0, y: 0, w: 1920, h: 1080 });
+const E1 = encuadre({ x: 900, y: 80, w: 1640, h: 1260 }, { x: 760, y: 0, w: 1160, h: 1080 });
+tl.set($(".cam"), E0, 0);
+tl.to($(".cam"), { ...E1, duration: 3, ease: "power2.inOut" }, tA);
+entra(".c1", tA + 0.5, { y: 30 });
+entra(".pie-m", tA + 1, { y: 10 });
+tl.to($(".c1"), { opacity: 0, duration: 0.4 }, at("Y el apóstol Pablo") - 0.4);
+entra(".c2", at("Y el apóstol Pablo"), { y: 30 });
+aparece(".mk-e", at("ancianos de Éfeso"), 0.5);
+tl.to($(".c2"), { opacity: 0, duration: 0.4 }, at("Una enciclopedia") - 0.4);
+entra(".c3", at("Una enciclopedia"), { y: 30 });
+aparece(".mk-j", at("de Jerusalén a Nicea"), 0.4);
+aparece(".mk-n", at("a Nicea") + 0.2, 0.4);
+traza(".camino", at("difícilmente fue recto") - 0.2, 2.6);
+</script>

@@ -1,0 +1,99 @@
+<style>
+.intro { position: absolute; left: 80px; right: 80px; top: 420px; }
+.intro .indice .ch { padding: 22px 20px 26px; }
+.intro .indice .ch .n { font-size: 80px; }
+.intro .indice .ch .t { font-size: 28px; }
+.h412 { position: absolute; left: 150px; right: 150px; top: 170px; bottom: 120px; display: flex; flex-direction: column; justify-content: center; }
+.h412 .cita { font-size: 60px; }
+.balanza { position: absolute; left: 60px; top: 150px; width: 1000px; height: 880px; }
+.balanza svg { width: 1000px; height: 880px; overflow: visible; }
+.balanza .pie-b { fill: #6e5a44; }
+.balanza .viga { fill: #c9a85a; stroke: #7a6232; stroke-width: 3; }
+.balanza .cad { stroke: #b59b5e; stroke-width: 4; }
+.balanza .plato { fill: #c9a85a; stroke: #7a6232; stroke-width: 3; }
+.balanza .vida-a { fill: #9aa4ad; }
+.balanza .vida-j { fill: var(--s4); }
+.balanza .lb { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; }
+.balanza .ig { font-family: "Fraunces", serif; font-weight: 700; font-size: 90px; fill: var(--s4); }
+.f-b .col { right: 80px; width: 760px; }
+.f-b .def { border-color: var(--s4); }
+.f-b .def .t { color: var(--s4); }
+.f-b .cita { font-size: 48px; }
+.f-b .fuente { left: 1080px; }
+.jn15 { position: absolute; left: 150px; right: 150px; top: 270px; }
+.jn15 .cita { font-size: 66px; }
+.dos12 { position: absolute; left: 150px; right: 150px; top: 650px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.dos12 .tj { border-color: var(--s4); }
+.dos12 .tj .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 70px; }
+.dos12 .tj .k { color: var(--s4); }
+</style>
+
+<div class="cabs c4"><span class="k">Señal 4</span><span class="t">Confían en Jesús y lo obedecen</span></div>
+<svg class="cabs-linea c4" viewBox="0 0 520 12"><path d="M 4 6 C 160 2 360 10 516 5"/></svg>
+
+<div class="fase f-0"><div class="intro"><div class="indice"></div></div></div>
+
+<div class="fase f-a">
+  <div class="h412"><div class="cita cc c4">“No hay salvación por medio de ningún otro, porque <b>no hay otro nombre bajo el cielo</b> que se les haya dado a los hombres mediante el que podamos ser salvados.”<span class="ref">PEDRO, ANTE EL TRIBUNAL JUDÍO · HECHOS 4:12</span></div></div>
+</div>
+
+<div class="fase f-b">
+  <div class="balanza"><svg viewBox="0 0 1000 880">
+    <path class="pie-b" d="M 470 190 L 530 190 L 560 780 L 440 780 Z"/><rect class="pie-b" x="330" y="770" width="340" height="34" rx="10"/>
+    <g class="pl pl-a"><path class="cad" d="M 0 0 L -110 250 M 0 0 L 110 250"/><path class="plato" d="M -150 250 L 150 250 C 130 300 -130 300 -150 250 Z"/>
+      <g class="it-a"><circle class="vida-a" cx="0" cy="205" r="48"/><text class="lb" x="0" y="350" text-anchor="middle" fill="#c3cbd2"><tspan x="0">la vida perfecta</tspan><tspan x="0" dy="48">que perdió Adán</tspan></text></g></g>
+    <g class="pl pl-j"><path class="cad" d="M 0 0 L -110 250 M 0 0 L 110 250"/><path class="plato" d="M -150 250 L 150 250 C 130 300 -130 300 -150 250 Z"/>
+      <g class="it-j"><circle class="vida-j" cx="0" cy="205" r="48"/><text class="lb" x="0" y="350" text-anchor="middle" fill="var(--s4)"><tspan x="0">la vida humana</tspan><tspan x="0" dy="48">perfecta de Jesús</tspan></text></g></g>
+    <g class="viga-g"><rect class="viga" x="-330" y="-14" width="660" height="28" rx="14"/><circle cx="0" cy="0" r="24" fill="#7a6232"/></g>
+  </svg></div>
+  <div class="col">
+    <div class="b b1"><div class="cita cc c4">“Para dar su vida como <b>rescate</b> a cambio de muchas personas.”<span class="ref">MATEO 20:28</span></div></div>
+    <div class="b b2"><div class="def"><div class="t">Rescate</div><div class="x">el <b>precio</b> que se paga para liberar a alguien</div><div class="s"><i>¡Disfrute de la vida para siempre!</i>, lección 27</div></div></div>
+    <div class="b b3"><div class="m">Adán, perfecto, desobedeció: nos dejó <b>el pecado y la muerte</b></div></div>
+    <div class="b b4"><div class="cita cc c4">“Se entregó como <b>rescate correspondiente</b> por todos.”<span class="ref">1 TIMOTEO 2:6</span></div><div class="s">Un precio que equivale exactamente a lo que se perdió.</div></div>
+  </div>
+</div>
+
+<div class="fase f-c">
+  <div class="jn15"><div class="cita cc c4">“Ustedes son mis amigos <b>si hacen lo que les mando</b>.”<span class="ref">JUAN 15:14</span></div></div>
+  <div class="dos12">
+    <div class="tj d1"><div class="k">El cristiano verdadero</div><div class="x">confía en el rescate</div></div>
+    <div class="tj d2"><div class="k">y</div><div class="x">obedece al que lo pagó</div></div>
+  </div>
+</div>
+
+<script>
+$(".intro .indice").innerHTML = indiceHTML(4);
+// Balanza: la viga gira sobre (500, 190); los platos cuelgan siempre derechos de sus extremos.
+const P = [500, 190], L = 300;
+function ponBalanza(a) {
+  const r = (a * Math.PI) / 180, c = Math.cos(r), s = Math.sin(r);
+  $(".viga-g").setAttribute("transform", `translate(${P[0]} ${P[1]}) rotate(${a.toFixed(2)})`);
+  $(".pl-a").setAttribute("transform", `translate(${(P[0] - L * c).toFixed(1)} ${(P[1] - L * s).toFixed(1)})`);
+  $(".pl-j").setAttribute("transform", `translate(${(P[0] + L * c).toFixed(1)} ${(P[1] + L * s).toFixed(1)})`);
+}
+ponBalanza(0);
+const bal = { a: 0 };
+const giro = (de, a, t, d) => tl.fromTo(bal, { a: de }, { a, duration: d, ease: "power2.inOut", immediateRender: false, onUpdate: () => ponBalanza(bal.a) }, t);
+
+const t0 = at("La cuarta señal");
+entra(".intro .indice .ch", t0 - 0.4, { y: 30, st: 0.06 });
+late(".intro .ch4", t0 + 0.6, { s: 1.06, n: 1 });
+cabSenal(4, at("reconocen a Jesús"));
+const tA = at("Pedro lo dijo");
+sale(".f-0", tA - 0.5, { y: -40 });
+entra(".h412 .cita", tA, { y: 30, d: 0.8 });
+const tB = at("Por qué él");
+sale(".f-a", tB - 0.4);
+entra(".balanza", tB, { y: 30 });
+secuencia([[".b1", tB + 0.2], [".b2", at("Un rescate es el precio")], [".b3", at("Adán era un hombre")], [".b4", at("Pablo lo llama")]]);
+salta(".it-a", at("Adán era un hombre"), { desde: 0.4 });
+giro(0, -14, at("al desobedecer"), 1.4);
+salta(".it-j", at("Jesús, también perfecto"), { desde: 0.4 });
+giro(-14, 0, at("dio su vida humana"), 1.6);
+const tC = at("Pero reconocerlo");
+sale(".f-b", tC - 0.4);
+entra(".jn15 .cita", at("Jesús dijo"), { y: 30 });
+entra(".d1", at("confía en el rescate"), { y: 24 });
+entra(".d2", at("obedece al que lo pagó"), { y: 24 });
+</script>

@@ -1,0 +1,37 @@
+<style>
+.leccion .l { font-size: 100px; }
+.seccion { gap: 52px; }
+.leccion .fu { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 34px; line-height: 1.3; color: #f1f4f7; margin-top: -10px; }
+.leccion .fu i { color: var(--tiza); }
+.leccion .p { font-size: 60px; }
+.leccion .propio { font-size: 32px; margin-top: -16px; }
+.portada { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.portada .t1 { font-family: "Fraunces", serif; font-weight: 700; font-size: 150px; line-height: 1; }
+.portada .t2 { font-family: "Caveat", cursive; font-weight: 700; font-size: 84px; color: var(--verde); margin-top: 20px; }
+.portada svg { width: 760px; height: 36px; margin-top: 14px; }
+.portada svg path { fill: none; stroke: var(--verde); stroke-width: 7; stroke-linecap: round; }
+.pista.lec { position: absolute; left: 0; right: 0; bottom: 60px; }
+.pista.lec span { color: rgba(241, 233, 216, 0.88); border-color: rgba(241, 233, 216, 0.5); }
+.pista.lec span.hecho { color: rgba(233, 191, 96, 0.95); border-color: rgba(233, 191, 96, 0.6); }
+.pista.lec span.on { color: #17212b; background: var(--verde); border-color: var(--verde); }
+</style>
+
+<div class="seccion"><span class="r">Lecciones</span><span class="t">Génesis 49</span></div>
+<svg class="seccion-linea" viewBox="0 0 1740 20" preserveAspectRatio="none"><path d="M 4 10 C 400 4 1200 16 1736 8" /></svg>
+<div class="leccion le0"><div class="n">1</div><div class="cuerpo"><div class="l">Hablar claro de las consecuencias, <b>sin etiquetas para siempre</b></div><div class="fu">Rubén siguió en la familia; los levitas eligieron la lealtad · 49:3-7; Éxodo 32:26-29 · <i>La Atalaya</i>, junio de 2025, parte 1, págs.&nbsp;4 a 5</div><div class="p pr0"><span class="k">PREGUNTA PARA PENSAR</span>¿Les dejamos espacio para elegir bien?</div></div></div>
+<div class="leccion le1"><div class="n">2</div><div class="cuerpo"><div class="l">La indignación <b>no nos da permiso para herir</b></div><div class="fu">49:5-7; Santiago 1:19, 20 · <i>La Atalaya</i>, junio de 2025, parte 1, pág.&nbsp;5</div><div class="p pr1"><span class="k">PREGUNTA PARA PENSAR</span>¿Cómo reaccionamos cuando le hacen daño a uno de los nuestros?</div></div></div>
+<div class="leccion le2"><div class="n">3</div><div class="cuerpo"><div class="l">Reconocer el cambio <b>con hechos concretos</b></div><div class="fu">Judá se ofreció por Benjamín · 44:30-34; 49:8, 9 · <i>La Atalaya</i>, junio de 2025, parte 1, págs.&nbsp;5 a 7</div><div class="p pr2"><span class="k">PREGUNTA PARA PENSAR</span>¿Elogiamos el cambio de un familiar con la misma precisión con que le señalamos un error?</div></div></div>
+<div class="pista lec"><span class="hecho">48</span><span class="on">49</span><span class="">50</span></div>
+
+<script>
+entra(".seccion", 0.3, { y: -20 });
+traza(".seccion-linea path", 0.6, 1.0);
+entra(".pista.lec", 0.8, { y: 16 });
+secuencia([[".le0", at("Primera") - 0.2], [".le1", at("Segunda") - 0.2], [".le2", at("Tercera") - 0.2]], null, { y: 30, d: 0.6 });
+entra(".pr0", at("Les dejamos espacio") - 0.3, { x: -30, y: 0 });
+centra([".le0 .cuerpo", ".le0 .n"], 110, at("Les dejamos espacio") - 0.9, 0.7);
+entra(".pr1", at("Cómo reaccionamos") - 0.3, { x: -30, y: 0 });
+centra([".le1 .cuerpo", ".le1 .n"], 110, at("Cómo reaccionamos") - 0.9, 0.7);
+entra(".pr2", at("Elogiamos el cambio") - 0.3, { x: -30, y: 0 });
+centra([".le2 .cuerpo", ".le2 .n"], 110, at("Elogiamos el cambio") - 0.9, 0.7);
+</script>

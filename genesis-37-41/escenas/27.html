@@ -1,0 +1,78 @@
+<style>
+.f1-27 .sangre img { object-position: 38% 50%; }
+.col.d27 { left: 1100px; right: 60px; width: auto; top: 110px; bottom: 80px; }
+.pie27 { left: 24px; bottom: 20px; }
+.plano27 { position: absolute; left: 60px; top: 110px; width: 1000px; height: 900px; }
+.plano27 svg { width: 1000px; height: 900px; display: block; }
+.pl { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; fill: var(--tiza); text-anchor: middle; }
+.pl.oro { fill: var(--oro); }
+.nota27 { position: absolute; left: 60px; bottom: 28px; padding: 8px 18px; border-radius: 12px; background: rgba(15, 22, 30, 0.86); font-family: "Montserrat", sans-serif; font-size: 22px; color: var(--tenue); }
+</style>
+
+<div class="fase f1-27">
+  <div class="sangre"><div class="kb"><img src="assets/img/huye.jpg" /></div></div>
+  <div class="velo der"></div>
+  <div class="pie pie27">“José huye de la esposa de Potifar”. <i>Lecciones que aprendo de la Biblia</i>, lección 14, pág. 41 (wol.jw.org)</div>
+</div>
+<div class="fase f2-27">
+  <div class="plano27"><svg viewBox="0 0 1000 900">
+    <g class="muros" stroke="#f1e9d8" stroke-width="10" fill="none" stroke-linejoin="round" filter="none">
+      <path class="mu1" d="M 120 120 H 880 V 780 H 580 M 420 780 H 120 V 120"/>
+      <path class="mu2" d="M 120 330 H 880"/>
+      <path class="mu3" d="M 310 120 V 330 M 500 120 V 330 M 690 120 V 330"/>
+    </g>
+    <g class="huecos" fill="#17212b"><rect x="190" y="322" width="60" height="16"/><rect x="380" y="322" width="60" height="16"/><rect x="570" y="322" width="60" height="16"/><rect x="760" y="322" width="60" height="16"/></g>
+    <g class="cols" fill="rgba(241,233,216,0.35)"><circle cx="330" cy="480" r="16"/><circle cx="670" cy="480" r="16"/><circle cx="330" cy="640" r="16"/><circle cx="670" cy="640" r="16"/></g>
+    <text class="pl t-desp" x="500" y="240">despensas</text>
+    <text class="pl oro t-prin" x="500" y="575">la parte principal</text>
+    <text class="pl t-ent" x="500" y="860">entrada</text>
+    <path class="camino27" d="M 500 840 C 500 740 520 640 470 540 C 420 440 240 420 220 300" stroke="#e9bf60" stroke-width="8" fill="none" stroke-dasharray="4 16" stroke-linecap="round"/>
+  </svg></div>
+  <div class="nota27">esquema de lo que describe <i>Perspicacia</i>; no es el plano de la casa de Potifar</div>
+</div>
+
+<div class="cab sobre" style="z-index:3"><span class="cap">Génesis 39</span><span>versículos 7 al 12</span></div>
+<div class="col d27">
+  <div class="b a1">
+    <div class="m md">José se negó: <b>dos razones</b></div>
+    <div class="def r1"><div class="t">su amo</div><div class="x">“ha puesto todo a mi disposición excepto a ti, porque eres su esposa”</div></div>
+    <div class="cita r2">“¿Cómo podría yo hacer algo tan malo y de hecho <b>pecar contra Dios</b>?”<span class="ref">GÉNESIS 39:9</span></div>
+  </div>
+  <div class="b a2">
+    <div class="m">faltaban unos <b>200 años</b> para que la Ley dijera: “No cometas adulterio”</div>
+    <div class="f">Éxodo 20:14 · <i>La Atalaya</i> (estudio), agosto de 2022, pág. 26</div>
+    <div class="cita md ed">“se unirá a su esposa y ellos serán <b>una sola carne</b>”<span class="ref">GÉNESIS 2:24</span></div>
+    <div class="m md cielo pa">“Lo aprendió de sus padres”</div>
+    <div class="f pa"><i>La Atalaya</i>, 1 de noviembre de 2014, pág. 14</div>
+  </div>
+  <div class="b a3">
+    <div class="m md">ella insistía “<b>día tras día</b>” · 39:10</div>
+    <div class="cita sm">“parece que las casas egipcias estaban diseñadas de tal manera que había que pasar por la parte principal de la casa para llegar a las despensas”<span class="ref">PERSPICACIA, VOL. 2, “JOSÉ”, PÁG. 123</span></div>
+    <div class="m md oro so">no se quedaba a solas con ella</div>
+    <div class="cita md hu">“él salió <b>huyendo</b> y dejó su ropa entre las manos de ella”<span class="ref">GÉNESIS 39:12</span></div>
+  </div>
+</div>
+
+<script>
+const tC = at("Ella insistía");
+kb(".f1-27 .kb", 0, tC, { s: 1.08, x: 2 }, { s: 1.0, x: 0 });
+aparece(".pie27", 0.6, 0.5);
+desaparece(".f1-27", tC - 0.4, 0.5);
+aparece(".f2-27", tC - 0.3, 0.5);
+secuencia([[".a1", 0.4], [".a2", at("Faltaban")], [".a3", tC]]);
+entra(".r1", at("su amo"), { y: 16 });
+entra(".r2", at("ofendería"), { y: 16 });
+entra(".ed", at("desde Edén") - 0.6, { y: 16 });
+entra(".pa", at("lo había aprendido"), { y: 12, st: 0.2 });
+// El plano: muros, despensas al fondo y el camino obligado por la parte principal.
+traza(".mu1", tC, 1.4);
+traza(".mu2", tC + 0.6, 0.8);
+traza(".mu3", tC + 1.0, 0.8);
+aparece([".huecos", ".cols", ".t-ent"], tC + 1.2, 0.5);
+aparece(".t-desp", at("despensas") - 0.4, 0.4);
+aparece(".t-prin", at("parte principal"), 0.4);
+traza(".camino27", at("había que pasar"), 2.2, { ease: "none" });
+tl.set($(".camino27"), { strokeDasharray: "4 16" }, at("había que pasar") + 2.25);
+entra(".so", at("no se quedaba"), { y: 16 });
+entra(".hu", at("salió huyendo") - 0.3, { y: 16 });
+</script>

@@ -1,0 +1,27 @@
+<style>
+.ilus.im { left: 60px; top: 120px; width: 690px; height: 900px; }
+.pie-img.pi { left: 60px; top: 1030px; width: 900px; font-size: 20px; }
+.der { position: absolute; left: 810px; right: 70px; top: 130px; bottom: 60px; }
+.der > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.der .cita { font-size: 50px; }
+.der .m { font-size: 64px; }
+.der .def .x { font-size: 58px; }
+.der .dato .v { font-size: 120px; }
+</style>
+
+<div class="cab sobre"><span class="cap">Génesis 6</span><span>versículos 18 a 22 · 2 Pedro 2:5</span></div>
+<div class="ilus im"><div class="kb"><img src="assets/img/arca-obra.jpg" /></div></div>
+<div class="pie-img pi">Lecciones que aprendo de la Biblia, lección 5, pág. 18 (wol.jw.org)</div>
+<div class="der">
+  <div class="b a1"><div class="def"><div class="t">pacto <i>beríth</i></div><div class="x">un <b>acuerdo solemne</b> · primera vez en la Biblia</div><div class="s">Perspicacia, vol. 2, “Pacto”</div></div><div class="cita">“Estoy estableciendo mi pacto contigo. Tú tienes que entrar en el arca con tus hijos, tu esposa y tus nueras”<span class="ref">GÉNESIS 6:18</span></div></div>
+  <div class="b a2"><div class="dato"><div class="v">40 a 50</div><div class="k">años de obra</div><div class="s">de los hijos ya casados (6:18) al año 600 de Noé (7:6) · Perspicacia, “Noé”</div></div><div class="cita">“predicador de <b>justicia</b>”<span class="ref">2 PEDRO 2:5</span></div><div class="m">cada tabla clavada, <b>un anuncio</b></div></div>
+  <div class="b a3"><div class="cita" style="font-size:60px">“Noé hizo todo lo que Dios le había mandado. Lo hizo <b>tal como él había dicho</b>”<span class="ref">GÉNESIS 6:22</span></div></div>
+</div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".im", 0.3, { y: 30 });
+kb(".im .kb", 0.3, DUR, { s: 1.0, y: 0 }, { s: 1.1, y: -2 });
+aparece(".pi", 0.9, 0.5);
+secuencia([[".a1", 0.5], [".a2", at("Noé tardó")], [".a3", at("Noé hizo todo")]]);
+</script>

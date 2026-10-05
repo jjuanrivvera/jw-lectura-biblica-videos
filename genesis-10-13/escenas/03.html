@@ -1,0 +1,76 @@
+<!--lead:2.4-->
+<style>
+.arbol03 { position: absolute; inset: 0; }
+.arbol03 svg { width: 1920px; height: 1080px; display: block; }
+.n03 { font-family: "Fraunces", serif; font-weight: 700; font-size: 70px; text-anchor: middle; fill: var(--tiza); }
+.hj03 { font-family: "Fraunces", serif; font-weight: 700; font-size: 76px; text-anchor: middle; }
+.ct03 { font-family: "Fraunces", serif; font-weight: 700; font-size: 124px; text-anchor: middle; }
+.lb03 { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.1em; text-anchor: middle; fill: var(--tenue); text-transform: uppercase; }
+.tot03 { font-family: "Fraunces", serif; font-weight: 700; font-size: 96px; fill: var(--oro); }
+.tot03s { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; fill: var(--oro); }
+.pie03 { position: absolute; left: 110px; right: 110px; top: 760px; height: 250px; }
+.pie03 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 14px; }
+.pie03 .cita { font-size: 50px; }
+.pie03 .m { font-size: 70px; }
+</style>
+
+<div class="capcard cc"><div class="fondo"><img src="assets/img/naciones.jpg" /></div><div class="num">Génesis 10</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">la tabla de las naciones</div><div class="edad">del Diluvio a los días de Péleg</div>
+  <div class="pista"><span class="on">10</span><span>11</span><span>12</span><span>13</span></div></div>
+
+<div class="fase fa">
+<div class="arbol03"><svg viewBox="0 0 1920 1080">
+  <g class="arriba">
+  <g class="noe"><text class="n03" x="960" y="150">Noé</text></g>
+  <path class="tr trj" d="M 930 172 C 800 210 520 200 380 262" fill="none" stroke="#93b3f5" stroke-width="7" stroke-linecap="round"/>
+  <path class="tr trc" d="M 960 176 C 962 200 960 230 960 262" fill="none" stroke="#f29b85" stroke-width="7" stroke-linecap="round"/>
+  <path class="tr trs" d="M 990 172 C 1120 210 1400 200 1540 262" fill="none" stroke="#9bd8a0" stroke-width="7" stroke-linecap="round"/>
+  <g class="hj hjj"><text class="hj03" x="360" y="340" fill="#93b3f5">Jafet</text></g>
+  <g class="hj hjc"><text class="hj03" x="960" y="340" fill="#f29b85">Cam</text></g>
+  <g class="hj hjs"><text class="hj03" x="1560" y="340" fill="#9bd8a0">Sem</text></g>
+  </g>
+  <g class="cj"><text class="ct03" x="360" y="480" fill="#93b3f5"><tspan class="kj">14</tspan></text><g class="pj"></g><text class="lb03" x="360" y="700">hacia el norte y el oeste</text></g>
+  <g class="cc3"><text class="ct03" x="960" y="480" fill="#f29b85"><tspan class="kc">30</tspan></text><g class="pc"></g><text class="lb03" x="960" y="700">hacia el sur</text></g>
+  <g class="cs"><text class="ct03" x="1560" y="480" fill="#9bd8a0"><tspan class="ks">26</tspan></text><g class="ps"></g><text class="lb03" x="1560" y="700">en medio</text></g>
+  <g class="tot"><text class="tot03" x="1130" y="150">= 70</text><text class="tot03s" x="1330" y="146">nombres</text></g>
+</svg></div>
+<div class="pie03">
+  <div class="b q1"><div class="m">no todas las personas: las <b>familias</b> que dieron origen a pueblos</div><div class="f">Génesis 10:32 · <i>Perspicacia</i>, vol. 2, “Naciones”, pág. 455</div></div>
+  <div class="b q2"><div class="cita">“la tabla más antigua de naciones, setenta en total” · “<b>única</b> en la literatura antigua”</div><div class="f"><i>Perspicacia</i>, vol. 2, “Naciones”, pág. 455; vol. 1, “Genealogía”, pág. 1001, citando a E. J. Hamlin</div></div>
+  <div class="b q3"><div class="cita">“documento <b>asombrosamente exacto</b>”</div><div class="f">el arqueólogo W. F. Albright, citado en <i>La Atalaya</i>, 15 de junio de 1976, pág. 381</div></div>
+</div>
+</div>
+
+<script>
+// Puntos de las familias: filas de 10, centradas bajo cada hijo.
+const puntos = (cx, n, color) => {
+  let s = "";
+  for (let i = 0; i < n; i++) {
+    const fila = Math.floor(i / 10), enFila = Math.min(10, n - fila * 10), col = i % 10;
+    const x = cx - ((enFila - 1) * 38) / 2 + col * 38, y = 540 + fila * 40;
+    s += `<circle class="pt" cx="${x}" cy="${y}" r="15" fill="${color}"/>`;
+  }
+  return s;
+};
+pinta(".pj", puntos(360, 14, "#93b3f5")); pinta(".pc", puntos(960, 30, "#f29b85")); pinta(".ps", puntos(1560, 26, "#9bd8a0"));
+capitulo(".cc", 0.2, at("Esta es la historia") - 0.6);
+aparece(".cc .fondo", 0.1, 0.8);
+entra(".cc .pista", 0.9, { y: 16 });
+const t0 = at("Esta es la historia");
+entra(".noe", t0 - 0.2, { y: 20 });
+traza(".tr", at("Sem, Cam"), 0.8, { st: 0.2 });
+salta(".hjj", at("Jafet", 0) + 0.1, { desde: 0.6 }); salta(".hjc", at("Cam", 0) + 0.1, { desde: 0.6 }); salta(".hjs", at("Sem", 0) + 0.1, { desde: 0.6 });
+entra(".tot", at("setenta nombres"), { x: -20, y: 0 });
+// El árbol empieza grande y centrado; sube cuando llegan los números.
+tl.set($(".arriba"), { y: 230, scale: 1.25, transformOrigin: "50% 0%" }, 0);
+tl.to($(".arriba"), { y: 0, scale: 1, duration: 0.9, ease: "power2.inOut" }, at("De ellos salen") - 0.2);
+tl.set($(".tot"), { y: 0 }, 0);
+const tj = at("catorce"), tc = at("treinta de Cam"), ts = at("veintiséis");
+entra(".cj text", tj - 0.2, { y: 16 }); cuenta(".kj", 0, 14, tj, 0.9);
+tl.fromTo($$(".pj .pt"), { opacity: 0, scale: 0, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.25, stagger: 0.05, ease: "back.out(2)", immediateRender: false }, tj);
+entra(".cc3 text", tc - 0.2, { y: 16 }); cuenta(".kc", 0, 30, tc, 0.9);
+tl.fromTo($$(".pc .pt"), { opacity: 0, scale: 0, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.25, stagger: 0.03, ease: "back.out(2)", immediateRender: false }, tc);
+entra(".cs text", ts - 0.2, { y: 16 }); cuenta(".ks", 0, 26, ts, 0.9);
+tl.fromTo($$(".ps .pt"), { opacity: 0, scale: 0, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.25, stagger: 0.035, ease: "back.out(2)", immediateRender: false }, ts);
+tl.set($$(".pt"), { opacity: 0 }, 0);
+secuencia([[".q1", at("No son todas")], [".q2", at("Es la tabla")], [".q3", at("Un arqueólogo")]]);
+</script>

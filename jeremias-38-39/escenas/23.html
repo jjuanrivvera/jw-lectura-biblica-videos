@@ -1,0 +1,60 @@
+<style>
+.tit23 { position: absolute; left: 0; right: 0; top: 104px; text-align: center; }
+.tit23 .m { font-size: 66px; }
+.prof { position: absolute; left: 70px; right: 70px; top: 200px; height: 400px; display: grid; grid-template-columns: 1fr 120px 1fr; align-items: stretch; }
+.prof .tj { justify-content: center; }
+.prof .tj .x { font-size: 44px; }
+.prof .tj.j { border-color: rgba(233, 191, 96, 0.7); }
+.prof .tj.e { border-color: rgba(147, 187, 239, 0.7); }
+.prof .tj.e .k { color: var(--cielo); }
+.prof .choque { display: flex; align-items: center; justify-content: center; font-family: "Fraunces", serif; font-weight: 700; font-size: 110px; color: var(--rojo); }
+.pasos { position: absolute; left: 70px; right: 70px; top: 660px; height: 230px; display: grid; grid-template-columns: 1fr 70px 1fr 70px 1fr; align-items: stretch; }
+.paso { border-radius: 24px; padding: 22px 26px; background: rgba(10, 16, 22, 0.42); border: 3px solid rgba(241, 233, 216, 0.14); display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+.paso .lg { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro); }
+.paso .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; line-height: 1.04; }
+.paso .ref { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 22px; color: var(--tenue); }
+.fl23 { display: flex; align-items: center; justify-content: center; }
+.fl23 svg { width: 60px; height: 60px; }
+.pie23 { position: absolute; left: 70px; right: 70px; bottom: 36px; display: flex; gap: 24px; align-items: center; }
+.pie23 .s { font-size: 26px; }
+.ok23 { position: absolute; width: 64px; height: 64px; border-radius: 50%; background: var(--oro); color: #17212b; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 38px; display: flex; align-items: center; justify-content: center; }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 39</span><span>versículos 5 al 7</span></div>
+
+<div class="tit23"><div class="m oro">dos profecías que parecían chocar</div></div>
+
+<div class="prof">
+  <div class="tj j p1"><div class="k">por medio de Jeremías · 34:3</div><div class="x">“<b>Mirarás al rey de Babilonia a los ojos</b>, y él hablará contigo cara a cara, e irás a Babilonia”</div></div>
+  <div class="choque ch">¿?</div>
+  <div class="tj e p2"><div class="k">por medio de Ezequiel · 12:13</div><div class="x">“Entonces lo llevaré a Babilonia, a la tierra de los caldeos, <b>pero no la verá</b>; y allí morirá”</div></div>
+</div>
+
+<div class="pasos">
+  <div class="paso s1"><div class="lg">Riblá</div><div class="x">lo sentenció cara a cara</div><div class="ref">39:5 · “ante su presencia” (<i>Perspicacia</i>)</div></div>
+  <div class="fl23 a1"><svg viewBox="0 0 60 60"><path d="M 8 30 H 46 M 34 16 L 50 30 L 34 44" stroke="#e9bf60" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="paso s2"><div class="lg">después</div><div class="x">lo cegaron; grilletes de cobre</div><div class="ref">39:7 · grilletes: argollas de metal para sujetar a un preso</div></div>
+  <div class="fl23 a2"><svg viewBox="0 0 60 60"><path d="M 8 30 H 46 M 34 16 L 50 30 L 34 44" stroke="#e9bf60" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="paso s3"><div class="lg">Babilonia</div><div class="x">llegó, pero no la vio</div><div class="ref">preso “hasta el día de su muerte” (52:11)</div></div>
+</div>
+<div class="ok23 k1" style="left:88px;top:570px">✓</div>
+<div class="ok23 k2" style="left:1768px;top:570px">✓</div>
+
+<div class="pie23"><div class="s">“Así como había predicho Ezequiel, llegó a Babilonia, pero no la vio” · <i>La Atalaya</i>, 1 de abril de 1965</div><div class="propio chico">juntar así las dos profecías es observación propia</div></div>
+
+<script>
+aparece(".cab", 0.2, 0.5);
+entra(".tit23", 0.6, { y: 20 });
+entra(".p1", at("Jeremías le había"), { y: 24 });
+entra(".p2", at("Y Ezequiel"), { y: 24 });
+salta(".ch", at("pero no la verá") + 0.3, {});
+entra(".s1", at("En Riblá"), { y: 24 });
+salta(".k1", at("cara a cara", at("En Riblá")) + 0.3, {});
+entra(".a1", at("Después lo cegaron") - 0.3, { x: -10, y: 0 });
+entra(".s2", at("Después lo cegaron"), { y: 24 });
+entra(".a2", at("Llegó a Babilonia") - 0.3, { x: -10, y: 0 });
+entra(".s3", at("Llegó a Babilonia"), { y: 24 });
+salta(".k2", at("nunca la vio"), {});
+desaparece(".ch", at("nunca la vio"), 0.4);
+entra(".pie23", at("nunca la vio") + 0.3, { y: 12 });
+</script>

@@ -1,0 +1,71 @@
+<style>
+.reg { position: absolute; left: 60px; top: 120px; width: 1800px; height: 620px; }
+.reg svg { width: 1800px; height: 620px; }
+.et { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; fill: var(--tiza); }
+.et b { fill: var(--oro); }
+.leyenda { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 24px; fill: var(--tenue); }
+.esau-t { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; fill: var(--verde); }
+.bocadillo { font-family: "Fraunces", serif; font-style: italic; font-weight: 500; font-size: 30px; fill: var(--oro); }
+.abajo { position: absolute; left: 70px; right: 70px; top: 745px; display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 26px; }
+.abajo .tj .x { font-size: 34px; }
+.total { position: absolute; right: 70px; top: 110px; font-family: "Fraunces", serif; font-weight: 700; font-size: 64px; color: var(--oro); }
+.total small { font-family: "Caveat", cursive; font-size: 48px; color: var(--tiza); }
+</style>
+<div class="cab"><span class="cap">Génesis 32</span><span>versículos 13 al 21</span></div>
+<div class="total"><span class="cnt">0</span> <small>animales</small></div>
+<div class="reg"><svg viewBox="0 0 1800 620">
+  <g class="filas"></g>
+  <line x1="40" y1="600" x2="1760" y2="600" stroke="#56657a" stroke-width="3"/>
+  <text class="leyenda" x="40" y="30">un punto = diez animales · rojo = machos · cada grupo, a distancia del anterior</text>
+  <g class="esau"><circle cx="1705" cy="300" r="46" fill="var(--verde)"/><text class="esau-t" x="1705" y="390" text-anchor="middle">Esaú</text><text class="esau-t" x="1705" y="452" text-anchor="middle" font-size="34">y 400 hombres</text></g>
+  <g class="bocas"></g>
+</svg></div>
+<div class="abajo">
+  <div class="tj b1"><div class="k">32:16</div><div class="x">“Crucen delante de mí y mantengan cierta distancia entre cada grupo”</div></div>
+  <div class="tj b2 on"><div class="k">Cada grupo repite · 32:18</div><div class="x">“Esto es un regalo para ti, mi señor Esaú. Y él mismo viene detrás de nosotros”</div></div>
+  <div class="tj b3"><div class="k">En aquella cultura</div><div class="x">“Una dádiva puede <b>aplacar la cólera</b>”</div><div class="ref"><i>Perspicacia</i>, vol. 2, “Regalo, dádiva”, pág. 803</div></div>
+</div>
+<div class="s supuesto" style="position:absolute;left:70px;right:70px;bottom:14px;font-size:19px;line-height:1.25">Esquema de la investigación: cantidades de 32:14, 15. <span class="propio" style="font-size:26px;padding:0 12px">supuesto</span> cinco grupos, uno por clase: la Biblia no dice cuántos · <span class="propio" style="font-size:26px;padding:0 12px">observación propia</span> la proporción de machos · 550: <i>La Atalaya</i>, 15/8/2011, pág. 23</div>
+<script>
+// Hembras y machos de cada clase (Génesis 32:14, 15), en decenas.
+const G = [
+  { n: "Cabras", h: 20, m: 2, t: "200 cabras y 20 machos", c: "var(--tiza)" },
+  { n: "Ovejas", h: 20, m: 2, t: "200 ovejas y 20 carneros", c: "var(--tiza)" },
+  { n: "Camellas", h: 3, m: 0, t: "30 camellas con sus crías", c: "var(--oro)", crias: true },
+  { n: "Vacas", h: 4, m: 1, t: "40 vacas y 10 toros", c: "#d8a47a" },
+  { n: "Burras", h: 2, m: 1, t: "20 burras y 10 burros", c: "#aab6c4" },
+];
+let f = "", b = "";
+G.forEach((g, i) => {
+  const y = 90 + i * 104;
+  let pts = "";
+  for (let k = 0; k < g.h + g.m; k++) pts += `<circle cx="${k * 26}" cy="0" r="10" fill="${k < g.h ? g.c : "var(--rojo)"}"/>`;
+  if (g.crias) for (let k = 0; k < 3; k++) pts += `<circle cx="${k * 26}" cy="22" r="5" fill="${g.c}"/>`;
+  f += `<g transform="translate(0 ${y})"><g class="grupo gr${i}"><g class="pts">${pts}</g><text class="et et${i}" x="0" y="58">${g.t}</text></g></g>`;
+  b += `<text class="bocadillo bo${i}" x="1530" y="${y + 56}" text-anchor="end" opacity="0">“Esto es un regalo para ti, mi señor Esaú”</text>`;
+});
+$(".filas").innerHTML = f;
+$(".bocas").innerHTML = b;
+aparece(".esau", 0.3, 0.5);
+const T0 = at("cabras");
+[at("cabras"), at("ovejas"), at("camellas"), at("vacas"), at("burros")].forEach((t, i) => {
+  tl.fromTo($(".gr" + i), { x: 40, opacity: 0 }, { x: 40, opacity: 1, duration: 0.4, ...IR }, t);
+});
+inicial(el(".grupo"), { opacity: 0 });
+cuenta(".cnt", 0, 550, at("Quinientos"), 1.2, (v) => Math.round(v).toString());
+aparece(".total", at("Quinientos") - 0.3, 0.3);
+late(el(".grupo .pts circle[fill='var(--rojo)']"), at("un macho"), { s: 1.6, n: 3 });
+// Los grupos salen uno tras otro hacia Esaú, con distancia entre ellos, repitiendo el mismo recado.
+const TS = at("No lo mandó");
+G.forEach((g, i) => {
+  const t = TS + i * 2.6;
+  tl.to($(".gr" + i), { x: 1530 - (g.h + g.m - 1) * 26, duration: 2.2, ease: "power1.inOut" }, t);
+  tl.to($(".et" + i), { opacity: 0, duration: 0.3 }, t + 1.8);
+  tl.to($(".bo" + i), { opacity: 1, duration: 0.3 }, t + 2.0);
+});
+entra(".b1", at("Crucen delante"), { y: 30 });
+entra(".b2", at("Cada grupo repetía"), { y: 30 });
+entra(".b3", at("En aquella cultura"), { y: 30 });
+late(".esau", at("una y otra vez"), { s: 1.08, n: 3 });
+entra(".supuesto", at("No lo mandó") + 1, { y: 10 });
+</script>

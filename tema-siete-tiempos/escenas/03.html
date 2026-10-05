@@ -1,0 +1,70 @@
+<style>
+.ilus.toc { left: 60px; top: 240px; width: 1000px; height: 563px; }
+.pie { position: absolute; left: 60px; top: 822px; width: 1000px; font-size: 24px; color: var(--tenue); }
+.etapas { position: absolute; left: 80px; right: 80px; top: 150px; bottom: 110px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
+.et { display: flex; flex-direction: column; align-items: center; }
+.et .vis { width: 520px; height: 600px; position: relative; overflow: hidden; }
+.et .vis svg { position: absolute; left: -315px; top: -438px; width: 1150px; height: 1150px; }
+.et .st1 svg, .et .st2 svg { left: -590px; top: -1115px; width: 1700px; height: 1700px; }
+.et .n { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.18em; color: var(--tenue); margin-top: 14px; }
+.et .m { font-size: 76px; text-align: center; margin-top: 4px; }
+.st1 .alto, .st1 .brote, .st1 .rayo, .st1 .banda-h, .st1 .banda-c, .st1 .animales { display: none; }
+.st2 .alto, .st2 .brote, .st2 .rayo, .st2 .corte, .st2 .animales { display: none; }
+.st3 .alto, .st3 .rayo, .st3 .corte, .st3 .banda-h, .st3 .banda-c, .st3 .animales { display: none; }
+.st1 .corte { stroke-dasharray: 4 18; }
+.flechas { position: absolute; left: 80px; right: 80px; top: 470px; display: grid; grid-template-columns: 1fr 1fr 1fr; pointer-events: none; }
+.flechas div { font-family: "Fraunces", serif; font-size: 100px; color: var(--oro); text-align: right; transform: translateX(70px); }
+.llave { position: absolute; left: 120px; right: 120px; top: 130px; bottom: 100px; display: flex; flex-direction: column; justify-content: center; gap: 34px; }
+.llave .cita { font-size: 64px; line-height: 1.22; }
+.llave .r { align-self: flex-start; padding: 10px 26px; border-radius: 14px; background: var(--oro); color: #121a2a; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.18em; }
+</style>
+
+<div class="fase f-a">
+<div class="cab"><span class="cap">Daniel 4:15</span><span>el tocón atado</span></div>
+<div class="ilus toc"><div class="kb"><img src="assets/img/arbol-cortado.jpg" /></div></div>
+<div class="pie">“Cortan el árbol del sueño de Nabucodonosor”, <i>Lecciones que aprendo de la Biblia</i>, lección 62 (wol.jw.org)</div>
+<div class="col">
+  <div class="b b1"><div class="m oro">un tocón con raíces vivas puede volver a brotar</div><div class="cita">“Hasta para un árbol hay esperanza. Aunque lo corten, <b>brotará de nuevo</b>”<span class="ref">JOB 14:7</span></div></div>
+</div>
+</div>
+
+<div class="fase f-b">
+<div class="etapas">
+  <div class="et e1"><div class="vis st1"></div><div class="n">CORTADO</div><div class="m">no se arranca</div></div>
+  <div class="et e2"><div class="vis st2"></div><div class="n">ATADO</div><div class="m oro">se guarda bajo llave</div></div>
+  <div class="et e3"><div class="vis st3"></div><div class="n">SIETE TIEMPOS DESPUÉS</div><div class="m" style="color:var(--verde)">vuelve a brotar</div></div>
+</div>
+<div class="flechas"><div class="fl1">→</div><div class="fl2">→</div><div></div></div>
+</div>
+
+<div class="fase f-c">
+<div class="llave">
+  <div class="r">LA LLAVE DEL SUEÑO</div>
+  <div class="cita">“Para que todo el que vive sepa que <b>el Altísimo es Gobernante en el reino de la humanidad</b> y que él se lo da a quien él quiere, y sobre él coloca incluso <b class="hum">al hombre más humilde</b>”<span class="ref">DANIEL 4:17</span></div>
+</div>
+</div>
+
+<script>
+/*incluir:_arbol.js*/
+["st1", "st2", "st3"].forEach((c, i) => ($("." + c).innerHTML = arbolSVG("a03" + i)));
+const tB = at("Atarlo con hierro");
+const tC = at("Y el versículo diecisiete");
+entra(".f-a .cab", 0.3, { y: -10 });
+aparece(".toc", 0.3, 0.8);
+kb(".toc .kb", 0.3, tB, { s: 1.0 }, { s: 1.12, y: -2 });
+aparece(".pie", 0.6, 0.5);
+entra(".b1", 0.6);
+sale([".f-a .cab", ".toc", ".pie", ".b1"], tB - 0.5);
+entra(".e1", tB, { y: 40 });
+entra(".fl1", at("Es como poner"), { x: -20, y: 0 });
+entra(".e2", at("Es como poner"), { y: 40 });
+salta(".st2 .banda-h, .st2 .banda-c", at("bajo llave"), { desde: 1.3, st: 0.2 });
+entra(".fl2", at("y después vuelve"), { x: -20, y: 0 });
+entra(".e3", at("y después vuelve"), { y: 40 });
+tl.fromTo($(".st3 .brote"), { scale: 0.1, transformOrigin: "500px 760px" }, { scale: 1, duration: 1.4, ease: "back.out(1.4)", immediateRender: false }, at("y después vuelve") + 0.3);
+sale([".e1", ".e2", ".e3", ".fl1", ".fl2"], tC - 0.5);
+entra(".llave .r", tC, { y: -20 });
+entra(".llave .cita", tC + 0.3, { y: 30 });
+late(".llave .r", at("Guarde esta frase"), { s: 1.08, n: 3 });
+tl.to($(".hum"), { color: "#92d193", duration: 0.5 }, at("Guarde esta frase"));
+</script>

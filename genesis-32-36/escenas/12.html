@@ -1,0 +1,30 @@
+<style>
+.mapa .cam img, .mapa .cam svg { width: 2880px; height: 1800px; }
+.hist { display: flex; flex-direction: column; gap: 16px; }
+.hist .h { display: grid; grid-template-columns: 40px 1fr; column-gap: 14px; align-items: baseline; }
+.hist .h .d { width: 22px; height: 22px; border-radius: 50%; background: var(--oro); margin-top: 16px; }
+.hist .h .m { font-size: 52px; }
+.hist .h .f { grid-column: 2; }
+</style>
+<!--incluir:_jaboc.html-->
+<div class="cab sobre"><span class="cap">Mahanaim y Peniel hoy</span><span>Génesis 32:2, 30</span></div>
+<div class="col der">
+  <div class="b a1"><div class="cita md">“La ubicación exacta de Mahanaim es incierta”</div><div class="f"><i>Perspicacia</i>, vol. 2, “Mahanaim”, pág. 279</div><div class="def"><div class="t">Peniel se suele identificar con</div><div class="x">Tulul edh-Dhahab: “<b>las colinas de oro</b>”</div><div class="s">a unos 6 km al este de Sucot · <i>Perspicacia</i>, vol. 2, “Penuel”, pág. 632</div></div></div>
+  <div class="b a2"><span class="externa">fuente externa · Wikipedia</span><div class="m">dos lomas a los lados del Zarqa</div><div class="m md">desde 2005 excava allí la Universidad de Dortmund con Jordania</div><div class="dato"><div class="v" style="font-size:56px">1300 – 970 <small>a. e. c.</small></div><div class="k">el poblado más antiguo hallado, según el radiocarbono</div></div></div>
+  <div class="b a3"><div class="m">los dos lugares tuvieron historia</div><div class="hist">
+    <div class="h"><div class="d"></div><div class="m"><b>Mahanaim</b>, capital de Is-bóset</div><div class="f">2 Samuel 2:8</div></div>
+    <div class="h"><div class="d"></div><div class="m">refugio de David, que huía de Absalón</div><div class="f">2 Samuel 17:24</div></div>
+    <div class="h h3"><div class="d" style="background:var(--rojo)"></div><div class="m"><b style="color:var(--rojo)">Peniel</b> niega pan a Gedeón; él derriba su torre</div><div class="f">Jueces 8:8, 9, 17</div></div>
+  </div></div>
+</div>
+<script>
+pinta(".marcas", `<circle class="hueco h1" cx="1033" cy="724" r="110"/><circle class="hueco h2" cx="1041" cy="874" r="110"/><text class="lugar rojo halo q1" x="1150" y="690" font-size="110" stroke-width="18">?</text><text class="lugar rojo halo q2" x="1170" y="990" font-size="110" stroke-width="18">?</text><text class="lugar halo td" x="1180" y="1250" font-size="80" stroke-width="14" font-style="italic">Tulul edh-Dhahab</text>`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 420, y: 180, w: 1650, h: 1590 }, V), 0);
+tl.set($(".jb"), { opacity: 0.8 }, 0);
+traza([".h1", ".h2"], 0.5, 1.0, { st: 0.4 });
+salta([".q1", ".q2"], at("no se sabe"), { st: 0.3 });
+entra(".td", at("Tulul"), { y: 20 });
+secuencia([[".a1", 0.4], [".a2", at("dos lomas")], [".a3", at("Los dos lugares")]]);
+entra($$(".hist .h"), at("Los dos lugares") + 0.6, { st: 4.0, y: 20 });
+</script>

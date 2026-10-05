@@ -1,0 +1,52 @@
+<style>
+.cab { }
+.cuenta { position: absolute; left: 0; top: 150px; width: 1080px; height: 900px; }
+.cuenta svg { width: 1080px; height: 900px; }
+.cuenta .raya { fill: none; stroke: var(--tiza); stroke-width: 11; stroke-linecap: round; }
+.cuenta .cruz { stroke: var(--oro); }
+.titulo23 { position: absolute; left: 0; right: 0; top: 190px; text-align: center; }
+.titulo23 .grande { font-size: 190px; color: var(--oro); }
+.titulo23 .m { font-size: 72px; margin-top: 4px; }
+.reinos { position: absolute; left: 0; right: 0; top: 960px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 66px; color: var(--tenue); }
+.quizas { position: absolute; left: 0; right: 0; top: 330px; text-align: center; font-family: "Fraunces", serif; font-style: italic; font-weight: 600; font-size: 250px; line-height: 1; color: var(--oro); }
+.quizas small { display: block; font-family: "Caveat", cursive; font-style: normal; font-size: 70px; color: var(--tiza); margin-top: 30px; }
+.cita b { color: var(--oro); font-weight: 700; }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 36</span><span>versículos 1 al 7</span></div>
+<div class="cuenta"><svg viewBox="0 0 1080 900"><g class="marcas"></g></svg></div>
+<div class="titulo23"><div class="grande">23 años</div><div class="m">de mensajes, desde los días de Josías</div></div>
+<div class="reinos">juicios contra unos 20 reyes y reinos</div>
+<div class="quizas">quizás<small>después de 23 años</small></div>
+
+<div class="zt">
+  <div class="b b1"><div class="cita">“todas las palabras que te he dicho [...] desde el primer día en que te hablé en los días de Josías hasta hoy”<span class="ref">JEREMÍAS 36:2</span></div></div>
+  <div class="b b2"><div class="m">23 años de mensajes, contra unos 20 reyes y reinos</div><div class="s">Dios nos habla mediante Jeremías, cap. 2, párr. 14</div></div>
+  <div class="b b3"><div class="cita">“no he dejado de hablarles una y otra vez; pero ustedes no han querido escuchar”<span class="ref">JEREMÍAS 25:3</span></div></div>
+  <div class="b b4"><div class="m">¿Para qué escribirlo?</div></div>
+  <div class="b b5"><div class="cita">“Cuando los de la casa de Judá escuchen toda la calamidad que tengo pensado mandarles, <b>quizás</b> dejen su mal camino y así pueda perdonarles su error y su pecado”<span class="ref">JEREMÍAS 36:3</span></div></div>
+  <div class="b b6"><div class="cita">“no me causa ningún placer la muerte del malvado, pero sí me causa placer que alguien malvado cambie de rumbo y siga vivo”<span class="ref">EZEQUIEL 33:11 · REFERENCIA DE 36:3</span></div></div>
+</div>
+
+<script>
+// Veintitrés rayas de conteo: grupos de cuatro y una que los cruza.
+let m = "";
+for (let i = 0; i < 23; i++) {
+  const g = Math.floor(i / 5), k = i % 5, fila = Math.floor(g / 3), col = g % 3;
+  const x0 = 170 + col * 270, y0 = 330 + fila * 250;
+  m += k < 4
+    ? `<path class="raya r${i}" d="M ${x0 + k * 46} ${y0} l ${(k % 2) * 4 - 2} 170"/>`
+    : `<path class="raya cruz r${i}" d="M ${x0 - 30} ${y0 + 140} L ${x0 + 172} ${y0 + 30}"/>`;
+}
+pinta(".marcas", m);
+const t0 = at("Le pide reunir"), t1 = at("El libro de Jeremías");
+for (let i = 0; i < 23; i++) traza(".r" + i, t0 + (i * (t1 - t0 - 0.6)) / 23, 0.3);
+entra(".titulo23", at("veintitrés años"), { y: -20 });
+entra(".reinos", at("veinte reyes"), { y: 20 });
+sale([".cuenta", ".titulo23", ".reinos"], at("Para qué") - 0.4, { d: 0.5 });
+salta(".quizas", at("quizás"), { desde: 0.6, d: 0.9 });
+tl.fromTo($(".quizas"), { scale: 1 }, { scale: 1.08, duration: 0.5, yoyo: true, repeat: 1, ease: "power1.inOut", immediateRender: false }, at("todavía dice quizás"));
+escribe(".quizas small", at("Después de veintitrés"), 1.2);
+
+secuencia([[".b1", at("Le pide reunir")], [".b2", at("El libro de Jeremías")], [".b3", at("Y en Jeremías veinticinco")], [".b4", at("Para qué")], [".b5", at("El versículo tres")], [".b6", at("Y la referencia")]]);
+</script>

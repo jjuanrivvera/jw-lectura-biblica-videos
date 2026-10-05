@@ -1,0 +1,55 @@
+<!--lead:2.6-->
+<style>
+.arbol { position: absolute; left: 0; top: 0; }
+.nom { font-family: "Fraunces", serif; font-weight: 600; font-size: 40px; }
+.rot2 { font-family: "Caveat", cursive; font-weight: 700; font-size: 56px; }
+.q { position: absolute; left: 80px; right: 80px; top: 130px; }
+.q .cita { font-size: 58px; }
+.cost { position: absolute; left: 80px; top: 330px; }
+.cost .m { font-size: 64px; }
+</style>
+
+<div class="capcard"><div class="num">Génesis 5</div><svg viewBox="0 0 820 40"><path d="M 10 22 C 220 6 600 36 810 16"/></svg><div class="sub">de Adán a Noé</div></div>
+<div class="fase fx">
+  <div class="cab"><span class="cap">Génesis 5</span><span>versículo 1</span></div>
+  <div class="q"><div class="cita">“Este es el libro de la <b>historia</b> de Adán”<span class="ref">GÉNESIS 5:1</span></div></div>
+  <div class="cost"><div class="m">otra costura: <b>empieza un documento nuevo</b></div></div>
+  <svg class="arbol" width="1920" height="1080" viewBox="0 0 1920 1080">
+    <path class="tronco" d="M 90 760 L 420 760" stroke="#f1e9d8" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <text class="nom t0" x="90" y="730" fill="#f1e9d8">Adán y Eva</text>
+    <path class="rc" d="M 420 760 C 560 760 620 560 820 560 L 1300 560" stroke="#ec8a67" stroke-width="12" stroke-linecap="round" fill="none"/>
+    <g class="nc" font-family="Fraunces" font-weight="600" font-size="36" fill="#ec8a67">
+      <text x="560" y="540">Caín</text><text x="820" y="530">…</text><text x="1100" y="530">Lamec</text>
+    </g>
+    <text class="rot2 lc" x="1100" y="620" fill="#ec8a67">“se jactaba de matar”</text>
+    <g class="fin-c"><path d="M 1310 520 L 1310 600" stroke="#ec8a67" stroke-width="8"/><text class="rot2" x="1340" y="578" fill="#ec8a67">se pierde en el Diluvio</text></g>
+    <path class="rs" d="M 420 760 C 560 760 620 900 820 900 L 1500 900" stroke="#e9bf60" stroke-width="12" stroke-linecap="round" fill="none"/>
+    <g class="ns" font-family="Fraunces" font-weight="600" font-size="36" fill="#e9bf60">
+      <text x="560" y="960">Set</text><text x="700" y="880">Enós</text><text x="830" y="880">…</text><text x="900" y="880">Enoc</text><text x="1040" y="880">Matusalén</text><text x="1250" y="880">Lamec</text><text x="1400" y="880">Noé</text>
+    </g>
+    <g class="fin-s"><path d="M 1500 900 L 1700 900" stroke="#e9bf60" stroke-width="12" stroke-dasharray="4 22" stroke-linecap="round"/>
+      <text class="rot2" x="1520" y="975" fill="#e9bf60">… hasta Jesús</text>
+      <text x="1520" y="1012" font-family="Montserrat" font-weight="700" font-size="24" fill="#b3bdc8">LUCAS 3:36-38</text></g>
+  </svg>
+</div>
+<div class="fuente fu" style="text-align:right">Génesis 4:17-24; 5:1-32 · Perspicacia, vol. 1, “Génesis, Libro de”</div>
+
+<script>
+capitulo(".capcard", 0.2, LEAD - 0.1);
+const T0 = LEAD + 0.35;
+entra(".cab", T0, { y: -20 });
+entra(".q", T0 + 0.1, { y: 30 });
+entra(".cost", at("Es una de esas"), { y: 20 });
+traza(".tronco", at("El capítulo cuatro") - 0.3, 0.6);
+aparece(".t0", at("El capítulo cuatro") - 0.2, 0.4);
+traza(".rc", at("la línea de Caín"), 1.4);
+tl.set($$(".nc text"), { opacity: 0 }, 0);
+tl.to($$(".nc text"), { opacity: 1, duration: 0.3, stagger: 0.25 }, at("la línea de Caín") + 0.3);
+escribe(".lc", at("el que se jactaba"), 0.8);
+traza(".rs", at("la de Set"), 1.4);
+tl.set($$(".ns text"), { opacity: 0 }, 0);
+tl.to($$(".ns text"), { opacity: 1, duration: 0.3, stagger: 0.22 }, at("la de Set") + 0.3);
+aparece(".fin-c", at("una se pierde"), 0.5);
+aparece(".fin-s", at("la otra llega"), 0.6);
+aparece(".fu", T0 + 1, 0.5);
+</script>

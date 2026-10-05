@@ -1,0 +1,40 @@
+<style>
+.img36 .kb img { object-position: 30% 50%; }
+.col36 { position: absolute; right: 60px; width: 920px; top: 110px; bottom: 80px; }
+.col36 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.col36 .def .x { font-size: 60px; text-wrap: balance; }
+.col36 .m { font-size: 68px; }
+.col36 .externa { align-self: flex-start; }
+.par36 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.par36 .tj .x { font-size: 50px; }
+.col36 .clave { align-self: flex-start; font-size: 62px; }
+.pie36 { left: 24px; bottom: 20px; max-width: 900px; }
+</style>
+<div class="sangre img36"><div class="kb"><img src="assets/img/hebron-calle.jpg" /></div></div>
+<div class="velo der"></div>
+<div class="cab" style="left:1030px"><span class="cap">Macpelá hoy</span><span>Hebrón</span></div>
+<div class="col36">
+  <div class="b b1">
+    <div class="def"><div class="t">la Tumba de los Patriarcas</div><div class="x">un gran recinto sobre el lugar que se identifica <b>tradicionalmente</b> con la cueva</div><div class="s"><i>Perspicacia</i>, “Macpelá”, pág.&nbsp;268</div></div>
+    <div class="m c2">construido en el <b>siglo primero</b> de nuestra era; la ciudad vieja <b>creció a su alrededor</b></div>
+    <span class="externa chico c3">fuente externa: UNESCO, “Hebron/Al-Khalil Old Town”</span>
+  </div>
+  <div class="b b2">
+    <span class="clave">tradición antigua, <b>no comprobación</b> de los restos</span>
+    <div class="par36">
+      <div class="tj on"><div class="k">la Biblia</div><div class="x">dice <b>dónde</b> los enterraron</div><div class="ref">Génesis 49:31; 50:13</div></div>
+      <div class="tj t2"><div class="k">el monumento</div><div class="x">vino <b>mucho después</b></div></div>
+    </div>
+  </div>
+</div>
+<div class="pie pie36">“Calle de Hebrón” · <i>Perspicacia</i>, “Hebrón”</div>
+
+<script>
+kb(".img36 .kb", 0, DUR, { s: 1.1, x: 2 }, { s: 1.0, x: 0 });
+aparece(".pie36", 0.6, 0.5);
+secuencia([[".b1", 0.4], [".b2", at("Es una tradición") - 0.2]]);
+const tR = at("El recinto se construyó");
+entra(".b1 .c2", tR - 0.2, { y: 14 });
+entra(".b1 .c3", tR + 0.6, { y: 10 });
+entra(".b2 .t2", at("el monumento vino") - 0.2, { y: 14 });
+</script>

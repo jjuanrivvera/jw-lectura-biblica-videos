@@ -1,0 +1,55 @@
+<style>
+.mapa5 { position: absolute; left: 50px; top: 0; width: 737px; height: 1080px; overflow: hidden; border-radius: 0 0 0 0; box-shadow: 0 0 80px rgba(0,0,0,0.55); }
+.mapa5 .kb { position: absolute; inset: 0; }
+.mapa5 img { width: 737px; height: 1080px; display: block; }
+.mapa5 svg { position: absolute; left: 0; top: 0; width: 737px; height: 1080px; }
+.aro { fill: none; stroke: #f5d36b; stroke-width: 7; }
+.titulo { position: absolute; left: 880px; right: 70px; top: 70px; }
+.titulo .grande { font-size: 124px; color: var(--tiza); }
+.titulo .grande b { color: var(--oro); }
+.titulo .s { font-size: 34px; margin-top: 14px; }
+.caps { position: absolute; left: 880px; right: 70px; top: 320px; display: flex; flex-direction: column; gap: 24px; }
+.cap-f { display: grid; grid-template-columns: 130px 1fr; align-items: center; column-gap: 26px; }
+.cap-f .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 84px; line-height: 1; color: var(--oro); text-align: right; }
+.cap-f .t { font-family: "Caveat", cursive; font-weight: 700; font-size: 60px; line-height: 1.0; }
+.cap-f.c36 .n { color: #b9a4ea; }
+.final { position: absolute; left: 880px; right: 70px; bottom: 44px; font-family: "Caveat", cursive; font-weight: 700; font-size: 58px; color: var(--verde); }
+</style>
+
+<div class="mapa5"><div class="kb"><img src="assets/img/mapa-cinco.jpg" />
+<svg viewBox="0 0 753 1100">
+  <circle class="aro r32" cx="690" cy="440" r="36"/>
+  <circle class="aro r33" cx="560" cy="285" r="36"/>
+  <circle class="aro r34" cx="372" cy="302" r="36"/>
+  <circle class="aro r35 r35a" cx="518" cy="440" r="36"/>
+  <circle class="aro r35 r35b" cx="530" cy="605" r="36"/>
+  <circle class="aro r35 r35c" cx="298" cy="612" r="36"/>
+  <circle class="aro r36" cx="545" cy="880" r="36"/>
+</svg></div>
+<div class="pie-mapa">Mapa: <i>Veamos “la buena tierra”</i>, pág. 7 (wol.jw.org) · números añadidos en la investigación</div>
+</div>
+
+<div class="titulo"><div class="grande">Génesis <b>32 al 36</b></div><div class="s">del regreso de Jacob a la muerte de Isaac · unos veintitrés años</div></div>
+
+<div class="caps">
+  <div class="cap-f c32"><div class="n">32</div><div class="t">la oración, el regalo y la lucha con el ángel: <b style="color:var(--oro)">Israel</b></div></div>
+  <div class="cap-f c33"><div class="n">33</div><div class="t">el abrazo de los dos hermanos</div></div>
+  <div class="cap-f c34"><div class="n">34</div><div class="t">Dina en Siquem · la venganza de Simeón y Leví</div></div>
+  <div class="cap-f c35"><div class="n">35</div><div class="t">Betel · nace Benjamín · mueren Raquel e Isaac</div></div>
+  <div class="cap-f c36"><div class="n">36</div><div class="t">la familia de Esaú se convierte en Edom</div></div>
+</div>
+<div class="final">al final: lecciones y preguntas para pensar</div>
+
+<script>
+entra(".titulo .grande", 0.4, { y: 40, d: 0.8 });
+entra(".titulo .s", at("Estos capítulos"), { y: 20 });
+kb(".mapa5 .kb", 0, DUR, { s: 1.06, y: -1 }, { s: 1.0, y: 0 });
+const C = [["32", at("En el treinta y dos")], ["33", at("En el treinta y tres")], ["34", at("En el treinta y cuatro")], ["35", at("En el treinta y cinco")], ["36", at("Y el treinta y seis")]];
+C.forEach(([n, t], i) => {
+  entra(".c" + n, t, { x: 40, y: 0 });
+  salta(".r" + n, t + 0.2, { desde: 0.3, st: 0.25 });
+  late(".r" + n, t + 1.0, { s: 1.18, n: 3 });
+  if (i < C.length - 1) atenua(".r" + n, C[i + 1][1], 0.35);
+});
+entra(".final", at("Al final"), { y: 20 });
+</script>

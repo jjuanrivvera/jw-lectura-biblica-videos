@@ -1,0 +1,41 @@
+<style>
+.fila48 { position: absolute; left: 60px; right: 60px; height: 380px; display: grid; grid-template-columns: 250px 1fr; column-gap: 30px; align-items: center; }
+.fila48 .med { position: relative; width: 220px; }
+.fila48 svg { width: 1520px; height: 300px; }
+.f48a { top: 110px; }
+.f48b { top: 560px; }
+.nd48 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 24px; fill: var(--oro); text-anchor: middle; }
+.tx48 { font-family: "Caveat", cursive; font-weight: 700; font-size: 36px; fill: var(--tiza); text-anchor: middle; }
+.jac48 { width: 220px; text-align: center; font-family: "Fraunces", serif; font-weight: 700; font-size: 52px; color: var(--tiza); }
+.jac48 small { display: block; font-family: "Caveat", cursive; font-size: 40px; color: var(--tenue); }
+</style>
+
+<div class="cab"><span class="cap">Cómo se amarran los seis capítulos</span><span>Judá y las canas de Jacob</span></div>
+<div class="fila48 f48a"><div class="wj"></div><svg viewBox="0 0 1520 300"><g class="hj"></g></svg></div>
+<div class="fila48 f48b"><div class="jac48">Jacob <small>sus palabras</small></div><svg viewBox="0 0 1520 300"><g class="hc"></g></svg></div>
+
+<script>
+$(".wj").outerHTML = medallon("juda");
+const J = [["37:26, 27", "propone venderlo"], ["43:9", "sale fiador"], ["44:33", "se ofrece como esclavo"], ["46:28", "va por delante"], ["49:10", "“El cetro no se apartará de Judá”"]];
+let h = `<path class="lj" d="M 40 140 H 1480" stroke="rgba(233,191,96,0.6)" stroke-width="6" stroke-linecap="round"/>`;
+J.forEach(([v, t], i) => { const x = 110 + i * 300; h += `<g class="pj j${i}"><circle cx="${x}" cy="140" r="${i === 4 ? 28 : 20}" fill="${i ? "#e9bf60" : "#ec8a67"}"/><text class="nd48" x="${x}" y="92">${v}</text><text class="tx48" x="${x}" y="${i % 2 ? 268 : 204}">${t}</text></g>`; });
+$(".hj").innerHTML = h;
+const C = [["37:35", "“hasta que baje a la Tumba”"], ["42:38", "“mis canas a la Tumba”"], ["44:29, 31", "Judá lo repite"], ["45:28", "“tengo que ir y verlo antes de morir”"], ["46:30", "“ya puedo morir en paz”"]];
+let c = `<path class="lc" d="M 40 140 H 1480" stroke="rgba(147,187,239,0.6)" stroke-width="6" stroke-linecap="round"/>`;
+C.forEach(([v, t], i) => { const x = 110 + i * 300; c += `<g class="pc c${i}"><circle cx="${x}" cy="140" r="20" fill="${i < 3 ? "#b3bdc8" : "#93bbef"}"/><text class="nd48" x="${x}" y="92" style="fill:#93bbef">${v}</text><text class="tx48" x="${x}" y="${i % 2 ? 268 : 204}">${t}</text></g>`; });
+$(".hc").innerHTML = c;
+salta(".f48a .med", 0.2, { desde: 0.6 });
+traza(".lj", 0.4, 1.6);
+salta(".j0", at("Judá propuso"), { desde: 0.4 });
+salta(".j1", at("salió fiador"), { desde: 0.4 });
+salta(".j2", at("se ofreció como esclavo"), { desde: 0.4 });
+salta(".j3", at("se ofreció como esclavo") + 1.0, { desde: 0.4 });
+salta(".j4", at("El cetro"), { desde: 0.4 });
+const tC = at("Jacob repetía");
+tl.fromTo(inicial(el(".jac48"), { opacity: 0 }), { opacity: 0 }, { opacity: 0.4, duration: 0.6, immediateRender: false }, 0.8);
+tl.to($(".jac48"), { opacity: 1, duration: 0.5 }, tC - 0.2);
+traza(".lc", 1.0, 1.4);
+salta([".c0", ".c1", ".c2"], tC + 0.4, { desde: 0.4, st: 0.35 });
+salta(".c3", at("Tengo que ir"), { desde: 0.4 });
+salta(".c4", at("Ya puedo morir"), { desde: 0.4 });
+</script>

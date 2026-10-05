@@ -1,0 +1,80 @@
+<style>
+.titulo { position: absolute; left: 70px; right: 70px; top: 40px; display: flex; align-items: baseline; gap: 44px; }
+.titulo .grande { font-size: 128px; }
+.titulo .grande b { color: var(--oro); }
+.titulo .sub { font-family: "Caveat", cursive; font-weight: 700; font-size: 72px; color: var(--oro); }
+.pan { position: absolute; top: 232px; width: 876px; height: 702px; border-radius: 28px; overflow: hidden; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55); }
+.pan.p38 { left: 56px; }
+.pan.p39 { left: 988px; }
+.pan .kb { position: absolute; inset: 0; }
+.pan img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pan.p39 img { object-position: 62% 50%; }
+.pan .v { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12, 18, 25, 0.25) 0%, rgba(12, 18, 25, 0.35) 32%, rgba(12, 18, 25, 0.9) 70%, rgba(12, 18, 25, 0.97) 100%); }
+.pan .n { position: absolute; left: 36px; top: 18px; font-size: 150px; text-shadow: 0 6px 26px rgba(0, 0, 0, 0.7); }
+.pan .lista { position: absolute; left: 38px; right: 30px; bottom: 30px; display: flex; flex-direction: column; gap: 6px; }
+.pan .lista .m { font-size: 64px; line-height: 1.02; text-shadow: 0 4px 18px rgba(0, 0, 0, 0.85); }
+.pan .borde { position: absolute; inset: 0; border-radius: 28px; border: 5px solid var(--oro); opacity: 0; }
+.final { position: absolute; left: 0; right: 0; bottom: 34px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 62px; color: var(--verde); }
+.pie0 { position: absolute; left: 56px; right: 56px; top: 946px; display: flex; justify-content: space-between; font-family: "Montserrat", sans-serif; font-size: 21px; color: var(--tenue); }
+.pie0 i { color: var(--tiza); }
+</style>
+
+<div class="titulo"><div class="grande">Jeremías <b>38 y 39</b></div><div class="sub">el final de Jerusalén</div></div>
+
+<div class="pan p38"><div class="kb" data-layout-allow-overflow><img src="assets/img/cisterna-guia.jpg" /></div><div class="v"></div>
+  <div class="n numcap">38</div>
+  <div class="lista">
+    <div class="m l1">la ciudad sitiada y <b>sin pan</b></div>
+    <div class="m l2 rojo">la cisterna con fango</div>
+    <div class="m l3">Ébed-Mélec lo saca</div>
+    <div class="m l4">el rey, <b>a escondidas</b></div>
+  </div>
+  <div class="borde"></div>
+</div>
+
+<div class="pan p39"><div class="kb" data-layout-allow-overflow><img src="assets/img/destruccion.jpg" /></div><div class="v"></div>
+  <div class="n numcap">39</div>
+  <div class="lista">
+    <div class="m l1 rojo">cae la ciudad</div>
+    <div class="m l2">la huida · Jericó · <b>Riblá</b></div>
+    <div class="m l3 rojo">Jerusalén arde</div>
+    <div class="m l4"><b>Jehová cuida</b> a los suyos</div>
+  </div>
+  <div class="borde"></div>
+</div>
+
+<div class="pie0"><span><i>Guía de actividades</i>, mayo de 2017 (recreación artística)</span><span><i>Lecciones que aprendo de la Biblia</i>, lección 58</span></div>
+
+<div class="final">al final: lecciones y preguntas para pensar</div>
+
+<script>
+entra(".titulo .grande", 0.3, { y: 40, d: 0.8 });
+escribe(".titulo .sub", at("Estos capítulos"), 1.0);
+entra([".p38", ".p39"], 0.9, { y: 50, d: 0.9, st: 0.25 });
+aparece(".pie0", 1.6, 0.6);
+kb(".p38 .kb", 0, DUR, { s: 1.12, x: 2 }, { s: 1.0, x: 0 });
+kb(".p39 .kb", 0, DUR, { s: 1.0, x: 0 }, { s: 1.12, x: -2 });
+
+const t38 = at("En el treinta y ocho");
+const t39 = at("En el treinta y nueve");
+aparece(".p38 .borde", t38 - 0.2, 0.4);
+atenua(".p39", t38 - 0.2, 0.45);
+entra(".p38 .l1", at("sitiada"), { y: 24 });
+entra(".p38 .l2", at("echan"), { y: 24 });
+entra(".p38 .l3", at("Un funcionario"), { y: 24 });
+entra(".p38 .l4", at("consulta"), { y: 24 });
+
+tl.to($(".p39"), { opacity: 1, duration: 0.5 }, t39 - 0.3);
+atenua(".p38", t39 - 0.3, 0.45);
+desaparece(".p38 .borde", t39 - 0.3, 0.3);
+aparece(".p39 .borde", t39 - 0.2, 0.4);
+entra(".p39 .l1", at("cae la ciudad"), { y: 24 });
+entra(".p39 .l2", at("huye"), { y: 24 });
+entra(".p39 .l3", at("arde"), { y: 24 });
+entra(".p39 .l4", at("Jehová cuida"), { y: 24 });
+
+const tf = at("Al final");
+tl.to($(".p38"), { opacity: 1, duration: 0.5 }, tf - 0.2);
+desaparece(".p39 .borde", tf - 0.2, 0.3);
+entra(".final", tf, { y: 24 });
+</script>

@@ -1,0 +1,40 @@
+<style>
+.mapa { left: 0; top: 0; width: 1100px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 2200px; height: 2000px; }
+.ovalo { fill: rgba(233,191,96,0.25); stroke: #8a5a00; stroke-width: 7; stroke-dasharray: 20 12; }
+.lugar { font-family: "Montserrat"; font-weight: 800; font-size: 50px; fill: #8a1c10; stroke-width: 12px; }
+.jab { fill: none; stroke: #1f7fd8; stroke-width: 12; opacity: 0.8; }
+.funde { position: absolute; left: 980px; top: 0; width: 160px; height: 1080px; background: linear-gradient(90deg, rgba(23,33,43,0), #17212b); }
+.pie-mapa { top: auto; bottom: 22px; max-width: 960px; }
+.col { top: 110px; bottom: 90px; right: 60px; width: 760px; }
+.perfil { width: 740px; height: 250px; }
+.pt { font-family: "Caveat"; font-weight: 700; font-size: 38px; fill: var(--tiza); }
+</style>
+<div class="mapa">
+  <div class="cam">
+    <img src="assets/img/mapa-b6.jpg" />
+    <svg viewBox="0 0 2200 2000">
+      <path class="jab" d="M 700 1180 C 760 1080 830 1030 900 1030 C 1000 1024 1100 1030 1180 1000 C 1250 990 1320 1000 1380 1010"/>
+      <g class="zona"><ellipse class="ovalo" cx="1010" cy="900" rx="230" ry="95"/><text class="lugar halo" x="1010" y="780" text-anchor="middle">GALAAD</text></g>
+    </svg>
+  </div>
+  <div class="pie-mapa">Mapa: apéndice B6 de la TNM, “La ocupación de la Tierra Prometida” (wol.jw.org) · marcas añadidas</div>
+</div>
+<div class="funde"></div>
+<div class="cab sobre"><span class="cap">Galaad hoy</span><span>Génesis 31:21-25</span></div>
+<div class="col">
+  <div class="b a1"><div class="cita md">“la región montañosa que se eleva como una cúpula al E. del río Jordán”</div><div class="s">a los dos lados del Jaboc · Perspicacia, vol. 1, “Galaad”, pág. 981</div>
+    <svg class="perfil" viewBox="0 0 740 250"><path class="suelo" d="M 0 230 L 90 226 C 180 210 240 120 330 70 C 420 30 520 40 600 60 C 660 76 700 90 740 96 L 740 250 L 0 250 Z" fill="rgba(146,209,147,0.28)" stroke="#92d193" stroke-width="5"/><path d="M 0 180 L 740 180" stroke="#93bbef" stroke-width="3" stroke-dasharray="10 8"/><text class="pt" x="10" y="170">nivel del mar</text><text class="pt" x="40" y="246" style="font-size:32px">−210 m (valle del Jordán)</text><text class="pt" x="360" y="40">más de 1.000 m</text></svg></div>
+  <div class="b a2"><div class="m md">lluvias, rocío denso y manantiales: <b style="color:var(--oro)">grandes bosques</b></div><div class="m md">“ideales para criar ganado”</div><div class="m md">su <b style="color:var(--oro)">bálsamo</b>, un aceite medicinal</div><div class="s">Perspicacia, vol. 1, “Galaad”, pág. 982 · “Bálsamo”, pág. 280 · Jeremías 8:22</div></div>
+  <div class="b a3"><span class="externa">fuente externa</span><div class="m">hoy: el noroeste de <b>Jordania</b></div><div class="m md">Ajlún: reserva de bosque de robles, algarrobos y pistachos (1988)</div><div class="m md">el Jaboc hoy se llama río <b>Zarqa</b>, ‘azul’</div><div class="s">“Ajloun Forest Reserve”, “Zarqa River”, Wikipedia, consultados el 28-sep-2026 · Perspicacia, vol. 2, “Jaboq”, pág. 7</div></div>
+</div>
+<script>
+const V = { x: 0, y: 0, w: 1100, h: 1080 };
+const cam = $(".cam");
+tl.set(cam, encuadre({ x: 350, y: 380, w: 1400, h: 1375 }, V), 0);
+tl.to(cam, { ...encuadre({ x: 450, y: 520, w: 1150, h: 1130 }, V), duration: DUR, ease: "none" }, 0);
+aparece(".zona", 0.5, 0.6);
+traza(".jab", at("río Jaboc"), 1.2);
+traza(".perfil .suelo", at("Sube desde"), 1.6);
+secuencia([[".a1", 0.4], [".a2", at("Tenía bosques")], [".a3", at("Hoy es el noroeste")]]);
+</script>

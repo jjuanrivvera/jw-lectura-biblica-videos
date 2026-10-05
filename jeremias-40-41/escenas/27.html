@@ -1,0 +1,60 @@
+<style>
+.duo { position: absolute; left: 70px; right: 70px; top: 100px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+.duo .h { border-radius: 30px; padding: 26px 32px; display: grid; grid-template-columns: 180px 1fr; column-gap: 26px; align-items: center; background: rgba(10, 16, 22, 0.5); border: 4px solid rgba(241, 233, 216, 0.14); }
+.duo .h svg { width: 180px; height: 180px; }
+.duo .h .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 70px; line-height: 1; }
+.duo .h .m { font-size: 52px; margin-top: 6px; }
+.duo .h .r { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.08em; color: var(--tenue); margin-top: 6px; }
+.duo .h.lib { border-color: var(--oro); }
+.duo .h.mue { border-color: rgba(179, 189, 200, 0.5); }
+.duo .h2 { margin-top: 20px; padding: 18px 32px; border-radius: 22px; background: rgba(10, 16, 22, 0.35); border: 3px dashed rgba(241, 233, 216, 0.2); }
+.duo .h2 .m { font-size: 46px; }
+.duo .h2 .s { font-size: 22px; }
+.ic { fill: none; stroke: var(--tiza); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.ic.oro { stroke: var(--oro); }
+.cl27 { position: absolute; left: 70px; right: 70px; top: 610px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; align-items: start; }
+.cl27 .cita { font-size: 40px; }
+.cl27 .s { font-size: 24px; }
+.cl27 .m { font-size: 56px; }
+.fin27 { position: absolute; left: 70px; right: 70px; top: 610px; display: grid; grid-template-columns: 1.2fr 1fr; column-gap: 40px; align-items: center; }
+.fin27 .cita { font-size: 46px; }
+.fin27 .m { font-size: 64px; }
+</style>
+
+<div class="cab"><span class="cap">el hilo de los dos capítulos</span><span>la protección de Jehová</span></div>
+
+<div class="duo">
+  <div>
+    <div class="h lib j1"><svg viewBox="0 0 180 180"><g transform="translate(46 112) rotate(-18)"><path class="ic oro" d="M 36 -8 A 46 26 0 1 1 26 -20"/></g><g transform="translate(130 64) rotate(24)"><path class="ic oro" d="M -34 10 A 42 24 0 1 0 -22 -18"/></g><path class="ic" d="M 86 108 C 94 116 104 112 108 104"/></svg>
+      <div><div class="n">Jeremías</div><div class="m oro">lo libró de las esposas</div><div class="r">JEREMÍAS 40:1-4</div></div></div>
+    <div class="h2 p1"><div class="m">Pedro: <b style="color:var(--oro)">librado</b></div><div class="s">Hechos 12 · <i>Acerquémonos a Jehová</i>, cap. 7</div></div>
+  </div>
+  <div>
+    <div class="h mue g1"><svg viewBox="0 0 180 180"><path class="ic" d="M 30 120 C 30 96 130 96 150 110 C 160 116 160 128 150 132 C 120 146 40 146 30 120 Z"/><path class="ic" style="stroke:var(--tenue)" d="M 150 104 C 146 92 152 80 156 72"/></svg>
+      <div><div class="n">Guedalías</div><div class="m" style="color:var(--tenue)">lo mataron mientras comía</div><div class="r">JEREMÍAS 41:1, 2 · “TEMEROSO DE DIOS”</div></div></div>
+    <div class="h2 p2"><div class="m">Santiago: <span style="color:var(--tenue)">muerto</span></div><div class="s">“Herodes mandó matar al apóstol Santiago cerca del año 44 de nuestra era; pero, poco después, Pedro fue librado”</div></div>
+  </div>
+</div>
+
+<div class="cl27">
+  <div class="c1"><div class="m oro">“Jehová no siempre utilizó su poder para salvar de la muerte a sus siervos”</div><div class="s"><i>Acerquémonos a Jehová</i>, cap. 7, párr. 14</div></div>
+  <div class="cita c2">“Si Jehová siempre protegiera a sus siervos de forma milagrosa, Satanás de seguro diría que no le servimos por amor, sino porque queremos su protección (Job 1:9, 10)”<span class="ref">ACERQUÉMONOS A JEHOVÁ, CAP. 7, PÁRR. 13</span></div>
+</div>
+
+<div class="fin27">
+  <div class="cita f1">“Jehová no siempre eliminará nuestras pruebas, pero podemos estar seguros de que <b>jamás abandonará a quienes lo aman</b>”<span class="ref">LA ATALAYA, ABRIL DE 2025</span></div>
+  <div class="f2"><div class="m oro">y para Guedalías también hay resurrección</div><div class="s" style="font-size:24px">Hechos 24:15</div></div>
+</div>
+
+<script>
+aparece(".cab", 0.2, 0.5);
+entra(".j1", at("A Jeremías"), { y: 30 });
+entra(".g1", at("A Guedalías"), { y: 30 });
+entra(".c1", at("Jehová no siempre"), { y: 24 });
+entra(".p2", at("Herodes"), { y: 20 });
+entra(".p1", at("Pedro fue librado"), { y: 20 });
+entra(".c2", at("Si Jehová siempre"), { y: 24 });
+sale(".cl27", at("Guedalías no murió") - 0.4, { d: 0.4 });
+entra(".f1", at("Jehová no siempre elimina"), { y: 24 });
+entra(".f2", at("Y para Guedalías"), { y: 24 });
+</script>

@@ -1,0 +1,57 @@
+<style>
+.foto15 { position: absolute; left: 0; top: 0; width: 1920px; height: 700px; overflow: hidden; }
+.foto15 .kb { position: absolute; left: 0; top: -150px; width: 1920px; height: 1024px; }
+.foto15 img { width: 1920px; height: 1024px; display: block; }
+.foto15 svg { position: absolute; left: 0; top: 0; width: 1920px; height: 700px; }
+.velo15 { position: absolute; left: 0; right: 0; top: 520px; height: 190px; background: linear-gradient(180deg, rgba(23, 33, 43, 0), #17212b 95%); }
+.pie15 { left: 24px; top: 20px; }
+.m15 { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; fill: #fff; paint-order: stroke; stroke: rgba(17, 25, 33, 0.9); stroke-width: 12px; stroke-linejoin: round; }
+.band15 { position: absolute; left: 90px; right: 90px; top: 690px; bottom: 40px; }
+.band15 > .b { position: absolute; inset: 0; display: flex; align-items: center; gap: 40px; }
+.band15 .def { flex: 1; }
+.band15 .cita { flex: 1.2; font-size: 46px; }
+.band15 .col { display: flex; flex-direction: column; gap: 10px; flex: 1; position: static; width: auto; }
+.nom15 { display: flex; align-items: center; gap: 36px; flex: 1.4; }
+.nom15 .pn { font-family: "Fraunces", serif; font-weight: 700; font-size: 60px; line-height: 1.05; }
+.nom15 .pn small { display: block; font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.1em; color: var(--tenue); margin-top: 6px; }
+.nom15 .flx { font-family: "Caveat", cursive; font-weight: 700; font-size: 80px; color: var(--oro); }
+</style>
+
+<div class="foto15"><div class="kb"><img src="assets/img/zigurat-ur.jpg" /></div>
+  <svg viewBox="0 0 1920 700">
+    <g class="mk1"><path d="M 1180 70 C 1110 60 1060 80 1030 112" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M 1026 86 L 1030 114 L 1056 104" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><text class="m15" x="1192" y="86">la cima</text></g>
+    <g class="mk2"><path d="M 250 240 C 290 280 320 320 350 360" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M 326 356 L 352 364 L 352 336" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><text class="m15" x="120" y="226">la escalera</text></g>
+  </svg>
+</div>
+<div class="velo15"></div>
+<div class="pie pie15">“Zigurat de Ur. La torre que se erigió en Babel se parecía a este zigurat religioso”. <i>Perspicacia</i>, vol. 1, pág. 322 (wol.jw.org)</div>
+
+<div class="band15">
+  <div class="b a1">
+    <div class="def"><div class="t">zigurat<i>Índice: “zigurat, probablemente”</i></div><div class="x">una <b>torre-templo</b> escalonada de Mesopotamia</div></div>
+    <div class="m md" style="flex:1">la torre de Babel <b>se le parecía</b></div>
+  </div>
+  <div class="b a2">
+    <div class="cita">se creía que la capilla de la cima era “la puerta […] a través de la que el Dios del cielo desciende la escalera del zigurat para llegar a su morada terrestre”<span class="ref">EL ARQUEÓLOGO WALTER ANDRAE, EN ¡DESPERTAD!, 22 DE ENERO DE 1989, PÁG. 21</span></div>
+  </div>
+  <div class="b a3">
+    <div class="nom15"><div class="pn">Babel<small>SUS HABITANTES</small></div><div class="flx">“Puerta de Dios”</div></div>
+    <div class="nom15"><div class="pn">Babel<small>GÉNESIS 11:9</small></div><div class="flx" style="color:var(--rojo)">“confusión”</div></div>
+    <div class="f" style="flex:0.8"><i>Bab e ilu</i> · de <i>ba·lál</i>, “confundir” · <i>Perspicacia</i>, vol. 1, “Babel”, pág. 270</div>
+  </div>
+  <div class="b a4">
+    <div class="m" style="flex:1">las inscripciones de las torres-templo:</div>
+    <div class="cita" style="font-size:64px">“Su cima llegará a los cielos”<span class="ref">PERSPICACIA, VOL. 1, “ARQUEOLOGÍA”, PÁG. 194</span></div>
+  </div>
+</div>
+
+<script>
+kb(".kb", 0, DUR, { s: 1.0 }, { s: 1.08, x: -2 });
+aparece(".pie15", 0.6, 0.5);
+secuencia([[".a1", 0.4], [".a2", at("Se creía")], [".a3", at("De ahí")], [".a4", at("Y las inscripciones")]]);
+entra(".a1 .m", at("se parecía") - 0.4, { y: 14 });
+entra(".mk1", at("la cima") - 0.2, { y: 10 });
+entra(".mk2", at("la escalera") - 0.2, { y: 10 });
+desaparece([".mk1", ".mk2"], at("De ahí") - 0.3, 0.4);
+entra(".a3 .nom15:nth-child(2)", at("Puerta de Dios") + 0.3, { x: 30, y: 0 });
+</script>

@@ -1,0 +1,66 @@
+<style>
+.arriba { position: absolute; left: 90px; right: 90px; top: 120px; text-align: center; }
+.arriba .cita { font-size: 58px; }
+.puente { position: absolute; left: 90px; top: 380px; width: 1740px; height: 330px; }
+.pt-c { stroke-width: 8; fill: rgba(16,24,34,0.95); }
+.pt-p { stroke: var(--oro); } .pt-h { stroke: var(--cielo); } .pt-g { stroke: var(--papel); }
+.lab { font-family: "Fraunces", serif; font-weight: 700; font-size: 54px; text-anchor: middle; }
+.lab.p { fill: var(--oro); } .lab.h { fill: var(--cielo); } .lab.g { fill: var(--papel); }
+.sub { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.12em; text-anchor: middle; fill: var(--tenue); text-transform: uppercase; }
+.arco { fill: none; stroke: var(--linea); stroke-width: 6; stroke-dasharray: 4 14; stroke-linecap: round; }
+.abajo { position: absolute; left: 90px; right: 90px; top: 740px; bottom: 90px; }
+.abajo > .b { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.abajo .def { max-width: 1300px; }
+.abajo .cita { font-size: 52px; text-align: center; max-width: 1500px; }
+.dos { position: absolute; left: 90px; right: 90px; top: 140px; height: 470px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.lado { border-radius: 26px; border: 3px solid var(--linea); background: rgba(16,24,34,0.92); padding: 40px 46px; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+.lado .q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.16em; color: var(--tenue); }
+.lado .cita { font-size: 52px; }
+.conc { position: absolute; left: 90px; right: 90px; top: 650px; bottom: 90px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px; text-align: center; }
+.conc .m { font-size: 76px; }
+.conc .cita { font-size: 56px; }
+</style>
+
+<div class="fase fa">
+  <div class="arriba"><div class="cita">“Hay un solo Dios, y hay <b class="cielo">un solo mediador</b> entre Dios y los hombres: un hombre, Cristo Jesús”.<span class="ref">1 Timoteo 2:5</span></div></div>
+  <svg class="puente" viewBox="0 0 1740 330">
+    <path class="arco a1" d="M 310 170 Q 590 20 760 150"/>
+    <path class="arco a2" d="M 980 150 Q 1150 20 1430 170"/>
+    <g class="pp"><circle class="pt-c pt-p" cx="200" cy="190" r="128"/><text class="lab p" x="200" y="208">Dios</text></g>
+    <g class="ph"><circle class="pt-c pt-h" cx="870" cy="190" r="128"/><text class="lab h" x="870" y="208">Cristo</text><text class="sub" x="870" y="40">el mediador</text></g>
+    <g class="pg"><circle class="pt-c pt-g" cx="1540" cy="190" r="128"/><text class="lab g" x="1540" y="180" style="font-size:44px">los</text><text class="lab g" x="1540" y="228" style="font-size:44px">hombres</text></g>
+  </svg>
+  <div class="abajo">
+    <div class="b c1"><div class="def"><div class="t">Concepto</div><div class="w">mediador</div><div class="x">alguien que se pone entre dos partes para reconciliarlas. Por definición, <b>no es ninguna de las dos</b></div></div></div>
+    <div class="b c2"><div class="cita">“No hay mediador cuando solo hay una persona implicada, y <b class="oro">Dios es uno solo</b>”.<span class="ref">Gálatas 3:20</span></div></div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="cab"><span class="sec">En el desierto</span><span></span></div>
+  <div class="dos">
+    <div class="lado l1"><div class="q">LO QUE PASÓ</div><div class="cita">“El espíritu dirigió a Jesús al desierto para que fuera <b class="terra">tentado por el Diablo</b>”.<span class="ref">Mateo 4:1</span></div></div>
+    <div class="lado l2"><div class="q">LO QUE DICE LA BIBLIA DE DIOS</div><div class="cita">“Con cosas malas, <b class="oro">nadie puede probar a Dios</b>”.<span class="ref">Santiago 1:13</span></div></div>
+  </div>
+  <div class="conc">
+    <div class="m k1">la tentación solo tenía sentido <span class="cielo">si Jesús podía elegir</span></div>
+    <div class="cita k2">“Adora a <b class="oro">Jehová tu Dios</b> y sírvele solo a él”.<span class="ref">Mateo 4:10</span></div>
+  </div>
+</div>
+
+<script>
+const tB = at("Piensen también") - 0.3;
+entra(".arriba", at("Otro texto ayuda") + 0.6, { y: 30 });
+entra(".pp", at("hay un solo Dios") , { y: 30 });
+entra(".ph", at("un solo mediador"), { y: 30 });
+entra(".pg", at("y los hombres"), { y: 30 });
+traza(".arco", at("y los hombres") + 0.5, 1.0, { st: 0.3 });
+secuencia([[".c1", at("Un mediador es alguien")], [".c2", at("Pablo lo explica")]], tB);
+tl.to($(".fa"), { opacity: 0, duration: 0.5 }, tB);
+aparece(".fb", tB + 0.3, 0.4);
+entra(".fb .cab", tB + 0.4, { y: -10 });
+entra(".l1", at("El Diablo tentó"), { y: 30 });
+entra(".l2", at("Pero la Biblia dice"), { y: 30 });
+entra(".k1", at("La tentación solo"), { y: 30 });
+entra(".k2", at("Adora a Jehová"), { y: 30 });
+</script>

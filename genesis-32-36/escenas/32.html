@@ -1,0 +1,30 @@
+<style>
+.mapa .cam img, .mapa .cam svg { width: 1944px; height: 2292px; }
+.porc { display: flex; flex-direction: column; gap: 12px; }
+.porc .fila { display: grid; grid-template-columns: 230px 1fr; align-items: center; column-gap: 14px; font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; }
+.porc .bs { display: flex; gap: 8px; }
+.porc .u { width: 110px; height: 44px; border-radius: 8px; background: var(--cielo); }
+.porc .u.d { background: var(--oro); }
+</style>
+<!--incluir:_recuadro.html-->
+<div class="cab sobre"><span class="cap">Génesis 35</span><span>versículos 21 y 22 · 49:3, 4</span></div>
+<div class="col der">
+  <div class="b a1"><div class="def"><div class="t">torre de Éder<i>migh·dal-ʽé·dher</i></div><div class="x">Éder: “<b>Hato</b>”. Una torre de pastores, “atalaya desde donde podían vigilar sus rebaños”</div><div class="s">probablemente entre Belén y Hebrón · <i>Perspicacia</i>, vol. 1, “Éder”, pág. 733</div></div></div>
+  <div class="b a2"><div class="m">la Biblia lo cuenta en una sola línea</div><div class="cita md">“se acostó con Bilhá, la concubina de su padre, e Israel se enteró”<span class="ref">GÉNESIS 35:22</span></div><div class="m md">concubina: una esposa secundaria</div><div class="m rojo">le costó el derecho de primogénito</div></div>
+  <div class="b a3"><div class="def"><div class="t">primogenitura</div><div class="x">la dirección de la familia y “<b>dos partes de los bienes</b>”</div><div class="s"><i>Perspicacia</i>, vol. 2, “Primogenitura”, pág. 718 · Deuteronomio 21:17</div></div>
+    <div class="porc"><div class="fila f1"><span>el primogénito</span><div class="bs"><div class="u d"></div><div class="u d"></div></div></div><div class="fila f2"><span>cada hermano</span><div class="bs"><div class="u"></div></div></div></div>
+    <div class="cita md">“su derecho de primogénito pasó a ser de los hijos de José”<span class="ref">1 CRÓNICAS 5:1</span></div></div>
+  <div class="b a4"><div class="cita">“No sobresaldrás”<span class="ref">GÉNESIS 49:4</span></div><div class="cita md" style="color:var(--oro)">“Pero Jacob no rechazó a Rubén como hijo, y sus descendientes llegaron a formar una tribu de Israel”</div><div class="f"><i>La Atalaya</i> (estudio), junio de 2025, pág. 4</div></div>
+</div>
+<script>
+pinta(".marcas", `<path class="flecha r1" stroke-width="12" stroke="#d99a14" d="M 683 1064 C 660 1150 600 1230 575 1297"/><circle class="hueco h-e" cx="628" cy="1190" r="46"/><g class="h-et"><rect x="690" y="1160" width="420" height="72" rx="14" fill="#a8321c"/><text x="900" y="1210" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="40" fill="#fff">torre de Éder (?)</text></g><circle class="anillo oro a-m" cx="564" cy="1297" r="40"/>`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 200, y: 850, w: 900, h: 868 }, V), 0);
+traza(".r1", 0.4, 1.4);
+traza(".h-e", 1.0, 0.7);
+aparece(".h-et", 1.4, 0.5);
+aparece(".a-m", at("Jacob no lo") - 3, 0.5);
+secuencia([[".a1", 0.4], [".a2", at("Allí pasó")], [".a3", at("Ese derecho")], [".a4", at("Pero Jacob")]]);
+entra(".f1", at("dos partes"), { x: -20, y: 0 });
+entra(".f2", at("el doble"), { x: -20, y: 0 });
+</script>

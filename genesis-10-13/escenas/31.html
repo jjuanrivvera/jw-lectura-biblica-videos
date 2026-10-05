@@ -1,0 +1,52 @@
+<style>
+.es31 { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.es31 svg { width: 1920px; height: 1080px; display: block; }
+.e31 { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; fill: var(--tiza); }
+.e31.azul { fill: #93bbef; }
+.e31.oro { fill: var(--oro); }
+.k31 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.12em; fill: var(--tenue); }
+.foto31 { position: absolute; left: 1180px; top: 90px; width: 680px; height: 363px; border-radius: 20px; overflow: hidden; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
+.foto31 img { width: 680px; height: 363px; object-fit: cover; display: block; }
+.pie31 { left: 1180px; top: 462px; max-width: 680px; }
+.col31 { position: absolute; left: 1180px; right: 60px; top: 540px; bottom: 60px; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.col31 .cita { font-size: 50px; }
+.cab31 { position: absolute; left: 90px; top: 40px; }
+</style>
+
+<div class="cab sobre cab31" style="z-index:3;right:auto"><span class="cap">Ur, hoy: Al-Muqayyar</span><span></span></div>
+<div class="es31"><svg viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="g31-rio" x1="0" x2="1"><stop offset="0" stop-color="#3f7fbf"/><stop offset="1" stop-color="#6aa6dc"/></linearGradient>
+    <pattern id="g31-ruinas" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><rect width="26" height="26" fill="#b99467"/><rect width="10" height="26" fill="#a78156"/></pattern>
+  </defs>
+  <path class="antes" d="M 250 120 C 290 260 250 380 300 520 C 340 640 300 780 330 940" fill="none" stroke="url(#g31-rio)" stroke-width="34" stroke-linecap="round" opacity="0.9"/>
+  <text class="e31 azul ta" x="96" y="600">el río,</text><text class="e31 azul ta" x="60" y="652">en la antigüedad</text>
+  <g class="ciudad"><ellipse cx="560" cy="540" rx="230" ry="290" fill="url(#g31-ruinas)" stroke="#e9bf60" stroke-width="6"/><rect x="520" y="480" width="80" height="60" fill="#7a5230" stroke="#f3d38a" stroke-width="4"/><text class="e31 oro" x="560" y="460" text-anchor="middle">zigurat</text></g>
+  <g class="med"><path d="M 330 870 H 790 M 330 856 V 884 M 790 856 V 884" stroke="#f1e9d8" stroke-width="4"/><text class="k31" x="560" y="920" text-anchor="middle">730 × 910 m</text></g>
+  <g class="hoy"><path d="M 900 540 H 1040" stroke="#f1e9d8" stroke-width="5" stroke-dasharray="14 10"/><path d="M 1040 520 L 1060 560 M 1052 520 L 1072 560" stroke="#f1e9d8" stroke-width="5"/><path d="M 1072 540 H 1100 M 1080 522 L 1102 540 L 1080 558" fill="none" stroke="#f1e9d8" stroke-width="5" stroke-linejoin="round"/><text class="e31" x="1000" y="500" text-anchor="middle">16 km al este</text><text class="k31" x="1000" y="600" text-anchor="middle">NO A ESCALA</text></g>
+  <path class="ahora" d="M 1130 140 C 1110 320 1150 500 1120 700 C 1100 840 1130 940 1120 1040" fill="none" stroke="url(#g31-rio)" stroke-width="34" stroke-linecap="round" opacity="0.9"/>
+  <text class="e31 azul th" x="1000" y="1000" text-anchor="end">el Éufrates, hoy</text>
+</svg></div>
+<div class="foto31"><img src="assets/img/zigurat-ur.jpg" /></div>
+<div class="pie pie31">Zigurat de Ur · <i>Perspicacia</i>, vol. 1, pág. 322 (wol.jw.org)</div>
+<div class="col31">
+  <div class="m md z1">su zigurat: “el <b>mejor conservado</b> de todos los que se han encontrado”</div>
+  <div class="cita z2">Jehová tomó a Abrahán “del <b>otro lado del Río</b>”<span class="ref">JOSUÉ 24:3</span></div>
+  <div class="f z2"><i>Perspicacia</i>, vol. 2, “Ur”, págs. 1173, 1174 · esquema propio, sin escala entre la ciudad y el río de hoy</div>
+</div>
+
+<script>
+entra(".cab31", 0.3, { y: -14 });
+aparece(".ciudad", 0.5, 0.6);
+entra(".med", at("Al Mucayar") - 0.2, { y: 10 });
+entra(".foto31", at("zigurat") - 0.3, { y: 24 });
+aparece(".pie31", at("zigurat"), 0.5);
+entra(".z1", at("mejor conservado") - 0.3, { y: 14 });
+traza(".ahora", at("El Éufrates pasa") - 0.2, 1.2);
+aparece(".th", at("El Éufrates pasa") + 0.6, 0.5);
+entra(".hoy", at("dieciséis kilómetros") - 0.2, { x: -20, y: 0 });
+traza(".antes", at("en la antigüedad") - 0.2, 1.2);
+aparece(".ta", at("bañaba"), 0.5);
+late(".ciudad ellipse", at("muralla occidental"), { s: 1.03, n: 3 });
+entra(".z2", at("Por eso Josué") - 0.2, { y: 16 });
+</script>

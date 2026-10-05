@@ -1,0 +1,64 @@
+<!--incluir:_g49b-hijo.html-->
+<style>
+.pres.p26 { gap: 18px; top: 90px; bottom: 60px; }
+.pres.p26 .cita { font-size: 46px; }
+.dib26 { display: flex; align-items: flex-end; gap: 10px; margin-top: -10px; }
+.dib26 .burro { width: 560px; height: 336px; flex: none; }
+.dib26 .clave { margin-bottom: 40px; font-size: 50px; }
+</style>
+
+<div class="fase fmapa"><!--incluir:_b6.html--><div class="funde-der"></div></div>
+<div class="cab ch"><span class="cap">Génesis 49</span><span>versículos 14 y 15</span></div>
+<div class="hijo gh" style="--c: var(--lea)"><img src="assets/img/isacar-g.jpg" /></div>
+<div class="pres p26">
+  <div class="nhijo">Isacar<small>“él es salario”</small></div>
+      <div class="cita ct26">“Isacar es un <b>burro de huesos fuertes</b> que está echado entre las dos bolsas de carga. [...] <b>Inclinará su hombro</b> para llevar cargas”<span class="ref">GÉNESIS 49:14, 15</span></div>
+    <div class="dib26"><!--incluir:_g49b-burro.html--><span class="clave">una tribu <b>dispuesta a trabajar</b></span></div>
+</div>
+<div class="mini"><div class="nhijo">Isacar<small>cómo se cumplió</small></div></div>
+<div class="col49">
+  <div class="b b1">
+    <div class="cumple"><div class="k">su tierra</div><div class="x">parte del <b>valle de Jezreel</b>: una llanura muy fértil</div></div>
+    <div class="cumple c2"><div class="k">pero</div><div class="x">había que <b>trabajarla mucho</b></div></div>
+  </div>
+  <div class="b b2">
+    <div class="cumple"><div class="k">Jueces 5:15</div><div class="x">apoyó a <b>Débora y a Barac</b></div></div>
+    <div class="cumple c2"><div class="k">1 Reyes 4:7, 17</div><div class="x">ayudaba a <b>abastecer la casa del rey Salomón</b></div></div>
+  </div>
+  <div class="b b3">
+    <span class="clave">no era <b>un castigo</b></span>
+    <div class="cumple"><div class="k">el orden del versículo 15</div><div class="x">primero, <b>una tierra agradable</b>; después, <b>los hombros</b> que la trabajarían</div></div>
+  </div>
+</div>
+<div class="fu49 f"><i>La Atalaya</i>, junio de 2025, “Qué nos enseñan las últimas palabras de Jacob (parte 2)”, pág.&nbsp;9 · <i>Perspicacia</i>, “Isacar”, págs.&nbsp;1253 a 1254</div>
+
+<script>
+/*incluir:_g49b-hijo.js*/
+const [ix, iy] = B6.isacar;
+pinta(".marcas", `
+  <ellipse class="anillo oro a-i" cx="${ix - 30}" cy="${iy + 10}" rx="260" ry="150" transform="rotate(-8 ${ix} ${iy})" style="stroke-width:10"/>
+  <ellipse class="jz" cx="1690" cy="1395" rx="190" ry="48" transform="rotate(12 1690 1395)" fill="rgba(146,209,147,0.42)" stroke="#2f7d3c" stroke-width="5" stroke-dasharray="16 12"/>
+  <g class="ljz">${chip(1618, 1536, "valle de Jezreel", { fs: 28, cls: "verde" })}</g>
+`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".fmapa .cam"), encuadre({ x: 1250, y: 960, w: 960, h: 926 }, V), 0);
+hijoEntra(0.3);
+entra(".ct26", 0.9, { y: 24 });
+const tB = at("burro de huesos");
+aparece(".br-sombra", tB - 0.1, 0.3);
+entra(".br-cuerpo", tB - 0.1, { x: -40, y: 0, d: 0.8 });
+entra(".br-bolsa1", at("dos bolsas") - 0.1, { y: -40, d: 0.5, ease: "back.out(1.6)" });
+tl.set($(".br-bolsa2"), { opacity: 0 }, 0);
+tl.fromTo($(".br-bolsa2"), { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.6)", immediateRender: false }, at("dos bolsas") + 0.2);
+late(".br-bolsa1", at("cargado a los dos") - 0.1, { s: 1.08, n: 1 });
+entra(".dib26 .clave", at("una tribu dispuesta") - 0.1, { y: 16 });
+const tM = at("A Isacar le tocó");
+hijoAMapa(tM - 0.5);
+traza(".a-i", tM + 0.4, 0.9);
+aparece(".jz", at("valle de Jezreel") - 0.1, 0.6);
+aparece(".ljz", at("valle de Jezreel") + 0.3, 0.4);
+secuencia([[".b1", tM], [".b2", at("Apoyó a Débora") - 0.2], [".b3", at("No era un castigo") - 0.2]]);
+entra(".b1 .c2", at("que había que trabajar") - 0.1, { y: 14 });
+entra(".b2 .c2", at("abastecer la casa") - 0.3, { y: 14 });
+entra(".b3 .cumple", at("una tierra agradable") - 0.3, { y: 14 });
+</script>

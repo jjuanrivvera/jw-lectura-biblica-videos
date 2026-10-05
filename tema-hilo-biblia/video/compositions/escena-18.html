@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="UTF-8" /><title>Cómo termina</title></head>
+<body>
+<template>
+<style>
+@font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces.ttf") format("truetype"); font-weight: 100 900; font-style: normal; }
+@font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Italic.ttf") format("truetype"); font-weight: 100 900; font-style: italic; }
+@font-face { font-family: "Caveat"; src: url("assets/fonts/Caveat.ttf") format("truetype"); font-weight: 400 700; }
+@font-face { font-family: "Montserrat"; src: url("assets/fonts/Montserrat.ttf") format("truetype"); font-weight: 100 900; }
+@font-face { font-family: "Griego"; src: url("assets/fonts/NotoSerif.ttf") format("truetype"); font-weight: 500; }
+#escena-18 {
+/* Estilo común de todas las escenas (1920x1080). El constructor lo anida bajo #escena-NN. */
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+color: var(--papel);
+font-family: "Montserrat", sans-serif;
+/* Un color por papel, siempre el mismo: oro solo para la línea de la descendencia (el hilo);
+   terracota para la serpiente y su descendencia; azul para lo celestial; salvia para la tierra y el paraíso. */
+--tinta: #10162a;
+--panel: rgba(18, 26, 48, 0.94);
+--papel: #f3ead8;
+--tenue: #aab4c8;
+--oro: #ebbd5c;
+--oro-claro: #f6d98f;
+--terra: #e07a5f;
+--cielo: #8fb9f2;
+--salvia: #8fd0a0;
+--linea: rgba(243, 234, 216, 0.22);
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.contenido { position: absolute; inset: 0; }
+.fase { position: absolute; inset: 0; }
+svg { overflow: visible; }
+
+.oro { color: var(--oro); }
+.terra { color: var(--terra); }
+.cielo { color: var(--cielo); }
+.salvia { color: var(--salvia); }
+
+/* Cabecera: sección a la izquierda, texto o tema a la derecha. */
+.cab {
+  position: absolute; left: 80px; right: 80px; top: 40px;
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 30px;
+  color: var(--tenue); letter-spacing: 0.1em; text-transform: uppercase;
+}
+.cab .sec { color: var(--oro); }
+
+/* Pie con la fuente. */
+.fuente {
+  position: absolute; left: 80px; right: 80px; bottom: 28px;
+  font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 24px; line-height: 1.3;
+  color: var(--tenue);
+}
+.fuente b, .fuente i { color: var(--papel); }
+.fuente b { font-weight: 700; }
+
+/* Columna de texto: el bloque activo se centra en el alto disponible. */
+.col { position: absolute; top: 120px; bottom: 100px; right: 90px; width: 780px; }
+.col.izq { left: 90px; right: auto; }
+.col > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+
+/* Registros: la Biblia, la anotación a mano, el texto de apoyo. */
+.cita { font-family: "Fraunces", serif; font-weight: 500; font-size: 54px; line-height: 1.22; color: var(--papel); }
+.cita b { font-weight: 700; }
+.ref { display: block; margin-top: 16px; font-family: "Montserrat", sans-serif; font-weight: 700;
+  font-size: 28px; letter-spacing: 0.12em; color: var(--tenue); text-transform: uppercase; }
+.m { font-family: "Caveat", cursive; font-weight: 700; font-size: 72px; line-height: 1.04; color: var(--papel); }
+.s { font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 34px; line-height: 1.35; color: var(--tenue); }
+.s b { color: var(--papel); font-weight: 700; }
+.titulo { font-family: "Fraunces", serif; font-weight: 700; font-size: 96px; line-height: 1.02; letter-spacing: -0.01em; }
+.grande { font-family: "Fraunces", serif; font-weight: 700; font-size: 150px; line-height: 1; letter-spacing: -0.02em; }
+
+/* Tarjeta de término: la palabra, qué es y por qué importa aquí. */
+.def { align-self: stretch; border: 3px solid rgba(243, 234, 216, 0.5); border-radius: 24px; padding: 24px 34px 28px;
+  background: var(--panel); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35); }
+.def .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--tenue); }
+.def .w { font-family: "Fraunces", serif; font-style: italic; font-weight: 600; font-size: 64px; line-height: 1.05; margin-top: 6px; color: var(--papel); }
+.def .x { font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 32px; line-height: 1.35; margin-top: 12px; color: var(--papel); }
+.def .x b { color: var(--oro); }
+.def .f { font-size: 24px; color: var(--tenue); margin-top: 12px; font-weight: 500; }
+
+/* Ilustraciones de la JW: marco sencillo. */
+.ilus { position: absolute; overflow: hidden; border-radius: 22px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
+.ilus .kb { position: absolute; inset: 0; }
+.ilus img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pie-img { position: absolute; padding: 8px 16px; border-radius: 10px; background: rgba(12, 18, 34, 0.86);
+  font-size: 24px; color: var(--papel); }
+.pie-img i { color: var(--papel); }
+
+/* Mapas: cámara sobre la imagen real y trazos encima, en coordenadas de la imagen. */
+.mapa { position: absolute; overflow: hidden; background: #dfe6d0; }
+.mapa .cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.mapa .cam img, .mapa .cam svg { position: absolute; left: 0; top: 0; display: block; }
+
+/* Trazos. */
+.trazo { fill: none; stroke: var(--papel); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.hilo { fill: none; stroke: var(--oro); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round;
+  filter: drop-shadow(0 0 10px rgba(235, 189, 92, 0.55)); }
+
+/* Rótulo de parte. */
+.parte { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 22px; }
+.parte .n { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.3em; color: var(--tenue); text-transform: uppercase; }
+.parte .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 120px; line-height: 1.02; max-width: 1600px; }
+
+/* Píldora de etiqueta. */
+.chip { display: inline-block; padding: 10px 24px; border-radius: 40px; font-family: "Montserrat", sans-serif; font-weight: 700;
+  font-size: 30px; border: 3px solid currentColor; }
+
+
+.arriba { position: absolute; left: 140px; right: 140px; top: 120px; height: 400px; }
+.arriba > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 18px; }
+.arriba .cita { font-size: 52px; }
+.arriba .cita b { color: var(--oro-claro); }
+.arriba .s { font-size: 34px; color: var(--papel); }
+.arriba .s b { color: var(--cielo); }
+.ruta { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+.ruta text { font-family: "Montserrat", sans-serif; }
+.med { position: absolute; width: 230px; height: 230px; border-radius: 50%; overflow: hidden; border: 6px solid var(--papel); box-shadow: 0 16px 40px rgba(0,0,0,0.45); }
+.med img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.m1 { left: 95px; top: 545px; }
+.m2 { left: 1375px; top: 545px; }
+.aqui { position: absolute; left: 380px; top: 640px; width: 260px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 58px; color: var(--cielo); }
+.fuente { bottom: 22px; }
+
+}
+</style>
+<div id="escena-18" data-composition-id="escena-18" data-width="1920" data-height="1080">
+<div class="contenido">
+<div class="cab"><span class="sec">Cómo termina</span><span>Apocalipsis</span></div>
+<div class="arriba">
+  <div class="b a1"><div class="cita">“El reino del mundo ha llegado a ser <b>el Reino de nuestro Señor y de su Cristo</b>, y él reinará para siempre jamás”.<span class="ref">Apocalipsis 11:15</span></div></div>
+  <div class="b a2"><div class="cita">“Hacia abajo fue arrojado el gran dragón, <b>la serpiente original</b>, al que llaman Diablo y Satanás”.<span class="ref">Apocalipsis 12:9</span></div><div class="s">Jesús se convirtió en Rey en 1914, y poco después expulsó a Satanás del cielo.</div></div>
+  <div class="b a3"><div class="cita">“Ahora el Diablo solo puede ejercer su influencia en la Tierra y <b>está esperando su destrucción</b>”.<span class="ref">La Atalaya (estudio), julio de 2022, pág. 17</span></div></div>
+  <div class="b a4"><div class="s"><b>Armagedón:</b> la guerra de Dios contra los que se oponen a él (Apocalipsis 16:16).</div><div class="s"><b>Los mil años:</b> Satanás, en el abismo, “en un estado de inactividad semejante a la muerte”, mientras Cristo gobierna.<span class="ref">Apocalipsis 20:1-3 · Apocalipsis... ¡se acerca su magnífica culminación!, cap. 40, pág. 288</span></div></div>
+  <div class="b a5"><div class="cita">“El Diablo, que las estuvo engañando, <b>fue arrojado al lago de fuego</b>”.<span class="ref">Apocalipsis 20:10</span></div><div class="s">“¡Ahora llegamos al cumplimiento de esa profecía!”: la de Génesis 3:15.<span class="ref">Apocalipsis... ¡se acerca su magnífica culminación!, cap. 40, pág. 286</span></div></div>
+  <div class="b a6"><div class="cita">“El Hijo mismo también se someterá a aquel que sometió todas las cosas a él, <b>para que Dios sea todas las cosas para todos</b>”.<span class="ref">1 Corintios 15:28</span></div></div>
+</div>
+<svg class="ruta" viewBox="0 0 1920 1080"></svg>
+<div class="med m1"><img src="assets/img/w22-1914.jpg" /></div>
+<div class="med m2"><img src="assets/img/w22-lago.jpg" /></div>
+<div class="aqui">estamos aquí</div>
+<div class="fuente">Ilustraciones: <i>La Atalaya</i> (estudio), julio de 2022, pág. 17</div>
+</div>
+</div>
+<script>
+(function () {
+const ID = "escena-18";
+const DUR = 65.304;
+const LEAD = 0.6;
+const W = [{"w":"Volvamos","t":0.703,"d":0.539},{"w":"ahora","t":1.255,"d":0.408},{"w":"a","t":1.676,"d":0.039},{"w":"Apocalipsis","t":1.729,"d":0.855},{"w":"para","t":2.834,"d":0.197},{"w":"ver","t":3.045,"d":0.224},{"w":"cómo","t":3.282,"d":0.263},{"w":"termina","t":3.558,"d":0.461},{"w":"la","t":4.032,"d":0.105},{"w":"historia","t":4.15,"d":0.566},{"w":"Primero","t":5.626,"d":0.513},{"w":"el","t":6.442,"d":0.184},{"w":"Reino","t":6.639,"d":0.303},{"w":"empieza","t":6.955,"d":0.474},{"w":"a","t":7.442,"d":0.026},{"w":"gobernar","t":7.482,"d":0.553},{"w":"El","t":8.376,"d":0.132},{"w":"reino","t":8.521,"d":0.355},{"w":"del","t":8.889,"d":0.171},{"w":"mundo","t":9.074,"d":0.342},{"w":"ha","t":9.429,"d":0.039},{"w":"llegado","t":9.482,"d":0.408},{"w":"a","t":9.903,"d":0.026},{"w":"ser","t":9.942,"d":0.237},{"w":"el","t":10.192,"d":0.105},{"w":"Reino","t":10.311,"d":0.355},{"w":"de","t":10.679,"d":0.105},{"w":"nuestro","t":10.797,"d":0.329},{"w":"Señor","t":11.139,"d":0.395},{"w":"y","t":11.547,"d":0.053},{"w":"de","t":11.613,"d":0.105},{"w":"su","t":11.732,"d":0.145},{"w":"Cristo","t":11.889,"d":0.5},{"w":"Jesús","t":13.297,"d":0.408},{"w":"se","t":13.718,"d":0.105},{"w":"convirtió","t":13.836,"d":0.539},{"w":"en","t":14.389,"d":0.132},{"w":"Rey","t":14.534,"d":0.263},{"w":"en","t":14.81,"d":0.105},{"w":"mil","t":14.928,"d":0.197},{"w":"novecientos","t":15.139,"d":0.632},{"w":"catorce","t":15.784,"d":0.553},{"w":"y","t":16.626,"d":0.092},{"w":"poco","t":16.731,"d":0.303},{"w":"después","t":17.047,"d":0.408},{"w":"Satanás","t":17.468,"d":0.474},{"w":"fue","t":17.955,"d":0.197},{"w":"arrojado","t":18.165,"d":0.474},{"w":"del","t":18.652,"d":0.171},{"w":"cielo","t":18.836,"d":0.421},{"w":"la","t":19.573,"d":0.092},{"w":"serpiente","t":19.678,"d":0.553},{"w":"original","t":20.244,"d":0.553},{"w":"al","t":21.06,"d":0.145},{"w":"que","t":21.218,"d":0.118},{"w":"llaman","t":21.349,"d":0.421},{"w":"Diablo","t":21.784,"d":0.355},{"w":"y","t":22.152,"d":0.053},{"w":"Satanás","t":22.218,"d":0.697},{"w":"Ahí","t":23.824,"d":0.329},{"w":"estamos","t":24.166,"d":0.487},{"w":"nosotros","t":24.666,"d":0.724},{"w":"Ahora","t":26.297,"d":0.342},{"w":"el","t":26.653,"d":0.079},{"w":"Diablo","t":26.745,"d":0.355},{"w":"solo","t":27.113,"d":0.329},{"w":"puede","t":27.455,"d":0.25},{"w":"ejercer","t":27.718,"d":0.461},{"w":"su","t":28.192,"d":0.105},{"w":"influencia","t":28.311,"d":0.513},{"w":"en","t":28.837,"d":0.053},{"w":"la","t":28.903,"d":0.092},{"w":"tierra","t":29.008,"d":0.434},{"w":"y","t":29.732,"d":0.105},{"w":"está","t":29.85,"d":0.25},{"w":"esperando","t":30.113,"d":0.539},{"w":"su","t":30.666,"d":0.158},{"w":"destrucción","t":30.837,"d":0.724},{"w":"Sigue","t":32.468,"d":0.408},{"w":"Armagedón","t":32.889,"d":0.618},{"w":"la","t":33.863,"d":0.079},{"w":"guerra","t":33.955,"d":0.303},{"w":"de","t":34.271,"d":0.105},{"w":"Dios","t":34.389,"d":0.289},{"w":"contra","t":34.692,"d":0.342},{"w":"los","t":35.047,"d":0.184},{"w":"que","t":35.245,"d":0.118},{"w":"se","t":35.376,"d":0.118},{"w":"oponen","t":35.508,"d":0.447},{"w":"a","t":35.968,"d":0.132},{"w":"él","t":36.113,"d":0.237},{"w":"Después","t":37.271,"d":0.592},{"w":"durante","t":38.126,"d":0.382},{"w":"mil","t":38.521,"d":0.237},{"w":"años","t":38.771,"d":0.355},{"w":"Satanás","t":39.389,"d":0.605},{"w":"queda","t":40.008,"d":0.276},{"w":"en","t":40.297,"d":0.092},{"w":"el","t":40.403,"d":0.118},{"w":"abismo","t":40.534,"d":0.461},{"w":"en","t":41.284,"d":0.158},{"w":"un","t":41.455,"d":0.132},{"w":"estado","t":41.6,"d":0.395},{"w":"de","t":42.008,"d":0.118},{"w":"inactividad","t":42.139,"d":0.697},{"w":"semejante","t":42.85,"d":0.579},{"w":"a","t":43.442,"d":0.026},{"w":"la","t":43.482,"d":0.105},{"w":"muerte","t":43.6,"d":0.434},{"w":"mientras","t":44.311,"d":0.395},{"w":"Cristo","t":44.718,"d":0.382},{"w":"gobierna","t":45.113,"d":0.605},{"w":"Y","t":46.626,"d":0.158},{"w":"al","t":46.797,"d":0.118},{"w":"final","t":46.929,"d":0.342},{"w":"llega","t":47.284,"d":0.303},{"w":"lo","t":47.6,"d":0.118},{"w":"que","t":47.732,"d":0.132},{"w":"Génesis","t":47.876,"d":0.526},{"w":"anunció","t":48.416,"d":0.526},{"w":"El","t":49.218,"d":0.184},{"w":"Diablo","t":49.416,"d":0.434},{"w":"que","t":50.139,"d":0.118},{"w":"las","t":50.271,"d":0.197},{"w":"estuvo","t":50.482,"d":0.382},{"w":"engañando","t":50.876,"d":0.618},{"w":"fue","t":51.797,"d":0.197},{"w":"arrojado","t":52.008,"d":0.474},{"w":"al","t":52.495,"d":0.092},{"w":"lago","t":52.6,"d":0.276},{"w":"de","t":52.889,"d":0.105},{"w":"fuego","t":53.008,"d":0.447},{"w":"La","t":54.363,"d":0.171},{"w":"cabeza","t":54.547,"d":0.5},{"w":"aplastada","t":55.337,"d":0.632},{"w":"para","t":55.982,"d":0.224},{"w":"siempre","t":56.218,"d":0.513},{"w":"Por","t":57.639,"d":0.184},{"w":"último","t":57.837,"d":0.461},{"w":"el","t":58.587,"d":0.184},{"w":"Hijo","t":58.784,"d":0.211},{"w":"se","t":59.008,"d":0.145},{"w":"somete","t":59.166,"d":0.421},{"w":"a","t":59.6,"d":0.026},{"w":"su","t":59.639,"d":0.145},{"w":"Padre","t":59.797,"d":0.395},{"w":"para","t":60.482,"d":0.224},{"w":"que","t":60.718,"d":0.145},{"w":"Dios","t":60.876,"d":0.263},{"w":"sea","t":61.153,"d":0.25},{"w":"todas","t":61.416,"d":0.408},{"w":"las","t":61.837,"d":0.145},{"w":"cosas","t":61.995,"d":0.408},{"w":"para","t":62.416,"d":0.211},{"w":"todos","t":62.639,"d":0.553}];
+// Librería común de las escenas. El constructor la pega dentro de una función que ya
+// define ID (id de la composición), DUR (duración de la escena), LEAD (silencio antes de la
+// voz) y W (palabras de la voz con su tiempo, ya desplazadas por LEAD).
+const root = document.getElementById(ID);
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+// Acepta un selector, un elemento, una NodeList o una lista mezclada de cualquiera de ellos.
+const el = (x) => (typeof x === "string" ? $$(x) : Array.isArray(x) ? x.flatMap((y) => el(y)) : x instanceof NodeList ? Array.from(x) : [x]);
+const tl = gsap.timeline({ paused: true });
+
+// ---------- sincronía con la voz ----------
+const norm = (s) =>
+  s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9ñ]/g, "");
+const WN = W.map((w) => norm(w.w));
+const trozos = (frase) => frase.split(/[\s\-]+/).map(norm).filter(Boolean);
+function buscar(frase, despues) {
+  const p = trozos(frase);
+  for (let i = 0; i < WN.length; i++) {
+    if (W[i].t < (despues || 0) - 0.001) continue;
+    let ok = true;
+    for (let k = 0; k < p.length; k++) if (WN[i + k] !== p[k]) { ok = false; break; }
+    if (ok) return i;
+  }
+  throw new Error(ID + ': no encuentro "' + frase + '" después de ' + despues);
+}
+// Momento en que la voz empieza a decir la frase (primera vez después de `despues`).
+function at(frase, despues) { return W[buscar(frase, despues)].t; }
+// Momento en que la voz termina de decir la frase.
+function fin(frase, despues) {
+  const i = buscar(frase, despues);
+  const w = W[i + trozos(frase).length - 1];
+  return w.t + w.d;
+}
+const FIN_VOZ = W.length ? W[W.length - 1].t + W[W.length - 1].d : DUR;
+
+// ---------- movimientos ----------
+// Todos los elementos que se revelan empiezan ocultos por CSS (.oc, .esc, trazos) y se
+// animan con immediateRender:false, así cada cuadro depende solo del tiempo.
+const IR = { immediateRender: false };
+// El primer movimiento que revela un elemento lo deja oculto desde el cuadro cero.
+const _ocultos = new WeakSet();
+function inicial(els, props) {
+  els.forEach((e) => { if (!_ocultos.has(e)) { _ocultos.add(e); gsap.set(e, props); } });
+  return els;
+}
+function entra(x, t, o = {}) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0, y: o.y ?? 36, x: o.x ?? 0, scale: o.s ?? 1 },
+    { opacity: 1, y: 0, x: 0, scale: 1, duration: o.d ?? 0.6, ease: o.ease ?? "power3.out", stagger: o.st ?? 0, ...IR }, t);
+}
+function sale(x, t, o = {}) {
+  tl.fromTo(el(x), { opacity: 1 }, { opacity: 0, y: o.y ?? -24, duration: o.d ?? 0.45, ease: "power2.in", stagger: o.st ?? 0, ...IR }, t);
+}
+function aparece(x, t, d = 0.5, hasta = 1) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0 }, { opacity: hasta, duration: d, ease: "none", ...IR }, t);
+}
+function atenua(x, t, hasta = 0.25, d = 0.5) {
+  tl.to(el(x), { opacity: hasta, duration: d, ease: "power1.inOut" }, t);
+}
+function desaparece(x, t, d = 0.45) {
+  tl.to(el(x), { opacity: 0, duration: d, ease: "none" }, t);
+}
+function salta(x, t, o = {}) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0, scale: o.desde ?? 0.4, rotation: o.r ?? 0 },
+    { opacity: 1, scale: 1, rotation: 0, duration: o.d ?? 0.55, ease: o.ease ?? "back.out(1.8)", stagger: o.st ?? 0, ...IR }, t);
+}
+// Escritura a mano: se descubre de izquierda a derecha, como si la tiza avanzara.
+function escribe(x, t, d = 0.8, o = {}) {
+  tl.fromTo(inicial(el(x), { clipPath: "inset(-30% 103% -30% -3%)" }), { opacity: 1, clipPath: "inset(-30% 103% -30% -3%)" },
+    { clipPath: "inset(-30% -3% -30% -3%)", opacity: 1, duration: d, ease: "none", stagger: o.st ?? 0, ...IR }, t);
+}
+// Trazo de tiza: la línea se dibuja en vivo.
+const _largos = new Map();
+// Las escenas que no están en pantalla al cargar están ocultas, y ahí getTotalLength()
+// devuelve 0. Se mide una copia del trazo dentro de un SVG auxiliar que sí se dibuja.
+function sonda(p) {
+  let s = document.getElementById("sonda-trazos");
+  if (!s) {
+    s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    s.id = "sonda-trazos";
+    s.setAttribute("style", "position:fixed;left:0;top:0;width:10px;height:10px;visibility:hidden;pointer-events:none");
+    document.body.appendChild(s);
+  }
+  const c = p.cloneNode(false);
+  s.appendChild(c);
+  return c;
+}
+function largo(p) {
+  const c = sonda(p);
+  const L = c.getTotalLength();
+  c.remove();
+  return L;
+}
+function preparaTrazos(x) {
+  el(x).forEach((p) => {
+    if (_largos.has(p)) return;
+    const L = largo(p);
+    _largos.set(p, L);
+    p.style.strokeDasharray = L + " " + (L + 2);
+    p.style.strokeDashoffset = L;
+  });
+}
+function traza(x, t, d = 1, o = {}) {
+  const ps = inicial(el(x), { opacity: 0 });
+  preparaTrazos(ps);
+  tl.fromTo(ps, { strokeDashoffset: (i, p) => _largos.get(p), opacity: 1 },
+    { strokeDashoffset: 0, opacity: 1, duration: d, ease: o.ease ?? "power1.inOut", stagger: o.st ?? 0, ...IR }, t);
+}
+// Un objeto que recorre un trazo mientras se dibuja (Agar, los reyes, Abrán).
+// Los puntos del camino se miden una sola vez al construir; durante el render solo se interpola.
+function medirCamino(path, N = 400) {
+  const p = sonda(el(path)[0]);
+  const L = p.getTotalLength();
+  const pts = [];
+  for (let i = 0; i <= N; i++) { const q = p.getPointAtLength((L * i) / N); pts.push([q.x, q.y]); }
+  p.remove();
+  return pts;
+}
+function ponEnCamino(objs, pts, k) {
+  const N = pts.length - 1;
+  const f = Math.min(N, Math.max(0, k * N)), i = Math.floor(f), r = f - i, j = Math.min(N, i + 1);
+  const x = pts[i][0] + (pts[j][0] - pts[i][0]) * r, y = pts[i][1] + (pts[j][1] - pts[i][1]) * r;
+  objs.forEach((e) => e.setAttribute("transform", "translate(" + x.toFixed(2) + " " + y.toFixed(2) + ")"));
+}
+// Solo el primer recorrido de un objeto fija su posición inicial; los siguientes
+// arrancan donde terminó el anterior.
+const _colocados = new WeakSet();
+function recorre(obj, path, t, d, o = {}) {
+  const pts = typeof path === "string" || path instanceof Element ? medirCamino(path) : path;
+  const objs = el(obj);
+  const st = { k: o.desde ?? 0 };
+  if (!objs.some((e) => _colocados.has(e))) { objs.forEach((e) => _colocados.add(e)); ponEnCamino(objs, pts, st.k); }
+  tl.to(st, { k: o.hasta ?? 1, duration: d, ease: o.ease ?? "power1.inOut", onUpdate: () => ponEnCamino(objs, pts, st.k) }, t);
+}
+function cuenta(x, desde, hasta, t, d, fmt = (v) => Math.round(v).toString()) {
+  const e = el(x)[0];
+  const st = { v: desde };
+  if (!_colocados.has(e)) { _colocados.add(e); e.textContent = fmt(desde); }
+  tl.to(st, { v: hasta, duration: d, ease: "power1.out", onUpdate: () => (e.textContent = fmt(st.v)) }, t);
+}
+function camara(x, t, d, props, ease = "power2.inOut") {
+  tl.to(el(x), { ...props, duration: d, ease }, t);
+}
+// Paneo lento sobre una ilustración (Ken Burns), sin salirse del marco.
+function kb(x, t0, t1, desde, hasta) {
+  tl.fromTo(el(x), { scale: desde.s ?? 1.08, xPercent: desde.x ?? 0, yPercent: desde.y ?? 0 },
+    { scale: hasta.s ?? 1.0, xPercent: hasta.x ?? 0, yPercent: hasta.y ?? 0, duration: Math.max(0.1, t1 - t0), ease: "none" }, t0);
+}
+const fmtMiles = (v) => Math.round(v).toLocaleString("es-CO");
+
+// ---------- piezas repetidas ----------
+// Filtro de tiza para los trazos: borde levemente irregular.
+root.insertAdjacentHTML("afterbegin",
+  '<svg width="0" height="0" style="position:absolute"><defs>' +
+  '<filter id="tz-' + ID + '" x="-5%" y="-5%" width="110%" height="110%">' +
+  '<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>' +
+  '<feDisplacementMap in="SourceGraphic" scale="3"/></filter></defs></svg>');
+const TIZA = "url(#tz-" + ID + ")";
+
+// Tarjeta de capítulo: "Jeremías 37" y su subtítulo.
+function capitulo(x, t0, t1) {
+  const c = el(x)[0];
+  entra(c.querySelector(".num"), t0, { y: 60, d: 0.8 });
+  escribe(c.querySelector(".sub"), t0 + 0.5, 0.9);
+  traza(c.querySelectorAll("path"), t0 + 0.3, 0.8);
+  if (c.querySelector(".edad")) entra(c.querySelector(".edad"), t0 + 0.9, { y: 20 });
+  sale(c, t1, { y: -60, d: 0.6 });
+}
+
+// Entrada y salida de toda la escena: el fondo es común, solo se funde el contenido.
+function marco() {
+  tl.fromTo($(".contenido"), { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none" }, 0);
+  tl.to($(".contenido"), { opacity: 0, duration: 0.5, ease: "none" }, DUR - 0.55);
+}
+
+// Bloques de texto que se reemplazan en el mismo lugar: cada uno entra en su momento y sale
+// justo antes del siguiente. Si `hasta` es null, el último se queda.
+function secuencia(lista, hasta = null, o = {}) {
+  lista.forEach(([s, t], i) => {
+    entra(s, t, { y: o.y ?? 26, d: o.d ?? 0.55 });
+    const sig = i < lista.length - 1 ? lista[i + 1][1] : hasta;
+    if (sig != null) sale(s, sig - 0.4, { d: 0.35 });
+  });
+}
+// Pone marcado SVG dentro de un elemento de la escena.
+function pinta(sel, svg) { $(sel).innerHTML = svg; }
+
+// ---------- mapas ----------
+// Encuadre de cámara: lleva la región {x, y, w, h} de la imagen del mapa a la ventana
+// {x, y, w, h} de la pantalla (relativa al contenedor .mapa), sin deformarla.
+function encuadre(r, v) {
+  const s = Math.min(v.w / r.w, v.h / r.h);
+  return { scale: +s.toFixed(4), x: +(v.x + (v.w - r.w * s) / 2 - r.x * s).toFixed(1), y: +(v.y + (v.h - r.h * s) / 2 - r.y * s).toFixed(1) };
+}
+// Latido de un marcador: crece y vuelve, un número finito de veces.
+function late(x, t, o = {}) {
+  tl.fromTo(el(x), { scale: 1 }, { scale: o.s ?? 1.35, transformOrigin: "50% 50%", duration: o.d ?? 0.35, yoyo: true, repeat: o.n ?? 3, ease: "power1.inOut", immediateRender: false }, t);
+}
+
+// ---------- lecciones ----------
+// Cada lección entra en su momento y sale antes de la siguiente; el número cuenta.
+function lecciones(lista) {
+  const cab = $(".seccion");
+  if (cab) { entra(cab, 0.3, { y: -20 }); traza(".seccion-linea path", 0.6, 1.0); }
+  secuencia(lista, null, { y: 30, d: 0.6 });
+}
+
+
+const LY = 830;
+const EST = [[210, "1914", "el Reino gobierna"], [510, "hoy", ""], [790, "Armagedón", ""], [1010, "", ""], [1260, "", ""], [1490, "la cabeza,", "aplastada"], [1740, "Dios, todo", "para todos"]];
+let sv = '<path class="trazo base" d="M 120 ' + LY + ' L 1820 ' + LY + '" style="stroke: #ebbd5c; stroke-width: 7" />' +
+  '<rect class="mil" x="1010" y="' + (LY - 24) + '" width="250" height="48" rx="12" fill="rgba(143,185,242,0.3)" stroke="#8fb9f2" stroke-width="3"/>' +
+  '<text class="milt" x="1135" y="' + (LY + 70) + '" text-anchor="middle" font-size="30" font-weight="800" fill="#8fb9f2">mil años</text>';
+EST.forEach(([x, a, b], i) => {
+  if (i === 3 || i === 4) return;
+  sv += '<g class="es es' + i + '"><circle cx="' + x + '" cy="' + LY + '" r="16" fill="#10162a" stroke="' + (i === 1 ? "#8fb9f2" : "#f6d98f") + '" stroke-width="6"/>' +
+    '<text x="' + x + '" y="' + (LY + 70) + '" text-anchor="middle" font-size="30" font-weight="800" fill="#f3ead8">' + a + '</text>' +
+    (b ? '<text x="' + x + '" y="' + (LY + 108) + '" text-anchor="middle" font-size="28" font-weight="600" fill="#aab4c8">' + b + '</text>' : "") + "</g>";
+});
+$(".ruta").innerHTML = sv;
+
+entra(".cab", 0.3, { y: -10 });
+traza(".base", 0.4, 1.4);
+secuencia([[".a1", 0.6], [".a2", at("Jesús se convirtió")], [".a3", at("Ahí estamos nosotros")], [".a4", at("Sigue Armagedón")], [".a5", at("Y al final llega")], [".a6", at("Por último")]]);
+entra([".es0", ".m1"], at("Jesús se convirtió"), { y: 16 });
+entra(".fuente", at("Jesús se convirtió") + 0.5, { y: 10 });
+entra(".es1", at("Ahí estamos nosotros"), { y: 16 });
+escribe(".aqui", at("Ahí estamos nosotros") + 0.2, 0.9);
+entra(".es2", at("Sigue Armagedón"), { y: 16 });
+aparece([".mil", ".milt"], at("durante mil años"), 0.5);
+entra([".es5", ".m2"], at("Y al final llega"), { y: 16 });
+entra(".es6", at("Por último"), { y: 16 });
+
+marco();
+window.__timelines[ID] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

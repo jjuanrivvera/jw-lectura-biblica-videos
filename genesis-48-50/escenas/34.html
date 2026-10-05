@@ -1,0 +1,71 @@
+<style>
+.mapa.REC { left: 0; top: 0; width: 1120px; height: 1080px; }
+.mapa.REC .pie-mapa { left: 14px; right: auto; max-width: 1090px; white-space: nowrap; font-size: 17px; padding: 5px 12px; bottom: 12px; }
+.funde34 { left: 1000px; }
+.col34 { position: absolute; left: 1130px; right: 64px; top: 110px; bottom: 70px; }
+.col34 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.col34 .cita { font-size: 52px; }
+.col34 .def .x { font-size: 56px; }
+.ent34 { display: flex; flex-direction: column; gap: 14px; }
+.ent34 .f { display: grid; grid-template-columns: 90px 1fr; align-items: center; column-gap: 18px; }
+.ent34 .n { display: flex; gap: 8px; }
+.ent34 .n span { width: 36px; height: 36px; border-radius: 50%; background: var(--tenue); }
+.ent34 .x { font-family: "Fraunces", serif; font-weight: 600; font-size: 62px; line-height: 1.1; }
+.ent34 .f.jac .x { color: var(--oro); }
+.ent34 .f.jac .n span { background: var(--oro); }
+.col34 .m { font-size: 64px; }
+.col34 .raq34 { font-size: 56px; }
+.raq34 { align-self: flex-start; border: 3px dashed var(--raquel); color: var(--raquel); }
+.f34 { position: absolute; left: 1130px; right: 64px; bottom: 22px; }
+</style>
+
+<!--incluir:_rec.html-->
+<div class="funde-der funde34"></div>
+<div class="cab" style="left:1130px"><span class="cap">Génesis 49</span><span>versículos 29 al 32</span></div>
+<div class="col34">
+  <div class="b b1">
+    <div class="cita">“Entiérrenme con mis antepasados en la cueva que está en el campo de Efrón el hitita. [...] en el campo de <b>Macpelá</b>, frente a Mamré”<span class="ref">JACOB · GÉNESIS 49:29, 30</span></div>
+    <div class="def"><div class="t">Macpelá <i>una posibilidad</i></div><div class="x">de una raíz que significa <b>“doble”</b>: quizás una entrada doble, o dos cavidades</div><div class="s"><i>Perspicacia</i>, “Macpelá”, pág.&nbsp;268</div></div>
+  </div>
+  <div class="b b2">
+    <div class="m">comprada por Abrahán <b>para sepultura</b> · Génesis 23</div>
+    <div class="ent34">
+      <div class="f e1"><span class="n"><span></span><span></span></span><span class="x">Abrahán y Sara</span></div>
+      <div class="f e2"><span class="n"><span></span><span></span></span><span class="x">Isaac y Rebeca</span></div>
+      <div class="f e3"><span class="n"><span></span></span><span class="x">Lea</span></div>
+      <div class="f jac e4"><span class="n"><span></span></span><span class="x">Jacob, el sexto</span></div>
+    </div>
+    <span class="clave raq34">Raquel: en el camino a Belén</span>
+  </div>
+</div>
+<div class="f34 f"><i>Perspicacia</i>, “Macpelá”, pág.&nbsp;268, y “Jacob”, pág.&nbsp;12</div>
+
+<script>
+const [mx, my] = REC.macpela, [bx, by] = REC.belen;
+pinta(".marcas", `
+  <circle class="anillo oro a-m" cx="${mx}" cy="${my}" r="66" style="stroke-width:10"/>
+  <g class="lm">${chip(mx + 100, my + 130, "cueva de Macpelá", { fs: 46, cls: "oro" })}</g>
+  <circle class="a-b" cx="${bx}" cy="${by}" r="58" fill="none" stroke="#5f8fd0" stroke-width="9" stroke-dasharray="18 12"/>
+  <g class="lb">${chip(bx - 70, by + 70, "Raquel: camino a Belén", { fs: 38, cls: "cielo", ancla: "der" })}</g>
+`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 70, y: 690, w: 1560, h: 1505 }, V), 0);
+const t0 = at("Entiérrenme");
+secuencia([[".b1", 0.4], [".b2", at("Abrahán la había comprado") - 0.2]]);
+traza(".a-m", at("Macpelá", t0) - 0.2, 0.8);
+aparece(".lm", at("Macpelá", t0), 0.4);
+entra(".b1 .def", at("Macpelá viene de") - 0.2, { y: 16 });
+// El bloque visible se centra mientras se llena: la columna arranca desplazada y sube con cada fila.
+const sube = (y, t) => tl.to($(".col34"), { y, duration: 0.7, ease: "power2.inOut" }, t);
+tl.set($(".col34"), { y: 180 }, 0);
+sube(0, at("Macpelá viene de") - 0.4);
+sube(225, at("Abrahán la había comprado") - 0.3);
+const yFila = [180, 139, 98, 57];
+const filas = [[".e1", at("Abrahán y Sara")], [".e2", at("Isaac y Rebeca")], [".e3", at("enterré yo a Lea")], [".e4", at("Él sería el sexto")]];
+filas.forEach(([s, t], i) => { sube(yFila[i], t - 0.3); entra(s, t - 0.2, { x: -20, y: 0 }); salta(`${s} .n span`, t, { desde: 0.2, st: 0.12 }); });
+const tR = at("Raquel, en cambio");
+sube(0, tR - 0.3);
+entra(".raq34", tR - 0.2, { y: 14 });
+traza(".a-b", tR - 0.1, 0.7);
+aparece(".lb", tR + 0.3, 0.4);
+</script>

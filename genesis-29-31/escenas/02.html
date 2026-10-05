@@ -1,0 +1,67 @@
+<!--lead:2.6-->
+<style>
+.mapa { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 5000px; height: 3800px; }
+.lugar { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 110px; fill: #1b2733; stroke-width: 24px; }
+.lugar.gr { font-size: 150px; fill: #8a1c10; }
+.pt { fill: #fff; stroke: #1b2733; stroke-width: 14; }
+.abanico { fill: rgba(233, 191, 96, 0.28); stroke: #b8860b; stroke-width: 14; stroke-dasharray: 50 30; }
+.dir { fill: none; stroke: #8a5a00; stroke-width: 22; stroke-linecap: round; }
+.dir-t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 120px; fill: #6b4400; stroke-width: 24px; }
+.ori-t { font-family: "Caveat", cursive; font-weight: 700; font-size: 220px; fill: #8a1c10; stroke-width: 30px; }
+.col { top: 120px; bottom: 100px; right: 60px; width: 760px; }
+.esquina { position: absolute; left: 0; top: 0; width: 760px; height: 420px; background: radial-gradient(ellipse 100% 100% at 0 0, #17212b 40%, rgba(23,33,43,0.85) 58%, rgba(23,33,43,0) 100%); }
+.pie-mapa { top: auto; bottom: 22px; left: auto; right: 60px; max-width: 760px; }
+</style>
+
+<div class="capcard cc"><div class="num">Génesis 29</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">el pozo, la boda y Lea</div><div class="edad">1781 a 1774 antes de nuestra era</div></div>
+
+<div class="fase fb">
+  <div class="mapa">
+    <div class="cam">
+      <img src="assets/img/mapa-b2.jpg" />
+      <svg viewBox="0 0 5000 3800">
+        <path class="abanico" d="M 1330 2700 L 2230 1141 A 1800 1800 0 0 1 3130 2700 A 1800 1800 0 0 1 2230 4259 Z"/>
+        <path class="dir d-e" d="M 1330 2700 L 2600 2700"/>
+        <path class="dir d-ne" d="M 1330 2700 L 2430 1600"/>
+        <path class="dir d-se" d="M 1330 2700 L 1760 3130"/>
+        <text class="dir-t halo t-e" x="2630" y="2740">E</text>
+        <text class="dir-t halo t-ne" x="2440" y="1560">NE</text>
+        <text class="dir-t halo t-se" x="1660" y="2960">SE</text>
+        <text class="ori-t halo t-or" x="1900" y="2560">el Oriente</text>
+        <g class="l-ca"><circle class="pt" cx="1330" cy="2700" r="36"/><text class="lugar halo" x="1290" y="2660" text-anchor="end">Canaán</text></g>
+        <g class="l-ha"><circle class="pt" cx="2807" cy="400" r="40"/><text class="lugar gr halo" x="2760" y="380" text-anchor="end">Harán</text></g>
+      </svg>
+    </div>
+  </div>
+  <div class="esquina"></div>
+  <div class="panel"></div>
+<div class="pie-mapa">Mapa: apéndice B2 de la TNM, “Génesis y los viajes de los patriarcas” (wol.jw.org) · marcas añadidas</div>
+  <div class="cab sobre"><span class="cap">Génesis 29</span><span>versículo 1</span></div>
+  <div class="col">
+    <div class="b a1"><div class="cita">“fue al país de los orientales”<span class="ref">GÉNESIS 29:1</span></div><div class="m oro">literalmente: “la tierra de los hijos del Este”</div><div class="s">TNM de 1987, nota en 29:1</div></div>
+    <div class="b a2"><div class="m">Harán queda al <b>noreste</b></div><div class="m">“el Oriente” abarcaba <b>E</b>, <b>NE</b> y <b>SE</b></div><div class="s">“no solo hacia el E., sino también hacia el NE. y hacia el SE.” · Perspicacia, vol. 2, “Orientales”, pág. 558</div></div>
+    <div class="b a3"><div class="m xl oro">Harán</div><div class="m">la casa de su tío Labán</div><div class="s">“junto a un pozo cercano a Harán” · Perspicacia, vol. 1, “Harán”, pág. 1088</div></div>
+  </div>
+</div>
+
+<script>
+const tFase = at("Jacob fue al país") - 0.2;
+capitulo(".cc", 0.3, tFase - 0.5);
+aparece(".fb", tFase, 0.5);
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+const cam = $(".cam");
+tl.set(cam, encuadre({ x: 870, y: 250, w: 2700, h: 2500 }, V), 0);
+tl.fromTo(cam, encuadre({ x: 870, y: 250, w: 2700, h: 2500 }, V), { ...encuadre({ x: 820, y: 250, w: 2860, h: 2750 }, V), duration: DUR - tFase, ease: "none", immediateRender: false }, tFase);
+aparece(".l-ca", tFase + 0.3, 0.4);
+aparece(".l-ha", at("Harán queda"), 0.4);
+late(".l-ha circle", at("Harán queda"), { s: 1.5, n: 3 });
+traza(".d-ne", at("al noreste"), 0.8);
+aparece(".t-ne", at("al noreste") + 0.6, 0.3);
+aparece(".abanico", at("el Oriente era"), 0.8, 1);
+traza([".d-e", ".d-se"], at("el Oriente era"), 0.8);
+aparece([".t-e", ".t-se", ".t-or"], at("el Oriente era") + 0.6, 0.4);
+atenua([".abanico", ".d-e", ".d-se", ".t-e", ".t-se", ".t-or"], at("Jacob iba a Harán"), 0.3);
+late(".l-ha circle", at("Jacob iba a Harán"), { s: 1.6, n: 3 });
+secuencia([[".a1", tFase + 0.45], [".a2", at("Harán queda")], [".a3", at("Jacob iba a Harán")]]);
+</script>

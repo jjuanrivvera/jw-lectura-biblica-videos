@@ -1,0 +1,59 @@
+<style>
+.mapa.REC { left: 0; top: 0; width: 1150px; height: 1080px; }
+.mapa.REC .pie-mapa { max-width: 1000px; z-index: 3; }
+.funde43 { left: 1080px; width: 70px; }
+.base43 { position: absolute; left: 0; top: 950px; width: 1150px; height: 130px; background: linear-gradient(0deg, #17212b 8%, rgba(23,33,43,0)); }
+.cab43 { left: 1160px; }
+.col43 { position: absolute; left: 1160px; right: 70px; top: 110px; bottom: 70px; display: flex; flex-direction: column; justify-content: center; gap: 44px; }
+.col43 .m { font-size: 118px; }
+.col43 .tj { padding: 30px 34px; gap: 16px; }
+.col43 .tj .x { font-size: 46px; }
+.col43 .tj .k { font-size: 28px; }
+.col43 .tj.q { border-color: var(--cielo); }
+.col43 .tj.q .k { color: var(--cielo); }
+.col43 .clave { align-self: flex-start; }
+.dos43 { display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; }
+</style>
+
+<!--incluir:_rec.html-->
+<div class="funde-der funde43"></div>
+<div class="base43"></div>
+<div class="cab cab43"><span class="cap">Atad hoy</span><span>Génesis 50:10, 11</span></div>
+<div class="col43">
+  <div class="w43"><div class="m oro t1">¿dónde estaba?</div></div>
+  <div class="tj t2"><div class="k">“en la región del Jordán”</div><div class="x">puede indicar <b>un lado del río o el otro</b>, según desde dónde se mire</div></div>
+  <div class="dos43">
+    <div class="tj q o1"><div class="k">algunos</div><div class="x">rodeó el mar Muerto: <b>¿al este?</b></div></div>
+    <div class="tj q o2"><div class="k">otros</div><div class="x">se quedó <b>¿al oeste?</b></div></div>
+  </div>
+  <span class="externa chico t4" style="border-color:var(--cielo);color:var(--cielo)">sitio sin identificar · <i>Perspicacia</i>, “Atad”, pág.&nbsp;245</span>
+</div>
+
+<script>
+pinta(".marcas", `
+  <ellipse class="zo" cx="1390" cy="900" rx="150" ry="210" fill="rgba(147,187,239,0.30)" stroke="#2f6fb0" stroke-width="8" stroke-dasharray="22 14"/>
+  <ellipse class="zw" cx="1070" cy="860" rx="150" ry="210" fill="rgba(147,187,239,0.30)" stroke="#2f6fb0" stroke-width="8" stroke-dasharray="22 14"/>
+  <g class="lo">${chip(1250, 770, "¿al este?", { fs: 52, cls: "cielo" })}</g>
+  <g class="lw">${chip(1100, 640, "¿al oeste?", { fs: 52, cls: "cielo", ancla: "der" })}</g>
+  <g class="lj">${chip(1330, 1190, "región del Jordán", { fs: 52, ancla: "centro" })}</g>
+  <g class="lm">${punto(657, 1413, { color: "#e9bf60", r: 16 })}${chip(640, 1650, "Macpelá", { fs: 52, cls: "oro" })}</g>
+`);
+const V = { x: 0, y: 0, w: 1150, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 190, y: 440, w: 1769, h: 1662 }, V), 0);
+entra(".cab43", 0.2, { y: -10 });
+entra(".t1", 0.3, { y: 20 });
+centra(".w43", 380, at("La expresión") - 0.3);
+aparece(".lm", 0.6, 0.5);
+const tR = at("La expresión");
+entra(".t2", tR - 0.2, { y: 20 });
+aparece(".lj", tR, 0.5);
+aparece([".zo", ".zw"], at("un lado del río") - 0.1, 0.6);
+const tA = at("Algunos piensan");
+entra(".o1", tA - 0.1, { y: 20 });
+late(".zo", tA + 0.2, { s: 1.06, n: 1 });
+aparece(".lo", tA + 0.1, 0.4);
+entra(".o2", at("otros, que") - 0.1, { y: 20 });
+late(".zw", at("otros, que") + 0.2, { s: 1.06, n: 1 });
+aparece(".lw", at("otros, que") + 0.1, 0.4);
+entra(".t4", at("Hoy no hay") - 0.1, { y: 14 });
+</script>

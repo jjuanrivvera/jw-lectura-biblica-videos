@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="UTF-8" /><title>Los cuatro Evangelios</title></head>
+<body>
+<template>
+<style>
+@font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces.ttf") format("truetype"); font-weight: 100 900; font-style: normal; }
+@font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Italic.ttf") format("truetype"); font-weight: 100 900; font-style: italic; }
+@font-face { font-family: "Caveat"; src: url("assets/fonts/Caveat.ttf") format("truetype"); font-weight: 400 700; }
+@font-face { font-family: "Montserrat"; src: url("assets/fonts/Montserrat.ttf") format("truetype"); font-weight: 100 900; }
+@font-face { font-family: "Griego"; src: url("assets/fonts/NotoSerif.ttf") format("truetype"); font-weight: 500; }
+#escena-14 {
+/* Estilo común de todas las escenas (1920x1080). El constructor lo anida bajo #escena-NN. */
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+color: var(--papel);
+font-family: "Montserrat", sans-serif;
+/* Un color por papel, siempre el mismo: oro solo para la línea de la descendencia (el hilo);
+   terracota para la serpiente y su descendencia; azul para lo celestial; salvia para la tierra y el paraíso. */
+--tinta: #10162a;
+--panel: rgba(18, 26, 48, 0.94);
+--papel: #f3ead8;
+--tenue: #aab4c8;
+--oro: #ebbd5c;
+--oro-claro: #f6d98f;
+--terra: #e07a5f;
+--cielo: #8fb9f2;
+--salvia: #8fd0a0;
+--linea: rgba(243, 234, 216, 0.22);
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.contenido { position: absolute; inset: 0; }
+.fase { position: absolute; inset: 0; }
+svg { overflow: visible; }
+
+.oro { color: var(--oro); }
+.terra { color: var(--terra); }
+.cielo { color: var(--cielo); }
+.salvia { color: var(--salvia); }
+
+/* Cabecera: sección a la izquierda, texto o tema a la derecha. */
+.cab {
+  position: absolute; left: 80px; right: 80px; top: 40px;
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 30px;
+  color: var(--tenue); letter-spacing: 0.1em; text-transform: uppercase;
+}
+.cab .sec { color: var(--oro); }
+
+/* Pie con la fuente. */
+.fuente {
+  position: absolute; left: 80px; right: 80px; bottom: 28px;
+  font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 24px; line-height: 1.3;
+  color: var(--tenue);
+}
+.fuente b, .fuente i { color: var(--papel); }
+.fuente b { font-weight: 700; }
+
+/* Columna de texto: el bloque activo se centra en el alto disponible. */
+.col { position: absolute; top: 120px; bottom: 100px; right: 90px; width: 780px; }
+.col.izq { left: 90px; right: auto; }
+.col > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+
+/* Registros: la Biblia, la anotación a mano, el texto de apoyo. */
+.cita { font-family: "Fraunces", serif; font-weight: 500; font-size: 54px; line-height: 1.22; color: var(--papel); }
+.cita b { font-weight: 700; }
+.ref { display: block; margin-top: 16px; font-family: "Montserrat", sans-serif; font-weight: 700;
+  font-size: 28px; letter-spacing: 0.12em; color: var(--tenue); text-transform: uppercase; }
+.m { font-family: "Caveat", cursive; font-weight: 700; font-size: 72px; line-height: 1.04; color: var(--papel); }
+.s { font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 34px; line-height: 1.35; color: var(--tenue); }
+.s b { color: var(--papel); font-weight: 700; }
+.titulo { font-family: "Fraunces", serif; font-weight: 700; font-size: 96px; line-height: 1.02; letter-spacing: -0.01em; }
+.grande { font-family: "Fraunces", serif; font-weight: 700; font-size: 150px; line-height: 1; letter-spacing: -0.02em; }
+
+/* Tarjeta de término: la palabra, qué es y por qué importa aquí. */
+.def { align-self: stretch; border: 3px solid rgba(243, 234, 216, 0.5); border-radius: 24px; padding: 24px 34px 28px;
+  background: var(--panel); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35); }
+.def .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--tenue); }
+.def .w { font-family: "Fraunces", serif; font-style: italic; font-weight: 600; font-size: 64px; line-height: 1.05; margin-top: 6px; color: var(--papel); }
+.def .x { font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 32px; line-height: 1.35; margin-top: 12px; color: var(--papel); }
+.def .x b { color: var(--oro); }
+.def .f { font-size: 24px; color: var(--tenue); margin-top: 12px; font-weight: 500; }
+
+/* Ilustraciones de la JW: marco sencillo. */
+.ilus { position: absolute; overflow: hidden; border-radius: 22px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
+.ilus .kb { position: absolute; inset: 0; }
+.ilus img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pie-img { position: absolute; padding: 8px 16px; border-radius: 10px; background: rgba(12, 18, 34, 0.86);
+  font-size: 24px; color: var(--papel); }
+.pie-img i { color: var(--papel); }
+
+/* Mapas: cámara sobre la imagen real y trazos encima, en coordenadas de la imagen. */
+.mapa { position: absolute; overflow: hidden; background: #dfe6d0; }
+.mapa .cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.mapa .cam img, .mapa .cam svg { position: absolute; left: 0; top: 0; display: block; }
+
+/* Trazos. */
+.trazo { fill: none; stroke: var(--papel); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.hilo { fill: none; stroke: var(--oro); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round;
+  filter: drop-shadow(0 0 10px rgba(235, 189, 92, 0.55)); }
+
+/* Rótulo de parte. */
+.parte { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 22px; }
+.parte .n { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.3em; color: var(--tenue); text-transform: uppercase; }
+.parte .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 120px; line-height: 1.02; max-width: 1600px; }
+
+/* Píldora de etiqueta. */
+.chip { display: inline-block; padding: 10px 24px; border-radius: 40px; font-family: "Montserrat", sans-serif; font-weight: 700;
+  font-size: 30px; border: 3px solid currentColor; }
+
+
+.cinta66 { position: absolute; left: 0; top: 950px; width: 1920px; height: 120px; }
+.intro { position: absolute; left: 80px; right: 80px; top: 150px; bottom: 170px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 48px; text-align: center; }
+.intro .titulo { font-size: 84px; max-width: 1500px; }
+.intro .nombres { display: flex; gap: 28px; }
+.intro .chip { font-size: 36px; color: #8fcfc4; }
+.intro .s { font-size: 36px; }
+
+.ev { position: absolute; left: 80px; right: 80px; top: 110px; height: 770px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.ca { border-radius: 22px; background: var(--panel); border: 3px solid var(--linea); padding: 24px 24px; display: flex; flex-direction: column; gap: 14px; }
+.ca .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 54px; color: #8fcfc4; line-height: 1; }
+.ca .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tenue); margin-top: 6px; }
+.ca .v { font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 28px; line-height: 1.3; color: var(--papel); }
+.ca .q { font-family: "Fraunces", serif; font-weight: 500; font-size: 30px; line-height: 1.24; color: var(--papel); margin-top: auto; }
+.ca .q b { color: var(--oro-claro); }
+.ca .r { display: block; font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; color: var(--tenue); margin-top: 8px; letter-spacing: 0.08em; }
+.ca .lazos { display: flex; gap: 10px; flex-wrap: wrap; }
+.ca .lazos .chip { font-size: 24px; padding: 6px 14px; color: var(--oro-claro); }
+
+.retrato { position: absolute; left: 80px; top: 120px; width: 760px; height: 800px; border-radius: 24px; overflow: hidden; background: #f4ede0; box-shadow: 0 24px 60px rgba(0,0,0,0.45); }
+.retrato img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.retrato .pie-img { left: 18px; bottom: 18px; }
+.col { width: 900px; right: 80px; top: 120px; bottom: 160px; }
+.anio { font-family: "Fraunces", serif; font-weight: 700; font-size: 96px; line-height: 1; }
+.anio small { font-size: 42px; color: var(--tenue); }
+.nombre { font-family: "Fraunces", serif; font-weight: 700; font-size: 60px; color: var(--oro-claro); }
+.fuente { bottom: auto; top: 892px; }
+
+}
+</style>
+<div id="escena-14" data-composition-id="escena-14" data-width="1920" data-height="1080">
+<div class="contenido">
+<div class="cab"><span class="sec">Escrituras Griegas · Los Evangelios</span><span>libros 40 a 43 de 66</span></div>
+
+<div class="fase fa">
+  <div class="intro">
+    <div class="titulo">Cuatro relatos de la vida de Jesús, cuatro escritores, lectores distintos</div>
+    <div class="nombres"><span class="chip">Mateo</span><span class="chip">Marcos</span><span class="chip">Lucas</span><span class="chip">Juan</span></div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="ev">
+    <div class="ca ca1"><div class="n">Mateo</div>
+      <div class="k">Quién</div><div class="v">Recaudador de impuestos; uno de los 12 apóstoles</div>
+      <div class="k">Para quién</div><div class="v">Principalmente para los judíos</div>
+      <div class="q">“Jesucristo, <b>hijo de David</b>, <b>hijo de Abrahán</b>”<span class="r">Mateo 1:1</span></div>
+      <div class="lazos"><span class="chip">pacto con David</span><span class="chip">pacto con Abrahán</span></div></div>
+    <div class="ca ca2"><div class="n">Marcos</div>
+      <div class="k">Quién</div><div class="v">No era apóstol</div>
+      <div class="k">Para quién</div><div class="v">Principalmente para los romanos; el relato más breve</div>
+      <div class="q">Jesús, <b>el Hijo de Dios que hace milagros</b></div></div>
+    <div class="ca ca3"><div class="n">Lucas</div>
+      <div class="k">Quién</div><div class="v">Médico; colaborador de Pablo</div>
+      <div class="k">Para quién</div><div class="v">Para Teófilo, y por él a judíos y no judíos</div>
+      <div class="q q1">“Hijo de <b>Adán</b>, hijo de Dios”<span class="r">Lucas 3:38</span></div>
+      <div class="q q2" style="margin-top: 0">“Le dará <b>el trono de David</b> su padre”<span class="r">Lucas 1:32</span></div></div>
+    <div class="ca ca4"><div class="n">Juan</div>
+      <div class="k">Quién</div><div class="v">El apóstol a quien Jesús amaba</div>
+      <div class="k">Cuándo</div><div class="v">El último, hacia el año 98</div>
+      <div class="q">“Para que ustedes crean que Jesús es <b>el Cristo</b>, el Hijo de Dios”<span class="r">Juan 20:31</span></div></div>
+  </div>
+  <div class="fuente">Escritores y lectores: <i>“Toda Escritura es inspirada de Dios y provechosa”</i>, estudios de Mateo, Marcos, Lucas y Juan</div>
+</div>
+
+<div class="fase fc">
+  <div class="retrato"><img src="assets/img/kr-jesus.jpg" /><div class="pie-img">Ilustración: <i>El Reino de Dios ya está gobernando</i>, cap. 3</div></div>
+  <div class="col">
+    <div class="b un">
+      <div class="anio">29 <small>e. c.</small></div>
+      <div class="s">Jesús es ungido después de bautizarse: la parte principal de la descendencia.</div>
+      <div class="def"><div class="t">Mesías · Cristo</div><div class="x">Mesías significa “Ungido”; el equivalente griego es <i>Kjri·stós</i>, Cristo. <b>Es un título, no un apellido.</b></div><div class="f"><i>Perspicacia</i>, vol. 2, “Mesías”</div></div>
+      <div class="nombre">La descendencia ya tiene nombre.</div>
+    </div>
+  </div>
+</div>
+
+<svg class="cinta66" viewBox="0 0 1920 120"></svg>
+</div>
+</div>
+<script>
+(function () {
+const ID = "escena-14";
+const DUR = 107.424;
+const LEAD = 0.6;
+const W = [{"w":"Con","t":0.703,"d":0.171},{"w":"Mateo","t":0.887,"d":0.368},{"w":"empiezan","t":1.268,"d":0.487},{"w":"las","t":1.768,"d":0.145},{"w":"Escrituras","t":1.926,"d":0.632},{"w":"Griegas","t":2.571,"d":0.526},{"w":"y","t":3.347,"d":0.092},{"w":"los","t":3.453,"d":0.211},{"w":"primeros","t":3.676,"d":0.487},{"w":"cuatro","t":4.176,"d":0.355},{"w":"libros","t":4.545,"d":0.355},{"w":"son","t":4.913,"d":0.158},{"w":"los","t":5.084,"d":0.158},{"w":"Evangelios","t":5.255,"d":0.711},{"w":"cuatro","t":6.268,"d":0.342},{"w":"relatos","t":6.624,"d":0.5},{"w":"de","t":7.137,"d":0.079},{"w":"la","t":7.229,"d":0.079},{"w":"vida","t":7.321,"d":0.263},{"w":"de","t":7.597,"d":0.118},{"w":"Jesús","t":7.729,"d":0.5},{"w":"escritos","t":8.518,"d":0.618},{"w":"por","t":9.15,"d":0.197},{"w":"cuatro","t":9.361,"d":0.382},{"w":"hombres","t":9.755,"d":0.289},{"w":"distintos","t":10.058,"d":0.658},{"w":"cada","t":10.979,"d":0.263},{"w":"uno","t":11.255,"d":0.25},{"w":"pensando","t":11.518,"d":0.513},{"w":"en","t":12.045,"d":0.066},{"w":"lectores","t":12.124,"d":0.487},{"w":"distintos","t":12.624,"d":0.75},{"w":"Juntos","t":14.284,"d":0.474},{"w":"responden","t":14.771,"d":0.5},{"w":"la","t":15.284,"d":0.092},{"w":"pregunta","t":15.389,"d":0.474},{"w":"que","t":15.876,"d":0.118},{"w":"llevaba","t":16.008,"d":0.408},{"w":"miles","t":16.429,"d":0.408},{"w":"de","t":16.85,"d":0.132},{"w":"años","t":16.995,"d":0.329},{"w":"abierta","t":17.337,"d":0.553},{"w":"Mateo","t":18.797,"d":0.539},{"w":"era","t":19.35,"d":0.184},{"w":"recaudador","t":19.547,"d":0.671},{"w":"de","t":20.232,"d":0.079},{"w":"impuestos","t":20.324,"d":0.658},{"w":"y","t":21.258,"d":0.092},{"w":"llegó","t":21.363,"d":0.303},{"w":"a","t":21.679,"d":0.039},{"w":"ser","t":21.732,"d":0.237},{"w":"uno","t":21.982,"d":0.197},{"w":"de","t":22.192,"d":0.118},{"w":"los","t":22.324,"d":0.184},{"w":"doce","t":22.521,"d":0.276},{"w":"apóstoles","t":22.811,"d":0.776},{"w":"Escribió","t":24.495,"d":0.592},{"w":"principalmente","t":25.1,"d":0.868},{"w":"para","t":25.982,"d":0.224},{"w":"los","t":26.218,"d":0.158},{"w":"judíos","t":26.389,"d":0.539},{"w":"y","t":27.205,"d":0.118},{"w":"empieza","t":27.337,"d":0.474},{"w":"así","t":27.824,"d":0.316},{"w":"El","t":28.455,"d":0.132},{"w":"libro","t":28.6,"d":0.289},{"w":"de","t":28.903,"d":0.118},{"w":"la","t":29.034,"d":0.092},{"w":"historia","t":29.139,"d":0.447},{"w":"de","t":29.6,"d":0.105},{"w":"Jesucristo","t":29.718,"d":0.724},{"w":"hijo","t":30.718,"d":0.276},{"w":"de","t":31.008,"d":0.105},{"w":"David","t":31.126,"d":0.395},{"w":"hijo","t":31.784,"d":0.25},{"w":"de","t":32.047,"d":0.092},{"w":"Abrahán","t":32.153,"d":0.526},{"w":"Ahí","t":33.6,"d":0.316},{"w":"están","t":33.929,"d":0.303},{"w":"los","t":34.245,"d":0.171},{"w":"dos","t":34.429,"d":0.224},{"w":"pactos","t":34.666,"d":0.461},{"w":"en","t":35.139,"d":0.132},{"w":"una","t":35.284,"d":0.197},{"w":"sola","t":35.495,"d":0.329},{"w":"línea","t":35.837,"d":0.474},{"w":"Mateo","t":37.218,"d":0.408},{"w":"presenta","t":37.639,"d":0.526},{"w":"a","t":38.179,"d":0.039},{"w":"Jesús","t":38.232,"d":0.421},{"w":"como","t":38.666,"d":0.224},{"w":"el","t":38.903,"d":0.066},{"w":"Mesías","t":38.982,"d":0.579},{"w":"y","t":39.574,"d":0.132},{"w":"el","t":39.718,"d":0.118},{"w":"Rey","t":39.85,"d":0.224},{"w":"prometido","t":40.087,"d":0.684},{"w":"Marcos","t":41.679,"d":0.579},{"w":"no","t":42.271,"d":0.224},{"w":"era","t":42.508,"d":0.171},{"w":"apóstol","t":42.692,"d":0.566},{"w":"Escribió","t":44.166,"d":0.592},{"w":"principalmente","t":44.771,"d":0.882},{"w":"para","t":45.666,"d":0.224},{"w":"los","t":45.903,"d":0.184},{"w":"romanos","t":46.1,"d":0.526},{"w":"el","t":46.916,"d":0.158},{"w":"relato","t":47.087,"d":0.434},{"w":"más","t":47.534,"d":0.263},{"w":"breve","t":47.811,"d":0.355},{"w":"y","t":48.442,"d":0.105},{"w":"pinta","t":48.561,"d":0.434},{"w":"a","t":49.008,"d":0.039},{"w":"Jesús","t":49.061,"d":0.434},{"w":"como","t":49.508,"d":0.25},{"w":"el","t":49.771,"d":0.105},{"w":"Hijo","t":49.889,"d":0.25},{"w":"de","t":50.153,"d":0.105},{"w":"Dios","t":50.271,"d":0.316},{"w":"que","t":50.6,"d":0.158},{"w":"hace","t":50.771,"d":0.237},{"w":"milagros","t":51.021,"d":0.711},{"w":"Lucas","t":52.639,"d":0.474},{"w":"era","t":53.126,"d":0.158},{"w":"médico","t":53.297,"d":0.421},{"w":"y","t":53.732,"d":0.066},{"w":"colaborador","t":53.811,"d":0.671},{"w":"de","t":54.495,"d":0.092},{"w":"Pablo","t":54.6,"d":0.408},{"w":"Le","t":55.916,"d":0.171},{"w":"escribió","t":56.1,"d":0.553},{"w":"a","t":56.666,"d":0.039},{"w":"un","t":56.718,"d":0.184},{"w":"hombre","t":56.916,"d":0.25},{"w":"llamado","t":57.179,"d":0.421},{"w":"Teófilo","t":57.613,"d":0.566},{"w":"y","t":58.442,"d":0.105},{"w":"por","t":58.561,"d":0.211},{"w":"medio","t":58.784,"d":0.316},{"w":"de","t":59.113,"d":0.118},{"w":"él","t":59.245,"d":0.118},{"w":"a","t":59.376,"d":0.039},{"w":"judíos","t":59.429,"d":0.579},{"w":"y","t":60.021,"d":0.066},{"w":"no","t":60.1,"d":0.184},{"w":"judíos","t":60.297,"d":0.658},{"w":"Su","t":61.863,"d":0.237},{"w":"lista","t":62.113,"d":0.316},{"w":"de","t":62.442,"d":0.092},{"w":"antepasados","t":62.547,"d":0.776},{"w":"no","t":63.337,"d":0.184},{"w":"se","t":63.534,"d":0.132},{"w":"detiene","t":63.679,"d":0.421},{"w":"en","t":64.113,"d":0.105},{"w":"Abrahán","t":64.232,"d":0.434},{"w":"llega","t":64.968,"d":0.329},{"w":"hasta","t":65.311,"d":0.224},{"w":"Adán","t":65.547,"d":0.316},{"w":"hijo","t":66.1,"d":0.25},{"w":"de","t":66.363,"d":0.092},{"w":"Dios","t":66.468,"d":0.487},{"w":"Es","t":67.863,"d":0.184},{"w":"decir","t":68.061,"d":0.408},{"w":"hasta","t":68.745,"d":0.263},{"w":"Edén","t":69.021,"d":0.329},{"w":"donde","t":69.639,"d":0.237},{"w":"empezó","t":69.889,"d":0.461},{"w":"el","t":70.363,"d":0.132},{"w":"hilo","t":70.508,"d":0.355},{"w":"Y","t":71.784,"d":0.145},{"w":"Lucas","t":71.942,"d":0.408},{"w":"recoge","t":72.363,"d":0.421},{"w":"lo","t":72.797,"d":0.132},{"w":"que","t":72.942,"d":0.132},{"w":"el","t":73.087,"d":0.132},{"w":"ángel","t":73.232,"d":0.342},{"w":"le","t":73.587,"d":0.066},{"w":"dijo","t":73.666,"d":0.276},{"w":"a","t":73.955,"d":0.026},{"w":"María","t":73.995,"d":0.421},{"w":"Jehová","t":74.732,"d":0.303},{"w":"le","t":75.047,"d":0.118},{"w":"daría","t":75.179,"d":0.355},{"w":"a","t":75.547,"d":0.039},{"w":"su","t":75.6,"d":0.184},{"w":"hijo","t":75.797,"d":0.263},{"w":"el","t":76.074,"d":0.105},{"w":"trono","t":76.192,"d":0.303},{"w":"de","t":76.508,"d":0.092},{"w":"David","t":76.613,"d":0.316},{"w":"su","t":76.942,"d":0.145},{"w":"padre","t":77.1,"d":0.395},{"w":"y","t":77.771,"d":0.079},{"w":"su","t":77.863,"d":0.171},{"w":"Reino","t":78.047,"d":0.368},{"w":"no","t":78.429,"d":0.224},{"w":"tendrá","t":78.666,"d":0.382},{"w":"fin","t":79.061,"d":0.368},{"w":"Juan","t":80.35,"d":0.395},{"w":"el","t":81.074,"d":0.118},{"w":"apóstol","t":81.205,"d":0.5},{"w":"a","t":81.718,"d":0.053},{"w":"quien","t":81.784,"d":0.211},{"w":"Jesús","t":82.008,"d":0.395},{"w":"amaba","t":82.416,"d":0.434},{"w":"escribió","t":83.113,"d":0.526},{"w":"el","t":83.653,"d":0.092},{"w":"suyo","t":83.758,"d":0.316},{"w":"al","t":84.087,"d":0.066},{"w":"final","t":84.166,"d":0.382},{"w":"hacia","t":84.797,"d":0.289},{"w":"el","t":85.1,"d":0.132},{"w":"año","t":85.245,"d":0.237},{"w":"noventa","t":85.495,"d":0.382},{"w":"y","t":85.889,"d":0.079},{"w":"ocho","t":85.982,"d":0.342},{"w":"para","t":86.626,"d":0.224},{"w":"que","t":86.863,"d":0.132},{"w":"ustedes","t":87.008,"d":0.474},{"w":"crean","t":87.495,"d":0.329},{"w":"que","t":87.837,"d":0.132},{"w":"Jesús","t":87.982,"d":0.434},{"w":"es","t":88.429,"d":0.145},{"w":"el","t":88.587,"d":0.118},{"w":"Cristo","t":88.718,"d":0.461},{"w":"el","t":89.429,"d":0.197},{"w":"Hijo","t":89.639,"d":0.25},{"w":"de","t":89.903,"d":0.092},{"w":"Dios","t":90.008,"d":0.513},{"w":"En","t":91.429,"d":0.197},{"w":"el","t":91.639,"d":0.158},{"w":"año","t":91.811,"d":0.237},{"w":"veintinueve","t":92.061,"d":0.658},{"w":"Jesús","t":93.034,"d":0.395},{"w":"fue","t":93.442,"d":0.197},{"w":"ungido","t":93.653,"d":0.434},{"w":"después","t":94.1,"d":0.434},{"w":"de","t":94.547,"d":0.079},{"w":"bautizarse","t":94.639,"d":0.776},{"w":"Mesías","t":96.324,"d":0.474},{"w":"significa","t":96.811,"d":0.592},{"w":"Ungido","t":97.416,"d":0.5},{"w":"y","t":98.179,"d":0.079},{"w":"su","t":98.271,"d":0.118},{"w":"equivalente","t":98.403,"d":0.605},{"w":"griego","t":99.021,"d":0.382},{"w":"es","t":99.416,"d":0.118},{"w":"Cristo","t":99.547,"d":0.447},{"w":"no","t":100.297,"d":0.197},{"w":"es","t":100.508,"d":0.145},{"w":"un","t":100.666,"d":0.105},{"w":"apellido","t":100.784,"d":0.579},{"w":"es","t":101.6,"d":0.184},{"w":"un","t":101.797,"d":0.145},{"w":"título","t":101.955,"d":0.487},{"w":"La","t":103.35,"d":0.158},{"w":"descendencia","t":103.521,"d":0.789},{"w":"ya","t":104.324,"d":0.197},{"w":"tiene","t":104.534,"d":0.303},{"w":"nombre","t":104.85,"d":0.461}];
+// Librería común de las escenas. El constructor la pega dentro de una función que ya
+// define ID (id de la composición), DUR (duración de la escena), LEAD (silencio antes de la
+// voz) y W (palabras de la voz con su tiempo, ya desplazadas por LEAD).
+const root = document.getElementById(ID);
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+// Acepta un selector, un elemento, una NodeList o una lista mezclada de cualquiera de ellos.
+const el = (x) => (typeof x === "string" ? $$(x) : Array.isArray(x) ? x.flatMap((y) => el(y)) : x instanceof NodeList ? Array.from(x) : [x]);
+const tl = gsap.timeline({ paused: true });
+
+// ---------- sincronía con la voz ----------
+const norm = (s) =>
+  s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9ñ]/g, "");
+const WN = W.map((w) => norm(w.w));
+const trozos = (frase) => frase.split(/[\s\-]+/).map(norm).filter(Boolean);
+function buscar(frase, despues) {
+  const p = trozos(frase);
+  for (let i = 0; i < WN.length; i++) {
+    if (W[i].t < (despues || 0) - 0.001) continue;
+    let ok = true;
+    for (let k = 0; k < p.length; k++) if (WN[i + k] !== p[k]) { ok = false; break; }
+    if (ok) return i;
+  }
+  throw new Error(ID + ': no encuentro "' + frase + '" después de ' + despues);
+}
+// Momento en que la voz empieza a decir la frase (primera vez después de `despues`).
+function at(frase, despues) { return W[buscar(frase, despues)].t; }
+// Momento en que la voz termina de decir la frase.
+function fin(frase, despues) {
+  const i = buscar(frase, despues);
+  const w = W[i + trozos(frase).length - 1];
+  return w.t + w.d;
+}
+const FIN_VOZ = W.length ? W[W.length - 1].t + W[W.length - 1].d : DUR;
+
+// ---------- movimientos ----------
+// Todos los elementos que se revelan empiezan ocultos por CSS (.oc, .esc, trazos) y se
+// animan con immediateRender:false, así cada cuadro depende solo del tiempo.
+const IR = { immediateRender: false };
+// El primer movimiento que revela un elemento lo deja oculto desde el cuadro cero.
+const _ocultos = new WeakSet();
+function inicial(els, props) {
+  els.forEach((e) => { if (!_ocultos.has(e)) { _ocultos.add(e); gsap.set(e, props); } });
+  return els;
+}
+function entra(x, t, o = {}) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0, y: o.y ?? 36, x: o.x ?? 0, scale: o.s ?? 1 },
+    { opacity: 1, y: 0, x: 0, scale: 1, duration: o.d ?? 0.6, ease: o.ease ?? "power3.out", stagger: o.st ?? 0, ...IR }, t);
+}
+function sale(x, t, o = {}) {
+  tl.fromTo(el(x), { opacity: 1 }, { opacity: 0, y: o.y ?? -24, duration: o.d ?? 0.45, ease: "power2.in", stagger: o.st ?? 0, ...IR }, t);
+}
+function aparece(x, t, d = 0.5, hasta = 1) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0 }, { opacity: hasta, duration: d, ease: "none", ...IR }, t);
+}
+function atenua(x, t, hasta = 0.25, d = 0.5) {
+  tl.to(el(x), { opacity: hasta, duration: d, ease: "power1.inOut" }, t);
+}
+function desaparece(x, t, d = 0.45) {
+  tl.to(el(x), { opacity: 0, duration: d, ease: "none" }, t);
+}
+function salta(x, t, o = {}) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0, scale: o.desde ?? 0.4, rotation: o.r ?? 0 },
+    { opacity: 1, scale: 1, rotation: 0, duration: o.d ?? 0.55, ease: o.ease ?? "back.out(1.8)", stagger: o.st ?? 0, ...IR }, t);
+}
+// Escritura a mano: se descubre de izquierda a derecha, como si la tiza avanzara.
+function escribe(x, t, d = 0.8, o = {}) {
+  tl.fromTo(inicial(el(x), { clipPath: "inset(-30% 103% -30% -3%)" }), { opacity: 1, clipPath: "inset(-30% 103% -30% -3%)" },
+    { clipPath: "inset(-30% -3% -30% -3%)", opacity: 1, duration: d, ease: "none", stagger: o.st ?? 0, ...IR }, t);
+}
+// Trazo de tiza: la línea se dibuja en vivo.
+const _largos = new Map();
+// Las escenas que no están en pantalla al cargar están ocultas, y ahí getTotalLength()
+// devuelve 0. Se mide una copia del trazo dentro de un SVG auxiliar que sí se dibuja.
+function sonda(p) {
+  let s = document.getElementById("sonda-trazos");
+  if (!s) {
+    s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    s.id = "sonda-trazos";
+    s.setAttribute("style", "position:fixed;left:0;top:0;width:10px;height:10px;visibility:hidden;pointer-events:none");
+    document.body.appendChild(s);
+  }
+  const c = p.cloneNode(false);
+  s.appendChild(c);
+  return c;
+}
+function largo(p) {
+  const c = sonda(p);
+  const L = c.getTotalLength();
+  c.remove();
+  return L;
+}
+function preparaTrazos(x) {
+  el(x).forEach((p) => {
+    if (_largos.has(p)) return;
+    const L = largo(p);
+    _largos.set(p, L);
+    p.style.strokeDasharray = L + " " + (L + 2);
+    p.style.strokeDashoffset = L;
+  });
+}
+function traza(x, t, d = 1, o = {}) {
+  const ps = inicial(el(x), { opacity: 0 });
+  preparaTrazos(ps);
+  tl.fromTo(ps, { strokeDashoffset: (i, p) => _largos.get(p), opacity: 1 },
+    { strokeDashoffset: 0, opacity: 1, duration: d, ease: o.ease ?? "power1.inOut", stagger: o.st ?? 0, ...IR }, t);
+}
+// Un objeto que recorre un trazo mientras se dibuja (Agar, los reyes, Abrán).
+// Los puntos del camino se miden una sola vez al construir; durante el render solo se interpola.
+function medirCamino(path, N = 400) {
+  const p = sonda(el(path)[0]);
+  const L = p.getTotalLength();
+  const pts = [];
+  for (let i = 0; i <= N; i++) { const q = p.getPointAtLength((L * i) / N); pts.push([q.x, q.y]); }
+  p.remove();
+  return pts;
+}
+function ponEnCamino(objs, pts, k) {
+  const N = pts.length - 1;
+  const f = Math.min(N, Math.max(0, k * N)), i = Math.floor(f), r = f - i, j = Math.min(N, i + 1);
+  const x = pts[i][0] + (pts[j][0] - pts[i][0]) * r, y = pts[i][1] + (pts[j][1] - pts[i][1]) * r;
+  objs.forEach((e) => e.setAttribute("transform", "translate(" + x.toFixed(2) + " " + y.toFixed(2) + ")"));
+}
+// Solo el primer recorrido de un objeto fija su posición inicial; los siguientes
+// arrancan donde terminó el anterior.
+const _colocados = new WeakSet();
+function recorre(obj, path, t, d, o = {}) {
+  const pts = typeof path === "string" || path instanceof Element ? medirCamino(path) : path;
+  const objs = el(obj);
+  const st = { k: o.desde ?? 0 };
+  if (!objs.some((e) => _colocados.has(e))) { objs.forEach((e) => _colocados.add(e)); ponEnCamino(objs, pts, st.k); }
+  tl.to(st, { k: o.hasta ?? 1, duration: d, ease: o.ease ?? "power1.inOut", onUpdate: () => ponEnCamino(objs, pts, st.k) }, t);
+}
+function cuenta(x, desde, hasta, t, d, fmt = (v) => Math.round(v).toString()) {
+  const e = el(x)[0];
+  const st = { v: desde };
+  if (!_colocados.has(e)) { _colocados.add(e); e.textContent = fmt(desde); }
+  tl.to(st, { v: hasta, duration: d, ease: "power1.out", onUpdate: () => (e.textContent = fmt(st.v)) }, t);
+}
+function camara(x, t, d, props, ease = "power2.inOut") {
+  tl.to(el(x), { ...props, duration: d, ease }, t);
+}
+// Paneo lento sobre una ilustración (Ken Burns), sin salirse del marco.
+function kb(x, t0, t1, desde, hasta) {
+  tl.fromTo(el(x), { scale: desde.s ?? 1.08, xPercent: desde.x ?? 0, yPercent: desde.y ?? 0 },
+    { scale: hasta.s ?? 1.0, xPercent: hasta.x ?? 0, yPercent: hasta.y ?? 0, duration: Math.max(0.1, t1 - t0), ease: "none" }, t0);
+}
+const fmtMiles = (v) => Math.round(v).toLocaleString("es-CO");
+
+// ---------- piezas repetidas ----------
+// Filtro de tiza para los trazos: borde levemente irregular.
+root.insertAdjacentHTML("afterbegin",
+  '<svg width="0" height="0" style="position:absolute"><defs>' +
+  '<filter id="tz-' + ID + '" x="-5%" y="-5%" width="110%" height="110%">' +
+  '<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>' +
+  '<feDisplacementMap in="SourceGraphic" scale="3"/></filter></defs></svg>');
+const TIZA = "url(#tz-" + ID + ")";
+
+// Tarjeta de capítulo: "Jeremías 37" y su subtítulo.
+function capitulo(x, t0, t1) {
+  const c = el(x)[0];
+  entra(c.querySelector(".num"), t0, { y: 60, d: 0.8 });
+  escribe(c.querySelector(".sub"), t0 + 0.5, 0.9);
+  traza(c.querySelectorAll("path"), t0 + 0.3, 0.8);
+  if (c.querySelector(".edad")) entra(c.querySelector(".edad"), t0 + 0.9, { y: 20 });
+  sale(c, t1, { y: -60, d: 0.6 });
+}
+
+// Entrada y salida de toda la escena: el fondo es común, solo se funde el contenido.
+function marco() {
+  tl.fromTo($(".contenido"), { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none" }, 0);
+  tl.to($(".contenido"), { opacity: 0, duration: 0.5, ease: "none" }, DUR - 0.55);
+}
+
+// Bloques de texto que se reemplazan en el mismo lugar: cada uno entra en su momento y sale
+// justo antes del siguiente. Si `hasta` es null, el último se queda.
+function secuencia(lista, hasta = null, o = {}) {
+  lista.forEach(([s, t], i) => {
+    entra(s, t, { y: o.y ?? 26, d: o.d ?? 0.55 });
+    const sig = i < lista.length - 1 ? lista[i + 1][1] : hasta;
+    if (sig != null) sale(s, sig - 0.4, { d: 0.35 });
+  });
+}
+// Pone marcado SVG dentro de un elemento de la escena.
+function pinta(sel, svg) { $(sel).innerHTML = svg; }
+
+// ---------- mapas ----------
+// Encuadre de cámara: lleva la región {x, y, w, h} de la imagen del mapa a la ventana
+// {x, y, w, h} de la pantalla (relativa al contenedor .mapa), sin deformarla.
+function encuadre(r, v) {
+  const s = Math.min(v.w / r.w, v.h / r.h);
+  return { scale: +s.toFixed(4), x: +(v.x + (v.w - r.w * s) / 2 - r.x * s).toFixed(1), y: +(v.y + (v.h - r.h * s) / 2 - r.y * s).toFixed(1) };
+}
+// Latido de un marcador: crece y vuelve, un número finito de veces.
+function late(x, t, o = {}) {
+  tl.fromTo(el(x), { scale: 1 }, { scale: o.s ?? 1.35, transformOrigin: "50% 50%", duration: o.d ?? 0.35, yoyo: true, repeat: o.n ?? 3, ease: "power1.inOut", immediateRender: false }, t);
+}
+
+// ---------- lecciones ----------
+// Cada lección entra en su momento y sale antes de la siguiente; el número cuenta.
+function lecciones(lista) {
+  const cab = $(".seccion");
+  if (cab) { entra(cab, 0.3, { y: -20 }); traza(".seccion-linea path", 0.6, 1.0); }
+  secuencia(lista, null, { y: 30, d: 0.6 });
+}
+
+
+// Los 66 libros: abreviatura, capítulos y grupo (TNM de estudio, "Tabla de los libros de la Biblia" y "Pregunta 19").
+// Los colores de grupo evitan el oro, que en este video es solo la línea de la descendencia.
+const LIBROS = [["Gé",50,0],["Éx",40,0],["Le",27,0],["Nú",36,0],["Dt",34,0],["Jos",24,1],["Jue",21,1],["Rut",4,1],["1Sa",31,1],["2Sa",24,1],["1Re",22,1],["2Re",25,1],["1Cr",29,1],["2Cr",36,1],["Esd",10,1],["Ne",13,1],["Est",10,1],["Job",42,2],["Sl",150,2],["Pr",31,2],["Ec",12,2],["Can",8,2],["Is",66,3],["Jer",52,3],["Lam",5,3],["Eze",48,3],["Da",12,3],["Os",14,3],["Joe",3,3],["Am",9,3],["Abd",1,3],["Jon",4,3],["Miq",7,3],["Na",3,3],["Hab",3,3],["Sof",3,3],["Ag",2,3],["Zac",14,3],["Mal",4,3],["Mt",28,4],["Mr",16,4],["Lu",24,4],["Jn",21,4],["Hch",28,5],["Ro",16,6],["1Co",16,6],["2Co",13,6],["Gál",6,6],["Ef",6,6],["Flp",4,6],["Col",4,6],["1Te",5,6],["2Te",3,6],["1Ti",6,6],["2Ti",4,6],["Tit",3,6],["Flm",1,6],["Heb",13,6],["Snt",5,6],["1Pe",5,6],["2Pe",3,6],["1Jn",5,6],["2Jn",1,6],["3Jn",1,6],["Jud",1,6],["Ap",22,7]];
+const GRUPOS = [
+  { n: "Pentateuco", c: "#a7b8cc" }, { n: "Históricos", c: "#94b8a6" }, { n: "Poéticos", c: "#b3a1d9" },
+  { n: "Proféticos", c: "#cfa6c8" }, { n: "Evangelios", c: "#8fcfc4" }, { n: "Hechos", c: "#7fb2d9" },
+  { n: "Cartas", c: "#9fa6ee" }, { n: "Apocalipsis", c: "#d6d9e0" },
+];
+
+// Cinta de los 66 libros al pie: dice en qué parte del recorrido estamos (escenas 14 a 14e).
+// Cada libro es una marca del color de su grupo; el grupo del que habla la voz se enciende y los demás se apagan.
+// Requiere _libros.js y un <svg class="cinta66" viewBox="0 0 1920 120"></svg> en el marcado.
+function cinta66() {
+  const X0 = 110, X1 = 1810, PAS = (X1 - X0) / 66, Y = 30;
+  let sv = '<line x1="' + X0 + '" y1="' + (Y + 26) + '" x2="' + X1 + '" y2="' + (Y + 26) + '" stroke="#ebbd5c" stroke-width="4" stroke-opacity="0.7"/>';
+  LIBROS.forEach((l, i) => {
+    const x = X0 + i * PAS + 2;
+    sv += '<rect class="c66 c66g' + l[2] + ' c66-' + l[0] + '" x="' + x + '" y="' + Y + '" width="' + (PAS - 5) + '" height="52" rx="4" fill="' + GRUPOS[l[2]].c + '"/>';
+  });
+  GRUPOS.forEach((g, r) => {
+    const libs = LIBROS.map((l, i) => [l, i]).filter(([l]) => l[2] === r);
+    const xa = X0 + libs[0][1] * PAS, xb = X0 + (libs[libs.length - 1][1] + 1) * PAS;
+    // Evangelios, Hechos y Apocalipsis son grupos angostos: su rótulo se alinea a un borde para no pisarse.
+    const [xm, anc] = r === 4 ? [xb - 4, "end"] : r === 5 ? [xa + 2, "start"] : r === 7 ? [xb, "end"] : [(xa + xb) / 2, "middle"];
+    sv += '<text class="c66t c66t' + r + '" x="' + xm + '" y="' + (Y + 86) + '" text-anchor="' + anc + '" font-family="Montserrat" font-weight="700" font-size="24" fill="' + g.c + '">' + g.n + '</text>';
+  });
+  $(".cinta66").innerHTML = sv;
+  gsap.set($$(".c66, .c66t"), { opacity: 0.28 });
+}
+// Enciende los grupos indicados desde el instante t.
+function focoCinta(grupos, t) {
+  for (let r = 0; r < 8; r++) {
+    const on = grupos.includes(r);
+    tl.to($$(".c66g" + r + ", .c66t" + r), { opacity: on ? 1 : 0.28, duration: 0.5 }, t);
+  }
+}
+
+cinta66();
+const tB = at("Mateo era recaudador") - 0.3;
+const tC = at("En el año veintinueve") - 0.3;
+entra(".cab", 0.3, { y: -10 });
+entra(".cinta66", 0.5, { y: 20 });
+focoCinta([4], 1.0);
+entra(".intro .titulo", 0.6, { y: 24 });
+entra(".intro .chip", 1.4, { y: 16, st: 0.15 });
+tl.to($(".fa"), { opacity: 0, duration: 0.5 }, tB);
+aparece(".fb", tB + 0.1, 0.4);
+[".ca1", ".ca2", ".ca3", ".ca4"].forEach((c, i) => aparece(c, tB + 0.2 + i * 0.15, 0.4, 0.35));
+const activa = (c, t) => {
+  [".ca1", ".ca2", ".ca3", ".ca4"].forEach((x) => tl.to($(x), { opacity: x === c ? 1 : 0.35, borderColor: x === c ? "#ebbd5c" : "rgba(243,234,216,0.22)", duration: 0.4 }, t));
+};
+activa(".ca1", at("Mateo era recaudador"));
+activa(".ca2", at("Marcos no era"));
+activa(".ca3", at("Lucas era médico"));
+activa(".ca4", at("Juan, el apóstol"));
+gsap.set($$(".ca1 .lazos, .ca3 .q1, .ca3 .q2"), { opacity: 0 });
+entra(".ca1 .lazos", at("Ahí están los dos pactos"), { y: 10 });
+entra(".ca3 .q1", at("Su lista de antepasados"), { y: 10 });
+entra(".ca3 .q2", at("Y Lucas recoge"), { y: 10 });
+entra(".fb .fuente", tB + 1.0, { y: 10 });
+tl.to($(".fb"), { opacity: 0, duration: 0.5 }, tC);
+aparece(".fc", tC + 0.1, 0.4);
+entra(".retrato", tC + 0.2, { y: 30 });
+entra(".un .anio", tC + 0.4, { y: 20 });
+entra(".un .s", tC + 0.6, { y: 20 });
+entra(".un .def", at("Mesías significa"), { y: 20 });
+entra(".un .nombre", at("La descendencia ya tiene"), { y: 16 });
+
+marco();
+window.__timelines[ID] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

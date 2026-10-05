@@ -1,0 +1,62 @@
+<style>
+.gran { position: absolute; left: 120px; right: 120px; top: 130px; bottom: 120px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.gran .cita { font-size: 70px; }
+.sal { position: absolute; left: 0; top: 140px; width: 1920px; height: 520px; }
+.sal svg { width: 1920px; height: 520px; }
+.yy { font-family: "Fraunces", serif; font-weight: 700; font-size: 64px; }
+.ll { font-family: "Caveat", cursive; font-weight: 700; font-size: 56px; }
+.pp { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; }
+.salc { position: absolute; left: 120px; right: 120px; top: 690px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+.salc .cita { font-size: 46px; }
+.ilus.dra { left: 60px; top: 150px; width: 700px; height: 780px; }
+.ilus.dra img { object-fit: cover; object-position: 30% 50%; }
+.pie { position: absolute; left: 60px; top: 944px; width: 700px; font-size: 24px; color: var(--tenue); line-height: 1.25; }
+.col2 { position: absolute; left: 830px; right: 90px; top: 130px; bottom: 120px; }
+.col2 .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.dos { display: grid; grid-template-columns: 1fr; gap: 30px; }
+.cielo-t { font-family: "Fraunces", serif; font-weight: 700; font-size: 80px; color: var(--cielo); line-height: 1.05; }
+.tierra-t { font-family: "Fraunces", serif; font-weight: 700; font-size: 64px; color: var(--fuego); line-height: 1.12; }
+</style>
+<div class="cab"><span class="cap">1914</span><span>en el cielo</span></div>
+<div class="fase f-a"><div class="gran"><div class="cita">“Vi venir con las nubes de los cielos a alguien <b>parecido a un hijo del hombre</b> [...]. Y <b>recibió dominio, honra y un reino</b>”<span class="ref">DANIEL 7:13, 14</span></div></div></div>
+<div class="fase f-b">
+<div class="sal"><svg viewBox="0 0 1920 520">
+  <path class="espera" d="M 200 260 L 1500 260" stroke="var(--cielo)" stroke-width="12" stroke-dasharray="4 26" stroke-linecap="round" fill="none"/>
+  <path class="domina" d="M 1510 260 L 1780 260" stroke="var(--verde)" stroke-width="16" stroke-linecap="round" fill="none"/>
+  <g class="a33"><circle cx="200" cy="260" r="26" fill="var(--cielo)"/><text class="yy" x="200" y="190" text-anchor="middle" fill="var(--cielo)">33</text><text class="ll" x="200" y="350" text-anchor="middle" fill="var(--tiza)">resucita</text></g>
+  <text class="ll tesp" x="850" y="225" text-anchor="middle" fill="var(--cielo)">espera a la derecha de su Padre</text>
+  <g class="a1914"><circle cx="1505" cy="260" r="30" fill="var(--verde)"/><text class="yy" x="1505" y="190" text-anchor="middle" fill="var(--verde)">1914</text><text class="ll" x="1505" y="350" text-anchor="middle" fill="var(--tiza)">recibe el Reino</text></g>
+</svg></div>
+<div class="salc"><div class="cita c1">“Siéntate a mi derecha <b>hasta que</b> ponga a tus enemigos como banquillo para tus pies”<span class="ref">SALMO 110:1</span></div><div class="cita c2">“<b style="color:var(--verde)">Ve dominando</b> en medio de tus enemigos”<span class="ref">SALMO 110:2</span></div></div>
+</div>
+<div class="fase f-c">
+<div class="ilus dra"><img src="assets/img/mundo-dragon.jpg" /></div>
+<div class="pie">Detalle: Satanás, como un dragón, es arrojado a la tierra. <i>La Atalaya</i> (estudio), abril de 2026 (wol.jw.org)</div>
+<div class="col2">
+  <div class="b b1"><div class="cita">“Estalló una guerra en el cielo. <b>Miguel y sus ángeles</b> lucharon contra el dragón”<span class="ref">APOCALIPSIS 12:7</span></div></div>
+  <div class="b b2"><div class="def"><div class="t">Miguel</div><div class="x">“¿Quién es como Dios?”: es Jesús</div><div class="s">“Los ángeles fieles comandados por Miguel, es decir, Cristo” · <i>El Reino de Dios ya está gobernando</i>, pág. 22</div></div></div>
+  <div class="b b3"><div class="cita">“<b>Fue arrojado a la tierra</b>, y sus ángeles fueron arrojados con él”<span class="ref">APOCALIPSIS 12:9</span></div></div>
+  <div class="b b4"><div class="dos"><div class="cielo-t">“¡Alégrense, cielos!”</div><div class="tierra-t">“¡Ay de la tierra y del mar! Porque el Diablo ha bajado [...] lleno de furia, ya que sabe que le queda poco tiempo”</div></div><div class="cita"><span class="ref">APOCALIPSIS 12:12</span></div></div>
+</div>
+</div>
+<script>
+const tB = at("Jesús había esperado");
+const tC = at("Apocalipsis doce describe");
+entra(".cab", 0.3, { y: -10 });
+entra(".gran .cita", 0.6, { y: 30 });
+sale(".f-a", tB - 0.5);
+salta(".a33", tB, { desde: 0.5 });
+traza(".espera", at("Siéntate a mi derecha"), 2.6, { ease: "none" });
+tl.set(".espera", { strokeDasharray: "4 26", strokeDashoffset: 0 }, at("Siéntate a mi derecha") + 2.65);
+aparece(".tesp", at("Siéntate a mi derecha") + 1.0, 0.6);
+entra(".c1", at("Siéntate a mi derecha"), { y: 30 });
+salta(".a1914", at("Ve dominando"), { desde: 0.5 });
+traza(".domina", at("Ve dominando") + 0.3, 0.8);
+entra(".c2", at("Ve dominando"), { y: 30 });
+late(".a1914 circle", at("hasta el fin de los siete tiempos"), { s: 1.4 });
+sale(".f-b", tC - 0.5);
+aparece(".dra", tC, 0.8);
+kb(".dra img", tC, DUR, { s: 1.05, y: -3 }, { s: 1.15, y: 3 });
+aparece(".pie", tC + 0.3, 0.5);
+secuencia([[".b1", at("estalló una guerra")], [".b2", at("Miguel significa")], [".b3", at("Satanás perdió")], [".b4", at("Por eso el mismo capítulo")]]);
+</script>

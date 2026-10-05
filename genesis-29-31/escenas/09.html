@@ -1,0 +1,28 @@
+<style>
+.marco { position: absolute; left: 60px; top: 150px; width: 1140px; height: 623px; border-radius: 26px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
+.marco img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pie-img { left: 60px; top: 790px; width: 1140px; }
+.col { top: 120px; bottom: 90px; right: 64px; width: 620px; }
+.dias { display: flex; align-items: baseline; gap: 20px; }
+.dias .grande { font-size: 150px; color: var(--oro); }
+.dias .m { font-size: 70px; }
+.foco { position: absolute; top: 150px; height: 623px; width: 570px; border: 8px solid var(--oro); border-radius: 26px; opacity: 0; }
+</style>
+<div class="cab"><span class="cap">Génesis 29</span><span>versículos 16 al 20</span></div>
+<div class="marco"><img src="assets/img/lea-raquel.jpg"/></div>
+<div class="foco f-lea" style="left:60px"></div>
+<div class="foco f-raq" style="left:630px"></div>
+<div class="pie-img">Retratos de Lea y de Raquel, “¿Qué aprendemos de las mujeres de la Biblia?”, jw.org (wol.jw.org) · montaje de la investigación</div>
+<div class="col">
+  <div class="b a1"><div class="cita md">“la mayor se llamaba Lea, y la menor, Raquel. Pero los ojos de Lea no tenían brillo. En cambio, Raquel se había convertido en una mujer muy hermosa y atractiva”<span class="ref">GÉNESIS 29:16, 17</span></div></div>
+  <div class="b a2"><div class="def"><div class="t">Ojos sin brillo</div><div class="x">“carecían de vida”</div><div class="s">“los ojos brillantes se consideran un atributo especial de belleza” · Perspicacia, vol. 2, “Lea”, pág. 194</div></div><div class="m md">no dice que fuera fea: al lado de su hermana <b>no llamaba la atención</b></div></div>
+  <div class="b a3"><div class="dias"><div class="grande">7</div><div class="m">años</div></div><div class="cita md">“le parecieron unos cuantos días por el amor que le tenía”<span class="ref">GÉNESIS 29:20</span></div><div class="m md">se casó con <b>84 años</b></div><div class="s">Perspicacia, vol. 2, “Jacob”, pág. 8</div></div>
+</div>
+<script>
+aparece(".marco", 0.2, 0.6);
+secuencia([[".a1", 0.4], [".a2", at("Que los ojos no tuvieran")], [".a3", at("Jacob trabajó siete años")]]);
+aparece(".f-lea", at("La mayor Lea"), 0.4); desaparece(".f-lea", at("La menor Raquel") - 0.2, 0.3);
+aparece(".f-raq", at("La menor Raquel"), 0.4); desaparece(".f-raq", at("Que los ojos") - 0.3, 0.3);
+aparece(".f-lea", at("Que los ojos no tuvieran") + 0.2, 0.4); desaparece(".f-lea", at("Jacob trabajó siete años") - 0.2, 0.3);
+aparece(".f-raq", at("Jacob trabajó siete años") + 0.2, 0.4);
+</script>

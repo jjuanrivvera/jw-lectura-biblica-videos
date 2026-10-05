@@ -1,0 +1,56 @@
+<style>
+.mapa.B6 { left: 0; top: 0; width: 1040px; height: 1080px; }
+.mapa.B6 .pie-mapa { left: 20px; right: auto; max-width: 940px; }
+.funde19 { left: 940px; }
+.col19 { position: absolute; left: 1090px; right: 70px; top: 110px; bottom: 80px; }
+.col19 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.col19 .cita { font-size: 46px; }
+.col19 .def .x { font-size: 54px; }
+.hd19 { display: flex; align-items: center; gap: 26px; }
+.hd19 .med { position: relative; width: 150px; }
+.hd19 .med .n { font-size: 24px; }
+.hd19 .m { font-size: 64px; }
+.dos19 { display: flex; gap: 40px; align-items: flex-start; }
+.dos19 .med { position: relative; width: 170px; }
+.dos19 .med .n { font-size: 26px; }
+.dos19 .y { font-family: "Caveat", cursive; font-weight: 700; font-size: 80px; color: var(--oro); align-self: center; margin-top: -40px; }
+</style>
+
+<!--incluir:_b6.html-->
+<div class="funde-der funde19"></div>
+<div class="cab" style="left:1090px"><span class="cap">Génesis 49</span><span>Simeón</span></div>
+<div class="col19">
+  <div class="b b1">
+    <div class="hd19"><!--MS--><div class="m">sin fronteras propias: <b>ciudades dentro de Judá</b></div></div>
+    <div class="cita">“La herencia de los descendientes de Simeón se sacó de la parte de la tierra que le tocó a Judá, porque <b>la parte de Judá era demasiado grande</b> para ellos”<span class="ref">JOSUÉ 19:9</span></div>
+  </div>
+  <div class="b b2">
+    <div class="def"><div class="t">enclave</div><div class="x">una ciudad <b>encerrada dentro de otra herencia</b></div><div class="s">en el mapa B6, los puntos verdes: “Ciudades enclavadas de Simeón”</div></div>
+    <div class="f"><i>La Atalaya</i> (estudio), junio de 2025, parte 1, págs.&nbsp;4 a 5 · <i>Perspicacia</i>, “Simeón”, pág.&nbsp;1028</div>
+  </div>
+  <div class="b b3">
+    <div class="m md oro">no tuvieron que repetir la violencia</div>
+    <div class="dos19"><!--DOS--></div>
+    <div class="cita">“Así que <b>Simeón acompañó a Judá</b>”<span class="ref">JUECES 1:3</span></div>
+  </div>
+</div>
+
+<script>
+$(".hd19").insertAdjacentHTML("afterbegin", medallon("simeon"));
+$(".dos19").innerHTML = medallon("simeon") + '<div class="y">y</div>' + medallon("juda");
+pinta(".marcas", `
+  <g class="pv19">${B6_SIMEON.map(([x, y]) => `<circle class="anillo oro" cx="${x}" cy="${y}" r="38" style="stroke-width:5; opacity:0.7"/>`).join("")}</g>
+  <ellipse class="anillo oro c19j" cx="1024" cy="3092" rx="190" ry="70" style="stroke-width:6; opacity:0.7"/>
+  ${chip(830, 2540, "ciudades de Simeón", { fs: 38, cls: "verde c19s", ancla: "der" })}`);
+const V = { x: 0, y: 0, w: 1040, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 250, y: 2000, w: 1600, h: 1560 }, V), 0);
+camara(".cam", 0.5, 4.0, encuadre({ x: 320, y: 2300, w: 1400, h: 1360 }, V));
+tl.set($$(".mchip"), { opacity: 0 }, 0);
+const tP = at("En el mapa son");
+secuencia([[".b1", 0.4], [".b2", tP - 0.2], [".b3", at("Sus descendientes") - 0.2]]);
+entra(".b1 .cita", at("porque la parte") - 0.4, { y: 20 });
+traza(".c19j", at("dentro de la tierra"), 0.8);
+salta(".pv19 circle", tP + 0.4, { st: 0.12, desde: 0.3 });
+aparece(".c19s", tP + 1.4, 0.5);
+entra(".b3 .cita", at("en Jueces") - 0.2, { y: 20 });
+</script>

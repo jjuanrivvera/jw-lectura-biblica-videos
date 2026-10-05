@@ -1,0 +1,58 @@
+<style>
+.col-n { position: absolute; left: 120px; top: 150px; width: 520px; }
+.col-n .r { display: flex; justify-content: space-between; align-items: baseline; font-family: "Fraunces", serif; font-weight: 600; font-size: 48px; line-height: 1.12; }
+.col-n .r span { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 26px; color: var(--tenue); }
+.col-n .r.noe { color: var(--cielo); }
+.col-n .raya { height: 6px; border-radius: 3px; background: var(--tiza); margin: 12px 0 8px; }
+.col-n .tot { display: flex; justify-content: space-between; align-items: baseline; font-family: "Fraunces", serif; font-weight: 700; font-size: 64px; color: var(--oro); }
+.der { position: absolute; left: 760px; right: 80px; top: 170px; }
+.der .grande { font-size: 230px; color: var(--oro); }
+.der .m { font-size: 70px; }
+.resta { position: absolute; left: 760px; right: 80px; top: 560px; }
+.resta .ec { font-family: "Fraunces", serif; font-weight: 700; font-size: 104px; line-height: 1.05; }
+.resta .ec b { color: var(--cielo); }
+.resta .s { margin-top: 10px; }
+.mat { position: absolute; left: 760px; right: 80px; top: 820px; }
+.mat .cita { font-size: 40px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 5</span><span>la cuenta, con lápiz y papel</span></div>
+<div class="col-n">
+  <div class="r"><span>Adán</span>130</div><div class="r"><span>Set</span>105</div><div class="r"><span>Enós</span>90</div>
+  <div class="r"><span>Quenán</span>70</div><div class="r"><span>Mahalalel</span>65</div><div class="r"><span>Jared</span>162</div>
+  <div class="r"><span>Enoc</span>65</div><div class="r"><span>Matusalén</span>187</div><div class="r"><span>Lamec</span>182</div>
+  <div class="r noe"><span>Noé, al Diluvio</span>+ 600</div>
+  <div class="raya"></div>
+  <div class="tot"><span style="font-family:Montserrat;font-size:26px;color:var(--tenue);font-weight:800;letter-spacing:.12em">TOTAL</span>1656</div>
+</div>
+<div class="der">
+  <div class="m">edad de cada uno al nacerle <b>el hijo de la lista</b></div>
+  <div style="display:flex;align-items:baseline;gap:24px;margin-top:30px"><div class="grande cnt">0</div><div class="m anos">años</div></div>
+</div>
+<div class="resta">
+  <div class="ec">4026 − 1656 = <b>2370</b></div>
+  <div class="s">a. e. c. · la fecha del Diluvio que publica Perspicacia, vol. 1, “Cronología” · <span class="propio" style="font-size:34px">suma y resta: cálculo propio</span></div>
+</div>
+<div class="mat"><div class="cita">“las Escrituras dicen que Matusalén <b>‘murió’</b>, no que pereció en el Diluvio como resultado de la ejecución divina”<span class="ref">PERSPICACIA, VOL. 2, “MATUSALÉN” · GÉNESIS 5:27</span></div></div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".der .m", 0.4, { y: 20 });
+const filas = $$(".col-n .r");
+const vals = [130, 105, 90, 70, 65, 162, 65, 187, 182, 600];
+let acum = 0;
+const t0 = at("Se suma");
+const paso = (at("y se añaden") - t0 - 0.6) / 9;
+filas.forEach((f, i) => {
+  const t = i < 9 ? t0 + 0.2 + i * paso : at("y se añaden");
+  entra(f, t, { y: -24, d: 0.4 });
+  const a = acum; acum += vals[i];
+  cuenta(".cnt", a, acum, t + 0.05, Math.min(0.4, paso * 0.9));
+});
+aparece([".cnt", ".anos"], t0, 0.3);
+entra(".raya", at("Da mil") - 0.3, { y: 0 });
+entra(".tot", at("Da mil"), { y: 10 });
+late(".cnt", at("Da mil"), { s: 1.08, n: 1 });
+entra(".resta", at("Y cuatro mil"), { y: 30 });
+entra(".mat", at("Matusalén murió"), { y: 30 });
+</script>

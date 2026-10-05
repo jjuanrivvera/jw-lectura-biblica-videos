@@ -1,0 +1,65 @@
+<style>
+.fila03 { position: absolute; left: 60px; right: 60px; top: 150px; height: 300px; }
+.fila03 .med { width: 158px; top: 40px; }
+.fila03 .med .n { font-size: 29px; }
+.tit03 { position: absolute; left: 0; right: 0; top: 40px; text-align: center; }
+.tit03 .m { font-size: 84px; }
+.tit03 .m .cnt { color: var(--oro); }
+.ben03 { position: absolute; left: 110px; top: 420px; width: 420px; }
+.ben03 .med { position: relative; width: 400px; }
+.ben03 .med .n { font-size: 38px; }
+.col03 { position: absolute; left: 640px; right: 90px; top: 330px; height: 700px; }
+.col03 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.nombres03 { display: grid; grid-template-columns: 1fr 90px 1fr; align-items: center; }
+.nombres03 .nm { font-family: "Fraunces", serif; font-weight: 700; font-size: 66px; line-height: 1; }
+.nombres03 .sg { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; line-height: 1.02; margin-top: 10px; }
+.nombres03 .quien { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tenue); margin-bottom: 8px; }
+.nombres03 svg { width: 90px; height: 60px; }
+.nombres03 svg path { fill: none; stroke: var(--oro); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+</style>
+
+<div class="tit03"><span class="m">bajan <span class="cnt">0</span></span></div>
+<div class="fila03"></div>
+<div class="ben03"></div>
+<div class="col03">
+  <div class="b a1">
+    <div class="m md oro">se queda con su padre</div>
+    <div class="cita">“No sea que tenga un accidente y muera”<span class="ref">JACOB · GÉNESIS 42:4</span></div>
+    <div class="s">Jacob “tenía aún muy fresca en su memoria la ocasión en la que mandó a José a visitar a sus hermanos y nunca más lo volvió a ver” · <i>La Atalaya</i>, 1 de mayo de 2015, pág.&nbsp;13</div>
+  </div>
+  <div class="b a2">
+    <div class="dato d22"><div class="v">22 <small>años, por lo menos</small></div><div class="k">no era un niño</div><div class="s"><i>Perspicacia</i>, vol.&nbsp;2, “Jacob”, pág.&nbsp;11</div></div>
+    <div class="m md rq">lo único que le quedaba de <b>Raquel</b></div>
+    <div class="nombres03">
+      <div class="n1"><div class="quien">Raquel, al morir</div><div class="nm">Ben-oní</div><div class="sg rojo" style="color:var(--rojo)">Hijo de Mi Duelo</div></div>
+      <svg class="fl" viewBox="0 0 90 60"><path d="M 8 30 H 78 M 60 14 L 80 30 L 60 46" /></svg>
+      <div class="n2"><div class="quien">Jacob</div><div class="nm oro" style="color:var(--oro)">Benjamín</div><div class="sg">Hijo de la Diestra</div></div>
+    </div>
+    <div class="f fn">Génesis 35:18 · <i>Perspicacia</i>, vol.&nbsp;1, “Benjamín”, pág.&nbsp;312</div>
+  </div>
+</div>
+
+<script>
+const diez = HIJOS.slice(0, 10);
+const paso = 1800 / 10;
+$(".fila03").innerHTML = diez.map(([k], i) => medallon(k, { estilo: `left:${i * paso + (paso - 158) / 2}px` })).join("");
+$(".ben03").innerHTML = medallon("benjamin");
+const tV = at("Van diez");
+const tB = at("Benjamín se queda");
+entra(".tit03", 0.2, { y: -20 });
+const meds = $$(".fila03 .med");
+salta(meds, tV - 0.3, { desde: 0.5, st: 0.12, d: 0.45 });
+cuenta(".tit03 .cnt", 0, 10, tV - 0.3, 1.3);
+// Los diez se achican y suben: queda Benjamín en primer plano.
+tl.to($(".fila03"), { scale: 0.78, y: -70, transformOrigin: "50% 0%", duration: 0.9, ease: "power2.inOut" }, tB - 0.3);
+tl.to($(".tit03"), { scale: 0.7, y: -34, duration: 0.9, ease: "power2.inOut" }, tB - 0.3);
+atenua(meds, tB + 0.2, 0.75);
+salta(".ben03 .med", tB, { desde: 0.6, d: 0.7 });
+secuencia([[".a1", tB + 0.2], [".a2", at("no era un niño") - 0.3]]);
+entra(".d22", at("no era un niño"), { y: 20 });
+entra(".rq", at("lo único que le quedaba"), { y: 20 });
+entra(".n1", at("Ella lo llamó"), { x: -20, y: 0 });
+traza(".fl path", at("Jacob, Benjamín"), 0.6);
+entra(".n2", at("Jacob, Benjamín") + 0.2, { x: -20, y: 0 });
+aparece(".fn", at("Ella lo llamó") + 0.5, 0.5);
+</script>

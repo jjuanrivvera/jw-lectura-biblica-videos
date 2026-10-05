@@ -1,0 +1,57 @@
+<style>
+.mapa.B2 { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa.B2 .pie-mapa { left: 24px; right: auto; bottom: 14px; font-size: 20px; }
+.lista41 { position: absolute; left: 60px; top: 110px; width: 820px; padding: 26px 34px; border-radius: 24px; background: rgba(15, 22, 30, 0.9); display: flex; flex-direction: column; gap: 12px; }
+.lista41 .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro); }
+.lista41 .it { display: flex; align-items: center; gap: 18px; font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; line-height: 1.0; }
+.lista41 .it b { width: 52px; height: 52px; border-radius: 50%; background: var(--oro); color: #17212b; font-family: "Fraunces", serif; font-size: 34px; display: flex; align-items: center; justify-content: center; flex: none; }
+.lista41 .it.q b { background: transparent; border: 4px dashed var(--oro); color: var(--oro); }
+.cab41 { left: 60px; right: auto; }
+.cab41 span { padding: 6px 18px; border-radius: 12px; background: rgba(15, 22, 30, 0.86); }
+.pp41 { position: absolute; right: 40px; top: 36px; }
+.no41 { position: absolute; left: 60px; top: 520px; }
+.no41 .clave { font-size: 50px; }
+</style>
+
+<!--incluir:_b2.html-->
+<div class="cab cab41"><span class="cap">Génesis 50:7-14</span></div>
+<div class="pp41"><span class="propio chico">orden del relato, no camino</span></div>
+<div class="lista41">
+  <div class="t">el orden del relato</div>
+  <div class="it i1"><b>1</b>salen de Gosén</div>
+  <div class="it q i2"><b>2</b>duelo en la era de Atad</div>
+  <div class="it i3"><b>3</b>entierro en Macpelá</div>
+  <div class="it i4"><b>4</b>vuelven a Egipto</div>
+</div>
+<div class="no41"><span class="clave">la Biblia <b>no dice el camino</b>: no se dibuja ninguno</span></div>
+
+<script>
+const num = (x, y, n, o = {}) => `<g class="n${n}"><circle cx="${x}" cy="${y}" r="42" fill="${o.q ? "rgba(15,22,30,0.9)" : "#e9bf60"}" stroke="${o.q ? "#e9bf60" : "#fff"}" stroke-width="7" ${o.q ? 'stroke-dasharray="12 9"' : ""}/>` +
+  `<text x="${x}" y="${y + 17}" text-anchor="middle" font-family="Fraunces" font-weight="700" font-size="50" fill="${o.q ? "#e9bf60" : "#17212b"}">${n}</text></g>`;
+pinta(".marcas", `
+  <ellipse class="zona41" cx="2316" cy="790" rx="130" ry="170" fill="rgba(233,191,96,0.28)" stroke="#d99a14" stroke-width="7" stroke-dasharray="20 14"/>
+  <text class="zona41q" x="2316" y="812" text-anchor="middle" font-family="Fraunces" font-weight="700" font-size="76" fill="#a8321c">?</text>
+  ${num(470, 1290, 1)}
+  <g class="c1">${chip(530, 1290, "Gosén", { fs: 46, cls: "oro" })}</g>
+  ${num(2316, 570, 2, { q: true })}
+  <g class="c2 mchip oro"><rect x="1370" y="632" width="460" height="136" rx="12"/><text x="1391" y="685" font-size="44">era de Atad:</text><text x="1391" y="742" font-size="44">región del Jordán</text></g>
+  ${num(2030, 1120, 3)}
+  <g class="c3">${chip(2084, 1120, "Macpelá", { fs: 38, cls: "oro" })}</g>
+  ${num(640, 1480, 4)}
+  <g class="c4">${chip(700, 1495, "vuelven a Egipto", { fs: 42, cls: "oro" })}</g>
+`);
+const V = { x: 0, y: 0, w: 1920, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 200, y: 250, w: 2440, h: 1372 }, V), 0);
+entra(".cab41", 0.2, { y: -10 });
+entra(".lista41 .t", 0.3, { y: 10 });
+aparece(".lista41", 0.2, 0.4);
+aparece(".pp41", 0.8, 0.5);
+const pasos = [[1, at("salen de Gosén")], [2, at("se detienen")], [3, at("entierran a Jacob")], [4, at("y vuelven")]];
+pasos.forEach(([n, t]) => {
+  entra(`.i${n}`, t - 0.2, { x: -16, y: 0 });
+  salta(`.n${n}`, t - 0.1);
+  aparece(`.c${n}`, t + 0.2, 0.4);
+});
+aparece([".zona41", ".zona41q"], at("se detienen") - 0.1, 0.6);
+entra(".no41", at("La Biblia no dice") - 0.1, { y: 14 });
+</script>

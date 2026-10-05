@@ -1,0 +1,56 @@
+<style>
+.mapa { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 2592px; height: 1444px; }
+.mk circle { fill: #c8452f; stroke: #fff; stroke-width: 6; }
+.mk text { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 52px; fill: #1d1a17; stroke-width: 12; }
+.tira { position: absolute; left: 90px; right: 90px; bottom: 60px; height: 300px; }
+.tira > .b { position: absolute; inset: 0; border-radius: 28px; background: rgba(16,24,34,0.95); border: 3px solid var(--linea); padding: 26px 40px; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.tira .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.14em; color: var(--oro); }
+.tira .cita { font-size: 46px; line-height: 1.18; }
+.tira .cita b { color: var(--oro); }
+.tira .ref { font-size: 24px; margin-top: 8px; }
+.tira .def { border: none; padding: 0; background: none; box-shadow: none; }
+.tira .def .w { font-size: 54px; }
+.tira .def .x { font-size: 30px; margin-top: 4px; }
+.cart { position: absolute; left: 20px; top: 440px; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 36px; color: #1d1a17; background: rgba(255,255,255,0.88); padding: 6px 16px; border-radius: 10px; }
+.pie-m { right: 40px; top: 24px; }
+.cab2 { position: absolute; left: 760px; top: 24px; padding: 8px 20px; border-radius: 10px; background: rgba(12,18,26,0.88); font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.1em; color: var(--oro); text-transform: uppercase; }
+</style>
+
+<div class="mapa">
+  <div class="cam">
+    <img src="assets/img/mapa-b13.jpg" />
+    <svg viewBox="0 0 2592 1444">
+      <g class="mk m-r"><circle cx="154" cy="29" r="20"/><text class="halo" x="190" y="90">Roma</text></g>
+      <g class="mk m-s"><circle cx="1434" cy="450" r="20"/><text class="halo" x="1190" y="450">Esmirna</text></g>
+      <g class="mk m-a"><circle cx="2281" cy="706" r="20"/><text class="halo" x="1990" y="780">Antioquía</text></g>
+      <g class="mk m-l"><circle cx="1730" cy="1236" r="20"/><text class="halo" x="1760" y="1300">Alejandría</text></g>
+    </svg>
+  </div>
+</div>
+<div class="cab2">Siglos II y III</div>
+<div class="cart m-c">← Cartago (fuera del mapa)</div>
+<div class="pie-img pie-m">Mapa: TNM, apéndice B13 · lugares según <i>Perspicacia</i></div>
+<div class="tira">
+  <div class="b t1"><div class="k">FINES DEL SIGLO I · ROMA · CLEMENTE</div><div class="cita">“Conozcan todos los pueblos que tú eres <b>el solo Dios</b>, y Jesucristo tu Hijo y Siervo”.<span class="ref">Primera carta de Clemente a los Corintios, citada en La Atalaya, 1/2/1992</span></div></div>
+  <div class="b t2"><div class="k">SIGLO II · ESMIRNA · POLICARPO</div><div class="cita">Habla “del <b>Dios y Padre</b> de nuestro Señor Jesucristo”. Ninguno habló de tres personas iguales.<span class="ref">La Atalaya, 1/2/1992</span></div></div>
+  <div class="b t3"><div class="k">LOS APOLOGISTAS</div><div class="def"><div class="w">apologistas</div><div class="x">escritores que defendían el cristianismo frente a las filosofías de su tiempo (Justino, Teófilo, Tertuliano...)</div></div></div>
+  <div class="b t4"><div class="k">C. 180 · ANTIOQUÍA · TEÓFILO · C. 230 · CARTAGO · TERTULIANO</div><div class="cita">Teófilo usa <b>trías</b>. Tertuliano, <b>trinitas</b>, pero escribe: “<b>Hubo un tiempo en que el Hijo no existía</b>”.<span class="ref">¿Debería creer usted en la Trinidad?</span></div></div>
+  <div class="b t5"><div class="k">C. 250 · ALEJANDRÍA · ORÍGENES</div><div class="cita">“En comparación con el Padre, [el Hijo] es una luz muy pequeña”.<span class="ref">¿Debería creer usted en la Trinidad?</span></div></div>
+  <div class="b t6"><div class="def"><div class="k">TÉRMINO</div><div class="w">subordinacionismo</div><div class="x">ver al Hijo como alguien inferior al Padre, que depende de él y existe por él</div></div></div>
+  <div class="b t7"><div class="k">UN HISTORIADOR RESUMIÓ</div><div class="cita">Hablan del Padre, del Hijo y del espíritu santo, “pero no como si fueran coiguales [...]. <b>Precisamente lo contrario es la realidad</b>”.<span class="ref">Alvan Lamson, citado en ¿Debería creer usted en la Trinidad?</span></div></div>
+</div>
+
+<script>
+const E = encuadre({ x: 0, y: 0, w: 2592, h: 1444 }, { x: 0, y: 0, w: 1920, h: 1080 });
+tl.set($(".cam"), E, 0);
+tl.to($(".cam"), { scale: E.scale * 1.06, duration: DUR, ease: "none" }, 0);
+entra(".cab2", 0.3, { y: -10 });
+entra(".pie-m", 0.6, { y: -10 });
+secuencia([[".t1", at("En Roma")], [".t2", at("En Esmirna")], [".t3", at("Después vinieron")], [".t4", at("En Antioquía")], [".t5", at("Y en Alejandría")], [".t6", at("A esa manera")], [".t7", at("Un historiador")]]);
+aparece(".m-r", at("En Roma"), 0.5);
+aparece(".m-s", at("En Esmirna"), 0.5);
+aparece(".m-a", at("En Antioquía"), 0.5);
+aparece(".m-c", at("En Cartago"), 0.5);
+aparece(".m-l", at("Y en Alejandría"), 0.5);
+</script>

@@ -1,0 +1,218 @@
+{
+  "00": {
+    "chapter": "Lectura familiar",
+    "source": "Génesis 1:1 a 4:26 · Traducción del Nuevo Mundo, edición de estudio",
+    "shape": "índice panorámico",
+    "title": "Génesis 1 al 4"
+  },
+  "01": {
+    "chapter": "Génesis 1 · Versículos 1 y 2",
+    "source": "Perspicacia, «Creación», págs. 569-571; «Tierra», pág. 1123",
+    "shape": "línea temporal abierta"
+  },
+  "02": {
+    "chapter": "Génesis 1 y 2 · El tiempo",
+    "source": "Perspicacia, «Día», págs. 676, 678; «Creación», pág. 572 · Hebreos 4:1-11",
+    "shape": "franja temporal"
+  },
+  "03": {
+    "chapter": "Génesis 1 · Días 1 y 4",
+    "source": "Perspicacia, «Creación», pág. 571 · jw.org, «¿Cuándo comenzó Dios a crear el universo?»",
+    "shape": "comparación atmosférica"
+  },
+  "04": {
+    "chapter": "Génesis 1 · Días 2 y 3",
+    "source": "Génesis 1:6-13 y nota · Perspicacia, «Creación», pág. 571 · jw.org, art. 82",
+    "shape": "corte de capas"
+  },
+  "05": {
+    "chapter": "Génesis 1 · La secuencia",
+    "source": "Génesis 1:3-31 · Imagen: «La ciencia y el relato de Génesis», pág. 26 · Diagrama de la investigación",
+    "shape": "seis días emparejados"
+  },
+  "06": {
+    "chapter": "Génesis 1 · Versículos 26 al 31",
+    "source": "Perspicacia, «Creación», pág. 570; «Hombre», págs. 1163-1164; «Tierra», págs. 1123-1124",
+    "shape": "cualidades y propósito"
+  },
+  "07": {
+    "chapter": "Génesis 2 · Un acercamiento",
+    "source": "Perspicacia, «Creación», págs. 570, 572-574; «Sábado», págs. 880-882",
+    "shape": "número y lupa narrativa"
+  },
+  "08": {
+    "chapter": "Génesis 2 · Nombre y vida",
+    "source": "Génesis 2:4, 7 y notas · Perspicacia, «Alma», págs. 95-96; «Tierra», pág. 1123",
+    "shape": "diagrama polvo y aliento"
+  },
+  "09": {
+    "chapter": "Génesis 2 · El jardín",
+    "source": "Génesis 2:15-17 · Perspicacia, «Edén», págs. 731-733; «Jardín», pág. 18",
+    "shape": "permiso y límite"
+  },
+  "10": {
+    "chapter": "Génesis 2 · El matrimonio",
+    "source": "Génesis 2:18-25 y notas · La Atalaya, 1 de septiembre de 2009, págs. 13-14",
+    "shape": "unión gráfica"
+  },
+  "11": {
+    "chapter": "Génesis 2 · Los cuatro ríos",
+    "source": "Génesis 2:10-14 y nota · Perspicacia, «Edén», «Pisón», «Guihón», «Éufrates» · Mapa: Natural Earth",
+    "shape": "mapa y relación textual"
+  },
+  "12": {
+    "chapter": "Génesis 2 · El lugar y el presente",
+    "source": "Perspicacia, «Edén», pág. 733; «Pisón» · La Atalaya, 15 de enero de 1972, págs. 59-60 · Natural Earth",
+    "shape": "atlas de incertidumbre"
+  },
+  "13": {
+    "chapter": "Génesis 3 · La serpiente",
+    "source": "Perspicacia, «Serpiente, culebra», «Eva» · La Atalaya, 1 de septiembre de 1984, pág. 31 · Apocalipsis 12:9",
+    "shape": "diagrama de responsabilidad"
+  },
+  "14": {
+    "chapter": "Génesis 3 · El diálogo",
+    "source": "Génesis 2:16-17; 3:1-5 · Perspicacia, «Edén» y «Pecado»",
+    "shape": "cotejo literal",
+    "own": "Observación propia · cotejo del texto"
+  },
+  "15": {
+    "chapter": "Génesis 3 · Decisiones y respuestas",
+    "source": "Génesis 3:6-14 · Perspicacia, «Adán», «Pecado» · ¡Despertad!, 8 de septiembre de 1998, pág. 26",
+    "shape": "cadena de decisiones"
+  },
+  "16": {
+    "chapter": "Génesis 3 · Las sentencias",
+    "source": "Génesis 3:14-19 · Perspicacia, «Serpiente», «Dolores de parto» · La Atalaya, 15 de octubre de 1980, pág. 27",
+    "shape": "tres consecuencias por fases"
+  },
+  "17": {
+    "chapter": "Génesis 3 · Muerte y descendencia",
+    "source": "Perspicacia, «Adán», «Vida», «Pecado» · La Atalaya 2019, núm. 3, pág. 9; mayo de 1976, pág. 280",
+    "shape": "duración y transmisión"
+  },
+  "18": {
+    "chapter": "Génesis 3:15 · La primera profecía",
+    "source": "La Atalaya, julio de 2022, párrs. 4-12 · Génesis 3:15 y notas",
+    "shape": "cuatro participantes"
+  },
+  "19": {
+    "chapter": "Génesis 3:15 · Desarrollo de la promesa",
+    "source": "La Atalaya, julio de 2022, párrs. 8-15 · Referencias marginales de Génesis 3:15",
+    "shape": "secuencia en dos franjas"
+  },
+  "20": {
+    "chapter": "Génesis 3 · Versículos 20 al 24",
+    "source": "Génesis 3:20-24 · Perspicacia, «Eva», «Vida», «Querubín» · Glosario de la TNM",
+    "shape": "secuencia de cierre"
+  },
+  "21": {
+    "chapter": "Génesis 4 · Las ofrendas",
+    "source": "«Dios aprobó sus ofrendas», págs. 16-19, párrs. 4-12 · Perspicacia, «Caín», pág. 387 · Hebreos 11:4",
+    "shape": "ilustración comparada",
+    "title": "Dos personas y sus ofrendas"
+  },
+  "22": {
+    "chapter": "Génesis 4 · Las ofrendas",
+    "source": "«Dios aprobó sus ofrendas», págs. 16-19, párrs. 4-12 · Perspicacia, «Caín», pág. 387 · Hebreos 11:4",
+    "shape": "ilustración comparada",
+    "title": "La motivación de la fe"
+  },
+  "23": {
+    "chapter": "Génesis 4:6, 7 · La advertencia",
+    "source": "La Atalaya, 1 de febrero de 1999, pág. 23 · Génesis 4:6, 7",
+    "shape": "bifurcación moral"
+  },
+  "24": {
+    "chapter": "Génesis 4 · El asesinato y la sentencia",
+    "source": "Génesis 4:8-12 · Perspicacia, «Caín», pág. 387; «Abel», pág. 17",
+    "shape": "pregunta y consecuencias"
+  },
+  "25": {
+    "chapter": "Génesis 4 · Señal y destierro",
+    "source": "Génesis 4:15, 16 y nota · Perspicacia, «Caín», pág. 387; «Condición de fugitivo, Tierra de la», pág. 521",
+    "shape": "decreto y orientación"
+  },
+  "26": {
+    "chapter": "Génesis 4 · La familia de Caín",
+    "source": "jw.org, «¿Quién fue la esposa de Caín?» · La Atalaya, 1 de septiembre de 2010, pág. 25",
+    "shape": "árbol familiar abierto"
+  },
+  "27": {
+    "chapter": "Génesis 4 · Una civilización",
+    "source": "Génesis 4:17-22 · Perspicacia, «Caín», «Enoc», «Jabal»",
+    "shape": "oficios y genealogía"
+  },
+  "28": {
+    "chapter": "Génesis 4 · Lamec",
+    "source": "Génesis 4:19, 23, 24 · Perspicacia, «Lamec», pág. 183 · ¡Despertad!, 8 de marzo de 1985, pág. 11",
+    "shape": "comparación de reclamaciones"
+  },
+  "29": {
+    "chapter": "Génesis 4 · Set y Enós",
+    "source": "Génesis 4:25, 26 · Perspicacia, «Set», pág. 1014 · Paraíso restaurado, págs. 67-68 · wcg (2025), pág. 16",
+    "shape": "sucesión y lectura del texto"
+  },
+  "30": {
+    "chapter": "Cronología · Tres vidas",
+    "source": "Génesis 5:3-11 · Perspicacia, «Adán», «Set», «Vida», «Cronología»",
+    "shape": "barras temporales a escala",
+    "own": "Cálculo propio · fechas de Enós a partir de Génesis 5"
+  },
+  "31": {
+    "chapter": "Preguntas complementarias · Génesis 6",
+    "source": "Génesis 6:2, 4 y notas · Perspicacia, «Nefilim»",
+    "shape": "diagrama sin reconstrucción física"
+  },
+  "32": {
+    "chapter": "Preguntas complementarias · El arca",
+    "source": "Génesis 6:14-16 y notas · Perspicacia, «Arca» · Dimensiones aproximadas publicadas",
+    "shape": "cofre en corte"
+  },
+  "33": {
+    "chapter": "Preguntas complementarias · Los tiempos",
+    "source": "Génesis 6:3; 7:11, 12; 8:13, 14 · Perspicacia, «Diluvio», «Noé» · jw.org, «El Diluvio de Noé»",
+    "shape": "barras de lluvia y estancia"
+  },
+  "34": {
+    "chapter": "Preguntas complementarias · Límites y certeza",
+    "source": "Génesis 8:4; 9:13 · Perspicacia, «Ararat», «Arca», «Arco iris», «Diluvio» · Natural Earth",
+    "shape": "mapa y señal"
+  },
+  "35": {
+    "chapter": "Los hilos · Una sola historia",
+    "source": "Génesis 1:3; 2:7, 17; 3:15, 17-19; 4:10, 12, 25 · Investigación, «Relaciones»",
+    "shape": "hilos narrativos",
+    "own": "Observación propia · relaciones entre los capítulos"
+  },
+  "36": {
+    "chapter": "Lecciones y preguntas · Génesis 1",
+    "source": "Génesis 1:4, 10, 12, 18, 21, 25, 28 · Investigación, «Qué nos llevamos a casa»",
+    "shape": "lecciones por fases"
+  },
+  "37": {
+    "chapter": "Lecciones y preguntas · Génesis 2",
+    "source": "Génesis 2:16, 17, 24 y nota · Investigación, «Qué nos llevamos a casa»",
+    "shape": "lecciones por fases"
+  },
+  "38": {
+    "chapter": "Lecciones y preguntas · Génesis 3",
+    "source": "Génesis 3:1-5, 12, 13, 15, 21 · Investigación, «Qué nos llevamos a casa»",
+    "shape": "lecciones por fases"
+  },
+  "39": {
+    "chapter": "Lecciones y preguntas · Génesis 4",
+    "source": "Génesis 4:4-7 · La Atalaya, 1 de febrero de 1999, págs. 22-23",
+    "shape": "lecciones por fases"
+  },
+  "40": {
+    "chapter": "Conversación en familia",
+    "source": "Investigación, «Tres preguntas para la mesa» · Génesis 3:9; 4:4-9",
+    "shape": "preguntas por turnos"
+  },
+  "41": {
+    "chapter": "Lectura familiar",
+    "source": "Génesis 1:31; 3:15 · Traducción del Nuevo Mundo, edición de estudio",
+    "shape": "cierre de tres ideas"
+  }
+}

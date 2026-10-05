@@ -1,0 +1,29 @@
+<style>
+.tit35 { position: absolute; left: 90px; right: 90px; top: 70px; }
+.tit35 .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 32px; letter-spacing: 0.2em; color: var(--verde); text-transform: uppercase; }
+.tit35 .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 76px; line-height: 1.05; margin-top: 8px; }
+.cinco { position: absolute; left: 90px; right: 90px; top: 280px; bottom: 70px; display: flex; flex-direction: column; justify-content: space-between; }
+.cinco .fila { display: grid; grid-template-columns: 70px 1fr; column-gap: 26px; align-items: center; }
+.cinco .fila .pt { width: 54px; height: 54px; border-radius: 50%; background: var(--verde); }
+.cinco .fila .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 74px; line-height: 1.02; }
+.cinco .fila .x small { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 25px; color: var(--tenue); margin-left: 18px; }
+.cinco .fila .x b { color: var(--oro); }
+</style>
+
+<div class="tit35"><div class="r">Lecciones y preguntas para pensar</div><div class="t">Lo que nos enseña de Jehová</div></div>
+<div class="cinco">
+  <div class="fila f1"><span class="pt"></span><div class="x">da una salida <b>hasta el último momento</b><small>38:2, 17</small></div></div>
+  <div class="fila f2"><span class="pt"></span><div class="x">ruega antes de castigar<small>38:20 · “Les advirtió vez tras vez, porque sentía compasión por su pueblo” (2 Crónicas 36:15)</small></div></div>
+  <div class="fila f3"><span class="pt"></span><div class="x">cumple su palabra <b>hasta el detalle</b><small>34:3; 39:5-7; Ezequiel 12:13</small></div></div>
+  <div class="fila f4"><span class="pt"></span><div class="x">cuida a los suyos por caminos que no esperamos<small>38:10-13; 39:12</small></div></div>
+  <div class="fila f5"><span class="pt"></span><div class="x">se fija en el miedo de cada uno, y <b>premia la confianza</b><small>39:17, 18</small></div></div>
+</div>
+
+<script>
+entra(".tit35", 0.3, { y: -20 });
+entra(".f1", at("Da una salida"), { x: 30, y: 0 });
+entra(".f2", at("Ruega"), { x: 30, y: 0 });
+entra(".f3", at("Cumple su palabra"), { x: 30, y: 0 });
+entra(".f4", at("Cuida a los suyos"), { x: 30, y: 0 });
+entra(".f5", at("se fija"), { x: 30, y: 0 });
+</script>

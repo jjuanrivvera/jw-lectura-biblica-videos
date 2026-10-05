@@ -1,0 +1,130 @@
+<style>
+.billete { position: absolute; left: 80px; top: 200px; width: 1100px; height: 540px; }
+.billete svg { width: 1100px; height: 540px; overflow: visible; }
+.falsos { position: absolute; left: 230px; top: 230px; width: 800px; height: 500px; }
+.falsos .fb { position: absolute; left: 0; top: 0; width: 760px; height: 373px; }
+.falsos .fb svg { width: 760px; height: 373px; }
+.falsos .q { position: absolute; left: 320px; top: 120px; font-family: "Fraunces", serif; font-weight: 700; font-size: 170px; color: var(--rojo); }
+.marcas { position: absolute; left: 1250px; right: 80px; top: 190px; display: flex; flex-direction: column; gap: 22px; }
+.marcas .mk { display: flex; align-items: center; gap: 22px; padding: 14px 22px; border-radius: 20px; background: rgba(10, 16, 22, 0.45); border: 3px solid rgba(233, 191, 96, 0.4); }
+.marcas .mk .n { flex: 0 0 56px; height: 56px; border-radius: 50%; background: var(--oro); color: #17212b; display: flex; align-items: center; justify-content: center;
+  font-family: "Fraunces", serif; font-weight: 700; font-size: 34px; }
+.marcas .mk .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 58px; line-height: 1; }
+.solo { position: absolute; left: 1250px; right: 80px; top: 720px; }
+.solo .m { font-size: 70px; }
+.falso1 { position: absolute; left: 640px; top: 770px; width: 520px; height: 255px; }
+.falso1 svg { width: 520px; height: 255px; }
+.falso1 .rot { position: absolute; right: -10px; top: -26px; padding: 4px 18px; border-radius: 10px; background: var(--rojo); color: #17212b;
+  font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.12em; }
+/* Fase B y C */
+.rel { position: absolute; left: 160px; right: 160px; top: 340px; display: flex; flex-direction: column; gap: 40px; }
+.rel .m { font-size: 84px; }
+.rel .no { color: var(--tenue); position: relative; align-self: flex-start; }
+.rel .no svg { position: absolute; left: -10px; top: 50%; width: calc(100% + 20px); height: 30px; margin-top: -10px; }
+.rel .no path { fill: none; stroke: var(--rojo); stroke-width: 8; stroke-linecap: round; }
+.imp { position: absolute; left: 160px; right: 160px; top: 230px; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+.imp .tj .x { font-size: 46px; }
+.imp .tj.no { border-color: rgba(236, 138, 103, 0.6); } .imp .tj.no .k { color: var(--rojo); }
+.f-c .indice { left: 80px; right: 80px; top: 640px; }
+.f-c .indice .ch { padding: 22px 20px 26px; }
+.f-c .indice .ch .n { font-size: 76px; }
+.f-c .indice .ch .t { font-size: 28px; }
+.f-c .ss { position: absolute; left: 80px; right: 80px; top: 540px; font-family: "Caveat", cursive; font-weight: 700; font-size: 62px; color: var(--oro); }
+</style>
+
+<div class="cab"><span class="cap">Una comparación</span><span>El billete auténtico</span></div>
+
+<div class="fase f-a">
+  <div class="falsos"></div>
+  <div class="billete"><svg class="bsv" viewBox="0 0 1100 540"></svg></div>
+  <div class="marcas">
+    <div class="mk k1"><div class="n">1</div><div class="x">la marca de agua</div></div>
+    <div class="mk k2"><div class="n">2</div><div class="x">el hilo</div></div>
+    <div class="mk k3"><div class="n">3</div><div class="x">el relieve</div></div>
+    <div class="mk k4"><div class="n">4</div><div class="x">la tinta</div></div>
+  </div>
+  <div class="falso1"><svg class="f1sv" viewBox="0 0 1100 540"></svg><div class="rot">FALSO</div></div>
+  <div class="solo"><div class="m oro">el falso se nota solo</div></div>
+  <div class="fuente"><i>¿Qué enseña realmente la Biblia?</i>, cap. 15, párr. 2</div>
+</div>
+
+<div class="fase f-b">
+  <div class="rel">
+    <div class="m no">estudiar todas las confesiones del mundo<svg viewBox="0 0 400 30" preserveAspectRatio="none"><path d="M 4 18 C 120 8 280 24 396 12"/></svg></div>
+    <div class="m oro bas">aprender cómo describe la Biblia a los verdaderos discípulos</div>
+  </div>
+</div>
+
+<div class="fase f-c">
+  <div class="imp">
+    <div class="tj no i1"><div class="k">La prueba no busca</div><div class="x">personas sin defectos</div></div>
+    <div class="tj on i2"><div class="k">Busca</div><div class="x">un grupo que, <b>en conjunto</b>, se esfuerza por hacer la voluntad de Dios</div></div>
+  </div>
+  <div class="ss">las marcas del billete auténtico: seis señales</div>
+  <div class="indice"></div>
+  <div class="fuente"><i>¿Qué enseña realmente la Biblia?</i>, cap. 15, párr. 5</div>
+</div>
+
+<script>
+// Billete dibujado: guilloches, medallón con el árbol como marca de agua, hilo, relieve y tinta que cambia.
+function billete(p, completo) {
+  let g = "";
+  for (let i = 0; i < 26; i++) g += `<ellipse cx="300" cy="270" rx="${60 + i * 9}" ry="${30 + i * 6}" fill="none" stroke="${completo ? "#7f9c7a" : "#8f8f8a"}" stroke-width="1.6" opacity="0.5"/>`;
+  for (let i = 0; i < 18; i++) g += `<ellipse cx="860" cy="270" rx="${40 + i * 8}" ry="${70 + i * 7}" fill="none" stroke="${completo ? "#b09a5c" : "#9a9a95"}" stroke-width="1.4" opacity="0.45"/>`;
+  const fondo = completo ? `url(#${p}-bg)` : "#c9c7bf";
+  return `<defs><linearGradient id="${p}-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e7e2c8"/><stop offset="0.5" stop-color="#d6dcc0"/><stop offset="1" stop-color="#e3d6b0"/></linearGradient>
+    <linearGradient id="${p}-tinta" x1="0" x2="1"><stop offset="0" stop-color="#2f7d6a"/><stop offset="1" stop-color="#7a4fa0"/></linearGradient>
+    <clipPath id="${p}-clip"><rect x="0" y="0" width="1100" height="540" rx="28"/></clipPath></defs>
+    <g clip-path="url(#${p}-clip)"><rect x="0" y="0" width="1100" height="540" fill="${fondo}"/>${g}
+    <rect x="30" y="30" width="1040" height="480" rx="18" fill="none" stroke="${completo ? "#5f7f5a" : "#8a8a85"}" stroke-width="6"/>
+    <rect x="46" y="46" width="1008" height="448" rx="12" fill="none" stroke="${completo ? "#5f7f5a" : "#8a8a85"}" stroke-width="2"/></g>
+    <rect x="0" y="0" width="1100" height="540" rx="28" fill="none" stroke="rgba(0,0,0,0.35)" stroke-width="3"/>`;
+}
+const FALSO = billete("bf", false);
+$(".falsos").innerHTML = [[-8, 0, 0], [5, 30, 20], [-3, 60, 44], [9, 20, 70], [-12, 50, 96]]
+  .map(([r, x, y], i) => `<div class="fb fb${i}" style="left:${x}px;top:${y}px"><svg viewBox="0 0 1100 540" style="transform:rotate(${r}deg)">${billete("bf" + i, false)}</svg></div>`).join("") + `<div class="q">?</div>`;
+pinta(".bsv", billete("ba", true) +
+  // 1 marca de agua: el árbol, apenas visible dentro del medallón.
+  `<g class="mk-agua"><ellipse cx="860" cy="270" rx="150" ry="190" fill="rgba(255,255,255,0.35)" stroke="#b09a5c" stroke-width="4"/>
+   <path d="M 846 400 L 848 320 C 820 300 790 290 780 250 C 760 200 800 150 860 140 C 920 150 960 200 940 250 C 930 290 900 300 872 320 L 874 400 Z" fill="#8f9a78" opacity="0.35"/></g>` +
+  // 2 hilo de seguridad.
+  `<g class="mk-hilo"><rect x="590" y="0" width="16" height="540" fill="#4d5f86" opacity="0.75"/><path d="M 598 10 L 598 530" stroke="#c9d3ea" stroke-width="4" stroke-dasharray="14 18"/></g>` +
+  // 3 relieve: líneas en bajo relieve con sombra.
+  `<g class="mk-rel">${Array.from({ length: 7 }, (_, i) => `<path d="M ${110 + i * 16} 120 L ${110 + i * 16} 420" stroke="#5f7f5a" stroke-width="7" stroke-linecap="round"/><path d="M ${113 + i * 16} 122 L ${113 + i * 16} 422" stroke="#fff" stroke-width="2" opacity="0.6"/>`).join("")}</g>` +
+  // 4 tinta que cambia de color.
+  `<g class="mk-tinta"><circle cx="330" cy="270" r="110" fill="url(#ba-tinta)"/><circle cx="330" cy="270" r="74" fill="none" stroke="#e7e2c8" stroke-width="6"/><circle cx="330" cy="270" r="30" fill="#e7e2c8"/></g>` +
+  `<g class="aro"><ellipse class="a1" cx="860" cy="270" rx="176" ry="214" fill="none" stroke="#e9bf60" stroke-width="8"/>` +
+  `<rect class="a2" x="570" y="-14" width="56" height="568" rx="14" fill="none" stroke="#e9bf60" stroke-width="8"/>` +
+  `<rect class="a3" x="88" y="98" width="140" height="344" rx="20" fill="none" stroke="#e9bf60" stroke-width="8"/>` +
+  `<circle class="a4" cx="330" cy="270" r="136" fill="none" stroke="#e9bf60" stroke-width="8"/></g>`);
+pinta(".f1sv", FALSO + `<circle cx="330" cy="270" r="110" fill="#8a8a85"/>`);
+$(".f-c .indice").innerHTML = indiceHTML(0);
+
+const t0 = at("Hay una comparación");
+entra(".cab", t0, { y: -10 });
+entra(".falsos .fb", at("separar billetes falsos"), { y: 40, st: 0.15 });
+salta(".falsos .q", at("memorizar cada falsificación"), { desde: 0.4 });
+const tA = at("Estudia bien el billete");
+tl.to($(".falsos"), { x: -300, opacity: 0, duration: 0.6, ease: "power2.in" }, tA - 0.5);
+entra(".billete", tA, { y: 40, d: 0.8 });
+[["la marca de agua", 1], ["el hilo", 2], ["el relieve", 3], ["la tinta", 4]].forEach(([f, k]) => {
+  entra(`.k${k}`, at(f), { x: 40, y: 0 });
+  traza(`.a${k}`, at(f), 0.6);
+  if (k < 4) atenua(`.a${k}`, at(["el hilo", "el relieve", "la tinta"][k - 1]), 0.0, 0.3);
+});
+entra(".falso1", at("el falso se nota solo") - 0.2, { y: 40 });
+entra(".solo .m", at("el falso se nota solo"), { y: 20 });
+aparece(".f-a .fuente", tA + 0.5, 0.5);
+const tB = at("Con la religión pasa lo mismo");
+sale(".f-a", tB - 0.3);
+entra(".rel .no", at("No hace falta estudiar"), { y: 24 });
+traza(".rel .no path", at("todas las confesiones") + 0.6, 0.5);
+entra(".rel .bas", at("Basta con aprender"), { y: 24 });
+const tC = at("Además, los verdaderos cristianos");
+sale(".f-b", tC - 0.3);
+entra(".i1", at("La prueba no busca"), { y: 24 });
+entra(".i2", at("sino a un grupo"), { y: 24 });
+entra(".f-c .ss", at("Esas marcas del billete"), { y: 16 });
+entra(".f-c .indice .ch", at("las seis señales") , { y: 30, st: 0.12 });
+aparece(".f-c .fuente", tC + 0.5, 0.5);
+</script>

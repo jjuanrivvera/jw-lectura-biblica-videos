@@ -1,0 +1,40 @@
+<style>
+.mapa .cam img, .mapa .cam svg { width: 1980px; height: 1800px; }
+.ley { display: flex; flex-direction: column; gap: 14px; }
+.ley .l { display: grid; grid-template-columns: 70px 1fr; align-items: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; }
+.ley svg { width: 60px; height: 20px; }
+</style>
+<div class="mapa L">
+  <div class="cam">
+    <img src="assets/img/b2-edom.jpg" />
+    <svg viewBox="0 0 1980 1800">
+      <path class="flecha verde punt re" stroke-width="16" d="M 1071 250 C 1120 420 1130 620 1080 820 C 1050 950 1000 1080 960 1160"/>
+      <path class="flecha rj" stroke-width="16" stroke="#d99a14" d="M 1071 245 L 1034 231"/>
+      <path class="flecha rj2" stroke-width="16" stroke="#d99a14" d="M 1034 231 C 990 250 930 250 877 226"/>
+      <circle class="anillo a-pe" cx="1071" cy="245" r="34"/>
+    </svg>
+  </div>
+  <div class="pie-mapa">Mapa: apéndice B2 de la TNM (wol.jw.org) · marcas añadidas</div>
+</div>
+<div class="sombra-der"></div>
+<div class="cab sobre"><span class="cap">Génesis 33</span><span>versículos 12 al 17</span></div>
+<div class="col der">
+  <div class="b a1"><div class="cita md">“Mi señor sabe que <b>los niños son frágiles</b>. También sabe que tengo ovejas y vacas con crías. Si en un día apuramos demasiado a los animales, todos morirán”<span class="ref">GÉNESIS 33:13</span></div></div>
+  <div class="b a2"><div class="cita">“al paso del ganado y de los niños”<span class="ref">GÉNESIS 33:14</span></div><div class="m md">un cordero de pocos días no aguanta una marcha rápida; la madre, sin pastar, da menos leche</div><span class="propio">observación propia</span></div>
+  <div class="b a3"><div class="ley">
+      <div class="l" style="color:var(--verde)"><svg viewBox="0 0 60 20"><path d="M 2 10 L 58 10" stroke="#1e7a3c" stroke-width="8" stroke-dasharray="12 8"/></svg><span>Esaú, a Seír: ≈ 160 km</span></div>
+      <div class="l" style="color:var(--oro)"><svg viewBox="0 0 60 20"><path d="M 2 10 L 58 10" stroke="#d99a14" stroke-width="8"/></svg><span>Jacob, a Sucot y a Siquem</span></div>
+    </div>
+    <div class="f">línea recta hasta Bozrá, <span class="propio" style="font-size:24px;padding:0 10px">cálculo propio</span> · el camino de Esaú no se conoce: la línea es un esquema</div>
+    <div class="cita md">“al parecer no se encontraron de nuevo hasta que enterraron a su padre Isaac, unos veintitrés años más tarde”</div><div class="f"><i>Perspicacia</i>, vol. 2, “Jacob”, pág. 10</div></div>
+</div>
+<script>
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 600, y: 60, w: 800, h: 780 }, V), 0);
+camara(".cam", at("Esaú volvió") - 0.6, 2.4, encuadre({ x: 350, y: 60, w: 1300, h: 1260 }, V));
+traza(".a-pe", 0.5, 0.7);
+traza(".re", at("Esaú volvió"), 2.2);
+traza(".rj", at("Jacob siguió") - 0.2, 0.5);
+traza(".rj2", at("Jacob siguió") + 0.3, 1.4);
+secuencia([[".a1", 0.4], [".a2", at("Yo haré")], [".a3", at("Esaú volvió")]]);
+</script>

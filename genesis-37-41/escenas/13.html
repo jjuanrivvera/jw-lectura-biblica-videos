@@ -1,0 +1,45 @@
+<style>
+.mapa.T { left: 0; top: 0; width: 1000px; height: 1080px; }
+.mapa.T .cam img, .mapa.T .cam svg { width: 1600px; height: 2700px; }
+.col.d13 { left: 1060px; right: 60px; width: auto; top: 110px; bottom: 80px; }
+.cab.d13c { left: 1060px; }
+.d13 .def .x { font-size: 54px; }
+</style>
+
+<!--incluir:_tierra.html-->
+<div class="cab d13c"><span class="cap">Hebrón y Siquem hoy</span><span>Josué 24:32</span></div>
+<div class="col d13">
+  <div class="b a1">
+    <div class="m">hoy son ciudades grandes de <b>Cisjordania</b></div>
+    <div class="def hb"><div class="t">Hebrón</div><div class="x">la antigua es <b>Tel Rumeida</b>, en la ladera oeste de la ciudad actual</div><div class="s">“a unos 30 Km. al SSO. de Jerusalén y a más de 900 m. sobre el nivel del mar” · <i>Perspicacia</i>, vol. 1, “Hebrón”, pág. 1112</div></div>
+    <span class="externa chico hb2">excavada desde 1964: murallas de la Edad del Bronce · ciudad vieja en la lista de la UNESCO desde 2017</span>
+    <div class="def sq13"><div class="t">Siquem</div><div class="x"><b>Tell Balata</b>, junto a Nablus</div><div class="s">“a unos 48 Km. al N. de Jerusalén” · <i>Perspicacia</i>, vol. 2, “Siquem”, pág. 1035</div></div>
+  </div>
+  <div class="b a2">
+    <div class="m md">siglos después, los huesos de José:</div>
+    <div class="cita">“en Siquem, en la porción del campo que Jacob había adquirido de los hijos de Hamor”<span class="ref">PERSPICACIA, VOL. 2, “SIQUEM”, PÁG. 1036 · JOSUÉ 24:32</span></div>
+    <div class="m md">el muchacho que salió a buscar a sus hermanos cerca de Siquem <b>terminó enterrado allí</b></div>
+    <span class="propio chico">observación propia</span>
+    <span class="externa chico">un edificio que la tradición llama la tumba de José, reconstruido en 1868: no hay pruebas de que lo sea</span>
+  </div>
+</div>
+
+<script>
+pinta(".marcas", `
+  <circle class="anillo a-heb" cx="651" cy="2374" r="50"/>
+  <circle class="anillo a-siq" cx="991" cy="794" r="50"/>
+  <g class="ch-heb"><rect x="720" y="2140" width="560" height="96" rx="20" fill="rgba(15,22,30,0.88)"/><text class="lugar" x="746" y="2204" font-size="52" fill="#e9bf60" style="fill:#e9bf60">hoy: Tel Rumeida</text></g>
+  <g class="ch-siq"><rect x="420" y="770" width="500" height="96" rx="20" fill="rgba(15,22,30,0.88)"/><text class="lugar" x="446" y="834" font-size="52" style="fill:#e9bf60">hoy: Tell Balata</text></g>`);
+const V = { x: 0, y: 0, w: 1000, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 0, y: 700, w: 1600, h: 1728 }, V), 0);
+traza(".a-heb", at("Hebrón y Siquem"), 0.7);
+traza(".a-siq", at("Hebrón y Siquem") + 0.4, 0.7);
+aparece(".ch-heb", at("Tel Rumeida"), 0.5);
+aparece(".ch-siq", at("Tel Balata"), 0.5);
+camara(".cam", at("Y en Siquem") - 0.4, 2.2, encuadre({ x: 400, y: 300, w: 1000, h: 1080 }, V));
+late(".a-siq", at("enterraron"), { s: 1.2, n: 3 });
+secuencia([[".a1", 0.4], [".a2", at("Y en Siquem")]]);
+entra(".hb", at("La Hebrón antigua"), { y: 20 });
+entra(".hb2", at("murallas"), { y: 10 });
+entra(".sq13", at("Siquem es"), { y: 20 });
+</script>

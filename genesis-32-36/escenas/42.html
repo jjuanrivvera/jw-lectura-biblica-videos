@@ -1,0 +1,32 @@
+<style>
+.linea42 { position: absolute; left: 60px; right: 60px; top: 470px; height: 340px; }
+.linea42 svg { width: 1800px; height: 340px; }
+.pt-a { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 25px; fill: var(--tenue); text-anchor: middle; }
+.pt-t { font-family: "Caveat", cursive; font-weight: 700; font-size: 42px; fill: var(--tiza); text-anchor: middle; }
+.arriba42 { position: absolute; left: 60px; right: 60px; top: 120px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+.abajo42 { position: absolute; left: 60px; right: 60px; bottom: 50px; }
+.nota42 { position: absolute; right: 60px; top: 440px; font-size: 20px; }
+</style>
+<div class="cab"><span class="cap">Qué pasó con Edom</span><span>de 1738 a. e. c. al año 70</span></div>
+<div class="arriba42">
+  <div class="u1"><div class="cita md">“No odies al edomita, pues es tu hermano”<span class="ref">DEUTERONOMIO 23:7</span></div></div>
+  <div class="u2"><div class="cita md" style="color:var(--rojo)">“Por haber tratado con violencia a tu hermano Jacob, la vergüenza te cubrirá y tú desaparecerás para siempre”<span class="ref">ABDÍAS 10</span></div></div>
+</div>
+<div class="f nota42">línea de la investigación: en orden, no a escala</div>
+<div class="linea42"><svg viewBox="0 -20 1800 340" class="ls"></svg></div>
+<div class="abajo42"><div class="cita md">“Después que los romanos destruyeron a Jerusalén en 70 E.C., el nombre de los edomitas desapareció de la historia”</div><div class="f">“Toda Escritura es inspirada de Dios y provechosa”, pág. 152</div></div>
+<script>
+const P = [["1738", "Esaú a Seír"], ["antes de 1473", "cierra el paso"], ["desde 1077", "siervos de David"], ["c. 913", "se libera"], ["607", "“¡Échenla abajo!”"], ["siglo VI", "Babilonia"], ["siglo IV", "los nabateos"], ["c. 125", "Juan Hircano"], ["siglo I a. e. c.", "Herodes"], ["días de Jesús", "Idumea"], ["70 E.C.", "desaparecen"]];
+let s = `<path class="ln" d="M 40 120 L 1760 120" stroke="var(--oro)" stroke-width="5" fill="none"/>`;
+P.forEach(([a, t], i) => {
+  const x = 60 + i * 168, arriba = i % 2 === 0;
+  s += `<g class="p p${i}"><circle cx="${x}" cy="120" r="16" fill="${i === 4 ? "#ec8a67" : i === 10 ? "#b3bdc8" : "var(--oro)"}"/><text class="pt-a" x="${x}" y="${arriba ? 78 : 178}">${a}</text><text class="pt-t" x="${x}" y="${arriba ? 34 : 226}">${t}</text></g>`;
+});
+$(".ls").innerHTML = s;
+traza(".ln", 0.4, 1.2);
+const T = [0.6, at("Pero Edom"), at("Pero Edom") + 1.2, at("Pero Edom") + 2.0, at("cuando Babilonia"), at("Perdieron"), at("Perdieron") + 0.6, at("que se llamó"), at("De ellos salió"), at("De ellos salió") + 1.6, at("Y después del")];
+T.forEach((t, i) => salta(".p" + i, t, { desde: 0.5 }));
+entra(".u1", at("No odies"), { y: 20 });
+entra(".u2", at("Abdías anunció"), { y: 20 });
+entra(".abajo42", at("Y después del"), { y: 20 });
+</script>

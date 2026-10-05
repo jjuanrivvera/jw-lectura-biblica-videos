@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="UTF-8" /><title>Y los historiadores</title></head>
+<body>
+<template>
+<style>
+@font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces.ttf") format("truetype"); font-weight: 100 900; font-style: normal; }
+@font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Italic.ttf") format("truetype"); font-weight: 100 900; font-style: italic; }
+@font-face { font-family: "Caveat"; src: url("assets/fonts/Caveat.ttf") format("truetype"); font-weight: 400 700; }
+@font-face { font-family: "Montserrat"; src: url("assets/fonts/Montserrat.ttf") format("truetype"); font-weight: 100 900; }
+#escena-19 {
+/* Estilo común de todas las escenas (1920x1080). El constructor lo anida bajo #escena-NN. */
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+color: var(--tiza);
+font-family: "Montserrat", sans-serif;
+--pizarra: #121a2a;
+--tiza: #efe7d6;
+--tenue: #aab4bf;
+--oro: #e8bd5f;
+--rojo: #e8805f;
+--verde: #92d193;
+--cielo: #8db4ec;
+--rosa: #e7a8c9;
+--agua: #1e3350;
+--hierro: #a9b3bd;
+--cobre: #d08a55;
+--fuego: #ef7b4f;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.contenido { position: absolute; inset: 0; }
+.fase { position: absolute; inset: 0; }
+svg { overflow: visible; }
+
+/* Tipografía por registro: la Biblia, la pizarra, los rótulos. */
+.biblia { font-family: "Fraunces", serif; font-weight: 500; line-height: 1.18; }
+.mano { font-family: "Caveat", cursive; font-weight: 700; line-height: 1.05; }
+.rotulo { font-family: "Montserrat", sans-serif; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+
+/* Cabecera: capítulo a la izquierda, versículos a la derecha. */
+.cab {
+  position: absolute; left: 80px; right: 80px; top: 40px;
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 30px;
+  color: var(--tenue); letter-spacing: 0.1em; text-transform: uppercase;
+}
+.cab .cap { color: var(--oro); }
+.cab.sobre span { padding: 6px 16px; border-radius: 10px; background: rgba(15, 22, 30, 0.85); }
+
+/* Pie con la fuente de la imagen o del mapa. */
+.fuente {
+  position: absolute; left: 80px; right: 80px; bottom: 30px;
+  font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 24px; line-height: 1.3;
+  color: var(--tenue);
+}
+.fuente b { color: var(--tiza); font-weight: 700; }
+
+/* Columna de texto: el bloque activo se centra en el alto disponible. */
+.col { position: absolute; top: 120px; bottom: 100px; right: 90px; width: 720px; }
+.col.izq { left: 90px; right: auto; }
+.col > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+
+/* Palabras clave a mano, citas y rótulos. */
+.m { font-family: "Caveat", cursive; font-weight: 700; font-size: 74px; line-height: 1.04; color: var(--tiza); }
+.m.oro { color: var(--oro); }
+.m.rojo { color: var(--rojo); }
+.m.cielo { color: var(--cielo); }
+.m.rosa { color: var(--rosa); }
+.m.xl { font-size: 104px; }
+.cita { font-family: "Fraunces", serif; font-weight: 500; font-size: 52px; line-height: 1.22; color: var(--tiza); }
+.cita b { color: var(--oro); font-weight: 700; }
+.cita .ref { display: block; margin-top: 18px; font-family: "Montserrat", sans-serif; font-weight: 700;
+  font-size: 28px; letter-spacing: 0.1em; color: var(--oro); }
+.s { font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 30px; line-height: 1.35; color: var(--tenue); }
+.s b { color: var(--tiza); font-weight: 700; }
+.grande { font-family: "Fraunces", serif; font-weight: 700; font-size: 150px; line-height: 1; letter-spacing: -0.02em; }
+
+/* Lo que la investigación marca como propio. */
+.propio {
+  display: inline-block; align-self: flex-start; padding: 6px 22px 4px; border: 3px dashed var(--cielo); border-radius: 14px;
+  font-family: "Caveat", cursive; font-weight: 700; font-size: 40px; color: var(--cielo);
+  transform: rotate(-1.5deg);
+}
+
+/* Tarjeta de definición: el término y qué es. */
+.def { align-self: stretch; border: 4px solid var(--cielo); border-radius: 26px; padding: 26px 34px 30px; background: rgba(18, 26, 42, 0.92); }
+.def .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cielo); }
+.def .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 62px; line-height: 1.05; margin-top: 8px; }
+.def .s { margin-top: 12px; }
+
+/* Ilustraciones de la JW: marco sencillo. */
+.ilus { position: absolute; overflow: hidden; border-radius: 22px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
+.ilus .kb { position: absolute; inset: 0; }
+.ilus img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Mapas: cámara sobre la imagen real y trazos encima, en coordenadas de la imagen. */
+.mapa { position: absolute; overflow: hidden; background: #cfd9c4; }
+.mapa .cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.mapa .cam img, .mapa .cam svg { position: absolute; left: 0; top: 0; display: block; }
+.mapa .velo { position: absolute; inset: 0; background: rgba(15, 22, 30, 0.35); opacity: 0; }
+/* Panel translúcido sobre el mapa. */
+.panel { position: absolute; top: 0; bottom: 0; right: 0; width: 820px;
+  background: linear-gradient(90deg, rgba(18, 26, 42, 0) 0%, rgba(18, 26, 42, 0.94) 8%, rgba(18, 26, 42, 0.97) 100%); }
+.panel.izq { left: 0; right: auto;
+  background: linear-gradient(270deg, rgba(18, 26, 42, 0) 0%, rgba(18, 26, 42, 0.9) 12%, rgba(18, 26, 42, 0.96) 100%); }
+/* Rótulos que se leen sobre el mapa. */
+.halo { paint-order: stroke; stroke: rgba(255, 255, 255, 0.92); stroke-linejoin: round; }
+.halo-o { paint-order: stroke; stroke: rgba(17, 25, 33, 0.9); stroke-linejoin: round; }
+
+/* Trazos de pizarra. */
+.trazo { fill: none; stroke: var(--tiza); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Tarjeta de capítulo: "Génesis 19" y su subtítulo. */
+.capcard { position: absolute; left: 0; right: 0; top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.capcard .num { font-family: "Fraunces", serif; font-weight: 700; font-size: 170px; line-height: 1; letter-spacing: -0.02em; }
+.capcard svg { display: block; margin: 18px auto 0; width: 760px; height: 40px; }
+.capcard svg path { fill: none; stroke: var(--oro); stroke-width: 7; stroke-linecap: round; }
+.capcard .sub { font-family: "Caveat", cursive; font-weight: 700; font-size: 84px; line-height: 1.05; color: var(--oro); margin-top: 22px; }
+.capcard .edad { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 32px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tenue); margin-top: 30px; }
+
+/* Secciones de lecciones: se tienen que ver distintas al resto (el verde solo va aquí). */
+.seccion { position: absolute; left: 90px; right: 90px; top: 56px; display: flex; align-items: baseline; gap: 34px; }
+.seccion .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.2em; color: var(--verde); text-transform: uppercase; white-space: nowrap; }
+.seccion .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 66px; line-height: 1; }
+.seccion-linea { position: absolute; left: 90px; right: 90px; top: 150px; height: 20px; }
+.seccion-linea path { fill: none; stroke: var(--verde); stroke-width: 6; stroke-linecap: round; }
+.leccion { position: absolute; left: 90px; right: 90px; top: 200px; bottom: 90px; display: grid; grid-template-columns: 170px 1fr; column-gap: 40px; align-content: center; row-gap: 40px; }
+.leccion .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 150px; line-height: 0.9; color: var(--verde); text-align: right; }
+.leccion .cuerpo { display: flex; flex-direction: column; gap: 34px; }
+.leccion .l { font-family: "Caveat", cursive; font-weight: 700; font-size: 76px; line-height: 1.05; }
+.leccion .p { border-left: 8px solid var(--oro); padding: 6px 0 8px 34px; font-family: "Fraunces", serif; font-style: italic; font-weight: 500; font-size: 50px; line-height: 1.22; color: var(--oro); }
+.leccion .p .k { display: block; font-family: "Montserrat", sans-serif; font-style: normal; font-weight: 800; font-size: 26px; letter-spacing: 0.18em; color: var(--tenue); margin-bottom: 10px; }
+.leccion .s { font-size: 28px; }
+
+
+.eje70 { position: absolute; left: 0; top: 130px; width: 1920px; height: 520px; }
+.eje70 svg { width: 1920px; height: 520px; }
+.yy { font-family: "Fraunces", serif; font-weight: 700; font-size: 54px; }
+.tk { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 32px; }
+.ll { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; }
+.pp { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; }
+.metodo { position: absolute; left: 120px; right: 120px; top: 690px; }
+.reyes { display: flex; gap: 14px; align-items: center; margin-top: 14px; }
+.rey { padding: 16px 22px; border-radius: 14px; background: rgba(141,180,236,0.2); border: 3px solid var(--cielo); font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; white-space: nowrap; }
+.rey.q { border-style: dashed; color: var(--oro); border-color: var(--oro); background: none; }
+.fuentes { position: absolute; left: 90px; right: 90px; top: 150px; bottom: 120px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; align-items: center; }
+.fu { border: 4px solid rgba(239,231,214,0.3); border-radius: 26px; padding: 28px 30px; background: rgba(18,26,42,0.92); display: flex; flex-direction: column; gap: 16px; }
+.fu .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; color: var(--cielo); }
+.fu .m { font-size: 56px; }
+.fu .s { font-size: 28px; }
+.cmp { display: flex; gap: 20px; }
+.cmp .c { flex: 1; text-align: center; border-radius: 16px; padding: 12px 6px; background: rgba(239,231,214,0.08); }
+.cmp .c .a { font-family: "Fraunces", serif; font-weight: 700; font-size: 80px; line-height: 1; }
+.cmp .c .b { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.08em; color: var(--tenue); margin-top: 6px; }
+.lag { height: 60px; border-radius: 12px; background: rgba(239,231,214,0.12); position: relative; overflow: hidden; }
+.lag .h { position: absolute; left: 0; top: 0; bottom: 0; width: 40%; background: var(--cielo); }
+.vat { position: absolute; left: 90px; top: 150px; width: 760px; bottom: 130px; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.tablilla { padding: 34px 36px; border-radius: 30px 30px 46px 34px; background: linear-gradient(160deg, #c9a27a, #8f6a48); color: #2a1a0c; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+.tablilla .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.18em; color: #3a2410; }
+.tablilla .t { font-family: "Fraunces", serif; font-weight: 600; font-size: 50px; line-height: 1.15; margin-top: 10px; }
+.cuentas { position: absolute; left: 920px; right: 90px; top: 150px; bottom: 130px; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.ln { display: grid; grid-template-columns: 300px 1fr; align-items: baseline; gap: 20px; }
+.ln .a { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.12em; color: var(--tenue); }
+.ln .b { font-family: "Fraunces", serif; font-weight: 700; font-size: 72px; line-height: 1; }
+.ln .b s { color: var(--tenue); text-decoration-color: var(--fuego); text-decoration-thickness: 8px; }
+.cierre { position: absolute; left: 120px; right: 120px; top: 170px; bottom: 140px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px; text-align: center; }
+.cierre .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 170px; line-height: 1; }
+.cierre .n b { color: var(--oro); }
+.cierre .n span { color: var(--cielo); }
+.cierre .m { font-size: 72px; }
+.ext { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.12em; color: var(--cielo); }
+
+}
+</style>
+<div id="escena-19" data-composition-id="escena-19" data-width="1920" data-height="1080">
+<div class="contenido">
+<div class="cab"><span class="cap">¿Y los historiadores?</span><span class="ext">LO EXTERNO, TAL COMO LO PRESENTA LA ATALAYA</span></div>
+<div class="fase f-a">
+<div class="eje70"><svg viewBox="0 0 1920 520">
+  <path d="M 140 80 L 1780 80" stroke="var(--tiza)" stroke-width="5"/>
+  <g class="ticks"></g>
+  <text class="pp" x="140" y="200" fill="var(--oro)">LA BIBLIA</text>
+  <rect x="517" y="220" width="1148" height="80" rx="14" fill="var(--oro)"/>
+  <text class="ll" x="1091" y="275" text-anchor="middle" fill="#121a2a">70 años</text>
+  <text class="yy" x="517" y="350" text-anchor="middle" fill="var(--oro)">607</text>
+  <g class="hist"><text class="pp" x="140" y="420" fill="var(--cielo)">LOS HISTORIADORES (EXTERNO)</text>
+  <rect x="845" y="440" width="820" height="80" rx="14" fill="rgba(141,180,236,0.25)" stroke="var(--cielo)" stroke-width="5" stroke-dasharray="16 10"/>
+  <text class="ll" x="1255" y="495" text-anchor="middle" fill="var(--cielo)">unos 50 años</text>
+  <text class="yy" x="760" y="500" text-anchor="middle" fill="var(--cielo)">587</text></g>
+  <path class="dif" d="M 517 370 L 845 370" stroke="var(--fuego)" stroke-width="6" fill="none"/><text class="ll dift" x="690" y="352" text-anchor="middle" fill="var(--fuego)">20 años</text>
+</svg></div>
+<div class="metodo"><div class="m">suman los reinados hacia atrás desde Nabonido</div><div class="reyes"><div class="rey">Nabonido</div><div class="rey">← rey</div><div class="rey">← rey</div><div class="rey q">¿alguien en medio?</div><div class="rey">← Nabucodonosor</div></div></div>
+</div>
+<div class="fase f-b">
+<div class="fuentes">
+  <div class="fu u1"><div class="k">HISTORIADORES CLÁSICOS</div><div class="m">Beroso</div><div class="s">Sacerdote babilonio. Escribió hacia 281 a. e. c., unos tres siglos después; solo quedan fragmentos.</div><div class="s"><i>La Atalaya</i>, 1 de octubre de 2011, pág. 29</div></div>
+  <div class="fu u2"><div class="k">CANON DE TOLOMEO</div><div class="m">una lista de reyes</div><div class="s">Hecha por un astrónomo unos 600 años más tarde. Entre Kandalanu y Nabonido:</div><div class="cmp"><div class="c"><div class="a">4</div><div class="b">REYES EN TOLOMEO</div></div><div class="c"><div class="a" style="color:var(--oro)">7</div><div class="b">EN LA LISTA DE URUK</div></div></div><div class="s"><i>La Atalaya</i>, 1 de octubre de 2011, págs. 30, 31</div></div>
+  <div class="fu u3"><div class="k">CRÓNICAS DE BABILONIA</div><div class="m">historia con lagunas</div><div class="s">Cubren solo 35 de unos 88 años del imperio.</div><div class="lag"><div class="h"></div></div><div class="s"><i>La Atalaya</i>, 1 de noviembre de 2011</div></div>
+</div>
+</div>
+<div class="fase f-c">
+<div class="vat"><div class="tablilla"><div class="k">TABLILLA ASTRONÓMICA VAT 4956</div><div class="t">“Año 37 de Nabucodonosor, rey de Babilonia”</div></div><div class="s">Registra trece posiciones de la Luna · <i>La Atalaya</i>, 1 de noviembre de 2011, págs. 25-27</div></div>
+<div class="cuentas">
+  <div class="ln l1"><div class="a">LOS ESPECIALISTAS</div><div class="b"><s>568</s> a. e. c.</div></div>
+  <div class="ln l2"><div class="a">LAS 13 LUNAS</div><div class="b" style="color:var(--oro)">588 a. e. c.</div></div>
+  <div class="ln l3"><div class="a">AÑO 18 DEL REY</div><div class="b" style="color:var(--fuego)">607 a. e. c.</div></div>
+</div>
+</div>
+<div class="fase f-d">
+<div class="cierre"><div class="n"><b>70</b> años, no <span>50</span></div><div class="m oro">con respeto por los historiadores, y con la Palabra de Dios primero</div><div class="s">Jeremías 25:11 · Daniel 9:2 · <i>La Atalaya</i>, 1 de noviembre de 2011, pág. 27</div></div>
+</div>
+</div>
+</div>
+<script>
+(function () {
+const ID = "escena-19";
+const DUR = 90.432;
+const LEAD = 0.6;
+const W = [{"w":"Los","t":0.703,"d":0.211},{"w":"historiadores","t":0.926,"d":0.776},{"w":"no","t":1.716,"d":0.197},{"w":"se","t":1.926,"d":0.132},{"w":"inventan","t":2.071,"d":0.5},{"w":"su","t":2.584,"d":0.145},{"w":"fecha","t":2.742,"d":0.461},{"w":"Suman","t":4.113,"d":0.461},{"w":"hacia","t":4.587,"d":0.237},{"w":"atrás","t":4.837,"d":0.355},{"w":"los","t":5.205,"d":0.171},{"w":"reinados","t":5.389,"d":0.487},{"w":"de","t":5.889,"d":0.079},{"w":"los","t":5.982,"d":0.184},{"w":"reyes","t":6.179,"d":0.316},{"w":"de","t":6.508,"d":0.066},{"w":"Babilonia","t":6.587,"d":0.618},{"w":"con","t":7.455,"d":0.158},{"w":"escritores","t":7.626,"d":0.632},{"w":"antiguos","t":8.271,"d":0.632},{"w":"una","t":9.245,"d":0.158},{"w":"lista","t":9.416,"d":0.342},{"w":"de","t":9.771,"d":0.118},{"w":"reyes","t":9.903,"d":0.447},{"w":"y","t":10.363,"d":0.079},{"w":"tablillas","t":10.455,"d":0.539},{"w":"de","t":11.008,"d":0.079},{"w":"arcilla","t":11.1,"d":0.526},{"w":"Pero","t":12.547,"d":0.25},{"w":"ese","t":12.811,"d":0.197},{"w":"método","t":13.021,"d":0.408},{"w":"solo","t":13.442,"d":0.276},{"w":"funciona","t":13.732,"d":0.5},{"w":"si","t":14.245,"d":0.171},{"w":"cada","t":14.429,"d":0.303},{"w":"rey","t":14.745,"d":0.224},{"w":"sucedió","t":14.982,"d":0.526},{"w":"al","t":15.521,"d":0.118},{"w":"anterior","t":15.653,"d":0.526},{"w":"sin","t":16.192,"d":0.25},{"w":"nadie","t":16.455,"d":0.329},{"w":"en","t":16.797,"d":0.105},{"w":"medio","t":16.916,"d":0.421},{"w":"Y","t":18.245,"d":0.184},{"w":"esas","t":18.442,"d":0.289},{"w":"fuentes","t":18.745,"d":0.461},{"w":"tienen","t":19.218,"d":0.316},{"w":"lagunas","t":19.547,"d":0.632},{"w":"Beroso","t":21.087,"d":0.566},{"w":"un","t":21.968,"d":0.118},{"w":"sacerdote","t":22.1,"d":0.605},{"w":"babilonio","t":22.718,"d":0.632},{"w":"escribió","t":23.639,"d":0.539},{"w":"unos","t":24.192,"d":0.329},{"w":"tres","t":24.534,"d":0.237},{"w":"siglos","t":24.784,"d":0.395},{"w":"después","t":25.192,"d":0.539},{"w":"y","t":25.968,"d":0.066},{"w":"solo","t":26.047,"d":0.342},{"w":"quedan","t":26.403,"d":0.355},{"w":"fragmentos","t":26.771,"d":0.789},{"w":"El","t":28.468,"d":0.211},{"w":"Canon","t":28.692,"d":0.329},{"w":"de","t":29.034,"d":0.105},{"w":"Tolomeo","t":29.153,"d":0.513},{"w":"es","t":29.679,"d":0.145},{"w":"una","t":29.837,"d":0.171},{"w":"lista","t":30.021,"d":0.329},{"w":"de","t":30.363,"d":0.118},{"w":"reyes","t":30.495,"d":0.421},{"w":"que","t":30.929,"d":0.145},{"w":"hizo","t":31.087,"d":0.276},{"w":"un","t":31.376,"d":0.158},{"w":"astrónomo","t":31.547,"d":0.566},{"w":"unos","t":32.126,"d":0.276},{"w":"seiscientos","t":32.416,"d":0.645},{"w":"años","t":33.074,"d":0.329},{"w":"más","t":33.416,"d":0.224},{"w":"tarde","t":33.653,"d":0.368},{"w":"anota","t":34.324,"d":0.382},{"w":"cuatro","t":34.718,"d":0.382},{"w":"reyes","t":35.113,"d":0.408},{"w":"en","t":35.534,"d":0.118},{"w":"un","t":35.666,"d":0.132},{"w":"periodo","t":35.811,"d":0.434},{"w":"en","t":36.258,"d":0.092},{"w":"que","t":36.363,"d":0.132},{"w":"una","t":36.508,"d":0.224},{"w":"tablilla","t":36.745,"d":0.434},{"w":"de","t":37.192,"d":0.132},{"w":"Uruk","t":37.337,"d":0.316},{"w":"pone","t":37.666,"d":0.289},{"w":"siete","t":37.968,"d":0.461},{"w":"Y","t":39.337,"d":0.132},{"w":"las","t":39.482,"d":0.197},{"w":"Crónicas","t":39.692,"d":0.513},{"w":"de","t":40.218,"d":0.066},{"w":"Babilonia","t":40.297,"d":0.553},{"w":"cubren","t":40.863,"d":0.421},{"w":"solo","t":41.297,"d":0.289},{"w":"treinta","t":41.6,"d":0.316},{"w":"y","t":41.929,"d":0.053},{"w":"cinco","t":41.995,"d":0.382},{"w":"de","t":42.389,"d":0.105},{"w":"los","t":42.508,"d":0.184},{"w":"unos","t":42.705,"d":0.276},{"w":"ochenta","t":42.995,"d":0.368},{"w":"y","t":43.376,"d":0.092},{"w":"ocho","t":43.482,"d":0.303},{"w":"años","t":43.797,"d":0.368},{"w":"de","t":44.179,"d":0.158},{"w":"ese","t":44.35,"d":0.211},{"w":"imperio","t":44.574,"d":0.553},{"w":"Hay","t":46.034,"d":0.224},{"w":"incluso","t":46.271,"d":0.474},{"w":"una","t":46.758,"d":0.237},{"w":"tablilla","t":47.008,"d":0.434},{"w":"astronómica","t":47.455,"d":0.75},{"w":"la","t":48.534,"d":0.092},{"w":"VAT","t":48.639,"d":0.487},{"w":"cuatro","t":49.139,"d":0.382},{"w":"nueve","t":49.534,"d":0.263},{"w":"cinco","t":49.811,"d":0.368},{"w":"seis","t":50.192,"d":0.368},{"w":"fechada","t":50.837,"d":0.461},{"w":"en","t":51.311,"d":0.092},{"w":"el","t":51.416,"d":0.158},{"w":"año","t":51.587,"d":0.25},{"w":"treinta","t":51.85,"d":0.342},{"w":"y","t":52.205,"d":0.053},{"w":"siete","t":52.271,"d":0.382},{"w":"de","t":52.666,"d":0.118},{"w":"Nabucodonosor","t":52.797,"d":1},{"w":"Los","t":54.705,"d":0.211},{"w":"especialistas","t":54.929,"d":0.855},{"w":"la","t":55.797,"d":0.105},{"w":"ponen","t":55.916,"d":0.355},{"w":"en","t":56.284,"d":0.118},{"w":"quinientos","t":56.416,"d":0.579},{"w":"sesenta","t":57.008,"d":0.421},{"w":"y","t":57.442,"d":0.079},{"w":"ocho","t":57.534,"d":0.368},{"w":"Pero","t":58.811,"d":0.211},{"w":"sus","t":59.034,"d":0.237},{"w":"trece","t":59.284,"d":0.289},{"w":"observaciones","t":59.587,"d":0.776},{"w":"de","t":60.376,"d":0.079},{"w":"la","t":60.468,"d":0.092},{"w":"Luna","t":60.574,"d":0.276},{"w":"coinciden","t":60.863,"d":0.645},{"w":"todas","t":61.521,"d":0.382},{"w":"con","t":61.916,"d":0.184},{"w":"el","t":62.113,"d":0.132},{"w":"año","t":62.258,"d":0.237},{"w":"quinientos","t":62.508,"d":0.592},{"w":"ochenta","t":63.113,"d":0.368},{"w":"y","t":63.495,"d":0.079},{"w":"ocho","t":63.587,"d":0.329},{"w":"veinte","t":64.179,"d":0.382},{"w":"años","t":64.574,"d":0.355},{"w":"antes","t":64.942,"d":0.539},{"w":"Y","t":66.389,"d":0.132},{"w":"si","t":66.534,"d":0.197},{"w":"ese","t":66.745,"d":0.224},{"w":"fue","t":66.982,"d":0.158},{"w":"su","t":67.153,"d":0.197},{"w":"año","t":67.363,"d":0.25},{"w":"treinta","t":67.626,"d":0.316},{"w":"y","t":67.955,"d":0.053},{"w":"siete","t":68.021,"d":0.408},{"w":"la","t":68.758,"d":0.066},{"w":"destrucción","t":68.837,"d":0.605},{"w":"de","t":69.455,"d":0.079},{"w":"Jerusalén","t":69.547,"d":0.658},{"w":"en","t":70.389,"d":0.118},{"w":"su","t":70.521,"d":0.197},{"w":"año","t":70.732,"d":0.237},{"w":"dieciocho","t":70.982,"d":0.632},{"w":"cae","t":71.889,"d":0.263},{"w":"en","t":72.166,"d":0.132},{"w":"seiscientos","t":72.311,"d":0.671},{"w":"siete","t":72.995,"d":0.434},{"w":"Con","t":74.337,"d":0.184},{"w":"quinientos","t":74.534,"d":0.566},{"w":"ochenta","t":75.113,"d":0.355},{"w":"y","t":75.482,"d":0.039},{"w":"siete","t":75.534,"d":0.421},{"w":"el","t":76.271,"d":0.184},{"w":"exilio","t":76.468,"d":0.461},{"w":"habría","t":76.942,"d":0.289},{"w":"durado","t":77.245,"d":0.421},{"w":"solo","t":77.679,"d":0.316},{"w":"cincuenta","t":78.008,"d":0.592},{"w":"años","t":78.613,"d":0.487},{"w":"La","t":80.008,"d":0.171},{"w":"Biblia","t":80.192,"d":0.355},{"w":"dice","t":80.561,"d":0.329},{"w":"setenta","t":80.903,"d":0.618},{"w":"Se","t":82.429,"d":0.237},{"w":"puede","t":82.679,"d":0.237},{"w":"hablar","t":82.929,"d":0.303},{"w":"del","t":83.245,"d":0.197},{"w":"tema","t":83.455,"d":0.276},{"w":"así","t":83.745,"d":0.329},{"w":"con","t":84.363,"d":0.171},{"w":"respeto","t":84.547,"d":0.5},{"w":"por","t":85.061,"d":0.197},{"w":"los","t":85.271,"d":0.145},{"w":"historiadores","t":85.429,"d":0.789},{"w":"y","t":86.482,"d":0.105},{"w":"con","t":86.6,"d":0.184},{"w":"la","t":86.797,"d":0.092},{"w":"Palabra","t":86.903,"d":0.421},{"w":"de","t":87.337,"d":0.118},{"w":"Dios","t":87.468,"d":0.303},{"w":"primero","t":87.784,"d":0.526}];
+// Librería común de las escenas. El constructor la pega dentro de una función que ya
+// define ID (id de la composición), DUR (duración de la escena), LEAD (silencio antes de la
+// voz) y W (palabras de la voz con su tiempo, ya desplazadas por LEAD).
+const root = document.getElementById(ID);
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+// Acepta un selector, un elemento, una NodeList o una lista mezclada de cualquiera de ellos.
+const el = (x) => (typeof x === "string" ? $$(x) : Array.isArray(x) ? x.flatMap((y) => el(y)) : x instanceof NodeList ? Array.from(x) : [x]);
+const tl = gsap.timeline({ paused: true });
+
+// ---------- sincronía con la voz ----------
+const norm = (s) =>
+  s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9ñ]/g, "");
+const WN = W.map((w) => norm(w.w));
+const trozos = (frase) => frase.split(/[\s\-]+/).map(norm).filter(Boolean);
+function buscar(frase, despues) {
+  const p = trozos(frase);
+  for (let i = 0; i < WN.length; i++) {
+    if (W[i].t < (despues || 0) - 0.001) continue;
+    let ok = true;
+    for (let k = 0; k < p.length; k++) if (WN[i + k] !== p[k]) { ok = false; break; }
+    if (ok) return i;
+  }
+  throw new Error(ID + ': no encuentro "' + frase + '" después de ' + despues);
+}
+// Momento en que la voz empieza a decir la frase (primera vez después de `despues`).
+function at(frase, despues) { return W[buscar(frase, despues)].t; }
+// Momento en que la voz termina de decir la frase.
+function fin(frase, despues) {
+  const i = buscar(frase, despues);
+  const w = W[i + trozos(frase).length - 1];
+  return w.t + w.d;
+}
+const FIN_VOZ = W.length ? W[W.length - 1].t + W[W.length - 1].d : DUR;
+
+// ---------- movimientos ----------
+// Todos los elementos que se revelan empiezan ocultos por CSS (.oc, .esc, trazos) y se
+// animan con immediateRender:false, así cada cuadro depende solo del tiempo.
+const IR = { immediateRender: false };
+// El primer movimiento que revela un elemento lo deja oculto desde el cuadro cero.
+const _ocultos = new WeakSet();
+function inicial(els, props) {
+  els.forEach((e) => { if (!_ocultos.has(e)) { _ocultos.add(e); gsap.set(e, props); } });
+  return els;
+}
+function entra(x, t, o = {}) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0, y: o.y ?? 36, x: o.x ?? 0, scale: o.s ?? 1 },
+    { opacity: 1, y: 0, x: 0, scale: 1, duration: o.d ?? 0.6, ease: o.ease ?? "power3.out", stagger: o.st ?? 0, ...IR }, t);
+}
+function sale(x, t, o = {}) {
+  tl.fromTo(el(x), { opacity: 1 }, { opacity: 0, y: o.y ?? -24, duration: o.d ?? 0.45, ease: "power2.in", stagger: o.st ?? 0, ...IR }, t);
+}
+function aparece(x, t, d = 0.5, hasta = 1) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0 }, { opacity: hasta, duration: d, ease: "none", ...IR }, t);
+}
+function atenua(x, t, hasta = 0.25, d = 0.5) {
+  tl.to(el(x), { opacity: hasta, duration: d, ease: "power1.inOut" }, t);
+}
+function desaparece(x, t, d = 0.45) {
+  tl.to(el(x), { opacity: 0, duration: d, ease: "none" }, t);
+}
+function salta(x, t, o = {}) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0, scale: o.desde ?? 0.4, rotation: o.r ?? 0 },
+    { opacity: 1, scale: 1, rotation: 0, duration: o.d ?? 0.55, ease: o.ease ?? "back.out(1.8)", stagger: o.st ?? 0, ...IR }, t);
+}
+// Escritura a mano: se descubre de izquierda a derecha, como si la tiza avanzara.
+function escribe(x, t, d = 0.8, o = {}) {
+  tl.fromTo(inicial(el(x), { clipPath: "inset(-30% 103% -30% -3%)" }), { opacity: 1, clipPath: "inset(-30% 103% -30% -3%)" },
+    { clipPath: "inset(-30% -3% -30% -3%)", opacity: 1, duration: d, ease: "none", stagger: o.st ?? 0, ...IR }, t);
+}
+// Trazo de tiza: la línea se dibuja en vivo.
+const _largos = new Map();
+// Las escenas que no están en pantalla al cargar están ocultas, y ahí getTotalLength()
+// devuelve 0. Se mide una copia del trazo dentro de un SVG auxiliar que sí se dibuja.
+function sonda(p) {
+  let s = document.getElementById("sonda-trazos");
+  if (!s) {
+    s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    s.id = "sonda-trazos";
+    s.setAttribute("style", "position:fixed;left:0;top:0;width:10px;height:10px;visibility:hidden;pointer-events:none");
+    document.body.appendChild(s);
+  }
+  const c = p.cloneNode(false);
+  s.appendChild(c);
+  return c;
+}
+function largo(p) {
+  const c = sonda(p);
+  const L = c.getTotalLength();
+  c.remove();
+  return L;
+}
+function preparaTrazos(x) {
+  el(x).forEach((p) => {
+    if (_largos.has(p)) return;
+    const L = largo(p);
+    _largos.set(p, L);
+    p.style.strokeDasharray = L + " " + (L + 2);
+    p.style.strokeDashoffset = L;
+  });
+}
+function traza(x, t, d = 1, o = {}) {
+  const ps = inicial(el(x), { opacity: 0 });
+  preparaTrazos(ps);
+  tl.fromTo(ps, { strokeDashoffset: (i, p) => _largos.get(p), opacity: 1 },
+    { strokeDashoffset: 0, opacity: 1, duration: d, ease: o.ease ?? "power1.inOut", stagger: o.st ?? 0, ...IR }, t);
+}
+// Un objeto que recorre un trazo mientras se dibuja (Agar, los reyes, Abrán).
+// Los puntos del camino se miden una sola vez al construir; durante el render solo se interpola.
+function medirCamino(path, N = 400) {
+  const p = sonda(el(path)[0]);
+  const L = p.getTotalLength();
+  const pts = [];
+  for (let i = 0; i <= N; i++) { const q = p.getPointAtLength((L * i) / N); pts.push([q.x, q.y]); }
+  p.remove();
+  return pts;
+}
+function ponEnCamino(objs, pts, k) {
+  const N = pts.length - 1;
+  const f = Math.min(N, Math.max(0, k * N)), i = Math.floor(f), r = f - i, j = Math.min(N, i + 1);
+  const x = pts[i][0] + (pts[j][0] - pts[i][0]) * r, y = pts[i][1] + (pts[j][1] - pts[i][1]) * r;
+  objs.forEach((e) => e.setAttribute("transform", "translate(" + x.toFixed(2) + " " + y.toFixed(2) + ")"));
+}
+// Solo el primer recorrido de un objeto fija su posición inicial; los siguientes
+// arrancan donde terminó el anterior.
+const _colocados = new WeakSet();
+function recorre(obj, path, t, d, o = {}) {
+  const pts = typeof path === "string" || path instanceof Element ? medirCamino(path) : path;
+  const objs = el(obj);
+  const st = { k: o.desde ?? 0 };
+  if (!objs.some((e) => _colocados.has(e))) { objs.forEach((e) => _colocados.add(e)); ponEnCamino(objs, pts, st.k); }
+  tl.to(st, { k: o.hasta ?? 1, duration: d, ease: o.ease ?? "power1.inOut", onUpdate: () => ponEnCamino(objs, pts, st.k) }, t);
+}
+function cuenta(x, desde, hasta, t, d, fmt = (v) => Math.round(v).toString()) {
+  const e = el(x)[0];
+  const st = { v: desde };
+  if (!_colocados.has(e)) { _colocados.add(e); e.textContent = fmt(desde); }
+  tl.to(st, { v: hasta, duration: d, ease: "power1.out", onUpdate: () => (e.textContent = fmt(st.v)) }, t);
+}
+function camara(x, t, d, props, ease = "power2.inOut") {
+  tl.to(el(x), { ...props, duration: d, ease }, t);
+}
+// Paneo lento sobre una ilustración (Ken Burns), sin salirse del marco.
+function kb(x, t0, t1, desde, hasta) {
+  tl.fromTo(el(x), { scale: desde.s ?? 1.08, xPercent: desde.x ?? 0, yPercent: desde.y ?? 0 },
+    { scale: hasta.s ?? 1.0, xPercent: hasta.x ?? 0, yPercent: hasta.y ?? 0, duration: Math.max(0.1, t1 - t0), ease: "none" }, t0);
+}
+const fmtMiles = (v) => Math.round(v).toLocaleString("es-CO");
+
+// ---------- piezas repetidas ----------
+// Filtro de tiza para los trazos: borde levemente irregular.
+root.insertAdjacentHTML("afterbegin",
+  '<svg width="0" height="0" style="position:absolute"><defs>' +
+  '<filter id="tz-' + ID + '" x="-5%" y="-5%" width="110%" height="110%">' +
+  '<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>' +
+  '<feDisplacementMap in="SourceGraphic" scale="3"/></filter></defs></svg>');
+const TIZA = "url(#tz-" + ID + ")";
+
+// Tarjeta de capítulo: "Jeremías 37" y su subtítulo.
+function capitulo(x, t0, t1) {
+  const c = el(x)[0];
+  entra(c.querySelector(".num"), t0, { y: 60, d: 0.8 });
+  escribe(c.querySelector(".sub"), t0 + 0.5, 0.9);
+  traza(c.querySelectorAll("path"), t0 + 0.3, 0.8);
+  if (c.querySelector(".edad")) entra(c.querySelector(".edad"), t0 + 0.9, { y: 20 });
+  sale(c, t1, { y: -60, d: 0.6 });
+}
+
+// Entrada y salida de toda la escena: el fondo es común, solo se funde el contenido.
+function marco() {
+  tl.fromTo($(".contenido"), { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none" }, 0);
+  tl.to($(".contenido"), { opacity: 0, duration: 0.5, ease: "none" }, DUR - 0.55);
+}
+
+// Bloques de texto que se reemplazan en el mismo lugar: cada uno entra en su momento y sale
+// justo antes del siguiente. Si `hasta` es null, el último se queda.
+function secuencia(lista, hasta = null, o = {}) {
+  lista.forEach(([s, t], i) => {
+    entra(s, t, { y: o.y ?? 26, d: o.d ?? 0.55 });
+    const sig = i < lista.length - 1 ? lista[i + 1][1] : hasta;
+    if (sig != null) sale(s, sig - 0.4, { d: 0.35 });
+  });
+}
+// Pone marcado SVG dentro de un elemento de la escena.
+function pinta(sel, svg) { $(sel).innerHTML = svg; }
+
+// ---------- mapas ----------
+// Encuadre de cámara: lleva la región {x, y, w, h} de la imagen del mapa a la ventana
+// {x, y, w, h} de la pantalla (relativa al contenedor .mapa), sin deformarla.
+function encuadre(r, v) {
+  const s = Math.min(v.w / r.w, v.h / r.h);
+  return { scale: +s.toFixed(4), x: +(v.x + (v.w - r.w * s) / 2 - r.x * s).toFixed(1), y: +(v.y + (v.h - r.h * s) / 2 - r.y * s).toFixed(1) };
+}
+// Latido de un marcador: crece y vuelve, un número finito de veces.
+function late(x, t, o = {}) {
+  tl.fromTo(el(x), { scale: 1 }, { scale: o.s ?? 1.35, transformOrigin: "50% 50%", duration: o.d ?? 0.35, yoyo: true, repeat: o.n ?? 3, ease: "power1.inOut", immediateRender: false }, t);
+}
+
+// ---------- lecciones ----------
+// Cada lección entra en su momento y sale antes de la siguiente; el número cuenta.
+function lecciones(lista) {
+  const cab = $(".seccion");
+  if (cab) { entra(cab, 0.3, { y: -20 }); traza(".seccion-linea path", 0.6, 1.0); }
+  secuencia(lista, null, { y: 30, d: 0.6 });
+}
+
+
+const X = (y) => 140 + (630 - y) * 16.4;
+let tk = "";
+for (let y = 630; y >= 530; y -= 10) tk += `<path d="M ${X(y)} 64 L ${X(y)} 96" stroke="var(--tiza)" stroke-width="4"/><text class="tk" x="${X(y)}" y="135" text-anchor="middle" fill="var(--tenue)">${y}</text>`;
+$(".ticks").innerHTML = tk;
+const tB = at("Y esas fuentes");
+const tC = at("Hay incluso una tablilla");
+const tD = at("Con quinientos ochenta y siete");
+entra(".cab", 0.3, { y: -10 });
+aparece(".eje70", 0.4, 0.6);
+inicial(el([".hist", ".dif", ".dift"]), { opacity: 0 });
+entra(".hist", 1.2, { y: 20 });
+traza(".dif", 2.4, 0.8); aparece(".dift", 2.6, 0.4);
+entra(".metodo .m", at("Suman hacia atrás"), { y: 20 });
+entra(".rey", at("Suman hacia atrás") + 0.6, { x: -20, y: 0, st: 0.25 });
+late(".rey.q", at("sin nadie en medio"), { s: 1.12, n: 3 });
+sale(".f-a", tB - 0.5);
+entra(".u1", tB, { y: 40 });
+entra(".u2", at("El Canon de Tolomeo"), { y: 40 });
+entra(".u3", at("Y las Crónicas"), { y: 40 });
+tl.fromTo($(".lag .h"), { scaleX: 0 }, { scaleX: 1, transformOrigin: "0 50%", duration: 1.0, immediateRender: false }, at("Y las Crónicas") + 1.0);
+sale(".f-b", tC - 0.5);
+entra(".vat", tC, { y: 30 });
+entra(".l1", at("Los especialistas"), { x: 30, y: 0 });
+entra(".l2", at("coinciden todas"), { x: 30, y: 0 });
+entra(".l3", at("Y si ese fue"), { x: 30, y: 0 });
+late(".l3 .b", at("cae en seiscientos siete"), { s: 1.08, n: 3 });
+sale(".f-c", tD - 0.5);
+entra(".cierre .n", tD, { y: 30 });
+entra(".cierre .m", at("Se puede hablar"), { y: 30 });
+entra(".cierre .s", at("Se puede hablar") + 0.6, { y: 10 });
+
+marco();
+window.__timelines[ID] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

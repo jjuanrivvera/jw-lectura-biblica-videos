@@ -1,9 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 project=${1:?Uso: tools/build.sh <proyecto>}
-case "$project" in
-  genesis-14-18|genesis-19-23|genesis-24-28) ;;
-  *) echo "Proyecto desconocido: $project" >&2; exit 2 ;;
-esac
 root=$(cd "$(dirname "$0")/.." && pwd)
-node "$root/$project/herramientas/construir.mjs"
+project_root="$root/$project"
+if [[ ! -d "$project_root/video" ]]; then
+  echo "Proyecto desconocido: $project" >&2
+  exit 2
+fi
+
+if [[ "$project" == "genesis-01-04" ]]; then
+  python3 "$project_root/herramientas/construir.py"
+elif [[ -f "$project_root/herramientas/construir.mjs" ]]; then
+  node "$project_root/herramientas/construir.mjs"
+else
+  echo "No hay constructor registrado para $project" >&2
+  exit 2
+fi

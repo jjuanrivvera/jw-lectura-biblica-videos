@@ -1,0 +1,76 @@
+<style>
+.av { position: absolute; left: 70px; width: 860px; top: 140px; display: flex; flex-direction: column; gap: 22px; }
+.av .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.16em; color: var(--tenue); text-transform: uppercase; }
+.av .cita { font-size: 58px; }
+.av .nota { font-family: "Montserrat", sans-serif; font-size: 26px; color: var(--tenue); }
+.av .nota b { color: var(--tiza); }
+.red { position: absolute; left: 980px; right: 70px; top: 120px; height: 620px; }
+.red svg { position: absolute; inset: 0; width: 870px; height: 620px; }
+.nd { position: absolute; padding: 16px 26px; border-radius: 22px; background: rgba(10, 16, 22, 0.55); border: 4px solid rgba(241, 233, 216, 0.2); text-align: center; }
+.nd .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 64px; line-height: 1.02; }
+.nd .r { font-family: "Caveat", cursive; font-weight: 700; font-size: 42px; color: var(--tenue); }
+.nd.ba { left: 470px; top: 0; border-color: rgba(236, 138, 103, 0.7); }
+.nd.is { left: 10px; top: 240px; border-color: var(--rojo); }
+.nd.gu { left: 470px; top: 460px; border-color: var(--oro); }
+.ln { fill: none; stroke-width: 7; stroke-linecap: round; }
+.ln.paz { stroke: var(--oro); stroke-dasharray: 2 16; }
+.ln.sec { stroke: var(--rojo); stroke-dasharray: 26 16; }
+.et12 { font-family: "Caveat", cursive; font-weight: 700; font-size: 42px; }
+.nocree { position: absolute; left: 1060px; top: 790px; padding: 10px 34px 8px; border: 6px solid var(--rojo); border-radius: 18px; color: var(--rojo); font-family: "Caveat", cursive; font-weight: 700; font-size: 76px; }
+.s12 { position: absolute; left: 70px; width: 860px; top: 760px; font-size: 27px; }
+.sol { position: absolute; left: 120px; right: 120px; top: 300px; text-align: center; }
+.sol .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.2em; color: var(--cielo); }
+.sol .cita { font-size: 84px; margin-top: 24px; }
+.sol .nota { margin-top: 40px; font-family: "Fraunces", serif; font-size: 40px; color: var(--tenue); }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 40</span><span>versículos 13 al 15</span></div>
+
+<div class="fase f1">
+  <div class="av">
+    <div class="k k1">Johanán y los jefes del ejército · 40:14</div>
+    <div class="cita c1">“¿Acaso no sabes que <b>Baalís, el rey de los ammonitas</b>, envió a Ismael hijo de Netanías para matarte?”</div>
+    <div class="nota n1">nota: <b>“matarte”</b> también puede traducirse <b>“herirte el alma”</b></div>
+  </div>
+  <div class="red">
+    <svg viewBox="0 0 870 620">
+      <path class="ln sec l-sec" d="M 560 110 C 420 140 300 190 220 236"/>
+      <path class="ln paz l-paz" d="M 260 360 C 330 440 420 480 470 500"/>
+      <text class="et12 t-sec" x="250" y="150" fill="#ec8a67">en secreto</text>
+      <text class="et12 t-paz" x="200" y="470" fill="#e9bf60">pacto de paz</text>
+    </svg>
+    <div class="nd ba"><div class="n">Baalís</div><div class="r">rey de los ammonitas</div></div>
+    <div class="nd is"><div class="n">Ismael</div><div class="r">hijo de Netanías</div></div>
+    <div class="nd gu"><div class="n">Guedalías</div><div class="r">el gobernador, en Mizpá</div></div>
+  </div>
+  <div class="s s12">Ismael “al parecer celebró un pacto jurado de paz y apoyo con él. Sin embargo, conspiró en secreto con Baalís, rey de los ammonitas, para matar a Guedalías” · <i>Perspicacia</i>, «Ismael»</div>
+  <div class="nocree">Guedalías no les cree</div>
+</div>
+
+<div class="fase f2">
+  <div class="sol">
+    <div class="k">JOHANÁN, A SOLAS · 40:15</div>
+    <div class="cita c2">“Quiero ir a matar a Ismael hijo de Netanías; <b>nadie lo sabrá</b>. ¿Por qué dejar que él te mate?”</div>
+    <div class="nota">y sigue: “¿Por qué dejar que se esparza toda la gente de Judá que ha venido a reunirse contigo?”</div>
+  </div>
+</div>
+
+<script>
+aparece(".cab", 0.2, 0.5);
+entra(".k1", 0.4, { y: 16 });
+escribe(".c1", at("Acaso no sabes"), at("Ismael había recibido") - at("Acaso no sabes") - 1.2);
+entra(".nd.gu", at("matarte"), { y: 20 });
+entra(".n1", at("matarte") + 0.4, { y: 14 });
+entra(".nd.ba", at("Baalís"), { y: 20 });
+entra(".nd.is", at("envió a Ismael"), { y: 20 });
+traza(".l-paz", at("pacto de paz") - 0.6, 1.0);
+aparece(".t-paz", at("pacto de paz"), 0.4);
+entra(".s12", at("Ismael había recibido") + 0.5, { y: 14 });
+traza(".l-sec", at("Pero en secreto"), 1.0);
+aparece(".t-sec", at("Pero en secreto") + 0.4, 0.4);
+salta(".nocree", at("Guedalías no les cree"), { r: -6 });
+desaparece(".f1", at("Así que Johanán") - 0.2, 0.5);
+entra(".sol .k", at("a solas") - 0.3, { y: 20 });
+escribe(".c2", at("Quiero ir"), 4.6);
+entra(".sol .nota", at("Por qué dejar") + 0.6, { y: 14 });
+</script>

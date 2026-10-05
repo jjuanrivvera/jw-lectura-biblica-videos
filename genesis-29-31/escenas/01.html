@@ -1,0 +1,76 @@
+<style>
+.prom { position: absolute; left: 80px; right: 80px; top: 96px; }
+.prom .cita { font-size: 52px; }
+.prom0 { position: absolute; left: 160px; right: 160px; top: 300px; text-align: center; }
+.prom0 .cita { font-size: 76px; }
+.prom0 .m { margin-top: 30px; color: var(--oro); }
+.eje { position: absolute; left: 80px; top: 330px; width: 1760px; height: 420px; }
+.ano { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; fill: var(--tenue); }
+.bar-t { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; fill: #17212b; }
+.ev { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; fill: var(--tiza); }
+.ev.oro { fill: var(--oro); }
+.edad { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 26px; fill: var(--oro); letter-spacing: 0.06em; }
+.hijos-t { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; fill: var(--rosa); }
+.dos { position: absolute; left: 80px; right: 80px; bottom: 70px; display: grid; grid-template-columns: 1fr 1.6fr; column-gap: 40px; }
+.dos .dato .v { font-size: 62px; }
+.dos .dato .k { font-size: 46px; }
+.pie { position: absolute; right: 80px; top: 44px; font-size: 22px; color: var(--tenue); }
+</style>
+
+<div class="pie">Fechas: Perspicacia, “Jacob”, “Zilpá”, “Gad”, “José”, “Galeed”</div>
+<div class="prom0"><div class="cita">“Yo estoy contigo y te protegeré adondequiera que vayas, y te haré volver a este país”<span class="ref">GÉNESIS 28:15 · LA PROMESA EN BETEL</span></div></div>
+<div class="prom"><div class="cita">“Yo estoy contigo y te protegeré adondequiera que vayas, y te haré volver a este país”<span class="ref">GÉNESIS 28:15</span></div></div>
+
+<svg class="eje" viewBox="0 0 1760 420">
+  <path class="trazo linea" d="M 20 300 L 1740 300"/>
+  <g class="anos">
+    <text class="ano" x="20" y="350" text-anchor="middle">1781</text>
+    <text class="ano" x="622" y="350" text-anchor="middle">1774</text>
+    <text class="ano" x="966" y="350" text-anchor="middle">1770</text>
+    <text class="ano" x="1224" y="350" text-anchor="middle">1767</text>
+    <text class="ano" x="1740" y="350" text-anchor="middle">1761</text>
+    <text class="ano" x="1740" y="394" text-anchor="end" style="font-size:22px">años antes de nuestra era</text>
+  </g>
+  <g class="b1"><rect x="20" y="230" width="602" height="56" rx="12" fill="#e9bf60"/><text class="bar-t" x="321" y="270" text-anchor="middle">7 años por Raquel</text></g>
+  <g class="b2"><rect x="626" y="230" width="598" height="56" rx="12" fill="#d7a64a"/><text class="bar-t" x="925" y="270" text-anchor="middle">7 años más</text></g>
+  <g class="b3"><rect x="1228" y="230" width="512" height="56" rx="12" fill="#93bbef"/><text class="bar-t" x="1484" y="270" text-anchor="middle">6 por el rebaño</text></g>
+  <g class="hj"><rect x="626" y="150" width="598" height="60" rx="14" fill="rgba(233,173,204,0.14)" stroke="#e9adcc" stroke-width="4" stroke-dasharray="14 10"/><text class="hijos-t" x="925" y="193" text-anchor="middle">nacen los hijos, hasta José</text></g>
+  <g class="e1"><circle cx="20" cy="300" r="14" fill="#e9bf60"/><text class="ev oro" x="20" y="120">llega a Harán</text><text class="edad" x="20" y="160">77 AÑOS</text></g>
+  <g class="e2"><circle cx="622" cy="300" r="14" fill="#e9bf60"/><text class="ev oro" x="622" y="80" text-anchor="middle">se casa</text><text class="edad" x="622" y="118" text-anchor="middle">84 AÑOS</text></g>
+  <g class="e3"><circle cx="1224" cy="300" r="14" fill="#e9bf60"/><text class="ev oro" x="1224" y="80" text-anchor="middle">nace José</text><text class="edad" x="1224" y="118" text-anchor="middle">UNOS 91 AÑOS</text></g>
+  <g class="e4"><circle cx="1740" cy="300" r="14" fill="#e9bf60"/><text class="ev oro" x="1740" y="120" text-anchor="end">sale hacia Canaán</text><text class="edad" x="1740" y="160" text-anchor="end">20 AÑOS DESPUÉS</text></g>
+  <g class="cursor"><path d="M 0 210 L 0 318" stroke="#f1e9d8" stroke-width="5"/><circle cx="0" cy="318" r="9" fill="#f1e9d8"/></g>
+</svg>
+
+<div class="dos">
+  <div class="dato d1"><div class="k">llegó</div><div class="v">solo, con su bastón</div><div class="s">“Cuando crucé el Jordán, solo tenía mi bastón” · Génesis 32:10</div></div>
+  <div class="dato d2"><div class="k">salió</div><div class="v">con 2 esposas, 2 siervas, 11 hijos y 1 hija</div><div class="s">rebaños grandes, camellos, burros, siervos y siervas · Génesis 30:43</div></div>
+</div>
+
+<script>
+const X = (a) => 20 + (1781 - a) * 86;
+const cur = $(".cursor");
+tl.set(cur, { x: X(1781) }, 0);
+entra(".prom0", 0.3, { y: 20 });
+sale(".prom0", at("Jacob llega") - 0.9, { y: -60 });
+entra(".prom", at("Jacob llega") - 0.4, { y: 20 });
+traza(".linea", at("Jacob llega") - 0.6, 0.8);
+aparece(".anos", at("Jacob llega") - 0.3, 0.6);
+aparece(".cursor", at("Jacob llega"), 0.3);
+salta(".e1", at("Jacob llega"), { desde: 0.7 });
+atenua(".prom", at("Jacob llega"), 0.35);
+const tramo = (b, t, d, hasta) => {
+  crece(b + " rect", t, d, { ease: "none" });
+  aparece(b + " text", t + d - 0.3, 0.4);
+  tl.to(cur, { x: X(hasta), duration: d, ease: "none" }, t);
+};
+tramo(".b1", at("Trabaja siete años"), 1.2, 1774);
+salta(".e2", at("se casa"), { desde: 0.7 });
+tramo(".b2", at("en los siete siguientes"), 1.2, 1767);
+entra(".hj", at("le nacen los hijos"), { y: 14 });
+salta(".e3", at("le nacen los hijos") + 0.8, { desde: 0.7 });
+tramo(".b3", at("y trabaja seis"), 1.0, 1761);
+salta(".e4", at("por el rebaño"), { desde: 0.7 });
+entra(".d1", at("Llegó solo"), { y: 30 });
+entra(".d2", at("Salió con su familia"), { y: 30 });
+</script>

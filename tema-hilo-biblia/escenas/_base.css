@@ -1,0 +1,100 @@
+/* Estilo común de todas las escenas (1920x1080). El constructor lo anida bajo #escena-NN. */
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+color: var(--papel);
+font-family: "Montserrat", sans-serif;
+/* Un color por papel, siempre el mismo: oro solo para la línea de la descendencia (el hilo);
+   terracota para la serpiente y su descendencia; azul para lo celestial; salvia para la tierra y el paraíso. */
+--tinta: #10162a;
+--panel: rgba(18, 26, 48, 0.94);
+--papel: #f3ead8;
+--tenue: #aab4c8;
+--oro: #ebbd5c;
+--oro-claro: #f6d98f;
+--terra: #e07a5f;
+--cielo: #8fb9f2;
+--salvia: #8fd0a0;
+--linea: rgba(243, 234, 216, 0.22);
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.contenido { position: absolute; inset: 0; }
+.fase { position: absolute; inset: 0; }
+svg { overflow: visible; }
+
+.oro { color: var(--oro); }
+.terra { color: var(--terra); }
+.cielo { color: var(--cielo); }
+.salvia { color: var(--salvia); }
+
+/* Cabecera: sección a la izquierda, texto o tema a la derecha. */
+.cab {
+  position: absolute; left: 80px; right: 80px; top: 40px;
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 30px;
+  color: var(--tenue); letter-spacing: 0.1em; text-transform: uppercase;
+}
+.cab .sec { color: var(--oro); }
+
+/* Pie con la fuente. */
+.fuente {
+  position: absolute; left: 80px; right: 80px; bottom: 28px;
+  font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 24px; line-height: 1.3;
+  color: var(--tenue);
+}
+.fuente b, .fuente i { color: var(--papel); }
+.fuente b { font-weight: 700; }
+
+/* Columna de texto: el bloque activo se centra en el alto disponible. */
+.col { position: absolute; top: 120px; bottom: 100px; right: 90px; width: 780px; }
+.col.izq { left: 90px; right: auto; }
+.col > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+
+/* Registros: la Biblia, la anotación a mano, el texto de apoyo. */
+.cita { font-family: "Fraunces", serif; font-weight: 500; font-size: 54px; line-height: 1.22; color: var(--papel); }
+.cita b { font-weight: 700; }
+.ref { display: block; margin-top: 16px; font-family: "Montserrat", sans-serif; font-weight: 700;
+  font-size: 28px; letter-spacing: 0.12em; color: var(--tenue); text-transform: uppercase; }
+.m { font-family: "Caveat", cursive; font-weight: 700; font-size: 72px; line-height: 1.04; color: var(--papel); }
+.s { font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 34px; line-height: 1.35; color: var(--tenue); }
+.s b { color: var(--papel); font-weight: 700; }
+.titulo { font-family: "Fraunces", serif; font-weight: 700; font-size: 96px; line-height: 1.02; letter-spacing: -0.01em; }
+.grande { font-family: "Fraunces", serif; font-weight: 700; font-size: 150px; line-height: 1; letter-spacing: -0.02em; }
+
+/* Tarjeta de término: la palabra, qué es y por qué importa aquí. */
+.def { align-self: stretch; border: 3px solid rgba(243, 234, 216, 0.5); border-radius: 24px; padding: 24px 34px 28px;
+  background: var(--panel); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35); }
+.def .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--tenue); }
+.def .w { font-family: "Fraunces", serif; font-style: italic; font-weight: 600; font-size: 64px; line-height: 1.05; margin-top: 6px; color: var(--papel); }
+.def .x { font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 32px; line-height: 1.35; margin-top: 12px; color: var(--papel); }
+.def .x b { color: var(--oro); }
+.def .f { font-size: 24px; color: var(--tenue); margin-top: 12px; font-weight: 500; }
+
+/* Ilustraciones de la JW: marco sencillo. */
+.ilus { position: absolute; overflow: hidden; border-radius: 22px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
+.ilus .kb { position: absolute; inset: 0; }
+.ilus img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pie-img { position: absolute; padding: 8px 16px; border-radius: 10px; background: rgba(12, 18, 34, 0.86);
+  font-size: 24px; color: var(--papel); }
+.pie-img i { color: var(--papel); }
+
+/* Mapas: cámara sobre la imagen real y trazos encima, en coordenadas de la imagen. */
+.mapa { position: absolute; overflow: hidden; background: #dfe6d0; }
+.mapa .cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.mapa .cam img, .mapa .cam svg { position: absolute; left: 0; top: 0; display: block; }
+
+/* Trazos. */
+.trazo { fill: none; stroke: var(--papel); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.hilo { fill: none; stroke: var(--oro); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round;
+  filter: drop-shadow(0 0 10px rgba(235, 189, 92, 0.55)); }
+
+/* Rótulo de parte. */
+.parte { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 22px; }
+.parte .n { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.3em; color: var(--tenue); text-transform: uppercase; }
+.parte .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 120px; line-height: 1.02; max-width: 1600px; }
+
+/* Píldora de etiqueta. */
+.chip { display: inline-block; padding: 10px 24px; border-radius: 40px; font-family: "Montserrat", sans-serif; font-weight: 700;
+  font-size: 30px; border: 3px solid currentColor; }

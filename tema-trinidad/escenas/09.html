@@ -1,0 +1,82 @@
+<style>
+.bg { position: absolute; inset: 0; overflow: hidden; }
+.bg .kb { position: absolute; inset: 0; }
+.bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vel-der { position: absolute; inset: 0; background: linear-gradient(270deg, rgba(18,26,36,0.97) 0%, rgba(18,26,36,0.92) 38%, rgba(18,26,36,0.25) 58%, rgba(18,26,36,0) 70%); }
+.cr { position: absolute; right: 80px; width: 840px; top: 110px; bottom: 110px; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.paso { font-family: "Fraunces", serif; font-weight: 500; font-size: 48px; line-height: 1.18; padding-left: 26px; border-left: 7px solid var(--linea); }
+.paso.h { border-color: var(--cielo); } .paso.e { border-color: var(--turq); } .paso.p { border-color: var(--oro); }
+.paso b { font-weight: 700; }
+.cr .ref { margin-top: 0; }
+.nota { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+.nota .n { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 32px; line-height: 1.3; }
+.pie-a { left: 40px; bottom: 30px; }
+/* Fase B */
+.vision { position: absolute; left: 60px; top: 120px; width: 900px; height: 840px; }
+.glo { fill: url(#gloria); }
+.fig-p { fill: none; stroke: var(--oro); stroke-width: 7; }
+.fig-h { fill: rgba(16,24,34,0.95); stroke: var(--cielo); stroke-width: 7; }
+.vt { font-family: "Fraunces", serif; font-weight: 700; font-size: 44px; text-anchor: middle; }
+.vt.p { fill: var(--oro); } .vt.h { fill: var(--cielo); }
+.dos-t { font-family: "Caveat", cursive; font-weight: 700; font-size: 80px; fill: var(--papel); text-anchor: middle; }
+.cd { position: absolute; right: 90px; width: 820px; top: 120px; bottom: 100px; }
+.cd > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+.cd .cita { font-size: 52px; }
+.pers { display: flex; flex-direction: column; gap: 16px; }
+.pers .cita { font-size: 44px; }
+</style>
+
+<div class="fase fa">
+  <div class="bg"><div class="kb"><img src="assets/img/gnj2-bautismo.jpg" style="object-position: 40% 50%" /></div></div>
+  <div class="vel-der"></div>
+  <div class="cab sobre"><span class="sec">El bautismo de Jesús</span><span></span></div>
+  <div class="cr">
+    <div class="paso h p1">“Jesús [...] <b class="cielo">salió del agua</b>,</div>
+    <div class="paso e p2">y [...] vio <b class="turq">el espíritu de Dios bajando como una paloma</b> y viniendo sobre Jesús.</div>
+    <div class="paso p p3">Y entonces una voz dijo desde los cielos: <b class="oro">‘Este es mi Hijo amado; él tiene mi aprobación’</b>”.</div>
+    <div class="ref r-mt">Mateo 3:16, 17</div>
+    <div class="nota"><div class="n n1"><span class="oro">El Padre</span> habla de alguien distinto: “mi Hijo”</div><div class="n n2"><span class="turq">El espíritu</span> no habla: baja sobre Jesús</div></div>
+  </div>
+  <div class="pie-img pie-a">Fotograma del video <i>Las buenas noticias según Jesús</i>, episodio 2 (jw.org)</div>
+</div>
+
+<div class="fase fb">
+  <svg class="vision" viewBox="0 0 900 840">
+    <defs><radialGradient id="gloria"><stop offset="0" stop-color="#fff3cf" stop-opacity="0.95"/><stop offset="0.5" stop-color="#ecc469" stop-opacity="0.45"/><stop offset="1" stop-color="#ecc469" stop-opacity="0"/></radialGradient></defs>
+    <circle class="glo" cx="300" cy="330" r="260"/>
+    <circle class="fig-p" cx="300" cy="330" r="120"/>
+    <text class="vt p" x="300" y="650">la gloria de Dios</text>
+    <circle class="fig-h" cx="680" cy="370" r="100"/>
+    <text class="vt h" x="680" y="390">Jesús</text>
+    <text class="vt h jd" x="680" y="530">de pie a la derecha</text>
+    <text class="dos-t" x="460" y="790">vio a dos</text>
+  </svg>
+  <div class="cd">
+    <div class="b d1"><div class="cita">“Lleno de espíritu santo, miró al cielo y vio <b class="oro">la gloria de Dios</b> y a <b class="cielo">Jesús de pie a la derecha de Dios</b>”.<span class="ref">Hechos 7:55</span></div></div>
+    <div class="b d2"><div class="def"><div class="t">Término · griego · Juan 14:16</div><div class="w"><span class="gr">παράκλητος</span> · paráklētos</div><div class="x">“ayudante”. Es una palabra masculina, y por eso lleva pronombres masculinos: <b>una regla de gramática, no una doctrina</b></div></div></div>
+    <div class="b d3"><div class="s">La Biblia también personifica cosas que no son personas:</div>
+      <div class="pers"><div class="cita">“La sabiduría queda demostrada por todos sus resultados”.<span class="ref">Lucas 7:35</span></div><div class="cita">“La muerte reinó desde Adán hasta Moisés”.<span class="ref">Romanos 5:14</span></div></div></div>
+  </div>
+  <div class="fuente">Nota de estudio de la TNM en Juan 14:16</div>
+</div>
+
+<script>
+const tB = at("Años después") - 0.3;
+kb(".fa .kb", 0, tB + 0.5, { s: 1.0 }, { s: 1.12, x: 2 });
+entra(".fa .cab", 0.3, { y: -10 });
+entra(".pie-a", 1.0, { y: 10 });
+entra(".p1", at("Jesús sale del agua"), { y: 20 });
+entra(".p2", at("y ve el espíritu"), { y: 20 });
+entra(".p3", at("Y una voz dice"), { y: 20 });
+entra(".r-mt", at("él tiene mi aprobación"), { y: 10 });
+entra(".n1", at("El Padre habla"), { y: 20 });
+entra(".n2", at("Y el espíritu no habla"), { y: 20 });
+tl.to($(".fa"), { opacity: 0, duration: 0.5 }, tB);
+aparece(".fb", tB + 0.3, 0.4);
+aparece(".glo, .fig-p", at("vio la gloria de Dios"), 0.8);
+entra(".vt.p", at("vio la gloria de Dios") + 0.3, { y: 15 });
+aparece(".fig-h, .vt.h", at("y a Jesús de pie"), 0.6);
+entra(".dos-t", at("Vio a dos"), { y: 15 });
+secuencia([[".d1", tB + 0.6], [".d2", at("Es cierto que Jesús")], [".d3", at("La Biblia también personifica")]]);
+entra(".fb .fuente", at("parákletos"), { y: 10 });
+</script>

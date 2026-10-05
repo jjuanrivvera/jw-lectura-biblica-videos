@@ -1,0 +1,111 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Preparar y llenar</title></head><body><template>
+<style>@font-face{font-family:Fraunces;src:url("assets/fonts/Fraunces.ttf");font-weight:100 900}
+@font-face{font-family:Montserrat;src:url("assets/fonts/Montserrat.ttf");font-weight:100 900}
+@font-face{font-family:Caveat;src:url("assets/fonts/Caveat.ttf");font-weight:400 700}
+#escena-05{position:absolute;inset:0;width:100%;height:100%;* { box-sizing: border-box; }
+--bg:#172c33; --fg:#f5efdf; --gold:#efbe66; --blue:#acd6d2; --muted:#bdcaca; --paper:#f1e8d5; --ink:#243b40;
+.scene-content {position:absolute;inset:0;background:var(--bg);color:var(--fg);font-family:Montserrat,sans-serif;overflow:hidden;}
+.scene-content.lesson {background:#183e35;}
+.chapter {position:absolute;left:76px;top:45px;font-size:24px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.scene-count {position:absolute;right:76px;top:45px;font-size:23px;letter-spacing:2px;color:var(--muted);}
+.title {position:absolute;left:76px;top:96px;margin:0;width:1768px;font-family:Fraunces,serif;font-size:66px;line-height:1.1;font-weight:650;}
+.header-line {position:absolute;left:76px;right:76px;top:192px;height:2px;background:#577078;}
+.stage {position:absolute;left:76px;top:224px;width:1768px;height:728px;}
+.stage > svg, .phase > svg {position:absolute;inset:0;pointer-events:none;}
+.source {position:absolute;left:76px;top:1000px;max-width:1640px;font-size:23px;line-height:1.35;color:var(--muted);}
+.progress {position:absolute;bottom:0;left:0;height:6px;width:1920px;background:var(--gold);transform-origin:0 50%;}
+.tag {display:inline-block;padding:10px 17px;border:2px dashed var(--blue);color:var(--blue);font-size:24px;line-height:1.2;}
+.own {position:absolute;right:0;bottom:0;max-width:950px;}
+.eyebrow {font-size:25px;letter-spacing:2px;font-weight:650;color:var(--blue);text-transform:uppercase;}
+.hand {font-family:Caveat,cursive;font-size:48px;line-height:1.1;color:var(--gold);}
+.display {font-family:Fraunces,serif;font-size:96px;line-height:1.04;font-weight:650;}
+.copy {font-size:37px;line-height:1.4;}
+.small {font-size:29px;line-height:1.4;}
+.muted {color:var(--muted);}
+.gold {color:var(--gold);}
+.blue {color:var(--blue);}
+.paper {background:var(--paper);color:var(--ink);border-radius:6px;}
+.paper .muted {color:#526567;}
+.paper .gold {color:#895112;}
+.paper .blue {color:#246566;}
+.paper .eyebrow {color:#246566;}
+.paper .hand {color:#895112;}
+.paper .tag {border-color:#246566;color:#246566;}
+.note {padding:22px 28px;border-top:3px solid var(--gold);font-size:34px;line-height:1.35;}
+.duo {display:grid;grid-template-columns:1fr 1fr;gap:48px;height:100%;}
+.trio {display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.rule {height:4px;background:var(--gold);transform-origin:left center;}
+.node {padding:25px 28px;background:#24424a;border:2px solid #68848a;border-radius:5px;}
+.node strong {display:block;font-family:Fraunces,serif;font-size:49px;line-height:1.15;}
+.node p {font-size:31px;line-height:1.4;margin:14px 0 0;}
+.quote {font-family:Fraunces,serif;font-size:55px;line-height:1.3;}
+svg {overflow:visible;}
+svg text {font-family:Montserrat,sans-serif;fill:var(--fg);font-size:31px;}
+svg .serif {font-family:Fraunces,serif;}
+svg .handwriting {font-family:Caveat,cursive;}
+.paper svg text {fill:var(--ink);}
+.atlas {position:absolute;left:0;top:0;width:1768px;height:728px;overflow:hidden;border-radius:6px;background:var(--paper);}
+.atlas-art {position:absolute;inset:0;}
+.atlas-key {position:absolute;right:28px;top:28px;width:420px;padding:26px;background:#172c33;color:var(--fg);border:2px solid #809594;border-radius:4px;}
+.atlas-key .display {font-size:54px;margin-top:18px;}
+.atlas-key p {font-size:29px;line-height:1.4;margin:18px 0 0;}
+.photo-pair {display:grid;grid-template-columns:1fr 1fr;gap:38px;height:570px;}
+.portrait {position:relative;overflow:hidden;background:#263e42;border:2px solid #668285;}
+.portrait img {width:100%;height:100%;object-fit:contain;}
+.portrait .label {position:absolute;left:22px;bottom:22px;padding:10px 22px;background:#172c33;font-family:Fraunces,serif;font-size:48px;}
+.phase {position:absolute;inset:0;}
+.lesson-number {position:absolute;left:0;top:130px;font-family:Fraunces,serif;font-size:320px;color:var(--gold);line-height:1;}
+.lesson-copy {position:absolute;left:420px;top:65px;width:1260px;height:650px;}
+.lesson-copy .display {font-size:73px;max-width:1250px;}
+.lesson-copy .copy {position:absolute;left:0;top:240px;margin:0;max-width:1210px;font-size:41px;}
+.lesson-question {position:absolute;left:0;top:450px;margin:0;font-family:Caveat,cursive;font-size:56px;line-height:1.2;color:var(--gold);max-width:1210px;}
+.rail {position:absolute;left:0;bottom:20px;display:flex;gap:16px;align-items:center;}
+.rail span {display:block;width:130px;height:6px;background:#73938b;}
+.foot-callout {position:absolute;bottom:0;left:0;width:1768px;font-size:34px;line-height:1.3;padding:18px 25px;background:#24424a;border-left:4px solid var(--gold);}
+.diagram-caption {font-size:26px;color:var(--muted);}
+}</style>
+<div id="escena-05" data-composition-id="escena-05" data-width="1920" data-height="1080" data-duration="58.608" >
+<div class="scene-content "><div class="chapter">Génesis 1 · La secuencia</div><div class="scene-count">06 / 42</div>
+<h1 id="escena-05-title" class="title">Preparar y llenar</h1><div class="header-line"></div>
+<div class="stage"><div id="escena-05-el-1" class="" style="position:absolute;left:0px;top:0px;width:1250px;height:352px;overflow:hidden" style-unused=""><img id="escena-05-el-2" data-layout-allow-overflow src="assets/creacion.jpg" style="width:1250px;height:659px;object-fit:contain;object-position:top" alt="Los seis días creativos, ilustración JW"/></div><div id="escena-05-el-3" class="eyebrow" style="position:absolute;left:40px;top:372px;width:700px;height:50px" data-at="0.100" >PREPARAR</div><div id="escena-05-el-4" class="eyebrow" style="position:absolute;left:960px;top:372px;width:700px;height:50px" data-at="0.100" >LLENAR</div><div id="escena-05-el-5" class="copy" style="position:absolute;left:40px;top:423px;width:745px;height:65px" data-at="13.671" >1 · Luz y oscuridad</div><div id="escena-05-el-6" class="copy gold" style="position:absolute;left:965px;top:423px;width:740px;height:65px" data-at="13.671" >4 · Lumbreras</div><svg id="escena-05-el-7" viewBox="0 0 1768 728" width="1768" height="728" aria-label="Diagrama explicativo"><path id="escena-05-el-8" d="M785,451 L900,451" fill="none" stroke="#efbe66" stroke-width="5" stroke-linecap="round" data-at="13.671" data-motion="draw"/></svg><div id="escena-05-el-9" class="copy" style="position:absolute;left:40px;top:518px;width:745px;height:65px" data-at="13.671" >2 · Aguas y espacio abierto</div><div id="escena-05-el-10" class="copy gold" style="position:absolute;left:965px;top:518px;width:740px;height:65px" data-at="13.671" >5 · Vida acuática y aves</div><svg id="escena-05-el-11" viewBox="0 0 1768 728" width="1768" height="728" aria-label="Diagrama explicativo"><path id="escena-05-el-12" d="M785,546 L900,546" fill="none" stroke="#efbe66" stroke-width="5" stroke-linecap="round" data-at="13.671" data-motion="draw"/></svg><div id="escena-05-el-13" class="copy" style="position:absolute;left:40px;top:613px;width:745px;height:65px" data-at="30.500" >3 · Suelo y vegetación</div><div id="escena-05-el-14" class="copy gold" style="position:absolute;left:965px;top:613px;width:740px;height:65px" data-at="30.500" >6 · Animales y humanidad</div><svg id="escena-05-el-15" viewBox="0 0 1768 728" width="1768" height="728" aria-label="Diagrama explicativo"><path id="escena-05-el-16" d="M785,641 L900,641" fill="none" stroke="#efbe66" stroke-width="5" stroke-linecap="round" data-at="30.500" data-motion="draw"/></svg><div id="escena-05-el-17" style="position:absolute;left:1310px;top:25px;width:450px"><div id="escena-05-el-18" class="display gold" style="font-size:170px">6</div><div id="escena-05-el-19" class="copy">etapas para preparar un hogar</div></div></div><div class="source">Génesis 1:3-31 · Imagen: «La ciencia y el relato de Génesis», pág. 26 · Diagrama de la investigación</div><div id="escena-05-progress" class="progress" aria-hidden="true"></div></div></div>
+<script>(()=>{const ID="escena-05";const DUR=58.608;const root=document.getElementById(ID);
+const tl=gsap.timeline({paused:true});
+const q=(s)=>root.querySelector(s);
+tl.fromTo(q('.title'),{opacity:0,y:12},{opacity:1,y:0,duration:.48,ease:'power2.out'},0);
+tl.fromTo(q('.progress'),{scaleX:0},{scaleX:1,duration:DUR,ease:'none'},0);
+root.querySelectorAll('[data-at]').forEach((el)=>{
+  const at=Number(el.dataset.at);
+  const type=el.dataset.motion||'reveal';
+  if(type==='draw'){
+    const len=el.getTotalLength();
+    tl.fromTo(el,{strokeDasharray:len,strokeDashoffset:len,opacity:1},
+      {strokeDashoffset:0,duration:Math.min(2.2,Number(el.dataset.drawDuration||1.15)),ease:'power1.inOut'},at);
+  }else if(type==='bar'){
+    tl.fromTo(el,{scaleX:0,transformOrigin:'0% 50%',opacity:1},{scaleX:1,duration:1.2,ease:'power2.out'},at);
+  }else if(type==='focus'){
+    tl.fromTo(el,{opacity:.38},{opacity:1,duration:.45,ease:'power1.out'},at);
+  }else{
+    tl.fromTo(el,{opacity:0,y:type==='rise'?18:0,x:type==='slide'?24:0},
+      {opacity:1,y:0,x:0,duration:.5,ease:type==='slide'?'power3.out':'power1.out'},at);
+  }
+  if(el.dataset.until){
+    tl.to(el,{opacity:0,duration:.22,ease:'power1.in'},Math.max(at+.5,Number(el.dataset.until)-.24));
+  }
+});
+root.querySelectorAll('[data-emphasis-at]').forEach((el)=>{
+  const at=Number(el.dataset.emphasisAt);
+  tl.fromTo(el,{scale:1},{scale:1.035,duration:.4,transformOrigin:'50% 50%',ease:'power2.out'},at);
+  tl.to(el,{scale:1,duration:.7,ease:'power2.inOut'},at+.5);
+});
+root.querySelectorAll('[data-camera]').forEach((el)=>{
+  const move=JSON.parse(el.dataset.camera);
+  tl.fromTo(el,{x:0,y:0,scale:1,transformOrigin:'0 0'},
+    {x:move.x,y:move.y,scale:move.scale,duration:move.duration||4,ease:'power2.inOut'},move.at||1);
+});
+root.querySelectorAll('[data-move-at]').forEach((el)=>{
+  tl.fromTo(el,{x:0,y:0},{x:Number(el.dataset.moveX||0),y:Number(el.dataset.moveY||0),
+    duration:2.1,ease:'power2.inOut'},Number(el.dataset.moveAt));
+});
+
+window.__timelines[ID]=tl;})();</script>
+</template></body></html>

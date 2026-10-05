@@ -1,0 +1,78 @@
+<style>
+.dos15 { position: absolute; left: 70px; top: 180px; width: 560px; height: 780px; }
+.dos15 .med { width: 330px; }
+.dos15 .med .n { font-size: 36px; }
+.dos15 .h { position: absolute; left: 0; right: 0; top: 740px; font-family: "Caveat", cursive; font-weight: 700; font-size: 48px; color: var(--cielo); text-align: center; }
+.col15a { position: absolute; left: 680px; right: 90px; top: 120px; bottom: 80px; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+.col15a .cita { font-size: 50px; }
+.plano15 { position: absolute; left: 50px; top: 120px; width: 900px; height: 860px; }
+.plano15 svg { width: 900px; height: 860px; }
+.mesa { fill: #6b4a2c; stroke: #3e2915; stroke-width: 4; }
+.rot15 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; fill: var(--tiza); text-anchor: middle; letter-spacing: 0.06em; }
+.col15b { position: absolute; left: 1000px; right: 70px; top: 110px; bottom: 70px; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.raz15 { display: flex; flex-direction: column; gap: 12px; }
+.raz15 .r { display: grid; grid-template-columns: 56px 1fr; align-items: start; column-gap: 14px; }
+.raz15 .r .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 54px; line-height: 0.9; color: var(--oro); }
+.raz15 .r .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; line-height: 1.02; }
+.raz15 .r .s { font-size: 22px; margin-top: 2px; }
+.col15b .def .x { font-size: 50px; }
+.col15b .cita.sm { font-size: 36px; }
+</style>
+
+<div class="fase f1">
+  <div class="cab"><span class="cap">Génesis 43</span><span>versículos 26 al 31</span></div>
+  <div class="dos15"><div class="h">Benjamín, “hijo de su misma madre” · 43:29</div></div>
+  <div class="col15a">
+    <div class="m p0" style="font-size:64px">llega José, y los once <b>se postran</b> · 43:26</div>
+    <div class="cita q1">“Salió rápidamente porque estaba a punto de llorar, entró a un cuarto privado y <b>rompió a llorar</b>”<span class="ref">GÉNESIS 43:30</span></div>
+    <div class="cita q2">“Después se lavó la cara y, una vez <b>controladas sus emociones</b>, salió y dijo: ‘Sirvan la comida’”<span class="ref">GÉNESIS 43:31</span></div>
+  </div>
+</div>
+
+<div class="fase f2">
+  <div class="cab"><span class="cap">Génesis 43</span><span>versículo 32</span></div>
+  <div class="plano15"><svg viewBox="0 0 900 860">
+    <g class="mJ"><rect class="mesa" x="300" y="40" width="300" height="90" rx="18" /><text class="rot15" x="450" y="100" style="fill:#f1e9d8">José</text></g>
+    <g class="mE"><rect class="mesa" x="40" y="260" width="130" height="520" rx="18" /><text class="rot15" x="105" y="820">los egipcios</text></g>
+    <g class="mH"><rect class="mesa" x="380" y="300" width="440" height="110" rx="18" /><g class="asientos"></g><text class="rot15" x="600" y="560">los hermanos</text></g>
+    <g class="sep" stroke="#ec8a67" stroke-width="6" stroke-dasharray="14 12" fill="none"><path d="M 240 180 V 800" /><path d="M 250 180 H 860" /></g>
+  </svg></div>
+  <div class="col15b">
+    <div class="def d1"><div class="t">algo detestable <i>toh·ʽe·váh</i></div><div class="x">comer con los hebreos, para los <b>egipcios</b></div><div class="s">un rechazo según sus propias normas · <i>Perspicacia</i>, vol.&nbsp;1, “Cosa detestable”, pág.&nbsp;565</div></div>
+    <div class="cm"><div class="m" style="font-size:52px">comer juntos: <b>amistad y paz</b></div><div class="f" style="font-size:22px"><i>Perspicacia</i>, vol.&nbsp;1, “Comida”, pág.&nbsp;514</div></div>
+    <div class="raz15">
+      <div class="r r1"><div class="n">1</div><div><div class="x">orgullo y prejuicio contra los extranjeros</div><div class="s"><i>Perspicacia</i>, vol.&nbsp;1, “Egipto, egipcio”, pág.&nbsp;773</div></div></div>
+      <div class="r r2"><div class="n">2</div><div><div class="x">los animales que Egipto tenía por sagrados</div><span class="propio chico" style="font-size:30px">aplicarlo a esta mesa: observación propia</span></div></div>
+      <div class="r r3"><div class="n">3</div><div><div class="x">el desprecio por los pastores, en una sociedad de <b>castas</b></div><div class="s">castas: clases fijas, donde cada oficio tenía su rango · <i>Perspicacia</i>, vol.&nbsp;1, págs.&nbsp;773, 774</div></div></div>
+    </div>
+    <div class="cita sm nj">“Estas normas egipcias, por supuesto, <b>ni procedían de Jehová Dios ni las aprobaba</b>”<span class="ref">PERSPICACIA, VOL.&nbsp;1, “COSA DETESTABLE”, PÁG.&nbsp;565</span></div>
+  </div>
+</div>
+
+<script>
+$(".dos15").insertAdjacentHTML("afterbegin", medallon("jose", { estilo: "left:0; top:0" }) + medallon("benjamin", { estilo: "left:230px; top:330px" }));
+// Once asientos, uno por hermano, del color de su madre (José no está en esta mesa).
+const COL = { lea: "#e9bf60", raquel: "#93bbef", bilha: "#e9adcc", zilpa: "#ec8a67" };
+$(".asientos").innerHTML = HIJOS.filter(([k]) => k !== "jose").map(([k, n, m], i) => `<circle class="as" cx="${400 + i * 40}" cy="${i % 2 ? 450 : 450}" r="16" fill="${COL[m]}" stroke="#17212b" stroke-width="3"/>`).join("");
+const tM = at("Hay tres mesas");
+entra(".p0", 0.3, { y: 16 });
+salta(".dos15 .r-jose", 0.3, { desde: 0.6 });
+salta(".dos15 .r-benjamin", at("ve a Benjamín"), { desde: 0.6 });
+entra(".dos15 .h", at("el hijo de su misma madre"), { y: 10 });
+entra(".q1", at("y sale a llorar"), { y: 16 });
+entra(".q2", at("Se lava la cara"), { y: 16 });
+tl.to($(".f1"), { opacity: 0, duration: 0.5, ease: "none" }, tM - 0.5);
+tl.set(inicial(el(".f2"), { opacity: 0 }), { opacity: 1 }, tM - 0.1);
+salta(".mJ", tM, { desde: 0.5 });
+salta(".mE", tM + 0.4, { desde: 0.5 });
+salta(".mH", tM + 0.8, { desde: 0.5 });
+salta(".as", tM + 1.0, { desde: 0, st: 0.05 });
+traza(".sep path", at("algo detestable") - 0.2, 0.9);
+tl.set($$(".sep path"), { strokeDasharray: "14 12" }, at("algo detestable") + 0.75);
+entra(".d1", at("algo detestable"), { y: 16 });
+entra(".cm", at("comer juntos"), { y: 16 });
+entra(".r1", at("el orgullo"), { x: -20, y: 0 });
+entra(".r2", at("los animales"), { x: -20, y: 0 });
+entra(".r3", at("y el desprecio"), { x: -20, y: 0 });
+entra(".nj", at("Eran normas egipcias"), { y: 16 });
+</script>

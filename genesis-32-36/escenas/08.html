@@ -1,0 +1,46 @@
+<style>
+.preg { position: absolute; left: 90px; top: 120px; }
+.preg .cita { font-size: 60px; }
+.nombre { position: absolute; left: 90px; right: 90px; top: 300px; height: 460px; }
+.nombre .w { position: absolute; left: 0; top: 0; font-family: "Fraunces", serif; font-weight: 700; font-size: 230px; line-height: 1; letter-spacing: -0.02em; }
+.nombre .sig { position: absolute; left: 8px; top: 250px; font-family: "Caveat", cursive; font-weight: 700; font-size: 76px; line-height: 1.05; }
+.nombre .ref2 { position: absolute; left: 8px; top: 400px; }
+.jac .w { color: var(--tenue); }
+.isr .w { color: var(--oro); }
+.cnt-b { position: absolute; right: 90px; top: 250px; text-align: right; }
+.cnt-b .grande { font-size: 170px; color: var(--tiza); }
+.cnt-b .m { font-size: 58px; margin-top: 18px; }
+.cnt-b .f { margin-top: 10px; }
+.alt { position: absolute; left: 90px; top: 800px; width: 1100px; }
+.angel { position: absolute; left: 90px; right: 90px; bottom: 70px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; }
+.angel .tj .x { font-size: 36px; }
+</style>
+<div class="cab"><span class="cap">Génesis 32</span><span>versículos 27 al 29</span></div>
+<div class="preg"><div class="cita">“¿Cómo te llamas?”<span class="ref">GÉNESIS 32:27</span></div></div>
+<div class="nombre">
+  <div class="jac"><div class="w">Jacob</div><div class="sig">“el que agarra el talón” · “el que suplanta”</div><div class="f ref2">notas de la TNM en 25:26 y 27:36 · <span class="propio" style="font-size:26px;padding:0 12px">observación propia</span> el nombre le recordaba cómo consiguió la bendición</div></div>
+  <div class="isr"><div class="w">Israel</div><div class="sig">“El que contiende (lucha) con Dios” · “Dios contiende”</div><div class="f ref2">nota de la TNM en 32:28 · confirmado en Betel, 35:10</div></div>
+</div>
+<div class="alt"><div class="def"><div class="t">el verbo de 32:28</div><div class="x">también: “persistido; <b>perseverado</b>; te has esforzado”</div><div class="s">TNM de 1987, nota en 32:28</div></div></div>
+<div class="cnt-b"><div class="grande">+<span class="cnt">0</span></div><div class="m">veces en las Escrituras</div><div class="f"><i>Perspicacia</i>, vol. 1, “Israel”, pág. 1263</div></div>
+<div class="angel">
+  <div class="tj t1"><div class="k">32:29 · el ángel no dice su nombre</div><div class="x">“cuando Jacob le preguntó su nombre a un ángel, él rehusó dárselo”</div></div>
+  <div class="tj t2"><div class="k">¿Por qué?</div><div class="x">“fue una protección para que no se les rindiera <b>honra y adoración indebidamente</b>”</div><div class="ref"><i>Perspicacia</i>, vol. 1, “Ángel”, pág. 139</div></div>
+</div>
+<script>
+entra(".preg", 0.4, { y: 20 });
+entra(".jac .w", at("Jacob significa"), { y: 40, d: 0.7 });
+escribe(".jac .sig", at("el que agarra"), 1.2);
+entra(".jac .ref2", at("el que agarra") + 1, { y: 10 });
+sale(".jac", at("Y recibe") - 0.2, { y: -40, d: 0.5 });
+entra(".isr .w", at("Israel") - 0.2, { y: 60, d: 0.8 });
+escribe(".isr .sig", at("el que contiende"), 1.4);
+entra(".isr .ref2", at("el que contiende") + 1.2, { y: 10 });
+entra(".alt", at("El verbo"), { x: 40, y: 0 });
+sale(".alt", at("El nombre aparece") - 0.4, { d: 0.35 });
+entra(".cnt-b", at("El nombre aparece"), { y: 20 });
+cuenta(".cnt", 0, 2500, at("dos mil"), 1.6, fmtMiles);
+sale(".preg", at("El ángel no quiso") - 0.4, { d: 0.35 });
+entra(".t1", at("El ángel no quiso"), { y: 30 });
+entra(".t2", at("Los ángeles venían"), { y: 30 });
+</script>

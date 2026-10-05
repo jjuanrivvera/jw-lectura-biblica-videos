@@ -1,0 +1,41 @@
+<style>
+.qs33 { position: absolute; left: 80px; right: 80px; top: 110px; display: grid; grid-template-columns: 1.2fr 1fr; column-gap: 40px; align-items: start; }
+.qs33 .cita { font-size: 44px; }
+.gr33 { position: absolute; left: 140px; top: 425px; width: 1640px; height: 615px; }
+.gr33 svg { width: 1640px; height: 615px; display: block; }
+.dos33 { position: absolute; left: 80px; right: 80px; top: 110px; display: grid; grid-template-columns: 1.25fr 1fr; column-gap: 50px; align-items: start; }
+.dos33 .izq, .dos33 .der { display: flex; flex-direction: column; gap: 14px; }
+.dos33 .cifra { font-size: 170px; }
+.dos33 .m { font-size: 60px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 40</span><span>versículos 14, 15 y 23</span></div>
+<div class="qs33">
+  <div class="cita q1">“tienes que acordarte de mí cuando te vaya bien. Por favor, muéstrame <b>amor leal</b> y háblale de mí al faraón”<span class="ref">GÉNESIS 40:14</span></div>
+  <div class="q2"><div class="cita">“Resulta que me secuestraron de la tierra de los hebreos”<span class="ref">GÉNESIS 40:15</span></div>
+    <div class="m md cielo q3" style="margin-top:14px">no dijo quiénes</div>
+    <div class="f q3">“Probablemente para no dejar en mala posición a su familia, prefirió no identificar a los secuestradores” · <i>Perspicacia</i>, vol. 2, “José”, pág. 124</div></div>
+</div>
+<div class="gr33"><svg viewBox="0 0 1760 660" class="gsvg"></svg></div>
+<div class="dos33">
+  <div class="izq"><div class="m once">unos <b>11 años</b> lejos de casa</div>
+    <div class="cita sm olv">“se olvidó de José, y siguió sin acordarse de él”<span class="ref">GÉNESIS 40:23</span></div></div>
+  <div class="der"><div class="dos"><span class="cifra">2</span> <span class="m">años completos</span></div>
+    <div class="f dos">Génesis 41:1</div></div>
+</div>
+
+<script>
+/*incluir:_grafica.js*/
+grafica(".gsvg");
+entra(".q1", 0.4, { y: 24 });
+entra(".q2", at("Resulta que"), { y: 24 });
+entra(".q3", at("No dijo"), { y: 12, st: 0.2 });
+pasosPrevios(6, 0.6);
+tl.set($(".gr-orol"), { opacity: 1 }, 0);
+// Las citas del pedido dejan su lugar al olvido; la gráfica sigue abajo, a todo lo ancho.
+sale(".qs33", at("Llevaba unos") - 0.5, { y: -16 });
+entra(".once", at("Llevaba unos"), { y: 16 });
+entra(".olv", at("se olvidó"), { y: 16 });
+paso(6, at("se olvidó"), 0.8);
+entra(".dos", at("Pasaron dos años"), { y: 20, st: 0.2 });
+</script>

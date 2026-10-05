@@ -1,0 +1,96 @@
+<style>
+.pl30 { position: absolute; left: 60px; top: 90px; width: 1000px; height: 920px; }
+.pl30 svg { width: 1000px; height: 920px; display: block; overflow: visible; }
+.e30 { font-family: "Caveat", cursive; font-weight: 700; font-size: 42px; fill: #3b2f1e; text-anchor: middle; }
+.e30.cl { fill: var(--oro); }
+.nro30 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; fill: #8a7a60; text-anchor: middle; }
+.col30 { position: absolute; left: 1110px; right: 70px; top: 70px; bottom: 70px; }
+.col30 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.col30 .cita { font-size: 42px; }
+.pts30 { display: flex; flex-direction: column; gap: 10px; }
+.pts30 div { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; line-height: 1.05; }
+.pts30 div b { color: var(--oro); }
+.edad30 { display: flex; gap: 24px; }
+.edad30 .dato { flex: 1; }
+.edad30 .dato .v { font-size: 74px; }
+.tienda30 svg { width: 100%; height: 190px; display: block; }
+.tt30 { position: absolute; left: 60px; top: 24px; }
+</style>
+
+<div class="tt30 f">planta aproximada de una casa de Ur, según la descripción · dibujo propio</div>
+<div class="pl30"><svg viewBox="0 0 1000 920">
+  <defs>
+    <pattern id="p30-losas" width="68" height="46" patternUnits="userSpaceOnUse"><rect width="68" height="46" fill="#cbbd9a"/><path d="M 0 0 H 68 M 0 23 H 68 M 0 0 V 23 M 34 23 V 46" stroke="#9c8c6a" stroke-width="3"/></pattern>
+  </defs>
+  <g class="pisos">
+    <rect x="40" y="40" width="920" height="820" fill="#e8dcc3"/>
+  </g>
+  <g class="patio"><rect x="330" y="290" width="340" height="320" fill="url(#p30-losas)"/></g>
+  <g class="muros" fill="none" stroke-linecap="square">
+    <path class="mu ext" d="M 40 40 H 960 V 860 H 190 M 120 860 H 40 V 40" stroke-width="24"/>
+    <path class="mu int" d="M 330 290 H 470 M 530 290 H 670 V 420 M 670 480 V 610 H 530 M 470 610 H 330 V 480 M 330 420 V 290" stroke-width="14"/>
+    <path class="mu int" d="M 300 40 V 290 M 520 40 V 290 M 740 40 V 290 M 260 610 V 860 M 480 610 V 860 M 700 610 V 860 M 40 450 H 330 M 670 400 H 960 M 670 510 H 960" stroke-width="12"/>
+  </g>
+  <g class="puerta"><path d="M 120 860 A 70 70 0 0 1 190 790" fill="none" stroke="#8a7a60" stroke-width="4" stroke-dasharray="8 6"/><text class="e30" x="155" y="905" style="fill:var(--tenue)">entrada</text></g>
+  <g class="nros">
+    <text class="nro30" x="170" y="175">1</text><text class="nro30" x="410" y="175">2</text><text class="nro30" x="630" y="175">3</text><text class="nro30" x="850" y="175">4</text>
+    <text class="nro30" x="150" y="745">5</text><text class="nro30" x="370" y="745">6</text><text class="nro30" x="590" y="745">7</text><text class="nro30" x="830" y="745">8</text>
+    <text class="nro30" x="185" y="380">9</text><text class="nro30" x="185" y="540">10</text><text class="nro30" x="815" y="355">11</text><text class="nro30" x="815" y="465">12</text><text class="nro30" x="815" y="570">13</text>
+  </g>
+  <g class="escalera"><g stroke="#8a7a60" stroke-width="4"><path d="M 70 470 V 590 M 300 470 V 590"/><path d="M 70 480 H 300 M 70 500 H 300 M 70 520 H 300 M 70 540 H 300 M 70 560 H 300 M 70 580 H 300"/></g><rect x="66" y="466" width="238" height="128" fill="rgba(233,191,96,0.18)" stroke="#d99a14" stroke-width="5"/></g>
+  <g class="lavabo"><rect x="744" y="44" width="212" height="242" fill="rgba(147,187,239,0.25)" stroke="#5f9fd8" stroke-width="5"/><ellipse cx="900" cy="100" rx="30" ry="20" fill="#f7f3ea" stroke="#5f9fd8" stroke-width="5"/><circle cx="900" cy="100" r="5" fill="#5f9fd8"/></g>
+  <g class="desague"><circle cx="500" cy="450" r="22" fill="#4a3f2c" stroke="#2e271a" stroke-width="4"/><path d="M 486 450 H 514 M 500 436 V 464" stroke="#9c8c6a" stroke-width="3"/>
+    <g fill="#5f9fd8"><path d="M 400 330 L 460 400 L 446 404 L 468 424 L 438 418 L 444 408 Z"/><path d="M 600 330 L 540 400 L 554 404 L 532 424 L 562 418 L 556 408 Z"/><path d="M 400 570 L 460 500 L 446 496 L 468 476 L 438 482 L 444 492 Z"/><path d="M 600 570 L 540 500 L 554 496 L 532 476 L 562 482 L 556 492 Z"/></g></g>
+  <g class="rot30">
+    <g class="rp"><rect x="360" y="300" width="280" height="60" rx="12" fill="rgba(23,33,43,0.85)"/><text class="e30 cl" x="500" y="343">patio empedrado</text></g>
+    <g class="rd"><rect x="400" y="540" width="200" height="60" rx="12" fill="rgba(23,33,43,0.85)"/><text class="e30 cl" x="500" y="583">desagüe</text></g>
+    <g class="re"><rect x="70" y="600" width="236" height="0" fill="none"/><text class="e30" x="185" y="630" style="font-size:36px">escalera: 2.º piso</text></g>
+    <g class="ri"><text class="e30" x="850" y="190" style="font-size:36px">invitados,</text><text class="e30" x="850" y="228" style="font-size:36px">con lavabo</text></g>
+  </g>
+</svg></div>
+
+<div class="col30">
+  <div class="b a1">
+    <div class="m">Leonard Woolley, <b>1922 a 1934</b></div>
+    <div class="dato"><div class="v">73 <small>casas</small></div><div class="k">de ladrillo, enlucidas y blanqueadas</div></div>
+    <div class="f"><i>La Atalaya</i>, 1 de enero de 2011, pág. 19</div>
+  </div>
+  <div class="b a2">
+    <div class="pts30"><div class="p1"><b>dos pisos</b></div><div class="p2"><b>13 o 14</b> habitaciones</div><div class="p3">un <b>patio empedrado</b>, inclinado hacia un desagüe</div><div class="p4">cuartos de invitados <b>con lavabo</b></div></div>
+    <div class="f"><i>Perspicacia</i>, vol. 2, “Ur”, pág. 1174 · <i>La Atalaya</i>, 15/5/2004, pág. 25, y 1/1/2011, pág. 19</div>
+  </div>
+  <div class="b a3">
+    <div class="cita">“doce habitaciones o más indica un nivel de vida realmente elevado”: eran casas de “la <b>clase media</b>: tenderos, mercaderes, escribas”<span class="ref">WOOLLEY, EN LA ATALAYA, 1 DE ENERO DE 2011, PÁG. 19</span></div>
+  </div>
+  <div class="b a4">
+    <div class="edad30"><div class="dato"><div class="v">~70</div><div class="k">Abrán</div></div><div class="dato"><div class="v">~60</div><div class="k">Sarái</div></div></div>
+    <div class="tienda30"><svg viewBox="0 0 740 190">
+      <defs><linearGradient id="g30-t" x1="0" x2="1"><stop offset="0" stop-color="#6b4a2e"/><stop offset="0.5" stop-color="#8c6541"/><stop offset="1" stop-color="#5c3e25"/></linearGradient></defs>
+      <path d="M 170 170 L 370 30 L 570 170 Z" fill="url(#g30-t)" stroke="#3e2a18" stroke-width="5"/>
+      <path d="M 250 114 L 490 114 M 210 142 L 530 142" stroke="#c9a468" stroke-width="6"/>
+      <path d="M 345 170 L 370 92 L 395 170 Z" fill="#241708"/>
+      <path d="M 370 30 L 370 14 M 170 170 L 120 180 M 570 170 L 620 180" stroke="#c9a468" stroke-width="4"/>
+      <path d="M 100 180 H 640" stroke="rgba(241,233,216,0.4)" stroke-width="3"/>
+    </svg></div>
+    <div class="cita" style="font-size:38px">“de verdad hicieron un <b>enorme sacrificio</b> para obedecer a Jehová”<span class="ref">LA ATALAYA, 15 DE MAYO DE 2004, PÁG. 25</span></div>
+  </div>
+</div>
+
+<script>
+const MU = $$(".mu");
+aparece(".tt30", 0.4, 0.5);
+aparece(".pisos", 0.5, 0.6);
+tl.set(MU, { stroke: "#a0522d" }, 0);
+traza(".mu.ext", 0.6, 1.6);
+traza(".mu.int", at("setenta y tres") - 0.2, 1.4, { st: 0.2 });
+tl.to(MU, { stroke: "#f7f3ea", duration: 0.8 }, at("blanqueadas") - 0.3);
+aparece(".puerta", at("blanqueadas") + 0.4, 0.5);
+secuencia([[".a1", 0.4], [".a2", at("Tenían dos pisos")], [".a3", at("Y eran casas")], [".a4", at("Abrán rondaba")]]);
+entra(".p1", at("Tenían dos pisos") - 0.1, { y: 12 }); aparece([".escalera", ".re"], at("dos pisos"), 0.5);
+entra(".p2", at("trece") - 0.2, { y: 12 }); tl.fromTo($$(".nros text"), { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.25, stagger: 0.08, ease: "back.out(2)", immediateRender: false }, at("trece")); tl.set($$(".nros text"), { opacity: 0 }, 0);
+entra(".p3", at("patio empedrado") - 0.2, { y: 12 }); aparece([".patio", ".rp"], at("patio empedrado"), 0.6);
+aparece([".desague", ".rd"], at("desagüe") - 0.2, 0.5);
+entra(".p4", at("cuartos de invitados") - 0.2, { y: 12 }); aparece([".lavabo", ".ri"], at("cuartos de invitados"), 0.5);
+atenua(".pl30", at("Dejaban") - 0.3, 0.35, 0.6);
+entra(".tienda30", at("Dejaban"), { y: 20 });
+</script>

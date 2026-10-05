@@ -1,0 +1,103 @@
+<style>
+.intro { position: absolute; left: 90px; right: 90px; top: 56px; height: 300px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; align-items: center; }
+.intro .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.16em; color: var(--tenue); }
+.intro .m { font-size: 66px; }
+.intro .der { display: flex; flex-direction: column; gap: 14px; }
+.chip { display: inline-flex; align-items: baseline; gap: 16px; font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; line-height: 1; }
+.chip b { font-family: "Fraunces", serif; font-size: 64px; color: var(--oro); }
+.chip.rojo { color: var(--rojo); }
+.linea { position: absolute; left: 60px; top: 340px; width: 1800px; height: 640px; }
+.linea svg { width: 1800px; height: 640px; }
+.nom { font-family: "Caveat", cursive; font-weight: 700; font-size: 52px; }
+.edad { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: #17212b; }
+.eje { stroke: #56657a; stroke-width: 3; }
+.tick { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 28px; fill: var(--tenue); text-anchor: middle; }
+.ev line { stroke: var(--oro); stroke-width: 3; }
+.ev text { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; fill: var(--oro); text-anchor: middle; }
+.ev.aprox line { stroke-dasharray: 7 6; }
+.cursor line { stroke: var(--tiza); stroke-width: 3; stroke-dasharray: 8 7; }
+.cursor text { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 32px; fill: var(--tiza); text-anchor: middle; }
+.nota { position: absolute; left: 90px; right: 90px; bottom: 22px; font-size: 22px; }
+.p1 { position: absolute; right: 90px; top: 1000px; }
+</style>
+
+<div class="intro">
+  <div>
+    <div class="k k1">GÉNESIS 31 TERMINÓ</div>
+    <div class="m m1">Jacob se despide de Labán en <span style="color:var(--oro)">Galaad</span></div>
+    <div class="m m2 md" style="color:var(--tenue)">después de 20 años en Harán</div>
+  </div>
+  <div class="der">
+    <div class="chip c1"><b>≈ 97</b> años</div>
+    <div class="chip c2"><b>2</b> esposas · <b>2</b> siervas · <b>11</b> niños</div>
+    <div class="chip rojo c3">y el hermano que había jurado matarlo · 27:41</div>
+  </div>
+</div>
+
+<div class="linea"><svg viewBox="0 0 1800 640">
+  <g class="filas"></g>
+  <line class="eje" x1="260" y1="560" x2="1760" y2="560"/>
+  <g class="ticks"></g>
+  <g class="evs"></g>
+  <g class="cursor"><line x1="0" y1="112" x2="0" y2="560"/><text class="cy" x="0" y="104">1761</text></g>
+</svg></div>
+<div class="nota s">Línea de la investigación. 1750, 1738, 1737 y 1728: <i>Perspicacia</i>, “Jacob”, “Isaac”, “Cronología”. <span class="propio" style="font-size:26px;padding:0 12px">cálculo propio</span> los años con “c.” (Peniel, Betel, Benjamín) y las edades.</div>
+
+<script>
+const X0 = 300, X1 = 1740, A = 1761, B = 1728;
+const xa = (y) => X0 + ((A - y) * (X1 - X0)) / (A - B);
+const P = [
+  { k: "ja", n: "Jacob", c: "var(--oro)", nac: 1858, y0: A, y1: B },
+  { k: "is", n: "Isaac", c: "#b9a4ea", nac: 1918, y0: A, y1: 1738 },
+  { k: "jo", n: "José", c: "var(--verde)", nac: 1767, y0: A, y1: B, egipto: 1750 },
+  { k: "be", n: "Benjamín", c: "var(--rojo)", nac: 1751.5, y0: 1751.5, y1: B },
+];
+let f = "";
+P.forEach((p, i) => {
+  const y = 130 + i * 100;
+  f += `<text class="nom n-${p.k}" x="0" y="${y + 46}" fill="${p.c}">${p.n}</text>`;
+  f += `<rect x="${xa(p.y0)}" y="${y}" width="${xa(p.y1) - xa(p.y0)}" height="60" rx="10" fill="${p.c}" opacity="0.13"/>`;
+  f += `<rect class="barra b-${p.k}" x="${xa(p.y0)}" y="${y}" width="0" height="60" rx="10" fill="${p.c}"/>`;
+  if (p.egipto) f += `<rect class="barra-eg" x="${xa(p.egipto)}" y="${y}" width="0" height="60" rx="10" fill="var(--cielo)"/><text class="eg-t" x="${xa(p.egipto) + 150}" y="${y - 12}" font-family="Caveat" font-weight="700" font-size="38" fill="var(--cielo)" opacity="0">en Egipto</text>`;
+  f += `<text class="edad e-${p.k}" x="${xa(p.y0) + 14}" y="${y + 43}"></text>`;
+});
+pinta(".filas", f);
+let tk = "";
+[1761, 1757, 1753, 1750, 1745, 1740, 1738, 1735, 1730, 1728].forEach((y) => { tk += `<line class="eje" x1="${xa(y)}" y1="560" x2="${xa(y)}" y2="574"/><text class="tick" x="${xa(y)}" y="604">${y}</text>`; });
+$(".ticks").innerHTML = tk;
+const EV = [["c. 1761 · Peniel", 1761, 18, false], ["Sucot, Siquem", 1757, 48, true], ["c. 1753 · Betel", 1753, 78, true], ["Benjamín", 1751.5, 48, true], ["1750 · José vendido", 1750, 18, false], ["1738 · muere Isaac", 1738, 18, false], ["1728 · Jacob a Egipto", 1728, 48, false]];
+let ev = "";
+EV.forEach(([t, y, yy, ap], i) => { ev += `<g class="ev ev${i}${ap ? " aprox" : ""}"><line x1="${xa(y)}" y1="${yy + 8}" x2="${xa(y)}" y2="560"/><text x="${Math.min(1680, Math.max(360, xa(y)))}" y="${yy}">${t}</text></g>`; });
+pinta(".evs", ev);
+
+const st = { y: A };
+const cur = $(".cursor"), cy = $(".cy");
+function dibuja() {
+  const x = xa(st.y);
+  cur.setAttribute("transform", `translate(${x.toFixed(1)} 0)`);
+  cy.textContent = Math.round(st.y);
+  P.forEach((p) => {
+    const hasta = Math.max(p.y1, st.y);
+    const w = st.y <= p.y0 ? xa(hasta) - xa(p.y0) : 0;
+    const fin = p.egipto ? Math.max(p.egipto, hasta) : hasta;
+    root.querySelector(".b-" + p.k).setAttribute("width", Math.max(0, xa(fin) - xa(p.y0)).toFixed(1));
+    if (p.egipto) root.querySelector(".barra-eg").setAttribute("width", Math.max(0, xa(hasta) - xa(p.egipto)).toFixed(1));
+    const e = root.querySelector(".e-" + p.k);
+    e.textContent = st.y <= p.y0 ? Math.round(p.nac - Math.max(st.y, p.y1)) + (p.k === "is" && st.y <= 1738 ? " †" : "") : "";
+  });
+}
+dibuja();
+const T0 = at("Estos capítulos cubren");
+tl.to(st, { y: 1738, duration: at("cuando muere") - T0 + 0.3, ease: "none", onUpdate: dibuja }, T0);
+tl.to(st, { y: 1728, duration: 2.2, ease: "power1.inOut", onUpdate: dibuja }, fin("muere Isaac") + 0.4);
+entra([".k1", ".m1"], 0.4, { y: 20, st: 0.3 });
+entra(".m2", at("después de veinte"), { y: 20 });
+entra(".c1", at("Tenía unos"), { x: 30, y: 0 });
+entra(".c2", at("Volvía con"), { x: 30, y: 0 });
+entra(".c3", at("el hermano que"), { x: 30, y: 0 });
+aparece(".linea", 0.8, 0.8);
+EV.forEach(([t, y], i) => aparece(".ev" + i, T0 + ((A - Math.max(y, 1738)) / (A - 1738)) * (at("cuando muere") - T0) - 0.2, 0.4));
+aparece(".eg-t", T0 + ((A - 1750) / 23) * (at("cuando muere") - T0), 0.4);
+late(".ev5", at("cuando muere"), { s: 1.08, n: 3 });
+entra(".nota", at("Estos capítulos") + 1, { y: 10 });
+</script>

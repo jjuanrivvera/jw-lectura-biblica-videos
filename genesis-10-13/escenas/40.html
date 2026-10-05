@@ -1,0 +1,88 @@
+<style>
+.neg40 { position: absolute; left: 0; top: 0; width: 1920px; height: 704px; overflow: hidden; }
+.neg40 .kb { position: absolute; inset: 0; }
+.neg40 img { width: 1920px; height: 704px; display: block; }
+.vneg40 { position: absolute; left: 0; right: 0; top: 520px; height: 200px; background: linear-gradient(180deg, rgba(23, 33, 43, 0), #17212b 92%); }
+.pneg40 { right: 24px; top: 20px; }
+.tneg40 { position: absolute; left: 90px; right: 90px; top: 700px; bottom: 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; }
+.tneg40 .def .x { font-size: 58px; }
+.mapa.M40 { left: 0; top: 0; width: 1920px; height: 1080px; background: #e9e4cf; }
+.mapa.M40 .cam img, .mapa.M40 .cam svg { width: 2720px; height: 2880px; }
+.pie40 { left: 24px; top: 20px; }
+.ch40 { position: absolute; right: 60px; bottom: 60px; width: 760px; display: flex; flex-direction: column; gap: 18px; }
+.ch40 .caja .m { font-size: 56px; }
+.q40 { position: absolute; left: 110px; right: 110px; top: 110px; bottom: 90px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.q40 .cita { font-size: 62px; }
+.q40 .cita b { color: var(--oro); }
+.q40 .fila { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
+.velo40 { position: absolute; inset: 0; background: rgba(23, 33, 43, 0.9); }
+.f1 { background: #17212b; }
+</style>
+
+<div class="fase f2">
+  <div class="mapa M40"><div class="cam">
+    <img src="assets/img/b2-oeste.jpg" />
+    <svg viewBox="0 0 2720 2880">
+      <path class="ruta-h r40h" stroke-width="30" d="M 1372 2056 C 1330 2150 1290 2240 1246 2304"/><path class="ruta r40" stroke-width="15" d="M 1372 2056 C 1330 2150 1290 2240 1246 2304"/>
+      <path class="ruta-h e40h" stroke-width="30" d="M 1246 2304 L 1040 2352 L 776 2372 L 496 2408 L 336 2432"/><path class="flecha punt e40" stroke-width="15" d="M 1246 2304 L 1040 2352 L 776 2372 L 496 2408 L 336 2432"/>
+      <g class="dud"><circle class="hueco" cx="250" cy="2470" r="90"/><text class="lugar rojo halo" x="250" y="2500" font-size="96" stroke-width="16" text-anchor="middle">?</text></g>
+      <text class="lugar halo neg" x="1150" y="2420" font-size="60" stroke-width="14">el Négueb</text>
+    </svg>
+  </div></div>
+  <div class="pie pie40">Mapa: apéndice B2 de la TNM (wol.jw.org) · marcas añadidas · la ciudad de Egipto, sin marcar: no se sabe</div>
+  <div class="ch40">
+    <div class="caja c1"><div class="cita sm">“Abrán bajó hacia Egipto para quedarse allí un tiempo”<span class="ref">GÉNESIS 12:10 · NOTA: “PARA VIVIR ALLÍ COMO EXTRANJERO”</span></div></div>
+    <div class="caja c2"><div class="m">¿a qué ciudad? La Biblia <b>no lo dice</b></div></div>
+  </div>
+</div>
+
+<div class="fase f1">
+  <div class="neg40"><div class="kb"><img src="assets/img/negueb.jpg" /></div></div>
+  <div class="vneg40"></div>
+  <div class="pie pneg40">El Négueb, al sur de Judá. <i>Perspicacia</i>, vol. 2, pág. 476 (wol.jw.org)</div>
+  <div class="tneg40">
+    <div class="mv40"><div class="def"><div class="t">Négueb<i>né·ghev</i></div><div class="x">de una raíz que significa “<b>estar reseco</b>”</div><div class="s"><i>Perspicacia</i>, vol. 2, “Négueb”, pág. 476</div></div></div>
+    <div class="m md dneg">la región semiárida al sur de Judá: una meseta de 450 a 600 m, de Beer-seba a Qadés-barnea</div>
+  </div>
+</div>
+
+<div class="fase f3">
+  <div class="velo40"></div>
+  <div class="q40">
+    <div class="cita q1">“Escúchame, <b>por favor</b>. [...] <b>Por favor</b>, diles que eres mi hermana para que me traten bien a causa de ti y para que no me quiten la vida”<span class="ref">GÉNESIS 12:11-13</span></div>
+    <div class="fila">
+      <div class="def q2"><div class="t">nota de 12:13</div><div class="x">o “para que <b>mi alma siga viva</b>”</div></div>
+      <div class="cita q3" style="font-size:40px">“aun poseyendo autoridad patriarcal, no abusó de su posición, sino que buscó la <b>colaboración</b> y el apoyo de su cónyuge”<span class="ref">LA ATALAYA, 15 DE AGOSTO DE 2001</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Fase 1: el Négueb.
+kb(".neg40 .kb", 0, 10, { s: 1.08 }, { s: 1.0 });
+// La definición empieza centrada y se corre a la izquierda cuando llega la descripción.
+tl.set($(".mv40"), { x: 444 }, 0);
+entra(".tneg40 .def", 0.6, { y: 20 });
+tl.to($(".mv40"), { x: 0, duration: 0.7, ease: "power2.inOut" }, at("semiárida") - 1.0);
+entra(".dneg", at("semiárida") - 0.4, { y: 16 });
+const t2 = at("El hambre");
+tl.to($(".f1"), { opacity: 0, duration: 0.6, ease: "none" }, t2 - 0.5);
+// Fase 2: la bajada a Egipto, sin ciudad conocida.
+const V = { x: 0, y: 0, w: 1920, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 0, y: 1740, w: 1920, h: 1080 }, V), 0);
+traza([".r40h", ".r40"], t2, 0.8);
+traza([".e40h", ".e40"], at("bajó a Egipto") - 0.2, 1.8, { ease: "none" });
+tl.set($(".e40"), { strokeDasharray: "26 20" }, at("bajó a Egipto") + 1.65);
+aparece(".neg", t2, 0.5);
+salta(".dud", at("qué ciudad") - 0.3, { desde: 0.4 });
+entra(".c1", at("bajó a Egipto") - 0.2, { y: 16 });
+entra(".c2", at("La Biblia no dice") - 0.2, { y: 16 });
+// Fase 3: “por favor”.
+const t3 = at("Antes de entrar");
+tl.fromTo($(".f3"), { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "none", immediateRender: false }, t3 - 0.3);
+tl.set($(".f3"), { opacity: 0 }, 0);
+desaparece(".f2", t3 + 0.3, 0.5);
+entra(".q1", t3, { y: 24 });
+entra(".q2", at("no me quiten") - 0.4, { y: 20 });
+entra(".q3", at("No le dio") - 0.2, { y: 20 });
+</script>

@@ -1,0 +1,32 @@
+<style>
+.fondo19 { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.fondo19 img { width: 100%; height: 100%; object-fit: cover; opacity: 0.32; }
+.oscuro { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(23,33,43,0.6), rgba(23,33,43,0.92) 55%); }
+.linea19 { position: absolute; left: 70px; right: 70px; top: 250px; height: 60px; }
+.linea19 svg { width: 1780px; height: 60px; }
+.tres { position: absolute; left: 70px; right: 70px; top: 330px; grid-template-columns: 1fr 1fr 1fr; column-gap: 26px; }
+.tres .tj { min-height: 640px; }
+.tres .tj .x { font-size: 44px; }
+.tres .tj .big { font-family: "Caveat", cursive; font-weight: 700; font-size: 72px; color: var(--tiza); line-height: 1; }
+.titulo19 { position: absolute; left: 70px; top: 120px; }
+.pie-img.pf { left: 70px; bottom: 24px; font-size: 21px; }
+</style>
+<div class="fondo19"><img src="assets/img/guerizim-aereo.jpg" /></div>
+<div class="oscuro"></div>
+<div class="cab"><span class="cap">El campo de Jacob</span><span>Génesis 33:19 · Josué 24:32 · Juan 4</span></div>
+<div class="titulo19 m xl">un mismo campo</div>
+<div class="linea19"><svg viewBox="0 0 1780 60"><path class="ln" d="M 20 30 L 1760 30" stroke="var(--oro)" stroke-width="6" fill="none"/><circle class="c1" cx="290" cy="30" r="18" fill="var(--oro)"/><circle class="c2" cx="890" cy="30" r="18" fill="var(--oro)"/><circle class="c3" cx="1490" cy="30" r="18" fill="var(--oro)"/></svg></div>
+<div class="tarjetas tres">
+  <div class="tj t1"><div class="k">Génesis 33:19</div><div class="big">Jacob lo compra</div><div class="x">por “100 piezas de dinero”</div></div>
+  <div class="tj t2"><div class="k">Josué 24:32 · siglos después</div><div class="big">los huesos de José</div><div class="x">“en la parte del campo que Jacob les había comprado por 100 piezas de dinero a los hijos de Hamor”</div></div>
+  <div class="tj t3 on"><div class="k">Juan 4 · casi 2.000 años después</div><div class="big">Jesús, junto al pozo</div><div class="x">“cerca del campo que Jacob le había dado a su hijo José. De hecho, allí estaba el pozo de Jacob”</div><div class="x t3b" style="color:var(--oro)">“Él fue quien nos dio este pozo, del que bebieron él, sus hijos y su ganado”</div><div class="ref">JUAN 4:5, 6, 12</div></div>
+</div>
+<div class="pie-img pf">Fondo: ladera del monte Guerizim, fotograma del video “Monte Guerizim” (galería de la TNM en Juan 4, wol.jw.org)</div>
+<script>
+entra(".titulo19", 0.3, { y: 20 });
+traza(".ln", 0.6, 1.5);
+salta(".c1", 0.8); entra(".t1", 0.8, { y: 30 });
+salta(".c2", at("Siglos después")); entra(".t2", at("Siglos después"), { y: 30 });
+salta(".c3", at("Y casi")); entra(".t3", at("Y casi"), { y: 30 });
+entra(".t3b", at("Una samaritana"), { y: 16 });
+</script>

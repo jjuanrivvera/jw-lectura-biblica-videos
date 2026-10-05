@@ -1,0 +1,50 @@
+<style>
+.pr { position: absolute; left: 70px; right: 70px; top: 120px; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 26px; }
+.pr .tj { min-height: 330px; justify-content: flex-start; padding: 26px 28px; }
+.pr .nom { font-family: "Fraunces", serif; font-weight: 700; font-size: 60px; line-height: 1.02; }
+.pr .hijo { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 28px; color: var(--tenue); }
+.pr .sig { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; line-height: 1.02; color: var(--oro); margin-top: 10px; }
+.pr .sig small { display: block; font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 22px; color: var(--tenue); margin-top: 6px; }
+.pr .tj.on { border-color: var(--oro); background: rgba(233, 191, 96, 0.08); }
+.antes { position: absolute; top: 500px; width: 858px; }
+.antes .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.16em; color: var(--cielo); text-transform: uppercase; margin-bottom: 10px; }
+.antes .cita { font-size: 56px; }
+.antes .flecha-up { position: absolute; top: -36px; width: 0; height: 0; border-left: 18px solid transparent; border-right: 18px solid transparent; border-bottom: 26px solid var(--cielo); }
+.callar { position: absolute; left: 70px; right: 70px; top: 790px; display: flex; justify-content: center; gap: 40px; align-items: baseline; }
+.callar .m { font-size: 70px; }
+.noconf { position: absolute; left: 70px; right: 70px; bottom: 34px; display: flex; gap: 20px; align-items: center; font-family: "Montserrat", sans-serif; font-size: 25px; color: var(--tenue); }
+.noconf b { color: var(--tiza); }
+.noconf .k { font-weight: 800; letter-spacing: 0.14em; color: var(--rosa); text-transform: uppercase; }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 38</span><span>versículo 1</span></div>
+
+<div class="pr">
+  <div class="tj c1"><div class="nom">Sefatías</div><div class="hijo">hijo de Matán</div><div class="sig">“Jehová Ha Juzgado”</div></div>
+  <div class="tj c2"><div class="nom">Guedalías</div><div class="hijo">hijo de Pasjur</div><div class="sig">“Jehová Es Grande”</div></div>
+  <div class="tj c3"><div class="nom">Jucal</div><div class="hijo">hijo de Selemías</div><div class="sig">“Jehová Puede; Jehová Prevalece”<small>forma abreviada de Jehucal</small></div></div>
+  <div class="tj c4"><div class="nom">Pasjur</div><div class="hijo">hijo de Malkiya</div><div class="sig" style="color:var(--tenue);font-size:40px">Perspicacia no da su significado</div></div>
+</div>
+
+<div class="antes a1" style="left:70px;width:1780px;top:510px;text-align:center"><div class="k">antes, de parte del rey · 21:1, 2</div><div class="cita">Pasjur: “Por favor, consulta a Jehová por nosotros”</div></div>
+<div class="antes a2" style="left:70px;width:1780px;top:510px;text-align:center"><div class="k">después · 37:3</div><div class="cita">Jucal: “Por favor, ora por nosotros a Jehová nuestro Dios”</div></div>
+
+<div class="callar"><div class="m c-a">esperaban un <b>mensaje alentador</b></div><div class="m rojo c-b">ahora quieren callarlo</div></div>
+
+<div class="noconf"><span class="k">no confundir</span><span>este <b>Guedalías</b> no es el hijo de Ahicam (39:14) · este <b>Pasjur</b> no es el sacerdote hijo de Imer (20:1, 2)</span></div>
+<div class="fuente" style="bottom:74px;font-size:21px;left:auto;right:70px;text-align:right">significados: <i>Perspicacia</i> · “mensaje alentador”: <i>Dios nos habla mediante Jeremías</i>, cap. 5</div>
+
+<script>
+aparece(".cab", 0.2, 0.5);
+entra([".c1", ".c2", ".c3", ".c4"], 0.8, { y: 40, st: 0.18 });
+[["c1", "Sefatías"], ["c2", "Guedalías"], ["c3", "Jucal"], ["c4", "Pasjur"]].forEach(([c, n]) => {
+  tl.fromTo($("." + c), { y: 0 }, { y: -18, duration: 0.3, yoyo: true, repeat: 1, ease: "power1.inOut", immediateRender: false }, at(n) - 0.1);
+});
+atenua([".c1", ".c2"], at("A dos ya"), 0.35);
+tl.fromTo([$(".c3"), $(".c4")], { borderColor: "rgba(241,233,216,0.14)" }, { borderColor: "#e9bf60", duration: 0.5, immediateRender: false }, at("A dos ya"));
+secuencia([[".a1", at("mandado a Pasjur")], [".a2", at("a Jucal")]], null, { y: 24 });
+entra(".c-a", at("esperaba un mensaje"), { y: 24 });
+entra(".c-b", at("querían callar"), { y: 24 });
+aparece(".fuente", at("esperaba un mensaje"), 0.5);
+entra(".noconf", at("Como la respuesta"), { y: 16 });
+</script>

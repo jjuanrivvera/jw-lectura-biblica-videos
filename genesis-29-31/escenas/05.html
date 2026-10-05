@@ -1,0 +1,33 @@
+<style>
+.marco { position: absolute; left: 60px; top: 110px; width: 1180px; height: 790px; border-radius: 26px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
+.marco .kb { position: absolute; inset: 0; }
+.marco img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pie-img { left: 60px; top: 916px; width: 1180px; }
+.col { top: 120px; bottom: 90px; right: 64px; width: 600px; }
+.m { font-size: 72px; }
+.m.xl { font-size: 104px; }
+</style>
+<div class="cab"><span class="cap">Génesis 29</span><span>versículos 9 al 12</span></div>
+<div class="im1">
+  <div class="marco"><div class="kb"><img src="assets/img/hombres-haran.jpg"/></div></div>
+  <div class="pie-img">“Hombres de Harán hablando de Labán y su hija Raquel con Jacob.” Ilustración: <i>Mi libro de historias bíblicas</i>, historia 18 (wol.jw.org)</div>
+</div>
+<div class="im2">
+  <div class="marco"><div class="kb"><img src="assets/img/raquel-ovejas.jpg"/></div></div>
+  <div class="pie-img">“Raquel cuida las ovejas de su padre.” Ilustración: <i>Mi libro de historias bíblicas</i>, historia 18 (wol.jw.org)</div>
+</div>
+<div class="col">
+  <div class="b a1"><div class="cita">“llegó Raquel. Ella era pastora y traía las ovejas de su padre”<span class="ref">GÉNESIS 29:9</span></div></div>
+  <div class="b a2"><div class="m">Raquel =</div><div class="m xl oro">“Oveja”</div><div class="s">Perspicacia, vol. 2, “Raquel”, pág. 787</div><div class="s">el rebaño lo cuidaban los hijos, “tanto hombres como mujeres” · “Pastor”, pág. 604</div></div>
+  <div class="b a3"><div class="m xl oro">de inmediato</div><div class="cita md">“fue de inmediato a correr la piedra del pozo y a darles de beber a las ovejas de Labán”<span class="ref">GÉNESIS 29:10</span></div><div class="m md">no esperó a nadie</div></div>
+  <div class="b a4"><div class="def"><div class="t">El beso</div><div class="x">el saludo <b>entre parientes</b>, no de novios</div><div class="s">“La amistad se expresaba con un beso” · Perspicacia, vol. 2, “Posturas y ademanes”, págs. 690, 691</div></div><div class="cita md">“Entonces levantó la voz y se echó a llorar”<span class="ref">GÉNESIS 29:11</span></div></div>
+</div>
+<script>
+const t2 = at("Ella era pastora");
+aparece(".im1", 0.2, 0.5);
+kb(".im1 .kb", 0, t2, { s: 1.12, x: 3 }, { s: 1.0, x: 0 });
+aparece(".im2", t2 - 0.3, 0.6);
+desaparece(".im1", t2 + 0.4, 0.2);
+kb(".im2 .kb", t2 - 0.3, DUR, { s: 1.0, x: 0, y: 0 }, { s: 1.14, x: -3, y: 2 });
+secuencia([[".a1", 0.4], [".a2", at("su nombre significa")], [".a3", at("En cuanto la vio")], [".a4", at("Luego la saludó")]]);
+</script>

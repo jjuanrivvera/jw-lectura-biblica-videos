@@ -1,0 +1,62 @@
+<style>
+.mapa.R38 { left: 0; top: 0; width: 1240px; height: 1080px; background: #e2e5c8; }
+.mapa.R38 .cam img, .mapa.R38 .cam svg { width: 2088px; height: 2436px; }
+.funde38 { left: 1120px; }
+.pie38 { left: 24px; bottom: 20px; }
+.col38 { position: absolute; left: 1270px; right: 56px; top: 70px; bottom: 70px; }
+.col38 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.col38 .cita { font-size: 44px; }
+.col38 .def .x { font-size: 56px; }
+</style>
+
+<div class="mapa R38"><div class="cam">
+  <img src="assets/img/b2-recuadro.jpg" />
+  <svg viewBox="0 0 2088 2436">
+    <path class="ruta-h r38h" stroke-width="30" d="M 867 345 C 856 420 848 470 840 540 C 832 610 828 690 826 772"/><path class="ruta r38" stroke-width="15" d="M 867 345 C 856 420 848 470 840 540 C 832 610 828 690 826 772"/>
+    <ellipse class="anillo oro a-bh" cx="826" cy="792" rx="70" ry="46"/>
+    <g class="tienda"><g transform="translate(1000 700)"><path d="M -46 40 L 0 -30 L 46 40 Z" fill="#8c6541" stroke="#3e2a18" stroke-width="5"/><path d="M -10 40 L 0 8 L 10 40 Z" fill="#241708"/></g></g>
+    <g class="altar"><g transform="translate(1000 820)"><g stroke="#4f4a40" stroke-width="3" fill="#b3ab9b"><ellipse cx="-20" cy="30" rx="22" ry="11"/><ellipse cx="20" cy="30" rx="22" ry="11"/><ellipse cx="0" cy="14" rx="24" ry="11"/></g><path d="M -10 2 C -6 -16 8 -20 2 -34 C 20 -22 18 -6 12 2 Z" fill="#ffb13b"/></g></g>
+    <path class="d17" d="M 790 800 C 770 880 770 950 786 1010" fill="none" stroke="#1b2733" stroke-width="6" stroke-dasharray="16 12"/>
+    <g class="t17"><rect x="560" y="836" width="190" height="80" rx="16" fill="rgba(15,22,30,0.9)"/><text x="655" y="891" text-anchor="middle" font-family="Fraunces" font-weight="700" font-size="50" fill="#e9bf60">17 km</text></g>
+    <g class="alt"><rect x="930" y="880" width="300" height="80" rx="16" fill="rgba(15,22,30,0.9)"/><text x="1080" y="935" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="54" fill="#f1e9d8">a unos 900 m</text></g>
+  </svg>
+</div></div>
+<div class="funde-der funde38"></div>
+<div class="pie pie38">Mapa: apéndice B2 de la TNM, recuadro (wol.jw.org) · marcas añadidas</div>
+
+<div class="col38">
+  <div class="b a1">
+    <div class="cita">“Colocó su tienda entre Betel y Hai. <b>Betel estaba al oeste y Hai estaba al este</b>”<span class="ref">GÉNESIS 12:8</span></div>
+  </div>
+  <div class="b a2">
+    <div class="def"><div class="t">Betel</div><div class="x">“<b>Casa de Dios</b>”</div><div class="s">su nombre cananeo original era Luz · <i>Perspicacia</i>, vol. 1, “Betel”, págs. 345, 346</div></div>
+    <div class="m md b17">a unos 17 km al norte de Jerusalén, a unos 900 m de altura</div>
+  </div>
+  <div class="b a3">
+    <div class="def"><div class="t">Hai</div><div class="x">“<b>Montón de Ruinas</b>”</div><div class="s">a 2,3 km al este-sureste de Betel, si es et-Tell · <i>Perspicacia</i>, vol. 1, “Hai”, pág. 1078</div></div>
+  </div>
+  <div class="b a4">
+    <div class="cita">“Allí construyó un <b>altar</b> para Jehová y empezó a <b>invocar el nombre de Jehová</b>”<span class="ref">GÉNESIS 12:8</span></div>
+    <div class="f">“también es posible que les predicara a los habitantes de la región” · <i>Imitemos su fe</i>, cap. 3</div>
+  </div>
+  <div class="b a5">
+    <div class="m">en un país ajeno, rodeado de cananeos, adoraba <b>a la vista de todos</b></div>
+  </div>
+</div>
+
+<script>
+const V = { x: 0, y: 0, w: 1240, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 350, y: 120, w: 1100, h: 958 }, V), 0);
+aparece(".pie38", 0.6, 0.5);
+traza([".r38h", ".r38"], 0.6, 2.0, { ease: "power1.inOut" });
+traza(".a-bh", at("entre Betel") - 0.1, 0.7);
+entra(".tienda", at("puso su tienda") - 0.1, { y: 14 });
+secuencia([[".a1", 0.4], [".a2", at("Betel significa")], [".a3", at("Hai significa")], [".a4", at("Allí construyó")], [".a5", at("Viajaba")]]);
+entra(".b17", at("diecisiete") - 0.3, { y: 12 });
+traza(".d17", at("diecisiete") - 0.2, 0.8);
+entra(".t17", at("diecisiete") + 0.2, { y: 10 });
+entra(".alt", at("novecientos metros") - 0.2, { y: 10 });
+desaparece([".t17", ".alt", ".d17"], at("Hai significa") - 0.3, 0.4);
+salta(".altar", at("otro altar") - 0.2, { desde: 0.3 });
+camara(".cam", at("Viajaba") - 0.4, DUR - at("Viajaba") + 0.2, encuadre({ x: 150, y: 60, w: 1500, h: 1307 }, V), "none");
+</script>

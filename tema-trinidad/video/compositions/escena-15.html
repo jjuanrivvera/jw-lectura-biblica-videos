@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="UTF-8" /><title>Lo que no quiso arrebatar</title></head>
+<body>
+<template>
+<style>
+@font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces.ttf") format("truetype"); font-weight: 100 900; font-style: normal; }
+@font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Italic.ttf") format("truetype"); font-weight: 100 900; font-style: italic; }
+@font-face { font-family: "Caveat"; src: url("assets/fonts/Caveat.ttf") format("truetype"); font-weight: 400 700; }
+@font-face { font-family: "Montserrat"; src: url("assets/fonts/Montserrat.ttf") format("truetype"); font-weight: 100 900; }
+@font-face { font-family: "Griego"; src: url("assets/fonts/NotoSerif.ttf") format("truetype"); font-weight: 500; }
+#escena-15 {
+/* Estilo común de todas las escenas (1920x1080). El constructor lo anida bajo #escena-NN. */
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+color: var(--papel);
+font-family: "Montserrat", sans-serif;
+/* Un color para cada uno, siempre el mismo: oro el Padre, azul el Hijo, turquesa el espíritu santo.
+   Terracota para los concilios y lo añadido después. */
+--tinta: #121a24;
+--papel: #f0e8d8;
+--tenue: #aeb8c4;
+--oro: #ecc469;
+--cielo: #93bdf2;
+--turq: #79d6c6;
+--terra: #e58463;
+--linea: rgba(240, 232, 216, 0.22);
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.contenido { position: absolute; inset: 0; }
+.fase { position: absolute; inset: 0; }
+svg { overflow: visible; }
+
+.oro { color: var(--oro); }
+.cielo { color: var(--cielo); }
+.turq { color: var(--turq); }
+.terra { color: var(--terra); }
+
+/* Cabecera: sección a la izquierda, texto bíblico o tema a la derecha. */
+.cab {
+  position: absolute; left: 80px; right: 80px; top: 40px;
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 30px;
+  color: var(--tenue); letter-spacing: 0.1em; text-transform: uppercase;
+}
+.cab .sec { color: var(--oro); }
+.cab.sobre span { padding: 6px 16px; border-radius: 10px; background: rgba(12, 18, 26, 0.85); }
+
+/* Pie con la fuente. */
+.fuente {
+  position: absolute; left: 80px; right: 80px; bottom: 28px;
+  font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 24px; line-height: 1.3;
+  color: var(--tenue);
+}
+.fuente b { color: var(--papel); font-weight: 700; }
+
+/* Columna de texto: el bloque activo se centra en el alto disponible. */
+.col { position: absolute; top: 120px; bottom: 100px; right: 90px; width: 760px; }
+.col.izq { left: 90px; right: auto; }
+.col > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+
+/* Registros: la Biblia, la anotación a mano, el texto de apoyo. */
+.cita { font-family: "Fraunces", serif; font-weight: 500; font-size: 54px; line-height: 1.22; color: var(--papel); }
+.cita b { font-weight: 700; }
+.ref { display: block; margin-top: 16px; font-family: "Montserrat", sans-serif; font-weight: 700;
+  font-size: 28px; letter-spacing: 0.12em; color: var(--tenue); text-transform: uppercase; }
+.m { font-family: "Caveat", cursive; font-weight: 700; font-size: 72px; line-height: 1.04; color: var(--papel); }
+.s { font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 32px; line-height: 1.35; color: var(--tenue); }
+.s b { color: var(--papel); font-weight: 700; }
+.titulo { font-family: "Fraunces", serif; font-weight: 700; font-size: 96px; line-height: 1.02; letter-spacing: -0.01em; }
+.grande { font-family: "Fraunces", serif; font-weight: 700; font-size: 150px; line-height: 1; letter-spacing: -0.02em; }
+.gr { font-family: "Griego", serif; font-weight: 500; }
+
+/* Tarjeta de término: la palabra, qué es y por qué importa aquí. */
+.def { align-self: stretch; border: 3px solid rgba(240, 232, 216, 0.55); border-radius: 24px; padding: 24px 34px 28px;
+  background: rgba(16, 24, 34, 0.94); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35); }
+.def .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--tenue); }
+.def .w { font-family: "Fraunces", serif; font-style: italic; font-weight: 600; font-size: 64px; line-height: 1.05; margin-top: 6px; color: var(--papel); }
+.def .w .gr { font-style: normal; }
+.def .x { font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 32px; line-height: 1.35; margin-top: 12px; color: var(--papel); }
+.def .x b { color: var(--oro); }
+
+/* Observación propia, no de la fuente. */
+.propio {
+  display: inline-block; align-self: flex-start; padding: 6px 20px 4px; border: 3px dashed var(--tenue); border-radius: 14px;
+  font-family: "Caveat", cursive; font-weight: 700; font-size: 38px; color: var(--tenue);
+}
+
+/* Ilustraciones de la JW: marco sencillo. */
+.ilus { position: absolute; overflow: hidden; border-radius: 22px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
+.ilus .kb { position: absolute; inset: 0; }
+.ilus img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pie-img { position: absolute; padding: 8px 16px; border-radius: 10px; background: rgba(12, 18, 26, 0.85);
+  font-size: 25px; color: var(--papel); }
+
+/* Mapas: cámara sobre la imagen real y trazos encima, en coordenadas de la imagen. */
+.mapa { position: absolute; overflow: hidden; background: #cfd9c4; }
+.mapa .cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.mapa .cam img, .mapa .cam svg { position: absolute; left: 0; top: 0; display: block; }
+.panel { position: absolute; top: 0; bottom: 0; right: 0; width: 820px;
+  background: linear-gradient(90deg, rgba(18, 26, 36, 0) 0%, rgba(18, 26, 36, 0.94) 9%, rgba(18, 26, 36, 0.97) 100%); }
+.halo { paint-order: stroke; stroke: rgba(255, 255, 255, 0.92); stroke-linejoin: round; }
+.halo-o { paint-order: stroke; stroke: rgba(14, 20, 28, 0.92); stroke-linejoin: round; }
+
+/* Trazos. */
+.trazo { fill: none; stroke: var(--papel); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Rótulo de parte: "Parte 2 · Los textos que se usan a favor". */
+.parte { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 22px; }
+.parte .n { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.3em; color: var(--tenue); text-transform: uppercase; }
+.parte .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 120px; line-height: 1.02; max-width: 1600px; }
+.parte svg { width: 700px; height: 30px; }
+.parte svg path { fill: none; stroke: var(--oro); stroke-width: 6; stroke-linecap: round; }
+
+
+.curva { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.cam { stroke: var(--cielo); stroke-width: 9; fill: none; stroke-linecap: round; }
+.pun { fill: var(--tinta); stroke: var(--cielo); stroke-width: 7; }
+.lb { position: absolute; width: 520px; }
+.lb .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; color: var(--tenue); }
+.lb .cita { font-size: 46px; margin-top: 6px; }
+.la { left: 60px; top: 110px; width: 420px; }
+.lbb { left: 690px; top: 600px; width: 540px; text-align: center; }
+.lc { left: 1440px; top: 110px; width: 420px; }
+.lc .cita b { color: var(--oro); }
+.centro { position: absolute; left: 540px; right: 540px; top: 90px; height: 430px; }
+.centro > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.centro .def .x { font-size: 30px; }
+.centro .cita { font-size: 44px; }
+.centro .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; color: var(--tenue); }
+.gloria { position: absolute; left: 500px; right: 500px; top: 150px; text-align: center; }
+.gloria .cita { font-size: 66px; }
+.gloria .cita b { color: var(--oro); }
+
+}
+</style>
+<div id="escena-15" data-composition-id="escena-15" data-width="1920" data-height="1080">
+<div class="contenido">
+<div class="cab"><span class="sec">Filipenses 2:5-11</span><span></span></div>
+<svg class="curva" viewBox="0 0 1920 1080">
+  <path class="cam c1" d="M 200 480 C 420 500 600 860 960 870"/>
+  <path class="cam c2" d="M 960 870 C 1320 860 1500 500 1720 480"/>
+  <circle class="pun pa" cx="200" cy="480" r="18"/><circle class="pun pb" cx="960" cy="870" r="18"/><circle class="pun pc" cx="1720" cy="480" r="18"/>
+</svg>
+<div class="lb la"><div class="k">VERSÍCULO 6</div><div class="cita">“Aunque existía en la forma de Dios, <b class="cielo">ni se le pasó por la mente tratar de ser igual a Dios</b>”.</div></div>
+<div class="lb lbb"><div class="k">VERSÍCULO 8</div><div class="cita">“Se humilló y se hizo obediente hasta la muerte”.</div></div>
+<div class="lb lc"><div class="k">VERSÍCULO 9</div><div class="cita">“<b>Dios lo elevó</b> a un puesto superior”.</div></div>
+<div class="centro">
+  <div class="b k1"><div class="def"><div class="t">Término · griego</div><div class="w"><span class="gr">μορφή</span> · morfḗ</div><div class="x">“forma”: naturaleza. Jesús era un ser espiritual, como “Dios es un espíritu” (Juan 4:24)</div></div></div>
+  <div class="b k2"><div class="def"><div class="t">Término · griego</div><div class="w"><span class="gr">ἁρπαγμός</span> · harpagmós</div><div class="x">literalmente, “<b>cosa que arrebatar</b>”. Nunca se usa para retener algo que uno ya tiene</div></div></div>
+  <div class="b k3"><div class="k">LO CONTRARIO: EL DIABLO A EVA</div><div class="cita">“Serán como Dios”.<span class="ref">Génesis 3:5</span></div></div>
+</div>
+<div class="gloria"><div class="cita">“Para <b>la gloria de Dios el Padre</b>”.<span class="ref">Filipenses 2:11</span></div></div>
+<div class="fuente">Nota de estudio de la TNM en Filipenses 2:6</div>
+</div>
+</div>
+<script>
+(function () {
+const ID = "escena-15";
+const DUR = 51.888;
+const LEAD = 0.6;
+const W = [{"w":"Filipenses","t":0.703,"d":0.737},{"w":"dos","t":1.453,"d":0.289},{"w":"seis","t":2.032,"d":0.368},{"w":"dice","t":2.413,"d":0.289},{"w":"de","t":2.716,"d":0.105},{"w":"Jesús","t":2.834,"d":0.434},{"w":"que","t":3.282,"d":0.237},{"w":"aunque","t":3.689,"d":0.303},{"w":"existía","t":4.005,"d":0.553},{"w":"en","t":4.571,"d":0.079},{"w":"la","t":4.663,"d":0.092},{"w":"forma","t":4.768,"d":0.316},{"w":"de","t":5.097,"d":0.105},{"w":"Dios","t":5.216,"d":0.368},{"w":"ni","t":5.847,"d":0.158},{"w":"se","t":6.018,"d":0.158},{"w":"le","t":6.189,"d":0.105},{"w":"pasó","t":6.308,"d":0.316},{"w":"por","t":6.637,"d":0.184},{"w":"la","t":6.834,"d":0.079},{"w":"mente","t":6.926,"d":0.342},{"w":"tratar","t":7.282,"d":0.395},{"w":"de","t":7.689,"d":0.105},{"w":"ser","t":7.808,"d":0.237},{"w":"igual","t":8.058,"d":0.329},{"w":"a","t":8.4,"d":0.026},{"w":"Dios","t":8.439,"d":0.5},{"w":"Forma","t":9.85,"d":0.526},{"w":"en","t":10.613,"d":0.184},{"w":"griego","t":10.811,"d":0.368},{"w":"morfé","t":11.192,"d":0.447},{"w":"tiene","t":11.942,"d":0.276},{"w":"que","t":12.232,"d":0.132},{"w":"ver","t":12.376,"d":0.197},{"w":"con","t":12.587,"d":0.158},{"w":"la","t":12.758,"d":0.066},{"w":"naturaleza","t":12.837,"d":0.75},{"w":"Jesús","t":13.903,"d":0.434},{"w":"era","t":14.35,"d":0.171},{"w":"un","t":14.534,"d":0.132},{"w":"ser","t":14.679,"d":0.197},{"w":"espiritual","t":14.889,"d":0.658},{"w":"como","t":15.771,"d":0.263},{"w":"Dios","t":16.047,"d":0.329},{"w":"es","t":16.389,"d":0.158},{"w":"espíritu","t":16.561,"d":0.658},{"w":"Y","t":18.126,"d":0.132},{"w":"la","t":18.271,"d":0.118},{"w":"expresión","t":18.403,"d":0.526},{"w":"tratar","t":18.942,"d":0.395},{"w":"de","t":19.35,"d":0.105},{"w":"ser","t":19.468,"d":0.289},{"w":"traduce","t":19.771,"d":0.474},{"w":"una","t":20.258,"d":0.224},{"w":"palabra","t":20.495,"d":0.421},{"w":"griega","t":20.929,"d":0.474},{"w":"jarpagmós","t":21.692,"d":0.75},{"w":"que","t":22.705,"d":0.118},{"w":"literalmente","t":22.837,"d":0.776},{"w":"significa","t":23.626,"d":0.711},{"w":"cosa","t":24.35,"d":0.382},{"w":"que","t":24.745,"d":0.132},{"w":"arrebatar","t":24.889,"d":0.658},{"w":"Pablo","t":26.468,"d":0.263},{"w":"estaba","t":26.745,"d":0.355},{"w":"poniendo","t":27.113,"d":0.461},{"w":"a","t":27.587,"d":0.026},{"w":"Jesús","t":27.626,"d":0.434},{"w":"como","t":28.074,"d":0.224},{"w":"ejemplo","t":28.311,"d":0.408},{"w":"de","t":28.732,"d":0.105},{"w":"humildad","t":28.85,"d":0.618},{"w":"Su","t":30.376,"d":0.211},{"w":"actitud","t":30.6,"d":0.5},{"w":"fue","t":31.113,"d":0.171},{"w":"lo","t":31.297,"d":0.105},{"w":"contrario","t":31.416,"d":0.566},{"w":"de","t":31.995,"d":0.105},{"w":"la","t":32.113,"d":0.079},{"w":"del","t":32.205,"d":0.171},{"w":"Diablo","t":32.389,"d":0.421},{"w":"que","t":33.1,"d":0.118},{"w":"animó","t":33.232,"d":0.434},{"w":"a","t":33.679,"d":0.132},{"w":"Eva","t":33.824,"d":0.263},{"w":"a","t":34.1,"d":0.039},{"w":"ser","t":34.153,"d":0.263},{"w":"como","t":34.429,"d":0.237},{"w":"Dios","t":34.679,"d":0.487},{"w":"Jesús","t":36.073,"d":0.434},{"w":"se","t":36.52,"d":0.092},{"w":"humilló","t":36.626,"d":0.421},{"w":"y","t":37.06,"d":0.079},{"w":"se","t":37.152,"d":0.184},{"w":"hizo","t":37.349,"d":0.276},{"w":"obediente","t":37.639,"d":0.539},{"w":"hasta","t":38.191,"d":0.211},{"w":"la","t":38.415,"d":0.092},{"w":"muerte","t":38.52,"d":0.474},{"w":"Y","t":39.903,"d":0.145},{"w":"qué","t":40.061,"d":0.132},{"w":"pasó","t":40.205,"d":0.303},{"w":"después","t":40.521,"d":0.658},{"w":"Dios","t":42.1,"d":0.382},{"w":"lo","t":42.495,"d":0.079},{"w":"elevó","t":42.587,"d":0.355},{"w":"a","t":42.955,"d":0.039},{"w":"un","t":43.008,"d":0.158},{"w":"puesto","t":43.179,"d":0.368},{"w":"superior","t":43.561,"d":0.658},{"w":"Y","t":45.139,"d":0.171},{"w":"todo","t":45.324,"d":0.342},{"w":"eso","t":45.679,"d":0.316},{"w":"dice","t":46.324,"d":0.263},{"w":"el","t":46.6,"d":0.079},{"w":"versículo","t":46.692,"d":0.618},{"w":"once","t":47.324,"d":0.408},{"w":"para","t":47.995,"d":0.237},{"w":"la","t":48.245,"d":0.105},{"w":"gloria","t":48.363,"d":0.368},{"w":"de","t":48.745,"d":0.118},{"w":"Dios","t":48.876,"d":0.303},{"w":"el","t":49.192,"d":0.132},{"w":"Padre","t":49.337,"d":0.434}];
+// Librería común de las escenas. El constructor la pega dentro de una función que ya
+// define ID (id de la composición), DUR (duración de la escena), LEAD (silencio antes de la
+// voz) y W (palabras de la voz con su tiempo, ya desplazadas por LEAD).
+const root = document.getElementById(ID);
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+// Acepta un selector, un elemento, una NodeList o una lista mezclada de cualquiera de ellos.
+const el = (x) => (typeof x === "string" ? $$(x) : Array.isArray(x) ? x.flatMap((y) => el(y)) : x instanceof NodeList ? Array.from(x) : [x]);
+const tl = gsap.timeline({ paused: true });
+
+// ---------- sincronía con la voz ----------
+const norm = (s) =>
+  s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9ñ]/g, "");
+const WN = W.map((w) => norm(w.w));
+const trozos = (frase) => frase.split(/[\s\-]+/).map(norm).filter(Boolean);
+function buscar(frase, despues) {
+  const p = trozos(frase);
+  for (let i = 0; i < WN.length; i++) {
+    if (W[i].t < (despues || 0) - 0.001) continue;
+    let ok = true;
+    for (let k = 0; k < p.length; k++) if (WN[i + k] !== p[k]) { ok = false; break; }
+    if (ok) return i;
+  }
+  throw new Error(ID + ': no encuentro "' + frase + '" después de ' + despues);
+}
+// Momento en que la voz empieza a decir la frase (primera vez después de `despues`).
+function at(frase, despues) { return W[buscar(frase, despues)].t; }
+// Momento en que la voz termina de decir la frase.
+function fin(frase, despues) {
+  const i = buscar(frase, despues);
+  const w = W[i + trozos(frase).length - 1];
+  return w.t + w.d;
+}
+const FIN_VOZ = W.length ? W[W.length - 1].t + W[W.length - 1].d : DUR;
+
+// ---------- movimientos ----------
+// Todos los elementos que se revelan empiezan ocultos por CSS (.oc, .esc, trazos) y se
+// animan con immediateRender:false, así cada cuadro depende solo del tiempo.
+const IR = { immediateRender: false };
+// El primer movimiento que revela un elemento lo deja oculto desde el cuadro cero.
+const _ocultos = new WeakSet();
+function inicial(els, props) {
+  els.forEach((e) => { if (!_ocultos.has(e)) { _ocultos.add(e); gsap.set(e, props); } });
+  return els;
+}
+function entra(x, t, o = {}) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0, y: o.y ?? 36, x: o.x ?? 0, scale: o.s ?? 1 },
+    { opacity: 1, y: 0, x: 0, scale: 1, duration: o.d ?? 0.6, ease: o.ease ?? "power3.out", stagger: o.st ?? 0, ...IR }, t);
+}
+function sale(x, t, o = {}) {
+  tl.fromTo(el(x), { opacity: 1 }, { opacity: 0, y: o.y ?? -24, duration: o.d ?? 0.45, ease: "power2.in", stagger: o.st ?? 0, ...IR }, t);
+}
+function aparece(x, t, d = 0.5, hasta = 1) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0 }, { opacity: hasta, duration: d, ease: "none", ...IR }, t);
+}
+function atenua(x, t, hasta = 0.25, d = 0.5) {
+  tl.to(el(x), { opacity: hasta, duration: d, ease: "power1.inOut" }, t);
+}
+function desaparece(x, t, d = 0.45) {
+  tl.to(el(x), { opacity: 0, duration: d, ease: "none" }, t);
+}
+function salta(x, t, o = {}) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0, scale: o.desde ?? 0.4, rotation: o.r ?? 0 },
+    { opacity: 1, scale: 1, rotation: 0, duration: o.d ?? 0.55, ease: o.ease ?? "back.out(1.8)", stagger: o.st ?? 0, ...IR }, t);
+}
+// Escritura a mano: se descubre de izquierda a derecha, como si la tiza avanzara.
+function escribe(x, t, d = 0.8, o = {}) {
+  tl.fromTo(inicial(el(x), { clipPath: "inset(-30% 103% -30% -3%)" }), { opacity: 1, clipPath: "inset(-30% 103% -30% -3%)" },
+    { clipPath: "inset(-30% -3% -30% -3%)", opacity: 1, duration: d, ease: "none", stagger: o.st ?? 0, ...IR }, t);
+}
+// Trazo de tiza: la línea se dibuja en vivo.
+const _largos = new Map();
+// Las escenas que no están en pantalla al cargar están ocultas, y ahí getTotalLength()
+// devuelve 0. Se mide una copia del trazo dentro de un SVG auxiliar que sí se dibuja.
+function sonda(p) {
+  let s = document.getElementById("sonda-trazos");
+  if (!s) {
+    s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    s.id = "sonda-trazos";
+    s.setAttribute("style", "position:fixed;left:0;top:0;width:10px;height:10px;visibility:hidden;pointer-events:none");
+    document.body.appendChild(s);
+  }
+  const c = p.cloneNode(false);
+  s.appendChild(c);
+  return c;
+}
+function largo(p) {
+  const c = sonda(p);
+  const L = c.getTotalLength();
+  c.remove();
+  return L;
+}
+function preparaTrazos(x) {
+  el(x).forEach((p) => {
+    if (_largos.has(p)) return;
+    const L = largo(p);
+    _largos.set(p, L);
+    p.style.strokeDasharray = L + " " + (L + 2);
+    p.style.strokeDashoffset = L;
+  });
+}
+function traza(x, t, d = 1, o = {}) {
+  const ps = inicial(el(x), { opacity: 0 });
+  preparaTrazos(ps);
+  tl.fromTo(ps, { strokeDashoffset: (i, p) => _largos.get(p), opacity: 1 },
+    { strokeDashoffset: 0, opacity: 1, duration: d, ease: o.ease ?? "power1.inOut", stagger: o.st ?? 0, ...IR }, t);
+}
+// Un objeto que recorre un trazo mientras se dibuja (Agar, los reyes, Abrán).
+// Los puntos del camino se miden una sola vez al construir; durante el render solo se interpola.
+function medirCamino(path, N = 400) {
+  const p = sonda(el(path)[0]);
+  const L = p.getTotalLength();
+  const pts = [];
+  for (let i = 0; i <= N; i++) { const q = p.getPointAtLength((L * i) / N); pts.push([q.x, q.y]); }
+  p.remove();
+  return pts;
+}
+function ponEnCamino(objs, pts, k) {
+  const N = pts.length - 1;
+  const f = Math.min(N, Math.max(0, k * N)), i = Math.floor(f), r = f - i, j = Math.min(N, i + 1);
+  const x = pts[i][0] + (pts[j][0] - pts[i][0]) * r, y = pts[i][1] + (pts[j][1] - pts[i][1]) * r;
+  objs.forEach((e) => e.setAttribute("transform", "translate(" + x.toFixed(2) + " " + y.toFixed(2) + ")"));
+}
+// Solo el primer recorrido de un objeto fija su posición inicial; los siguientes
+// arrancan donde terminó el anterior.
+const _colocados = new WeakSet();
+function recorre(obj, path, t, d, o = {}) {
+  const pts = typeof path === "string" || path instanceof Element ? medirCamino(path) : path;
+  const objs = el(obj);
+  const st = { k: o.desde ?? 0 };
+  if (!objs.some((e) => _colocados.has(e))) { objs.forEach((e) => _colocados.add(e)); ponEnCamino(objs, pts, st.k); }
+  tl.to(st, { k: o.hasta ?? 1, duration: d, ease: o.ease ?? "power1.inOut", onUpdate: () => ponEnCamino(objs, pts, st.k) }, t);
+}
+function cuenta(x, desde, hasta, t, d, fmt = (v) => Math.round(v).toString()) {
+  const e = el(x)[0];
+  const st = { v: desde };
+  if (!_colocados.has(e)) { _colocados.add(e); e.textContent = fmt(desde); }
+  tl.to(st, { v: hasta, duration: d, ease: "power1.out", onUpdate: () => (e.textContent = fmt(st.v)) }, t);
+}
+function camara(x, t, d, props, ease = "power2.inOut") {
+  tl.to(el(x), { ...props, duration: d, ease }, t);
+}
+// Paneo lento sobre una ilustración (Ken Burns), sin salirse del marco.
+function kb(x, t0, t1, desde, hasta) {
+  tl.fromTo(el(x), { scale: desde.s ?? 1.08, xPercent: desde.x ?? 0, yPercent: desde.y ?? 0 },
+    { scale: hasta.s ?? 1.0, xPercent: hasta.x ?? 0, yPercent: hasta.y ?? 0, duration: Math.max(0.1, t1 - t0), ease: "none" }, t0);
+}
+const fmtMiles = (v) => Math.round(v).toLocaleString("es-CO");
+
+// ---------- piezas repetidas ----------
+// Filtro de tiza para los trazos: borde levemente irregular.
+root.insertAdjacentHTML("afterbegin",
+  '<svg width="0" height="0" style="position:absolute"><defs>' +
+  '<filter id="tz-' + ID + '" x="-5%" y="-5%" width="110%" height="110%">' +
+  '<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>' +
+  '<feDisplacementMap in="SourceGraphic" scale="3"/></filter></defs></svg>');
+const TIZA = "url(#tz-" + ID + ")";
+
+// Tarjeta de capítulo: "Jeremías 37" y su subtítulo.
+function capitulo(x, t0, t1) {
+  const c = el(x)[0];
+  entra(c.querySelector(".num"), t0, { y: 60, d: 0.8 });
+  escribe(c.querySelector(".sub"), t0 + 0.5, 0.9);
+  traza(c.querySelectorAll("path"), t0 + 0.3, 0.8);
+  if (c.querySelector(".edad")) entra(c.querySelector(".edad"), t0 + 0.9, { y: 20 });
+  sale(c, t1, { y: -60, d: 0.6 });
+}
+
+// Entrada y salida de toda la escena: el fondo es común, solo se funde el contenido.
+function marco() {
+  tl.fromTo($(".contenido"), { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none" }, 0);
+  tl.to($(".contenido"), { opacity: 0, duration: 0.5, ease: "none" }, DUR - 0.55);
+}
+
+// Bloques de texto que se reemplazan en el mismo lugar: cada uno entra en su momento y sale
+// justo antes del siguiente. Si `hasta` es null, el último se queda.
+function secuencia(lista, hasta = null, o = {}) {
+  lista.forEach(([s, t], i) => {
+    entra(s, t, { y: o.y ?? 26, d: o.d ?? 0.55 });
+    const sig = i < lista.length - 1 ? lista[i + 1][1] : hasta;
+    if (sig != null) sale(s, sig - 0.4, { d: 0.35 });
+  });
+}
+// Pone marcado SVG dentro de un elemento de la escena.
+function pinta(sel, svg) { $(sel).innerHTML = svg; }
+
+// ---------- mapas ----------
+// Encuadre de cámara: lleva la región {x, y, w, h} de la imagen del mapa a la ventana
+// {x, y, w, h} de la pantalla (relativa al contenedor .mapa), sin deformarla.
+function encuadre(r, v) {
+  const s = Math.min(v.w / r.w, v.h / r.h);
+  return { scale: +s.toFixed(4), x: +(v.x + (v.w - r.w * s) / 2 - r.x * s).toFixed(1), y: +(v.y + (v.h - r.h * s) / 2 - r.y * s).toFixed(1) };
+}
+// Latido de un marcador: crece y vuelve, un número finito de veces.
+function late(x, t, o = {}) {
+  tl.fromTo(el(x), { scale: 1 }, { scale: o.s ?? 1.35, transformOrigin: "50% 50%", duration: o.d ?? 0.35, yoyo: true, repeat: o.n ?? 3, ease: "power1.inOut", immediateRender: false }, t);
+}
+
+// ---------- lecciones ----------
+// Cada lección entra en su momento y sale antes de la siguiente; el número cuenta.
+function lecciones(lista) {
+  const cab = $(".seccion");
+  if (cab) { entra(cab, 0.3, { y: -20 }); traza(".seccion-linea path", 0.6, 1.0); }
+  secuencia(lista, null, { y: 30, d: 0.6 });
+}
+
+
+entra(".cab", 0.3, { y: -10 });
+aparece(".pa", 0.6, 0.4);
+entra(".la", 0.8, { y: 30 });
+secuencia([[".k1", at("Forma, en griego")], [".k2", at("Y la expresión")], [".k3", at("Su actitud fue")]], at("Jesús se humilló"));
+entra(".fuente", at("Forma, en griego") + 0.5, { y: 10 });
+traza(".c1", at("Jesús se humilló"), 1.8);
+aparece(".pb", at("Jesús se humilló") + 1.7, 0.3);
+entra(".lbb", at("hasta la muerte") - 0.4, { y: 30 });
+traza(".c2", at("Dios lo elevó") - 0.3, 1.6);
+aparece(".pc", at("Dios lo elevó") + 1.2, 0.3);
+entra(".lc", at("Dios lo elevó") + 0.4, { y: 30 });
+entra(".gloria", at("Y todo eso"), { y: 30 });
+
+marco();
+window.__timelines[ID] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

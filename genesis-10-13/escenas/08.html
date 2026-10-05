@@ -1,0 +1,69 @@
+<style>
+.mapa.C8 { left: 0; top: 0; width: 1160px; height: 1080px; background: #dfe6d0; }
+.mapa.C8 .cam img, .mapa.C8 .cam svg { width: 1920px; height: 2320px; }
+.funde08 { left: 1040px; }
+.pie08 { left: 24px; top: 20px; max-width: 700px; }
+.col08 { position: absolute; left: 1200px; right: 60px; top: 70px; bottom: 70px; }
+.col08 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.col08 .cita { font-size: 44px; }
+.arb08 svg { width: 100%; display: block; }
+.a8n { font-family: "Fraunces", serif; font-weight: 700; font-size: 50px; text-anchor: middle; fill: var(--tiza); }
+.a8t { font-family: "Caveat", cursive; font-weight: 700; font-size: 38px; text-anchor: middle; }
+</style>
+
+<div class="mapa C8"><div class="cam">
+  <img src="assets/img/b2-canaan.jpg" />
+  <svg viewBox="0 0 1920 2320">
+    <path class="ruta-h co-h" stroke-width="30" d=""/><path class="flecha co" stroke-width="15" d="" stroke="#c0392b"/>
+    <path class="ruta-h su-h" stroke-width="30" d=""/><path class="flecha su" stroke-width="15" d="" stroke="#c0392b"/>
+    <circle class="anillo a-sid" cx="904" cy="248" r="44"/>
+    <circle class="anillo a-gaz" cx="336" cy="1788" r="40"/>
+    <circle class="anillo a-gue" cx="424" cy="1872" r="40"/>
+    <g class="sod"><circle class="hueco" cx="1008" cy="1990" r="56"/><path d="M 1050 2030 L 1086 2052" stroke="#a8321c" stroke-width="5"/><text class="lugar rojo halo" x="1080" y="2100" font-size="62" stroke-width="14">Sodoma, Gomorra,</text><text class="lugar rojo halo" x="1080" y="2170" font-size="62" stroke-width="14">Admá, Zeboyim (?)</text></g>
+  </svg>
+</div></div>
+<div class="funde-der funde08"></div>
+<div class="pie pie08">Mapa: apéndice B2 de la TNM (wol.jw.org) · marcas añadidas · Sodoma y las demás, con “(?)” como en el recuadro del mismo mapa</div>
+
+<div class="col08">
+  <div class="b a1">
+    <div class="def"><div class="t">Canaán<i>Génesis 10:6, 15</i></div><div class="x">“Tierra de <b>Comercio</b>; Tierra del <b>Mercader</b>”</div><div class="s">hijo de Cam, padre de Sidón, de Het y de los pueblos cananeos · <i>Perspicacia</i>, vol. 1, “Canaán”, pág. 405</div></div>
+    <div class="cita v19">“El territorio cananeo iba desde <b>Sidón</b> hasta <b>Guerar</b>, que está cerca de Gaza, y hasta <b>Sodoma, Gomorra, Admá y Zeboyim</b>, cerca de Lasa”<span class="ref">GÉNESIS 10:19</span></div>
+  </div>
+  <div class="b a2">
+    <div class="m rojo md">una idea equivocada</div>
+    <div class="arb08"><svg viewBox="0 0 660 330">
+      <text class="a8n" x="330" y="56">Cam</text>
+      <path class="ra" d="M 330 76 C 330 110 90 100 90 150 M 330 76 C 330 110 250 110 250 150 M 330 76 C 330 110 410 110 410 150 M 330 76 C 330 110 570 100 570 150" fill="none" stroke="rgba(241,233,216,0.6)" stroke-width="5"/>
+      <g class="hs"><text class="a8n" x="90" y="200">Cus</text><text class="a8n" x="250" y="200">Mizraim</text><text class="a8n" x="410" y="200">Put</text><text class="a8n" x="570" y="200" style="fill:#f29b85">Canaán</text></g>
+      <g class="tg1"><rect x="14" y="228" width="152" height="92" rx="18" fill="rgba(147,187,239,0.14)" stroke="#93bbef" stroke-width="3"/><text class="a8t" x="90" y="266" style="fill:#cfe0f7">de él, la</text><text class="a8t" x="90" y="304" style="fill:#cfe0f7">raza negra</text></g>
+      <g class="tg3"><rect x="334" y="228" width="152" height="92" rx="18" fill="rgba(147,187,239,0.14)" stroke="#93bbef" stroke-width="3" stroke-dasharray="10 7"/><text class="a8t" x="410" y="266" style="fill:#cfe0f7">quizás</text><text class="a8t" x="410" y="304" style="fill:#cfe0f7">también</text></g>
+      <g class="tg2"><rect x="494" y="228" width="152" height="92" rx="18" fill="rgba(236,138,103,0.16)" stroke="#ec8a67" stroke-width="3"/><text class="a8t" x="570" y="266" style="fill:#f7b8a3">la maldición</text><text class="a8t" x="570" y="304" style="fill:#f7b8a3">(9:25)</text></g>
+    </svg></div>
+    <div class="cita sm">“los descendientes de Canaán, sobre quien recayó la maldición, <b>no fueron de raza negra</b>. La raza negra descendió de Cus y posiblemente de Put, otros hijos de Cam que no estuvieron relacionados ni con el incidente ni con la maldición”<span class="ref">PERSPICACIA, VOL. 1, “CAM”, PÁG. 397</span></div>
+  </div>
+</div>
+
+<script>
+const P = (u, v) => [((u - 140) * 16).toFixed(0), ((v - 225) * 16).toFixed(0)].join(" ");
+const COSTA = "M " + [[196, 240], [189.5, 254], [184, 270], [180.5, 287], [177, 300], [172, 314], [166.5, 326], [161, 336.75], [166.5, 342]].map((p) => P(...p)).join(" L ");
+const SUR = "M " + [[166.5, 342], [176, 347], [190, 349], [202.5, 349.5]].map((p) => P(...p)).join(" L ");
+$(".co-h").setAttribute("d", COSTA); $(".co").setAttribute("d", COSTA);
+$(".su-h").setAttribute("d", SUR); $(".su").setAttribute("d", SUR);
+const V = { x: 0, y: 0, w: 1160, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 120, y: 190, w: 1600, h: 2120 }, V), 0);
+aparece(".pie08", 0.6, 0.5);
+secuencia([[".a1", 0.4], [".a2", at("Esto desmiente")]]);
+entra(".v19", at("versículo diecinueve") - 0.2, { y: 20 });
+traza(".a-sid", at("desde Sidón"), 0.6);
+traza([".co-h", ".co"], at("hasta Guerar") - 0.4, 1.4, { ease: "none" });
+traza([".a-gue", ".a-gaz"], at("cerca de Gaza") - 0.3, 0.5, { st: 0.2 });
+traza([".su-h", ".su"], at("hasta Sodoma") - 0.3, 1.0, { ease: "none" });
+aparece(".sod", at("Sodoma") + 0.4, 0.5);
+aparece(".a2 .ra", at("Esto desmiente"), 0.5);
+entra(".hs", at("Esto desmiente") + 0.3, { y: 12 });
+entra(".tg2", at("recayó sobre Canaán") - 0.2, { y: 12 });
+entra(".tg1", at("de Cus") - 0.2, { y: 12 });
+entra(".tg3", at("de Put") - 0.2, { y: 12 });
+entra(".a2 .cita", at("La raza negra", at("recayó")) - 0.3, { y: 16 });
+</script>

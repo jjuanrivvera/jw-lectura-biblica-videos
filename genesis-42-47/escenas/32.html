@@ -1,0 +1,92 @@
+<style>
+.grupos32 { position: absolute; left: 70px; right: 70px; top: 250px; height: 480px; display: grid; grid-template-columns: 518px 296px 296px 296px; justify-content: space-between; }
+.gp { position: relative; }
+.gp .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c); white-space: nowrap; }
+.gp .t b { font-family: "Fraunces", serif; font-size: 48px; letter-spacing: 0; margin-left: 10px; color: var(--tiza); }
+.gp .pts { position: relative; margin-top: 16px; display: grid; grid-template-columns: repeat(var(--cols), 60px); gap: 14px; }
+.pt { width: 60px; height: 60px; border-radius: 50%; background: var(--c); box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4); position: relative; display: flex; align-items: center; justify-content: center; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 24px; color: #17212b; }
+.pt.mujer { box-shadow: 0 0 0 5px #f1e9d8, 0 6px 14px rgba(0, 0, 0, 0.4); }
+.pt.jac { background: #f1e9d8; }
+.pt .x { position: absolute; inset: -6px; }
+.pt .x path { stroke: #c0392b; stroke-width: 8; stroke-linecap: round; }
+.cont32 { position: absolute; right: 80px; top: 92px; display: flex; align-items: baseline; gap: 16px; }
+.cont32 .cifra { font-size: 150px; }
+.cont32 .u { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; }
+.tit32 { position: absolute; left: 80px; top: 110px; }
+.tit32 .m { font-size: 64px; }
+.bajo32 { position: absolute; left: 70px; right: 70px; top: 780px; height: 250px; }
+.bajo32 > .b { position: absolute; inset: 0; display: grid; gap: 22px; align-items: stretch; }
+.bajo32 .tj .x { font-size: 34px; }
+.ley32 { position: absolute; left: 80px; top: 196px; display: flex; gap: 30px; font-family: "Caveat", cursive; font-weight: 700; font-size: 38px; color: var(--tenue); }
+</style>
+
+<div class="cab"><span class="cap">Génesis 46</span><span>versículos 8 al 27</span></div>
+<div class="tit32"><div class="m">los que entraron en Egipto</div></div>
+<div class="ley32"><span class="lg1">○ blanco: las dos mujeres, Dina y Sérah</span><span class="lg2" style="color:var(--rojo)">× Er y Onán, muertos en Canaán</span></div>
+<div class="cont32"><span class="cifra"><span class="num32">0</span></span><span class="u">personas</span></div>
+<div class="grupos32"></div>
+<div class="bajo32">
+  <div class="b a1" style="grid-template-columns: 1fr 1fr">
+    <div class="tj t66"><div class="k">46:26 · 66</div><div class="x">los que entraron <b>con</b> Jacob, sin las esposas de sus hijos</div></div>
+    <div class="tj on t70"><div class="k">46:27 · 70</div><div class="x">con Jacob, y con José y sus dos hijos, que <b>ya estaban</b> en Egipto</div><div class="ref"><i>La Atalaya</i>, 15 de septiembre de 1983, pág.&nbsp;31</div></div>
+  </div>
+  <div class="b a2" style="grid-template-columns: 1fr 1fr 1fr">
+    <div class="tj on s75"><div class="k">Hechos 7:14 · 75</div><div class="x">la cifra de la <b>Septuaginta</b>, la traducción griega que se leía en tiempos de Esteban</div></div>
+    <div class="tj s75a"><div class="k">quizá</div><div class="x">los hijos y nietos de Manasés y Efraín (Gé 46:20 en la Septuaginta)</div></div>
+    <div class="tj s75b"><div class="k">o quizá</div><div class="x">las esposas de los hijos de Jacob</div><div class="ref">nota de estudio de Hechos 7:14</div></div>
+  </div>
+</div>
+<div class="pp32" style="position:absolute; left:80px; top:740px"><span class="propio chico">Jacob en el grupo de Lea: así cuadran el 33 y el 66 (observación propia)</span></div>
+
+<script>
+// Las cuatro madres y sus descendientes en el orden de la lista (46:8-25).
+const G = [
+  ["lea", "Lea", 7, ["Ru", "Ha", "Pa", "He", "Ca", "Si", "Je", "Ja", "Oh", "Ja", "Zó", "Sh", "Le", "Gu", "Co", "Me", "Ju", "Er", "On", "Se", "Pé", "Zé", "He", "Ha", "Is", "To", "Pu", "Yo", "Si", "Za", "Sé", "El", "Ja", "Di", "J"]],
+  ["zilpa", "Zilpá", 4, ["Ga", "Zi", "Ha", "Su", "Ez", "Er", "Ar", "Ar", "As", "Im", "Is", "Is", "Be", "Sé", "Hé", "Ma"]],
+  ["raquel", "Raquel", 4, ["Jo", "Ma", "Ef", "Be", "Be", "Bé", "As", "Gu", "Na", "Eh", "Ro", "Mu", "Hu", "Ar"]],
+  ["bilha", "Bilhá", 4, ["Da", "Hu", "Ne", "Ja", "Gu", "Jé", "Si"]],
+];
+const CUENTA = { lea: 33, zilpa: 16, raquel: 14, bilha: 7 };
+$(".grupos32").innerHTML = G.map(([k, n, cols, lista]) => `<div class="gp ${k} g-${k}"><div class="t">${n}<b class="cg">${CUENTA[k]}</b></div><div class="pts" style="--cols:${cols}">` +
+  lista.map((s, i) => {
+    const esp = (k === "lea" && (i === 17 || i === 18)) ? " muerto" : (k === "lea" && i === 34) ? " jac" : (k === "raquel" && i < 3) ? " egipto" : "";
+    const muj = (k === "lea" && i === 33) || (k === "zilpa" && i === 13) ? " mujer" : "";
+    return `<div class="pt${esp}${muj}">${k === "lea" && i === 34 ? "J" : ""}${esp === " muerto" ? '<svg class="x" viewBox="0 0 72 72"><path d="M 10 10 L 62 62 M 62 10 L 10 62"/></svg>' : ""}</div>`;
+  }).join("") + `</div></div>`).join("");
+const tL = at("treinta y tres de Lea");
+entra(".tit32", 0.3, { y: 16 });
+aparece(".cont32", 0.6, 0.5);
+const orden = [["lea", tL], ["zilpa", at("dieciséis de Zilpá")], ["raquel", at("catorce de Raquel")], ["bilha", at("siete de Bilhá")]];
+let acum = 0;
+orden.forEach(([k, t]) => {
+  const pts = $$(`.g-${k} .pt`).filter((p) => !p.classList.contains("muerto"));
+  entra(`.g-${k} .t`, t - 0.2, { y: 12 });
+  salta(pts, t - 0.1, { desde: 0.3, st: 1.2 / pts.length, d: 0.3 });
+  cuenta(".num32", acum, acum + CUENTA[k], t, 1.2);
+  acum += CUENTA[k];
+});
+// Er y Onán: aparecen tachados; Jacob entra al grupo de Lea y el total llega a setenta.
+const tE = at("Er y Onán");
+salta($$(".g-lea .muerto"), tE - 0.1, { desde: 0.3, st: 0.2 });
+aparece(".lg2", tE + 0.3, 0.4);
+aparece(".lg1", at("dieciséis de Zilpá") + 1.2, 0.4);
+tl.to($$(".g-lea .muerto"), { opacity: 0.3, duration: 0.5 }, tE + 1.4);
+late(".g-lea .jac", at("Jacob sí"), { s: 1.3, n: 3 });
+aparece(".pp32", at("Jacob sí") + 0.6, 0.5);
+// 66 y 70.
+const t66 = at("El versículo veintiséis");
+const egip = [$(".g-lea .jac"), ...$$(".g-raquel .egipto")];
+tl.to(egip, { opacity: 0.25, scale: 0.8, duration: 0.5 }, at("sesenta y seis"));
+cuenta(".num32", 70, 66, at("sesenta y seis"), 0.8);
+entra(".t66", t66, { y: 20 });
+tl.to(egip, { opacity: 1, scale: 1.12, duration: 0.5, ease: "back.out(2)" }, at("Con Jacob, y con José"));
+cuenta(".num32", 66, 70, at("Con Jacob, y con José") + 0.2, 0.8);
+entra(".t70", at("Con Jacob, y con José"), { y: 20 });
+sale(".pp32", t66, { y: -10 });
+// 75.
+const t75 = at("Esteban dijo");
+secuencia([[".a1", t66 - 0.1], [".a2", t75 - 0.2]]);
+cuenta(".num32", 70, 75, at("setenta y cinco"), 0.9);
+entra(".s75a", at("Quizá contaba"), { y: 20 });
+entra(".s75b", at("o a las esposas"), { y: 20 });
+</script>

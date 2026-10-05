@@ -1,0 +1,52 @@
+<style>
+.f-v .foto { background: transparent; left: 80px; top: 170px; width: 1180px; height: 664px; }
+.f-v .foto .fr { position: absolute; inset: 0; }
+.col { left: 1320px; right: 70px; width: auto; top: 150px; bottom: 120px; }
+.col .m { font-size: 66px; }
+.col .m.s3 { color: var(--s3); }
+.col .s { font-size: 30px; }
+.col .cita { font-size: 46px; }
+.lugar11 { position: absolute; left: 80px; top: 860px; width: 1180px; display: flex; gap: 18px; align-items: baseline; }
+.lugar11 .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.16em; color: var(--s3); }
+.lugar11 .x { font-family: "Fraunces", serif; font-weight: 500; font-size: 30px; color: var(--tenue); }
+</style>
+
+<div class="cabs c3"><span class="k">Señal 3</span><span class="t">Dispuesto a dar su vida</span></div>
+<svg class="cabs-linea c3" viewBox="0 0 520 12"><path d="M 4 6 C 160 2 360 10 516 5"/></svg>
+
+<div class="fase f-v">
+  <div class="foto">
+    <div class="fr r1"><img src="assets/img/v184-027.jpg" /><div class="min">0:27</div></div>
+    <div class="fr r2"><img src="assets/img/v184-012.jpg" /><div class="min">0:12 · Lloyd</div></div>
+    <div class="fr r3"><img src="assets/img/v184-076.jpg" /><div class="min">1:16</div></div>
+    <div class="fr r4"><img src="assets/img/v184-094.jpg" /><div class="min">1:34</div></div>
+    <div class="fr r5"><img src="assets/img/v184-133.jpg" /><div class="min">2:13</div></div>
+  </div>
+  <div class="lugar11"><span class="k">MALAUI</span><span class="x">Video “Estaba dispuesto a dar su vida”, <i>¡Disfrute de la vida para siempre!</i>, lección 18</span></div>
+  <div class="col">
+    <div class="b b1"><div class="m s3">la obra, prohibida</div><div class="s">Perseguidos por todo el país porque se negaban a participar en la política.</div></div>
+    <div class="b b2"><div class="m">casas quemadas, cosechas confiscadas</div></div>
+    <div class="b b3"><div class="m">el hermano Johansson, de la sucursal, y <b>Lloyd</b></div><div class="s">Viajaban para animar a los hermanos.</div></div>
+    <div class="b b4"><div class="m">junto a un río, unos soldados</div><div class="s">“Tú puedes pasar, pero primero tenemos que matar al hombre blanco.”</div></div>
+    <div class="b b5"><div class="cita cc c3">“Nadie tiene amor más grande que quien da su vida por sus amigos.”<span class="ref">JUAN 15:13</span></div><div class="m s3">“¡Mátenme a mí, no a él!”</div></div>
+    <div class="b b6"><div class="m">a la vuelta, Johansson salvó a Lloyd</div><div class="s">En otro control, acelerando a tiempo.</div></div>
+    <div class="b b7"><div class="m s3">de distinta raza, cada uno dispuesto a arriesgar la vida por el otro</div></div>
+  </div>
+</div>
+
+<script>
+const t0 = at("Ese amor se ha visto");
+cabSenal(3, t0);
+aparece(".r1", t0, 0.8);
+aparece(".lugar11", t0 + 0.6, 0.5);
+aparece(".r2", at("El hermano Johansson", 0), 0.6);
+aparece(".r3", at("Junto a un río"), 0.6);
+aparece(".r4", at("y se puso delante"), 0.6);
+aparece(".r5", at("A la vuelta"), 0.6);
+[["r1", at("El hermano Johansson", 0)], ["r2", at("Junto a un río")], ["r3", at("y se puso delante")], ["r4", at("A la vuelta")]]
+  .forEach(([r, t]) => desaparece("." + r, t + 0.7, 0.1));
+kb(".foto .fr img", t0, DUR, { s: 1.07 }, { s: 1.0 });
+secuencia([[".b1", at("En Malaui")], [".b2", at("les quemaron las casas")], [".b3", at("El hermano Johansson", 0)], [".b4", at("Junto a un río")],
+  [".b5", at("Lloyd se acordó")], [".b6", at("A la vuelta")], [".b7", at("De distinta raza")]]);
+entra(".b5 .m", at("Mátenme a mí"), { y: 20 });
+</script>

@@ -1,0 +1,320 @@
+[
+ {
+  "num": "00",
+  "titulo": "Apertura",
+  "start": 0,
+  "dur": 44.232
+ },
+ {
+  "num": "01",
+  "titulo": "La historia de Jacob",
+  "start": 44.232,
+  "dur": 31.752
+ },
+ {
+  "num": "02",
+  "titulo": "Trece años",
+  "start": 75.984,
+  "dur": 24.216
+ },
+ {
+  "num": "03",
+  "titulo": "Un mal informe",
+  "start": 100.2,
+  "dur": 38.928
+ },
+ {
+  "num": "04",
+  "titulo": "La túnica especial",
+  "start": 139.128,
+  "dur": 38.904
+ },
+ {
+  "num": "05",
+  "titulo": "Las gavillas",
+  "start": 178.032,
+  "dur": 35.112
+ },
+ {
+  "num": "06",
+  "titulo": "El sol, la luna y once estrellas",
+  "start": 213.144,
+  "dur": 30.96
+ },
+ {
+  "num": "07",
+  "titulo": "De Hebrón a Dotán",
+  "start": 244.104,
+  "dur": 48.528
+ },
+ {
+  "num": "08",
+  "titulo": "La cisterna",
+  "start": 292.632,
+  "dur": 46.56
+ },
+ {
+  "num": "09",
+  "titulo": "La caravana de Galaad",
+  "start": 339.192,
+  "dur": 40.392
+ },
+ {
+  "num": "10",
+  "titulo": "Veinte piezas de plata",
+  "start": 379.584,
+  "dur": 38.76
+ },
+ {
+  "num": "11",
+  "titulo": "La túnica con sangre",
+  "start": 418.344,
+  "dur": 48.6
+ },
+ {
+  "num": "12",
+  "titulo": "Camino de Egipto",
+  "start": 466.944,
+  "dur": 31.512
+ },
+ {
+  "num": "13",
+  "titulo": "Hebrón y Siquem hoy",
+  "start": 498.456,
+  "dur": 27.864
+ },
+ {
+  "num": "14",
+  "titulo": "Dotán hoy",
+  "start": 526.32,
+  "dur": 36.168
+ },
+ {
+  "num": "15",
+  "titulo": "La Vía del Mar hoy",
+  "start": 562.488,
+  "dur": 23.4
+ },
+ {
+  "num": "16",
+  "titulo": "Por qué está aquí",
+  "start": 585.888,
+  "dur": 30.552
+ },
+ {
+  "num": "17",
+  "titulo": "Judá baja a Adulam",
+  "start": 616.44,
+  "dur": 34.248
+ },
+ {
+  "num": "18",
+  "titulo": "El matrimonio de cuñado",
+  "start": 650.688,
+  "dur": 54.84
+ },
+ {
+  "num": "19",
+  "titulo": "Onán y Selá",
+  "start": 705.528,
+  "dur": 41.112
+ },
+ {
+  "num": "20",
+  "titulo": "El anillo, el cordón y la vara",
+  "start": 746.64,
+  "dur": 50.136
+ },
+ {
+  "num": "21",
+  "titulo": "Más justa que yo",
+  "start": 796.776,
+  "dur": 45.48
+ },
+ {
+  "num": "22",
+  "titulo": "Pérez y Zérah",
+  "start": 842.256,
+  "dur": 38.64
+ },
+ {
+  "num": "23",
+  "titulo": "Adulam hoy",
+  "start": 880.896,
+  "dur": 26.016
+ },
+ {
+  "num": "24",
+  "titulo": "Timná, Enaim y Aczib hoy",
+  "start": 906.912,
+  "dur": 32.616
+ },
+ {
+  "num": "25",
+  "titulo": "Potifar",
+  "start": 939.528,
+  "dur": 33.384
+ },
+ {
+  "num": "26",
+  "titulo": "A cargo de todo",
+  "start": 972.912,
+  "dur": 35.328
+ },
+ {
+  "num": "27",
+  "titulo": "Algo tan malo",
+  "start": 1008.24,
+  "dur": 50.448
+ },
+ {
+  "num": "28",
+  "titulo": "La prisión del rey",
+  "start": 1058.688,
+  "dur": 43.392
+ },
+ {
+  "num": "29",
+  "titulo": "Jehová siguió con él",
+  "start": 1102.08,
+  "dur": 32.688
+ },
+ {
+  "num": "30",
+  "titulo": "El copero y el panadero",
+  "start": 1134.768,
+  "dur": 45.504
+ },
+ {
+  "num": "31",
+  "titulo": "La vid y las canastas",
+  "start": 1180.272,
+  "dur": 39.456
+ },
+ {
+  "num": "32",
+  "titulo": "El cumpleaños del faraón",
+  "start": 1219.728,
+  "dur": 41.136
+ },
+ {
+  "num": "33",
+  "titulo": "Acuérdate de mí",
+  "start": 1260.864,
+  "dur": 31.152
+ },
+ {
+  "num": "34",
+  "titulo": "Siete vacas y siete espigas",
+  "start": 1292.016,
+  "dur": 40.152
+ },
+ {
+  "num": "35",
+  "titulo": "La crecida del Nilo",
+  "start": 1332.168,
+  "dur": 44.664
+ },
+ {
+  "num": "36",
+  "titulo": "Trigo y viento del este",
+  "start": 1376.832,
+  "dur": 26.4
+ },
+ {
+  "num": "37",
+  "titulo": "Yo no soy nadie",
+  "start": 1403.232,
+  "dur": 35.928
+ },
+ {
+  "num": "38",
+  "titulo": "Siete y siete",
+  "start": 1439.16,
+  "dur": 31.92
+ },
+ {
+  "num": "39",
+  "titulo": "Los graneros",
+  "start": 1471.08,
+  "dur": 37.056
+ },
+ {
+  "num": "40",
+  "titulo": "El segundo de Egipto",
+  "start": 1508.136,
+  "dur": 40.152
+ },
+ {
+  "num": "41",
+  "titulo": "Nombre nuevo y esposa",
+  "start": 1548.288,
+  "dur": 31.68
+ },
+ {
+  "num": "42",
+  "titulo": "Treinta años y dos hijos",
+  "start": 1579.968,
+  "dur": 33.456
+ },
+ {
+  "num": "43",
+  "titulo": "Hambre en toda la tierra",
+  "start": 1613.424,
+  "dur": 27.6
+ },
+ {
+  "num": "44",
+  "titulo": "On hoy",
+  "start": 1641.024,
+  "dur": 35.64
+ },
+ {
+  "num": "45",
+  "titulo": "La ropa y el engaño",
+  "start": 1676.664,
+  "dur": 39.624
+ },
+ {
+  "num": "46",
+  "titulo": "Judá, y Dios con José",
+  "start": 1716.288,
+  "dur": 35.976
+ },
+ {
+  "num": "47",
+  "titulo": "Lecciones de Génesis 37",
+  "start": 1752.264,
+  "dur": 41.784
+ },
+ {
+  "num": "48",
+  "titulo": "Lecciones de Génesis 38",
+  "start": 1794.048,
+  "dur": 32.448
+ },
+ {
+  "num": "49",
+  "titulo": "Lecciones de Génesis 39",
+  "start": 1826.496,
+  "dur": 36.576
+ },
+ {
+  "num": "50",
+  "titulo": "Lecciones de Génesis 40",
+  "start": 1863.072,
+  "dur": 34.248
+ },
+ {
+  "num": "51",
+  "titulo": "Lecciones de Génesis 41",
+  "start": 1897.32,
+  "dur": 41.064
+ },
+ {
+  "num": "52",
+  "titulo": "Cierre",
+  "start": 1938.384,
+  "dur": 12.328
+ }
+]

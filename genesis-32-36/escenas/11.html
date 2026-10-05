@@ -1,0 +1,20 @@
+<style>
+.mapa .cam img, .mapa .cam svg { width: 2880px; height: 1800px; }
+.dato .v { font-size: 64px; }
+</style>
+<!--incluir:_jaboc.html-->
+<div class="cab sobre"><span class="cap">El Jaboc hoy</span><span>Génesis 32:22 · Números 21:24</span></div>
+<div class="col der">
+  <div class="b a1"><div class="m xl" style="color:var(--cielo)">río Zarqa</div><div class="m md">en Jordania</div><div class="def"><div class="t">Wadi Zarqa</div><div class="x">“<b>Valle Torrencial Azul</b>”</div><div class="s">quizás por su color azul grisáceo visto desde lejos · <i>Perspicacia</i>, vol. 2, “Jaboq”, pág. 7</div></div></div>
+  <div class="b a2"><div class="m">en la Biblia, siguió siendo <b>frontera</b></div><div class="m md">entre los ammonitas y los amorreos</div><div class="f">Números 21:24 · <i>Perspicacia</i>, vol. 2, pág. 7</div></div>
+  <div class="b a3"><span class="externa">fuente externa · Wikipedia</span><div class="dato"><div class="v">2.º</div><div class="k">afluente del Jordán bajo, después del Yarmuk</div></div><div class="dato"><div class="k">pasa por Zarqa, la segunda ciudad de Jordania; la presa del rey Talal riega unas 17.000 hectáreas del valle</div></div></div>
+  <div class="b a4"><span class="externa">fuente externa · Wikipedia</span><div class="m rojo">muy contaminado</div><div class="m md">recibe aguas residuales tratadas de Ammán y de Zarqa: su agua solo sirve para riego</div><div class="f">aquel río de “aguas poco profundas y fácilmente vadeables” (<i>Perspicacia</i>)</div></div>
+</div>
+<script>
+pinta(".marcas", `<text class="lugar azul halo zq" x="1560" y="1330" font-size="110" stroke-width="20">hoy: río Zarqa</text>`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 420, y: 0, w: 1870, h: 1800 }, V), 0);
+traza(".jb", 0.4, 2.0);
+entra(".zq", at("es el Zarca") - 0.3, { y: 20 });
+secuencia([[".a1", 0.5], [".a2", at("En la Biblia")], [".a3", at("Hoy es el")], [".a4", at("Pero está")]]);
+</script>

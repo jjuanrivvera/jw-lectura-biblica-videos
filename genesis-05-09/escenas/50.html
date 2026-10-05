@@ -1,0 +1,33 @@
+<style>
+.fondo { position: absolute; inset: 0; overflow: hidden; }
+.fondo .kb { position: absolute; inset: 0; }
+.fondo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.velo { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(23,33,43,0.94) 0%, rgba(23,33,43,0.82) 45%, rgba(23,33,43,0.15) 100%); }
+.cierre { position: absolute; left: 110px; top: 250px; width: 1000px; display: flex; flex-direction: column; gap: 34px; }
+.cierre .m { font-size: 84px; }
+.cierre .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 110px; line-height: 1; }
+.cierre .t b { color: var(--oro); }
+.fin { position: absolute; left: 110px; bottom: 60px; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.3em; color: var(--tenue); }
+.pie { position: absolute; right: 30px; bottom: 24px; font-size: 20px; color: #1b2733; background: rgba(255,255,255,0.7); padding: 4px 12px; border-radius: 8px; }
+</style>
+
+<div class="fondo"><div class="kb"><img src="assets/img/arcoiris.jpg" style="object-position: 50% 30%"/></div></div>
+<div class="velo"></div>
+<div class="cierre">
+  <div class="t">después de <b>la lluvia</b></div>
+  <div class="m c1">la próxima vez que salga un arco iris, recordemos Génesis 9</div>
+  <div class="m oro c2">Jehová lo puso ahí para eso</div>
+</div>
+<div class="fin">GÉNESIS 5 AL 9</div>
+<div class="pie">Lecciones que aprendo de la Biblia, lección 6</div>
+
+<script>
+aparece(".fondo", 0.2, 1.2);
+kb(".fondo .kb", 0, DUR, { s: 1.15, x: -3 }, { s: 1.0, x: 0 });
+aparece(".velo", 0.2, 1.0);
+entra(".cierre .t", 0.6, { y: 30, d: 0.9 });
+entra(".c1", at("La próxima vez"), { y: 20 });
+entra(".c2", at("Jehová lo puso"), { y: 20 });
+entra(".fin", FIN_VOZ + 0.6, { y: 10 });
+aparece(".pie", 1.0, 0.6);
+</script>

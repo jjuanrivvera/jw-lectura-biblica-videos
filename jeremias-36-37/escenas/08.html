@@ -1,0 +1,68 @@
+<style>
+.zv { top: 150px; height: 900px; }
+.sellog { position: absolute; left: 0; right: 0; top: 190px; height: 700px; }
+.sellog svg { width: 1080px; height: 700px; }
+.arbol { position: absolute; left: 0; top: 150px; width: 1080px; height: 900px; }
+.arbol svg { position: absolute; inset: 0; width: 1080px; height: 900px; }
+.arbol path { fill: none; stroke: rgba(239,231,214,0.55); stroke-width: 5; stroke-linecap: round; }
+.nodo { position: absolute; width: 330px; text-align: center; }
+.nodo .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 60px; line-height: 1; }
+.nodo .d { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; line-height: 1.02; color: var(--verde); margin-top: 8px; }
+.nodo .v { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 26px; color: var(--tenue); margin-top: 6px; }
+.nodo.malo .d { color: var(--rojo); }
+.n-saf { left: 375px; top: 10px; }
+.n-saf .d { color: var(--oro); }
+.n-ahi { left: 20px; top: 300px; }
+.n-gue { left: 375px; top: 300px; }
+.n-jaa { left: 730px; top: 300px; }
+.n-mic { left: 180px; top: 620px; }
+.n-ged { left: 570px; top: 620px; }
+.gen { position: absolute; left: 20px; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.16em; color: var(--tenue); }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 36</span><span>la familia de Safán</span></div>
+<div class="sellog"><svg viewBox="0 0 1080 700"><g class="dib"></g></svg></div>
+
+<div class="arbol">
+  <svg viewBox="0 0 1080 900"><path class="l1" d="M 540 190 L 540 250 M 185 290 L 185 250 L 895 250 L 895 290 M 540 250 L 540 290"/><path class="l2" d="M 185 540 L 185 575 L 895 575 L 895 540 M 345 575 L 345 610 M 735 575 L 735 610" stroke-dasharray="4 14"/></svg>
+  <div class="nodo n-saf"><div class="n">Safán</div><div class="d">le leyó la Ley a Josías</div><div class="v">2 REYES 22:10</div></div>
+  <div class="nodo n-ahi"><div class="n">Ahicam</div><div class="d">salvó a Jeremías de la muerte</div><div class="v">JEREMÍAS 26:24</div></div>
+  <div class="nodo n-gue"><div class="n">Guemarías</div><div class="d">prestó el comedor; rogó por el rollo</div><div class="v">JEREMÍAS 36:10, 25</div></div>
+  <div class="nodo n-jaa malo"><div class="n">Jaazanías</div><div class="d">entre los idólatras</div><div class="v">EZEQUIEL 8:11</div></div>
+  <div class="nodo n-mic"><div class="n">Micaya</div><div class="d">llevó el mensaje al palacio</div><div class="v">JEREMÍAS 36:11-13</div></div>
+  <div class="nodo n-ged"><div class="n">Guedalías</div><div class="d">recibió a Jeremías tras la caída</div><div class="v">JEREMÍAS 39:14</div></div>
+  <div class="gen g1" style="top:585px">NIETOS</div>
+  <div class="gen g2" style="top:262px">HIJOS</div>
+</div>
+
+<div class="zt">
+  <div class="b b1"><div class="m">Guemarías no es un personaje de cuento</div></div>
+  <div class="b b2"><div class="cita">“Propiedad de Guemarías [...], hijo de Safán”</div><div class="s">Sello en un pedazo de arcilla hallado en Jerusalén, siglo VII antes de nuestra era · Perspicacia, “Guemarías”</div></div>
+  <div class="b b3"><div class="m">Safán le leyó la Ley a Josías, y Josías <span style="color:var(--oro)">“se rasgó la ropa”</span></div><div class="s">2 Reyes 22:10, 11</div></div>
+  <div class="b b4"><div class="m oro">Tres generaciones cerca de la palabra de Jehová</div><div class="s">Perspicacia, “Safán”</div></div>
+  <div class="b b5"><div class="m">La excepción: <span style="color:var(--rojo)">Jaazanías</span></div><div class="s">Ezequiel 8:11 · Perspicacia, “Safán”</div></div>
+</div>
+
+<script>
+/*incluir:_dibujos.js*/
+root.insertAdjacentHTML("afterbegin", '<svg width="0" height="0" style="position:absolute">' + defsDibujos() + "</svg>");
+pinta(".dib", `<path d="M 380 330 C 300 420 260 520 230 640 M 700 330 C 780 420 820 520 850 640" fill="none" stroke="#7a4b24" stroke-width="12" stroke-linecap="round"/>` + bula(540, 330, 2.1, "bula"));
+salta(".bula", at("Perspicacia informa"), { desde: 0.5 });
+traza(".dib > path", at("cerraba un documento"), 1.0);
+tl.fromTo($(".bula .marca"), { opacity: 0.2 }, { opacity: 1, duration: 0.8, immediateRender: false }, at("con un sello"));
+sale(".sellog", at("Safán fue") - 0.5, { d: 0.5 });
+
+entra(".n-saf", at("Safán fue"), { y: -20 });
+traza(".arbol .l1", at("Perspicacia reúne"), 1.2);
+aparece(".g2", at("Perspicacia reúne") + 0.6);
+entra(".n-ahi", at("Su hijo Ahicam"), { y: 20 });
+entra(".n-gue", at("Su hijo Guemarías"), { y: 20 });
+traza(".arbol .l2", at("Su nieto"), 1.0);
+tl.set($(".arbol .l2"), { strokeDasharray: "4 14", strokeDashoffset: 0 }, at("Su nieto") + 1.05);
+aparece(".g1", at("Su nieto") + 0.4);
+entra(".n-mic", at("Su nieto"), { y: 20 });
+entra(".n-ged", at("otro nieto"), { y: 20 });
+entra(".n-jaa", at("La excepción"), { y: 20 });
+
+secuencia([[".b1", 0.6], [".b2", at("Perspicacia informa")], [".b3", at("Safán fue")], [".b4", at("Perspicacia reúne")], [".b5", at("La excepción")]]);
+</script>

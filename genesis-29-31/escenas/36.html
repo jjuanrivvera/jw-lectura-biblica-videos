@@ -1,0 +1,21 @@
+<style>
+.tb { position: absolute; left: 60px; top: 120px; width: 700px; height: 820px; }
+.col { top: 120px; bottom: 90px; right: 64px; width: 1040px; }
+.col .m { font-size: 70px; }
+.dos-r { display: grid; grid-template-columns: 1fr 1fr; column-gap: 26px; }
+.dos-r .dato .v { font-size: 44px; font-family: "Caveat"; }
+</style>
+<div class="cab"><span class="cap">Génesis 31</span><span>versículos 30 al 32</span></div>
+<svg class="tb" viewBox="0 0 700 820"></svg>
+<div class="col">
+  <div class="b a1"><div class="m">Nuzi: miles de <b style="color:var(--oro)">tablillas de arcilla</b> con contratos</div><div class="s">cerca de Kirkuk (Irak) · Perspicacia, vol. 2, “Labán”, pág. 177</div></div>
+  <div class="b a2"><div class="cita md">“si un yerno poseía los dioses de la familia, tenía derecho a reclamar legalmente la herencia de su suegro fallecido”</div><div class="s">Perspicacia, vol. 2, “Terafim”, pág. 1105</div><div class="m">los terafim = un <b style="color:var(--oro)">título de propiedad</b></div><div class="s">“explicaría el desmesurado interés de Labán por recuperarlos” · ibíd.</div></div>
+  <div class="b a3"><div class="m">¿Por qué se los llevó Raquel? <b style="color:var(--oro)">No se sabe con seguridad.</b></div><div class="dos-r"><div class="dato"><div class="k">quizá</div><div class="v">que Jacob tuviera parte en la herencia, “como hijo adoptivo”</div></div><div class="dato"><div class="k">o quizá</div><div class="v">impedir que Labán reclamara lo que Jacob había ganado</div></div></div><div class="s">Perspicacia, vol. 2, “Raquel”, págs. 787, 788: “dependen de que existiera tal costumbre entre el pueblo de Labán”</div><div class="m md">Jacob <b style="color:var(--oro)">no sabía nada</b> (31:32)</div></div>
+</div>
+<script>
+/*incluir:_dibujos.js*/
+pinta(".tb", defsDibujos() + tablilla(80, 80, 520, 640, "t") + '<g class="sello"><circle cx="520" cy="660" r="80" fill="rgba(138,28,16,0.85)" stroke="#e9bf60" stroke-width="6"/><text class="eti" x="520" y="676" text-anchor="middle" style="font-size:44px;fill:#f1e9d8">herencia</text></g>');
+salta(".tb .t", 0.4, { desde: 0.85 });
+salta(".tb .sello", at("Los terafim funcionaban"), { desde: 0.3, r: -20 });
+secuencia([[".a1", 0.4], [".a2", at("Según una de ellas")], [".a3", at("Por qué se los llevó")]]);
+</script>

@@ -1,0 +1,64 @@
+<style>
+.fila19 { position: absolute; left: 50px; right: 50px; top: 110px; height: 500px; }
+.col19 { position: absolute; top: 0; width: 165px; height: 500px; }
+.col19 .med { width: 124px; left: 20px; top: 0; }
+.col19 .med .n { font-size: 20px; }
+.col19 svg { position: absolute; left: 12px; top: 250px; width: 140px; height: 190px; }
+.col19 .ok { position: absolute; left: 0; right: 0; top: 446px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 38px; color: #cfd6dd; }
+.luz19 { position: absolute; top: 236px; width: 165px; height: 262px; border-radius: 24px; border: 5px solid var(--oro); box-shadow: 0 0 30px rgba(233, 191, 96, 0.45); }
+.q19 { position: absolute; left: 110px; right: 110px; top: 690px; text-align: center; }
+.q19 .cita { font-size: 50px; }
+.bajo19 { position: absolute; left: 60px; right: 60px; top: 650px; height: 380px; }
+.bajo19 .img19 { position: absolute; left: 0; top: 20px; width: 680px; height: 340px; }
+.bajo19 .tj { position: absolute; top: 40px; }
+.bajo19 .tj .x { font-size: 36px; }
+.bajo19 .b1 { left: 740px; right: 0; }
+.bajo19 .b2 { left: 740px; right: 0; }
+</style>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+  <linearGradient id="g19-saco" x1="0" x2="1"><stop offset="0" stop-color="#a98b5d" /><stop offset="0.5" stop-color="#cdb487" /><stop offset="1" stop-color="#8f7349" /></linearGradient>
+  <linearGradient id="g19-plata" x1="0" x2="1"><stop offset="0" stop-color="#6d7882" /><stop offset="0.4" stop-color="#eef2f5" /><stop offset="1" stop-color="#58636d" /></linearGradient>
+</defs></svg>
+
+<div class="cab"><span class="cap">Génesis 44</span><span>versículos 10 al 13</span></div>
+<div class="fila19"><div class="luz19"></div></div>
+<div class="q19"><div class="cita c1">“Empezando por el del hermano mayor y terminando por el del más joven. Y la copa se encontró <b>en el costal de Benjamín</b>”<span class="ref">GÉNESIS 44:12</span></div></div>
+<div class="bajo19">
+  <div class="recuadro img19"><img src="assets/img/copa-hist.jpg" /><div class="rot">“Siervos egipcios encuentran la copa de plata de José en el saco de uno de sus hermanos”. <i>Mi libro de historias bíblicas</i>, historia 24</div></div>
+  <div class="tj b1"><div class="k">rasgaron sus ropas · 44:13</div><div class="x">rompían la prenda por delante, hasta el pecho: así se mostraba un <b>dolor muy grande</b>. La última vez, por José (37:29, 34)</div><div class="ref"><i>Perspicacia</i>, vol.&nbsp;2, “Rasgar las prendas de vestir”, pág.&nbsp;788</div></div>
+  <div class="tj on b2"><div class="k">podían irse</div><div class="x">“El resto de ustedes será declarado inocente” (44:10). Pero <b>regresaron todos</b> a la ciudad (44:13)</div></div>
+</div>
+
+<script>
+const ONCE = HIJOS.filter(([k]) => k !== "jose");
+const saco = (k) => `<svg viewBox="0 0 140 190"><path d="M 40 34 C 22 62 12 120 18 160 C 22 182 118 182 122 160 C 128 120 118 62 100 34 Z" fill="url(#g19-saco)" stroke="#6a5332" stroke-width="4"/>` +
+  `<path d="M 52 60 C 46 100 48 140 54 170 M 88 60 C 94 100 92 140 86 170" stroke="rgba(80,60,30,0.3)" stroke-width="3" fill="none"/>` +
+  `<path class="boca" d="M 38 34 C 56 24 84 24 102 34 C 84 44 56 44 38 34 Z" fill="#6f5a39" stroke="#6a5332" stroke-width="3"/>` +
+  `<path class="atado" d="M 48 30 C 58 12 82 12 92 30" stroke="#5a3c1c" stroke-width="7" fill="none" stroke-linecap="round"/>` +
+  (k === "benjamin" ? `<g class="copa19"><g transform="translate(70 34)"><g class="copai"><path d="M -24 -36 C -24 -8 -12 8 0 10 C 12 8 24 -8 24 -36 Z" fill="url(#g19-plata)" stroke="#4d5760" stroke-width="2.5"/><ellipse cx="0" cy="-36" rx="24" ry="6" fill="#3d464f" stroke="#e9eef2" stroke-width="3"/></g></g></g>` : "") + `</svg>`;
+$(".fila19").insertAdjacentHTML("beforeend", ONCE.map(([k], i) => `<div class="col19 c-${k}" style="left:${i * 165}px">${medallon(k)}${saco(k)}` + (k === "benjamin" ? "" : `<div class="ok">nada</div>`) + `</div>`).join(""));
+const tB = at("del mayor al más joven");
+const tU = at("Y la copa aparece");
+const cols = $$(".col19");
+salta(cols.map((c) => c.querySelector(".med")), 0.3, { desde: 0.6, st: 0.06 });
+aparece(cols.map((c) => c.querySelector("svg")), 0.6, 0.5);
+entra(".c1", 0.8, { y: 20 });
+// El registro: la luz pasa de costal en costal, de Rubén a Benjamín.
+const luz = $(".luz19");
+const dt = (tU - 0.3 - tB) / 10;
+tl.set(inicial([luz], { opacity: 0 }), { opacity: 1, x: 0 }, tB);
+cols.forEach((c, i) => {
+  const t = tB + i * dt;
+  if (i > 0) tl.to(luz, { x: i * 165, duration: Math.min(0.35, dt * 0.6), ease: "power2.inOut" }, t);
+  tl.to(c.querySelector(".atado"), { opacity: 0.15, duration: 0.2 }, t + 0.1);
+  if (i < 10) aparece(c.querySelector(".ok"), t + 0.25, 0.25);
+});
+tl.fromTo(inicial([$(".copai")], { opacity: 0 }), { opacity: 0, y: 24 }, { opacity: 1, y: -6, duration: 0.7, ease: "back.out(2)", immediateRender: false }, tU + 0.3);
+late(".c-benjamin .med", tU + 0.6, { s: 1.1, n: 3 });
+tl.to(cols.filter((c, i) => i < 10).map((c) => c.querySelector(".med")), { opacity: 0.5, duration: 0.5 }, tU + 0.8);
+sale(".q19", tU + 0.2, { y: 16 });
+entra(".img19", tU + 0.5, { y: 20 });
+secuencia([[".b1", at("Ellos rasgan")], [".b2", at("El mayordomo solo quería")]]);
+tl.to(cols.filter((c, i) => i < 10).map((c) => c.querySelector(".med")), { opacity: 1, duration: 0.5 }, at("regresan todos"));
+</script>

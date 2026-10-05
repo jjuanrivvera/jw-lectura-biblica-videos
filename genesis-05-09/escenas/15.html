@@ -1,0 +1,48 @@
+<style>
+.tres { position: absolute; left: 80px; right: 80px; top: 140px; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; }
+.tres .t3 { border-radius: 24px; padding: 22px 28px; background: rgba(10,16,22,0.5); border: 4px solid rgba(233,191,96,0.55); }
+.tres .t3 .cita { font-size: 46px; }
+.tres .t3 .s { margin-top: 10px; font-size: 24px; }
+.noperf { position: absolute; left: 80px; right: 80px; top: 470px; }
+.noperf .m { font-size: 62px; }
+.gen { position: absolute; left: 0; top: 0; }
+.gn { font-family: "Fraunces", serif; font-weight: 700; font-size: 44px; }
+.gl { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 6</span><span>versículo 9</span></div>
+<div class="tres">
+  <div class="t3 p1"><div class="cita">“Noé era un hombre <b>justo</b>.”</div></div>
+  <div class="t3 p2"><div class="cita">“Resultó ser <b>intachable</b> entre la gente de su tiempo.”</div><div class="s">nota: “sin culpa” · lit. “entre sus generaciones”</div></div>
+  <div class="t3 p3"><div class="cita">“Él <b>andaba con el Dios verdadero</b>”</div><div class="s">GÉNESIS 6:9</div></div>
+</div>
+<div class="noperf"><div class="m">no quiere decir perfecto: <b>cumplió plenamente</b> lo que Dios le pidió</div><div class="s">“a diferencia de aquel mundo impío, satisfizo plenamente lo que Dios requirió de él” · Perspicacia, vol. 2, “Noé”</div></div>
+<svg class="gen" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <g class="g0"><rect x="80" y="660" width="330" height="90" rx="45" fill="rgba(233,191,96,0.2)" stroke="#e9bf60" stroke-width="5"/><text class="gn" x="245" y="720" text-anchor="middle" fill="#e9bf60">Enoc</text></g>
+  <g class="g1"><path d="M 410 705 L 480 705" stroke="#f1e9d8" stroke-width="5"/><rect x="480" y="660" width="330" height="90" rx="45" fill="none" stroke="#b3bdc8" stroke-width="4"/><text class="gn" x="645" y="720" text-anchor="middle" fill="#f1e9d8">Matusalén</text></g>
+  <g class="g2"><path d="M 810 705 L 880 705" stroke="#f1e9d8" stroke-width="5"/><rect x="880" y="660" width="330" height="90" rx="45" fill="none" stroke="#b3bdc8" stroke-width="4"/><text class="gn" x="1045" y="720" text-anchor="middle" fill="#f1e9d8">Lamec</text></g>
+  <g class="g3"><path d="M 1210 705 L 1280 705" stroke="#f1e9d8" stroke-width="5"/><rect x="1280" y="660" width="330" height="90" rx="45" fill="rgba(233,191,96,0.2)" stroke="#e9bf60" stroke-width="5"/><text class="gn" x="1445" y="720" text-anchor="middle" fill="#e9bf60">Noé</text></g>
+  <text class="gl gt" x="1640" y="678" fill="#e9bf60">los dos que</text><text class="gl gt" x="1640" y="740" fill="#e9bf60">“andaban”</text>
+  <g class="hueco">
+    <rect x="80" y="850" width="600" height="46" rx="10" fill="#8a6a22" stroke="#e9bf60" stroke-width="3"/><text x="380" y="883" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="24" fill="#f1e9d8">Enoc · años 622 a 987</text>
+    <path d="M 690 873 L 790 873" stroke="#ec8a67" stroke-width="6" stroke-dasharray="4 10" stroke-linecap="round"/>
+    <rect x="800" y="850" width="1040" height="46" rx="10" fill="#34496a" stroke="#93bbef" stroke-width="3"/><text x="1320" y="883" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="24" fill="#f1e9d8">Noé · desde el año 1056</text>
+    <text class="gl" x="740" y="950" text-anchor="middle" fill="#ec8a67">69 años: no se conocieron</text>
+  </g>
+</svg>
+<div class="fuente">Génesis 5:21-29; 6:9 · Perspicacia, vol. 2, “Noé” · años desde Adán (esquema, no a escala) · <span class="propio" style="font-size:28px">cálculo propio</span></div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".p1", 0.3, { y: 30 });
+entra(".p2", at("Resultó ser"), { y: 30 });
+entra(".p3", at("Él andaba"), { y: 30 });
+entra(".noperf", at("Intachable no"), { y: 30 });
+atenua(".noperf", at("Y es el segundo"), 0.3);
+salta(".g0", at("El primero fue Enoc"), { desde: 0.5 });
+entra([".g1", ".g2"], at("su bisabuelo"), { y: 10, st: 0.3 });
+salta(".g3", at("su bisabuelo") + 0.8, { desde: 0.5 });
+aparece(".gt", at("su bisabuelo") + 1.2, 0.5);
+aparece(".hueco", at("Pero no se conocieron"), 0.6);
+aparece(".fuente", at("Pero no se conocieron"), 0.6);
+</script>

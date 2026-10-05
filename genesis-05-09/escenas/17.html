@@ -1,0 +1,54 @@
+<style>
+.top { position: absolute; left: 80px; right: 80px; top: 130px; display: flex; gap: 40px; align-items: baseline; }
+.top .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 110px; color: var(--oro); line-height: 1; }
+.top .n small { font-family: "Caveat", cursive; font-size: 54px; color: var(--tiza); margin-left: 12px; }
+.regla { position: absolute; left: 80px; top: 300px; width: 900px; height: 300px; }
+.defc { position: absolute; left: 1040px; right: 80px; top: 300px; }
+.defc .def .x { font-size: 60px; }
+.tun { position: absolute; left: 0; top: 0; }
+.tt { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; }
+.ec { position: absolute; left: 1040px; right: 80px; top: 690px; }
+.ec .v { font-family: "Fraunces", serif; font-weight: 700; font-size: 62px; line-height: 1.1; }
+.ec .v b { color: var(--oro); }
+</style>
+
+<div class="cab"><span class="cap">Génesis 6</span><span>versículo 15 · Perspicacia, vol. 1, “Codo”</span></div>
+<div class="top">
+  <div class="n n1">300<small>de largo</small></div><div class="n n2">50<small>de ancho</small></div><div class="n n3">30<small>de alto</small></div><div class="n n4" style="color:var(--tiza)"><small style="margin:0">codos</small></div>
+</div>
+<svg class="regla" viewBox="0 0 900 300">
+  <rect class="rg" x="20" y="120" width="860" height="90" rx="10" fill="#c9a76a" stroke="#5a3e1c" stroke-width="4"/>
+  <g class="mm" stroke="#3b2a10" stroke-width="3"></g>
+  <text class="lr" x="450" y="80" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="56" fill="#f1e9d8">del codo al extremo de la mano</text>
+  <text class="lv" x="450" y="275" text-anchor="middle" font-family="Fraunces" font-weight="700" font-size="60" fill="#e9bf60">≈ 44,5 cm</text>
+</svg>
+<div class="defc"><div class="def"><div class="t">codo</div><div class="x">una medida tomada <b>del cuerpo</b></div><div class="s">existió también un codo largo, de unos 51,8 cm; con él, el arca mediría unos 155 m · las publicaciones usan el de 44,5: “un cálculo moderado”</div></div></div>
+<svg class="tun" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <path class="tl" d="M 100 900 C 220 700 380 1000 520 820 C 640 670 780 960 960 780" stroke="#93bbef" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="3 9"/>
+  <text class="tt t1" x="90" y="700" fill="#f1e9d8">túnel del rey Ezequías</text>
+  <text class="tt t2" x="90" y="1010" fill="#93bbef">inscripción de Siloé: 1.200 codos</text>
+  <text class="tt t3" x="990" y="990" fill="#e9bf60">medido hoy: 533 m</text>
+</svg>
+<div class="ec"><div class="v">533 m ÷ 1.200 = <b>44,4 cm</b></div><div class="s">por codo · Perspicacia, vol. 1, “Arca”</div></div>
+
+<script>
+const mm = $(".mm");
+let t = "";
+for (let i = 0; i <= 44; i++) { const x = 20 + i * (860 / 44.5); t += `<path d="M ${x.toFixed(1)} 120 L ${x.toFixed(1)} ${i % 10 === 0 ? 170 : i % 5 === 0 ? 155 : 142}"/>`; }
+mm.innerHTML = t;
+entra(".cab", 0.2, { y: -20 });
+entra(".n1", at("trescientos codos"), { y: 30 });
+entra(".n2", at("cincuenta de ancho"), { y: 30 });
+entra(".n3", at("treinta de alto"), { y: 30 });
+entra(".n4", at("treinta de alto") + 0.5, { y: 30 });
+tl.fromTo($(".rg"), { scaleX: 0 }, { scaleX: 1, transformOrigin: "0% 50%", duration: 1.0, ease: "power2.out", immediateRender: true }, at("Qué es un codo"));
+aparece(".mm", at("Qué es un codo") + 0.6, 0.5);
+aparece(".lr", at("la distancia del codo"), 0.5);
+aparece(".lv", at("Unos cuarenta"), 0.5);
+entra(".defc", at("Una medida tomada"), { y: 30 });
+traza(".tl", at("Una inscripción"), 1.8);
+aparece(".t1", at("el túnel"), 0.5);
+aparece(".t2", at("mil doscientos codos"), 0.5);
+aparece(".t3", at("quinientos treinta y tres", 0), 0.5);
+entra(".ec", at("Quinientos treinta y tres metros entre"), { y: 30 });
+</script>

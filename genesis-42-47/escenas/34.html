@@ -1,0 +1,35 @@
+<style>
+.ilu34 { position: absolute; left: 60px; top: 130px; width: 1100px; height: 550px; }
+.pie34 { left: 60px; top: 692px; width: 1100px; }
+.q34 { position: absolute; left: 60px; top: 770px; width: 1100px; height: 260px; }
+.q34 > .cita { position: absolute; left: 0; right: 0; top: 0; font-size: 46px; }
+.col34 { position: absolute; left: 1210px; right: 60px; top: 110px; bottom: 70px; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.col34 .fila { display: flex; align-items: center; gap: 22px; }
+.col34 .med { position: relative; width: 150px; }
+.col34 .med .n { font-size: 22px; }
+.col34 .tj .x { font-size: 34px; }
+.col34 .m { font-size: 50px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 46</span><span>versículos 28 al 30</span></div>
+<div class="ilus ilu34"><div class="kb"><img src="assets/img/abrazo-lfb.jpg" /></div></div>
+<div class="pie-img pie34">“José y su padre, Jacob, se vuelven a encontrar”. <i>Lecciones que aprendo de la Biblia</i>, lección 15, pág.&nbsp;43</div>
+<div class="q34">
+  <div class="cita c1">“Tan pronto como lo tuvo delante, lo abrazó y estuvo llorando un largo rato”<span class="ref">GÉNESIS 46:29</span></div>
+  <div class="cita c2">“<b>Ya puedo morir en paz</b>, porque te he visto y sé que estás vivo”<span class="ref">GÉNESIS 46:30</span></div>
+</div>
+<div class="col34">
+  <div class="fila f1"><div class="wj"></div><div class="m">Judá, por delante · 46:28</div></div>
+  <div class="tj t1"><div class="k">el carro de José</div><div class="x">un carro de honor, “que solo era menos importante que el de Faraón”</div><div class="ref"><i>Perspicacia</i>, vol.&nbsp;1, “Carro”, pág.&nbsp;435</div></div>
+  <div class="tj on t2"><div class="k">37:35 y 46:30</div><div class="x">el que iba a bajar a la Tumba de duelo vivió <b>diecisiete años más</b> (47:28)</div></div>
+</div>
+
+<script>
+$(".wj").outerHTML = medallon("juda");
+kb(".ilu34 .kb", 0, DUR, { s: 1.0, x: 0 }, { s: 1.1, x: -2 });
+aparece([".ilu34", ".pie34"], 0.2, 0.6);
+entra(".f1", 0.4, { x: 30, y: 0 });
+entra(".t1", at("José prepara su carro"), { y: 16 });
+secuencia([[".c1", at("En cuanto ve")], [".c2", at("Ya puedo morir")]]);
+entra(".t2", at("Ya puedo morir") + 1.0, { y: 16 });
+</script>

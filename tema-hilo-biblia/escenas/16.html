@@ -1,0 +1,66 @@
+<style>
+.fa { padding: 0; }
+.cola { position: absolute; left: 140px; right: 140px; top: 130px; bottom: 120px; }
+.cola > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 34px; }
+.cola .m { font-size: 64px; color: var(--tenue); }
+.cola .cita { font-size: 52px; }
+.cola .cita b { color: var(--cielo); }
+.cola .s { font-size: 34px; }
+
+.barras { position: absolute; left: 90px; right: 90px; top: 150px; height: 420px; }
+.barras svg { width: 1740px; height: 420px; }
+.barras text { font-family: "Montserrat", sans-serif; }
+.colb { position: absolute; left: 90px; right: 90px; top: 600px; height: 380px; }
+.colb > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.colb .cita { font-size: 44px; }
+.colb .cita b { color: var(--oro-claro); }
+.colb .s { font-size: 34px; color: var(--papel); }
+</style>
+
+<div class="cab"><span class="sec">¿Por qué poco a poco?</span><span></span></div>
+
+<div class="fase fa">
+  <div class="cola">
+    <div class="b a1"><div class="titulo" style="font-size: 76px;">¿Por qué no lo explicó todo desde el principio?</div><div class="m">Un buen padre no les cuenta a sus hijos más de lo que pueden entender.</div>
+      <div class="cita">“Jehová ha revelado gradualmente su propósito para la humanidad, pero siempre lo ha hecho <b>en el momento oportuno</b>”.<span class="ref">El Reino de Dios ya está gobernando, cap. 3, pág. 32</span></div>
+      <div class="s a1b">“…pero solo a quienes sienten un temor reverente por él”.</div></div>
+    <div class="b a2"><div class="cita">Los profetas “siguieron investigando a qué momento en particular o a qué época respecto a Cristo <b>señalaba el espíritu dentro de ellos</b>”.<span class="ref">1 Pedro 1:11</span></div></div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="barras"><svg viewBox="0 0 1740 420">
+    <text x="0" y="40" font-size="30" font-weight="800" fill="#aab4c8" letter-spacing="3">EL NOMBRE SATANÁS APARECE</text>
+    <text x="0" y="150" font-size="34" font-weight="700" fill="#f3ead8">Escrituras Hebreas</text>
+    <rect class="bh" x="430" y="100" width="720" height="76" rx="12" fill="#e07a5f" fill-opacity="0.85" />
+    <text class="nh" x="1170" y="155" font-size="52" font-weight="800" fill="#f3ead8">18 veces</text>
+    <text x="0" y="300" font-size="34" font-weight="700" fill="#f3ead8">Escrituras Griegas</text>
+    <rect class="bg" x="430" y="250" width="1200" height="76" rx="12" fill="#e07a5f" fill-opacity="0.85" />
+    <path class="mas" d="M 1630 250 L 1700 288 L 1630 326" fill="none" stroke="#e07a5f" stroke-width="8" stroke-linecap="round" stroke-dasharray="4 14" />
+    <text class="ng" x="1400" y="400" font-size="44" font-weight="800" fill="#f3ead8">más de 30</text>
+  </svg></div>
+  <div class="colb">
+    <div class="b c1"><div class="cita">“Las Escrituras Hebreas se centraron en <b>identificar al Mesías</b>, en vez de dar un énfasis indebido a Satanás”.<span class="ref">El Reino de Dios ya está gobernando, cap. 3, pág. 35, nota</span></div>
+      <div class="s c1b">Cuando llegó, Jesús lo desenmascaró: “homicida” y “padre de la mentira” (Juan 8:44).</div></div>
+    <div class="b c2"><div class="cita">“Sella el libro hasta el tiempo del fin. Muchos lo examinarán con cuidado, y <b>el conocimiento verdadero se hará abundante</b>”.<span class="ref">Daniel 12:4</span></div></div>
+  </div>
+</div>
+
+<script>
+const tB = at("Hay un detalle curioso") - 0.3;
+entra(".cab", 0.3, { y: -10 });
+entra(".a1 .m", at("Por la misma razón"), { y: 16 });
+secuencia([[".a1", 0.5], [".a2", at("Los mismos profetas")]], tB);
+entra(".a1 .cita", at("Jehová ha revelado"), { y: 24 });
+entra(".a1b", at("y solo a quienes"), { y: 14 });
+tl.to($(".fa"), { opacity: 0, duration: 0.5 }, tB);
+aparece(".fb", tB + 0.1, 0.4);
+tl.fromTo($(".bh"), { attr: { width: 0 } }, { attr: { width: 720 }, duration: 1.0, ease: "power2.out", immediateRender: false }, at("dieciocho veces"));
+gsap.set($(".bh"), { attr: { width: 0 } });
+aparece(".nh", at("dieciocho veces") + 0.6, 0.4);
+tl.fromTo($(".bg"), { attr: { width: 0 } }, { attr: { width: 1200 }, duration: 1.2, ease: "power2.out", immediateRender: false }, at("más de treinta"));
+gsap.set($(".bg"), { attr: { width: 0 } });
+aparece([".mas", ".ng"], at("más de treinta") + 0.9, 0.4);
+secuencia([[".c1", at("Las Escrituras Hebreas se centraron")], [".c2", at("Y a Daniel")]]);
+entra(".c1b", at("cuando el Mesías llegó"), { y: 14 });
+</script>

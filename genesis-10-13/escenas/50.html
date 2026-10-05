@@ -1,0 +1,33 @@
+<style>
+.fh50 { position: absolute; top: 0; height: 1080px; overflow: hidden; }
+.fh50 .kb { position: absolute; inset: 0; }
+.fh50 img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.fh50.h1 { left: 0; width: 1156px; }
+.fh50.h1 img { object-position: 62% 50%; }
+.fh50.h2 { left: 1164px; width: 756px; }
+.fh50.h2 img { object-position: 42% 50%; }
+.raya50 { position: absolute; left: 1156px; top: 0; width: 8px; height: 1080px; background: #17212b; }
+.abajo50 { position: absolute; left: 0; right: 0; bottom: 0; height: 420px; background: linear-gradient(180deg, rgba(23, 33, 43, 0), rgba(23, 33, 43, 0.88) 55%, rgba(23, 33, 43, 0.97)); }
+.q50 { position: absolute; left: 110px; right: 110px; bottom: 70px; text-align: center; }
+.q50 .cita { font-size: 58px; }
+.p50a { right: 790px; top: 20px; }
+.p50b { right: 24px; top: 20px; max-width: 700px; }
+.cab50 { left: 40px; right: auto; top: 30px; }
+</style>
+
+<div class="fh50 h1"><div class="kb"><img src="assets/img/hebron-hoy.jpg" /></div></div>
+<div class="fh50 h2"><div class="kb"><img src="assets/img/hebron-calle.jpg" /></div></div>
+<div class="raya50"></div>
+<div class="abajo50"></div>
+<div class="cab sobre cab50"><span class="cap">Hebrón, hoy</span></div>
+<div class="pie p50a">“Hebrón en la actualidad”. <i>Perspicacia</i>, vol. 1, pág. 331 (wol.jw.org)</div>
+<div class="pie p50b">“Calle de Hebrón”. <i>Perspicacia</i>, vol. 1, pág. 1113 (wol.jw.org)</div>
+<div class="q50"><div class="cita">“uno de los lugares más antiguos del Oriente Medio que <b>todavía está habitado</b>”<span class="ref">PERSPICACIA, VOL. 1, “HEBRÓN”, PÁG. 1112</span></div></div>
+
+<script>
+kb(".h1 .kb", 0, DUR, { s: 1.1, x: -1.5 }, { s: 1.0, x: 0 });
+kb(".h2 .kb", 0, DUR, { s: 1.0, y: 1.5 }, { s: 1.1, y: 0 });
+entra(".cab50", 0.3, { y: -14 });
+aparece([".p50a", ".p50b"], 0.6, 0.5);
+entra(".q50", at("uno de los lugares") - 0.2, { y: 24 });
+</script>

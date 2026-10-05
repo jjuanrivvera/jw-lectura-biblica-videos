@@ -1,0 +1,45 @@
+<style>
+.q26 { position: absolute; left: 90px; right: 90px; top: 104px; text-align: center; }
+.q26 .cita { font-size: 44px; }
+.anios26 { position: absolute; left: 70px; right: 70px; top: 390px; height: 150px; display: grid; grid-template-columns: repeat(14, 1fr); gap: 10px; }
+.an { border-radius: 14px; display: flex; align-items: center; justify-content: center; font-family: "Fraunces", serif; font-weight: 700; font-size: 44px; color: #17212b; }
+.an.b { background: #92c7a0; }
+.an.h { background: #ec8a67; }
+.eti26 { position: absolute; top: 560px; font-family: "Caveat", cursive; font-weight: 700; font-size: 40px; line-height: 1.02; text-align: center; }
+.mk26 { position: absolute; top: 346px; width: 8px; height: 210px; border-radius: 4px; background: var(--oro); }
+.cta26 { position: absolute; left: 90px; top: 700px; display: flex; align-items: baseline; gap: 18px; }
+.cta26 .cifra { font-size: 90px; }
+.cta26 .op { font-family: "Fraunces", serif; font-weight: 700; font-size: 66px; color: var(--tenue); }
+.cta26 .u { font-family: "Caveat", cursive; font-weight: 700; font-size: 48px; }
+.cta26b { position: absolute; left: 90px; top: 815px; }
+.q26b { position: absolute; left: 1060px; right: 80px; top: 700px; }
+.q26b .cita { font-size: 46px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 45</span><span>versículos 6 al 11</span></div>
+<div class="q26"><div class="cita c1">“Con este ya llevamos <b>dos años de hambre</b> en el país, y todavía quedan <b>cinco años</b> en que no se pasará el arado ni se cosechará”<span class="ref">GÉNESIS 45:6</span></div></div>
+<div class="anios26"></div>
+<div class="mk26" style="left:1211px"></div>
+<div class="eti26 e1" style="left:70px; width:885px; color:#92c7a0">siete años de abundancia · 41:47</div>
+<div class="eti26 e2" style="left:1222px; width:628px; color:var(--rojo)">quedan cinco años de hambre</div>
+<div class="eti26 e0" style="left:1065px; width:300px; top:292px; color:var(--oro)">José se da a conocer</div>
+<div class="cta26"><span class="op">José:</span><span class="cifra">30</span><span class="op">+</span><span class="cifra">7</span><span class="op">+</span><span class="cifra">2</span><span class="op">=</span><span class="cifra">39</span><span class="u">años</span></div>
+<div class="cta26b"><span class="propio chico">cuenta propia con 41:46 y 45:6; Jacob tenía 130 (47:9)</span></div>
+<div class="q26b"><div class="cita q2">“Baja adonde estoy yo. No te tardes. Vivirás en la tierra de <b>Gosén, cerca de mí</b>”<span class="ref">GÉNESIS 45:9, 10</span></div></div>
+
+<script>
+$(".anios26").innerHTML = Array.from({ length: 14 }, (_, i) => `<div class="an ${i < 7 ? "b" : "h"}">${(i % 7) + 1}</div>`).join("");
+const cajas = $$(".an");
+entra(".c1", 0.2, { y: 16 });
+salta(cajas.slice(0, 7), 0.6, { desde: 0.5, st: 0.08 });
+salta(cajas.slice(7), at("dos años de hambre") - 0.5, { desde: 0.5, st: 0.08 });
+entra(".e1", 1.2, { y: 10 });
+tl.to(cajas.slice(9), { opacity: 0.45, duration: 0.5 }, at("todavía quedan cinco"));
+tl.fromTo(inicial(el(".mk26"), { opacity: 0 }), { opacity: 1, scaleY: 0, transformOrigin: "50% 0%" }, { scaleY: 1, duration: 0.6, ease: "power2.out", immediateRender: false }, at("dos años de hambre") + 0.6);
+entra(".e0", at("dos años de hambre") + 0.9, { y: -10 });
+entra(".e2", at("todavía quedan cinco"), { y: 10 });
+const tC = at("Tenía unos treinta");
+entra($$(".cta26 > *"), tC, { y: 16, st: 0.25 });
+aparece(".cta26b", tC + 1.6, 0.5);
+entra(".q2", at("Por eso la prisa"), { y: 16 });
+</script>

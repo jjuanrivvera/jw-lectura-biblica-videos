@@ -1,0 +1,53 @@
+<style>
+.alm { position: absolute; left: 0; top: 0; width: 640px; height: 1080px; overflow: hidden; }
+.alm .kb { position: absolute; inset: 0; }
+.alm img { width: 100%; height: 100%; object-fit: cover; }
+.alm-f { position: absolute; left: 520px; top: 0; width: 160px; height: 1080px; background: linear-gradient(90deg, rgba(23,33,43,0), #17212b); }
+.pie-foto { max-width: 560px; }
+.dib { position: absolute; left: 680px; top: 110px; width: 1200px; height: 560px; }
+.nt { font-family: "Caveat"; font-weight: 700; font-size: 52px; fill: var(--tiza); }
+.nt b, .nt .o { fill: var(--oro); }
+.abajo { position: absolute; left: 700px; right: 70px; top: 690px; bottom: 60px; }
+.abajo > div { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+.abajo .cita { font-size: 44px; }
+.cab { left: 700px; }
+</style>
+<div class="alm"><div class="kb"><img src="assets/img/almendro.jpg"/></div></div>
+<div class="alm-f"></div>
+<div class="pie-foto">“Flores de almendro [...] en hebreo su nombre significa “el que despierta”.” Foto: Perspicacia, vol. 1, “Almendro”, pág. 99 (wol.jw.org)</div>
+<div class="cab"><span class="cap">Génesis 30</span><span>versículos 37 al 39</span></div>
+<svg class="dib" viewBox="0 0 1200 560">
+  <g class="r1"></g><text class="nt t1" x="700" y="100">estoraque: <tspan class="o">‘blanco’</tspan></text>
+  <g class="r2"></g><text class="nt t2" x="700" y="240">almendro: <tspan class="o">‘el que despierta’</tspan></text>
+  <g class="r3"></g><text class="nt t3" x="700" y="380">plátano oriental: <tspan class="o">un árbol</tspan></text>
+  <g class="puestas"></g>
+  <g class="canal">
+    <rect x="60" y="470" width="1080" height="70" rx="16" fill="#8d8577" stroke="#4d473f" stroke-width="4"/>
+    <rect x="80" y="482" width="1040" height="24" rx="8" fill="#3f86c8"/>
+    <text class="nt" x="1000" y="440" text-anchor="middle">en los abrevaderos</text>
+  </g>
+</svg>
+<div class="abajo">
+  <div class="a1"><div class="cita">“les quitó algunas partes de la corteza para dejar al descubierto la madera blanca”<span class="ref">GÉNESIS 30:37</span></div><div class="s">Perspicacia, vol. 1, “Estoraque”, pág. 878 · “Almendro”, pág. 99 · vol. 2, “Plátano”, pág. 670</div></div>
+  <div class="a2"><div class="m">lo que miraba la hembra al concebir… <b style="color:var(--oro)">¿quedaba marcado en la cría?</b></div><div class="m md" style="color:var(--rojo)">“el mismo concepto erróneo que tenían muchas personas”</div><div class="s">Perspicacia, vol. 2, “Jacob”, pág. 9 · la creencia en Grecia y en Egipto: La Atalaya, 15 de marzo de 1951, pág. 191</div></div>
+</div>
+<script>
+/*incluir:_dibujos.js*/
+pinta(".r1", rama(40, 80, 640, 60));
+pinta(".r2", rama(40, 220, 640, 200));
+pinta(".r3", rama(40, 360, 640, 340));
+$(".dib").insertAdjacentHTML("afterbegin", defsDibujos());
+kb(".alm .kb", 0, DUR, { s: 1.15, y: -3 }, { s: 1.0, y: 0 });
+entra(".a1", 0.4, { y: 20 });
+entra(".r1", at("El estoraque"), { x: -40, y: 0 }); aparece(".t1", at("El estoraque") + 0.3, 0.4);
+entra(".r2", at("El almendro"), { x: -40, y: 0 }); aparece(".t2", at("El almendro") + 0.3, 0.4);
+entra(".r3", at("Y el plátano"), { x: -40, y: 0 }); aparece(".t3", at("Y el plátano") + 0.3, 0.4);
+aparece(".canal", at("Jacob las puso"), 0.5);
+atenua([".t1", ".t2", ".t3"], at("Jacob las puso"), 0);
+// Las tres ramas bajan y se paran dentro del canal.
+sale([".r1", ".r2", ".r3"], at("Jacob las puso"), { y: 20 });
+pinta(".puestas", rama(260, 490, 300, 150) + rama(560, 490, 590, 140) + rama(860, 490, 880, 150));
+entra(".puestas", at("Jacob las puso") + 0.3, { y: -60 });
+sale(".a1", at("Creía que lo que") - 0.4);
+entra(".a2", at("Creía que lo que"), { y: 20 });
+</script>

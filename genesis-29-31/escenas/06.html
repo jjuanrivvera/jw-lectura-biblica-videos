@@ -1,0 +1,41 @@
+<style>
+.arbol { position: absolute; left: 60px; top: 120px; width: 1100px; height: 860px; }
+.nom { font-family: "Fraunces", serif; font-weight: 700; font-size: 58px; fill: var(--tiza); }
+.nom.oro { fill: var(--oro); }
+.nom.rosa { fill: var(--rosa); }
+.nom.cielo { fill: var(--cielo); }
+.rel { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; fill: var(--oro); }
+.caja { fill: rgba(10,16,22,0.45); stroke: rgba(241,233,216,0.25); stroke-width: 3; }
+.col { top: 120px; bottom: 90px; right: 70px; width: 680px; }
+.contrato { position: absolute; left: 60px; top: 120px; width: 1100px; height: 860px; }
+</style>
+<div class="cab"><span class="cap">Génesis 29</span><span>versículos 13 al 15</span></div>
+<svg class="arbol" viewBox="0 0 1100 860">
+  <g class="n-lab"><rect class="caja" x="560" y="40" width="330" height="110" rx="24"/><text class="nom oro" x="725" y="115" text-anchor="middle">Labán</text></g>
+  <g class="n-reb"><rect class="caja" x="140" y="40" width="330" height="110" rx="24"/><text class="nom" x="305" y="115" text-anchor="middle">Rebeca</text></g>
+  <g class="r-her"><path class="trazo" d="M 470 95 L 560 95"/><text class="rel" x="515" y="200" text-anchor="middle">hermanos</text></g>
+  <g class="n-jac"><path class="trazo" d="M 305 150 L 305 330"/><rect class="caja" x="140" y="330" width="330" height="110" rx="24"/><text class="nom" x="305" y="405" text-anchor="middle">Jacob</text></g>
+  <g class="n-hij"><path class="trazo" d="M 725 150 L 725 260 M 600 260 L 860 260 M 600 260 L 600 330 M 860 260 L 860 330"/>
+    <rect class="caja" x="480" y="330" width="240" height="110" rx="24"/><text class="nom cielo" x="600" y="405" text-anchor="middle">Lea</text>
+    <rect class="caja" x="740" y="330" width="280" height="110" rx="24"/><text class="nom rosa" x="880" y="405" text-anchor="middle">Raquel</text></g>
+  <g class="r-sob"><path d="M 580 150 C 540 250 500 320 474 372" fill="none" stroke="#e9bf60" stroke-width="6" stroke-dasharray="12 10"/>
+    <text class="rel" x="130" y="560">“hermano” (29:12, 15): cualquier pariente cercano</text></g>
+  <g class="r-hc"><text class="rel" x="130" y="680" style="font-size:54px;fill:#f1e9d8">“mi hueso y mi carne” = “eres mi pariente”</text></g>
+</svg>
+<div class="col">
+  <div class="b a1"><div class="cita md">Labán “corrió a encontrarse con él. Lo abrazó, lo saludó con un beso y lo llevó a su casa”<span class="ref">GÉNESIS 29:13</span></div><div class="m md">vio algo que podía aprovechar: <b>“un trabajador industrioso”</b></div><div class="s">La Atalaya, 15 de octubre de 2003, pág. 29</div></div>
+  <div class="b a2"><div class="cita">“De veras eres de mi propia sangre”<span class="ref">GÉNESIS 29:14</span></div><div class="def"><div class="t">Literalmente</div><div class="x">“mi hueso y mi carne”</div><div class="s">nota de la TNM en 29:14</div></div></div>
+  <div class="b a3"><div class="m xl oro">1 mes</div><div class="m md">trabajando, no de visita</div><div class="cita md">“¿cómo voy a dejar que trabajes para mí sin darte nada a cambio?”<span class="ref">GÉNESIS 29:15</span></div></div>
+  <div class="b a4"><div class="m">de <b>pariente</b></div><div class="m">a <b>contrato de trabajo</b></div><div class="s">“redujo su relación consanguínea con Jacob a un simple contrato laboral” · La Atalaya, 15 de octubre de 2003, pág. 29</div></div>
+</div>
+<script>
+entra(".n-reb", 0.5, { y: 20 });
+entra(".n-lab", at("Labán corre"), { y: 20 });
+traza(".r-her path", at("Labán corre") + 0.4, 0.5); aparece(".r-her text", at("Labán corre") + 0.8, 0.4);
+traza(".n-jac path", 1.5, 0.5); entra(".n-jac rect, .n-jac text", 1.8, { y: 10 });
+traza(".n-hij path", 2.5, 0.8); entra([".n-hij rect", ".n-hij text"], 3.0, { y: 10, st: 0.1 });
+traza(".r-sob path", at("De veras eres"), 1.0);
+aparece(".r-sob text", at("De veras eres") + 0.8, 0.4);
+aparece(".r-hc", at("literalmente mi hueso"), 0.5);
+secuencia([[".a1", 0.4], [".a2", at("Le dice")], [".a3", at("Jacob trabaja un mes")], [".a4", at("El tío convirtió")]]);
+</script>

@@ -1,0 +1,58 @@
+<style>
+.mapa.B2 { left: 0; top: 0; width: 1920px; height: 1080px; }
+.cab.sobre { z-index: 3; right: auto; gap: 30px; }
+.b3c { right: 44px; bottom: 44px; width: 640px; height: 300px; }
+.b3c img { height: 259px; }
+.b3c .rot { top: 259px; bottom: 0; padding: 6px 14px; }
+.b3c .mk { position: absolute; background: rgba(255, 214, 64, 0.55); mix-blend-mode: multiply; border-radius: 10px; transform-origin: 50% 50%; }
+.nota04 { position: absolute; left: 520px; top: 960px; }
+.nota04 .propio { font-size: 38px; }
+</style>
+
+<!--incluir:_b2.html-->
+<div class="cab sobre"><span class="cap">Génesis 42</span><span>versículos 1 al 5</span></div>
+<div class="recuadro b3c"><img src="assets/img/b3-caminos.jpg" />
+  <div class="mk mk1" style="left:26px; top:78px; width:560px; height:46px; transform: rotate(-12.3deg);"></div>
+  <div class="mk mk2" style="left:158px; top:176px; width:222px; height:44px; transform: rotate(-4.6deg);"></div>
+  <div class="rot">Apéndice B3 de la TNM: los dos caminos</div>
+</div>
+<div class="nota04"><span class="propio chico">rutas aproximadas: la Biblia no dice cuál tomaron</span></div>
+
+<script>
+const HB = "M 2114 1025 C 2140 1062 2092 1076 2052 1098 C 2020 1122 2006 1160 1990 1180";
+const RA = "M 1990 1180 C 1950 1150 1880 1105 1811 1041 C 1780 1090 1740 1132 1690 1180 C 1600 1230 1500 1252 1350 1290 C 1150 1332 950 1370 800 1395 C 720 1408 670 1392 630 1372";
+const RB = "M 1990 1180 C 1950 1232 1900 1272 1860 1297 C 1780 1330 1600 1350 1400 1368 C 1200 1384 1080 1390 960 1400 C 840 1412 740 1440 660 1480";
+pinta(".marcas", `
+  <path class="ruta-h hb-h" stroke-width="11" d="${HB}"/><path class="ruta hb" stroke-width="5.5" d="${HB}"/>
+  <circle class="anillo a-heb" cx="2114" cy="1025" r="15" style="stroke-width:4"/>
+  <circle class="anillo oro a-bs" cx="1990" cy="1180" r="15" style="stroke-width:4"/>
+  <g class="km45"><rect x="2066" y="1110" width="118" height="40" rx="9" fill="rgba(15,22,30,0.9)"/><text class="lugar" x="2080" y="1138" font-size="22" style="fill:#e9bf60">≈ 45 km</text></g>
+  <g class="cruce"><rect x="1600" y="1206" width="396" height="70" rx="12" fill="rgba(15,22,30,0.94)"/><text class="lugar" x="1614" y="1234" font-size="19" style="fill:#f1e9d8">la última ciudad antes del desierto</text><text class="lugar" x="1614" y="1262" font-size="19" style="fill:#e9bf60">y un cruce de caminos</text></g>
+  <g class="viaj"><circle r="11" fill="#c0392b" stroke="#fff" stroke-width="3.5"/><text y="4.5" font-size="12" text-anchor="middle" class="lugar" style="fill:#fff">10</text></g>
+  <path class="ruta-h ra-h" stroke-width="30" d="${RA}"/><path class="ruta ra" stroke-width="15" d="${RA}"/>
+  <path class="ruta-h rb-h" stroke-width="30" d="${RB}"/><path class="ruta rb" stroke-width="15" style="stroke:#1f5d99" d="${RB}"/>
+  <g class="lra"><rect x="600" y="1128" width="500" height="60" rx="14" fill="rgba(15,22,30,0.92)"/><text class="lugar" x="620" y="1171" font-size="34" style="fill:#f0a47e">① por la costa, por Gaza</text></g>
+  <g class="lrb"><rect x="900" y="1580" width="500" height="60" rx="14" fill="rgba(15,22,30,0.92)"/><text class="lugar" x="920" y="1623" font-size="34" style="fill:#93bbef">② por el desierto de Sur</text></g>`);
+const V = { x: 0, y: 0, w: 1920, h: 1080 };
+const CERCA = encuadre({ x: 1440, y: 760, w: 1200, h: 675 }, V);
+const LEJOS = encuadre({ x: 250, y: 859, w: 2100, h: 1181 }, V);
+tl.set($(".cam"), CERCA, 0);
+const t2 = at("De allí salían");
+traza(".a-heb", 0.4, 0.6);
+traza([".hb-h", ".hb"], at("el camino bajaba") - 0.2, 2.4, { ease: "power1.inOut" });
+recorre(".viaj", ".hb", at("el camino bajaba") - 0.2, 2.4);
+aparece(".km45", at("cuarenta y cinco kilómetros") - 0.2, 0.4);
+traza(".a-bs", at("a Beer") - 0.1, 0.6);
+aparece(".cruce", at("la última ciudad"), 0.5);
+desaparece([".km45", ".cruce", ".viaj"], t2 - 0.6, 0.4);
+camara(".cam", t2 - 0.5, 2.2, LEJOS);
+traza([".ra-h", ".ra"], at("Uno bajaba") - 0.1, 3.2, { ease: "power1.inOut" });
+aparece(".lra", at("Uno bajaba") + 1.0, 0.5);
+traza([".rb-h", ".rb"], at("El otro cruzaba") - 0.1, 3.0, { ease: "power1.inOut" });
+aparece(".lrb", at("El otro cruzaba") + 1.0, 0.5);
+entra([".b3c", ".b3r"], at("el mapa lo llama") - 0.3, { y: 30 });
+tl.fromTo(inicial(el(".mk1"), { opacity: 0 }), { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.8, ease: "power2.out", immediateRender: false }, at("Camino a la tierra"));
+tl.fromTo(inicial(el(".mk2"), { opacity: 0 }), { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.6, ease: "power2.out", immediateRender: false }, at("el Camino a Sur"));
+tl.set([$(".ra"), $(".rb")], { strokeDasharray: "30 22" }, at("La Biblia no dice") - 0.1);
+entra(".nota04", at("La Biblia no dice"), { y: 16 });
+</script>

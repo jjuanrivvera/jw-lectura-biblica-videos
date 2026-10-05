@@ -1,0 +1,56 @@
+<style>
+.nom07 { position: absolute; left: 70px; right: 70px; top: 96px; text-align: center; }
+.nom07 .cita { font-size: 62px; }
+.nom07 .ref { font-size: 26px; }
+.gen { position: absolute; left: 70px; right: 70px; top: 230px; display: grid; grid-template-columns: 1fr 120px 1fr 120px 1fr; align-items: start; }
+.g { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; }
+.g .med { width: 320px; height: 320px; border-radius: 50%; border: 5px solid rgba(233, 191, 96, 0.55); background: radial-gradient(circle at 40% 35%, rgba(233, 191, 96, 0.16), rgba(10, 16, 22, 0.5) 70%); display: flex; align-items: center; justify-content: center; }
+.g .med svg { width: 220px; height: 220px; }
+.g .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 80px; line-height: 1; margin-top: 10px; }
+.g .rol { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; line-height: 1.05; color: var(--oro); }
+.g .ref { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.08em; color: var(--tenue); }
+.g.gu .med { border-color: var(--oro); border-width: 7px; }
+.fl07 { width: 120px; height: 320px; }
+.fl07 path { fill: none; stroke: var(--tenue); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.fl07 text { font-family: "Caveat", cursive; font-weight: 700; font-size: 34px; fill: var(--tenue); }
+.ic { fill: none; stroke: var(--tiza); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.ic.oro { stroke: var(--oro); }
+.fin07 { position: absolute; left: 70px; right: 70px; top: 880px; text-align: center; }
+.fin07 .m { font-size: 72px; }
+.fin07 .m b { color: var(--oro); }
+.s07 { position: absolute; left: 70px; right: 70px; top: 930px; text-align: center; }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 40</span><span>versículos 5, 9 y 11</span></div>
+<div class="nom07"><div class="cita n07">“Guedalías, hijo de Ahicam, <b>hijo de Safán</b>”<span class="ref">ASÍ LO PRESENTA LA TNM TRES VECES · 40:5, 9, 11</span></div></div>
+
+<div class="gen">
+  <div class="g sa"><div class="med"><svg viewBox="0 0 170 170"><path class="ic i-sa" d="M 30 50 H 130 C 150 50 150 80 130 80 H 50 C 30 80 30 110 50 110 H 140 M 30 50 C 12 50 12 80 30 80"/><path class="ic oro i-sa" d="M 60 64 H 116 M 64 95 H 124"/></svg></div>
+    <div class="n">Safán</div><div class="rol">secretario del rey Josías: le entregaron el libro de la Ley</div><div class="ref">2 REYES 22:8</div></div>
+  <svg class="fl07 f1" viewBox="0 0 120 320"><path d="M 10 160 H 104 M 86 143 L 106 160 L 86 177"/><text x="60" y="135" text-anchor="middle">padre de</text></svg>
+  <div class="g ah"><div class="med"><svg viewBox="0 0 170 170"><path class="ic i-ah" d="M 85 22 L 140 42 V 86 C 140 120 112 142 85 152 C 58 142 30 120 30 86 V 42 Z"/><path class="ic oro i-ah" d="M 60 86 L 78 104 L 112 70"/></svg></div>
+    <div class="n">Ahicam</div><div class="rol">evitó que entregaran a Jeremías para matarlo</div><div class="ref">JEREMÍAS 26:24</div></div>
+  <svg class="fl07 f2" viewBox="0 0 120 320"><path d="M 10 160 H 104 M 86 143 L 106 160 L 86 177"/><text x="60" y="135" text-anchor="middle">padre de</text></svg>
+  <div class="g gu"><div class="med"><svg viewBox="0 0 170 170"><path class="ic i-gu" d="M 22 140 H 148 M 34 140 V 76 H 70 V 140 M 70 100 H 100 V 140 M 100 60 H 136 V 140 M 34 76 L 52 56 L 70 76 M 100 60 V 40 H 136 V 60"/><path class="ic oro i-gu" d="M 46 140 V 116 H 58 V 140 M 112 140 V 112 H 124 V 140"/></svg></div>
+    <div class="n">Guedalías</div><div class="rol">“el gobernador temeroso de Dios”</div><div class="ref">PERSPICACIA, «SAFÁN»</div></div>
+</div>
+
+<div class="s s07">“algunos hijos de Safán” fueron “defensores de la adoración verdadera” · <i>Perspicacia</i>, «Safán»</div>
+<div class="fin07"><div class="m f07">Jeremías no se fue con un desconocido: <b>la tercera generación</b> de una familia que lo defendió</div></div>
+
+<script>
+aparece(".cab", 0.2, 0.5);
+entra(".n07", 0.5, { y: 30 });
+late(".n07 b", at("hijo de Safán"), { s: 1.04, n: 1 });
+entra(".sa", at("Su abuelo"), { y: 40 });
+traza(".i-sa", at("Su abuelo") + 0.3, 1.2, { st: 0.2 });
+aparece(".f1", at("Su padre") - 0.5, 0.5);
+entra(".ah", at("Su padre"), { y: 40 });
+traza(".i-ah", at("Su padre") + 0.3, 1.2, { st: 0.2 });
+aparece(".f2", at("Y a Guedalías") - 0.5, 0.5);
+entra(".gu", at("Y a Guedalías"), { y: 40 });
+traza(".i-gu", at("Y a Guedalías") + 0.3, 1.4, { st: 0.2 });
+entra(".s07", at("gobernador temeroso"), { y: 14 });
+sale(".s07", at("Así que Jeremías") - 0.3, { d: 0.3 });
+escribe(".f07", at("Así que Jeremías"), 3.2);
+</script>

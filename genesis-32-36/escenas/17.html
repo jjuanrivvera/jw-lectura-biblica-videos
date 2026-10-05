@@ -1,0 +1,28 @@
+<style>
+.mapa .cam img, .mapa .cam svg { width: 2880px; height: 1800px; }
+.dib svg { width: 700px; height: 430px; display: block; }
+</style>
+<!--incluir:_jaboc.html-->
+<div class="cab sobre"><span class="cap">Génesis 33</span><span>versículo 17</span></div>
+<div class="col der">
+  <div class="b a1"><div class="cita md">“Allí se hizo una casa y preparó refugios para su manada. Por eso llamó Sucot a aquel lugar”<span class="ref">GÉNESIS 33:17</span></div><div class="def"><div class="t">Sucot</div><div class="x">‘<b>cabañas</b>’ o ‘refugios’</div><div class="s">nota de la TNM en 33:17</div></div><div class="f">de Peniel a Sucot, unos 7 km en línea recta <span class="propio" style="font-size:24px;padding:0 10px">cálculo propio</span></div></div>
+  <div class="b a2"><div class="dib"><svg viewBox="0 0 700 430" class="cab-svg"></svg></div><div class="m md">un techo sencillo de ramas y palos: sombra en el calor del valle, abrigo en invierno</div><div class="f">“Jacob hizo cabañas para proteger a su rebaño” · <i>Perspicacia</i>, vol. 1, “Cabaña”, pág. 380</div></div>
+  <div class="b a3"><div class="m">una <b>casa</b>, no solo tiendas: pensaba quedarse</div><div class="cita md">“puede que hayan sido varios años”</div><div class="f"><i>Perspicacia</i>, vol. 2, “Jacob”, pág. 10</div><div class="m oro">“los niños son frágiles”: en Sucot les dio tiempo</div><span class="propio">observación propia</span></div>
+</div>
+<script>
+/*incluir:_cabana.js*/
+$(".cab-svg").innerHTML = cabanaSVG("e17");
+pinta(".marcas", `<path class="flecha rj" stroke-width="18" stroke="#d99a14" d="M 1041 874 C 1000 900 900 880 860 830 C 820 790 790 780 757 771"/><circle class="anillo a-s" cx="757" cy="771" r="80"/>`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 420, y: 180, w: 1650, h: 1590 }, V), 0);
+tl.set($(".jb"), { opacity: 0.7 }, 0);
+traza(".rj", 0.6, 1.4);
+traza(".a-s", at("a Sucot") + 0.3, 0.7);
+late(".a-s", at("cabañas"), { s: 1.15, n: 3 });
+secuencia([[".a1", 0.4], [".a2", at("Una cabaña")], [".a3", at("Y que se")]]);
+aparece(".cab-svg .palos", at("Una cabaña"), 0.5);
+tl.fromTo($$(".cab-svg .techo ellipse"), { opacity: 0 }, { opacity: 1, duration: 0.2, stagger: { amount: 1.4 }, immediateRender: false }, at("ramas") - 0.2);
+tl.set($$(".cab-svg .techo ellipse"), { opacity: 0 }, 0);
+aparece(".cab-svg .sombra", at("sombra"), 0.6);
+aparece(".cab-svg .ovejas", at("Una cabaña") + 1.2, 0.6);
+</script>

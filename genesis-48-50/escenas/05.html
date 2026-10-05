@@ -1,0 +1,58 @@
+<style>
+.tit05 { position: absolute; left: 80px; top: 110px; }
+.tit05 .m { font-size: 96px; }
+.cnt05 { position: absolute; right: 80px; top: 96px; text-align: right; }
+.cnt05 .cifra { font-size: 150px; }
+.cnt05 .u { font-family: "Caveat", cursive; font-weight: 700; font-size: 48px; color: var(--tenue); margin-top: -6px; }
+.fila05 { position: absolute; left: 60px; right: 60px; top: 410px; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 18px; }
+.fila05 .med { position: relative; width: 136px; margin: 0 auto; }
+.fila05 .med .n { font-size: 24px; }
+.ram05 { position: absolute; top: 650px; display: flex; gap: 10px; }
+.ram05 span { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; padding: 4px 14px 2px; border-radius: 12px; background: var(--oro); color: #17212b; }
+.lev05 { position: absolute; top: 650px; width: 260px; text-align: center; }
+.lev05 .clave { font-size: 46px; }
+.lin05 { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.cards05 { position: absolute; left: 80px; right: 80px; top: 770px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+.cards05 .tj .x { font-size: 44px; }
+.cards05 .tj .k { font-size: 28px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 48</span><span>versículos 5 y 6 · Josué 14:4</span></div>
+<div class="tit05"><div class="m">¿trece tribus?</div></div>
+<div class="cnt05"><div class="cifra"><span class="c05">12</span></div><div class="u u1">hijos de Jacob</div><div class="u u2" style="position:absolute; right:0; top:150px; white-space:nowrap; color:var(--oro)">herencias de tierra</div></div>
+<div class="fila05"></div>
+<svg class="lin05" viewBox="0 0 1920 1080"><path class="lj05" d="" fill="none" stroke="#e9bf60" stroke-width="5" stroke-linecap="round"/></svg>
+<div class="ram05"><span class="e">Efraín</span><span class="mm">Manasés</span></div>
+<div class="lev05"><span class="clave">solo ciudades</span></div>
+<div class="cards05">
+  <div class="tj t1"><div class="k">si se cuentan personas</div><div class="x"><b>12</b> hijos de Jacob</div></div>
+  <div class="tj on t2"><div class="k">si se cuenta territorio</div><div class="x"><b>12</b> herencias de tierra: José en dos, Leví sin franja</div><div class="ref">“A los levitas no se les dio ninguna parte de la tierra, solo ciudades” · Josué 14:4</div></div>
+</div>
+
+<script>
+$(".fila05").innerHTML = HIJOS.map(([k]) => `<div class="w05 w-${k}">${medallon(k)}</div>`).join("");
+// Posiciones de José y Leví en la fila, para colocar sus rótulos debajo.
+const col = (i) => 60 + (1800 - 11 * 18) / 12 * (i + 0.5) + 18 * i;
+const xJ = col(10), xL = col(2);
+$(".ram05").style.left = (xJ - 150) + "px";
+$(".lev05").style.left = (xL - 130) + "px";
+$(".lj05").setAttribute("d", `M ${xJ} 608 L ${xJ} 642`);
+entra(".tit05", 0.3, { y: 16 });
+salta($$(".fila05 .med"), 0.6, { st: 0.08, d: 0.45 });
+aparece(".cnt05", 1.2, 0.5);
+const tT = at("trece tribus");
+const f05 = (v) => (Math.round(v) === 13 ? "13?" : String(Math.round(v)));
+const tR = at("José tiene ahora");
+late(".w-jose .med", tR, { s: 1.12, n: 2 });
+traza(".lj05", tR + 0.3, 0.3);
+salta([".ram05 .e", ".ram05 .mm"], tR + 0.5, { st: 0.25 });
+cuenta(".c05", 12, 13, tR + 0.8, 0.5, f05);
+tl.to(".u1", { opacity: 0, duration: 0.2 }, tR + 0.6);
+const tL = at("Pero Leví");
+tl.to($(".w-levi .med .foto"), { filter: "grayscale(1) brightness(0.5)", duration: 0.6 }, tL + 0.4);
+salta(".lev05", at("sino ciudades") - 0.2);
+cuenta(".c05", 13, 12, at("siguen siendo doce"), 0.6, f05);
+aparece(".u2", at("siguen siendo doce") + 0.3, 0.4);
+entra(".t2", at("siguen siendo doce") - 0.2, { y: 20 });
+entra(".t1", Math.min(at("Son doce hijos") - 0.2, 2.4), { y: 20 });
+</script>

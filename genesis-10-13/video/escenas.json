@@ -1,0 +1,344 @@
+[
+ {
+  "num": "00",
+  "titulo": "Apertura",
+  "start": 0,
+  "dur": 39.664
+ },
+ {
+  "num": "01",
+  "titulo": "Tres historias",
+  "start": 39.664,
+  "dur": 22.984
+ },
+ {
+  "num": "02",
+  "titulo": "Unos cuatrocientos treinta años",
+  "start": 62.648,
+  "dur": 29.872
+ },
+ {
+  "num": "03",
+  "titulo": "Setenta familias",
+  "start": 92.52,
+  "dur": 32.128
+ },
+ {
+  "num": "04",
+  "titulo": "Por familias y lenguas",
+  "start": 124.648,
+  "dur": 32.224
+ },
+ {
+  "num": "05",
+  "titulo": "Jafet",
+  "start": 156.872,
+  "dur": 29.632
+ },
+ {
+  "num": "06",
+  "titulo": "Cam",
+  "start": 186.504,
+  "dur": 23.32
+ },
+ {
+  "num": "07",
+  "titulo": "Sem",
+  "start": 209.824,
+  "dur": 27.496
+ },
+ {
+  "num": "08",
+  "titulo": "La tierra de Canaán",
+  "start": 237.32,
+  "dur": 33.784
+ },
+ {
+  "num": "09",
+  "titulo": "Nemrod",
+  "start": 271.104,
+  "dur": 34.288
+ },
+ {
+  "num": "10",
+  "titulo": "El primer reino",
+  "start": 305.392,
+  "dur": 36.16
+ },
+ {
+  "num": "11",
+  "titulo": "Las ciudades de Nemrod hoy",
+  "start": 341.552,
+  "dur": 25.936
+ },
+ {
+  "num": "12",
+  "titulo": "Un solo idioma",
+  "start": 367.488,
+  "dur": 25.6
+ },
+ {
+  "num": "13",
+  "titulo": "Ladrillos y betún",
+  "start": 393.088,
+  "dur": 31.456
+ },
+ {
+  "num": "14",
+  "titulo": "Así nos haremos famosos",
+  "start": 424.544,
+  "dur": 35.848
+ },
+ {
+  "num": "15",
+  "titulo": "Un zigurat",
+  "start": 460.392,
+  "dur": 29.32
+ },
+ {
+  "num": "16",
+  "titulo": "La torre, a escala",
+  "start": 489.712,
+  "dur": 32.2
+ },
+ {
+  "num": "17",
+  "titulo": "Babel hoy",
+  "start": 521.912,
+  "dur": 20.704
+ },
+ {
+  "num": "18",
+  "titulo": "Jehová bajó para ver",
+  "start": 542.616,
+  "dur": 33.544
+ },
+ {
+  "num": "19",
+  "titulo": "Confundamos su idioma",
+  "start": 576.16,
+  "dur": 39.184
+ },
+ {
+  "num": "20",
+  "titulo": "De Babel a Pentecostés",
+  "start": 615.344,
+  "dur": 31.912
+ },
+ {
+  "num": "21",
+  "titulo": "Una sola familia",
+  "start": 647.256,
+  "dur": 24.112
+ },
+ {
+  "num": "22",
+  "titulo": "La vida se acorta",
+  "start": 671.368,
+  "dur": 30.928
+ },
+ {
+  "num": "23",
+  "titulo": "La cuenta",
+  "start": 702.296,
+  "dur": 31.48
+ },
+ {
+  "num": "24",
+  "titulo": "Setenta o ciento treinta",
+  "start": 733.776,
+  "dur": 33.04
+ },
+ {
+  "num": "25",
+  "titulo": "Vidas que se cruzan",
+  "start": 766.816,
+  "dur": 32.536
+ },
+ {
+  "num": "26",
+  "titulo": "La familia de Taré",
+  "start": 799.352,
+  "dur": 32.368
+ },
+ {
+  "num": "27",
+  "titulo": "De Ur a Harán",
+  "start": 831.72,
+  "dur": 35.92
+ },
+ {
+  "num": "28",
+  "titulo": "Sal de tu país",
+  "start": 867.64,
+  "dur": 23.152
+ },
+ {
+  "num": "29",
+  "titulo": "Ur",
+  "start": 890.792,
+  "dur": 33.064
+ },
+ {
+  "num": "30",
+  "titulo": "Una casa en Ur",
+  "start": 923.856,
+  "dur": 32.896
+ },
+ {
+  "num": "31",
+  "titulo": "Ur hoy",
+  "start": 956.752,
+  "dur": 20.968
+ },
+ {
+  "num": "32",
+  "titulo": "La promesa",
+  "start": 977.72,
+  "dur": 29.248
+ },
+ {
+  "num": "33",
+  "titulo": "El pacto y su fecha",
+  "start": 1006.968,
+  "dur": 36.28
+ },
+ {
+  "num": "34",
+  "titulo": "De Harán a Canaán",
+  "start": 1043.248,
+  "dur": 26.872
+ },
+ {
+  "num": "35",
+  "titulo": "Siquem",
+  "start": 1070.12,
+  "dur": 30.328
+ },
+ {
+  "num": "36",
+  "titulo": "Tu descendencia",
+  "start": 1100.448,
+  "dur": 30.328
+ },
+ {
+  "num": "37",
+  "titulo": "En qué idioma",
+  "start": 1130.776,
+  "dur": 19.408
+ },
+ {
+  "num": "38",
+  "titulo": "Entre Betel y Hai",
+  "start": 1150.184,
+  "dur": 28.456
+ },
+ {
+  "num": "39",
+  "titulo": "Betel y Hai hoy",
+  "start": 1178.64,
+  "dur": 25.552
+ },
+ {
+  "num": "40",
+  "titulo": "Hambre",
+  "start": 1204.192,
+  "dur": 34.024
+ },
+ {
+  "num": "41",
+  "titulo": "Mintió Abrán",
+  "start": 1238.216,
+  "dur": 33.904
+ },
+ {
+  "num": "42",
+  "titulo": "En la casa del faraón",
+  "start": 1272.12,
+  "dur": 34.816
+ },
+ {
+  "num": "43",
+  "titulo": "De vuelta al altar",
+  "start": 1306.936,
+  "dur": 36.232
+ },
+ {
+  "num": "44",
+  "titulo": "Somos hermanos",
+  "start": 1343.168,
+  "dur": 36.904
+ },
+ {
+  "num": "45",
+  "titulo": "Lo que vio Lot",
+  "start": 1380.072,
+  "dur": 34.24
+ },
+ {
+  "num": "46",
+  "titulo": "Era Lot mala persona",
+  "start": 1414.312,
+  "dur": 25.744
+ },
+ {
+  "num": "47",
+  "titulo": "Dónde estaba Sodoma",
+  "start": 1440.056,
+  "dur": 22.504
+ },
+ {
+  "num": "48",
+  "titulo": "Levanta la vista",
+  "start": 1462.56,
+  "dur": 36.16
+ },
+ {
+  "num": "49",
+  "titulo": "Hebrón",
+  "start": 1498.72,
+  "dur": 32.392
+ },
+ {
+  "num": "50",
+  "titulo": "Hebrón hoy",
+  "start": 1531.112,
+  "dur": 10.096
+ },
+ {
+  "num": "51",
+  "titulo": "Cómo se amarran",
+  "start": 1541.208,
+  "dur": 35.128
+ },
+ {
+  "num": "52",
+  "titulo": "Lecciones de Génesis diez",
+  "start": 1576.336,
+  "dur": 33.664
+ },
+ {
+  "num": "53",
+  "titulo": "Lecciones de Génesis once",
+  "start": 1610,
+  "dur": 32.536
+ },
+ {
+  "num": "54",
+  "titulo": "Lecciones de Génesis doce",
+  "start": 1642.536,
+  "dur": 30.16
+ },
+ {
+  "num": "55",
+  "titulo": "Lecciones de Génesis trece",
+  "start": 1672.696,
+  "dur": 32.128
+ },
+ {
+  "num": "56",
+  "titulo": "Cierre",
+  "start": 1704.824,
+  "dur": 19.648
+ }
+]

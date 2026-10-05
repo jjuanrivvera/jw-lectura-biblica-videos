@@ -1,0 +1,81 @@
+<style>
+.titulo { position: absolute; left: 70px; right: 70px; top: 34px; display: flex; align-items: baseline; gap: 44px; }
+.titulo .grande { font-size: 128px; }
+.titulo .grande b { color: var(--oro); }
+.titulo .sub { font-family: "Caveat", cursive; font-weight: 700; font-size: 74px; color: var(--oro); }
+.pan { position: absolute; top: 222px; width: 880px; height: 716px; border-radius: 28px; overflow: hidden; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55); background: #e3ddd2; }
+.pan.p40 { left: 52px; }
+.pan.p41 { left: 988px; }
+.pan .kb { position: absolute; inset: 0; }
+.pan .kb img { position: absolute; display: block; }
+.pan.p40 .kb img { width: 1600px; height: 1668px; left: -470px; top: -150px; }
+.pan.p41 .kb img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+.pan .v { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12, 18, 25, 0.55) 0%, rgba(12, 18, 25, 0.12) 24%, rgba(12, 18, 25, 0.30) 36%, rgba(12, 18, 25, 0.90) 64%, rgba(12, 18, 25, 0.97) 100%); }
+.pan .n { position: absolute; left: 36px; top: 14px; font-size: 150px; text-shadow: 0 6px 26px rgba(0, 0, 0, 0.75); }
+.pan .lista { position: absolute; left: 40px; right: 30px; bottom: 30px; display: flex; flex-direction: column; gap: 4px; }
+.pan .lista .m { font-size: 64px; line-height: 1.04; text-shadow: 0 4px 18px rgba(0, 0, 0, 0.85); }
+.pan .borde { position: absolute; inset: 0; border-radius: 28px; border: 5px solid var(--oro); opacity: 0; }
+.final { position: absolute; left: 0; right: 0; bottom: 30px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 60px; color: var(--verde); }
+.pie0 { position: absolute; left: 52px; right: 52px; top: 948px; display: flex; justify-content: space-between; font-family: "Montserrat", sans-serif; font-size: 21px; color: var(--tenue); }
+.pie0 i { color: var(--tiza); }
+</style>
+
+<div class="titulo"><div class="grande">Jeremías <b>40 y 41</b></div><div class="sub">el resto que quedó en Judá</div></div>
+
+<div class="pan p40"><div class="kb" data-layout-allow-overflow><img src="assets/img/alrededores.jpg" /></div><div class="v"></div>
+  <div class="n numcap">40</div>
+  <div class="lista">
+    <div class="m l1">liberan a <b>Jeremías</b></div>
+    <div class="m l2">Mizpá: gobierna <b>Guedalías</b></div>
+    <div class="m l3">vuelve la gente · <b>cosecha</b></div>
+    <div class="m l4 rojo">un aviso que no cree</div>
+  </div>
+  <div class="borde"></div>
+</div>
+
+<div class="pan p41"><div class="kb" data-layout-allow-overflow><img src="assets/img/gabaon.jpg" /></div><div class="v"></div>
+  <div class="n numcap">41</div>
+  <div class="lista">
+    <div class="m l1 rojo">Ismael mata a Guedalías</div>
+    <div class="m l2">engaña a <b>80 hombres</b> de luto</div>
+    <div class="m l3">Johanán lo alcanza en <b>Gabaón</b></div>
+    <div class="m l4">por miedo, rumbo a <b>Egipto</b></div>
+  </div>
+  <div class="borde"></div>
+</div>
+
+<div class="pie0"><span><i>Perspicacia</i>, mapa “Jerusalén y sus alrededores”</span><span><i>Perspicacia</i>, «Gabaón»: Gabaón en la actualidad</span></div>
+
+<div class="final">al final: lecciones y preguntas para pensar</div>
+
+<script>
+entra(".titulo .grande", 0.3, { y: 40, d: 0.8 });
+escribe(".titulo .sub", at("Estos capítulos"), 1.0);
+entra([".p40", ".p41"], 0.9, { y: 50, d: 0.9, st: 0.25 });
+aparece(".pie0", 1.6, 0.6);
+kb(".p40 .kb", 0, DUR, { s: 1.0, x: 0 }, { s: 1.1, x: 2 });
+kb(".p41 .kb", 0, DUR, { s: 1.12, x: -2 }, { s: 1.0, x: 0 });
+
+const t40 = at("En el cuarenta");
+const t41 = at("En el cuarenta y uno");
+aparece(".p40 .borde", t40 - 0.2, 0.4);
+atenua(".p41", t40 - 0.2, 0.45);
+entra(".p40 .l1", at("liberan"), { y: 24 });
+entra(".p40 .l2", at("Mizpá"), { y: 24 });
+entra(".p40 .l3", at("vuelve"), { y: 24 });
+entra(".p40 .l4", at("Pero Guedalías"), { y: 24 });
+
+tl.to($(".p41"), { opacity: 1, duration: 0.5 }, t41 - 0.3);
+atenua(".p40", t41 - 0.3, 0.45);
+desaparece(".p40 .borde", t41 - 0.3, 0.3);
+aparece(".p41 .borde", t41 - 0.2, 0.4);
+entra(".p41 .l1", at("Ismael mata"), { y: 24 });
+entra(".p41 .l2", at("engaña"), { y: 24 });
+entra(".p41 .l3", at("Johanán"), { y: 24 });
+entra(".p41 .l4", at("por miedo"), { y: 24 });
+
+const tf = at("Al final");
+tl.to($(".p40"), { opacity: 1, duration: 0.5 }, tf - 0.2);
+desaparece(".p41 .borde", tf - 0.2, 0.3);
+entra(".final", tf, { y: 24 });
+</script>

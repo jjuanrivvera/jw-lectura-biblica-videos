@@ -1,0 +1,47 @@
+<style>
+.tabla { top: 160px; grid-template-columns: 600px 1fr; row-gap: 20px; }
+.tabla .h { font-size: 26px; color: var(--s1); border-bottom-color: rgba(233, 191, 96, 0.5); }
+.tabla .c { font-size: 40px; }
+.tabla .c .n { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 0.14em; color: var(--tenue); margin-bottom: 6px; }
+.tabla .c.q { font-size: 42px; border-color: rgba(233, 191, 96, 0.55); }
+.tabla .c.q b { color: var(--s1); }
+.tabla .c.q .rf { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.1em; color: var(--s1); margin-top: 8px; }
+.tabla .c.q .nota { font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 24px; color: var(--tenue); margin-top: 10px; }
+.tabla .c.q .dos { display: flex; flex-direction: column; gap: 10px; }
+.cierre { position: absolute; left: 80px; right: 80px; top: 470px; display: flex; justify-content: center; }
+.cierre .m { font-size: 92px; padding: 10px 46px 4px; border-radius: 24px; background: rgba(15, 22, 30, 0.92); border: 4px solid var(--s1); }
+.cierre .no { position: absolute; bottom: 150px; font-size: 54px; color: var(--tenue); }
+</style>
+
+<div class="cabs c1"><span class="k">Señal 1</span><span class="t">Comparar con el texto</span></div>
+<svg class="cabs-linea c1" viewBox="0 0 520 12"><path d="M 4 6 C 160 2 360 10 516 5"/></svg>
+
+<div class="tabla">
+  <div class="h h1">Lo que muchos creen</div><div class="h h2">Lo que dice el texto</div>
+  <div class="c r1a"><div class="n">1</div>El alma es inmortal: sigue viviendo cuando el cuerpo muere</div>
+  <div class="c q r1b"><div>“El alma que peca es la que <b>morirá</b>.”</div><div class="rf">EZEQUIEL 18:4</div><div class="nota nt">La idea viene de la filosofía de los antiguos griegos. <i>Preguntas sobre la Biblia</i>, “¿Qué es el alma?”</div></div>
+  <div class="c r2a"><div class="n">2</div>Los malos sufren para siempre después de morir</div>
+  <div class="c q r2b"><div>“Los muertos <b>no saben nada en absoluto</b>.”</div><div class="rf">ECLESIASTÉS 9:5</div></div>
+  <div class="c r3a"><div class="n">3</div>La Trinidad: Padre, Hijo y espíritu santo forman un solo Dios</div>
+  <div class="c q r3b"><div class="dos"><div class="q1">“Voy a subir a mi Padre y Padre de ustedes, <b>a mi Dios y Dios de ustedes</b>.” <span class="rf">JUAN 20:17</span></div><div class="q2">“El Padre <b>es mayor que yo</b>.” <span class="rf">JUAN 14:28</span></div></div></div>
+</div>
+<div class="cierre" data-layout-allow-overlap><div class="m oro">¿qué dice el texto?</div></div>
+
+<script>
+const t0 = at("Esa señal se puede comprobar");
+cabSenal(1, t0);
+entra([".h1", ".h2"], at("Tomemos tres enseñanzas"), { y: 16, st: 0.2 });
+entra(".r1a", at("La primera"), { x: -30, y: 0 });
+entra(".r1b", at("Pero Ezequiel"), { x: 30, y: 0 });
+tl.set($(".r1b .nt"), { opacity: 0 }, 0);
+tl.to($(".r1b .nt"), { opacity: 1, duration: 0.5 }, at("Esa idea no viene"));
+entra(".r2a", at("La segunda"), { x: -30, y: 0 });
+entra(".r2b", at("Pero Eclesiastés"), { x: 30, y: 0 });
+entra(".r3a", at("La tercera"), { x: -30, y: 0 });
+entra(".r3b", at("Pero después de resucitar"), { x: 30, y: 0 });
+tl.set($(".r3b .q2"), { opacity: 0 }, 0);
+tl.to($(".r3b .q2"), { opacity: 1, duration: 0.5 }, at("Y antes había dicho"));
+const tC = at("No se trata de quién");
+atenua([".r1a", ".r2a", ".r3a", ".r1b", ".r2b", ".r3b", ".h1", ".h2"], tC, 0.22);
+salta(".cierre .m", at("Se trata de qué dice"), { desde: 0.7 });
+</script>

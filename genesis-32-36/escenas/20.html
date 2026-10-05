@@ -1,0 +1,35 @@
+<style>
+.tell { position: absolute; left: 60px; top: 150px; width: 1060px; height: 760px; }
+.tell svg { width: 1060px; height: 760px; }
+.cota { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; fill: var(--tiza); }
+.capa-t { font-family: "Caveat", cursive; font-weight: 700; font-size: 36px; fill: #1b2733; }
+.col.der { width: 690px; }
+.nota-t { position: absolute; left: 70px; bottom: 26px; font-size: 21px; }
+</style>
+<div class="cab"><span class="cap">Sucot hoy</span><span>Génesis 33:17 · 1 Reyes 7:46</span></div>
+<div class="tell"><svg viewBox="0 0 1060 760" class="tell-svg"></svg></div>
+<div class="nota-t s">Corte esquemático de un tell, no a escala vertical. <span class="externa" style="font-size:26px;padding:0 12px">fuente externa</span> medidas de Tell Deir Alla: Wikipedia</div>
+<div class="col der">
+  <div class="b a1"><div class="def"><div class="t">Sucot se suele identificar con</div><div class="x">Tell Deir ʽAlla</div><div class="s">hoy llamado Sukkot · a unos 5 km al este del Jordán, donde el Jaboc brota de las colinas · <i>Perspicacia</i>, vol. 2, “Sucot”, pág. 1059</div></div></div>
+  <div class="b a2"><div class="def"><div class="t">tell</div><div class="x">una colina hecha de <b>ruinas</b>: ciudades construidas una encima de otra durante siglos</div></div><span class="externa">≈ 200 m de largo y 27 m de alto · excavado desde 1960 por la Universidad de Leiden</span></div>
+  <div class="b a3"><div class="m">las cabañas de Jacob se volvieron ciudad</div><div class="cita md">“entre Sucot y Zaretán” se fundieron los objetos de cobre del templo</div><div class="f">1 Reyes 7:46</div><div class="cita md" style="color:var(--oro)">“han desenterrado allí evidencia de operaciones de fundición”</div><div class="f">“Toda Escritura es inspirada de Dios y provechosa”, pág. 65</div></div>
+  <div class="b a4"><div class="dato"><div class="v">1967</div><div class="k">“fragmentos de yeso con escritos semíticos antiguos” sobre Balaam, hijo de Beor</div><div class="s">de alrededor del año 800 a. e. c. · <i>La Atalaya</i>, 15/11/1986, pág. 30</div></div><span class="externa">reconstruida con 119 fragmentos · Museo Arqueológico de Jordania, Ammán</span></div>
+</div>
+<script>
+// Capas del tell, de la más antigua (abajo) a la más reciente (arriba).
+const CAP = ["#6f5a44", "#80684e", "#917757", "#a18663", "#b09470", "#bda37f"];
+let t = `<path d="M 0 640 L 1060 640 L 1060 760 L 0 760 Z" fill="#4c3b2b"/>`;
+CAP.forEach((c, i) => {
+  const y0 = 640 - i * 72, y1 = y0 - 72, e = 60 + i * 55;
+  t += `<path class="capa c${i}" d="M ${e} ${y0} C ${e + 60} ${y1 + 10} ${1060 - e - 60} ${y1 + 10} ${1060 - e} ${y0} Z" fill="${c}" stroke="#3a2c20" stroke-width="3"/>`;
+  t += `<text class="capa-t ct${i}" x="530" y="${y0 - 22}" text-anchor="middle">${i === 0 ? "la ciudad más antigua" : i === CAP.length - 1 ? "la más reciente" : ""}</text>`;
+});
+t += `<path class="cota m1" d="M 60 690 L 1000 690 M 60 675 L 60 705 M 1000 675 L 1000 705" stroke="var(--tiza)" stroke-width="4" fill="none"/><text class="cota m1" x="530" y="735" text-anchor="middle">≈ 200 m</text>`;
+t += `<path class="cota m2" d="M 1030 640 L 1030 220 M 1015 640 L 1045 640 M 1015 220 L 1045 220" stroke="var(--tiza)" stroke-width="4" fill="none"/><text class="cota m2" x="1005" y="200" text-anchor="end">27 m</text>`;
+$(".tell-svg").innerHTML = t;
+CAP.forEach((c, i) => entra(".c" + i, 0.5 + i * 0.35, { y: 30, d: 0.5 }));
+aparece([".ct0", ".ct5"], at("Un tel") + 0.5, 0.5);
+aparece(".m1", at("una encima") , 0.5);
+aparece(".m2", at("una encima") + 0.4, 0.5);
+secuencia([[".a1", 0.4], [".a2", at("Un tel")], [".a3", at("Las cabañas")], [".a4", at("Y en mil")]]);
+</script>

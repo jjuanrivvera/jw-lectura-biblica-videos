@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="UTF-8" /><title>Las montañas de Ararat</title></head>
+<body>
+<template>
+<style>
+@font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces.ttf") format("truetype"); font-weight: 100 900; font-style: normal; }
+@font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Italic.ttf") format("truetype"); font-weight: 100 900; font-style: italic; }
+@font-face { font-family: "Caveat"; src: url("assets/fonts/Caveat.ttf") format("truetype"); font-weight: 400 700; }
+@font-face { font-family: "Montserrat"; src: url("assets/fonts/Montserrat.ttf") format("truetype"); font-weight: 100 900; }
+#escena-29 {
+/* Estilo común de todas las escenas (1920x1080). El constructor lo anida bajo #escena-NN. */
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+color: var(--tiza);
+font-family: "Montserrat", sans-serif;
+--pizarra: #17212b;
+--pizarra2: #1d2a36;
+--tiza: #f1e9d8;
+--tenue: #b3bdc8;
+--oro: #e9bf60;
+--rojo: #ec8a67;
+--verde: #92d193;
+--cielo: #93bbef;
+--rosa: #e9adcc;
+--agua: #5f9fd8;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.contenido { position: absolute; inset: 0; }
+.fase { position: absolute; inset: 0; }
+svg { overflow: visible; }
+
+/* Tipografía por registro: la Biblia, la pizarra, los rótulos. */
+.biblia { font-family: "Fraunces", serif; font-weight: 500; line-height: 1.18; }
+.mano { font-family: "Caveat", cursive; font-weight: 700; line-height: 1.05; }
+.rotulo { font-family: "Montserrat", sans-serif; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+
+/* Cabecera: capítulo a la izquierda, versículos a la derecha. */
+.cab {
+  position: absolute; left: 80px; right: 80px; top: 38px;
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 30px;
+  color: var(--tenue); letter-spacing: 0.1em; text-transform: uppercase;
+}
+.cab .cap { color: var(--oro); }
+.cab.sobre span { padding: 6px 18px; border-radius: 12px; background: rgba(15, 22, 30, 0.86); }
+
+/* Pie con la fuente de la imagen o del mapa. */
+.fuente {
+  position: absolute; left: 80px; right: 80px; bottom: 28px;
+  font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 24px; line-height: 1.3;
+  color: var(--tenue);
+}
+.fuente b { color: var(--tiza); font-weight: 700; }
+.pie-mapa { position: absolute; left: 24px; bottom: 20px; padding: 8px 16px; border-radius: 10px;
+  background: rgba(15, 22, 30, 0.84); font-size: 22px; color: var(--tiza); }
+
+/* Columna de texto: el bloque activo se centra en el alto disponible. */
+.col { position: absolute; top: 120px; bottom: 96px; right: 80px; width: 740px; }
+.col.izq { left: 80px; right: auto; }
+.col > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+
+/* Palabras clave a mano, citas y rótulos. */
+.m { font-family: "Caveat", cursive; font-weight: 700; font-size: 78px; line-height: 1.04; color: var(--tiza); }
+.m.oro { color: var(--oro); }
+.m.rojo { color: var(--rojo); }
+.m.cielo { color: var(--cielo); }
+.m.rosa { color: var(--rosa); }
+.m.verde-no { color: var(--verde); }
+.m.xl { font-size: 112px; }
+.m.md { font-size: 64px; }
+.m b { color: var(--oro); font-weight: 700; }
+.cita { font-family: "Fraunces", serif; font-weight: 500; font-size: 54px; line-height: 1.2; color: var(--tiza); }
+.cita b { color: var(--oro); font-weight: 700; }
+.cita.md { font-size: 46px; }
+.cita .ref { display: block; margin-top: 18px; font-family: "Montserrat", sans-serif; font-weight: 700;
+  font-size: 28px; letter-spacing: 0.1em; color: var(--oro); }
+.s { font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 30px; line-height: 1.35; color: var(--tenue); }
+.s b { color: var(--tiza); font-weight: 700; }
+.grande { font-family: "Fraunces", serif; font-weight: 700; font-size: 150px; line-height: 1; letter-spacing: -0.02em; }
+
+/* Lo que la investigación marca como propio, y lo que viene de fuera de la JW. */
+.propio, .externa {
+  display: inline-block; align-self: flex-start; padding: 5px 20px 3px; border-radius: 14px;
+  font-family: "Caveat", cursive; font-weight: 700; font-size: 40px; line-height: 1.1;
+}
+.propio { border: 3px dashed var(--cielo); color: var(--cielo); }
+.externa { border: 3px dotted var(--rosa); color: var(--rosa); }
+
+/* Tarjeta de definición: el término y qué es. */
+.def { align-self: stretch; border: 4px solid var(--cielo); border-radius: 26px; padding: 24px 34px 28px; background: rgba(23, 33, 43, 0.93); }
+.def .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cielo); }
+.def .t i { font-family: "Fraunces", serif; font-style: italic; font-weight: 600; letter-spacing: 0.02em; text-transform: none; color: var(--tiza); margin-left: 12px; font-size: 32px; }
+.def .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 62px; line-height: 1.05; margin-top: 8px; }
+.def .x b { color: var(--oro); }
+.def .s { margin-top: 12px; }
+
+/* Ilustraciones y fotos de la JW: marco sencillo. */
+.ilus { position: absolute; overflow: hidden; border-radius: 22px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
+.ilus .kb { position: absolute; inset: 0; }
+.ilus img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pie-img { position: absolute; font-size: 24px; line-height: 1.3; color: var(--tenue); }
+.pie-img i { color: var(--tiza); }
+
+/* Mapas: cámara sobre la imagen real y trazos encima, en coordenadas de la imagen. */
+.mapa { position: absolute; overflow: hidden; background: #cfd9c4; }
+.mapa .cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.mapa .cam img, .mapa .cam svg { position: absolute; left: 0; top: 0; display: block; }
+/* Panel translúcido sobre el mapa. */
+.panel { position: absolute; top: 0; bottom: 0; right: 0; width: 910px;
+  background: linear-gradient(90deg, rgba(23, 33, 43, 0) 0%, rgba(23, 33, 43, 0.93) 9%, rgba(23, 33, 43, 0.97) 100%); }
+/* Rótulos que se leen sobre el mapa. */
+.halo { paint-order: stroke; stroke: rgba(255, 255, 255, 0.94); stroke-linejoin: round; }
+.halo-o { paint-order: stroke; stroke: rgba(17, 25, 33, 0.92); stroke-linejoin: round; }
+.ruta-h { fill: none; stroke: rgba(255, 255, 255, 0.9); stroke-linecap: round; stroke-linejoin: round; }
+.ruta { fill: none; stroke: #b8430f; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Trazos de pizarra. */
+.trazo { fill: none; stroke: var(--tiza); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Tarjeta de capítulo: "Génesis 24" y su subtítulo, a pantalla completa. */
+.capcard { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.capcard .num { font-family: "Fraunces", serif; font-weight: 700; font-size: 190px; line-height: 1; letter-spacing: -0.02em; }
+.capcard svg { display: block; margin: 18px auto 0; width: 820px; height: 40px; }
+.capcard svg path { fill: none; stroke: var(--oro); stroke-width: 7; stroke-linecap: round; }
+.capcard .sub { font-family: "Caveat", cursive; font-weight: 700; font-size: 92px; line-height: 1.05; color: var(--oro); margin-top: 22px; }
+.capcard .edad { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tenue); margin-top: 30px; }
+
+/* Tablas comparativas a lo ancho: una fila entra con la voz. */
+.tabla { position: absolute; left: 80px; right: 80px; display: grid; column-gap: 26px; row-gap: 16px; align-items: stretch; }
+.tabla .h { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--oro); padding: 0 6px 10px; border-bottom: 4px solid rgba(233, 191, 96, 0.5); display: flex; align-items: flex-end; }
+.tabla .rt { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tenue); display: flex; align-items: center; }
+.tabla .c { font-family: "Fraunces", serif; font-weight: 500; font-size: 38px; line-height: 1.18; padding: 16px 22px; border-radius: 18px; background: rgba(10, 16, 22, 0.42); border: 3px solid rgba(241, 233, 216, 0.10); display: flex; flex-direction: column; justify-content: center; }
+.tabla .c small { display: block; font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 22px; color: var(--tenue); margin-top: 6px; letter-spacing: 0.04em; }
+.tabla .c.dif { border-color: var(--rojo); }
+.tabla .c.si { border-color: rgba(233, 191, 96, 0.7); }
+
+/* Tarjetas de dato grande. */
+.dato { border-radius: 26px; background: rgba(10, 16, 22, 0.42); border: 3px solid rgba(241, 233, 216, 0.12); padding: 22px 30px; }
+.dato .v { font-family: "Fraunces", serif; font-weight: 700; font-size: 84px; line-height: 1; color: var(--oro); }
+.dato .v small { font-size: 44px; }
+.dato .k { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; line-height: 1.05; margin-top: 8px; }
+.dato .s { font-size: 24px; margin-top: 8px; }
+
+/* Secciones de lecciones: se tienen que ver distintas al resto (el verde solo va aquí). */
+.seccion { position: absolute; left: 90px; right: 90px; top: 50px; display: flex; align-items: baseline; gap: 34px; }
+.seccion .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 32px; letter-spacing: 0.2em; color: var(--verde); text-transform: uppercase; white-space: nowrap; }
+.seccion .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 76px; line-height: 1; }
+.seccion-linea { position: absolute; left: 90px; right: 90px; top: 150px; height: 20px; }
+.seccion-linea path { fill: none; stroke: var(--verde); stroke-width: 6; stroke-linecap: round; }
+.leccion { position: absolute; left: 90px; right: 90px; top: 190px; bottom: 70px; display: grid; grid-template-columns: 190px 1fr; column-gap: 50px; align-content: center; }
+.leccion .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 200px; line-height: 0.85; color: var(--verde); text-align: right; }
+.leccion .cuerpo { display: flex; flex-direction: column; gap: 40px; }
+.leccion .l { font-family: "Caveat", cursive; font-weight: 700; font-size: 92px; line-height: 1.04; }
+.leccion .l b { color: var(--oro); }
+.leccion .p { border-left: 10px solid var(--oro); padding: 8px 0 10px 40px; font-family: "Fraunces", serif; font-style: italic; font-weight: 500; font-size: 58px; line-height: 1.2; color: var(--oro); }
+.leccion .p .k { display: block; font-family: "Montserrat", sans-serif; font-style: normal; font-weight: 800; font-size: 28px; letter-spacing: 0.18em; color: var(--tenue); margin-bottom: 12px; }
+.leccion .s { font-size: 28px; }
+
+/* Génesis 1-4: placas legibles sobre paisajes, mapas e ilustraciones. */
+.placa { position: absolute; border-radius: 26px; padding: 24px 34px 26px; background: rgba(14, 21, 29, 0.84); box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35); }
+.placa .m { font-size: 70px; }
+.placa .cita { font-size: 50px; }
+.fuente.sobre { left: auto; right: 40px; bottom: 22px; max-width: 1500px; text-align: right; padding: 8px 18px; border-radius: 12px; background: rgba(14, 21, 29, 0.8); font-size: 22px; }
+.heb { font-family: "Fraunces", serif; font-style: italic; font-weight: 600; color: var(--cielo); }
+.paisaje { position: absolute; inset: 0; }
+.tachado { position: relative; }
+
+/* Mapa de relieve a pantalla completa con panel de texto a la izquierda. */
+.mapa.pleno { left: 0; top: 0; width: 1920px; height: 1080px; background: #b9c7cf; }
+.panel-izq { position: absolute; left: 0; top: 0; bottom: 0; width: 820px;
+  background: linear-gradient(90deg, rgba(23,33,43,0.97) 0%, rgba(23,33,43,0.93) 82%, rgba(23,33,43,0) 100%); }
+.mapa .rio { fill: none; stroke: #1f6fb8; stroke-width: 12; stroke-linecap: round; stroke-linejoin: round; }
+.mapa .rio-h { fill: none; stroke: rgba(255,255,255,0.85); stroke-width: 24; stroke-linecap: round; stroke-linejoin: round; }
+.mapa .lago { fill: #8fb8d6; stroke: #5b8db3; stroke-width: 4; }
+.mapa .et { font-family: "Fraunces", serif; font-weight: 600; font-style: italic; fill: #23384a; paint-order: stroke; stroke: rgba(255,255,255,0.85); stroke-width: 10px; stroke-linejoin: round; }
+.mapa .mar { font-family: "Fraunces", serif; font-style: italic; font-weight: 500; fill: #2e5f86; }
+.mapa .rot { font-family: "Caveat", cursive; font-weight: 700; paint-order: stroke; stroke: rgba(255,255,255,0.92); stroke-width: 12px; stroke-linejoin: round; }
+.col-izq { position: absolute; left: 70px; top: 120px; width: 660px; bottom: 90px; }
+.col-izq > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.duda { border: 4px dashed var(--rosa); border-radius: 24px; padding: 18px 28px; }
+.duda .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 60px; color: var(--rosa); }
+.duda .s { font-size: 28px; }
+
+
+.col-izq .cita { font-size: 50px; }
+.col-izq .m { font-size: 62px; }
+.col-izq .def .x { font-size: 54px; }
+
+}
+</style>
+<div id="escena-29" data-composition-id="escena-29" data-width="1920" data-height="1080">
+<div class="contenido">
+<div class="mapa pleno"><div class="cam">
+  <img src="assets/img/relieve.jpg" width="3264" height="2880" />
+  <svg width="3264" height="2880" viewBox="0 0 3264 2880">
+    <defs><radialGradient id="e29-zona"><stop offset="0" stop-color="#e9bf60" stop-opacity="0.5"/><stop offset="0.75" stop-color="#e9bf60" stop-opacity="0.25"/><stop offset="1" stop-color="#e9bf60" stop-opacity="0"/></radialGradient></defs>
+    <path class="lago" d=""/><path class="lago l2" d=""/>
+    <path class="rio-h" d="" data-r="e"/><path class="rio" d="" data-r="e"/>
+    <path class="rio-h" d="" data-r="m"/><path class="rio" d="" data-r="m"/>
+    <path class="rio-h" d="" data-r="t"/><path class="rio" d="" data-r="t"/>
+    <text class="et r-ti" x="1665" y="1170" font-size="50">Tigris</text>
+    <g class="zona"><ellipse cx="1700" cy="830" rx="300" ry="190" fill="url(#e29-zona)"/><ellipse cx="1700" cy="830" rx="300" ry="190" fill="none" stroke="#a36a00" stroke-width="6" stroke-dasharray="18 12"/></g>
+    <text class="rot t-zona" x="1450" y="700" font-size="58" fill="#7a4a00">montañas de Ararat · Urartu</text>
+    <g class="ararat"><path d="M 1757 722 L 1792 782 L 1722 782 Z" fill="#5b4430" stroke="#fff" stroke-width="5"/><path d="M 1757 722 L 1768 741 L 1746 741 Z" fill="#fff"/></g>
+    <text class="rot t-ara" x="1757" y="836" font-size="44" fill="#3a2a1c" text-anchor="middle">monte Ararat (el de hoy)</text>
+    <text class="rot t-van" x="1560" y="935" font-size="44" fill="#1f4f78">lago de Van</text>
+    <g class="paises" font-family="Montserrat" font-weight="800" font-size="34" letter-spacing="6" fill="rgba(40,40,40,0.55)">
+      <text x="1250" y="800">TURQUÍA</text><text x="1790" y="640">ARMENIA</text><text x="1860" y="990">IRÁN</text>
+    </g>
+    <text class="rot t-nose" x="1440" y="1090" font-size="50" fill="#a33b1c">dónde se posó el arca: no se sabe</text>
+  </svg>
+</div></div>
+<div class="panel-izq"></div>
+<div class="cab sobre"><span class="cap">Génesis 8</span><span>versículo 4</span></div>
+<div class="col-izq">
+  <div class="b b1"><div class="cita">“las montañas de Ararat”<span class="ref">GÉNESIS 8:4</span></div><div class="m">en <b>plural</b>: no un pico</div></div>
+  <div class="b b2"><div class="def"><div class="t">Ararat</div><div class="x">“una cadena de montañas y una <b>región</b>”</div><div class="s">“en la que convergen Turquía, Irán y Armenia”, en torno al lago de Van · Perspicacia, vol. 1, “Ararat”</div></div></div>
+  <div class="b b3"><div class="m">los asirios: <b>Urartu</b></div><div class="s">inscripciones de Salmanasar I, Asurnasirpal II, Tiglat-piléser III y Sargón II · siglos IX y VIII a. e. c.</div><div class="m" style="font-size:54px">allá huyeron los asesinos de Senaquerib</div><div class="s">2 Reyes 19:37 · también Jeremías 51:27</div></div>
+  <div class="b b4"><div class="m oro">¿dónde exactamente? no se sabe</div><div class="cita" style="font-size:42px">“probablemente no sobre la cima de la cumbre más elevada [...], sino sobre un terreno propicio”<span class="ref">PERSPICACIA, VOL. 1, “ARARAT”</span></div></div>
+</div>
+<div class="pie-mapa" style="left:auto;right:24px">Relieve, ríos y lagos: Natural Earth (dominio público) · región aproximada, no es un límite</div>
+</div>
+</div>
+<script>
+(function () {
+const ID = "escena-29";
+const DUR = 35.392;
+const LEAD = 0.6;
+const W = [{"w":"El","t":0.703,"d":0.224},{"w":"arca","t":0.939,"d":0.263},{"w":"se","t":1.216,"d":0.132},{"w":"detuvo","t":1.361,"d":0.421},{"w":"sobre","t":1.795,"d":0.342},{"w":"las","t":2.15,"d":0.171},{"w":"montañas","t":2.334,"d":0.566},{"w":"de","t":2.913,"d":0.079},{"w":"Ararat","t":3.005,"d":0.421},{"w":"En","t":4.35,"d":0.211},{"w":"plural","t":4.574,"d":0.526},{"w":"No","t":6.021,"d":0.25},{"w":"es","t":6.284,"d":0.145},{"w":"un","t":6.442,"d":0.132},{"w":"pico","t":6.587,"d":0.382},{"w":"es","t":7.271,"d":0.184},{"w":"una","t":7.468,"d":0.171},{"w":"cadena","t":7.653,"d":0.368},{"w":"de","t":8.034,"d":0.092},{"w":"montañas","t":8.139,"d":0.645},{"w":"una","t":9.139,"d":0.158},{"w":"región","t":9.311,"d":0.421},{"w":"donde","t":9.745,"d":0.263},{"w":"hoy","t":10.021,"d":0.158},{"w":"se","t":10.192,"d":0.132},{"w":"juntan","t":10.337,"d":0.434},{"w":"Turquía","t":10.784,"d":0.566},{"w":"Irán","t":11.626,"d":0.303},{"w":"y","t":11.942,"d":0.079},{"w":"Armenia","t":12.034,"d":0.513},{"w":"alrededor","t":12.837,"d":0.632},{"w":"del","t":13.482,"d":0.158},{"w":"lago","t":13.653,"d":0.263},{"w":"de","t":13.929,"d":0.092},{"w":"Van","t":14.034,"d":0.355},{"w":"Los","t":15.311,"d":0.224},{"w":"asirios","t":15.547,"d":0.553},{"w":"la","t":16.113,"d":0.092},{"w":"llamaban","t":16.218,"d":0.487},{"w":"Urartu","t":16.718,"d":0.513},{"w":"La","t":18.139,"d":0.171},{"w":"Biblia","t":18.324,"d":0.355},{"w":"la","t":18.692,"d":0.092},{"w":"vuelve","t":18.797,"d":0.303},{"w":"a","t":19.113,"d":0.026},{"w":"nombrar","t":19.153,"d":0.447},{"w":"allá","t":19.889,"d":0.25},{"w":"huyeron","t":20.153,"d":0.368},{"w":"los","t":20.534,"d":0.158},{"w":"asesinos","t":20.705,"d":0.605},{"w":"de","t":21.324,"d":0.079},{"w":"Senaquerib","t":21.416,"d":0.605},{"w":"Dónde","t":22.942,"d":0.289},{"w":"se","t":23.245,"d":0.132},{"w":"detuvo","t":23.389,"d":0.395},{"w":"exactamente","t":23.797,"d":0.895},{"w":"No","t":25.6,"d":0.211},{"w":"se","t":25.824,"d":0.145},{"w":"sabe","t":25.982,"d":0.421},{"w":"Probablemente","t":27.311,"d":0.737},{"w":"no","t":28.061,"d":0.197},{"w":"en","t":28.271,"d":0.079},{"w":"la","t":28.363,"d":0.079},{"w":"cima","t":28.455,"d":0.316},{"w":"más","t":28.784,"d":0.263},{"w":"alta","t":29.061,"d":0.368},{"w":"sino","t":29.758,"d":0.237},{"w":"en","t":30.008,"d":0.079},{"w":"un","t":30.1,"d":0.118},{"w":"terreno","t":30.232,"d":0.421},{"w":"donde","t":30.666,"d":0.303},{"w":"todos","t":30.982,"d":0.382},{"w":"pudieran","t":31.376,"d":0.447},{"w":"vivir","t":31.837,"d":0.329},{"w":"algunos","t":32.179,"d":0.474},{"w":"meses","t":32.666,"d":0.382},{"w":"más","t":33.061,"d":0.408}];
+// Librería común de las escenas. El constructor la pega dentro de una función que ya
+// define ID (id de la composición), DUR (duración de la escena), LEAD (silencio antes de la
+// voz) y W (palabras de la voz con su tiempo, ya desplazadas por LEAD).
+const root = document.getElementById(ID);
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+// Acepta un selector, un elemento, una NodeList o una lista mezclada de cualquiera de ellos.
+const el = (x) => (typeof x === "string" ? $$(x) : Array.isArray(x) ? x.flatMap((y) => el(y)) : x instanceof NodeList ? Array.from(x) : [x]);
+const tl = gsap.timeline({ paused: true });
+
+// ---------- sincronía con la voz ----------
+const norm = (s) =>
+  s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9ñ]/g, "");
+const WN = W.map((w) => norm(w.w));
+const trozos = (frase) => frase.split(/[\s\-]+/).map(norm).filter(Boolean);
+function buscar(frase, despues) {
+  const p = trozos(frase);
+  for (let i = 0; i < WN.length; i++) {
+    if (W[i].t < (despues || 0) - 0.001) continue;
+    let ok = true;
+    for (let k = 0; k < p.length; k++) if (WN[i + k] !== p[k]) { ok = false; break; }
+    if (ok) return i;
+  }
+  throw new Error(ID + ': no encuentro "' + frase + '" después de ' + despues);
+}
+// Momento en que la voz empieza a decir la frase (primera vez después de `despues`).
+function at(frase, despues) { return W[buscar(frase, despues)].t; }
+// Momento en que la voz termina de decir la frase.
+function fin(frase, despues) {
+  const i = buscar(frase, despues);
+  const w = W[i + trozos(frase).length - 1];
+  return w.t + w.d;
+}
+const FIN_VOZ = W.length ? W[W.length - 1].t + W[W.length - 1].d : DUR;
+
+// ---------- movimientos ----------
+// Todos los elementos que se revelan empiezan ocultos por CSS (.oc, .esc, trazos) y se
+// animan con immediateRender:false, así cada cuadro depende solo del tiempo.
+const IR = { immediateRender: false };
+// El primer movimiento que revela un elemento lo deja oculto desde el cuadro cero.
+const _ocultos = new WeakSet();
+function inicial(els, props) {
+  els.forEach((e) => { if (!_ocultos.has(e)) { _ocultos.add(e); gsap.set(e, props); } });
+  return els;
+}
+function entra(x, t, o = {}) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0, y: o.y ?? 36, x: o.x ?? 0, scale: o.s ?? 1 },
+    { opacity: 1, y: 0, x: 0, scale: 1, duration: o.d ?? 0.6, ease: o.ease ?? "power3.out", stagger: o.st ?? 0, ...IR }, t);
+}
+function sale(x, t, o = {}) {
+  tl.fromTo(el(x), { opacity: 1 }, { opacity: 0, y: o.y ?? -24, duration: o.d ?? 0.45, ease: "power2.in", stagger: o.st ?? 0, ...IR }, t);
+}
+function aparece(x, t, d = 0.5, hasta = 1) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0 }, { opacity: hasta, duration: d, ease: "none", ...IR }, t);
+}
+function atenua(x, t, hasta = 0.25, d = 0.5) {
+  tl.to(el(x), { opacity: hasta, duration: d, ease: "power1.inOut" }, t);
+}
+function desaparece(x, t, d = 0.45) {
+  tl.to(el(x), { opacity: 0, duration: d, ease: "none" }, t);
+}
+function salta(x, t, o = {}) {
+  tl.fromTo(inicial(el(x), { opacity: 0 }), { opacity: 0, scale: o.desde ?? 0.4, rotation: o.r ?? 0, transformOrigin: "50% 50%" },
+    { opacity: 1, scale: 1, rotation: 0, duration: o.d ?? 0.55, ease: o.ease ?? "back.out(1.8)", stagger: o.st ?? 0, ...IR }, t);
+}
+// Escritura a mano: se descubre de izquierda a derecha, como si la tiza avanzara.
+function escribe(x, t, d = 0.8, o = {}) {
+  tl.fromTo(inicial(el(x), { clipPath: "inset(-30% 103% -30% -3%)" }), { opacity: 1, clipPath: "inset(-30% 103% -30% -3%)" },
+    { clipPath: "inset(-30% -3% -30% -3%)", opacity: 1, duration: d, ease: "none", stagger: o.st ?? 0, ...IR }, t);
+}
+// Trazo de tiza: la línea se dibuja en vivo.
+const _largos = new Map();
+// Las escenas que no están en pantalla al cargar están ocultas, y ahí getTotalLength()
+// devuelve 0. Se mide una copia del trazo dentro de un SVG auxiliar que sí se dibuja.
+function sonda(p) {
+  let s = document.getElementById("sonda-trazos");
+  if (!s) {
+    s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    s.id = "sonda-trazos";
+    s.setAttribute("style", "position:fixed;left:0;top:0;width:10px;height:10px;visibility:hidden;pointer-events:none");
+    document.body.appendChild(s);
+  }
+  const c = p.cloneNode(false);
+  s.appendChild(c);
+  return c;
+}
+function largo(p) {
+  const c = sonda(p);
+  const L = c.getTotalLength();
+  c.remove();
+  return L;
+}
+function preparaTrazos(x) {
+  el(x).forEach((p) => {
+    if (_largos.has(p)) return;
+    const L = largo(p);
+    _largos.set(p, L);
+    p.style.strokeDasharray = L + " " + (L + 2);
+    p.style.strokeDashoffset = L;
+  });
+}
+function traza(x, t, d = 1, o = {}) {
+  const ps = inicial(el(x), { opacity: 0 });
+  preparaTrazos(ps);
+  tl.fromTo(ps, { strokeDashoffset: (i, p) => _largos.get(p), opacity: 1 },
+    { strokeDashoffset: 0, opacity: 1, duration: d, ease: o.ease ?? "power1.inOut", stagger: o.st ?? 0, ...IR }, t);
+}
+// Un objeto que recorre un trazo mientras se dibuja (Agar, los reyes, Abrán).
+// Los puntos del camino se miden una sola vez al construir; durante el render solo se interpola.
+function medirCamino(path, N = 400) {
+  const p = sonda(el(path)[0]);
+  const L = p.getTotalLength();
+  const pts = [];
+  for (let i = 0; i <= N; i++) { const q = p.getPointAtLength((L * i) / N); pts.push([q.x, q.y]); }
+  p.remove();
+  return pts;
+}
+function ponEnCamino(objs, pts, k) {
+  const N = pts.length - 1;
+  const f = Math.min(N, Math.max(0, k * N)), i = Math.floor(f), r = f - i, j = Math.min(N, i + 1);
+  const x = pts[i][0] + (pts[j][0] - pts[i][0]) * r, y = pts[i][1] + (pts[j][1] - pts[i][1]) * r;
+  objs.forEach((e) => e.setAttribute("transform", "translate(" + x.toFixed(2) + " " + y.toFixed(2) + ")"));
+}
+// Solo el primer recorrido de un objeto fija su posición inicial; los siguientes
+// arrancan donde terminó el anterior.
+const _colocados = new WeakSet();
+function recorre(obj, path, t, d, o = {}) {
+  const pts = typeof path === "string" || path instanceof Element ? medirCamino(path) : path;
+  const objs = el(obj);
+  const st = { k: o.desde ?? 0 };
+  if (!objs.some((e) => _colocados.has(e))) { objs.forEach((e) => _colocados.add(e)); ponEnCamino(objs, pts, st.k); }
+  tl.to(st, { k: o.hasta ?? 1, duration: d, ease: o.ease ?? "power1.inOut", onUpdate: () => ponEnCamino(objs, pts, st.k) }, t);
+}
+function cuenta(x, desde, hasta, t, d, fmt = (v) => Math.round(v).toString()) {
+  const e = el(x)[0];
+  const st = { v: desde };
+  if (!_colocados.has(e)) { _colocados.add(e); e.textContent = fmt(desde); }
+  tl.to(st, { v: hasta, duration: d, ease: "power1.out", onUpdate: () => (e.textContent = fmt(st.v)) }, t);
+}
+function camara(x, t, d, props, ease = "power2.inOut") {
+  tl.to(el(x), { ...props, duration: d, ease }, t);
+}
+// Paneo lento sobre una ilustración (Ken Burns), sin salirse del marco.
+function kb(x, t0, t1, desde, hasta) {
+  tl.fromTo(el(x), { scale: desde.s ?? 1.08, xPercent: desde.x ?? 0, yPercent: desde.y ?? 0 },
+    { scale: hasta.s ?? 1.0, xPercent: hasta.x ?? 0, yPercent: hasta.y ?? 0, duration: Math.max(0.1, t1 - t0), ease: "none" }, t0);
+}
+const fmtMiles = (v) => Math.round(v).toLocaleString("es-CO");
+
+// ---------- piezas repetidas ----------
+// Filtro de tiza para los trazos: borde levemente irregular.
+root.insertAdjacentHTML("afterbegin",
+  '<svg width="0" height="0" style="position:absolute"><defs>' +
+  '<filter id="tz-' + ID + '" x="-5%" y="-5%" width="110%" height="110%">' +
+  '<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>' +
+  '<feDisplacementMap in="SourceGraphic" scale="3"/></filter></defs></svg>');
+const TIZA = "url(#tz-" + ID + ")";
+
+// Tarjeta de capítulo: "Jeremías 37" y su subtítulo.
+function capitulo(x, t0, t1) {
+  const c = el(x)[0];
+  entra(c.querySelector(".num"), t0, { y: 60, d: 0.8 });
+  escribe(c.querySelector(".sub"), t0 + 0.5, 0.9);
+  traza(c.querySelectorAll("path"), t0 + 0.3, 0.8);
+  if (c.querySelector(".edad")) entra(c.querySelector(".edad"), t0 + 0.9, { y: 20 });
+  sale(c, t1, { y: -60, d: 0.6 });
+}
+
+// Entrada y salida de toda la escena: el fondo es común, solo se funde el contenido.
+function marco() {
+  tl.fromTo($(".contenido"), { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none" }, 0);
+  tl.to($(".contenido"), { opacity: 0, duration: 0.5, ease: "none" }, DUR - 0.55);
+}
+
+// Bloques de texto que se reemplazan en el mismo lugar: cada uno entra en su momento y sale
+// justo antes del siguiente. Si `hasta` es null, el último se queda.
+function secuencia(lista, hasta = null, o = {}) {
+  lista.forEach(([s, t], i) => {
+    entra(s, t, { y: o.y ?? 26, d: o.d ?? 0.55 });
+    const sig = i < lista.length - 1 ? lista[i + 1][1] : hasta;
+    if (sig != null) sale(s, sig - 0.4, { d: 0.35 });
+  });
+}
+// Pone marcado SVG dentro de un elemento de la escena.
+function pinta(sel, svg) { $(sel).innerHTML = svg; }
+
+// ---------- mapas ----------
+// Encuadre de cámara: lleva la región {x, y, w, h} de la imagen del mapa a la ventana
+// {x, y, w, h} de la pantalla (relativa al contenedor .mapa), sin deformarla.
+function encuadre(r, v) {
+  const s = Math.min(v.w / r.w, v.h / r.h);
+  return { scale: +s.toFixed(4), x: +(v.x + (v.w - r.w * s) / 2 - r.x * s).toFixed(1), y: +(v.y + (v.h - r.h * s) / 2 - r.y * s).toFixed(1) };
+}
+// Latido de un marcador: crece y vuelve, un número finito de veces.
+function late(x, t, o = {}) {
+  tl.fromTo(el(x), { scale: 1 }, { scale: o.s ?? 1.35, transformOrigin: "50% 50%", duration: o.d ?? 0.35, yoyo: true, repeat: o.n ?? 3, ease: "power1.inOut", immediateRender: false }, t);
+}
+
+// ---------- lecciones ----------
+// Cada lección entra en su momento y sale antes de la siguiente; el número cuenta.
+function lecciones(lista) {
+  const cab = $(".seccion");
+  if (cab) { entra(cab, 0.3, { y: -20 }); traza(".seccion-linea path", 0.6, 1.0); }
+  secuencia(lista, null, { y: 30, d: 0.6 });
+}
+
+
+// Generado por mapas/generar.py (Natural Earth 10m). Coordenadas de assets/img/relieve.jpg (3264x2880).
+const MAPA_W = 3264, MAPA_H = 2880;
+const P = (lon, lat) => [(lon - 26) * 96, (46 - lat) * 120];
+const RIO_EUFRATES = "M 1484.2 698.4 L 1480.1 705.8 L 1474.1 712.8 L 1470.6 719.4 L 1468.1 721.8 L 1442.5 724.7 L 1427.5 729.7 L 1419.9 728.4 L 1415.7 727.7 L 1410.1 729.5 L 1389.0 725.6 L 1385.9 726.9 L 1381.6 726.9 L 1380.8 727.9 L 1373.1 727.2 L 1359.4 732.0 L 1357.1 735.6 L 1359.7 740.3 L 1368.1 748.4 L 1368.4 753.9 L 1365.8 757.6 L 1362.4 761.0 L 1362.4 765.0 L 1361.6 768.9 L 1357.4 771.1 L 1351.8 773.2 L 1335.4 769.9 L 1318.2 762.1 L 1307.1 758.3 L 1299.4 755.9 L 1287.3 756.7 L 1279.5 763.3 L 1275.3 764.8 L 1270.2 765.2 L 1267.3 766.6 L 1252.6 766.1 L 1248.5 768.2 L 1239.0 769.7 L 1235.1 770.1 L 1231.4 773.2 L 1226.1 774.0 L 1223.8 775.3 L 1222.3 778.1 L 1220.3 780.0 L 1216.0 779.5 L 1212.7 778.6 L 1208.1 780.4 L 1205.9 781.2 L 1201.0 785.7 L 1190.7 788.9 L 1188.8 790.9 L 1186.7 792.1 L 1187.3 795.4 L 1192.8 801.8 L 1197.5 804.4 L 1200.3 808.0 L 1209.6 815.3 L 1211.5 819.4 L 1220.3 820.1 L 1220.4 824.5 L 1222.6 827.4 L 1223.0 830.6 L 1225.4 836.5 L 1226.9 840.0 L 1227.2 840.9 L 1227.3 844.0 L 1226.3 847.6 L 1226.7 851.4 L 1227.5 857.4 L 1226.4 860.4 L 1225.7 862.5 L 1220.8 866.3 L 1217.0 868.2 L 1214.8 868.0 L 1213.0 866.2 L 1212.8 868.5 L 1211.4 870.2 L 1200.9 869.2 L 1197.2 871.1 L 1197.4 875.1 L 1194.9 877.7 L 1190.6 879.2 L 1188.1 882.6 L 1186.9 886.0 L 1185.7 889.4 L 1186.7 891.2 L 1187.9 895.6 L 1190.7 899.0 L 1192.9 898.5 L 1195.8 901.8 L 1198.2 902.9 L 1206.4 904.2 L 1208.4 906.0 L 1209.7 905.6 L 1218.1 909.5 L 1226.8 907.6 L 1232.1 908.9 L 1233.9 911.4 L 1236.8 915.7 L 1239.5 916.7 L 1243.9 920.3 L 1255.0 918.2 L 1260.7 920.4 L 1262.3 925.9 L 1261.6 938.6 L 1272.2 938.4 L 1271.9 944.3 L 1270.5 950.9 L 1262.4 957.5 L 1254.9 960.1 L 1253.3 963.2 L 1251.9 969.0 L 1245.9 971.3 L 1247.0 974.6 L 1245.2 977.9 L 1246.0 979.4 L 1245.2 981.3 L 1242.8 980.5 L 1240.5 981.0 L 1238.2 983.4 L 1238.7 985.0 L 1242.6 982.9 L 1243.4 987.0 L 1242.7 989.2 L 1238.6 989.7 L 1238.2 991.7 L 1240.0 994.9 L 1238.4 995.3 L 1236.0 994.7 L 1235.0 996.1 L 1234.2 996.5 L 1232.8 996.9 L 1231.0 995.5 L 1228.8 996.4 L 1235.4 1001.8 L 1209.3 1010.0 L 1207.2 1012.6 L 1199.5 1019.9 L 1184.7 1020.7 L 1179.1 1022.8 L 1177.5 1025.5 L 1171.8 1025.6 L 1170.9 1027.7 L 1170.5 1029.8 L 1170.1 1030.2 L 1169.3 1030.6 L 1168.8 1029.3 L 1164.0 1027.9 L 1161.1 1025.6 L 1157.2 1027.6 L 1154.2 1026.8 L 1151.0 1026.6 L 1145.3 1033.1 L 1141.0 1037.9 L 1139.8 1041.5 L 1138.3 1042.4 L 1136.7 1047.9 L 1139.2 1050.1 L 1140.0 1054.4 L 1138.7 1053.0 L 1137.0 1053.7 L 1137.0 1057.6 L 1139.3 1061.8 L 1140.1 1064.3 L 1139.3 1070.7 L 1140.6 1073.4 L 1142.8 1073.4 L 1144.6 1075.0 L 1147.6 1073.7 L 1150.0 1074.0 L 1148.6 1078.3 L 1148.8 1081.1 L 1152.8 1085.1 L 1153.3 1089.2 L 1153.8 1091.5 L 1155.9 1094.3 L 1154.0 1095.5 L 1154.0 1098.7 L 1155.2 1101.4 L 1154.9 1104.4 L 1155.7 1107.5 L 1156.9 1109.4 L 1156.9 1111.1 L 1158.4 1111.2 L 1158.0 1113.8 L 1159.4 1115.3 L 1160.8 1118.0 L 1165.6 1119.3 L 1170.3 1121.8 L 1171.8 1121.9 L 1172.6 1123.8 L 1173.9 1125.3 L 1179.5 1135.7 L 1177.6 1138.5 L 1173.8 1145.7 L 1170.5 1151.1 L 1169.8 1160.4 L 1170.7 1165.9 L 1168.9 1169.3 L 1165.1 1171.4 L 1163.5 1173.0 L 1161.6 1176.2 L 1158.3 1182.3 L 1157.7 1183.9 L 1157.7 1186.3 L 1159.3 1191.8 L 1161.0 1194.7 L 1163.7 1197.8 L 1165.0 1200.0 L 1180.8 1210.0 L 1189.9 1213.6 L 1196.2 1216.9 L 1202.9 1215.5 L 1205.8 1216.4 L 1205.9 1216.5 L 1208.0 1216.8 L 1210.4 1215.6 L 1214.2 1217.6 L 1221.3 1218.0 L 1223.8 1216.5 L 1224.9 1213.9 L 1223.7 1212.7 L 1222.9 1213.2 L 1223.3 1210.8 L 1226.1 1209.8 L 1228.2 1210.6 L 1229.2 1210.1 L 1230.1 1208.2 L 1239.0 1209.0 L 1251.3 1208.5 L 1255.3 1211.2 L 1257.4 1213.4 L 1259.2 1213.8 L 1261.6 1213.6 L 1265.0 1215.5 L 1270.1 1216.4 L 1273.2 1218.4 L 1275.2 1220.5 L 1280.1 1220.2 L 1283.2 1219.7 L 1286.0 1218.0 L 1286.2 1221.2 L 1288.0 1223.9 L 1293.4 1223.0 L 1297.0 1223.7 L 1301.2 1226.3 L 1301.9 1225.5 L 1303.5 1224.7 L 1304.9 1225.3 L 1303.9 1228.1 L 1305.1 1228.8 L 1306.5 1227.7 L 1307.1 1225.9 L 1309.2 1225.2 L 1314.8 1228.5 L 1319.3 1232.2 L 1325.3 1231.8 L 1328.2 1238.2 L 1327.5 1241.1 L 1327.9 1244.9 L 1329.7 1247.4 L 1330.8 1249.3 L 1332.0 1248.5 L 1333.4 1249.3 L 1332.2 1251.7 L 1334.3 1252.6 L 1336.0 1256.7 L 1337.2 1256.8 L 1339.1 1255.8 L 1339.9 1257.1 L 1341.4 1257.9 L 1344.0 1259.7 L 1344.8 1261.3 L 1346.0 1261.5 L 1347.0 1262.1 L 1347.8 1263.3 L 1350.3 1265.6 L 1351.4 1269.8 L 1354.5 1272.6 L 1356.9 1276.8 L 1358.3 1278.0 L 1360.1 1280.5 L 1363.4 1281.8 L 1365.0 1282.5 L 1366.3 1283.7 L 1369.0 1283.4 L 1370.1 1284.1 L 1368.3 1288.0 L 1370.7 1287.8 L 1372.2 1286.3 L 1375.5 1288.0 L 1376.2 1290.1 L 1376.5 1291.6 L 1382.8 1293.8 L 1384.4 1296.1 L 1382.6 1297.2 L 1382.4 1299.1 L 1384.3 1302.6 L 1385.3 1304.8 L 1385.3 1310.1 L 1386.6 1311.8 L 1388.0 1311.0 L 1389.2 1312.6 L 1386.7 1315.3 L 1387.1 1316.0 L 1387.7 1315.5 L 1389.9 1318.4 L 1390.7 1321.0 L 1392.3 1321.7 L 1394.7 1321.3 L 1396.9 1324.0 L 1398.3 1325.0 L 1398.4 1327.6 L 1399.3 1332.6 L 1400.6 1335.3 L 1403.8 1334.0 L 1403.2 1337.2 L 1403.4 1340.0 L 1404.4 1342.6 L 1407.2 1345.8 L 1411.0 1346.3 L 1414.3 1350.0 L 1416.3 1351.4 L 1417.6 1353.8 L 1419.8 1354.3 L 1420.9 1352.5 L 1422.9 1355.3 L 1423.5 1357.0 L 1421.6 1358.4 L 1421.6 1359.5 L 1425.8 1361.4 L 1427.5 1359.5 L 1429.2 1361.7 L 1429.6 1364.7 L 1433.2 1367.0 L 1432.1 1370.6 L 1434.3 1375.0 L 1434.1 1377.6 L 1432.5 1379.9 L 1433.3 1383.8 L 1434.3 1385.0 L 1436.1 1385.9 L 1439.3 1388.6 L 1444.4 1391.2 L 1446.4 1392.2 L 1450.1 1395.7 L 1458.4 1394.1 L 1461.0 1391.6 L 1457.1 1389.1 L 1461.5 1386.1 L 1464.0 1387.0 L 1465.7 1390.0 L 1468.0 1388.3 L 1467.6 1386.5 L 1468.5 1385.2 L 1469.6 1385.7 L 1471.5 1385.9 L 1474.4 1387.2 L 1476.6 1386.5 L 1479.9 1389.2 L 1481.2 1387.7 L 1478.8 1384.8 L 1481.7 1384.2 L 1482.1 1385.9 L 1484.6 1389.3 L 1488.1 1388.2 L 1488.8 1387.6 L 1489.7 1387.7 L 1490.6 1388.9 L 1491.8 1388.9 L 1492.7 1387.9 L 1494.3 1387.3 L 1495.9 1387.3 L 1496.6 1385.6 L 1496.0 1383.6 L 1498.7 1382.5 L 1506.3 1385.5 L 1510.6 1384.0 L 1513.9 1381.0 L 1514.3 1378.0 L 1516.3 1378.3 L 1520.1 1382.6 L 1522.2 1383.3 L 1526.1 1382.3 L 1532.9 1383.4 L 1534.0 1385.9 L 1538.9 1393.3 L 1548.0 1400.1 L 1548.5 1404.3 L 1553.0 1405.5 L 1559.5 1402.2 L 1559.7 1405.1 L 1561.3 1408.0 L 1563.7 1405.5 L 1563.5 1400.6 L 1565.9 1397.4 L 1568.2 1398.0 L 1569.6 1400.2 L 1573.2 1403.0 L 1572.3 1407.1 L 1569.1 1408.2 L 1566.1 1410.7 L 1567.4 1414.3 L 1571.6 1416.7 L 1572.7 1418.2 L 1572.5 1426.8 L 1571.5 1428.3 L 1572.2 1429.9 L 1574.8 1431.4 L 1575.6 1436.1 L 1578.8 1438.5 L 1582.1 1435.4 L 1584.5 1435.5 L 1585.3 1438.5 L 1586.9 1441.2 L 1589.4 1443.4 L 1589.4 1448.9 L 1586.0 1452.4 L 1587.2 1454.2 L 1586.7 1455.7 L 1589.0 1457.7 L 1591.9 1458.2 L 1594.1 1455.6 L 1595.2 1452.4 L 1601.2 1452.5 L 1608.9 1457.6 L 1606.4 1461.4 L 1605.1 1465.1 L 1607.1 1467.2 L 1607.8 1470.4 L 1605.7 1472.5 L 1605.0 1474.5 L 1607.7 1476.3 L 1610.7 1476.9 L 1617.6 1483.7 L 1621.2 1490.6 L 1625.4 1494.9 L 1626.0 1496.5 L 1629.5 1496.8 L 1633.1 1496.1 L 1638.3 1500.7 L 1640.0 1497.8 L 1643.4 1495.6 L 1648.2 1497.7 L 1655.9 1504.8 L 1659.3 1506.7 L 1664.8 1503.8 L 1667.1 1503.8 L 1668.9 1505.8 L 1669.9 1505.6 L 1670.2 1505.1 L 1671.6 1506.4 L 1672.6 1506.4 L 1673.9 1505.9 L 1674.7 1508.6 L 1677.1 1508.9 L 1678.1 1508.3 L 1678.1 1510.2 L 1679.5 1511.5 L 1682.6 1511.4 L 1685.3 1509.2 L 1686.4 1511.9 L 1688.1 1511.6 L 1690.2 1513.4 L 1690.3 1514.9 L 1693.5 1514.5 L 1696.2 1513.4 L 1700.6 1517.7 L 1702.5 1519.9 L 1703.1 1517.8 L 1704.4 1518.1 L 1704.6 1522.6 L 1705.6 1524.0 L 1707.4 1523.6 L 1708.1 1525.0 L 1709.2 1528.8 L 1710.3 1529.8 L 1710.5 1529.0 L 1712.3 1528.7 L 1712.8 1533.2 L 1714.6 1538.1 L 1717.2 1536.9 L 1719.1 1534.5 L 1721.9 1539.8 L 1724.6 1541.1 L 1726.1 1539.6 L 1727.6 1540.0 L 1728.4 1540.4 L 1733.1 1542.4 L 1734.7 1543.7 L 1731.9 1543.6 L 1732.6 1544.7 L 1734.4 1546.4 L 1735.2 1548.1 L 1738.6 1550.3 L 1740.0 1553.5 L 1742.1 1556.9 L 1744.7 1559.8 L 1745.3 1564.3 L 1744.8 1567.9 L 1746.7 1568.5 L 1747.7 1569.8 L 1748.6 1573.4 L 1753.1 1576.2 L 1754.0 1580.2 L 1754.8 1585.8 L 1753.5 1591.8 L 1752.5 1594.1 L 1749.4 1611.6 L 1756.4 1624.0 L 1756.1 1628.8 L 1756.4 1633.3 L 1760.0 1644.5 L 1762.0 1647.0 L 1761.0 1655.6 L 1762.3 1665.8 L 1765.3 1669.4 L 1765.9 1672.5 L 1769.3 1677.4 L 1771.5 1682.3 L 1772.0 1684.4 L 1773.2 1686.4 L 1774.0 1688.9 L 1774.6 1694.5 L 1775.2 1704.1 L 1776.4 1708.1 L 1775.7 1711.2 L 1773.5 1713.9 L 1774.5 1717.6 L 1775.4 1720.9 L 1780.8 1725.5 L 1788.0 1729.1 L 1788.7 1731.4 L 1790.3 1732.5 L 1794.5 1738.1 L 1800.8 1741.1 L 1801.9 1742.5 L 1803.5 1744.3 L 1804.7 1742.8 L 1808.1 1741.1 L 1810.9 1741.7 L 1813.7 1745.2 L 1816.3 1747.6 L 1819.5 1748.5 L 1821.8 1747.0 L 1823.7 1747.1 L 1824.7 1748.3 L 1825.9 1748.8 L 1828.4 1750.1 L 1830.8 1749.4 L 1836.7 1748.6 L 1841.7 1751.0 L 1844.2 1754.8 L 1847.9 1760.2 L 1849.8 1760.0 L 1856.3 1760.9 L 1866.3 1764.1 L 1868.8 1763.4 L 1870.5 1763.7 L 1872.3 1764.8 L 1875.1 1765.5 L 1874.8 1768.5 L 1876.8 1774.7 L 1879.5 1775.8 L 1881.0 1774.3 L 1888.0 1778.5 L 1891.8 1779.2 L 1895.3 1778.8 L 1897.6 1780.1 L 1899.9 1781.7 L 1901.0 1780.5 L 1906.6 1782.2 L 1908.4 1783.4 L 1909.9 1784.6 L 1912.3 1784.6 L 1917.6 1785.4 L 1919.6 1786.3 L 1920.8 1784.9 L 1923.9 1784.8 L 1925.4 1786.0 L 1928.3 1789.1 L 1930.0 1791.4 L 1944.2 1794.7 L 1949.1 1799.6 L 1954.9 1804.2 L 1964.9 1811.8 L 1967.0 1812.9 L 1970.3 1814.2 L 1972.5 1813.2 L 1991.8 1804.6 L 2013.3 1804.5 L 2016.9 1802.5 L 2027.3 1804.2 L 2038.5 1803.4 L 2041.6 1804.1 L 2044.5 1806.0 L 2046.2 1803.3 L 2048.3 1802.4 L 2057.6 1798.0 L 2060.3 1799.9 L 2060.5 1802.0 L 2061.9 1805.8 L 2075.5 1825.8 L 2078.4 1827.8 L 2084.4 1829.8 L 2086.7 1832.1 L 2087.7 1837.1 L 2088.2 1848.5 L 2089.1 1850.9 L 2090.8 1852.1 L 2093.9 1853.3 L 2095.7 1854.9 L 2098.2 1859.2 L 2102.2 1862.6 L 2124.5 1866.3 L 2127.1 1868.8 L 2129.2 1873.8 L 2130.4 1880.2 L 2132.2 1881.6 L 2134.5 1881.8 L 2139.2 1881.2 L 2141.3 1882.4 L 2146.3 1889.8 L 2150.7 1894.5 L 2151.4 1897.0 L 2150.4 1899.3 L 2148.8 1901.2 L 2148.7 1903.4 L 2151.9 1908.5 L 2152.7 1909.9 L 2154.6 1917.5 L 2155.9 1920.6 L 2157.9 1922.4 L 2163.1 1924.7 L 2163.1 1924.7";
+const RIO_TIGRIS = "M 1264.3 909.6 L 1268.4 909.1 L 1273.5 906.2 L 1281.8 902.3 L 1292.5 897.7 L 1297.8 899.6 L 1299.7 901.6 L 1305.6 902.6 L 1308.8 906.2 L 1309.7 910.1 L 1310.5 911.7 L 1312.5 912.7 L 1313.3 913.9 L 1314.2 914.8 L 1318.1 915.6 L 1324.2 913.6 L 1330.2 914.6 L 1339.8 913.8 L 1342.5 914.8 L 1345.8 918.3 L 1346.9 920.0 L 1347.0 921.3 L 1346.2 922.7 L 1346.5 925.0 L 1354.4 928.8 L 1356.1 929.9 L 1360.6 934.9 L 1361.4 937.2 L 1360.4 940.1 L 1357.5 945.3 L 1359.2 947.1 L 1365.6 947.5 L 1369.6 950.0 L 1368.4 953.4 L 1367.1 960.3 L 1367.1 961.9 L 1368.3 964.0 L 1367.7 967.3 L 1367.8 969.4 L 1368.9 972.2 L 1367.4 973.2 L 1366.3 975.1 L 1367.0 976.8 L 1368.3 977.9 L 1368.7 979.3 L 1383.8 983.0 L 1393.8 979.7 L 1411.1 979.5 L 1416.9 983.2 L 1422.9 980.8 L 1427.7 980.8 L 1440.3 985.5 L 1443.3 987.4 L 1447.6 986.2 L 1449.0 986.5 L 1450.7 987.9 L 1453.5 988.2 L 1456.8 987.9 L 1459.9 990.3 L 1461.4 990.8 L 1462.1 990.3 L 1463.0 989.9 L 1467.4 991.2 L 1469.0 991.2 L 1470.3 990.5 L 1475.9 991.6 L 1492.5 991.1 L 1498.8 988.4 L 1504.6 987.6 L 1507.4 989.5 L 1510.1 990.1 L 1513.4 989.4 L 1515.5 991.1 L 1519.3 1003.4 L 1520.9 1005.9 L 1522.3 1007.2 L 1522.7 1011.6 L 1519.9 1020.4 L 1520.1 1026.7 L 1523.5 1029.7 L 1529.2 1028.7 L 1538.7 1028.2 L 1544.6 1032.2 L 1548.3 1033.9 L 1549.8 1033.8 L 1551.2 1036.4 L 1554.5 1038.0 L 1555.8 1040.5 L 1557.4 1043.7 L 1557.4 1045.4 L 1561.6 1047.0 L 1562.8 1046.1 L 1564.0 1045.8 L 1564.9 1047.6 L 1568.6 1050.9 L 1569.9 1052.7 L 1569.2 1061.0 L 1570.2 1063.4 L 1570.9 1068.2 L 1572.1 1070.8 L 1572.8 1075.1 L 1575.8 1080.5 L 1581.2 1085.4 L 1584.7 1083.2 L 1584.3 1087.5 L 1586.0 1089.8 L 1585.5 1093.5 L 1587.4 1096.4 L 1584.4 1097.8 L 1587.4 1098.1 L 1592.0 1100.8 L 1594.8 1105.3 L 1599.3 1105.1 L 1600.3 1104.0 L 1602.3 1104.0 L 1606.0 1108.0 L 1608.6 1110.0 L 1610.2 1110.3 L 1608.9 1112.0 L 1607.7 1113.6 L 1609.4 1114.5 L 1613.6 1112.9 L 1615.6 1114.2 L 1617.0 1116.9 L 1618.7 1114.7 L 1621.2 1114.5 L 1621.3 1116.9 L 1622.9 1120.4 L 1621.1 1123.7 L 1618.3 1122.8 L 1615.8 1122.8 L 1615.8 1123.7 L 1615.0 1125.1 L 1614.5 1126.8 L 1612.4 1128.6 L 1608.4 1133.7 L 1608.1 1139.3 L 1612.3 1139.9 L 1618.9 1140.8 L 1625.8 1141.1 L 1630.1 1143.6 L 1629.0 1145.7 L 1629.0 1148.0 L 1632.1 1150.9 L 1636.7 1153.1 L 1639.9 1152.1 L 1643.2 1154.4 L 1645.3 1157.2 L 1646.3 1158.8 L 1648.5 1160.5 L 1649.9 1165.5 L 1649.2 1166.7 L 1651.2 1169.9 L 1652.8 1172.4 L 1654.4 1174.0 L 1655.7 1176.3 L 1657.6 1177.8 L 1658.4 1180.2 L 1659.7 1181.9 L 1660.7 1182.5 L 1660.4 1184.6 L 1660.4 1189.0 L 1661.2 1191.2 L 1664.3 1196.0 L 1664.3 1200.8 L 1665.2 1203.5 L 1664.1 1207.4 L 1663.6 1208.9 L 1664.1 1210.7 L 1665.7 1211.2 L 1666.6 1214.3 L 1663.8 1217.7 L 1662.3 1223.1 L 1660.7 1224.5 L 1659.7 1226.8 L 1659.7 1231.7 L 1662.6 1234.4 L 1662.6 1236.7 L 1660.4 1237.3 L 1658.2 1238.7 L 1655.2 1242.6 L 1657.6 1247.3 L 1657.2 1249.2 L 1655.9 1251.6 L 1655.2 1252.1 L 1655.9 1256.3 L 1658.5 1263.4 L 1658.1 1266.9 L 1657.8 1268.3 L 1657.9 1270.6 L 1658.8 1271.6 L 1659.4 1272.8 L 1663.0 1276.5 L 1667.0 1278.6 L 1667.5 1280.5 L 1666.9 1280.7 L 1666.3 1281.7 L 1666.8 1282.6 L 1666.5 1284.8 L 1665.6 1286.3 L 1672.6 1288.1 L 1671.4 1291.0 L 1669.3 1292.0 L 1669.3 1294.4 L 1671.1 1297.2 L 1678.1 1304.8 L 1681.9 1307.9 L 1683.3 1311.8 L 1687.4 1315.0 L 1687.7 1318.4 L 1686.0 1321.9 L 1684.1 1323.6 L 1682.1 1328.1 L 1683.8 1329.9 L 1683.8 1334.2 L 1685.1 1336.7 L 1685.9 1337.2 L 1686.6 1340.7 L 1687.4 1343.4 L 1687.4 1345.3 L 1689.6 1346.2 L 1691.5 1347.5 L 1693.0 1347.9 L 1693.5 1350.8 L 1694.5 1350.7 L 1696.1 1352.7 L 1697.0 1356.0 L 1696.5 1358.2 L 1698.6 1360.4 L 1698.6 1364.8 L 1700.2 1368.4 L 1700.6 1372.5 L 1701.2 1374.4 L 1704.6 1375.7 L 1706.4 1378.8 L 1707.4 1396.3 L 1709.0 1398.6 L 1710.8 1404.1 L 1711.5 1405.6 L 1711.6 1408.4 L 1711.0 1411.7 L 1714.6 1416.5 L 1717.1 1422.7 L 1721.1 1427.3 L 1726.8 1430.2 L 1736.9 1431.4 L 1745.9 1433.1 L 1747.5 1433.7 L 1749.2 1435.4 L 1750.4 1436.1 L 1751.9 1435.2 L 1756.0 1435.0 L 1764.3 1439.8 L 1770.2 1445.9 L 1771.3 1450.0 L 1770.6 1454.4 L 1765.6 1464.9 L 1765.4 1467.1 L 1766.1 1469.2 L 1768.6 1472.0 L 1768.9 1473.0 L 1767.1 1476.1 L 1765.0 1484.4 L 1763.2 1485.0 L 1760.9 1485.0 L 1759.0 1486.4 L 1759.5 1489.9 L 1758.1 1492.7 L 1757.6 1494.0 L 1757.3 1498.2 L 1757.3 1499.6 L 1758.1 1502.9 L 1758.8 1503.8 L 1760.8 1505.3 L 1761.5 1507.9 L 1760.9 1511.4 L 1761.4 1512.8 L 1762.8 1514.2 L 1763.5 1515.3 L 1765.5 1520.9 L 1764.3 1522.0 L 1764.1 1523.7 L 1765.1 1525.3 L 1766.6 1525.9 L 1768.0 1525.8 L 1770.1 1525.0 L 1771.4 1526.1 L 1772.0 1528.7 L 1772.9 1529.6 L 1774.4 1530.7 L 1775.2 1533.6 L 1774.9 1535.4 L 1774.6 1536.2 L 1774.5 1538.5 L 1775.2 1539.7 L 1776.8 1540.0 L 1777.5 1540.3 L 1780.9 1543.7 L 1781.8 1545.5 L 1782.8 1550.0 L 1783.3 1551.2 L 1784.3 1551.6 L 1785.1 1550.7 L 1786.0 1550.2 L 1787.4 1551.9 L 1788.7 1555.3 L 1790.1 1556.9 L 1791.9 1558.1 L 1794.1 1558.5 L 1796.2 1557.1 L 1797.2 1556.8 L 1798.4 1556.9 L 1799.1 1558.4 L 1797.9 1560.9 L 1797.6 1562.6 L 1798.4 1563.4 L 1799.5 1563.4 L 1800.7 1562.1 L 1802.5 1561.6 L 1805.4 1564.8 L 1807.0 1564.5 L 1808.0 1563.3 L 1809.1 1563.7 L 1809.8 1565.6 L 1811.1 1567.5 L 1814.1 1568.1 L 1816.0 1569.2 L 1817.7 1571.0 L 1819.9 1574.2 L 1822.1 1575.0 L 1827.0 1572.2 L 1828.9 1572.1 L 1830.3 1573.5 L 1829.4 1575.5 L 1826.5 1577.2 L 1827.3 1579.5 L 1833.3 1585.3 L 1834.6 1585.8 L 1836.5 1584.7 L 1837.9 1585.0 L 1840.4 1586.6 L 1849.7 1587.1 L 1850.8 1589.8 L 1848.7 1594.9 L 1848.6 1596.8 L 1850.0 1597.3 L 1852.2 1596.9 L 1853.4 1597.3 L 1854.4 1598.4 L 1855.2 1600.6 L 1856.1 1602.2 L 1857.6 1602.2 L 1859.0 1601.7 L 1860.4 1602.2 L 1862.1 1604.9 L 1864.3 1610.6 L 1865.8 1611.6 L 1866.7 1611.6 L 1867.2 1611.1 L 1868.4 1609.9 L 1872.7 1608.5 L 1873.3 1608.7 L 1873.8 1609.2 L 1874.0 1609.3 L 1874.2 1609.3 L 1874.6 1610.0 L 1874.8 1611.9 L 1874.0 1615.1 L 1875.3 1616.2 L 1877.0 1615.7 L 1879.2 1613.5 L 1880.6 1613.6 L 1881.2 1614.6 L 1882.1 1615.5 L 1883.6 1615.6 L 1884.8 1615.0 L 1886.8 1612.5 L 1890.5 1613.0 L 1891.8 1614.2 L 1893.6 1617.4 L 1894.6 1617.9 L 1898.8 1616.2 L 1899.9 1616.2 L 1900.8 1617.0 L 1901.5 1619.0 L 1902.0 1619.3 L 1903.8 1618.5 L 1905.7 1615.6 L 1909.7 1613.4 L 1911.1 1613.4 L 1912.3 1614.0 L 1913.3 1613.3 L 1913.9 1611.0 L 1915.0 1608.5 L 1916.6 1606.8 L 1923.0 1605.3 L 1924.6 1603.6 L 1929.2 1601.6 L 1933.5 1602.0 L 1936.9 1604.4 L 1941.0 1611.3 L 1944.0 1612.7 L 1950.0 1614.0 L 1953.5 1616.6 L 1964.7 1616.3 L 1967.7 1616.9 L 1981.0 1620.9 L 1983.7 1622.5 L 1991.8 1635.9 L 1991.8 1638.0 L 1989.5 1639.5 L 1988.2 1640.9 L 1987.7 1642.8 L 1988.0 1644.6 L 1989.3 1647.9 L 1989.0 1650.2 L 1988.1 1651.8 L 1986.6 1653.5 L 1986.7 1655.9 L 1988.5 1659.8 L 1988.6 1662.2 L 1989.1 1664.5 L 1990.6 1666.0 L 1993.6 1667.5 L 1995.0 1670.2 L 1995.8 1671.0 L 1996.8 1671.1 L 1999.7 1670.5 L 2001.0 1671.0 L 2002.8 1672.6 L 2005.8 1684.6 L 2007.0 1687.6 L 2011.7 1694.7 L 2015.0 1696.5 L 2018.3 1694.7 L 2024.1 1693.1 L 2026.5 1694.1 L 2028.9 1696.3 L 2029.2 1700.0 L 2028.1 1702.8 L 2028.7 1705.4 L 2029.4 1707.3 L 2030.4 1714.6 L 2034.4 1718.9 L 2035.7 1724.5 L 2038.6 1726.9 L 2043.2 1736.2 L 2046.2 1737.4 L 2048.3 1738.7 L 2052.0 1743.3 L 2052.1 1745.6 L 2051.5 1748.4 L 2053.1 1751.0 L 2055.8 1752.7 L 2057.7 1755.0 L 2057.1 1758.7 L 2055.8 1761.2 L 2058.0 1768.4 L 2058.5 1772.3 L 2056.9 1778.3 L 2058.4 1781.2 L 2059.7 1782.1 L 2056.6 1786.9 L 2056.5 1788.3 L 2057.4 1789.2 L 2057.2 1793.9 L 2057.7 1797.7 L 2067.6 1815.4 L 2077.8 1827.2 L 2080.0 1828.8 L 2086.0 1830.7 L 2087.2 1833.7 L 2088.0 1847.2 L 2088.5 1849.8 L 2089.9 1851.6 L 2092.9 1852.8 L 2094.9 1854.0 L 2096.4 1855.9 L 2099.9 1861.5 L 2123.4 1865.9 L 2125.5 1866.9 L 2128.3 1871.2 L 2130.0 1879.1 L 2131.2 1881.1 L 2133.4 1881.8 L 2138.0 1881.1 L 2140.4 1881.6 L 2143.3 1886.0 L 2150.1 1893.5 L 2151.2 1895.7 L 2151.1 1898.3 L 2149.5 1900.2 L 2148.5 1902.5 L 2149.9 1906.1 L 2152.4 1909.7 L 2154.4 1915.9 L 2155.4 1919.8 L 2156.5 1921.3 L 2159.3 1923.4 L 2163.1 1924.7";
+const RIO_MURAT = "M 1687.7 790.8 L 1692.6 783.5 L 1696.4 779.7 L 1696.3 774.1 L 1686.0 767.5 L 1674.4 765.8 L 1669.4 764.0 L 1667.2 762.0 L 1664.3 761.3 L 1662.0 759.2 L 1658.8 759.9 L 1654.0 759.5 L 1639.0 754.5 L 1636.0 755.5 L 1632.1 763.3 L 1630.5 763.1 L 1629.5 762.5 L 1629.0 764.1 L 1629.5 765.0 L 1626.9 767.7 L 1625.2 768.2 L 1623.5 771.9 L 1617.8 774.9 L 1605.7 778.1 L 1602.8 781.0 L 1599.2 787.2 L 1596.9 788.0 L 1594.0 792.1 L 1590.3 796.2 L 1587.3 808.0 L 1587.4 812.0 L 1587.2 815.9 L 1586.7 819.7 L 1585.0 820.9 L 1574.6 820.2 L 1569.9 819.7 L 1556.4 820.1 L 1551.9 820.2 L 1547.6 823.8 L 1544.6 825.1 L 1540.6 825.5 L 1537.4 828.8 L 1536.0 829.0 L 1534.6 828.7 L 1533.8 828.7 L 1531.7 829.1 L 1528.4 830.2 L 1526.8 832.0 L 1519.8 833.3 L 1508.0 835.7 L 1504.5 834.9 L 1500.4 833.0 L 1497.8 833.2 L 1494.8 831.1 L 1492.3 831.6 L 1491.2 838.9 L 1490.6 840.8 L 1491.0 842.6 L 1491.9 843.7 L 1491.7 846.1 L 1490.1 847.6 L 1490.6 851.3 L 1492.6 855.5 L 1491.8 857.9 L 1488.7 856.3 L 1486.0 855.5 L 1485.5 856.6 L 1485.3 857.9 L 1482.7 860.1 L 1481.0 859.4 L 1480.1 858.7 L 1479.1 860.4 L 1476.1 858.7 L 1475.2 859.2 L 1474.2 857.0 L 1472.8 857.5 L 1470.3 858.1 L 1462.8 859.9 L 1460.1 861.9 L 1457.1 867.4 L 1454.1 869.4 L 1439.1 858.1 L 1434.8 853.1 L 1433.0 853.2 L 1431.6 854.4 L 1429.0 854.9 L 1415.3 859.6 L 1410.2 859.5 L 1403.9 863.8 L 1400.2 867.3 L 1395.9 868.5 L 1394.7 870.5 L 1393.1 871.5 L 1390.3 871.8 L 1385.7 874.0 L 1368.3 871.1 L 1365.3 871.3 L 1360.5 869.9 L 1356.8 869.7 L 1354.1 871.1 L 1348.9 870.7 L 1344.8 874.0 L 1336.0 877.7 L 1333.4 877.1 L 1330.7 877.8 L 1328.0 881.4 L 1324.6 883.4 L 1318.8 883.2 L 1315.9 881.7 L 1312.4 880.4 L 1307.2 881.2 L 1301.8 880.9 L 1296.0 879.7 L 1294.1 872.7 L 1293.8 868.0 L 1291.4 867.0 L 1290.6 866.6 L 1289.2 866.1 L 1286.1 866.5 L 1285.4 866.1 L 1282.1 863.0 L 1275.8 860.2 L 1273.1 857.7 L 1271.6 857.1 L 1270.6 857.0 L 1258.6 854.9 L 1254.6 853.6 L 1251.3 853.6 L 1240.3 853.0 L 1230.0 855.0";
+const LAGO_VAN = "M 1644.6 922.0 L 1642.0 922.3 L 1633.8 922.0 L 1632.1 920.8 L 1631.5 919.7 L 1630.0 919.6 L 1628.2 919.7 L 1626.8 919.6 L 1625.8 918.7 L 1626.0 917.8 L 1626.7 916.7 L 1627.5 915.4 L 1627.5 914.7 L 1626.5 913.8 L 1625.9 912.9 L 1625.1 912.4 L 1624.2 913.0 L 1623.8 912.2 L 1623.5 911.8 L 1623.1 911.6 L 1622.2 911.3 L 1622.9 908.1 L 1623.5 908.1 L 1623.8 908.5 L 1624.4 909.2 L 1624.8 909.7 L 1624.7 908.7 L 1625.0 908.3 L 1625.5 908.3 L 1626.1 908.1 L 1625.1 906.3 L 1624.8 905.6 L 1623.4 906.4 L 1622.2 906.3 L 1620.9 905.9 L 1619.5 905.6 L 1620.2 904.7 L 1619.6 903.9 L 1619.7 903.4 L 1620.4 903.2 L 1621.5 903.1 L 1620.9 902.8 L 1620.4 902.3 L 1619.9 901.6 L 1619.5 900.7 L 1620.5 899.9 L 1620.1 899.3 L 1619.4 899.4 L 1618.2 903.1 L 1616.6 903.6 L 1614.6 903.1 L 1613.0 902.2 L 1612.6 905.2 L 1612.0 906.4 L 1610.3 907.2 L 1609.4 906.7 L 1602.4 907.3 L 1602.0 906.9 L 1599.7 903.3 L 1598.6 902.5 L 1593.5 901.7 L 1592.0 900.8 L 1591.3 899.0 L 1590.5 899.7 L 1588.8 900.3 L 1588.0 900.7 L 1587.5 901.2 L 1587.2 901.9 L 1586.8 902.6 L 1586.0 903.1 L 1584.1 903.5 L 1582.7 903.0 L 1581.6 901.9 L 1580.7 900.7 L 1581.0 900.6 L 1581.1 899.9 L 1581.1 898.9 L 1580.7 898.2 L 1579.9 898.0 L 1579.1 898.3 L 1578.1 899.0 L 1575.3 900.5 L 1574.0 900.5 L 1572.9 899.0 L 1571.5 900.3 L 1569.6 901.1 L 1567.5 901.5 L 1565.6 901.5 L 1564.8 899.1 L 1565.7 897.8 L 1569.6 896.6 L 1570.7 895.4 L 1572.4 892.0 L 1573.5 890.7 L 1575.3 890.5 L 1576.3 890.3 L 1576.8 889.6 L 1576.4 889.0 L 1575.7 888.2 L 1575.2 887.1 L 1575.4 885.8 L 1576.7 885.3 L 1583.4 885.0 L 1582.9 884.4 L 1582.3 883.9 L 1581.7 883.6 L 1581.4 883.4 L 1580.7 880.9 L 1579.9 879.6 L 1578.6 876.9 L 1577.8 875.6 L 1578.1 873.5 L 1580.9 871.6 L 1593.7 866.6 L 1595.6 866.2 L 1598.2 866.1 L 1604.1 864.8 L 1606.4 863.6 L 1607.8 864.0 L 1613.0 864.9 L 1613.7 865.7 L 1615.5 865.8 L 1622.2 864.5 L 1624.0 864.4 L 1625.2 864.9 L 1626.4 865.8 L 1627.8 865.9 L 1640.9 863.5 L 1643.9 862.0 L 1647.6 859.1 L 1648.9 858.7 L 1649.6 857.9 L 1650.7 854.3 L 1651.9 853.0 L 1650.6 852.3 L 1649.1 852.0 L 1645.9 852.1 L 1646.0 851.9 L 1645.9 851.6 L 1645.6 851.3 L 1645.2 851.3 L 1644.8 851.7 L 1644.6 852.8 L 1643.9 853.2 L 1642.6 854.6 L 1645.8 854.4 L 1646.2 856.2 L 1644.4 857.8 L 1641.3 857.0 L 1640.5 856.0 L 1639.6 854.4 L 1638.9 852.8 L 1638.6 851.7 L 1638.3 848.9 L 1638.9 848.3 L 1642.6 847.9 L 1643.6 847.5 L 1644.5 846.9 L 1645.9 846.4 L 1647.5 846.2 L 1651.5 847.2 L 1653.1 846.9 L 1654.2 846.1 L 1655.3 845.3 L 1656.4 844.8 L 1658.0 844.5 L 1659.6 844.7 L 1662.3 845.5 L 1662.1 844.7 L 1661.8 843.1 L 1661.6 842.3 L 1662.3 842.3 L 1662.7 843.3 L 1663.4 843.8 L 1664.4 844.0 L 1665.7 843.9 L 1665.7 842.7 L 1665.9 841.8 L 1666.6 841.5 L 1667.9 841.5 L 1668.2 841.5 L 1668.8 841.0 L 1669.3 840.5 L 1669.7 840.0 L 1670.5 839.8 L 1670.9 839.9 L 1671.1 840.2 L 1671.6 840.5 L 1677.9 840.8 L 1684.1 842.3 L 1687.6 842.1 L 1688.7 842.3 L 1689.3 842.7 L 1690.9 844.2 L 1692.0 844.8 L 1692.7 844.3 L 1693.6 844.8 L 1695.3 846.4 L 1694.9 846.5 L 1694.5 846.6 L 1694.2 846.7 L 1693.9 847.2 L 1695.3 848.1 L 1693.5 848.3 L 1689.3 849.6 L 1684.6 849.8 L 1683.3 850.4 L 1683.0 851.0 L 1682.0 853.8 L 1680.1 855.5 L 1678.5 855.8 L 1677.1 855.7 L 1675.9 856.0 L 1674.9 857.0 L 1673.2 856.9 L 1671.6 858.0 L 1670.3 859.6 L 1669.4 861.3 L 1668.9 861.3 L 1667.5 859.1 L 1664.6 858.5 L 1661.6 859.7 L 1660.3 863.2 L 1660.5 865.5 L 1660.0 866.5 L 1658.7 866.9 L 1657.1 867.1 L 1655.5 867.6 L 1654.1 868.4 L 1653.1 869.4 L 1652.8 869.9 L 1652.6 870.5 L 1652.5 871.2 L 1652.5 872.3 L 1652.3 873.5 L 1651.7 874.1 L 1651.1 874.5 L 1650.5 875.1 L 1648.9 877.7 L 1648.2 879.4 L 1647.9 881.3 L 1647.0 883.5 L 1644.8 885.0 L 1640.0 886.6 L 1640.0 887.5 L 1640.6 887.5 L 1641.7 886.4 L 1643.9 885.7 L 1648.9 885.0 L 1650.3 885.5 L 1651.2 886.6 L 1652.8 889.6 L 1653.8 890.3 L 1655.3 891.0 L 1656.8 891.5 L 1658.0 891.7 L 1662.3 894.9 L 1663.2 901.6 L 1661.4 907.2 L 1657.7 907.2 L 1653.8 909.8 L 1653.1 910.1 L 1652.5 911.0 L 1649.7 913.3 L 1648.9 913.8 L 1647.6 914.1 L 1646.7 914.9 L 1646.2 916.1 L 1645.9 917.9 L 1646.2 919.8 L 1646.7 920.8 L 1646.5 921.3 L 1644.6 922.0 L 1644.6 922.0 Z";
+const LAGO_URMIA = "M 1910.6 1031.9 L 1911.4 1033.3 L 1911.7 1035.1 L 1911.3 1036.5 L 1910.3 1036.0 L 1909.1 1035.1 L 1908.1 1035.1 L 1906.8 1036.1 L 1904.1 1037.3 L 1903.1 1038.0 L 1902.9 1038.5 L 1902.5 1040.8 L 1902.2 1041.2 L 1895.9 1045.8 L 1894.6 1046.1 L 1892.9 1045.7 L 1891.4 1044.7 L 1890.7 1043.1 L 1891.2 1041.2 L 1890.3 1041.5 L 1888.1 1042.3 L 1887.3 1042.8 L 1885.1 1046.5 L 1884.4 1047.0 L 1883.9 1048.3 L 1883.4 1056.9 L 1882.7 1059.3 L 1881.6 1062.0 L 1880.2 1064.2 L 1878.4 1065.1 L 1877.3 1064.7 L 1876.3 1063.9 L 1875.6 1063.1 L 1875.1 1062.7 L 1873.2 1062.7 L 1872.4 1062.9 L 1872.3 1063.4 L 1872.4 1063.9 L 1872.2 1064.4 L 1869.9 1065.5 L 1868.4 1065.5 L 1867.3 1064.3 L 1862.9 1058.3 L 1862.4 1057.0 L 1862.0 1056.4 L 1861.5 1056.1 L 1860.2 1056.2 L 1859.7 1056.1 L 1858.2 1054.7 L 1857.1 1052.7 L 1856.8 1051.5 L 1856.8 1050.5 L 1856.5 1049.8 L 1855.4 1049.5 L 1854.4 1048.2 L 1853.1 1039.7 L 1852.8 1038.8 L 1851.1 1036.4 L 1852.3 1035.9 L 1853.5 1035.4 L 1854.5 1034.4 L 1855.1 1033.1 L 1854.4 1031.2 L 1853.5 1027.5 L 1852.4 1025.1 L 1852.1 1023.0 L 1851.5 1022.0 L 1849.4 1020.0 L 1849.2 1019.5 L 1849.5 1017.7 L 1850.8 1014.6 L 1851.1 1013.3 L 1851.1 1011.2 L 1850.5 1009.9 L 1847.9 1007.5 L 1849.2 1006.2 L 1848.6 1004.0 L 1847.3 1001.6 L 1846.5 999.7 L 1847.0 998.4 L 1847.9 997.6 L 1848.8 997.1 L 1849.2 996.5 L 1848.4 989.3 L 1848.3 988.8 L 1847.9 987.8 L 1845.5 984.7 L 1845.2 983.3 L 1841.6 981.2 L 1841.4 981.1 L 1840.7 980.2 L 1840.2 979.4 L 1839.3 979.6 L 1838.0 980.4 L 1831.5 977.5 L 1829.8 977.1 L 1830.0 975.8 L 1828.7 968.1 L 1828.6 965.5 L 1828.9 963.4 L 1829.8 961.5 L 1831.1 959.5 L 1832.8 958.2 L 1837.3 957.2 L 1839.3 956.5 L 1841.4 955.4 L 1842.2 954.4 L 1842.6 952.9 L 1842.6 948.9 L 1842.9 948.3 L 1843.3 947.7 L 1843.1 946.4 L 1842.6 944.3 L 1841.9 943.3 L 1841.2 942.6 L 1840.6 941.7 L 1840.6 940.1 L 1839.9 940.1 L 1838.8 943.1 L 1837.4 944.4 L 1836.0 943.8 L 1834.7 940.9 L 1833.1 942.4 L 1831.1 943.8 L 1828.8 944.8 L 1826.8 945.1 L 1824.4 943.4 L 1823.8 940.9 L 1824.4 938.9 L 1825.5 939.3 L 1826.3 938.0 L 1826.6 936.7 L 1827.2 935.6 L 1828.7 935.1 L 1828.5 930.0 L 1833.0 927.8 L 1853.6 927.3 L 1858.7 928.1 L 1864.1 933.0 L 1868.7 938.9 L 1870.5 940.1 L 1871.4 941.2 L 1871.8 943.8 L 1871.9 946.3 L 1871.8 947.5 L 1872.3 948.5 L 1871.5 950.9 L 1869.5 954.9 L 1870.7 956.0 L 1869.8 959.6 L 1870.8 961.5 L 1867.6 963.2 L 1868.0 963.7 L 1868.5 964.4 L 1868.9 964.8 L 1868.2 965.6 L 1866.1 967.2 L 1865.7 967.7 L 1865.4 968.2 L 1863.3 970.9 L 1863.0 971.9 L 1862.8 973.4 L 1863.0 976.3 L 1863.6 978.3 L 1863.7 981.9 L 1863.6 982.1 L 1864.5 984.2 L 1865.9 986.6 L 1867.5 988.6 L 1870.0 989.9 L 1870.6 991.0 L 1871.0 992.2 L 1871.4 992.7 L 1872.7 992.5 L 1873.7 991.5 L 1874.3 990.1 L 1874.1 988.6 L 1876.7 988.1 L 1886.0 987.9 L 1888.0 989.1 L 1892.3 993.0 L 1895.2 994.6 L 1896.5 992.7 L 1896.6 994.6 L 1897.0 996.0 L 1898.5 998.6 L 1899.0 999.0 L 1899.6 999.2 L 1900.1 999.4 L 1900.5 1000.2 L 1900.5 1001.1 L 1900.3 1001.7 L 1900.0 1002.2 L 1899.8 1003.0 L 1898.2 1003.9 L 1887.6 1002.7 L 1887.3 1003.1 L 1888.0 1004.3 L 1889.1 1005.4 L 1891.7 1006.4 L 1892.1 1007.7 L 1892.1 1009.3 L 1892.5 1010.8 L 1893.7 1012.3 L 1897.5 1016.2 L 1898.3 1016.6 L 1899.3 1016.6 L 1900.1 1016.9 L 1900.5 1017.8 L 1900.6 1018.6 L 1900.8 1019.2 L 1901.2 1019.6 L 1901.8 1019.9 L 1901.9 1022.4 L 1903.8 1026.0 L 1906.3 1029.2 L 1908.1 1030.6 L 1909.5 1030.9 L 1910.6 1031.9 L 1910.6 1031.9 Z";
+
+$$(".lago")[0].setAttribute("d", LAGO_VAN);
+$$(".lago")[1].setAttribute("d", LAGO_URMIA);
+const R = { e: RIO_EUFRATES, m: RIO_MURAT, t: RIO_TIGRIS };
+$$("[data-r]").forEach((p) => p.setAttribute("d", R[p.dataset.r]));
+const V = { x: 760, y: 0, w: 1160, h: 1080 };
+const cam = $(".mapa .cam");
+tl.set(cam, encuadre({ x: 700, y: 300, w: 1900, h: 1770 }, V), 0);
+tl.set($$(".mapa svg text, .zona, .ararat, .paises"), { opacity: 0 }, 0);
+aparece(".r-ti", 0.6, 0.6);
+entra(".cab", 0.2, { y: -20 });
+secuencia([[".b1", 0.4], [".b2", at("No es un pico")], [".b3", at("Los asirios")], [".b4", at("Dónde se detuvo")]]);
+tl.to(cam, { ...encuadre({ x: 1250, y: 520, w: 900, h: 840 }, V), duration: 2.4, ease: "power2.inOut" }, at("No es un pico") - 0.3);
+aparece(".zona", at("es una cadena"), 0.8);
+aparece(".t-van", at("lago de Van"), 0.5);
+aparece(".paises", at("Turquía"), 0.6);
+aparece(".t-zona", at("Urartu"), 0.5);
+salta(".ararat", at("Dónde se detuvo") - 0.2, { desde: 0.3 });
+aparece(".t-ara", at("Dónde se detuvo"), 0.5);
+aparece(".t-nose", at("No se sabe"), 0.5);
+late(".zona", at("un terreno"), { s: 1.04, n: 3 });
+
+marco();
+window.__timelines[ID] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

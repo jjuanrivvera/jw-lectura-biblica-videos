@@ -1,0 +1,50 @@
+<style>
+.cab.sobre span { background: rgba(15, 22, 30, 0.8); }
+.panelq { position: absolute; left: 80px; top: 118px; width: 1100px; display: flex; flex-direction: column; gap: 18px; }
+.globo { padding: 20px 30px; border-radius: 26px; background: rgba(23,33,43,0.92); }
+.globo .cita { font-size: 50px; }
+.dueño { position: absolute; left: 80px; top: 118px; width: 900px; }
+.dueño .def { background: rgba(23,33,43,0.95); }
+.propio-p { position: absolute; right: 80px; top: 300px; width: 560px; padding: 18px 24px; border-radius: 22px; background: rgba(23,33,43,0.93); }
+.propio-p .m { font-size: 52px; }
+.fuente-p { position: absolute; left: 80px; bottom: 16px; font-size: 21px; color: var(--tiza); opacity: 0.85; }
+.reloj { font-family: "Montserrat"; font-weight: 800; font-size: 34px; fill: #6b4400; letter-spacing: 0.1em; }
+</style>
+
+<svg class="lienzo" viewBox="0 0 1920 1080"></svg>
+<svg class="lienzo extra" viewBox="0 0 1920 1080">
+  <text class="reloj halo" x="1500" y="260" text-anchor="middle" style="stroke-width:10px">MEDIODÍA</text>
+  <g class="candado" transform="translate(836 420)">
+    <path d="M -34 0 L -34 -34 C -34 -76 34 -76 34 -34 L 34 0" fill="none" stroke="#e9bf60" stroke-width="14"/>
+    <rect x="-56" y="-6" width="112" height="86" rx="14" fill="#e9bf60" stroke="#8a5a00" stroke-width="5"/>
+    <circle cx="0" cy="28" r="12" fill="#6b4400"/><rect x="-5" y="30" width="10" height="28" fill="#6b4400"/>
+  </g>
+  <g class="todos"><path d="M 470 520 C 600 470 680 470 730 500" class="guia" style="stroke:#8a5a00;stroke-width:7;stroke-dasharray:14 12"/><path d="M 1380 520 C 1200 460 1080 460 950 500" class="guia" style="stroke:#1b2733;stroke-width:7;stroke-dasharray:14 12"/></g>
+</svg>
+<div class="cab sobre"><span class="cap">Génesis 29</span><span>versículos 7 y 8</span></div>
+
+<div class="panelq">
+  <div class="globo g1"><div class="cita">“Si solo es mediodía”<span class="ref">JACOB · GÉNESIS 29:7</span></div><div class="s">el rebaño se abrevaba “por lo general alrededor del mediodía” · Perspicacia, vol. 2, “Pastor”, pág. 604</div></div>
+  <div class="globo g2"><div class="cita">“No tenemos permiso para hacer eso. Tenemos que esperar a que se reúnan todos los rebaños y se quite la piedra del pozo”<span class="ref">LOS PASTORES · GÉNESIS 29:8</span></div></div>
+</div>
+<div class="dueño"><div class="def"><div class="t">El agua tenía dueño</div><div class="x">usar un pozo sin autorización: “una violación de los <b>derechos de propiedad</b>”</div><div class="s">Perspicacia, vol. 2, “Pozo”, pág. 693</div></div></div>
+<div class="propio-p"><div class="m mano">nadie saca agua antes que los demás</div><span class="propio">observación propia</span></div>
+<div class="fuente-p">dibujo propio, no a escala</div>
+
+<script>
+/*incluir:_dibujos.js*/
+/*incluir:_pozo.js*/
+pinta(".lienzo", pozoEscena());
+const E = (s) => root.querySelector(".lienzo " + s);
+tl.fromTo(E(".sol-g"), { scale: 1 }, { scale: 1.2, transformOrigin: "1500px 130px", duration: 1.2, ease: "power2.out", immediateRender: false }, at("mediodía") - 0.3);
+aparece(".reloj", at("mediodía"), 0.4);
+entra(".g1", 0.4, { y: 20 });
+sale(".g1", at("Los pastores contestan") - 0.3);
+entra(".g2", at("Los pastores contestan"), { y: 20 });
+sale(".g2", at("El agua tenía dueño") - 0.3);
+atenua(".reloj", at("Los pastores contestan"), 0);
+entra(".dueño", at("El agua tenía dueño"), { y: 20 });
+salta(".candado", at("derechos de propiedad"), { desde: 0.5 });
+traza(".todos path", at("una regla de abrir"), 0.9);
+entra(".propio-p", at("impiden que alguien"), { y: 20 });
+</script>

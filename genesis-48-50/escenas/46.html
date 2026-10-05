@@ -1,0 +1,74 @@
+<style>
+.q46 { position: absolute; left: 80px; right: 80px; top: 130px; text-align: center; }
+.q46 .ant { font-family: "Fraunces", serif; font-weight: 500; font-size: 60px; color: var(--tenue); }
+.q46 .gr { font-family: "Fraunces", serif; font-weight: 700; font-size: 112px; line-height: 1.05; color: var(--tiza); margin-top: 10px; }
+.q46 .gr b { color: var(--oro); }
+.q46 .ref { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.1em; color: var(--oro); margin-top: 18px; }
+.q46 .clave { margin-top: 34px; font-size: 56px; }
+.cols46 { position: absolute; left: 80px; right: 80px; top: 420px; height: 330px; display: grid; grid-template-columns: 1fr 230px 1fr; align-items: stretch; }
+.cols46 .tj { justify-content: center; padding: 30px 38px; }
+.cols46 .tj .k { font-size: 30px; }
+.cols46 .tj .x { font-size: 54px; }
+.cols46 .ellos { border-color: var(--rojo); }
+.cols46 .ellos .k { color: var(--rojo); }
+.cols46 .dios { border-color: var(--oro); background: rgba(233, 191, 96, 0.08); }
+.cols46 .y { display: flex; align-items: center; justify-content: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; color: var(--tenue); text-align: center; line-height: 1.05; padding: 0 12px; }
+.ref46 { position: absolute; left: 80px; right: 80px; top: 768px; text-align: center; font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.1em; color: var(--oro); }
+.at46 { position: absolute; left: 260px; right: 260px; top: 830px; }
+.at46 .tj { border-color: var(--cielo); flex-direction: row; align-items: center; gap: 26px; padding: 20px 30px; }
+.at46 .tj .k { color: var(--cielo); white-space: nowrap; }
+.at46 .tj .x { font-size: 40px; }
+.at46 .tj .ref { margin-top: 0; }
+.fin46 { position: absolute; left: 80px; top: 170px; width: 900px; display: flex; flex-direction: column; gap: 34px; }
+.fin46 .cita { font-size: 60px; }
+.fin46 .clave { align-self: flex-start; font-size: 56px; }
+.il46 { left: 1020px; top: 230px; width: 840px; height: 472px; }
+.pie46 { position: absolute; left: 1020px; top: 718px; width: 840px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 50</span><span>versículos 19 al 21</span></div>
+<div class="q46">
+  <div class="ant a1">“No tengan miedo.</div>
+  <div class="gr a2">¿Acaso estoy yo en el <b>lugar de Dios</b>?”</div>
+  <div class="ref a2r">JOSÉ · GÉNESIS 50:19</div>
+  <span class="clave a3">su poder en Egipto <b>no le daba derecho a vengarse</b></span>
+</div>
+<div class="cols46">
+  <div class="tj ellos e1"><div class="k">ustedes</div><div class="x">“quisieron hacerme <b>daño</b>”</div></div>
+  <div class="y e2">las dos cosas son ciertas</div>
+  <div class="tj dios e3"><div class="k">Dios</div><div class="x">“se valió de eso para hacer un <b>bien</b> y salvarles la vida a muchos”</div></div>
+</div>
+<div class="ref46 e4">JOSÉ · GÉNESIS 50:20</div>
+<div class="at46"><div class="tj"><div class="k">una aclaración</div><div class="x">eso no quiere decir que Jehová <b>dirija cada suceso</b> que nos afecta</div><div class="ref"><i>La Atalaya</i>, enero de 2023, págs.&nbsp;17 a 18</div></div></div>
+
+<div class="fin46">
+  <div class="cita f1">“Les seguiré dando <b>alimento</b> a ustedes y a sus niñitos”<span class="ref">JOSÉ · GÉNESIS 50:21</span></div>
+  <span class="clave f2">los <b>consoló</b> y los <b>tranquilizó</b> con sus palabras</span>
+</div>
+<div class="ilus il46"><div class="kb"><img src="assets/img/perdon-video.jpg" /></div></div>
+<div class="pie-img pie46">“José los perdonó.” Video <i>Aprende de los amigos de Jehová: José</i> (jw.org), minuto 2:02</div>
+
+<script>
+entra(".cab", 0.2, { y: -10 });
+const tQ = at("Acaso estoy");
+tl.set($(".q46"), { y: 170 }, 0);
+entra(".a1", 0.3, { y: 20 });
+entra(".a2", tQ - 0.2, { y: 30, d: 0.8 });
+aparece(".a2r", tQ + 0.6, 0.4);
+entra(".a3", at("Su poder") - 0.1, { y: 16 });
+const tA = at("Aunque ustedes");
+sale(".a3", tA - 0.6, { y: -10 });
+tl.to($(".q46"), { y: -40, scale: 0.78, transformOrigin: "50% 0%", duration: 0.8, ease: "power2.inOut" }, tA - 0.5);
+entra(".e1", tA - 0.1, { x: -30, y: 0 });
+entra(".e3", at("Dios se valió") - 0.1, { x: 30, y: 0 });
+aparece(".e4", at("Dios se valió") + 0.5, 0.4);
+entra(".e2", at("Las dos cosas") - 0.1, { y: 14 });
+entra(".at46", at("como advierte") - 0.2, { y: 24 });
+const tP = at("Y José promete");
+desaparece([".q46", ".cols46", ".e4", ".at46"], tP - 0.6, 0.5);
+entra(".f1", tP - 0.1, { y: 24 });
+entra(".il46", tP + 0.2, { s: 0.95, y: 20 });
+aparece(".pie46", tP + 0.6, 0.4);
+kb(".il46 .kb", tP + 0.2, DUR, { s: 1.0 }, { s: 1.08 });
+entra(".f2", at("Los consoló") - 0.1, { y: 16 });
+</script>

@@ -1,0 +1,46 @@
+<style>
+.dos45 { position: absolute; left: 70px; right: 70px; top: 100px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.dos45 .cita { font-size: 40px; }
+.heb45 { position: absolute; left: 0; right: 0; top: 330px; height: 330px; }
+.heb45 .letras { position: absolute; left: 0; right: 0; top: 0; text-align: center; font-family: "NotoHebrew", serif; font-weight: 700; font-size: 220px; line-height: 1.2; color: var(--tiza); direction: rtl; }
+.heb45 .nota { position: absolute; left: 0; right: 0; top: 270px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; color: var(--tenue); }
+.lect45 { position: absolute; top: 330px; width: 640px; text-align: center; }
+.lect45 .h { font-family: "NotoHebrew", serif; font-weight: 700; font-size: 170px; line-height: 1.25; direction: rtl; }
+.lect45 .t { font-family: "Fraunces", serif; font-style: italic; font-weight: 600; font-size: 56px; }
+.lect45 .s { font-family: "Caveat", cursive; font-weight: 700; font-size: 60px; color: var(--oro); }
+.lect45 svg { width: 180px; height: 100px; margin-top: 4px; }
+.l1 { left: 180px; }
+.l2 { right: 180px; }
+.bajo45 { position: absolute; left: 70px; right: 70px; top: 850px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 26px; }
+.bajo45 .tj .x { font-size: 32px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 47:31 y Hebreos 11:21</span><span>¿cama o bastón?</span></div>
+<div class="dos45">
+  <div class="cita c1">“Entonces Israel se inclinó en la cabecera de <b>la cama</b>”<span class="ref">GÉNESIS 47:31</span></div>
+  <div class="cita c2">“Por la fe, Jacob [...] adoró a Dios apoyado sobre la parte superior de <b>su bastón</b>”<span class="ref">HEBREOS 11:21</span></div>
+</div>
+<div class="heb45"><div class="letras">מטה</div><div class="nota">las mismas tres consonantes, sin vocales escritas</div></div>
+<div class="lect45 l1"><div class="h">מִטָּה</div><div class="t">mit·táh</div><div class="s">cama</div>
+  <svg viewBox="0 0 180 100"><path d="M 20 30 V 86 M 20 60 H 164 V 86 M 30 60 V 44 C 30 36 44 36 52 40 L 70 50" stroke="#e9bf60" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
+<div class="lect45 l2"><div class="h">מַטֶּה</div><div class="t">mat·téh</div><div class="s">bastón</div>
+  <svg viewBox="0 0 180 100"><path d="M 90 96 V 22 C 90 8 110 6 114 18 C 116 26 108 30 104 26" stroke="#e9bf60" stroke-width="8" fill="none" stroke-linecap="round" /></svg></div>
+<div class="bajo45">
+  <div class="tj b1"><div class="k">la Septuaginta leyó “bastón”</div><div class="x">y Hebreos sigue esa lectura</div><div class="ref">nota de Génesis 47:31 en la TNM de 1987 con referencias · que Hebreos siga a la Septuaginta: observación propia</div></div>
+  <div class="tj on b2"><div class="k">en las dos</div><div class="x">un anciano que, al final de su vida, <b>adora a Dios</b></div></div>
+</div>
+
+<script>
+const tH = at("El hebreo antiguo");
+const tU = at("Con unas vocales");
+entra(".c1", 0.3, { y: 16 });
+centra(".dos45", 300, at("las mismas tres letras") - 1.0);
+entra(".c2", at("Pero Hebreos"), { y: 16 });
+salta(".heb45 .letras", at("las mismas tres letras") - 0.3, { desde: 0.5, d: 0.7 });
+entra(".heb45 .nota", at("las mismas tres letras") + 0.4, { y: 10 });
+tl.to($(".heb45"), { opacity: 0, scale: 0.9, duration: 0.5 }, tU - 0.3);
+entra(".l1", tU, { y: 20 });
+entra(".l2", at("con otras, matté"), { y: 20 });
+entra(".b1", at("La Septuaginta leyó"), { y: 16 });
+entra(".b2", at("En las dos"), { y: 16 });
+</script>

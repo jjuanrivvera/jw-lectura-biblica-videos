@@ -1,0 +1,83 @@
+<style>
+.cmp { position: absolute; left: 80px; right: 80px; top: 150px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 50px; }
+.cmp .tj { min-height: 470px; justify-content: center; gap: 22px; }
+.cmp .tj .x { font-size: 62px; }
+.cmp .tj .m { font-size: 70px; }
+.cmp .tj .ref { margin-top: 6px; }
+.paz { position: absolute; left: 80px; right: 80px; top: 690px; text-align: center; }
+.paz .m { font-size: 76px; }
+.puntos { position: absolute; top: 140px; width: 800px; height: 700px; }
+.puntos svg { width: 800px; height: 700px; }
+.p400 { left: 80px; } .p318 { left: 1040px; }
+.pt-t { position: absolute; top: 812px; width: 800px; text-align: center; }
+.t400 { left: 80px; } .t318 { left: 1040px; }
+.pt-t .grande { font-size: 110px; }
+.pt-t .m { font-size: 52px; }
+.nodice { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; }
+.campos { position: absolute; left: 80px; right: 80px; top: 360px; height: 520px; }
+.campos svg { width: 1760px; height: 520px; }
+.miedo { position: absolute; left: 80px; right: 80px; top: 150px; text-align: center; }
+.miedo .cita { font-size: 64px; }
+.escapa { position: absolute; left: 80px; right: 80px; bottom: 60px; text-align: center; }
+</style>
+<div class="cab"><span class="cap">Génesis 32</span><span>versículos 3 al 8</span></div>
+<div class="fase fa">
+  <div class="cmp">
+    <div class="tj t1"><div class="k">La bendición de Isaac a Jacob</div><div class="x">“sé el amo de tus hermanos”</div><div class="ref">GÉNESIS 27:29</div></div>
+    <div class="tj t2 on"><div class="k">Lo que Jacob manda decir</div><div class="x">“Díganle esto a <b>mi señor</b> Esaú” · “<b>Tu siervo</b> Jacob ha dicho”</div><div class="ref">GÉNESIS 32:4</div></div>
+  </div>
+  <div class="paz"><div class="m oro">no discute quién tenía razón: quiere hacer las paces</div><div class="f" style="margin-top:12px"><i>La Atalaya</i> (estudio), diciembre de 2021, pág. 25</div></div>
+</div>
+<div class="fase fb">
+  <div class="puntos p400"><svg viewBox="0 0 800 700" class="s400"></svg></div>
+  <div class="puntos p318"><svg viewBox="0 0 800 700" class="s318"></svg></div>
+  <div class="pt-t t400"><div class="grande" style="color:var(--rojo)">400</div><div class="m">los hombres de Esaú · 32:6</div></div>
+  <div class="pt-t t318"><div class="grande" style="color:var(--oro)">318</div><div class="m">con estos, Abrahán venció a cuatro reyes · 14:14</div></div>
+  <div class="nodice"><span class="propio">comparación: observación propia</span> <span class="f">&nbsp; Qué pensaba hacer Esaú, la Biblia no lo dice (<i>Perspicacia</i>, vol. 1, “Esaú”, pág. 829)</span></div>
+</div>
+<div class="fase fc">
+  <div class="miedo"><div class="cita">“sintió mucho miedo y angustia”<span class="ref">GÉNESIS 32:7</span></div></div>
+  <div class="campos"><svg viewBox="0 0 1760 520"><g class="g1"></g><g class="g2"></g><text class="lc1" x="480" y="500" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="56" fill="var(--tiza)" opacity="0">campamento 1</text><text class="lc2" x="1280" y="500" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="56" fill="var(--tiza)" opacity="0">campamento 2</text></svg></div>
+  <div class="escapa"><div class="m md oro">si Esaú atacaba uno, el otro podía escapar · 32:8</div></div>
+</div>
+<script>
+function rejilla(n, cols, color, r = 11, paso = 34) {
+  let s = "";
+  for (let i = 0; i < n; i++) {
+    const c = i % cols, f = Math.floor(i / cols);
+    s += `<circle cx="${60 + c * paso}" cy="${40 + f * paso}" r="${r}" fill="${color}"/>`;
+  }
+  return s;
+}
+$(".s400").innerHTML = rejilla(400, 20, "var(--rojo)");
+$(".s318").innerHTML = rejilla(318, 20, "var(--oro)");
+// Los dos campamentos: el mismo grupo de puntos se parte en dos.
+let g1 = "", g2 = "";
+for (let i = 0; i < 60; i++) {
+  const c = i % 10, f = Math.floor(i / 10);
+  const pt = `<circle cx="${c * 40}" cy="${f * 40}" r="13" fill="${i % 7 === 0 ? "var(--oro)" : "var(--tiza)"}"/>`;
+  if (c < 5) g1 += pt; else g2 += pt;
+}
+$(".g1").innerHTML = g1; $(".g2").innerHTML = g2;
+const TB = at("Los mensajeros vuelven"), TC = at("Jacob sintió");
+entra(".t1", 0.5, { y: 30 });
+entra(".t2", at("Aun así"), { y: 30 });
+entra(".paz", at("No discute"), { y: 20 });
+sale(".fa", TB - 0.5, { d: 0.4 });
+tl.fromTo($$(".s400 circle"), { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, transformOrigin: "50% 50%", duration: 0.3, stagger: { amount: 2.2 }, ease: "none", immediateRender: false }, at("cuatrocientos"));
+entra(".t400", at("cuatrocientos") + 0.8, { y: 20 });
+tl.fromTo($$(".s318 circle"), { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, transformOrigin: "50% 50%", duration: 0.3, stagger: { amount: 1.8 }, ease: "none", immediateRender: false }, at("con trescientos"));
+entra(".t318", at("con trescientos") + 0.8, { y: 20 });
+entra(".nodice", at("Qué pensaba"), { y: 20 });
+tl.set($$(".s400 circle, .s318 circle"), { opacity: 0 }, 0);
+sale(".fb", TC - 0.5, { d: 0.4 });
+aparece(".fc", TC - 0.1, 0.3);
+entra(".miedo", TC, { y: 20 });
+tl.fromTo($(".g1"), { x: 680, y: 140 }, { x: 680, y: 140, duration: 0.1 }, 0);
+tl.fromTo($(".g2"), { x: 680, y: 140 }, { x: 680, y: 140, duration: 0.1 }, 0);
+aparece([".g1", ".g2"], TC + 0.3, 0.5);
+tl.to($(".g1"), { x: 380, duration: 1.4, ease: "power2.inOut" }, at("dos campamentos"));
+tl.to($(".g2"), { x: 980, duration: 1.4, ease: "power2.inOut" }, at("dos campamentos"));
+aparece([".lc1", ".lc2"], at("dos campamentos") + 1.2, 0.5);
+entra(".escapa", at("para que"), { y: 20 });
+</script>

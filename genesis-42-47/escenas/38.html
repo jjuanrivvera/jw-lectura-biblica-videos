@@ -1,0 +1,44 @@
+<!--lead:2.0-->
+<style>
+.cinco38 { position: absolute; left: 80px; top: 150px; width: 700px; height: 760px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; }
+.cinco38 .circs { display: flex; gap: 22px; }
+.cinco38 .circ { width: 112px; height: 112px; border-radius: 50%; border: 6px dashed rgba(241, 233, 216, 0.55); display: flex; align-items: center; justify-content: center; font-family: "Fraunces", serif; font-weight: 700; font-size: 50px; color: rgba(241, 233, 216, 0.6); }
+.cinco38 .m { font-size: 62px; text-align: center; }
+.cinco38 .s { text-align: center; font-size: 26px; }
+.col38 { position: absolute; left: 860px; right: 70px; top: 110px; bottom: 70px; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.col38 .cita { font-size: 44px; }
+.giro38 { display: grid; grid-template-columns: 1fr 70px 1fr; align-items: center; gap: 10px; }
+.giro38 .clave { font-size: 44px; text-align: center; }
+.giro38 svg { width: 70px; height: 50px; }
+.giro38 svg path { fill: none; stroke: var(--oro); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 47</span><span>versículos 1 al 6</span></div>
+<div class="cinco38">
+  <div class="circs"><div class="circ">1</div><div class="circ">2</div><div class="circ">3</div><div class="circ">4</div><div class="circ">5</div></div>
+  <div class="m m1">cinco de sus hermanos, ante el faraón</div>
+  <div class="s s1">Génesis 47:2 · la Biblia no dice cuáles</div>
+</div>
+<div class="col38">
+  <div class="cita q1">“Nosotros, tus siervos, somos <b>pastores de ovejas</b> [...]. Hemos venido a este país a vivir como extranjeros porque [...] <b>no hay pastos</b> para los rebaños de tus siervos”<span class="ref">GÉNESIS 47:3, 4</span></div>
+  <div class="cita q2" style="color:var(--oro)">“Que vivan en la tierra de Gosén. Y, si sabes de algunos hombres expertos entre ellos, <b style="color:var(--tiza)">ponlos a cargo de mi ganado</b>”<span class="ref">EL FARAÓN · GÉNESIS 47:6</span></div>
+  <div class="giro38 g1"><span class="clave">pastores <b>despreciados</b></span><svg class="fl38" viewBox="0 0 70 50"><path d="M 6 25 H 58 M 42 10 L 60 25 L 42 40" /></svg><span class="clave">a cargo del ganado <b>del faraón</b></span></div>
+</div>
+
+<div class="capcard cc"><div class="fondo"><img src="assets/img/jose-administra.jpg" /></div>
+  <div class="dentro"><div class="num">Génesis 47</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16" /></svg><div class="sub">Gosén y la hambruna</div>
+  <div class="pista"><span class="hecho">42</span><span class="hecho">43</span><span class="hecho">44</span><span class="hecho">45</span><span class="hecho">46</span><span class="on">47</span></div></div></div>
+
+<script>
+const t0 = at("Cinco hermanos");
+capitulo(".cc", 0.3, t0 - 0.5);
+entra(".cc .pista", 1.0, { y: 20 });
+kb(".cc .fondo", 0, t0, { s: 1.12 }, { s: 1.0 });
+salta(".circ", t0, { desde: 0.4, st: 0.15 });
+entra(".m1", t0 + 0.6, { y: 16 });
+aparece(".s1", t0 + 1.2, 0.5);
+entra(".q1", at("dicen la verdad"), { y: 16 });
+entra(".q2", at("El faraón le dice"), { y: 16 });
+entra(".g1", at("Los pastores despreciados"), { y: 16 });
+traza(".fl38 path", at("terminan cuidando"), 0.5);
+</script>

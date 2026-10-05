@@ -1,0 +1,62 @@
+<style>
+.mapa.M11 { left: 0; top: 0; width: 1920px; height: 1080px; background: #e2e5c8; }
+.mapa.M11.sur .cam img, .mapa.M11.sur .cam svg { width: 1904px; height: 1960px; }
+.mapa.M11.nor .cam img, .mapa.M11.nor .cam svg { width: 2862px; height: 2970px; }
+.hc1 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 40px; fill: #e9bf60; letter-spacing: 0.04em; }
+.hc2 { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; fill: #f1e9d8; }
+.banda11 { position: absolute; left: 0; right: 0; bottom: 0; height: 250px; background: linear-gradient(180deg, rgba(23, 33, 43, 0) 0%, rgba(23, 33, 43, 0.92) 36%, rgba(23, 33, 43, 0.98) 100%); }
+.lay11 { position: absolute; left: 90px; right: 90px; bottom: 40px; display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; }
+.lay11 .m { font-size: 64px; }
+.lay11 .f { max-width: 640px; text-align: right; }
+.pie11 { right: 24px; top: 20px; }
+</style>
+
+<div class="mapa M11 sur"><div class="cam cs">
+  <img src="assets/img/b2-sur.jpg" />
+  <svg viewBox="0 0 1904 1960">
+    <circle class="anillo oro a-bab" cx="577" cy="721" r="56"/>
+    <circle class="anillo a-ere" cx="1239" cy="1480" r="52"/>
+    <g class="ch hb"><path d="M 628 700 L 690 660" stroke="#17212b" stroke-width="6"/><rect x="680" y="560" width="600" height="140" rx="22" fill="rgba(15,22,30,0.9)"/><text class="hc1" x="710" y="616">HOY: BABILONIA</text><text class="hc2" x="710" y="676">cerca de Hilla, en Irak</text></g>
+    <g class="ch he"><path d="M 1188 1458 L 1150 1430" stroke="#17212b" stroke-width="6"/><rect x="360" y="1330" width="800" height="140" rx="22" fill="rgba(15,22,30,0.9)"/><text class="hc1" x="390" y="1386">HOY: WARKA, LA ANTIGUA URUK</text><text class="hc2" x="390" y="1446">allí, “un antiguo zigurat”</text></g>
+  </svg>
+</div></div>
+<div class="mapa M11 nor"><div class="cam cn">
+  <img src="assets/img/b2-meso.jpg" />
+  <svg viewBox="0 0 2862 2970">
+    <circle class="anillo a-niv" cx="1552" cy="508" r="48"/>
+    <circle class="anillo a-cal" cx="1614" cy="633" r="48"/>
+    <g class="ch hn"><path d="M 1600 490 L 1670 440" stroke="#17212b" stroke-width="6"/><rect x="1660" y="330" width="760" height="138" rx="22" fill="rgba(15,22,30,0.9)"/><text class="hc1" x="1690" y="386">HOY: QUYUNJIQ Y NEBI YUNUS</text><text class="hc2" x="1690" y="444">dos montículos, frente a Mosul</text></g>
+    <g class="ch hc"><path d="M 1664 640 L 1720 660" stroke="#17212b" stroke-width="6"/><rect x="1712" y="600" width="740" height="138" rx="22" fill="rgba(15,22,30,0.9)"/><text class="hc1" x="1742" y="656">HOY: NIMRUD</text><text class="hc2" x="1742" y="714">conserva el nombre de su fundador</text></g>
+  </svg>
+</div></div>
+<div class="cab sobre" style="z-index:3"><span class="cap">Las ciudades de Nemrod, hoy</span><span></span></div>
+<div class="pie pie11">Mapa: apéndice B2 de la TNM (wol.jw.org) · marcas añadidas</div>
+<div class="banda11"></div>
+<div class="lay11">
+  <div class="m">Nimrud se excavó en el siglo XIX: <b>resultó ser Cálah</b></div>
+  <div class="f">el arqueólogo Layard; luego halló en Quyunjiq un palacio de Nínive · <i>La Atalaya</i>, 1 de junio de 1993, pág. 5 · <i>Perspicacia</i>, “Babel”, “Erec”, “Nínive”, “Cálah”</div>
+</div>
+
+<script>
+const V = { x: 0, y: 0, w: 1920, h: 1080 };
+const SUR = encuadre({ x: 0, y: 520, w: 1904, h: 1071 }, V), NOR = encuadre({ x: 1000, y: 250, w: 1600, h: 900 }, V);
+tl.set($(".cs"), SUR, 0);
+tl.set($(".cn"), NOR, 0);
+aparece(".pie11", 0.5, 0.5);
+entra(".cab", 0.3, { y: -16 });
+traza(".a-bab", at("Babilonia") - 0.3, 0.6);
+entra(".hb", at("Babilonia"), { y: 20 });
+traza(".a-ere", at("Erec") - 0.2, 0.6);
+entra(".he", at("Uarka"), { y: 20 });
+const tN = at("Nínive");
+camara(".cs", 0.2, tN - 1.2, encuadre({ x: 60, y: 560, w: 1784, h: 1004 }, V), "none");
+tl.set($(".nor"), { opacity: 0 }, 0);
+tl.to($(".nor"), { opacity: 1, duration: 0.8, ease: "none" }, tN - 0.9);
+camara(".cn", tN - 0.9, DUR - tN + 0.8, encuadre({ x: 1060, y: 280, w: 1480, h: 832 }, V), "none");
+traza(".a-niv", tN + 0.2, 0.6);
+entra(".hn", tN + 0.4, { y: 20 });
+traza(".a-cal", at("Cálah", 0) - 0.2, 0.6);
+entra(".hc", at("Nimrud", 0) - 0.2, { y: 20 });
+aparece(".banda11", at("se excavó") - 0.9, 0.5);
+entra(".lay11", at("se excavó") - 0.6, { y: 20 });
+</script>

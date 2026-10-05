@@ -1,0 +1,26 @@
+<style>
+/*incluir:_ruta.css*/
+.barras { display: flex; flex-direction: column; gap: 12px; }
+.bx { display: grid; grid-template-columns: 250px 1fr; align-items: center; column-gap: 20px; }
+.bx .l { font-family: "Caveat"; font-weight: 700; font-size: 44px; }
+.bx .r { height: 64px; border-radius: 12px; background: #5f9fd8; display: flex; align-items: center; padding-left: 18px; font-family: "Fraunces"; font-weight: 700; font-size: 38px; color: #0d1b2a; }
+</style>
+<!--incluir:_ruta.html-->
+<div class="cab sobre"><span class="cap">El Éufrates hoy</span><span>Génesis 31:21</span></div>
+<div class="col">
+  <div class="b a1"><div class="m xl oro">≈ 2.700 km</div><div class="m md">“El río más largo e importante del sudoeste asiático”</div><div class="m md">en turco, <b>Firat</b>: “muy parecido al término hebreo Peráth”</div><div class="s">Perspicacia, vol. 1, “Éufrates”, pág. 883</div></div>
+  <div class="b a2"><span class="externa">fuente externa</span><div class="m">presas desde los años 70</div><div class="m md">Atatürk (Turquía): <b>169 m</b> de alto</div><div class="m md">Birecik y Karkamış, cerca de los antiguos cruces</div><div class="m md">Tabqa (Siria): un lago de ~80 km</div></div>
+  <div class="b a3"><span class="externa">fuente externa</span><div class="m md">caudal más alto medido en Irak</div><div class="barras"><div class="bx"><div class="l">antes de 1990</div><div class="r br1">&gt; 7.500 m³/s</div></div><div class="bx"><div class="l">después</div><div class="r br2" style="width:33%">~2.500</div></div></div><div class="s">“Euphrates”, “Atatürk Dam”, “Tabqa Dam”, “Carchemish”, Wikipedia, consultados el 28-sep-2026</div></div>
+</div>
+<script>
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+const cam = $(".cam");
+tl.set(cam, encuadre({ x: 1850, y: 80, w: 1450, h: 1330 }, V), 0);
+tl.to(cam, { ...encuadre({ x: 1950, y: 150, w: 1300, h: 1190 }, V), duration: DUR, ease: "none" }, 0);
+tl.set([$(".car.jac"), $(".car.lab"), $(".rhl"), $(".rl"), $(".rh2"), $(".rj2"), $(".rh3"), $(".rj3"), $(".l-da"), $(".l-ga")], { opacity: 0 }, 0);
+aparece([".l-ha", ".vado", ".r-eu"], 0.2, 0.5);
+late(".anillo-v", at("Pero hoy no es"), { s: 1.3, n: 3 });
+secuencia([[".a1", 0.4], [".a2", at("Pero hoy no es")], [".a3", at("Las crecidas")]]);
+crece(".br1", at("Las crecidas") + 0.3, 0.8);
+crece(".br2", at("a unos dos mil quinientos") - 0.3, 0.6);
+</script>

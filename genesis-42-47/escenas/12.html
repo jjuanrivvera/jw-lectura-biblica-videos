@@ -1,0 +1,75 @@
+<!--lead:2.0-->
+<style>
+.jud12 { position: absolute; left: 110px; top: 250px; width: 420px; }
+.jud12 .med { position: relative; width: 400px; }
+.jud12 .med .n { font-size: 40px; }
+.col12 { position: absolute; left: 620px; right: 90px; top: 110px; bottom: 80px; }
+.col12 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+.col12 .cita { font-size: 52px; }
+.nota12 { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 28px; color: var(--tenue); }
+.nota12 b { font-family: "Caveat", cursive; font-size: 54px; color: var(--oro); margin-left: 12px; }
+.pasos12 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.pasos12 .tj .x { font-size: 34px; }
+.frente12 { position: absolute; left: 80px; right: 80px; top: 120px; height: 620px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; }
+.frente12 .lado { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; }
+.frente12 .lado .med { position: relative; width: 320px; }
+.frente12 .lado .m { font-size: 70px; }
+.frente12 .lado .ref { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.1em; color: var(--tenue); }
+.cede12 { position: absolute; left: 160px; right: 160px; top: 760px; text-align: center; }
+.cede12 .cita { font-size: 46px; }
+</style>
+
+<div class="fase f1">
+  <div class="cab"><span class="cap">Génesis 43</span><span>versículos 1 al 10</span></div>
+  <div class="jud12"></div>
+  <div class="col12">
+    <div class="b a1">
+      <div class="m md">“sin Benjamín no podemos volver” · 43:3-5</div>
+      <div class="cita q1">“Yo asumo la responsabilidad. Si no te lo traigo de vuelta y te lo entrego, <b>cargaré con ese pecado contra ti para siempre</b>”<span class="ref">JUDÁ · GÉNESIS 43:9</span></div>
+      <div class="nota12 n1">la nota de la TNM traduce:<b>“Seré fianza por él”</b></div>
+    </div>
+    <div class="b a2">
+      <div class="def d1"><div class="t">fiador</div><div class="x">respondía con <b>su propia persona</b> si el otro fallaba</div><div class="s">“persona que fía a otra para la seguridad de una obligación” · <i>Perspicacia</i>, vol.&nbsp;1, “Fianza, fiador”, pág.&nbsp;926</div></div>
+      <div class="pasos12"><div class="tj p1"><div class="k">ante testigos</div><div class="x">no había contrato firmado</div></div><div class="tj p2"><div class="k">la mano</div><div class="x">estrechaba la mano del <b>acreedor</b></div></div><div class="tj on p3"><div class="k">aquí</div><div class="x">no un préstamo: <b>una vida</b></div></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="fase f2">
+  <div class="cab"><span class="cap">Génesis 42:37 y 43:9</span><span>dos ofertas</span></div>
+  <div class="frente12">
+    <div class="lado l1"><div class="w-ruben"></div><div class="m">“mis dos hijos”</div><div class="ref">RUBÉN · GÉNESIS 42:37</div></div>
+    <div class="lado l2"><div class="w-juda"></div><div class="m oro">“yo”</div><div class="ref">JUDÁ · GÉNESIS 43:9</div></div>
+  </div>
+  <div class="cede12"><div class="cita q2">“Que el Dios Todopoderoso permita que ese hombre les tenga compasión”<span class="ref">JACOB CEDE · GÉNESIS 43:14</span></div></div>
+</div>
+
+<div class="capcard cc"><div class="fondo"><img src="assets/img/mayordomo.jpg" /></div>
+  <div class="dentro"><div class="num">Génesis 43</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16" /></svg><div class="sub">el segundo viaje y el banquete</div>
+  <div class="pista"><span class="hecho">42</span><span class="on">43</span><span>44</span><span>45</span><span>46</span><span>47</span></div></div></div>
+
+<script>
+$(".jud12").innerHTML = medallon("juda");
+$(".w-ruben").outerHTML = medallon("ruben");
+$(".w-juda").outerHTML = medallon("juda");
+const t0 = at("Se acaba el grano");
+const tF = at("Un fiador respondía");
+const tR = at("Rubén había ofrecido");
+capitulo(".cc", 0.3, t0 - 0.5);
+entra(".cc .pista", 1.0, { y: 20 });
+kb(".cc .fondo", 0, t0, { s: 1.12 }, { s: 1.0 });
+salta(".jud12 .med", t0, { desde: 0.7 });
+secuencia([[".a1", t0 + 0.2], [".a2", tF - 0.3]]);
+entra(".q1", t0 + 1.2, { y: 20 });
+entra(".n1", at("La nota lo traduce"), { y: 12 });
+entra(".d1", tF, { y: 16 });
+entra(".p1", at("Se hacía ante testigos"), { y: 16 });
+entra(".p2", at("estrechando la mano"), { y: 16 });
+entra(".p3", at("Y aquí no se garantizaba"), { y: 16 });
+tl.to($(".f1"), { opacity: 0, duration: 0.5, ease: "none" }, tR - 0.5);
+tl.set(inicial(el(".f2"), { opacity: 0 }), { opacity: 1 }, tR - 0.1);
+entra(".l1", tR, { y: 30 });
+entra(".l2", at("Judá se ofrece él"), { y: 30 });
+entra(".q2", at("Y Jacob cede"), { y: 20 });
+atenua([".l1", ".l2"], at("Y Jacob cede") - 0.2, 0.35);
+</script>

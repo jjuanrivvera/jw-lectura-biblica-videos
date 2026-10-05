@@ -1,0 +1,74 @@
+<style>
+.f07a .grito { position: absolute; left: 90px; right: 90px; top: 150px; text-align: center; }
+.f07a .grito .cita { font-size: 76px; line-height: 1.12; }
+.f07a .grito .nota { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 26px; color: var(--tenue); margin-top: 16px; }
+.f07a .grito .nota i { color: var(--tiza); }
+.prueba07 { position: absolute; left: 90px; right: 90px; top: 520px; display: grid; grid-template-columns: 1.1fr 1fr 1fr; column-gap: 30px; align-items: stretch; }
+.prueba07 .tj .x { font-size: 38px; }
+.prueba07 .tj .k { font-size: 24px; }
+.prueba07 .p0 { justify-content: center; }
+.prueba07 .p0 .m { font-size: 64px; color: var(--oro); }
+.f07b .q07 { position: absolute; left: 90px; right: 90px; top: 100px; text-align: center; }
+.f07b .q07 .cita { font-size: 50px; }
+.fila07 { position: absolute; left: 60px; right: 60px; top: 360px; height: 260px; }
+.fila07 .med { width: 128px; top: 0; }
+.fila07 .med .n { font-size: 21px; }
+.marca07 { position: absolute; top: 590px; width: 320px; margin-left: -160px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; line-height: 1.02; white-space: nowrap; }
+.supo07 { position: absolute; left: 90px; right: 90px; top: 740px; text-align: center; }
+.supo07 .m { font-size: 64px; }
+.dias07 { position: absolute; left: 90px; right: 90px; top: 850px; display: flex; align-items: center; justify-content: center; gap: 40px; }
+.dias07 .cifra { font-size: 110px; }
+.dias07 .cifra small { font-size: 50px; }
+.dias07 .f { max-width: 820px; font-size: 24px; }
+</style>
+
+<div class="fase f07a">
+  <div class="cab"><span class="cap">Génesis 42</span><span>versículos 9 al 17</span></div>
+  <div class="grito"><div class="cita c1">“¡Ustedes son espías! ¡Han venido a averiguar <b>los puntos débiles del país</b>!”<span class="ref">GÉNESIS 42:9</span></div>
+    <div class="nota n1">nota de la TNM: <i>“a ver la situación delicada”</i></div></div>
+  <div class="prueba07">
+    <div class="tj p0"><div class="m">una prueba: ¿han cambiado?</div><div class="ref">“José decidió no decir a sus hermanos quién era, ponerlos a prueba y averiguar si habían cambiado” · <i>La Atalaya</i>, 1 de mayo de 2015, pág.&nbsp;13</div></div>
+    <div class="tj p1"><div class="k">si seguían siendo violentos</div><div class="x">¿cómo se cumpliría el <b>propósito de Dios</b>?</div></div>
+    <div class="tj p2"><div class="k">si José se vengaba</div><div class="x">ponía en peligro a <b>Benjamín</b> y a <b>su padre</b></div></div>
+  </div>
+</div>
+
+<div class="fase f07b">
+  <div class="cab"><span class="cap">Génesis 42</span><span>versículos 13 al 17</span></div>
+  <div class="q07"><div class="cita c3">“Somos 12 hermanos. [...] El más joven se quedó con nuestro padre y <b>el otro ya no está con nosotros</b>”<span class="ref">GÉNESIS 42:13</span></div></div>
+  <div class="fila07"></div>
+  <div class="marca07 mB" style="left:1560px; margin-left:0; width:300px; text-align:right; top:664px; color:var(--cielo);">con su padre</div>
+  <div class="marca07 mJ" style="left:1635px; color:var(--oro);">“ya no está”</div>
+  <div class="supo07"><div class="m">así supo José que <b>su padre y Benjamín vivían</b></div></div>
+  <div class="dias07"><div class="cifra">3 <small>días</small></div><div class="f">encerrados “durante tres días” (42:17). Parte de un día podía contarse como un día entero: nota de estudio de Mateo 12:40, que cita Génesis 42:17, 18</div></div>
+</div>
+
+<script>
+const tD = at("Para defenderse");
+entra(".c1", 0.2, { y: 30, d: 0.7 });
+centra(".grito", 230, at("José no se da a conocer") - 0.6);
+aparece(".n1", at("los puntos débiles") + 0.8, 0.5);
+entra(".p0", at("José no se da a conocer"), { y: 24 });
+entra(".p1", at("Si seguían siendo"), { y: 24 });
+entra(".p2", at("Y si él se vengaba"), { y: 24 });
+tl.to($(".f07a"), { opacity: 0, duration: 0.5, ease: "none" }, tD - 0.5);
+// Los doce, en el orden de sus nacimientos: diez delante, Benjamín en casa, José "ya no está".
+const paso = 1800 / 12;
+$(".fila07").innerHTML = HIJOS.map(([k], i) => medallon(k, { estilo: `left:${i * paso + (paso - 128) / 2}px` })).join("");
+tl.set(inicial(el(".f07b"), { opacity: 0 }), { opacity: 1 }, tD - 0.1);
+entra(".c3", tD, { y: 20 });
+const meds = $$(".fila07 .med");
+const tDoce = at("Somos doce hermanos");
+salta(meds, tDoce - 0.2, { desde: 0.5, st: 0.08, d: 0.45 });
+const jose = $(".fila07 .r-jose"), ben = $(".fila07 .r-benjamin");
+const diez = meds.filter((m) => m !== jose && m !== ben);
+atenua([jose, ben], tDoce + 1.4, 0.3);
+tl.to(ben, { opacity: 1, scale: 1.12, duration: 0.5, ease: "back.out(2)" }, at("El más joven"));
+entra(".mB", at("El más joven") + 0.2, { y: -10 });
+tl.to(jose, { opacity: 1, scale: 1.12, duration: 0.5, ease: "back.out(2)" }, at("el otro ya no está"));
+entra(".mJ", at("el otro ya no está") + 0.2, { y: -10 });
+tl.to(jose.querySelector(".foto"), { boxShadow: "0 0 0 10px rgba(233,191,96,0.55), 0 16px 36px rgba(0,0,0,0.5)", duration: 0.6, ease: "power1.out" }, at("Así supo José"));
+entra(".supo07", at("Así supo José") + 0.2, { y: 20 });
+sale(".supo07", at("Y los encerró") - 0.4, { y: -10 });
+entra(".dias07", at("Y los encerró"), { y: 20 });
+</script>

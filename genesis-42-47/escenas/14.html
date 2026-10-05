@@ -1,0 +1,74 @@
+<style>
+.ilu14 { position: absolute; left: 70px; top: 130px; width: 900px; height: 450px; }
+.pie14 { left: 70px; top: 594px; width: 900px; }
+.col14 { position: absolute; left: 1020px; right: 70px; top: 110px; bottom: 70px; }
+.col14 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.col14 .cita { font-size: 46px; }
+.bajo14 { position: absolute; left: 70px; top: 700px; width: 900px; display: flex; flex-direction: column; gap: 16px; }
+.bajo14 .m { font-size: 60px; }
+.sim14 { position: absolute; left: 330px; top: 170px; width: 380px; }
+.sim14 .med { position: relative; width: 360px; }
+.sim14 .med .n { font-size: 38px; }
+.vuelta14 { position: absolute; left: 70px; top: 700px; width: 900px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 64px; line-height: 1.04; color: var(--oro); }
+.cambio14 { display: grid; grid-template-columns: 1fr 80px 1fr; align-items: center; gap: 10px; }
+.cambio14 .clave { font-size: 50px; text-align: center; }
+.cambio14 svg { width: 80px; height: 50px; }
+.cambio14 svg path { fill: none; stroke: var(--oro); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 43</span><span>versículos 15 al 25</span></div>
+
+<div class="dos14" style="position:absolute; left:120px; top:160px; width:760px; height:520px"></div>
+<div class="fase f1">
+  <div class="ilus ilu14"><div class="kb"><img src="assets/img/mayordomo.jpg" /></div></div>
+  <div class="pie-img pie14">“Un mayordomo del antiguo Egipto supervisa las actividades de los trabajadores”. <i>La Atalaya</i> (estudio), noviembre de 2019, “¿Lo sabía?” (wol.jw.org)</div>
+  <div class="bajo14"><div class="def d1"><div class="t">mayordomo</div><div class="x">el <b>encargado de la casa</b> de otro: un hombre libre o un esclavo de confianza</div><div class="s"><i>Perspicacia</i>, vol.&nbsp;2, “Mayordomo”, pág.&nbsp;349 · José lo había sido con Potifar (39:4)</div></div></div>
+</div>
+
+<div class="fase f2">
+  <div class="sim14"></div>
+  <div class="vuelta14 v1">Simeón vuelve con ellos · 43:23</div>
+</div>
+
+<div class="col14">
+  <div class="b a1">
+    <div class="m md">José ve a Benjamín</div>
+    <div class="cita q1">“Lleva a estos hombres a la casa [...], porque van a comer conmigo al mediodía”<span class="ref">GÉNESIS 43:16</span></div>
+  </div>
+  <div class="b a2">
+    <div class="cita q2">“¡Ahora van a atacarnos y a hacernos sus <b>esclavos</b>, y van a quedarse con nuestros burros!”<span class="ref">GÉNESIS 43:18</span></div>
+    <div class="cita sm q3">“Allí estaba todo nuestro dinero en su justo peso. Así que quisiéramos <b>devolverlo en persona</b>”<span class="ref">GÉNESIS 43:21</span></div>
+    <div class="cita q4" style="color:var(--oro)">“No tengan miedo. [...] El Dios de ustedes y el Dios de su padre puso ese tesoro en sus costales”<span class="ref">EL MAYORDOMO · GÉNESIS 43:23</span></div>
+  </div>
+  <div class="b a3">
+    <div class="def d2"><div class="t">agua para los pies</div><div class="x">la bienvenida al viajero que llegaba en <b>sandalias</b> por caminos secos y polvorientos</div><div class="s"><i>Perspicacia</i>, vol.&nbsp;2, “Lavar los pies”, pág.&nbsp;192 · Génesis 43:24</div></div>
+    <div class="cambio14"><span class="clave rojo c1">temían ser esclavos</span><svg class="fl14" viewBox="0 0 80 50"><path d="M 6 25 H 66 M 50 10 L 68 25 L 50 40" /></svg><span class="clave c2">los reciben como <b>invitados</b></span></div>
+  </div>
+</div>
+
+<script>
+$(".sim14").innerHTML = medallon("simeon");
+const tT = at("Los hermanos temen");
+const tS = at("Les trae a Simeón");
+$(".dos14").innerHTML = medallon("jose", { estilo: "left:0; top:0; width:340px" }) + medallon("benjamin", { estilo: "left:400px; top:120px; width:280px" });
+salta(".dos14 .r-jose", 0.3, { desde: 0.6 });
+salta(".dos14 .r-benjamin", 0.9, { desde: 0.6 });
+const tMy = at("El mayordomo era");
+tl.to($(".dos14"), { opacity: 0, duration: 0.5 }, tMy - 0.6);
+kb(".ilu14 .kb", tMy - 0.4, tS, { s: 1.0, x: 0 }, { s: 1.1, x: -3 });
+aparece(".ilu14", tMy - 0.4, 0.6);
+aparece(".pie14", tMy, 0.5);
+entra(".d1", at("El mayordomo era"), { y: 20 });
+secuencia([[".a1", 0.4], [".a2", tT - 0.3], [".a3", tS - 0.3]]);
+entra(".q2", tT, { y: 16 });
+entra(".q3", at("Así que lo confiesan"), { y: 16 });
+entra(".q4", at("No tengan miedo") - 0.2, { y: 16 });
+tl.to($(".f1"), { opacity: 0, duration: 0.5, ease: "none" }, tS - 0.5);
+tl.set(inicial(el(".f2"), { opacity: 0 }), { opacity: 1 }, tS - 0.1);
+salta(".sim14 .med", tS, { desde: 0.6 });
+escribe(".v1", tS + 0.3, 1.0);
+entra(".d2", at("y agua para lavarse"), { y: 16 });
+entra(".c1", at("Temían ser esclavos"), { x: -20, y: 0 });
+traza(".fl14 path", at("y los reciben") - 0.2, 0.5);
+entra(".c2", at("y los reciben"), { x: -20, y: 0 });
+</script>

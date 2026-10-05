@@ -1,0 +1,41 @@
+<style>
+.cab32 { position: absolute; left: 90px; top: 44px; display: flex; align-items: baseline; gap: 26px; }
+.cab32 .grande { font-size: 84px; }
+.cab32 .s { font-size: 32px; }
+.pr32 { position: absolute; left: 90px; right: 90px; top: 180px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.pr32 .tj { padding: 22px 28px; }
+.pr32 .tj .x { font-size: 44px; }
+.pr32 .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 60px; line-height: 1; color: var(--oro); }
+.gr32 { position: absolute; left: 90px; right: 90px; top: 492px; padding: 26px 40px; border-radius: 28px; border: 4px solid var(--oro); background: rgba(233, 191, 96, 0.08); display: flex; align-items: center; gap: 40px; }
+.gr32 .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 110px; line-height: 1; color: var(--oro); }
+.gr32 .cita { font-size: 58px; }
+.ab32 { position: absolute; left: 90px; right: 90px; top: 752px; bottom: 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.ab32 .def .x { font-size: 54px; }
+.ab32 .cita { font-size: 42px; }
+</style>
+
+<div class="cab32"><div class="grande">La promesa</div><div class="s">Génesis 12:2, 3</div></div>
+<div class="pr32">
+  <div class="tj p1"><div class="n">1</div><div class="x">“Te convertiré en una <b>gran nación</b>”</div></div>
+  <div class="tj p2"><div class="n">2</div><div class="x">“te <b>bendeciré</b>”</div></div>
+  <div class="tj p3"><div class="n">3</div><div class="x">“haré <b>grande tu nombre</b>, y tú serás una bendición”</div></div>
+</div>
+<div class="gr32"><div class="n">4</div><div class="cita">“sin duda <b>todas las familias de la tierra</b> serán bendecidas por medio de ti”<span class="ref">GÉNESIS 12:3</span></div></div>
+<div class="ab32">
+  <div class="def nt"><div class="t">nota de 12:3</div><div class="x">o “<b>conseguirán</b> una bendición para ellas mismas”</div><div class="s">la bendición se ofrece a todos, pero cada uno tiene que tomarla</div></div>
+  <div class="cita ga">“le anticipó las <b>buenas noticias</b> a Abrahán al decir: ‘Por medio de ti todas las naciones serán bendecidas’”<span class="ref">GÁLATAS 3:8</span></div>
+</div>
+
+<script>
+// Las tarjetas empiezan más abajo y suben cuando llega la parte de abajo.
+tl.set($$(".pr32, .gr32"), { y: 110 }, 0);
+entra(".cab32", 0.3, { y: -16 });
+entra(".p1", at("gran nación") - 0.5, { y: 24 });
+entra(".p2", at("te bendeciré") - 0.2, { y: 24 });
+entra(".p3", at("haré grande") - 0.2, { y: 24 });
+salta(".gr32", at("sobre todo") - 0.1, { desde: 0.85 });
+tl.to($$(".pr32, .gr32"), { y: 0, duration: 0.8, ease: "power2.inOut" }, at("La nota da") - 0.8);
+entra(".nt", at("La nota da") - 0.2, { y: 24 });
+late(".gr32", at("se ofrece a todos"), { s: 1.02, n: 3 });
+entra(".ga", at("Pablo") - 0.2, { y: 24 });
+</script>

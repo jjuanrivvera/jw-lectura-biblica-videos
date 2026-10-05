@@ -1,0 +1,50 @@
+<style>
+.tit47 { position: absolute; left: 80px; right: 80px; top: 100px; }
+.tit47 .m { font-size: 70px; }
+.hilo47 { position: absolute; left: 60px; right: 60px; top: 250px; height: 330px; }
+.hilo47 svg { width: 1800px; height: 330px; }
+.nd47 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; fill: var(--oro); text-anchor: middle; }
+.tx47 { font-family: "Caveat", cursive; font-weight: 700; font-size: 38px; fill: var(--tiza); text-anchor: middle; }
+.q47 { position: absolute; left: 80px; right: 80px; top: 600px; }
+.q47 .cita { font-size: 40px; }
+.plata47 { position: absolute; left: 60px; right: 60px; top: 250px; height: 560px; }
+.plata47 svg { width: 1800px; height: 560px; }
+.pp47 { position: absolute; left: 80px; top: 860px; }
+</style>
+
+<div class="cab"><span class="cap">Cómo se amarran los seis capítulos</span><span>de Génesis 37 a 47</span></div>
+<div class="fase f1">
+  <div class="tit47"><div class="m">los sueños se cumplen <b>por etapas</b></div></div>
+  <div class="hilo47"><svg viewBox="0 0 1800 330"><g class="h1"></g></svg></div>
+  <div class="q47"><div class="cita c1">Los sueños “se cumplieron cuando Jacob y su casa se mudaron a Egipto durante un hambre severa. <b>Todos dependían de José</b> [...] para conseguir comida”<span class="ref">PERSPICACIA, VOL.&nbsp;2, “SUEÑOS”, PÁG.&nbsp;1062</span></div></div>
+</div>
+<div class="fase f2">
+  <div class="tit47"><div class="m">la plata marca <b>cada paso</b></div></div>
+  <div class="plata47"><svg viewBox="0 0 1800 560"><defs>
+    <radialGradient id="g47-plata" cx="0.4" cy="0.35" r="0.8"><stop offset="0" stop-color="#f4f6f8" /><stop offset="1" stop-color="#7b8791" /></radialGradient></defs><g class="h2"></g></svg></div>
+  <div class="pp47"><span class="propio chico">este recorrido de la plata: observación propia</span></div>
+</div>
+
+<script>
+// Hilo 1: las gavillas que se inclinan, de 37:7 a 50:18.
+const S = [["37:7", "el sueño"], ["42:6", "se inclinan diez"], ["43:26", "los once"], ["44:14", "caen ante él"], ["50:18", "y otra vez"]];
+let h = `<path class="lh1" d="M 60 150 H 1740" stroke="rgba(233,191,96,0.6)" stroke-width="6" stroke-linecap="round"/>`;
+S.forEach(([v, t], i) => { const x = 110 + i * 395; h += `<g class="p1 q${i}"><circle cx="${x}" cy="150" r="22" fill="${i ? "#e9bf60" : "#f1e9d8"}"/><text class="nd47" x="${x}" y="100">${v}</text><text class="tx47" x="${x}" y="220">${t}</text></g>`; });
+$(".h1").innerHTML = h;
+// Hilo 2: la plata, de la venta de José a la casa del faraón.
+const P = [["37:28", "veinte piezas por José"], ["42:25, 35", "vuelve en los costales"], ["43:21", "“en su justo peso”"], ["44:2, 12", "la copa de plata"], ["45:22", "300 piezas a Benjamín"], ["47:14", "toda, a la casa del faraón"]];
+let p = `<path class="lh2" d="M 60 200 H 1740" stroke="rgba(200,210,218,0.55)" stroke-width="6" stroke-linecap="round"/>`;
+P.forEach(([v, t], i) => { const x = 150 + i * 300; p += `<g class="p2 r${i}"><circle cx="${x}" cy="200" r="${i === 5 ? 44 : 30}" fill="url(#g47-plata)" stroke="#5f6a74" stroke-width="3"/><text class="nd47" x="${x}" y="120" style="fill:#d5dde4">${v}</text><text class="tx47" x="${x}" y="${i % 2 ? 330 : 300}">${t}</text></g>`; });
+$(".h2").innerHTML = p;
+const tP = at("Y la plata marca");
+entra(".tit47", 0.2, { y: 16 });
+traza(".lh1", 0.5, 2.0);
+salta(".p1", at("para que su sueño"), { desde: 0.4, st: 0.35 });
+entra(".c1", at("toda la familia terminó"), { y: 16 });
+tl.to($(".f1"), { opacity: 0, duration: 0.5, ease: "none" }, tP - 0.5);
+tl.set(inicial(el(".f2"), { opacity: 0 }), { opacity: 1 }, tP - 0.1);
+traza(".lh2", tP, 1.6);
+const ps = [["r0", "veinte piezas"], ["r1", "la plata en los costales"], ["r2", "la devuelta"], ["r3", "la copa de plata"], ["r4", "las trescientas"], ["r5", "y toda la plata"]];
+ps.forEach(([r, f]) => salta(`.${r}`, at(f) - 0.1, { desde: 0.3 }));
+aparece(".pp47", tP + 1.5, 0.5);
+</script>

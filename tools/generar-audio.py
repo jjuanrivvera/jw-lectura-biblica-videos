@@ -9,7 +9,11 @@ from pathlib import Path
 
 import edge_tts
 
-PROJECTS = {"genesis-14-18", "genesis-19-23", "genesis-24-28"}
+REPO_ROOT = Path(__file__).resolve().parents[1]
+PROJECTS = {
+    path.name for path in REPO_ROOT.iterdir()
+    if path.is_dir() and (path / "NARRACION.md").is_file()
+}
 VOICE = "es-US-AlonsoNeural"
 LEAD = 0.6
 
@@ -88,8 +92,8 @@ async def generate_one(audio_dir, number, title, text, semaphore):
 
 async def main():
     if len(sys.argv) != 2 or sys.argv[1] not in PROJECTS:
-        raise SystemExit("Uso: python3 tools/generar-audio.py genesis-14-18|genesis-19-23|genesis-24-28")
-    root = Path(__file__).resolve().parents[1] / sys.argv[1]
+        raise SystemExit("Uso: python3 tools/generar-audio.py <proyecto con NARRACION.md>")
+    root = REPO_ROOT / sys.argv[1]
     audio_dir = root / "video" / "audio"
     audio_dir.mkdir(parents=True, exist_ok=True)
     semaphore = asyncio.Semaphore(4)

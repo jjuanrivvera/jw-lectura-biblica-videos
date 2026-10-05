@@ -1,0 +1,31 @@
+<style>
+.leccion .l { font-size: 100px; }
+.leccion .p { font-size: 64px; }
+.leccion .s { font-size: 30px; }
+.portada { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; text-align: center; }
+.portada .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 110px; line-height: 1.05; }
+.portada .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.22em; color: var(--verde); text-transform: uppercase; }
+</style>
+
+<div class="portada"><div class="r">al final, todas juntas</div><div class="t">Lecciones y preguntas para pensar</div></div>
+<div class="seccion"><span class="r">Lecciones y preguntas para pensar</span><span class="t">Génesis 37</span></div>
+<div class="seccion-linea"><svg viewBox="0 0 1740 20" preserveAspectRatio="none" style="width:100%;height:20px"><path d="M 4 10 C 400 4 900 16 1736 8"/></svg></div>
+<div class="leccion l1"><div class="n">1</div><div class="cuerpo"><div class="l">El favoritismo de Jacob <b>hirió a toda la familia</b></div><div class="p"><span class="k">PARA PENSAR</span>¿Sabe cada uno en casa que lo queremos?</div><div class="s"><i>La Atalaya</i>, 1 de agosto de 2014, pág. 12: “Los padres sabios hacen todo lo posible por confirmarles […] que los quieren”</div></div></div>
+<div class="leccion l2"><div class="n">2</div><div class="cuerpo"><div class="l">Los celos empezaron por no poder hablarle bien a un hermano, y <b>terminaron en una venta</b></div><div class="p"><span class="k">PARA PENSAR</span>¿Qué hacemos cuando a un hermano le va mejor que a nosotros?</div><div class="s">37:4 · Romanos 12:15 · <i>La Atalaya</i>, 1 de agosto de 2014, pág. 12</div></div></div>
+<div class="leccion l3"><div class="n">3</div><div class="cuerpo"><div class="l">José fue a buscar a sus hermanos aunque no lo querían, y Rubén <b>habló</b> cuando los demás querían matar</div><div class="p"><span class="k">PARA PENSAR</span>¿Nos atrevemos a hablar cuando otros hacen algo malo?</div><div class="s">37:13, 21, 22</div></div></div>
+
+<script>
+entra(".portada .r", 0.3, { y: 20 });
+entra(".portada .t", 0.6, { y: 40, d: 0.8 });
+sale(".portada", at("Génesis treinta y siete") - 0.6, { y: -40, d: 0.5 });
+const t0 = at("Génesis treinta y siete");
+entra(".seccion", t0, { y: -20 });
+traza(".seccion-linea path", t0 + 0.3, 1.0);
+secuencia([[".l1", at("Primera")], [".l2", at("Segunda")], [".l3", at("Tercera")]], null, { y: 30, d: 0.6 });
+entra(".l1 .p", at("Sabe cada uno") - 0.2, { y: 20 });
+entra(".l1 .s", at("Sabe cada uno") + 0.2, { y: 10 });
+entra(".l2 .p", at("Qué hacemos") - 0.2, { y: 20 });
+entra(".l2 .s", at("Qué hacemos") + 0.2, { y: 10 });
+entra(".l3 .p", at("Nos atrevemos") - 0.2, { y: 20 });
+entra(".l3 .s", at("Nos atrevemos") + 0.2, { y: 10 });
+</script>

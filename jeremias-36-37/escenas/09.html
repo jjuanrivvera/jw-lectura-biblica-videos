@@ -1,0 +1,94 @@
+<style>
+.zv { top: 150px; height: 900px; }
+.parte { position: absolute; font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; line-height: 1; color: var(--oro); }
+.pa { left: 30px; top: 720px; width: 300px; text-align: right; }
+.pb { left: 30px; top: 930px; width: 300px; text-align: right; }
+.pc { left: 790px; top: 850px; width: 270px; }
+.pd { left: 790px; top: 690px; width: 270px; }
+.nombres { position: absolute; left: 40px; right: 40px; top: 190px; display: flex; justify-content: center; gap: 26px; }
+.nombres div { padding: 16px 30px; border: 4px solid var(--verde); border-radius: 22px; font-family: "Fraunces", serif; font-weight: 700; font-size: 56px; background: rgba(23,33,43,0.9); }
+.nombres .r { position: absolute; left: 0; right: 0; top: 118px; text-align: center; border: 0; background: none; font-family: "Caveat", cursive; font-size: 58px; color: var(--rojo); padding: 0; }
+.ocultos { position: absolute; left: 40px; right: 40px; top: 230px; text-align: center; font-family: "Fraunces", serif; font-weight: 700; font-size: 82px; line-height: 1.05; color: var(--verde); }
+.col-marca { fill: rgba(230,187,92,0.28); }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 36</span><span>versículos 20 al 26</span></div>
+<div class="zv"><svg viewBox="0 0 1080 900"><g class="dib"></g></svg></div>
+<div class="parte pa">redondo, poco profundo</div>
+<div class="parte pb">sobre patas</div>
+<div class="parte pc">de metal</div>
+<div class="parte pd">las brasas</div>
+<div class="nombres"><div>Elnatán</div><div>Delayá</div><div>Guemarías</div><div class="r">“él no les hizo caso”</div></div>
+<div class="ocultos">“pero Jehová los mantuvo ocultos”</div>
+
+<div class="zt">
+  <div class="b b1"><div class="m">La casa de invierno, en el noveno mes</div><div class="s">Nota de 36:22: de mediados de noviembre a mediados de diciembre</div></div>
+  <div class="b b2 def"><div class="t">Brasero</div><div class="x">recipiente redondo, poco profundo, sobre patas, probablemente de metal</div><div class="s" style="margin-top:14px">Perspicacia, “Brasero”</div></div>
+  <div class="b b3"><div class="m">Jehudí lee. Cada 3 o 4 columnas…</div><div class="s">Jeremías 36:23</div></div>
+  <div class="b b4"><div class="m">…un corte <span style="color:var(--oro)">“con un cuchillo de secretario”</span>, y al fuego</div><div class="s">Jeremías 36:23 · una herramienta del oficio de escribir</div></div>
+  <div class="b b5"><div class="m">Pedazo por pedazo, hasta acabar con el rollo</div></div>
+  <div class="b b6"><div class="cita">“Aunque Elnatán, Delayá y Guemarías le rogaron al rey que no quemara el rollo, él no les hizo caso”<span class="ref">JEREMÍAS 36:25</span></div></div>
+  <div class="b b7"><div class="cita">“ni el rey ni ninguno de los siervos de él que oyeron todas esas palabras sintieron ningún miedo ni se rasgaron la ropa”<span class="ref">JEREMÍAS 36:24</span></div></div>
+  <div class="b b8"><div class="m">El rey manda capturar a Baruc y a Jeremías…</div><div class="s">Jeremías 36:26</div></div>
+</div>
+
+<script>
+/*incluir:_dibujos.js*/
+root.insertAdjacentHTML("afterbegin", '<svg width="0" height="0" style="position:absolute">' + defsDibujos() + "</svg>");
+// El rollo arriba: el palo izquierdo guarda lo que falta por leer; a la derecha, el pedazo que se lee.
+const RX = 250, RY = 60, RW = 400, RH = 270;
+let piezas = "";
+for (let k = 0; k < 3; k++) piezas += hoja(RX, RY, RW, RH, 4, 40 + k, { clase: "pz pz" + k, cada: 99 });
+const cuchillo = `<g class="cuchillo"><rect x="-11" y="-150" width="22" height="80" rx="8" fill="${url("mad")}"/>
+  <path d="M -9 -70 L 9 -70 L 9 40 L 0 70 L -9 40 Z" fill="#d7dde3"/><path d="M 0 -70 L 9 -70 L 9 40 L 0 70 Z" fill="#9aa5b1"/></g>`;
+// El rollo va detrás del brasero: los pedazos caen dentro del recipiente y las llamas los tapan.
+pinta(".dib", `<g class="rolloarr">${piezas}${palo(RX - 16, RY, RH, 96, "palo pi")}</g>` + brasero(540, 640, 1.15) + cuchillo);
+llamear(0.3, DUR);
+const CX = RX + RW / 2, CY = RY + RH / 2;
+
+entra(".brasero", 0.8, { y: 30, d: 0.9 });
+entra(".pa", at("redondo"), { x: -20, y: 0 });
+entra(".pb", at("patas"), { x: -20, y: 0 });
+entra(".pc", at("metal"), { x: 20, y: 0 });
+entra(".pd", at("brasas"), { x: 20, y: 0 });
+tl.fromTo($$(".brasa"), { opacity: 1 }, { opacity: 0.55, duration: 0.3, yoyo: true, repeat: 3, stagger: 0.03, immediateRender: false }, at("brasas"));
+sale([".pa", ".pb", ".pc", ".pd"], at("Jehudí lee") - 0.3, { d: 0.4 });
+
+// El rollo aparece y se lee el primer pedazo.
+entra(".rolloarr .pi", at("Jehudí lee") - 0.2, { x: -40, y: 0 });
+const nace = (k, t) => tl.fromTo(inicial([$(".pz" + k)], { opacity: 0 }), { opacity: 1, scaleX: 0, svgOrigin: `${RX} ${CY}` },
+  { opacity: 1, scaleX: 1, svgOrigin: `${RX} ${CY}`, duration: 0.8, ease: "power2.out", immediateRender: false }, t);
+// Corte: el cuchillo baja pegado al palo; el pedazo cae al brasero, se oscurece y se consume.
+const corta = (t) => {
+  tl.fromTo($(".cuchillo"), { x: RX + 6, y: RY - 90, opacity: 0 }, { x: RX + 6, y: RY + 10, opacity: 1, duration: 0.25, immediateRender: false }, t);
+  tl.to($(".cuchillo"), { y: RY + RH + 60, duration: 0.55, ease: "power1.in" }, t + 0.25);
+  tl.to($(".cuchillo"), { opacity: 0, duration: 0.2 }, t + 0.8);
+};
+const cae = (k, t) => {
+  tl.to($(".pz" + k), { x: 540 - CX, y: 610 - CY, rotation: 28, scale: 0.32, svgOrigin: `${CX} ${CY}`, duration: 0.9, ease: "power2.in" }, t);
+  tl.to($(".pz" + k), { filter: "sepia(1) saturate(4) brightness(0.55)", opacity: 0, duration: 0.5, ease: "power1.in" }, t + 0.7);
+  tl.to($(".llamas"), { scale: 1.45, svgOrigin: "540 634", duration: 0.35, yoyo: true, repeat: 1, ease: "power2.out" }, t + 0.85);
+};
+tl.set($(".cuchillo"), { x: RX + 6, y: RY - 90, opacity: 0 }, 0);
+nace(0, at("Jehudí lee"));
+// Mientras se lee, las columnas se marcan una tras otra, de derecha a izquierda.
+$$(".pz0 .col").reverse().forEach((c, i) => tl.fromTo(c, { opacity: 0.78 }, { opacity: 0.25, duration: 0.3, immediateRender: false }, at("cada vez") + i * 0.45));
+corta(at("corta ese pedazo"));
+cae(0, at("lo echa al fuego"));
+nace(1, at("Otras tres"));
+corta(at("otro corte"));
+cae(1, at("otro pedazo"));
+nace(2, at("Así hasta") - 0.2);
+corta(at("Así hasta") + 0.7);
+cae(2, at("acabar"));
+tl.to($(".rolloarr .pi"), { x: 540 - (RX - 16), y: 600 - CY, rotation: -40, scale: 0.4, svgOrigin: `${RX - 16} ${CY}`, duration: 0.9, ease: "power2.in" }, at("con el rollo"));
+tl.to($(".rolloarr .pi"), { filter: "sepia(1) saturate(4) brightness(0.55)", opacity: 0, duration: 0.5 }, at("con el rollo") + 0.7);
+tl.to($(".llamas"), { scale: 1.6, svgOrigin: "540 634", duration: 0.4, yoyo: true, repeat: 1 }, at("con el rollo") + 0.85);
+
+entra(".nombres div:not(.r)", at("Elnatán"), { y: -20, st: 0.6 });
+escribe(".nombres .r", at("pero él no"), 1.2);
+sale(".nombres", at("Y el versículo veinticuatro") - 0.4);
+escribe(".ocultos", at("pero Jehová"), 1.4);
+
+secuencia([[".b1", 0.6], [".b2", at("Perspicacia lo describe")], [".b3", at("Jehudí lee")], [".b4", at("corta ese pedazo")], [".b5", at("Así hasta")], [".b6", at("Elnatán")], [".b7", at("Y el versículo veinticuatro")], [".b8", at("El rey manda")]]);
+</script>

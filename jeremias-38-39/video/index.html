@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Jeremías 38 y 39</title>
+    <script src="assets/gsap.min.js"></script>
+    <style>
+@font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces.ttf") format("truetype"); font-weight: 100 900; font-style: normal; }
+@font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Italic.ttf") format("truetype"); font-weight: 100 900; font-style: italic; }
+@font-face { font-family: "Caveat"; src: url("assets/fonts/Caveat.ttf") format("truetype"); font-weight: 400 700; }
+@font-face { font-family: "Montserrat"; src: url("assets/fonts/Montserrat.ttf") format("truetype"); font-weight: 100 900; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #17212b; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #17212b; }
+      /* Pizarra: el fondo es común a todas las escenas para que los cortes no parpadeen. */
+      #pizarra { position: absolute; inset: 0; background:
+        radial-gradient(ellipse 70% 45% at 30% 22%, rgba(120, 150, 170, 0.10), transparent 70%),
+        radial-gradient(ellipse 60% 40% at 75% 78%, rgba(120, 150, 170, 0.08), transparent 70%),
+        radial-gradient(ellipse 120% 90% at 50% 50%, transparent 55%, rgba(5, 9, 14, 0.55) 100%),
+        #17212b; }
+      #grano { position: absolute; inset: -40px; opacity: 0.16; mix-blend-mode: screen;
+        background-image: url("assets/grano.png"); background-size: 512px 512px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="1240.016" data-width="1920" data-height="1080">
+      <div id="pizarra"></div>
+      <div id="grano"></div>
+      <div id="h-00" data-composition-id="escena-00" data-composition-src="compositions/escena-00.html" data-start="0" data-duration="47.136" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-01" data-composition-id="escena-01" data-composition-src="compositions/escena-01.html" data-start="47.136" data-duration="43.008" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-02" data-composition-id="escena-02" data-composition-src="compositions/escena-02.html" data-start="90.144" data-duration="23.264" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-03" data-composition-id="escena-03" data-composition-src="compositions/escena-03.html" data-start="113.408" data-duration="36.984" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-04" data-composition-id="escena-04" data-composition-src="compositions/escena-04.html" data-start="150.392" data-duration="33.264" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-05" data-composition-id="escena-05" data-composition-src="compositions/escena-05.html" data-start="183.656" data-duration="39.144" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-06" data-composition-id="escena-06" data-composition-src="compositions/escena-06.html" data-start="222.8" data-duration="39.864" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-07" data-composition-id="escena-07" data-composition-src="compositions/escena-07.html" data-start="262.664" data-duration="32.52" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-08" data-composition-id="escena-08" data-composition-src="compositions/escena-08.html" data-start="295.184" data-duration="35.04" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-09" data-composition-id="escena-09" data-composition-src="compositions/escena-09.html" data-start="330.224" data-duration="27.72" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-10" data-composition-id="escena-10" data-composition-src="compositions/escena-10.html" data-start="357.944" data-duration="34.056" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-11" data-composition-id="escena-11" data-composition-src="compositions/escena-11.html" data-start="392" data-duration="34.08" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-12" data-composition-id="escena-12" data-composition-src="compositions/escena-12.html" data-start="426.08" data-duration="39.552" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-13" data-composition-id="escena-13" data-composition-src="compositions/escena-13.html" data-start="465.632" data-duration="33.96" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-14" data-composition-id="escena-14" data-composition-src="compositions/escena-14.html" data-start="499.592" data-duration="36" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-15" data-composition-id="escena-15" data-composition-src="compositions/escena-15.html" data-start="535.592" data-duration="43.008" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-16" data-composition-id="escena-16" data-composition-src="compositions/escena-16.html" data-start="578.6" data-duration="23.808" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-17" data-composition-id="escena-17" data-composition-src="compositions/escena-17.html" data-start="602.408" data-duration="34.712" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-18" data-composition-id="escena-18" data-composition-src="compositions/escena-18.html" data-start="637.12" data-duration="31.248" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-19" data-composition-id="escena-19" data-composition-src="compositions/escena-19.html" data-start="668.368" data-duration="29.88" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-20" data-composition-id="escena-20" data-composition-src="compositions/escena-20.html" data-start="698.248" data-duration="35.328" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-21" data-composition-id="escena-21" data-composition-src="compositions/escena-21.html" data-start="733.576" data-duration="39.696" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-22" data-composition-id="escena-22" data-composition-src="compositions/escena-22.html" data-start="773.272" data-duration="26.232" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-23" data-composition-id="escena-23" data-composition-src="compositions/escena-23.html" data-start="799.504" data-duration="38.568" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-24" data-composition-id="escena-24" data-composition-src="compositions/escena-24.html" data-start="838.072" data-duration="21.408" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-25" data-composition-id="escena-25" data-composition-src="compositions/escena-25.html" data-start="859.48" data-duration="23.256" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-26" data-composition-id="escena-26" data-composition-src="compositions/escena-26.html" data-start="882.736" data-duration="34.344" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-27" data-composition-id="escena-27" data-composition-src="compositions/escena-27.html" data-start="917.08" data-duration="25.128" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-28" data-composition-id="escena-28" data-composition-src="compositions/escena-28.html" data-start="942.208" data-duration="29.256" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-29" data-composition-id="escena-29" data-composition-src="compositions/escena-29.html" data-start="971.464" data-duration="27.984" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-30" data-composition-id="escena-30" data-composition-src="compositions/escena-30.html" data-start="999.448" data-duration="36.768" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-31" data-composition-id="escena-31" data-composition-src="compositions/escena-31.html" data-start="1036.216" data-duration="31.272" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-32" data-composition-id="escena-32" data-composition-src="compositions/escena-32.html" data-start="1067.488" data-duration="31.368" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-33" data-composition-id="escena-33" data-composition-src="compositions/escena-33.html" data-start="1098.856" data-duration="58.8" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-34" data-composition-id="escena-34" data-composition-src="compositions/escena-34.html" data-start="1157.656" data-duration="45.576" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-35" data-composition-id="escena-35" data-composition-src="compositions/escena-35.html" data-start="1203.232" data-duration="21.864" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="h-36" data-composition-id="escena-36" data-composition-src="compositions/escena-36.html" data-start="1225.096" data-duration="14.92" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <audio id="voz-00" src="audio/escena-00.mp3" data-start="0.600" data-duration="45.336" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-01" src="audio/escena-01.mp3" data-start="47.736" data-duration="41.208" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-02" src="audio/escena-02.mp3" data-start="92.744" data-duration="19.464" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-03" src="audio/escena-03.mp3" data-start="114.008" data-duration="35.184" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-04" src="audio/escena-04.mp3" data-start="150.992" data-duration="31.464" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-05" src="audio/escena-05.mp3" data-start="184.256" data-duration="37.344" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-06" src="audio/escena-06.mp3" data-start="223.400" data-duration="38.064" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-07" src="audio/escena-07.mp3" data-start="263.264" data-duration="30.720" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-08" src="audio/escena-08.mp3" data-start="295.784" data-duration="33.240" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-09" src="audio/escena-09.mp3" data-start="330.824" data-duration="25.920" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-10" src="audio/escena-10.mp3" data-start="358.544" data-duration="32.256" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-11" src="audio/escena-11.mp3" data-start="392.600" data-duration="32.280" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-12" src="audio/escena-12.mp3" data-start="426.680" data-duration="37.752" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-13" src="audio/escena-13.mp3" data-start="466.232" data-duration="32.160" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-14" src="audio/escena-14.mp3" data-start="500.192" data-duration="34.200" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-15" src="audio/escena-15.mp3" data-start="536.192" data-duration="41.208" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-16" src="audio/escena-16.mp3" data-start="579.200" data-duration="22.008" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-17" src="audio/escena-17.mp3" data-start="605.008" data-duration="30.912" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-18" src="audio/escena-18.mp3" data-start="637.720" data-duration="29.448" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-19" src="audio/escena-19.mp3" data-start="668.968" data-duration="28.080" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-20" src="audio/escena-20.mp3" data-start="698.848" data-duration="33.528" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-21" src="audio/escena-21.mp3" data-start="734.176" data-duration="37.896" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-22" src="audio/escena-22.mp3" data-start="773.872" data-duration="24.432" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-23" src="audio/escena-23.mp3" data-start="800.104" data-duration="36.768" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-24" src="audio/escena-24.mp3" data-start="838.672" data-duration="19.608" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-25" src="audio/escena-25.mp3" data-start="860.080" data-duration="21.456" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-26" src="audio/escena-26.mp3" data-start="883.336" data-duration="32.544" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-27" src="audio/escena-27.mp3" data-start="917.680" data-duration="23.328" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-28" src="audio/escena-28.mp3" data-start="942.808" data-duration="27.456" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-29" src="audio/escena-29.mp3" data-start="972.064" data-duration="26.184" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-30" src="audio/escena-30.mp3" data-start="1000.048" data-duration="34.968" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-31" src="audio/escena-31.mp3" data-start="1036.816" data-duration="29.472" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-32" src="audio/escena-32.mp3" data-start="1068.088" data-duration="29.568" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-33" src="audio/escena-33.mp3" data-start="1099.456" data-duration="57.000" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-34" src="audio/escena-34.mp3" data-start="1158.256" data-duration="43.776" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-35" src="audio/escena-35.mp3" data-start="1203.832" data-duration="20.064" data-track-index="10" data-volume="1"></audio>
+      <audio id="voz-36" src="audio/escena-36.mp3" data-start="1225.696" data-duration="10.320" data-track-index="10" data-volume="1"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // El polvo de tiza deriva muy despacio durante todo el video.
+      tl.fromTo("#grano", { x: 0, y: 0 }, { x: -30, y: -24, duration: 1240.016, ease: "none" }, 0);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

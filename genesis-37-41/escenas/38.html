@@ -1,0 +1,69 @@
+<style>
+.top38 { position: absolute; left: 80px; right: 80px; top: 100px; height: 210px; }
+.top38 > div { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.top38 .cita { font-size: 46px; }
+.tira38 { position: absolute; left: 60px; right: 60px; top: 330px; height: 430px; }
+.tira38 svg { width: 1800px; height: 430px; display: block; }
+.e38 { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; fill: var(--tiza); text-anchor: middle; }
+.e38.oro { fill: var(--oro); }
+.e38.verde { fill: #8fd08a; }
+.e38.rojo { fill: var(--rojo); }
+.n38 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; fill: #17212b; text-anchor: middle; }
+.baj38 { position: absolute; left: 80px; right: 80px; top: 790px; display: grid; grid-template-columns: 1.2fr 1fr; column-gap: 30px; align-items: start; }
+.eq38 { position: absolute; left: 80px; right: 80px; top: 790px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.eq38 .t { font-family: "Caveat", cursive; font-weight: 700; font-size: 58px; color: var(--oro); }
+.eq38 .fila { display: flex; align-items: baseline; gap: 26px; font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; }
+.eq38 .fila i { font-style: normal; color: var(--tenue); }
+.eq38 .v { color: #8fd08a; }
+.eq38 .r { color: var(--rojo); }
+</style>
+
+<div class="cab"><span class="cap">Génesis 41</span><span>versículos 25 al 36</span></div>
+<div class="top38">
+  <div class="ta"><div class="cita">“Durante siete años habrá gran abundancia en toda la tierra de Egipto. Pero después vendrán siete años de hambre”<span class="ref">GÉNESIS 41:29, 30</span></div></div>
+  <div class="tb"><div class="cita">“porque el Dios verdadero ha decidido <b>firmemente</b> hacer todo esto”<span class="ref">GÉNESIS 41:32</span></div><div class="f">“Hacer algo por segunda vez […] daba seguridad y veracidad al asunto” · <i>Perspicacia</i>, vol. 2, “Número”, pág. 507</div></div>
+  <div class="tc"><div class="cita md">“que se recoja la quinta parte de lo que produzca Egipto durante los siete años de abundancia”<span class="ref">GÉNESIS 41:34</span></div></div>
+</div>
+<div class="tira38"><svg viewBox="0 0 1800 430" class="t38"></svg></div>
+<div class="eq38"><div class="t">los dos sueños son uno</div>
+  <div class="fila f1 v"><span>7 vacas gordas</span><i>=</i><span>7 espigas llenas</span><i>=</i><span>7 años de abundancia</span></div>
+  <div class="fila f2 r"><span>7 vacas flacas</span><i>=</i><span>7 espigas quemadas</span><i>=</i><span>7 años de hambre</span></div></div>
+<div class="baj38">
+  <div class="cita sm b1">“José no solo le explicó el significado de los sueños, sino que también le dijo cómo debía actuar. Y esto impresionó mucho al faraón”<span class="ref">LA ATALAYA (ESTUDIO), ENERO DE 2023, PÁG. 17</span></div>
+  <div class="m md b2">“en cada ciudad guardaba lo que producían los campos de los alrededores” · 41:48</div>
+</div>
+
+<script>
+// Catorce años: siete buenos (cada uno aparta un quinto) y siete de hambre.
+let s = "";
+const CX = (i) => 70 + i * 118;
+for (let i = 0; i < 14; i++) {
+  const buena = i < 7, x = CX(i);
+  s += `<g class="an an${i} ${buena ? "ab" : "ah"}"><rect x="${x - 50}" y="40" width="100" height="200" rx="14" fill="${buena ? "rgba(127,191,106,0.22)" : "rgba(199,125,79,0.22)"}" stroke="${buena ? "#7fbf6a" : "#c77d4f"}" stroke-width="3"/>`;
+  if (buena) s += `<rect class="verde38" x="${x - 38}" y="92" width="76" height="136" rx="6" fill="#7fbf6a"/><rect class="q5 q5-${i}" x="${x - 38}" y="56" width="76" height="34" rx="6" fill="#e9bf60"/>`;
+  else s += `<path d="M ${x - 22} 210 L ${x - 10} 150 M ${x} 210 L ${x + 6} 140 M ${x + 20} 210 L ${x + 12} 160" stroke="#8a6f4a" stroke-width="6" stroke-linecap="round"/>`;
+  s += `<text class="n38" x="${x}" y="${buena ? 76 : 76}" style="fill:${buena ? "#17212b" : "#f0c3a8"}">${buena ? "1/5" : ""}</text><text class="e38 ${buena ? "verde" : "rojo"}" x="${x}" y="280" style="font-size:36px">${(i % 7) + 1}</text></g>`;
+}
+s += `<text class="e38 verde lab-a" x="${(CX(0) + CX(6)) / 2}" y="330">siete años de abundancia</text><text class="e38 rojo lab-h" x="${(CX(7) + CX(13)) / 2}" y="330">siete años de hambre</text>`;
+s += `<g class="gran38"><path d="M 830 420 L 830 372 C 830 352 900 346 900 346 C 900 346 970 352 970 372 L 970 420 Z" fill="#b8956a" stroke="#6f5a3e" stroke-width="3"/><text class="e38 oro" x="1110" y="405" style="text-anchor:start">1/5 de cada año, a los graneros</text></g>`;
+s += `<path class="fl38" d="M ${CX(3)} 300 C ${CX(3)} 350 820 360 860 380" stroke="#e9bf60" stroke-width="6" fill="none" stroke-dasharray="10 10"/>`;
+$(".t38").innerHTML = s;
+$$(".q5, .n38").forEach((e) => gsap.set(e, { opacity: 0 }));
+secuencia([[".ta", 0.4], [".tb", at("Y se repitió")], [".tc", at("propuso un plan")]]);
+entra(".ab", at("gran abundancia") - 0.6, { y: 20, st: 0.1, d: 0.4 });
+aparece(".lab-a", at("gran abundancia"), 0.4);
+entra(".ah", at("siete años de hambre") - 0.4, { y: 20, st: 0.1, d: 0.4 });
+aparece(".lab-h", at("siete años de hambre") + 0.3, 0.4);
+late(".tb", at("dos veces"), { s: 1.02, n: 1 });
+const tQ = at("la quinta parte");
+tl.fromTo($$(".q5, .ab .n38"), { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.35, stagger: 0.12, immediateRender: false }, tQ);
+entra(".gran38", tQ + 0.8, { y: 16 });
+traza(".fl38", tQ + 1.0, 0.9);
+tl.set($(".fl38"), { strokeDasharray: "10 10" }, tQ + 1.95);
+entra(".eq38 .t", at("los dos sueños") - 0.2, { y: 16 });
+entra(".f1", at("gran abundancia") - 0.2, { y: 16 });
+entra(".f2", at("siete años de hambre"), { y: 16 });
+sale(".eq38", at("no solo interpretó") - 0.5, { y: -16 });
+entra(".b1", at("no solo interpretó"), { y: 20 });
+entra(".b2", at("graneros de las ciudades") - 0.4, { y: 20 });
+</script>

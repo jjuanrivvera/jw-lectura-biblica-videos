@@ -1,0 +1,33 @@
+<style>
+.suen { position: absolute; left: 60px; top: 110px; width: 1180px; height: 400px; }
+.pt { font-family: "Caveat"; font-weight: 700; font-size: 50px; fill: var(--tiza); }
+.bars { position: absolute; left: 80px; top: 560px; width: 1140px; height: 360px; }
+.bt { font-family: "Caveat"; font-weight: 700; font-size: 50px; fill: var(--tiza); }
+.col { top: 120px; bottom: 90px; right: 64px; width: 600px; }
+.rico { display: flex; flex-wrap: wrap; gap: 14px; }
+.rico span { font-family: "Caveat"; font-weight: 700; font-size: 54px; padding: 4px 22px; border-radius: 30px; background: rgba(233,191,96,0.16); border: 3px solid rgba(233,191,96,0.6); }
+</style>
+<div class="cab"><span class="cap">Génesis 30:43; 31:8-12</span><span>el sueño</span></div>
+<svg class="suen" viewBox="0 0 1180 400"></svg>
+<svg class="bars" viewBox="0 0 1140 360">
+  <g class="b1"><text class="bt" x="0" y="50">con portadores, lo natural: una de cada varias</text><rect x="0" y="70" width="1100" height="70" rx="14" fill="rgba(241,233,216,0.1)" stroke="rgba(241,233,216,0.3)" stroke-width="3"/><rect class="b1r" x="0" y="70" width="275" height="70" rx="14" fill="#b3bdc8"/></g>
+  <g class="b2"><text class="bt" x="0" y="230">el relato: “todo el rebaño tenía crías moteadas” (31:8)</text><rect class="b2r" x="0" y="250" width="1100" height="70" rx="14" fill="#e9bf60"/></g>
+</svg>
+<div class="col">
+  <div class="b a1"><div class="cita md">“Vi que los machos de las cabras que se apareaban con el rebaño eran rayados, moteados y manchados”<span class="ref">GÉNESIS 31:10</span></div><div class="cita md">“he visto todo lo que Labán te está haciendo”<span class="ref">GÉNESIS 31:12</span></div></div>
+  <div class="b a2"><div class="m md">“Jehová bien podía hacer que la proporción de prole manchada aumentara”</div><div class="s">La Atalaya, 15 de marzo de 1951, pág. 192</div><div class="cita md">“Dios ha estado quitándole animales a su padre y dándomelos a mí”<span class="ref">GÉNESIS 31:9</span></div></div>
+  <div class="b a3"><div class="m">“el hombre se hizo <b style="color:var(--oro)">muy rico</b>”</div><div class="rico"><span>rebaños</span><span>camellos</span><span>burros</span><span>siervos</span></div><div class="s">Génesis 30:43 · “no gracias a su propio ingenio, sino al apoyo de Jehová” · La Atalaya, 15 de octubre de 2003, pág. 30</div></div>
+</div>
+<script>
+/*incluir:_dibujos.js*/
+pinta(".suen", defsDibujos() +
+  '<g class="m1">' + cabra(200, 300, 1.4, { rayas: true }) + '<text class="pt" x="200" y="380" text-anchor="middle">rayados</text></g>' +
+  '<g class="m2">' + cabra(590, 300, 1.4, {}) + '<g transform="translate(590 300) scale(1.4)"><circle cx="-30" cy="-60" r="5" fill="#f4eee0"/><circle cx="-10" cy="-48" r="4" fill="#f4eee0"/><circle cx="12" cy="-66" r="5" fill="#f4eee0"/><circle cx="26" cy="-46" r="4" fill="#f4eee0"/><circle cx="-24" cy="-40" r="4" fill="#f4eee0"/></g><text class="pt" x="590" y="380" text-anchor="middle">moteados</text></g>' +
+  '<g class="m3">' + cabra(980, 300, 1.4, { manchas: true }) + '<text class="pt" x="980" y="380" text-anchor="middle">manchados</text></g>');
+entra(".m1", at("los machos que se apareaban"), { y: 30 });
+entra(".m2", at("rayados moteados") + 0.4, { y: 30 });
+entra(".m3", at("rayados moteados") + 0.8, { y: 30 });
+aparece(".b1", at("Pero la herencia"), 0.4); crece(".b1r", at("Pero la herencia") + 0.3, 0.8);
+aparece(".b2", at("Cada vez que Labán"), 0.4); crece(".b2r", at("Cada vez que Labán") + 0.3, 1.4);
+secuencia([[".a1", 0.4], [".a2", at("Pero la herencia")], [".a3", at("Y el hombre se hizo")]]);
+</script>

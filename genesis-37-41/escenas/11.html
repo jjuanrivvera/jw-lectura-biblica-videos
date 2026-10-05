@@ -1,0 +1,45 @@
+<style>
+.pag11 { position: absolute; left: 50px; top: 50px; width: 860px; height: 980px; border-radius: 20px; overflow: hidden; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
+.pag11 img { position: absolute; left: 0; top: 0; width: 860px; height: auto; }
+.pie11 { left: 50px; top: 1036px; max-width: 900px; }
+.col.d11 { left: 970px; right: 60px; width: auto; top: 110px; bottom: 80px; }
+.dos11 { display: flex; flex-direction: column; gap: 22px; }
+.dos11 .def .x { font-size: 56px; }
+</style>
+
+<div class="cab" style="left:970px"><span class="cap">Génesis 37</span><span>versículos 29 al 35</span></div>
+<div class="pag11"><img src="assets/img/tunica-hist.jpg" /></div>
+<div class="pie pie11">Página 4 de <i>Los hijos de Jacob</i> (jw.org, 2013): la única ilustración de la JW de la túnica con sangre y del duelo de Jacob</div>
+
+<div class="col d11">
+  <div class="b a1">
+    <div class="cita">“Por favor, <b>comprueba</b> si es la túnica de tu hijo o no”<span class="ref">GÉNESIS 37:32</span></div>
+    <div class="s">mojaron la túnica en la sangre de un macho cabrío · 37:31</div>
+  </div>
+  <div class="b a2">
+    <div class="m">la sangre era <b>una prueba</b></div>
+    <div class="cita md">“si una fiera hubiera despedazado al animal, entonces él debe traer los restos como prueba”<span class="ref">ÉXODO 22:13</span></div>
+    <div class="def pf"><div class="t">una prueba falsa</div><div class="x">Rubén respondía por José; Jacob, “<b>padre y juez</b> patriarcal”, la dio por buena</div><div class="s"><i>Perspicacia</i>, vol. 1, “Custodia”, págs. 617, 618</div></div>
+  </div>
+  <div class="b a3">
+    <div class="m">el <b>duelo</b> de Jacob</div>
+    <div class="dos11">
+      <div class="def rs"><div class="t">rasgar la ropa</div><div class="x">por delante, hasta el pecho: el gesto de <b>un gran dolor</b></div><div class="s"><i>Perspicacia</i>, vol. 2, “Rasgar las prendas de vestir”, pág. 788</div></div>
+      <div class="def ts"><div class="t">tela de saco<i>saq</i></div><div class="x">una tela <b>basta</b> de pelo de cabra oscuro: la ropa de duelo</div><div class="s"><i>Perspicacia</i>, vol. 2, “Saco”, pág. 896 · Jacob es el primero de la Biblia que la usa</div></div>
+    </div>
+  </div>
+  <div class="b a4">
+    <div class="cita">“¡Seguiré de duelo por mi hijo hasta que baje a la <b>Tumba</b>!”<span class="ref">GÉNESIS 37:35</span></div>
+    <div class="def tu"><div class="t">Tumba</div><div class="x">nota: o “<b>Seol</b>”: “el lugar simbólico donde descansan los muertos”</div></div>
+  </div>
+</div>
+
+<script>
+entra(".pag11", 0.2, { y: 30, d: 0.8 });
+aparece(".pie11", 0.6, 0.5);
+tl.fromTo($(".pag11 img"), { y: 0 }, { y: -214, duration: 6, ease: "power1.inOut", immediateRender: false }, at("Por qué la sangre"));
+secuencia([[".a1", 0.4], [".a2", at("Por qué la sangre")], [".a3", at("Se rasgó")], [".a4", at("No se dejaba")]]);
+entra(".pf", at("Así que prepararon"), { y: 20 });
+entra(".ts", at("tela de saco"), { y: 20 });
+entra(".tu", at("Es decir"), { y: 20 });
+</script>

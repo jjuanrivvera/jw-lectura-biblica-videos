@@ -1,0 +1,66 @@
+<style>
+.mapa.B6 { left: 70px; top: 0; width: 790px; height: 1080px; }
+.mapa.B6 .pie-mapa { left: 14px; right: 14px; bottom: 14px; font-size: 22px; }
+.col20 { position: absolute; left: 930px; right: 70px; top: 110px; bottom: 80px; }
+.col20 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.col20 .cita { font-size: 48px; }
+.hd20 { display: flex; align-items: center; gap: 30px; }
+.hd20 .med { position: relative; width: 160px; }
+.hd20 .med .n { font-size: 26px; }
+.hd20 .cifra { font-size: 170px; }
+.hd20 .u { font-family: "Caveat", cursive; font-weight: 700; font-size: 58px; line-height: 1.02; }
+.pp20 { align-self: flex-start; }
+.dos20 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.dos20 .tj .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; line-height: 1.04; }
+</style>
+
+<!--incluir:_b6.html-->
+<div class="cab" style="left:930px"><span class="cap">Génesis 49</span><span>Leví</span></div>
+<div class="col20">
+  <div class="b b1">
+    <div class="hd20"><!--ML--><span class="cifra"><span class="n20">0</span></span><span class="u">ciudades, con sus campos de pasto, por todo el país</span></div>
+    <div class="cita">“Las ciudades que los levitas recibieron dentro del territorio de los israelitas fueron un total de <b>48 ciudades</b> junto con sus campos de pasto”<span class="ref">JOSUÉ 21:41</span></div>
+    <span class="propio chico pp20">esquema propio: los puntos ilustran el patrón, no enumeran las ciudades</span>
+  </div>
+  <div class="b b2">
+    <div class="m md oro">pero terminó siendo distinto</div>
+    <div class="cita">“Moisés [...] dijo: ‘¿Quién está de parte de Jehová? ¡Que venga conmigo!’. Y <b>todos los levitas</b> se reunieron a su alrededor”<span class="ref">ÉXODO 32:26 · EL BECERRO DE ORO</span></div>
+  </div>
+  <div class="b b3">
+    <div class="m md">Jehová los separó para servirle</div>
+    <div class="dos20">
+      <div class="tj on d1"><div class="k">sacerdotes</div><div class="x">los hombres de la <b>familia de Aarón</b>, que era levita</div></div>
+      <div class="tj d2"><div class="k">los demás levitas</div><div class="x">ayudaban en el <b>santuario</b></div></div>
+    </div>
+    <div class="f">Éxodo 32:26-29; Números 3:6-12 · <i>La Atalaya</i> (estudio), junio de 2025, parte 1, pág.&nbsp;5 · <i>Perspicacia</i>, “Ciudades levitas”, pág.&nbsp;495</div>
+  </div>
+  <div class="b b4">
+    <div class="m md oro">en todas partes, quien enseñara la Ley</div>
+    <div class="cita">“Que ellos instruyan a Jacob en tus decisiones judiciales y <b>a Israel en tu Ley</b>”<span class="ref">SOBRE LEVÍ · DEUTERONOMIO 33:10</span></div>
+  </div>
+</div>
+
+<script>
+$(".hd20").insertAdjacentHTML("afterbegin", medallon("levi"));
+// 48 puntos repartidos sobre las herencias: cuatro alrededor de cada uno de doce centros en tierra.
+const C20 = [[1500, 930], [1720, 820], [2150, 980], [1590, 1230], [1750, 1390], [1560, 1640], [1440, 1960], [1240, 2130],
+  [1580, 2210], [2060, 2120], [2120, 2440], [1300, 2720]];
+const O20 = [[-80, -70], [85, -55], [-70, 80], [80, 75]];
+const P20 = C20.flatMap(([x, y]) => O20.map(([dx, dy]) => [x + dx, y + dy]));
+pinta(".marcas", `<g class="lv20">${P20.map(([x, y]) => `<rect x="${x - 26}" y="${y - 26}" width="52" height="52" rx="8" fill="#1f5d99" stroke="#fff" stroke-width="8"/>`).join("")}</g>`);
+const V = { x: 0, y: 0, w: 790, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 0, y: 0, w: 2808, h: 3888 }, V), 0);
+const tB = at("Cuando el pueblo");
+secuencia([[".b1", 0.4], [".b2", at("Pero su dispersión") - 0.2], [".b3", at("Jehová los separó") - 0.2], [".b4", at("Y como vivían") - 0.2]]);
+// Los cuadros caen por todo el mapa mientras el número cuenta hasta 48.
+const t48 = at("cuarenta y ocho ciudades");
+salta(".lv20 rect", t48 - 0.2, { st: 1.2 / 48, desde: 0.2, d: 0.35 });
+cuenta(".n20", 0, 48, t48 - 0.2, 1.3);
+entra(".b1 .cita", t48 + 1.2, { y: 20 });
+entra(".pp20", at("repartidas por todo") , { y: 12 });
+entra(".b2 .cita", Math.min(at("Moisés preguntó") - 0.3, at("Pero su dispersión") + 0.8), { y: 20 });
+entra(".d1", at("Los sacerdotes") - 0.2, { y: 20 });
+entra(".d2", at("los demás levitas") - 0.2, { y: 20 });
+// Al final, todos los puntos laten: en todas partes había quien enseñara.
+late(".lv20 rect", at("en todas partes") , { s: 1.3, n: 3 });
+</script>

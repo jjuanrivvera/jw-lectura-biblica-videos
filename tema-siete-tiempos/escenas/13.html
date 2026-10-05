@@ -1,0 +1,57 @@
+<style>
+.fila { position: absolute; left: 110px; right: 110px; }
+.fila .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.14em; color: var(--oro); }
+.bar { position: relative; height: 120px; margin-top: 14px; display: flex; gap: 8px; }
+.seg { border-radius: 16px; display: flex; align-items: center; justify-content: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 60px; color: #121a2a; }
+.dias { flex: 1; background: linear-gradient(90deg, #d9b25e, var(--oro)); font-family: "Fraunces", serif; font-size: 66px; }
+.t1 { flex: 1; background: var(--cielo); } .t2 { flex: 2; background: #a9c6f0; } .t3 { flex: 0.5; background: #cfe0f8; font-family: "Fraunces", serif; font-size: 70px; }
+.fA { top: 140px; } .fB { top: 380px; }
+.res { position: absolute; left: 110px; right: 110px; top: 640px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.res .cj { border: 4px solid var(--oro); border-radius: 24px; padding: 24px 30px; background: rgba(18,26,42,0.95); }
+.res .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 62px; line-height: 1.05; }
+.res .n b { color: var(--oro); }
+.res .s { margin-top: 10px; }
+.siete { position: absolute; left: 110px; right: 110px; top: 200px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; }
+.bl { height: 300px; border-radius: 18px; background: linear-gradient(180deg, #f0cd7e, #b98a33); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #121a2a; }
+.bl .a { font-family: "Fraunces", serif; font-weight: 700; font-size: 64px; }
+.bl .b { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.12em; }
+.bl .c { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; margin-top: 6px; }
+.total { position: absolute; left: 110px; right: 110px; top: 580px; text-align: center; }
+.total .eq { font-family: "Fraunces", serif; font-weight: 700; font-size: 150px; line-height: 1; color: var(--oro); }
+.o { font-family: "Montserrat", sans-serif; font-weight: 800; color: var(--tiza); }
+.total .s { margin-top: 18px; font-size: 34px; }
+</style>
+<div class="cab"><span class="cap">El cálculo</span><span>¿cuánto es un tiempo?</span></div>
+<div class="fase f-a">
+  <div class="fila fA"><div class="k">APOCALIPSIS 12:6 · “POR 1.260 DÍAS”</div><div class="bar"><div class="seg dias">1.260 días</div></div></div>
+  <div class="fila fB"><div class="k">APOCALIPSIS 12:14 · “UN TIEMPO Y TIEMPOS Y MEDIO TIEMPO”</div><div class="bar"><div class="seg t1">un tiempo</div><div class="seg t2">y tiempos</div><div class="seg t3">½</div></div></div>
+  <div class="res">
+    <div class="cj c1"><div class="n">3½ tiempos = <b>1.260</b> días</div><div class="n">1 tiempo = <b>360</b> días</div><div class="s">1.260 ÷ 3½ = 360</div></div>
+    <div class="cj c2"><div class="n">42 meses = 1.260 días</div><div class="n">12 × 30 = <b>360</b></div><div class="s">Apocalipsis 11:2, 3 · “En las profecías, el año medio consta de 360 días” · <i>Profecías de Daniel</i>, pág. 95</div></div>
+  </div>
+</div>
+<div class="fase f-b">
+  <div class="siete">
+    <div class="bl"><div class="b">TIEMPO</div><div class="a">1</div><div class="c">360 días</div></div><div class="bl"><div class="b">TIEMPO</div><div class="a">2</div><div class="c">360 días</div></div><div class="bl"><div class="b">TIEMPO</div><div class="a">3</div><div class="c">360 días</div></div><div class="bl"><div class="b">TIEMPO</div><div class="a">4</div><div class="c">360 días</div></div><div class="bl"><div class="b">TIEMPO</div><div class="a">5</div><div class="c">360 días</div></div><div class="bl"><div class="b">TIEMPO</div><div class="a">6</div><div class="c">360 días</div></div><div class="bl"><div class="b">TIEMPO</div><div class="a">7</div><div class="c">360 días</div></div>
+  </div>
+  <div class="total"><div class="eq">7 <span class="o">×</span> 360 <span class="o">=</span> <span class="tot">2.520</span> días</div><div class="s">Daniel 4:16 · “que pasen siete tiempos por él”</div></div>
+</div>
+<script>
+const tB = at("Y siete tiempos son");
+entra(".cab", 0.3, { y: -10 });
+entra(".fA .k", 0.6, { y: 10 });
+tl.fromTo($(".fA .bar"), { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 1.2, ease: "power2.out", immediateRender: false }, at("En el versículo seis") + 0.3);
+inicial([$(".fA .bar")], { clipPath: "inset(0 100% 0 0)" });
+entra(".fB .k", at("En el catorce"), { y: 10 });
+const tT = at("Un tiempo más dos tiempos");
+salta(".t1", tT, { desde: 0.6 });
+salta(".t2", at("más dos tiempos"), { desde: 0.6 });
+salta(".t3", at("más medio tiempo"), { desde: 0.6 });
+entra(".c1", at("Entonces tres tiempos"), { y: 30 });
+late(".c1", at("un tiempo son trescientos sesenta días"), { s: 1.04, n: 3 });
+entra(".c2", at("Apocalipsis once"), { y: 30 });
+sale(".f-a", tB - 0.5);
+entra(".bl", tB, { y: 60, st: 0.22 });
+entra(".total", tB + 1.4, { y: 30 });
+cuenta(".tot", 0, 2520, tB + 1.5, 1.0, fmtMiles);
+</script>

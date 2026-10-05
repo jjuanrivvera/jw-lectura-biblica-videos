@@ -1,0 +1,50 @@
+<style>
+.pr37 { position: absolute; left: 90px; right: 90px; top: 56px; text-align: center; }
+.pr37 .grande { font-size: 84px; }
+.pr37 .s { font-size: 34px; margin-top: 10px; }
+.bab37 { position: absolute; left: 90px; right: 90px; top: 570px; text-align: center; }
+.gl37 { position: absolute; left: 90px; right: 90px; top: 250px; height: 360px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; align-items: center; }
+.bu37 { position: relative; padding: 32px 30px 30px; border-radius: 32px; background: #f1e9d8; color: #17212b; text-align: center; }
+.bu37 .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.14em; color: #6b7785; }
+.bu37 .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 76px; line-height: 1.05; margin-top: 4px; }
+.bu37::after { content: ""; position: absolute; bottom: -26px; left: 50%; margin-left: -20px; border-width: 28px 20px 0 20px; border-style: solid; border-color: #f1e9d8 transparent transparent transparent; }
+.bu37.ab { background: #e9bf60; }
+.bu37.ab::after { border-color: #e9bf60 transparent transparent transparent; }
+.ac37 { position: absolute; left: 90px; right: 90px; top: 660px; bottom: 50px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
+.ac37 .cita { font-size: 42px; }
+.ac37 .s { font-size: 34px; margin-bottom: 14px; }
+.le37 { display: flex; flex-wrap: wrap; gap: 14px; }
+.le37 span { font-family: "Caveat", cursive; font-weight: 700; font-size: 60px; line-height: 1; padding: 10px 24px 8px; border-radius: 16px; border: 3px solid rgba(241, 233, 216, 0.3); }
+.le37 span.on { border-color: var(--oro); color: var(--oro); }
+</style>
+
+<div class="pr37"><div class="grande">¿En qué idioma se entendía Abrán?</div><div class="s">la Biblia no menciona intérpretes, ni en Canaán ni en Egipto</div></div>
+<div class="bab37"><div class="m md">en Babel, Jehová había <b>confundido las lenguas</b></div></div>
+<div class="gl37">
+  <div class="bu37 b1"><div class="k">EN CANAÁN</div><div class="x">los cananeos</div></div>
+  <div class="bu37 ab b2"><div class="k" style="color:#6b4a14">ABRÁN, DE UR</div><div class="x">¿acadio?</div></div>
+  <div class="bu37 b3"><div class="k">EN EGIPTO</div><div class="x">los egipcios</div></div>
+</div>
+<div class="ac37">
+  <div class="cita qa">“Es probable que por haber vivido en Ur de los caldeos, Abrahán supiese <b>acadio</b> (asirobabilonio) [...], un idioma que por algún tiempo fue <b>lengua internacional</b>”<span class="ref">PERSPICACIA, VOL. 2, “LENGUAJE”, PÁGS. 205, 206</span></div>
+  <div><div class="s">los descendientes de Sem hablaron:</div><div class="le37"><span>hebreo</span><span>arameo</span><span class="on">acadio</span><span>árabe</span></div></div>
+</div>
+
+<script>
+// La pregunta abre sola y centrada; sube cuando llegan los globos.
+tl.set($(".pr37"), { y: 330 }, 0);
+entra(".pr37 .grande", 0.3, { y: 20 });
+entra(".bab37", at("confundido") - 0.3, { y: 16 });
+tl.to($(".pr37"), { y: 0, duration: 0.8, ease: "power2.inOut" }, at("cananeos") - 0.9);
+desaparece(".bab37", at("cananeos") - 0.9, 0.4);
+entra(".b1", at("cananeos") - 0.2, { y: 20 });
+entra(".b3", at("egipcios") - 0.2, { y: 20 });
+entra(".pr37 .s", at("no menciona") - 0.2, { y: 12 });
+salta(".b2", at("Es probable") - 0.1, { desde: 0.5 });
+// Los globos ocupan el centro hasta que llega la cita de abajo.
+tl.set($(".gl37"), { y: 170 }, 0);
+tl.to($(".gl37"), { y: 0, duration: 0.8, ease: "power2.inOut" }, at("supiera acadio") - 1.0);
+entra(".qa", at("supiera acadio") - 0.3, { y: 20 });
+aparece(".ac37 .s", at("lengua internacional") - 0.8, 0.4);
+entra(".le37 span", at("lengua internacional") - 0.6, { y: 14, st: 0.12 });
+</script>

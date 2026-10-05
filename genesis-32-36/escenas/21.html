@@ -1,0 +1,33 @@
+<style>
+.foto { position: absolute; left: 0; top: 0; width: 1920px; height: 997px; overflow: hidden; }
+.foto .kb { position: absolute; inset: 0; }
+.foto img { width: 100%; height: 100%; object-fit: cover; }
+.foto svg { position: absolute; left: 0; top: 0; width: 1920px; height: 997px; }
+.rot { font-family: "Montserrat", sans-serif; font-weight: 800; fill: #fff; paint-order: stroke; stroke: rgba(15,22,30,0.85); stroke-width: 10px; stroke-linejoin: round; }
+.caja { position: absolute; right: 60px; top: 110px; width: 820px; height: 330px; }
+.caja .b { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 14px; padding: 26px 32px; border-radius: 24px; background: rgba(15, 22, 30, 0.84); }
+.pie-img.pf { left: 30px; bottom: 30px; font-size: 21px; }
+</style>
+<div class="foto"><div class="kb"><img src="assets/img/guerizim-ebal.jpg" /></div>
+<svg viewBox="0 0 1920 997">
+  <g class="l-eb"><path d="M 770 390 L 770 470" stroke="#fff" stroke-width="5"/><text class="rot" x="770" y="370" font-size="54" text-anchor="middle">monte Ebal</text></g>
+  <g class="l-gu"><text class="rot" x="470" y="760" font-size="60" text-anchor="middle">monte Guerizim</text><text class="rot" x="470" y="820" font-size="36" text-anchor="middle">desde aquí se ve</text></g>
+  <g class="l-na"><text class="rot" x="1600" y="620" font-size="54" text-anchor="middle">Nablus</text></g>
+  <g class="l-va"><text class="rot" x="1150" y="610" font-size="42" text-anchor="middle" fill="#f5d36b">el valle</text></g>
+</svg></div>
+<div class="pie-img pf">Foto: “Vista desde el monte Guerizim mirando hacia el monte Ebal”, <i>Perspicacia</i>, vol. 1, “Ebal, Monte”, pág. 726 (wol.jw.org)</div>
+<div class="cab sobre"><span class="cap">Siquem hoy</span><span>Génesis 33:18 · Josué 8:33</span></div>
+<div class="caja">
+  <div class="b a1"><div class="m">ruinas de Siquem: <b>Tell Balata</b></div><div class="m md">junto a la ciudad de Nablus</div><div class="f"><i>La Atalaya</i>, 1 de febrero de 1997, pág. 31</div></div>
+  <div class="b a2"><div class="m">Guerizim: <b>≈ 850 m</b> · Ebal: <b>más de 900 m</b></div><div class="m md">Siquem, en el extremo oriental del valle estrecho entre los dos</div><div class="f"><i>Perspicacia</i>, vol. 1, págs. 726, 1057 · vol. 2, pág. 1035</div></div>
+  <div class="b a3"><div class="m">en ese valle acampó Jacob</div><div class="m md">y allí Josué leyó la Ley ante todo Israel · Josué 8:33</div></div>
+  <div class="b a4"><span class="externa">fuente externa · Wikipedia</span><div class="m">Nablus viene de <b>Flavia Neápolis</b></div><div class="m md">fundada por Vespasiano en el año 72, junto a la antigua Siquem</div></div>
+</div>
+<script>
+kb(".foto .kb", 0, DUR, { s: 1.08, x: 1 }, { s: 1.0, x: 0 });
+aparece(".l-na", at("de Nablus"), 0.5);
+aparece(".l-gu", at("el Guerizim"), 0.5);
+aparece(".l-eb", at("el Ebal"), 0.5);
+aparece(".l-va", at("En ese valle"), 0.5);
+secuencia([[".a1", 0.4], [".a2", at("en un valle")], [".a3", at("En ese valle")], [".a4", at("Nablus viene")]]);
+</script>

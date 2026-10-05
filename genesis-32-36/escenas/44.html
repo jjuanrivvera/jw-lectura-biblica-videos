@@ -1,0 +1,52 @@
+<style>
+.tit44 { position: absolute; left: 70px; top: 110px; }
+.tres44 { position: absolute; left: 70px; right: 70px; top: 290px; grid-template-columns: 1fr 1fr 1fr; column-gap: 26px; }
+.tres44 .tj { min-height: 420px; }
+.tres44 .tj .x { font-size: 44px; }
+.tres44 .big { font-family: "Caveat", cursive; font-weight: 700; font-size: 64px; line-height: 1; color: var(--oro); }
+.concl { position: absolute; left: 70px; right: 70px; top: 770px; }
+.mapa .cam img, .mapa .cam svg { width: 1944px; height: 2292px; }
+.fb .col.der > .b { gap: 16px; }
+.nm { display: grid; grid-template-columns: 250px 1fr; align-items: baseline; column-gap: 16px; }
+.nm .a { font-family: "Fraunces", serif; font-weight: 700; font-size: 38px; color: var(--oro); }
+.nm .b2 { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; }
+.et44 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 52px; fill: #fff; paint-order: stroke; stroke: #7a2a12; stroke-width: 14px; stroke-linejoin: round; }
+</style>
+<div class="cab"><span class="cap">Cómo se amarran los cinco capítulos</span><span>Génesis 32 al 36</span></div>
+<div class="fase fa">
+  <div class="tit44 m xl">1 · el rostro</div>
+  <div class="tarjetas tres44">
+    <div class="tj r1"><div class="k">32:20</div><div class="big">el regalo va delante</div><div class="x">“después veré su rostro”</div><div class="ref">TNM DE 1987</div></div>
+    <div class="tj r2"><div class="k">32:30</div><div class="big">Peniel</div><div class="x">‘<b>rostro de Dios</b>’</div><div class="ref">NOTA DE LA TNM</div></div>
+    <div class="tj r3 on"><div class="k">33:10</div><div class="big">al día siguiente</div><div class="x">“He visto tu rostro y ha sido como ver el rostro de Dios”</div></div>
+  </div>
+  <div class="concl"><div class="m oro">la reconciliación con Dios vino antes que la reconciliación con el hermano</div><span class="propio">observación propia</span></div>
+</div>
+<div class="fase fb">
+<!--incluir:_recuadro.html-->
+<div class="col der"><div class="b">
+  <div class="m">2 · nombres que cuentan lo que pasó</div>
+  <div class="nm n1"><span class="a">Mahanaim</span><span class="b2">‘dos campamentos’ · 32:2</span></div>
+  <div class="nm n2"><span class="a">Peniel</span><span class="b2">‘rostro de Dios’ · 32:30</span></div>
+  <div class="nm n3"><span class="a">Sucot</span><span class="b2">‘cabañas’ · 33:17</span></div>
+  <div class="nm n4"><span class="a">El-Betel</span><span class="b2">‘Dios de Betel’ · 35:7</span></div>
+  <div class="nm n5"><span class="a">Alón-Bacut</span><span class="b2">‘roble del llanto’ · 35:8</span></div>
+  <div class="m md n6">y dos personas: Jacob → <b>Israel</b> · Ben-Oní → <b>Benjamín</b></div>
+  <span class="propio n6">observación propia: la historia con Jehová, en el mapa</span><div class="f n6"><i>Perspicacia</i>, vol. 2, “Nombre”, págs. 498, 499</div>
+</div></div>
+</div>
+<script>
+pinta(".marcas", `<circle class="anillo oro l1" cx="1340" cy="281" r="40"/><circle class="anillo oro l2" cx="1343" cy="328" r="40"/><circle class="anillo oro l3" cx="1249" cy="292" r="40"/><g class="l4"><circle class="anillo oro" cx="737" cy="715" r="44"/><rect x="790" y="770" width="330" height="70" rx="14" fill="#8a5a00"/><text x="955" y="820" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="42" fill="#fff">El-Betel</text></g><g class="l5"><rect x="790" y="852" width="330" height="70" rx="14" fill="#8a5a00"/><text x="955" y="902" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="42" fill="#fff">Alón-Bacut</text></g>`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 450, y: 0, w: 1250, h: 1205 }, V), 0);
+entra(".tit44", at("Primero"), { y: 20 });
+entra(".r1", at("Jacob manda"), { y: 30 });
+entra(".r2", at("esa noche"), { y: 30 });
+entra(".r3", at("y al día"), { y: 30 });
+entra(".concl", at("La reconciliación"), { y: 20 });
+sale(".fa", at("Segundo") - 0.5, { d: 0.4 });
+aparece(".fb", at("Segundo") - 0.1, 0.5);
+const NT = [at("Mahanaim"), at("Peniel", at("Mahanaim")), at("Sucot"), at("El-Betel"), at("Alón-Bacut")];
+NT.forEach((t, i) => { entra(".n" + (i + 1), t, { x: 30, y: 0 }); salta(".l" + (i + 1), t, { desde: 0.5 }); });
+entra(".n6", at("Y dos personas"), { y: 16 });
+</script>

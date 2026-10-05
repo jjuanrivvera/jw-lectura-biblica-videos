@@ -1,0 +1,67 @@
+<style>
+.arb09 { position: absolute; left: 60px; top: 60px; width: 620px; height: 960px; }
+.arb09 svg { width: 620px; height: 960px; display: block; }
+.a9 { font-family: "Fraunces", serif; font-weight: 700; font-size: 64px; text-anchor: middle; fill: var(--tiza); }
+.a9s { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.1em; text-anchor: middle; fill: var(--tenue); text-transform: uppercase; }
+.col09 { position: absolute; left: 740px; right: 70px; top: 70px; bottom: 70px; }
+.col09 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+.col09 .cita { font-size: 52px; }
+.arco09 { display: flex; align-items: center; gap: 30px; }
+.arco09 svg { width: 230px; height: 230px; flex: none; }
+.cnt09 { display: flex; align-items: center; gap: 40px; }
+.cnt09 .n70 { font-family: "Fraunces", serif; font-weight: 700; font-size: 170px; line-height: 1; color: var(--oro); }
+.cnt09 .fuera { font-family: "Caveat", cursive; font-weight: 700; font-size: 64px; line-height: 1.05; color: var(--rojo); }
+</style>
+
+<div class="arb09"><svg viewBox="0 0 620 960">
+  <text class="a9 n1" x="310" y="90">Noé</text>
+  <path class="l1" d="M 310 112 V 200" stroke="rgba(241,233,216,0.55)" stroke-width="6"/>
+  <text class="a9 n2" x="310" y="266" style="fill:#f29b85">Cam</text><text class="a9s n2s" x="310" y="300">hijo</text>
+  <path class="l2" d="M 310 318 V 406" stroke="rgba(241,233,216,0.55)" stroke-width="6"/>
+  <text class="a9 n3" x="310" y="472">Cus</text><text class="a9s n3s" x="310" y="506">nieto</text>
+  <path class="l3" d="M 310 524 V 612" stroke="#e9bf60" stroke-width="7"/>
+  <g class="nem"><rect x="90" y="630" width="440" height="140" rx="26" fill="rgba(236,138,103,0.16)" stroke="#ec8a67" stroke-width="5"/><text class="a9" x="310" y="720" style="font-size:84px;fill:#f7b8a3">Nemrod</text></g>
+  <text class="a9s bis" x="310" y="816" style="fill:var(--oro);font-size:30px">bisnieto de Noé</text>
+  <g class="rab"><text class="a9s" x="310" y="880" style="font-size:22px">rabinos: de ma·rádh, “rebelarse”</text><text class="a9s" x="310" y="914" style="font-size:22px;fill:#93bbef">explicación rabínica, no dato bíblico</text></g>
+</svg></div>
+
+<div class="col09">
+  <div class="b a1">
+    <div class="cita">“el primer hombre que se hizo <b>poderoso</b> en la tierra”<span class="ref">GÉNESIS 10:8</span></div>
+    <div class="arco09 ca"><svg viewBox="0 0 230 230">
+      <defs><linearGradient id="g09-madera" x1="0" x2="1"><stop offset="0" stop-color="#6d4b2c"/><stop offset="0.5" stop-color="#b8864f"/><stop offset="1" stop-color="#5a3b20"/></linearGradient></defs>
+      <path d="M 70 20 C 170 60 170 170 70 210" fill="none" stroke="url(#g09-madera)" stroke-width="14" stroke-linecap="round"/>
+      <path d="M 70 20 L 70 210" stroke="#e8dcc0" stroke-width="3"/>
+      <path d="M 20 115 L 196 115" stroke="#c9a468" stroke-width="6" stroke-linecap="round"/>
+      <path d="M 196 115 L 176 103 L 176 127 Z" fill="#9aa3ad"/>
+      <path d="M 30 115 L 16 103 M 30 115 L 16 127 M 42 115 L 28 103 M 42 115 L 28 127" stroke="#ec8a67" stroke-width="4" stroke-linecap="round"/>
+    </svg><div class="cita">“un poderoso cazador <b>en oposición a Jehová</b>”<span class="ref">GÉNESIS 10:9</span></div></div>
+  </div>
+  <div class="b a2">
+    <div class="def"><div class="t">en oposición a<i>lif·néh</i></div><div class="x">se usa aquí “en un sentido <b>desfavorable</b>”: “<b>en contra</b>” o “en oposición a”</div><div class="s"><i>Perspicacia</i>, vol. 2, “Nemrod”, pág. 481</div></div>
+    <div class="def gu"><div class="t">cazador<i>nota de 10:9</i></div><div class="x">o “<b>guerrero</b>”</div></div>
+  </div>
+  <div class="b a3">
+    <div class="m">cazador “no solo de animales, sino también de <b>seres humanos</b>”</div>
+    <div class="f">al extender su dominio a Asiria, “posiblemente valiéndose de las armas” · <i>¡Despertad!</i>, 22 de enero de 1989, pág. 20</div>
+  </div>
+  <div class="b a4">
+    <div class="cnt09"><div class="n70">70</div><div class="fuera">Nemrod aparece en la tabla, pero <b>no cuenta</b> entre las setenta</div></div>
+    <div class="cita sm">“A Nemrod, nieto de Cam, no se le cuenta entre ellos, evidentemente porque llega a ser ‘un poderoso cazador en oposición a Jehová’”<span class="ref">“TODA ESCRITURA ES INSPIRADA DE DIOS Y PROVECHOSA”, PÁG. 15</span></div>
+  </div>
+</div>
+
+<script>
+entra([".n1", ".n2", ".n2s"], 0.3, { y: 16, st: 0.12 });
+traza(".l1", 0.4, 0.4);
+traza(".l2", 0.7, 0.4);
+entra([".n3", ".n3s"], 0.9, { y: 16 });
+traza(".l3", at("Nemrod") - 0.3, 0.4);
+salta(".nem", at("Nemrod"), { desde: 0.6 });
+entra(".bis", at("bisnieto"), { y: 12 });
+secuencia([[".a1", at("el primer hombre") - 0.3], [".a2", at("La expresión hebrea")], [".a3", at("Cazó")], [".a4", at("Aparece en la tabla")]]);
+entra(".ca", at("un poderoso cazador") - 0.2, { y: 20 });
+entra(".gu", at("la nota da") - 0.2, { y: 18 });
+entra(".a4 .cita", at("evidentemente") - 0.8, { y: 16 });
+entra(".rab", at("Cazó") + 0.5, { y: 10 });
+</script>

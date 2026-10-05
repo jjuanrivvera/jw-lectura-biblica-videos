@@ -1,0 +1,18 @@
+<style>
+.fondo52 { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.fondo52 img { width: 100%; height: 100%; object-fit: cover; opacity: 0.22; filter: grayscale(1); }
+.velo52 { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(23,33,43,0.55), #17212b 90%); }
+.cierre { position: absolute; left: 180px; right: 180px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 30px; }
+.cierre .cita { font-size: 76px; line-height: 1.18; }
+.cierre .ref { font-size: 34px; }
+.pie52 { position: absolute; left: 40px; bottom: 24px; font-size: 20px; }
+</style>
+<div class="fondo52"><img src="assets/img/abrazo.jpg" /></div>
+<div class="velo52"></div>
+<div class="cierre"><div class="cita">“Yo no merezco el amor leal ni la fidelidad que me has mostrado a mí, <b>tu siervo</b>”<span class="ref">GÉNESIS 32:10</span></div></div>
+<div class="pie52 f">Fondo: cartel del video “Jacob, un hombre que amaba la paz” (jw.org, 2022)</div>
+<script>
+aparece(".fondo52", 0.2, 2.0);
+entra(".cierre .cita", 0.6, { y: 40, d: 1.4 });
+kb(".fondo52", 0, DUR, { s: 1.08 }, { s: 1.0 });
+</script>

@@ -1,0 +1,79 @@
+<style>
+.mapa.R49 { left: 0; top: 0; width: 1240px; height: 1080px; background: #e2e5c8; }
+.mapa.R49 .cam img, .mapa.R49 .cam svg { width: 2088px; height: 2436px; }
+.funde49 { left: 1120px; }
+.pie49 { left: 24px; bottom: 20px; }
+.col49 { position: absolute; left: 1270px; right: 56px; top: 60px; bottom: 60px; }
+.col49 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.col49 .cita { font-size: 44px; }
+.col49 .cita.sm { font-size: 38px; }
+.col49 .def .x { font-size: 54px; }
+.col49 .m.md { font-size: 58px; }
+.alt49 { display: flex; gap: 14px; flex-wrap: wrap; }
+.alt49 span { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; line-height: 1; padding: 8px 20px 6px; border-radius: 14px; border: 3px solid rgba(233, 191, 96, 0.5); }
+.alt49 span.on { border-color: var(--oro); color: var(--oro); }
+</style>
+
+<div class="mapa R49"><div class="cam">
+  <img src="assets/img/b2-recuadro.jpg" />
+  <svg viewBox="0 0 2088 2436">
+    <path class="ruta-h r49h" stroke-width="30" d="M 826 796 C 816 880 810 960 806 1024 C 790 1080 770 1110 756 1140 C 720 1230 672 1306 644 1356"/>
+    <path class="ruta r49" stroke-width="15" d="M 826 796 C 816 880 810 960 806 1024 C 790 1080 770 1110 756 1140 C 720 1230 672 1306 644 1356"/>
+    <g class="tie49"><g transform="translate(716 1296)"><path d="M -46 40 L 0 -30 L 46 40 Z" fill="#8c6541" stroke="#3e2a18" stroke-width="5"/><path d="M -10 40 L 0 8 L 10 40 Z" fill="#241708"/></g></g>
+    <g class="alt49m"><g transform="translate(806 1300)"><g stroke="#4f4a40" stroke-width="3" fill="#b3ab9b"><ellipse cx="-20" cy="30" rx="22" ry="11"/><ellipse cx="20" cy="30" rx="22" ry="11"/><ellipse cx="0" cy="14" rx="24" ry="11"/></g><path d="M -10 2 C -6 -16 8 -20 2 -34 C 20 -22 18 -6 12 2 Z" fill="#ffb13b"/></g></g>
+    <ellipse class="anillo mam49" cx="636" cy="1366" rx="44" ry="36"/>
+    <ellipse class="anillo oro heb49" cx="622" cy="1414" rx="44" ry="36"/>
+    <path class="d30" d="M 806 1024 L 632 1402" fill="none" stroke="#1b2733" stroke-width="6" stroke-dasharray="16 12"/>
+    <g class="chipm k30"><rect x="440" y="1178" width="254" height="76" rx="16"/><text x="567" y="1230" text-anchor="middle" font-size="44">unos 30 km</text></g>
+    <g class="viaj49"><circle r="20" fill="#e9bf60" stroke="#fff" stroke-width="7"/></g>
+  </svg>
+</div></div>
+<div class="funde-der funde49"></div>
+<div class="pie pie49">Mapa: apéndice B2 de la TNM, recuadro (wol.jw.org) · marcas añadidas</div>
+
+<div class="col49">
+  <div class="b a1">
+    <div class="cita">“Así que Abrán se fue y <b>siguió viviendo en tiendas</b> de campaña”<span class="ref">GÉNESIS 13:18</span></div>
+    <div class="m md ct49">aunque tenía con qué construirse una casa</div>
+  </div>
+  <div class="b a2">
+    <div class="cita">“llegó adonde estaban los <b>árboles grandes de Mamré</b>, en Hebrón. Allí se quedó a vivir y <b>construyó un altar</b> para Jehová”<span class="ref">GÉNESIS 13:18</span></div>
+    <div class="alt49"><span>Siquem</span><span>Betel</span><span class="on">Hebrón</span></div>
+  </div>
+  <div class="b a3">
+    <div class="def"><div class="t">Mamré<i>“posiblemente: Bien Alimentado”</i></div><div class="x">“el <b>principal lugar de residencia</b> de Abrahán”</div><div class="s">“por lo general se identifica con er-Ramat el-Khalil, situado a unos 3 Km. al N. de Hebrón” · <i>Perspicacia</i>, vol. 2, “Mamré”, págs. 287, 288</div></div>
+  </div>
+  <div class="b a4">
+    <div class="def"><div class="t">Hebrón</div><div class="x">“<b>Lugar de Asociación</b>”</div><div class="s">su nombre antiguo era Quiryat-arbá · <i>Perspicacia</i>, vol. 1, “Hebrón”, pág. 1112</div></div>
+    <div class="m md al49">a más de <b>900 m</b> de altura</div>
+    <div class="cita sm zo49">“Hebrón se había construido <b>siete años antes que Zoan</b> de Egipto”<span class="ref">NÚMEROS 13:22</span></div>
+  </div>
+</div>
+
+<script>
+const V = { x: 0, y: 0, w: 1240, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 250, y: 600, w: 1100, h: 958 }, V), 0);
+aparece(".pie49", 0.6, 0.5);
+secuencia([[".a1", 0.4], [".a2", at("Llegó a los árboles")], [".a3", at("Mamré a unos")], [".a4", at("Hebrón significa")]]);
+entra(".ct49", at("aunque tenía") - 0.2, { y: 14 });
+// De Betel a Mamré.
+const t0 = at("Llegó a los árboles") - 0.3, d0 = 2.2;
+traza([".r49h", ".r49"], t0, d0, { ease: "power1.inOut" });
+recorre(".viaj49", ".r49", t0, d0);
+aparece(".viaj49", t0 - 0.3, 0.3);
+entra(".tie49", at("Mamré en Hebrón") - 0.1, { y: 12 });
+salta(".alt49m", at("otro altar") - 0.2, { desde: 0.3 });
+entra(".alt49 span", at("otro altar") - 0.3, { y: 12, st: 0.2 });
+// Mamré y Hebrón, de cerca.
+camara(".cam", at("Mamré a unos") - 0.6, 1.4, encuadre({ x: 380, y: 1100, w: 827, h: 720 }, V));
+desaparece(".viaj49", at("Mamré a unos") - 0.6, 0.4);
+traza(".mam49", at("Mamré a unos") + 0.2, 0.6);
+traza(".heb49", at("al norte de Hebrón") - 0.1, 0.6);
+// Hebrón: altura y distancia a Jerusalén.
+camara(".cam", at("Está a más") - 0.6, 1.4, encuadre({ x: 420, y: 880, w: 860, h: 749 }, V));
+entra(".al49", at("Está a más") - 0.2, { y: 14 });
+traza(".d30", at("Está a más") + 0.4, 0.8);
+tl.set($(".d30"), { strokeDasharray: "16 12" }, at("Está a más") + 1.25);
+entra(".k30", at("Está a más") + 0.9, { y: 10 });
+entra(".zo49", at("siete años") - 0.3, { y: 16 });
+</script>

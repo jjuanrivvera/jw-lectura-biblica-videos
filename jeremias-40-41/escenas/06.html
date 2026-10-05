@@ -1,0 +1,67 @@
+<style>
+.camino { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.camino .tr { fill: none; stroke: var(--tiza); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+.camino .tr.oro { stroke: var(--oro); }
+.nodo { position: absolute; left: 110px; top: 360px; width: 300px; text-align: center; }
+.nodo .m { font-size: 76px; }
+.nodo .s { font-size: 26px; }
+.op { position: absolute; left: 1080px; right: 70px; padding: 26px 34px; border-radius: 28px; background: rgba(10, 16, 22, 0.5); border: 4px solid rgba(241, 233, 216, 0.16); }
+.op .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--tenue); }
+.op .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 70px; line-height: 1.05; margin-top: 4px; }
+.op .cita { font-size: 46px; margin-top: 10px; }
+.op.bab { top: 110px; }
+.op.pais { top: 470px; }
+.op .elige { margin-top: 14px; font-family: "Caveat", cursive; font-weight: 700; font-size: 58px; color: var(--oro); }
+.op .elige small { display: block; font-family: "Fraunces", serif; font-style: italic; font-weight: 500; font-size: 36px; color: var(--tiza); }
+.op .borde6 { position: absolute; inset: -4px; border-radius: 28px; border: 6px solid var(--oro); opacity: 0; }
+.datos06 { position: absolute; left: 70px; top: 700px; width: 960px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; }
+.datos06 .dato .v { font-size: 74px; }
+.datos06 .dato .k { font-size: 44px; }
+.motivo { position: absolute; left: 70px; top: 700px; width: 960px; display: flex; flex-direction: column; gap: 16px; }
+.motivo .s { font-size: 30px; }
+.motivo .m { font-size: 56px; }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 40</span><span>versículos 4 al 6</span></div>
+
+<svg class="camino" viewBox="0 0 1920 1080">
+  <path class="tr c-b" d="M 400 420 C 620 400 760 250 1060 250 M 1028 226 L 1066 250 L 1030 276"/>
+  <path class="tr c-p" d="M 400 440 C 620 470 760 610 1060 610 M 1028 586 L 1066 610 L 1030 636"/>
+  <path class="tr oro c-p2" d="M 400 440 C 620 470 760 610 1060 610"/>
+</svg>
+<div class="nodo"><div class="m oro">Ramá</div><div class="s">Jeremías, ya sin esposas</div></div>
+
+<div class="op bab"><div class="k">vente conmigo</div><div class="t">Babilonia</div><div class="cita">“vente y yo te cuidaré”<span class="ref">JEREMÍAS 40:4</span></div><div class="borde6"></div></div>
+<div class="op pais"><div class="k">o quédate</div><div class="t">el país entero</div><div class="cita">“Vete adonde prefieras”<span class="ref">JEREMÍAS 40:4</span></div>
+  <div class="elige">Mizpá, con Guedalías<small>“a vivir entre la gente que quedaba en el país” · 40:6</small></div><div class="borde6"></div></div>
+
+<div class="datos06">
+  <div class="dato d1"><div class="v">≈ 60 <small>años o más</small></div><div class="k">si empezó joven, en el año 13 de Josías</div><div class="s">Jeremías 1:2, 6</div><div class="propio chico" style="margin-top:10px">cálculo propio</div></div>
+  <div class="dato d2"><div class="v" style="font-size:60px">víveres y un regalo</div><div class="k">antes de dejarlo ir</div><div class="s">40:5 · qué era el regalo, ninguna publicación lo dice</div></div>
+</div>
+<div class="motivo">
+  <div class="s s06">“se resistió a abandonar a los exiliados a Babilonia, probablemente porque creía que debía compartir con ellos su suerte o porque deseaba seguir ofreciéndoles ayuda espiritual” · <i>Perspicacia</i>, «Jeremías»</div>
+  <div class="m oro m06">con su libertad nueva, se puso al servicio de los que se quedaron</div>
+  <div class="propio chico p06">observación propia</div>
+</div>
+
+<script>
+aparece(".cab", 0.2, 0.5);
+entra(".nodo", 0.4, { x: -30, y: 0 });
+traza(".c-b", at("Si te parece") - 0.3, 1.0);
+entra(".bab", at("Si te parece"), { x: 40, y: 0 });
+traza(".c-p", at("Y si no") - 0.2, 1.0);
+entra(".pais .k, .pais .t, .pais .cita", at("Tienes"), { x: 40, y: 0 });
+aparece(".pais", at("Y si no"), 0.4);
+entra(".d1", at("Jeremías tenía"), { y: 30 });
+entra(".d2", at("Antes de dejarlo"), { y: 30 });
+const tf = at("Y Jeremías se fue");
+atenua([".bab", ".c-b"], tf, 0.22, 0.6);
+traza(".c-p2", tf, 1.0);
+aparece(".pais .borde6", tf + 0.3, 0.4);
+entra(".pais .elige", at("Mizpá") - 0.2, { y: 20 });
+sale(".datos06", at("Probablemente") - 0.5, { y: -10, d: 0.4 });
+entra(".s06", at("Probablemente"), { y: 20 });
+escribe(".m06", at("Tenía una libertad"), 2.2);
+entra(".p06", at("servicio"), { y: 10 });
+</script>

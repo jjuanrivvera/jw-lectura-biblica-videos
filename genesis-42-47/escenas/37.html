@@ -1,0 +1,54 @@
+<style>
+.mapa.B2 { left: 0; top: 0; width: 1150px; height: 1080px; }
+.funde37 { left: 1050px; }
+.col37 { position: absolute; left: 1150px; right: 60px; top: 100px; bottom: 60px; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.col37 .def .x { font-size: 44px; }
+.col37 .tj .x { font-size: 32px; }
+.col37 .caja .s { font-size: 26px; color: #d5dbe1; }
+.col37 .caja .s b { color: var(--tiza); }
+.col37 .caja { display: flex; flex-direction: column; gap: 10px; }
+.cab.d37 { left: 1150px; }
+.mapa.B2 .pie-mapa { top: 20px; bottom: auto; }
+</style>
+
+<!--incluir:_b2.html-->
+<div class="funde-der funde37"></div>
+<div class="cab d37"><span class="cap">Gosén hoy</span><span>Génesis 45:10; 47:27</span></div>
+<div class="col37">
+  <div class="def d1"><div class="t">Gosén</div><div class="x">ubicación exacta <b>incierta</b>: en el este del delta, junto a la frontera</div><div class="s">la Septuaginta la pone cerca del Wadi Tumilat · <i>Perspicacia</i>, vol.&nbsp;1, “Gosén”, pág.&nbsp;1031</div></div>
+  <div class="tj d2"><div class="k">“lo mejor de la tierra de Egipto”</div><div class="x">probablemente, la <b>tierra de pastos</b> más fértil; allí vivió Israel <b>215 años</b> (1728 a 1513)</div></div>
+  <div class="caja d3">
+    <div class="s">el <b>Wadi Tumilat</b>: un valle seco de unos <b>50 km</b>, de la zona de Zagazig hasta Ismailía, junto al Canal de Suez</div>
+    <div class="s s2">fue un brazo del Nilo y una <b>ruta de caravanas</b>; hoy lo recorre un canal de agua dulce</div>
+    <div class="s s3">en sus ruinas, muchos sitúan <b>Sucot y Pitom</b> (Éxodo 1:11; 12:37)</div>
+    <span class="externa chico">fuente externa: Wikipedia, “Wadi Tumilat”, “Land of Goshen”, “Pithom”</span>
+  </div>
+</div>
+
+<script>
+const WT = "M 422 1529 C 500 1545 570 1552 628 1548 C 660 1547 680 1549 693 1548 C 720 1545 750 1530 773 1522";
+const CANAL = "M 834 1201 C 820 1280 805 1340 801 1391 C 790 1450 776 1490 773 1522 C 782 1570 800 1600 812 1640";
+pinta(".marcas", `
+  <ellipse class="anillo oro a-go" cx="440" cy="1402" rx="176" ry="92" style="stroke-width:6"/>
+  <path class="wt" d="${WT}" stroke="rgba(194,71,126,0.55)" stroke-width="30" fill="none" stroke-linecap="round"/>
+  <g class="lwt"><rect x="440" y="1580" width="220" height="42" rx="10" fill="rgba(15,22,30,0.94)"/><text class="lugar" x="454" y="1610" font-size="25" style="fill:#e9adcc">Wadi Tumilat</text></g>
+  <g class="pz"><circle cx="422" cy="1529" r="9" fill="#c2477e" stroke="#fff" stroke-width="3"/><rect x="250" y="1540" width="120" height="38" rx="9" fill="rgba(15,22,30,0.94)"/><text class="lugar" x="262" y="1566" font-size="22" style="fill:#e9adcc">Zagazig</text></g>
+  <g class="pis"><circle cx="773" cy="1522" r="9" fill="#c2477e" stroke="#fff" stroke-width="3"/><rect x="790" y="1500" width="120" height="38" rx="9" fill="rgba(15,22,30,0.94)"/><text class="lugar" x="802" y="1526" font-size="22" style="fill:#e9adcc">Ismailía</text></g>
+  <g class="psp"><circle cx="628" cy="1548" r="7" fill="#e9adcc"/><circle cx="693" cy="1548" r="7" fill="#e9adcc"/><rect x="560" y="1640" width="220" height="38" rx="9" fill="rgba(15,22,30,0.94)"/><text class="lugar" x="572" y="1666" font-size="22" style="fill:#e9adcc">¿Pitom? ¿Sucot?</text></g>
+  <path class="canal" d="${CANAL}" stroke="#3d8fe0" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <g class="lcan"><rect x="836" y="1300" width="200" height="38" rx="9" fill="rgba(15,22,30,0.94)"/><text class="lugar" x="848" y="1326" font-size="22" style="fill:#7fb5ea">Canal de Suez</text></g>`);
+const V = { x: 0, y: 0, w: 1150, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 200, y: 1170, w: 800, h: 751 }, V), 0);
+entra(".d1", 0.3, { y: 16 });
+traza(".a-go", 0.6, 0.9);
+entra(".d2", at("Era, probablemente"), { y: 16 });
+const tH = at("Hoy el Uadi Tumilat");
+traza(".wt", tH, 1.4);
+aparece([".lwt", ".pz", ".pis"], tH + 0.8, 0.5);
+entra(".d3", tH, { y: 16 });
+traza(".canal", at("junto al Canal"), 1.2);
+aparece(".lcan", at("junto al Canal") + 0.6, 0.4);
+entra(".s2", at("Fue un brazo"), { y: 10 });
+entra(".s3", at("y en sus ruinas"), { y: 10 });
+aparece(".psp", tH + 1.0, 0.5);
+</script>

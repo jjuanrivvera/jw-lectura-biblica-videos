@@ -1,0 +1,26 @@
+<style>
+.mapa .cam img, .mapa .cam svg { width: 1944px; height: 2292px; }
+.nombres { display: grid; grid-template-columns: 1fr 70px 1fr; align-items: center; }
+.nombres .w { font-family: "Fraunces", serif; font-weight: 700; font-size: 76px; line-height: 1; }
+.nombres .s2 { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; margin-top: 8px; }
+.nombres svg { width: 70px; height: 40px; }
+</style>
+<!--incluir:_recuadro.html-->
+<div class="cab sobre"><span class="cap">Génesis 35</span><span>versículos 16 al 20</span></div>
+<div class="col der">
+  <div class="b a1"><div class="cita md">“el parto se le complicó”<span class="ref">GÉNESIS 35:16</span></div><div class="def"><div class="t">partera</div><div class="x">“la mujer que ayuda o asiste a la parturienta en el alumbramiento”</div><div class="s"><i>Perspicacia</i>, vol. 2, “Partera”, pág. 599</div></div><div class="cita md" style="color:var(--oro)">“No tengas miedo, porque también tendrás este niño”<span class="ref">GÉNESIS 35:17</span></div></div>
+  <div class="b a2"><div class="nombres"><div class="n1"><div class="w" style="color:var(--tenue)">Ben-Oní</div><div class="s2">‘hijo de mi duelo’</div></div><svg viewBox="0 0 70 40" class="fl"><path d="M 6 20 L 60 20 M 44 6 L 62 20 L 44 34" stroke="var(--oro)" stroke-width="6" fill="none" stroke-linecap="round"/></svg><div class="n2"><div class="w" style="color:var(--oro)">Benjamín</div><div class="s2">‘hijo de la diestra’</div></div></div><div class="f">notas de la TNM en 35:18</div><div class="cita md">“De esta forma indicó que el recién nacido gozaría del favor y del apoyo de otros”</div><div class="f"><i>La Atalaya</i>, 1 de febrero de 2009, pág. 14</div></div>
+  <div class="b a3"><div class="cita md">“fue enterrada en el camino a Efrat, es decir, Belén”<span class="ref">GÉNESIS 35:19</span></div><div class="cita">“Raquel llora por sus hijos”<span class="ref">JEREMÍAS 31:15 · MATEO 2:18</span></div><div class="f">“Aquí Raquel representa a todas las madres de Israel” · nota de estudio de la TNM en Mateo 2:18</div></div>
+</div>
+<script>
+pinta(".marcas", `<path class="flecha r1" stroke-width="12" stroke="#d99a14" d="M 737 715 C 740 820 715 960 683 1064"/><circle class="anillo a-be" cx="683" cy="1064" r="50"/><circle class="anillo a-t" cx="692" cy="1020" r="14" style="fill:#c0392b"/><g class="a-tt"><path d="M 692 1020 L 600 1090" stroke="#a8321c" stroke-width="5"/><rect x="250" y="1085" width="400" height="72" rx="14" fill="#a8321c"/><text x="450" y="1135" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="40" fill="#fff">tumba tradicional</text></g>`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 250, y: 500, w: 900, h: 868 }, V), 0);
+traza(".r1", 0.5, 1.6);
+traza(".a-be", at("Belén") - 0.2, 0.7);
+secuencia([[".a1", 0.4], [".a2", at("Antes de morir")], [".a3", at("Raquel fue enterrada")]]);
+entra(".n1", at("Ben-Oní"), { y: 16 });
+aparece(".fl", at("Jacob lo llamó"), 0.4);
+entra(".n2", at("Benjamín"), { y: 16 });
+aparece([".a-t", ".a-tt"], at("Raquel fue enterrada"), 0.5);
+</script>

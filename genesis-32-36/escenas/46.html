@@ -1,0 +1,20 @@
+<style>
+.portada { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; text-align: center; }
+.portada .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 40px; letter-spacing: 0.22em; color: var(--verde); }
+.portada .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 120px; line-height: 1.02; }
+.portada svg { width: 900px; height: 40px; }
+.portada svg path { fill: none; stroke: var(--verde); stroke-width: 7; stroke-linecap: round; }
+.portada .caps { display: flex; gap: 40px; font-family: "Fraunces", serif; font-weight: 700; font-size: 70px; color: var(--verde); }
+</style>
+<div class="portada">
+  <div class="r">GÉNESIS 32 AL 36</div>
+  <div class="t"><span style="display:block">Lecciones y preguntas</span><span style="display:block">para pensar</span></div>
+  <svg viewBox="0 0 900 40"><path d="M 6 22 C 260 8 620 34 894 16"/></svg>
+  <div class="caps"><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span></div>
+</div>
+<script>
+entra(".portada .r", 0.3, { y: -20 });
+entra(".portada .t", 0.5, { y: 30, d: 0.8 });
+traza(".portada svg path", 1.0, 1.0);
+entra($$(".portada .caps span"), at("capítulo por"), { st: 0.2, y: 20 });
+</script>

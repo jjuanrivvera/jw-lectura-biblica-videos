@@ -1,0 +1,320 @@
+[
+ {
+  "num": "00",
+  "titulo": "Apertura",
+  "start": 0,
+  "dur": 47.04
+ },
+ {
+  "num": "01",
+  "titulo": "De Galaad a Hebrón",
+  "start": 47.04,
+  "dur": 31.752
+ },
+ {
+  "num": "02",
+  "titulo": "Mahanaim",
+  "start": 78.792,
+  "dur": 34.16
+ },
+ {
+  "num": "03",
+  "titulo": "Cuatrocientos hombres",
+  "start": 112.952,
+  "dur": 45.552
+ },
+ {
+  "num": "04",
+  "titulo": "La oración",
+  "start": 158.504,
+  "dur": 45.432
+ },
+ {
+  "num": "05",
+  "titulo": "El regalo, grupo tras grupo",
+  "start": 203.936,
+  "dur": 46.272
+ },
+ {
+  "num": "06",
+  "titulo": "El vado del Jaboc",
+  "start": 250.208,
+  "dur": 38.808
+ },
+ {
+  "num": "07",
+  "titulo": "La lucha hasta el amanecer",
+  "start": 289.016,
+  "dur": 36.864
+ },
+ {
+  "num": "08",
+  "titulo": "Israel",
+  "start": 325.88,
+  "dur": 39.816
+ },
+ {
+  "num": "09",
+  "titulo": "La cadera y el tendón",
+  "start": 365.696,
+  "dur": 45.984
+ },
+ {
+  "num": "10",
+  "titulo": "Peniel",
+  "start": 411.68,
+  "dur": 30.48
+ },
+ {
+  "num": "11",
+  "titulo": "El Jaboc hoy",
+  "start": 442.16,
+  "dur": 34.824
+ },
+ {
+  "num": "12",
+  "titulo": "Mahanaim y Peniel hoy",
+  "start": 476.984,
+  "dur": 30.264
+ },
+ {
+  "num": "13",
+  "titulo": "La fila",
+  "start": 507.248,
+  "dur": 36.512
+ },
+ {
+  "num": "14",
+  "titulo": "Siete veces",
+  "start": 543.76,
+  "dur": 39.624
+ },
+ {
+  "num": "15",
+  "titulo": "He visto tu rostro",
+  "start": 583.384,
+  "dur": 38.568
+ },
+ {
+  "num": "16",
+  "titulo": "Los niños son frágiles",
+  "start": 621.952,
+  "dur": 42.144
+ },
+ {
+  "num": "17",
+  "titulo": "Sucot",
+  "start": 664.096,
+  "dur": 34.752
+ },
+ {
+  "num": "18",
+  "titulo": "Siquem: un terreno y un altar",
+  "start": 698.848,
+  "dur": 46.272
+ },
+ {
+  "num": "19",
+  "titulo": "El campo de Jacob",
+  "start": 745.12,
+  "dur": 27.744
+ },
+ {
+  "num": "20",
+  "titulo": "Sucot hoy",
+  "start": 772.864,
+  "dur": 31.728
+ },
+ {
+  "num": "21",
+  "titulo": "Siquem hoy",
+  "start": 804.592,
+  "dur": 32.712
+ },
+ {
+  "num": "22",
+  "titulo": "El pozo de Jacob hoy",
+  "start": 837.304,
+  "dur": 35.664
+ },
+ {
+  "num": "23",
+  "titulo": "Dina",
+  "start": 872.968,
+  "dur": 39.536
+ },
+ {
+  "num": "24",
+  "titulo": "La propuesta de Hamor",
+  "start": 912.504,
+  "dur": 44.736
+ },
+ {
+  "num": "25",
+  "titulo": "El engaño",
+  "start": 957.24,
+  "dur": 44.496
+ },
+ {
+  "num": "26",
+  "titulo": "Lo que dijo Jacob",
+  "start": 1001.736,
+  "dur": 45.144
+ },
+ {
+  "num": "27",
+  "titulo": "Sube a Betel",
+  "start": 1046.88,
+  "dur": 52.544
+ },
+ {
+  "num": "28",
+  "titulo": "La subida",
+  "start": 1099.424,
+  "dur": 28.68
+ },
+ {
+  "num": "29",
+  "titulo": "El-Betel y Débora",
+  "start": 1128.104,
+  "dur": 35.784
+ },
+ {
+  "num": "30",
+  "titulo": "Dios Todopoderoso",
+  "start": 1163.888,
+  "dur": 43.008
+ },
+ {
+  "num": "31",
+  "titulo": "Raquel",
+  "start": 1206.896,
+  "dur": 42.432
+ },
+ {
+  "num": "32",
+  "titulo": "La torre de Éder",
+  "start": 1249.328,
+  "dur": 41.736
+ },
+ {
+  "num": "33",
+  "titulo": "Los doce hijos",
+  "start": 1291.064,
+  "dur": 39.816
+ },
+ {
+  "num": "34",
+  "titulo": "Muere Isaac",
+  "start": 1330.88,
+  "dur": 38.352
+ },
+ {
+  "num": "35",
+  "titulo": "Betel hoy",
+  "start": 1369.232,
+  "dur": 27.432
+ },
+ {
+  "num": "36",
+  "titulo": "La tumba de Raquel hoy",
+  "start": 1396.664,
+  "dur": 32.784
+ },
+ {
+  "num": "37",
+  "titulo": "Hebrón hoy",
+  "start": 1429.448,
+  "dur": 29.328
+ },
+ {
+  "num": "38",
+  "titulo": "La historia de Esaú",
+  "start": 1458.776,
+  "dur": 42.824
+ },
+ {
+  "num": "39",
+  "titulo": "Los jeques",
+  "start": 1501.6,
+  "dur": 40.344
+ },
+ {
+  "num": "40",
+  "titulo": "Los horeos",
+  "start": 1541.944,
+  "dur": 37.176
+ },
+ {
+  "num": "41",
+  "titulo": "Los reyes de Edom",
+  "start": 1579.12,
+  "dur": 37.536
+ },
+ {
+  "num": "42",
+  "titulo": "Qué pasó con Edom",
+  "start": 1616.656,
+  "dur": 40.968
+ },
+ {
+  "num": "43",
+  "titulo": "Edom hoy",
+  "start": 1657.624,
+  "dur": 29.472
+ },
+ {
+  "num": "44",
+  "titulo": "Cómo se amarran: el rostro y los nombres",
+  "start": 1687.096,
+  "dur": 43.8
+ },
+ {
+  "num": "45",
+  "titulo": "Cómo se amarran: la tierra y los hermanos",
+  "start": 1730.896,
+  "dur": 37.872
+ },
+ {
+  "num": "46",
+  "titulo": "Lecciones",
+  "start": 1768.768,
+  "dur": 7.968
+ },
+ {
+  "num": "47",
+  "titulo": "Lecciones de Génesis 32",
+  "start": 1776.736,
+  "dur": 40.248
+ },
+ {
+  "num": "48",
+  "titulo": "Lecciones de Génesis 33",
+  "start": 1816.984,
+  "dur": 37.944
+ },
+ {
+  "num": "49",
+  "titulo": "Lecciones de Génesis 34",
+  "start": 1854.928,
+  "dur": 40.104
+ },
+ {
+  "num": "50",
+  "titulo": "Lecciones de Génesis 35",
+  "start": 1895.032,
+  "dur": 42.888
+ },
+ {
+  "num": "51",
+  "titulo": "Lecciones de Génesis 36",
+  "start": 1937.92,
+  "dur": 34.584
+ },
+ {
+  "num": "52",
+  "titulo": "Cierre",
+  "start": 1972.504,
+  "dur": 13.624
+ }
+]

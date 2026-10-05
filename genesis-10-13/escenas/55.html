@@ -1,0 +1,27 @@
+<style>
+.leccion .l { font-size: 100px; }
+.leccion .p { font-size: 64px; }
+.leccion .s { font-size: 30px; }
+.portada { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; text-align: center; }
+.portada .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 110px; line-height: 1.05; }
+.portada .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.22em; color: var(--verde); text-transform: uppercase; }
+</style>
+
+<div class="seccion"><span class="r">Lecciones y preguntas para pensar</span><span class="t">Génesis 13</span></div>
+<div class="seccion-linea"><svg viewBox="0 0 1740 20" preserveAspectRatio="none" style="width:100%;height:20px"><path d="M 4 10 C 400 4 900 16 1736 8"/></svg></div>
+<div class="leccion l1"><div class="n">1</div><div class="cuerpo"><div class="l">Abrán cedió su derecho, y <b>no salió perdiendo</b></div><div class="p"><span class="k">PARA PENSAR</span>¿Qué podemos ceder esta semana en casa para que haya paz?</div><div class="s">13:8, 9, 14-17 · 1 Corintios 10:24: “Que nadie busque su propio beneficio, sino el de los demás”</div></div></div>
+<div class="leccion l2"><div class="n">2</div><div class="cuerpo"><div class="l">Lot escogió por <b>lo que se veía verde</b></div><div class="p"><span class="k">PARA PENSAR</span>Al escoger trabajo, estudios o casa, ¿qué pesa más?</div><div class="s">13:10-13</div></div></div>
+<div class="leccion l3"><div class="n">3</div><div class="cuerpo"><div class="l">Después del mal rato en Egipto, Abrán <b>volvió al altar</b></div><div class="p"><span class="k">PARA PENSAR</span>¿Son prioritarios en nuestro hogar el estudio y la oración en familia, y las reuniones?</div><div class="s">13:3, 4 · la pregunta es de <i>La Atalaya</i>, 15 de agosto de 2001, pág. 23</div></div></div>
+
+<script>
+const t0 = 0.3;
+entra(".seccion", t0, { y: -20 });
+traza(".seccion-linea path", t0 + 0.3, 1.0);
+secuencia([[".l1", at("Primera")], [".l2", at("Segunda")], [".l3", at("Tercera")]], null, { y: 30, d: 0.6 });
+entra(".l1 .p", at("Qué podemos ceder") - 0.2, { y: 20 });
+entra(".l1 .s", at("Qué podemos ceder") + 0.2, { y: 10 });
+entra(".l2 .p", at("Al escoger") - 0.2, { y: 20 });
+entra(".l2 .s", at("Al escoger") + 0.2, { y: 10 });
+entra(".l3 .p", at("Son prioritarios") - 0.2, { y: 20 });
+entra(".l3 .s", at("Son prioritarios") + 0.2, { y: 10 });
+</script>

@@ -1,0 +1,97 @@
+<style>
+.tr { position: absolute; left: 90px; right: 90px; top: 200px; display: flex; flex-direction: column; gap: 50px; }
+.tr .cita { font-size: 64px; }
+.vs { display: flex; gap: 40px; align-items: stretch; }
+.vs .v { flex: 1; border-radius: 24px; border: 3px solid var(--linea); padding: 30px 36px; background: rgba(16,24,34,0.92); }
+.vs .v .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; color: var(--tenue); }
+.vs .v .x { font-family: "Fraunces", serif; font-weight: 600; font-size: 64px; margin-top: 8px; }
+.filas { position: absolute; left: 90px; right: 90px; top: 60px; bottom: 190px; display: flex; flex-direction: column; justify-content: center; gap: 46px; }
+.fila .g { font-family: "Griego", serif; font-weight: 500; font-size: 104px; line-height: 1.15; white-space: nowrap; }
+.fila .e { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 40px; color: var(--tenue); margin-top: 4px; }
+.fila .e b { color: var(--papel); }
+.art { padding: 0 12px; border-radius: 14px; border: 4px solid transparent; }
+.vacio { display: inline-block; width: 120px; height: 86px; vertical-align: -14px; border: 4px dashed var(--terra); border-radius: 14px; margin-right: 18px; }
+.anot { display: inline-block; margin-left: 26px; font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; line-height: 1; }
+.anot.blq { display: block; margin-left: 0; margin-top: 8px; }
+.anot .gr { font-size: 44px; }
+.an1 { color: var(--oro); }
+.an2 { color: var(--terra); }
+.an3 { color: var(--cielo); }
+.cual { position: absolute; left: 90px; right: 90px; bottom: 80px; text-align: center; font-family: "Fraunces", serif; font-style: italic; font-weight: 600; font-size: 58px; }
+.izq { position: absolute; left: 90px; width: 760px; top: 120px; bottom: 100px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.izq .cita { font-size: 76px; }
+.izq .s { font-size: 38px; }
+.lista { position: absolute; left: 930px; right: 90px; top: 120px; bottom: 100px; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.it { display: grid; grid-template-columns: 150px 1fr; column-gap: 24px; align-items: baseline; }
+.it .a { font-family: "Fraunces", serif; font-weight: 700; font-size: 58px; color: var(--tenue); }
+.it .x { font-family: "Fraunces", serif; font-weight: 600; font-size: 54px; line-height: 1.12; }
+.it .x i { font-family: "Montserrat", sans-serif; font-style: normal; font-weight: 600; font-size: 26px; color: var(--tenue); display: block; margin-top: 6px; }
+.copto { border-radius: 22px; border: 3px solid var(--linea); padding: 22px 30px; background: rgba(16,24,34,0.92); font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 34px; line-height: 1.3; }
+</style>
+
+<div class="fase fa">
+  <div class="cab"><span class="sec">Juan 1:1</span><span>el texto más citado</span></div>
+  <div class="tr">
+    <div class="cita">“En el principio la Palabra existía, la Palabra estaba <b class="oro">con Dios</b> y la Palabra era <b class="cielo">un dios</b>”.<span class="ref">Juan 1:1, Traducción del Nuevo Mundo · nota: “o era divina”</span></div>
+    <div class="vs"><div class="v v1"><div class="t">TNM</div><div class="x">“la Palabra era <span class="cielo">un dios</span>”</div></div><div class="v v2"><div class="t">OTRAS TRADUCCIONES</div><div class="x">“la Palabra era <span class="oro">Dios</span>”</div></div></div>
+  </div>
+</div>
+
+<div class="fase fb">
+  <div class="filas">
+    <div class="fila r1"><div class="g">Ἐν ἀρχῇ ἦν ὁ λόγος,</div><div class="e">En el principio la Palabra existía,</div></div>
+    <div class="fila r2"><div class="g">καὶ ὁ λόγος ἦν <span class="pros">πρὸς</span> <span class="art a-ton">τὸν</span> <span class="oro">θεόν</span>,</div><div class="e">la Palabra estaba <b>con</b> <b class="oro">el Dios</b>, <span class="anot an1">con artículo: el Dios Todopoderoso</span><span class="anot an3 blq"><span class="gr">πρός</span>: “hacia”, muy cerca de otro</span></div></div>
+    <div class="fila r3"><div class="g">καὶ <span class="vacio"></span><span class="cielo">θεὸς</span> ἦν ὁ λόγος.</div><div class="e">y la Palabra era <b class="cielo">un dios</b>: divina, parecida a Dios <span class="anot an2">sin artículo: describe una cualidad</span></div></div>
+  </div>
+  <div class="cual">quien está <span class="oro">con</span> alguien no es ese alguien</div>
+</div>
+
+<div class="fase fc">
+  <div class="izq">
+    <div class="s">El griego de entonces <b>no tenía artículo indefinido</b>: no tenía “un”. El traductor lo pone cuando el contexto lo pide.</div>
+    <div class="cita">“¡Es <b class="terra">un</b> fantasma!”.<span class="ref">Marcos 6:49</span></div>
+    <div class="copto">Unas antiguas versiones en <b>copto</b>, el idioma de Egipto, de los siglos III y IV, también distinguen los dos usos de <span class="gr">θεός</span>.</div>
+  </div>
+  <div class="lista">
+    <div class="it i1"><div class="a">1808</div><div class="x">“y la palabra era un dios”<i>inglés · Improved Version</i></div></div>
+    <div class="it i2"><div class="a">1928</div><div class="x">“y la Palabra era un ser divino”<i>francés · La Bible du Centenaire</i></div></div>
+    <div class="it i3"><div class="a">1935</div><div class="x">“y la Palabra era divino”<i>inglés · Smith y Goodspeed</i></div></div>
+    <div class="it i4"><div class="a">1975</div><div class="x">“y un dios (o: de género divino) era la Palabra”<i>alemán · Siegfried Schulz</i></div></div>
+  </div>
+  <div class="fuente">Nota de estudio de la TNM en Juan 1:1 · <i>¿Debería creer usted en la Trinidad?</i></div>
+</div>
+
+<script>
+const tB = at("Miremos el griego") - 0.3;
+const tC = at("El griego de entonces") - 0.3;
+entra(".fa .cab", 0.3, { y: -10 });
+entra(".tr .cita", 0.6, { y: 30 });
+entra(".v1", at("Otras traducciones") - 0.6, { y: 30 });
+entra(".v2", at("Otras traducciones"), { y: 30 });
+tl.to($(".fa"), { opacity: 0, duration: 0.5 }, tB);
+aparece(".fb", tB + 0.3, 0.4);
+entra(".r1", tB + 0.4, { y: 20 });
+entra(".r2", at("la Palabra estaba con Dios, la"), { y: 20 });
+tl.fromTo($(".a-ton"), { borderColor: "rgba(236,196,105,0)", color: "#f0e8d8" }, { borderColor: "#ecc469", color: "#ecc469", duration: 0.5, immediateRender: false }, at("lleva delante"));
+entra(".an1", at("es el Dios") , { y: 15 });
+entra(".r3", at("En la frase siguiente"), { y: 20 });
+aparece(".vacio", at("aparece sin artículo"), 0.5);
+entra(".an2", at("describe una cualidad"), { y: 15 });
+tl.to($(".fb"), { opacity: 0, duration: 0.5 }, tC);
+aparece(".fc", tC + 0.3, 0.4);
+entra(".izq .s", tC + 0.4, { y: 20 });
+entra(".izq .cita", at("Es un fantasma") - 0.3, { y: 20 });
+// La aclaración de "pros" vuelve a la fase del griego.
+tl.to($(".fc"), { opacity: 0, duration: 0.4 }, at("Y aquí el contexto") - 0.3);
+tl.to($(".fb"), { opacity: 1, duration: 0.4 }, at("Y aquí el contexto"));
+tl.to([$(".an1"), $(".an2")], { opacity: 0.25, duration: 0.4 }, at("Y aquí el contexto"));
+entra(".an3", at("la preposición es pros"), { y: 15 });
+tl.fromTo($(".pros"), { color: "#f0e8d8" }, { color: "#93bdf2", duration: 0.5, immediateRender: false }, at("la preposición es pros"));
+entra(".cual", at("entre dos personas distintas") - 0.5, { y: 20 });
+const tD = at("Por eso, varias traducciones") - 0.3;
+tl.to($(".fb"), { opacity: 0, duration: 0.4 }, tD);
+tl.to($(".fc"), { opacity: 1, duration: 0.4 }, tD + 0.2);
+entra(".it", at("Por eso, varias traducciones"), { x: 30, y: 0, st: 0.5 });
+entra(".copto", at("Y unas antiguas versiones"), { y: 20 });
+entra(".fc .fuente", at("Y unas antiguas versiones") + 0.5, { y: 10 });
+</script>

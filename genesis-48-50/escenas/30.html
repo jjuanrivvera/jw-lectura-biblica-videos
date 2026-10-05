@@ -1,0 +1,49 @@
+<!--incluir:_g49b-hijo.html-->
+<style>
+.def30 .x { font-size: 54px; }
+.fmapa .pie-mapa { max-width: 1072px; white-space: nowrap; font-size: 17px; padding: 5px 12px; bottom: 14px; }
+.col49 .s.j30 { font-size: 30px; }
+</style>
+<div class="fase fmapa"><!--incluir:_b6.html--><div class="funde-der"></div></div>
+<div class="cab ch"><span class="cap">Génesis 49</span><span>versículo 21</span></div>
+<div class="hijo gh" style="--c: var(--bilha)"><img src="assets/img/neftali-g.jpg" /></div>
+<div class="pres">
+  <div class="nhijo">Neftalí</div>
+  <div class="cita">“Neftalí es <b>una cierva esbelta</b> y habla con <b>palabras hermosas</b>”<span class="ref">GÉNESIS 49:21</span></div>
+  <div class="def def30"><div class="t">cierva <i>nota de Génesis 49:21</i></div><div class="x">la <b>hembra del venado</b>: un animal rápido y ágil</div></div>
+</div>
+<div class="mini"><div class="nhijo">Neftalí<small>cómo se cumplió</small></div></div>
+<div class="col49">
+  <div class="b b1">
+    <div class="cumple"><div class="k">Jueces 4:6, 10; 5:18</div><div class="x">cuando Barac llamó contra Sísara, respondió con <b>valor y rapidez</b></div></div>
+  </div>
+  <div class="b b2">
+    <div class="cita">“se estableció en <b>Capernaúm</b>, que está junto al mar, en los distritos de Zabulón y Neftalí”<span class="ref">MATEO 4:13</span></div>
+    <div class="cumple c2"><div class="k">tal vez</div><div class="x">las palabras hermosas, en <b>la enseñanza de Jesús</b></div></div>
+    <div class="s j30 c3">aunque Jesús era de la <b>tribu de Judá</b></div>
+  </div>
+</div>
+<div class="fu49 f"><i>La Atalaya</i>, junio de 2025, “Qué nos enseñan las últimas palabras de Jacob (parte 2)”, pág.&nbsp;12 · <i>Perspicacia</i>, “Neftalí”, págs.&nbsp;474 a 475</div>
+
+<script>
+/*incluir:_g49b-hijo.js*/
+const [nx, ny] = B6.neftali;
+pinta(".marcas", `
+  <ellipse class="anillo oro a-n" cx="${nx - 10}" cy="${ny - 40}" rx="200" ry="330" transform="rotate(10 ${nx} ${ny})" style="stroke-width:10"/>
+  <circle class="cap30" cx="1915" cy="1030" r="62" fill="rgba(233,191,96,0.22)" stroke="#d99a14" stroke-width="7" stroke-dasharray="16 11"/>
+  <g class="lcap">${chip(1982, 1088, "Capernaúm (zona aprox.)", { fs: 23, cls: "oro" })}</g>
+`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".fmapa .cam"), encuadre({ x: 1450, y: 380, w: 1100, h: 1061 }, V), 0);
+hijoEntra(0.3);
+entra(".pres .cita", 0.9, { y: 24 });
+entra(".def30", at("La cierva es") - 0.2, { y: 20 });
+const tM = at("Cuando Barac");
+hijoAMapa(tM - 0.5);
+secuencia([[".b1", tM], [".b2", at("Mucho después") - 0.2]]);
+traza(".a-n", tM + 0.4, 0.9);
+const tJ = at("Jesús se estableció");
+aparece([".cap30", ".lcap"], tJ + 0.2, 0.5);
+entra(".b2 .c2", at("Tal vez") - 0.2, { y: 14 });
+entra(".b2 .c3", at("aunque Jesús") - 0.2, { y: 10 });
+</script>

@@ -1,0 +1,37 @@
+<style>
+.top { position: absolute; left: 80px; right: 80px; top: 110px; display: grid; grid-template-columns: 1fr 360px; column-gap: 40px; align-items: center; }
+.top .cita { font-size: 54px; }
+.top .foto-c { width: 360px; height: 360px; border-radius: 22px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+.top .foto-c img { width: 100%; height: 100%; object-fit: cover; }
+.top .pie-c { font-size: 19px; color: var(--tenue); margin-top: 8px; }
+.tabla { top: 140px; grid-template-columns: 220px 1fr 1fr; }
+.tabla .c { font-size: 46px; padding: 22px 26px; }
+.tabla { row-gap: 26px; }
+.tabla .rt { font-size: 30px; }
+.tabla .c { font-size: 34px; }
+.tabla .c.j { font-family: "Fraunces"; }
+.def-l { position: absolute; left: 80px; right: 80px; top: 500px; }
+.def-l .def .x { font-size: 58px; }
+</style>
+<div class="cab"><span class="cap">Génesis 31</span><span>versículos 36 al 41</span></div>
+<div class="top">
+  <div><div class="cita">“Llevo 20 años trabajando para ti en tu casa: 14 años por tus dos hijas y 6 por tu rebaño, y me cambiaste el salario hasta 10 veces”<span class="ref">GÉNESIS 31:41</span></div></div>
+  <div><div class="foto-c"><img src="assets/img/contrato.jpg"/></div><div class="pie-c">“Contrato en escritura cuneiforme por la compra de ovejas y cabras (hacia el año 2050 a. C.)”. La Atalaya, 1 de marzo de 2015, pág. 12 (wol.jw.org)</div></div>
+</div>
+<div class="def-l"><div class="def"><div class="t">Custodia</div><div class="x">cuidar animales ajenos era un <b>compromiso legal</b>: si los robaban, el pastor pagaba</div><div class="s">Perspicacia, vol. 1, “Custodia”, pág. 618</div></div></div>
+<div class="tabla">
+  <div class="h hh">Situación</div><div class="h hh">Lo que se esperaba</div><div class="h hh">Lo que dice Jacob</div>
+  <div class="rt r1">Una fiera</div><div class="c r1">presentar los restos y quedar libre <small>Éxodo 22:13 · Amós 3:12</small></div><div class="c j si r1">“Nunca te llevé ningún animal despedazado por fieras. Yo me hacía cargo de la pérdida” <small>31:39</small></div>
+  <div class="rt r2">Las crías</div><div class="c r2">unos 80 corderos vivos por cada 100 hembras <small>La Atalaya, 1 de marzo de 2015, pág. 12</small></div><div class="c j si r2">“Ninguna de tus ovejas ni de tus cabras abortó” <small>31:38</small></div>
+  <div class="rt r3">El sustento</div><div class="c r3">el pastor cobraba en animales <small>Perspicacia, “Pastor”, pág. 604</small></div><div class="c j si r3">“Nunca comí ni un carnero de tu rebaño” <small>31:38</small></div>
+</div>
+<script>
+entra(".top", 0.4, { y: 20 });
+entra(".def-l", at("Cuidar animales ajenos"), { y: 20 });
+sale([".def-l", ".top"], at("Pero si una fiera") - 0.4);
+aparece(".hh", at("Pero si una fiera"), 0.4);
+entra(".r1", at("Pero si una fiera"), { y: 6, st: 0.1 });
+late(".r1.si", at("Jacob hizo más"), { s: 1.03, n: 1 });
+entra(".r2", at("Ninguna de tus ovejas"), { y: 6, st: 0.1 });
+entra(".r3", at("y nunca comí"), { y: 6, st: 0.1 });
+</script>

@@ -1,0 +1,27 @@
+<style>
+.leccion .l { font-size: 100px; }
+.leccion .p { font-size: 64px; }
+.leccion .s { font-size: 30px; }
+.portada { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; text-align: center; }
+.portada .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 110px; line-height: 1.05; }
+.portada .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.22em; color: var(--verde); text-transform: uppercase; }
+</style>
+
+<div class="seccion"><span class="r">Lecciones y preguntas para pensar</span><span class="t">Génesis 38</span></div>
+<div class="seccion-linea"><svg viewBox="0 0 1740 20" preserveAspectRatio="none" style="width:100%;height:20px"><path d="M 4 10 C 400 4 900 16 1736 8"/></svg></div>
+<div class="leccion l1"><div class="n">1</div><div class="cuerpo"><div class="l">Judá prometió y <b>no cumplió</b>, por miedo</div><div class="p"><span class="k">PARA PENSAR</span>¿Tengo pendiente alguna promesa que le hice a mi familia?</div><div class="s">38:11, 14</div></div></div>
+<div class="leccion l2"><div class="n">2</div><div class="cuerpo"><div class="l">Judá <b>reconoció su error</b> en voz alta</div><div class="p"><span class="k">PARA PENSAR</span>¿Me cuesta admitir delante de otros que me equivoqué?</div><div class="s">38:26 · <i>La Atalaya</i>, 15 de enero de 1983, pág. 29: “al menos admitió su error”</div></div></div>
+<div class="leccion l3"><div class="n">3</div><div class="cuerpo"><div class="l">Jehová bendijo a Judá aunque cometió errores graves: <b>se fija en lo bueno</b> de sus siervos</div><div class="p"><span class="k">PARA PENSAR</span>¿Me quedo yo con lo bueno de los demás?</div><div class="s"><i>La Atalaya</i> (estudio), junio de 2025, págs. 6, 7</div></div></div>
+
+<script>
+const t0 = 0.3;
+entra(".seccion", t0, { y: -20 });
+traza(".seccion-linea path", t0 + 0.3, 1.0);
+secuencia([[".l1", at("Primera")], [".l2", at("Segunda")], [".l3", at("Tercera")]], null, { y: 30, d: 0.6 });
+entra(".l1 .p", at("Tengo pendiente") - 0.2, { y: 20 });
+entra(".l1 .s", at("Tengo pendiente") + 0.2, { y: 10 });
+entra(".l2 .p", at("Me cuesta admitir") - 0.2, { y: 20 });
+entra(".l2 .s", at("Me cuesta admitir") + 0.2, { y: 10 });
+entra(".l3 .p", at("Me quedo yo") - 0.2, { y: 20 });
+entra(".l3 .s", at("Me quedo yo") + 0.2, { y: 10 });
+</script>

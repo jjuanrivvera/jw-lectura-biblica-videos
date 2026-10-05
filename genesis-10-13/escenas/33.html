@@ -1,0 +1,55 @@
+<style>
+.ar33 { position: absolute; left: 90px; right: 90px; top: 60px; height: 380px; display: grid; grid-template-columns: 1fr 1.15fr; gap: 34px; align-items: center; }
+.ar33 .def .x { font-size: 56px; }
+.ar33 .lista { display: flex; flex-direction: column; gap: 14px; }
+.ar33 .lista .m { font-size: 54px; }
+.lt33 { position: absolute; inset: 0; }
+.lt33 svg { width: 1920px; height: 1080px; display: block; }
+.cal33 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; fill: #17212b; text-anchor: middle; letter-spacing: 0.08em; }
+.dia33 { font-family: "Fraunces", serif; font-weight: 700; font-size: 70px; fill: #17212b; text-anchor: middle; }
+.an33 { font-family: "Fraunces", serif; font-weight: 700; font-size: 46px; fill: var(--oro); text-anchor: middle; }
+.tx33 { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; fill: var(--tiza); text-anchor: middle; }
+.dur33 { font-family: "Caveat", cursive; font-weight: 700; font-size: 52px; fill: #92d193; text-anchor: middle; }
+.fu33 { position: absolute; left: 90px; right: 90px; bottom: 18px; }
+</style>
+
+<div class="ar33">
+  <div class="def d1"><div class="t">pacto<i>beríth</i></div><div class="x">un <b>acuerdo solemne</b></div><div class="s">“de etimología incierta”; unas 280 veces en las Escrituras Hebreas · <i>Perspicacia</i>, vol. 2, “Pacto”, pág. 571</div></div>
+  <div class="lista">
+    <div class="m l1">de un solo lado: “más bien una <b>promesa</b>”</div>
+    <div class="s l2" style="font-size:30px">“Jehová no le impuso condiciones de cumplimiento obligatorio” · por eso “no se requería un mediador”</div>
+    <div class="m l3" style="font-size:48px">“un pacto <b>hasta tiempo indefinido</b>”</div>
+    <div class="f l3"><i>Perspicacia</i>, vol. 2, “Pacto”, págs. 571-573</div>
+  </div>
+</div>
+
+<div class="lt33"><svg viewBox="0 0 1920 1080">
+  <path class="eje" d="M 250 700 H 1680" stroke="rgba(241,233,216,0.35)" stroke-width="6" stroke-dasharray="4 12" stroke-linecap="round"/>
+  <g class="n1"><rect x="160" y="560" width="180" height="180" rx="18" fill="#f1e9d8"/><rect x="160" y="560" width="180" height="50" rx="18" fill="#c0392b"/><rect x="160" y="592" width="180" height="18" fill="#c0392b"/><text class="cal33" x="250" y="596" style="fill:#fff">NISÁN</text><text class="dia33" x="250" y="700">14</text>
+    <text class="an33" x="250" y="800">1943 a. e. c.</text><text class="tx33" x="250" y="856">Abrán cruza el Éufrates:</text><text class="tx33" x="250" y="900">entra en vigor el pacto</text></g>
+  <g class="n2"><rect x="870" y="560" width="180" height="180" rx="18" fill="#f1e9d8"/><rect x="870" y="560" width="180" height="50" rx="18" fill="#c0392b"/><rect x="870" y="592" width="180" height="18" fill="#c0392b"/><text class="cal33" x="960" y="596" style="fill:#fff">NISÁN</text><text class="dia33" x="960" y="700">14</text>
+    <text class="an33" x="960" y="800">1513 a. e. c.</text><text class="tx33" x="960" y="856">la Pascua:</text><text class="tx33" x="960" y="900">Israel sale de Egipto</text></g>
+  <g class="n3"><rect x="1580" y="560" width="180" height="180" rx="18" fill="#f1e9d8"/><rect x="1580" y="560" width="180" height="50" rx="18" fill="#c0392b"/><rect x="1580" y="592" width="180" height="18" fill="#c0392b"/><text class="cal33" x="1670" y="596" style="fill:#fff">NISÁN</text><text class="dia33" x="1670" y="700">14</text>
+    <text class="an33" x="1670" y="800">33 e. c.</text><text class="tx33" x="1670" y="856">Jesús hace con sus apóstoles</text><text class="tx33" x="1670" y="900">el pacto del Reino</text></g>
+  <g class="d430"><path d="M 360 520 C 520 460 700 460 850 520" fill="none" stroke="#92d193" stroke-width="5"/><path d="M 826 500 L 852 522 L 820 530" fill="none" stroke="#92d193" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><text class="dur33" x="605" y="468">430 años · Gálatas 3:17</text></g>
+  <g class="nis"><text class="tx33" x="250" y="540" style="fill:#e9bf60;font-size:40px">“probablemente”</text></g>
+</svg></div>
+<div class="fu33 f">1943: <i>Perspicacia</i>, vol. 1, “Abrahán”, pág. 30 (el pacto “al parecer” entró en vigor al cruzar el Éufrates) · las tres fechas: <i>Imitemos su fe</i>, cap. 3, recuadro “Una fecha clave” · Éxodo 12:40, 41</div>
+
+<script>
+tl.set($(".ar33"), { y: 200 }, 0);
+entra(".d1", at("Pacto en hebreo") - 0.3, { y: 24 });
+entra(".l1", at("un solo lado") - 0.3, { y: 18 });
+entra(".l2", at("no le puso") - 0.2, { y: 14 });
+entra(".l3", at("no le puso") + 0.8, { y: 14 });
+tl.to($(".ar33"), { y: 0, duration: 0.8, ease: "power2.inOut" }, at("Al parecer") - 0.8);
+aparece(".eje", at("Al parecer"), 0.6);
+salta(".n1", at("cruzó el Éufrates") - 0.2, { desde: 0.5 });
+entra(".nis", at("probablemente") - 0.1, { y: 8 });
+late(".n1 rect", at("Nisán") - 0.1, { s: 1.04, n: 3 });
+traza([".d430 path"], at("cuatrocientos treinta") - 0.3, 0.9);
+entra(".d430 text", at("cuatrocientos treinta"), { y: 10 });
+salta(".n2", at("Israel salió") - 0.3, { desde: 0.5 });
+salta(".n3", at("Jesús") - 0.3, { desde: 0.5 });
+aparece(".fu33", at("Al parecer"), 0.5);
+</script>

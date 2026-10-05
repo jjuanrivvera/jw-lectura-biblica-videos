@@ -1,0 +1,52 @@
+<style>
+.mapa.S { left: 0; top: 0; width: 1000px; height: 1080px; }
+.mapa.S .cam img, .mapa.S .cam svg { width: 1400px; height: 1200px; }
+.pip24 { position: absolute; left: 560px; top: 30px; width: 420px; height: 470px; border-radius: 18px; overflow: hidden; border: 4px solid #fff; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55); }
+.pip24 .cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.pip24 .cam img, .pip24 .cam svg { position: absolute; left: 0; top: 0; width: 2088px; height: 2436px; }
+.pip24 .rot { position: absolute; left: 0; right: 0; bottom: 0; padding: 6px 12px; background: rgba(15, 22, 30, 0.86); font-family: "Montserrat", sans-serif; font-size: 18px; color: var(--tenue); }
+.col.d24 { left: 1060px; right: 60px; width: auto; top: 110px; bottom: 80px; }
+.cab.d24c { left: 1060px; }
+.d24 .def .x { font-size: 46px; }
+</style>
+
+<!--incluir:_sur.html-->
+<div class="pip24"><div class="cam"><img src="assets/img/b2-recuadro.jpg" /><svg viewBox="0 0 2088 2436"><circle class="anillo oro a-acz" cx="438" cy="1260" r="30"/></svg></div><div class="rot">recuadro del apéndice B2 de la TNM</div></div>
+<div class="cab d24c"><span class="cap">Timná, Enaim y Aczib hoy</span><span>38:5, 12-14</span></div>
+<div class="col d24">
+  <div class="b a1">
+    <div class="def"><div class="t">Timná</div><div class="x">“ciudad de la región montañosa de Judá”; hay <b>otra</b>, en el límite de Judá y Dan: la de la esposa de Sansón</div><div class="s"><i>Perspicacia</i>, vol. 2, “Timnah”, pág. 1128 (el mapa escribe Timnah)</div></div>
+    <div class="m md sb">“subiendo a Timná” (38:13) encaja mejor con la de la sierra</div>
+    <span class="propio chico sb">observación propia</span>
+    <span class="externa chico hy24">su posible lugar: una colina de unos 620 m, sin excavar, con una fortaleza cuadrada en la superficie</span>
+  </div>
+  <div class="b a2">
+    <div class="def"><div class="t">Enaim</div><div class="x">“probablemente: Dos Fuentes”; hoy <b>no se sabe</b> dónde estaba</div><div class="s"><i>Perspicacia</i>, vol. 1, “Enaim”, pág. 810</div></div>
+    <div class="def ac"><div class="t">Aczib</div><div class="x">donde nació Selá: Tell el-Beida (Horvat Lavnin), <b>a 5 km de Adulam</b></div><div class="s"><i>Perspicacia</i>, vol. 1, “Aczib”, pág. 47</div></div>
+    <span class="externa chico ac">Horvat Lavnin está en el mismo parque de Adulam, con cuevas y cisternas</span>
+  </div>
+</div>
+
+<script>
+pinta(".marcas", `
+  <circle class="anillo oro a-t1" cx="640" cy="490" r="40"/>
+  <circle class="anillo a-t2" cx="364" cy="286" r="40"/>
+  <circle class="anillo a-adu" cx="540" cy="586" r="36"/>
+  <g class="ch-t1"><rect x="720" y="560" width="300" height="76" rx="18" fill="rgba(15,22,30,0.88)"/><text class="lugar" x="740" y="612" font-size="42" style="fill:#e9bf60">la de la sierra</text></g>
+  <g class="ch-t2"><rect x="200" y="170" width="330" height="76" rx="18" fill="rgba(15,22,30,0.88)"/><text class="lugar" x="220" y="222" font-size="42" style="fill:#93bbef">la de Sansón</text></g>`);
+const V = { x: 0, y: 0, w: 1000, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 150, y: 0, w: 1111, h: 1200 }, V), 0);
+tl.set($(".pip24 .cam"), encuadre({ x: 236, y: 982, w: 400, h: 448 }, { x: 0, y: 0, w: 420, h: 470 }), 0);
+traza(".a-t1", at("Timná de este") - 0.2, 0.7);
+aparece(".ch-t1", at("sierra de Judá"), 0.4);
+traza(".a-t2", at("otra Timná"), 0.7);
+aparece(".ch-t2", at("esposa de Sansón"), 0.4);
+late(".a-t1", at("subía a Timná"), { s: 1.2, n: 3 });
+traza(".a-adu", (at("donde nació") - 0.9), 0.6);
+entra(".pip24", (at("donde nació") - 0.9) - 0.2, { y: 30 });
+traza(".a-acz", (at("donde nació") - 0.9) + 0.4, 0.7);
+secuencia([[".a1", 0.4], [".a2", at("De Enaim")]]);
+entra(".sb", at("pero el texto"), { y: 12, st: 0.2 });
+entra(".hy24", at("Su posible lugar"), { y: 12 });
+entra(".ac", (at("donde nació") - 0.9), { y: 16, st: 0.3 });
+</script>

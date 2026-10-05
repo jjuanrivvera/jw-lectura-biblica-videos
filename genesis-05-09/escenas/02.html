@@ -1,0 +1,57 @@
+<style>
+.eje { position: absolute; left: 0; top: 0; }
+.fecha { font-family: "Fraunces", serif; font-weight: 700; }
+.q { position: absolute; left: 80px; right: 80px; top: 150px; }
+.q .m { font-size: 88px; }
+.textos { position: absolute; left: 80px; right: 80px; top: 800px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 50px; }
+.tx { border-radius: 26px; padding: 22px 32px; background: rgba(10,16,22,0.5); border: 4px solid rgba(241,233,216,0.14); }
+.tx .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tenue); }
+.tx .m { font-size: 62px; margin-top: 6px; }
+.tx.si { border-color: var(--oro); }
+.tx .s { font-size: 24px; margin-top: 6px; }
+</style>
+
+<div class="cab"><span class="cap">Las fechas</span><span>Perspicacia, vol. 1, “Cronología”</span></div>
+<div class="q q0"><div class="m">¿de dónde salen <b>las fechas</b>?</div></div>
+<div class="q q1"><div class="m">las fechas <b>no están escritas</b> en la Biblia: se <b>calculan</b></div></div>
+<svg class="eje" width="1920" height="1080" viewBox="0 -60 1920 1080">
+  <path class="linea" d="M 120 520 L 1800 520" stroke="#f1e9d8" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <g class="p539"><circle cx="1720" cy="520" r="22" fill="#e9bf60" stroke="#17212b" stroke-width="6"/>
+    <text class="fecha" x="1720" y="470" text-anchor="middle" font-size="100" fill="#e9bf60">539</text>
+    <text x="1720" y="600" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="46" fill="#f1e9d8">cae Babilonia</text>
+    <text x="1720" y="645" text-anchor="middle" font-family="Montserrat" font-weight="600" font-size="22" fill="#b3bdc8">fecha fija de la historia</text></g>
+  <path class="atras" d="M 1690 560 C 1400 640 900 640 190 560" stroke="#ec8a67" stroke-width="7" stroke-dasharray="18 14" fill="none" stroke-linecap="round"/>
+  <path class="punta" d="M 214 540 L 186 560 L 218 578" stroke="#ec8a67" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="atras-t" x="960" y="690" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="48" fill="#ec8a67">hacia atrás, con los períodos que da la Biblia</text>
+  <g class="p2370"><circle cx="880" cy="520" r="20" fill="#93bbef" stroke="#17212b" stroke-width="6"/>
+    <text class="fecha" x="880" y="470" text-anchor="middle" font-size="100" fill="#93bbef">2370</text>
+    <text x="880" y="352" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="50" fill="#f1e9d8">el Diluvio</text></g>
+  <g class="p4026"><circle cx="190" cy="520" r="20" fill="#f1e9d8" stroke="#17212b" stroke-width="6"/>
+    <text class="fecha" x="200" y="470" text-anchor="start" font-size="100" fill="#f1e9d8">4026</text>
+    <text x="200" y="352" text-anchor="start" font-family="Caveat" font-weight="700" font-size="50" fill="#f1e9d8">Adán</text></g>
+  <text class="aec" x="1800" y="380" text-anchor="end" font-family="Montserrat" font-weight="800" font-size="26" letter-spacing="3" fill="#b3bdc8">ANTES DE NUESTRA ERA</text>
+</svg>
+<div class="textos">
+  <div class="tx si t1"><div class="t">las edades de Génesis 5</div><div class="m">del <b>texto hebreo</b></div><div class="s">“ha demostrado ser más confiable” · Perspicacia, “Cronología”</div></div>
+  <div class="tx t2"><div class="t">Septuaginta · traducción antigua al griego</div><div class="m">trae <b>otras cifras</b></div></div>
+</div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".q0", 0.3, { y: 30 });
+sale(".q0", at("Esas fechas") - 0.4);
+entra(".q1", at("Esas fechas"), { y: 30 });
+traza(".linea", 0.4, 1.0);
+aparece(".aec", 0.8, 0.5);
+salta(".p4026", at("Adán fue creado"), { desde: 0.5 });
+salta(".p2370", at("y el Diluvio"), { desde: 0.5 });
+salta(".p539", at("la caída de Babilonia"), { desde: 0.5 });
+late(".p539 circle", at("con firmeza"), { s: 1.4, n: 3 });
+traza(".atras", at("contando hacia atrás"), 1.8, { ease: "power1.in" });
+aparece(".punta", at("contando hacia atrás") + 1.7, 0.2);
+aparece(".atras-t", at("contando hacia atrás") + 0.6, 0.5);
+atenua(".eje", at("Las edades"), 0.35, 0.6);
+entra(".t1", at("Las edades"), { y: 30 });
+entra(".t2", at("la Septuaginta"), { y: 30 });
+tl.to($(".t1"), { scale: 1.04, duration: 0.5, transformOrigin: "50% 50%" }, at("ha demostrado"));
+</script>

@@ -1,0 +1,51 @@
+<!--lead:2.6-->
+<style>
+.cal { position: absolute; left: 70px; right: 70px; top: 150px; height: 230px; }
+.cal .fila { position: absolute; left: 0; right: 0; top: 50px; display: grid; grid-template-columns: repeat(19, 1fr); column-gap: 8px; }
+.cal .mes { height: 96px; border-radius: 12px; background: rgba(241, 233, 216, 0.08); border: 2px solid rgba(241, 233, 216, 0.14); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.cal .mes b { font-family: "Fraunces", serif; font-weight: 700; font-size: 34px; line-height: 1; color: var(--tiza); }
+.cal .mes span { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 18px; color: #e6eaee; margin-top: 4px; }
+.cal .mes.lleno { background: rgba(233, 191, 96, 0.22); border-color: rgba(233, 191, 96, 0.6); }
+.cal .anio { position: absolute; top: 0; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.1em; color: var(--oro); }
+.cal .cuenta { position: absolute; top: 170px; left: 0; right: 0; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; color: var(--oro); }
+.tres { position: absolute; left: 70px; right: 70px; top: 470px; bottom: 80px; display: grid; grid-template-columns: 1fr 1.25fr 1fr; column-gap: 26px; }
+.tres .tj { justify-content: flex-start; }
+.tres .tj .k { font-size: 24px; }
+.tres .big17 { font-family: "Fraunces", serif; font-weight: 700; font-size: 60px; line-height: 1.02; color: var(--oro); }
+.tres .tj .x { font-size: 34px; }
+.tres .s { font-size: 24px; }
+.tj.ez { border-color: rgba(147, 187, 239, 0.7); }
+.tj.ez .k { color: var(--cielo); }
+</style>
+
+<div class="capcard"><div class="num">Jeremías 39</div><svg viewBox="0 0 820 40"><path d="M 10 22 C 200 10 420 34 810 16"/></svg><div class="sub">cae Jerusalén</div><div class="edad">607 a. e. c. · Sedequías, el último de la línea de David que reinó en Jerusalén</div></div>
+
+<div class="fase f1">
+  <div class="cab"><span class="cap">Jeremías 39</span><span>versículos 1 y 2</span></div>
+  <div class="cal">
+    <div class="anio" style="left:0">609 a. e. c.</div>
+    <div class="anio" style="right:0">607 a. e. c.</div>
+    <div class="fila"></div>
+    <div class="cuenta">dieciocho meses de sitio</div>
+  </div>
+  <div class="tres">
+    <div class="tj t1"><div class="k">empieza el sitio · 39:1; 52:4</div><div class="big17">día 10 del mes 10</div><div class="x">año 9 de Sedequías</div><div class="s">mes de tebet: “parte de diciembre y parte de enero” · <i>Perspicacia</i></div></div>
+    <div class="tj ez t2"><div class="k">ese mismo día, en Babilonia · Ezequiel 24:2</div><div class="x">“Hijo del hombre, <b>registra esta fecha</b>, el día de hoy. Porque, precisamente en este día, el rey de Babilonia ha comenzado su ataque contra Jerusalén”</div><div class="s">“registra esta fecha”: literalmente, “el nombre del día” (nota de la TNM)</div></div>
+    <div class="tj t3"><div class="k">la brecha · 39:2; 52:6</div><div class="big17">día 9 del mes 4</div><div class="x">año 11 de Sedequías</div><div class="s">mes de tamuz: “(junio-julio)” · “el hambre en la ciudad era terrible”</div></div>
+  </div>
+</div>
+
+<script>
+const M = [["10", "tebet"], ["11", ""], ["12", ""], ["1", ""], ["2", ""], ["3", ""], ["4", ""], ["5", ""], ["6", ""], ["7", ""], ["8", ""], ["9", ""], ["10", ""], ["11", ""], ["12", ""], ["1", ""], ["2", ""], ["3", ""], ["4", "tamuz"]];
+$(".cal .fila").innerHTML = M.map(([n, t], i) => `<div class="mes m${i}"><b>${n}</b>${t ? `<span>${t}</span>` : ""}</div>`).join("");
+const tFin = at("Empieza con") - 0.2;
+capitulo(".capcard", 0.3, tFin - 0.5);
+aparece(".f1 .cab", tFin, 0.5);
+aparece([".cal .anio", ".cal .fila"], tFin + 0.2, 0.6);
+entra(".t1", at("El sitio comenzó"), { y: 24 });
+const t0 = at("El sitio comenzó") + 0.4, t1 = at("la muralla cedió") + 0.6;
+for (let i = 0; i < 19; i++) tl.to($(".m" + i), { backgroundColor: "rgba(233,191,96,0.22)", borderColor: "rgba(233,191,96,0.6)", duration: 0.3 }, t0 + (i / 18) * (t1 - t0));
+entra(".t2", at("Ese mismo día"), { y: 24 });
+entra(".t3", at("la muralla cedió"), { y: 24 });
+entra(".cuenta", at("la muralla cedió") + 0.8, { y: 16 });
+</script>

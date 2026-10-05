@@ -1,0 +1,29 @@
+<!--lead:2.6-->
+<style>
+.arbol { position: absolute; left: 90px; top: 180px; width: 900px; height: 820px; }
+.arbol svg { width: 900px; height: 820px; }
+.et { font-family: "Caveat", cursive; font-weight: 700; font-size: 48px; fill: var(--tiza); }
+.col.der { width: 760px; }
+</style>
+<div class="capcard cc"><div class="num">Génesis 35</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">de vuelta a Betel</div><div class="edad">hacia el 1753 antes de nuestra era · cálculo propio</div></div>
+<div class="fase fp">
+<div class="cab"><span class="cap">Génesis 35</span><span>versículos 1 al 5</span></div>
+<div class="arbol"><svg viewBox="0 0 800 820" class="arb"></svg></div>
+<div class="col der">
+  <div class="b a1"><div class="cita">“Ponte en camino, sube a Betel”<span class="ref">GÉNESIS 35:1</span></div><div class="def"><div class="t">voto</div><div class="x">“promesa solemne que se le hacía a Dios”, con <b>el peso de un juramento</b></div><div class="s">TNM, glosario, “voto” · el de Jacob: Génesis 28:20-22</div></div><div class="m md">nadie estaba obligado a hacerlo; hecho, había que cumplirlo</div></div>
+  <div class="b a2"><div class="cita md">“Desháganse de los dioses extranjeros que tengan, límpiense y cámbiense de ropa”<span class="ref">GÉNESIS 35:2</span></div><div class="def"><div class="t">terafim</div><div class="x">“Dioses o ídolos domésticos a los que a veces se consultaba para <b>saber el futuro</b>”</div><div class="s">TNM, glosario · probablemente los que Raquel le robó a Labán (31:19)</div></div></div>
+  <div class="b a3"><div class="cita md">“y Jacob lo enterró todo debajo del árbol grande que estaba cerca de Siquem”<span class="ref">GÉNESIS 35:4</span></div><div class="m md">con los aretes, que algunos llevaban como amuletos</div><div class="f"><i>Perspicacia</i>, vol. 1, “Arete”, pág. 184; “Ídolo, idolatría”, pág. 1195</div></div>
+  <div class="b a4"><div class="cita md">“el terror de Dios se apoderó de las ciudades de los alrededores, de modo que nadie persiguió a los hijos de Jacob”<span class="ref">GÉNESIS 35:5</span></div></div>
+</div>
+</div>
+<script>
+/*incluir:_arbol.js*/
+$(".arb").innerHTML = arbolSVG("e27", true) + `<text class="et l-en" x="130" y="800">ídolos y aretes, enterrados</text>`;
+capitulo(".cc", 0.3, at("Dios le dice") - 0.2);
+aparece(".fp", at("Dios le dice") + 0.45, 0.5);
+aparece(".arbol", at("Dios le dice") + 0.6, 0.8);
+tl.set($$(".arb .enterrado, .arb .l-en"), { opacity: 0 }, 0);
+tl.fromTo($(".arb .enterrado"), { opacity: 0, y: -80 }, { opacity: 1, y: 0, duration: 1.0, ease: "power2.out", immediateRender: false }, at("los enterró"));
+tl.to($(".arb .l-en"), { opacity: 1, duration: 0.5 }, at("los enterró") + 0.8);
+secuencia([[".a1", at("Dios le dice")], [".a2", at("Antes de salir")], [".a3", at("Jacob los enterró")], [".a4", at("Y el terror")]]);
+</script>

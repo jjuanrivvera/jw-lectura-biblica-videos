@@ -1,0 +1,73 @@
+<style>
+.q10 { position: absolute; left: 110px; right: 110px; top: 110px; text-align: center; }
+.q10 .cita { font-size: 50px; }
+.tres10 { position: absolute; left: 0; right: 0; top: 400px; height: 480px; }
+.tres10 .med { width: 270px; top: 0; }
+.tres10 .med .n { font-size: 36px; }
+.tres10 .eti { position: absolute; top: 350px; width: 420px; margin-left: -210px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 56px; }
+.tres10 .x { position: absolute; top: 0; width: 270px; height: 270px; }
+.tres10 .x path { fill: none; stroke: var(--rojo); stroke-width: 14; stroke-linecap: round; }
+.f10b .rub { position: absolute; left: 110px; top: 250px; width: 360px; }
+.f10b .rub .med { position: relative; width: 340px; }
+.f10b .rub .med .n { font-size: 36px; }
+.jac10 { position: absolute; left: 110px; top: 330px; width: 360px; text-align: center; }
+.jac10 .grande { font-size: 110px; color: var(--oro); }
+.jac10 .s { font-size: 28px; }
+.col10 { position: absolute; left: 560px; right: 90px; top: 110px; bottom: 80px; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+.col10 .cita { font-size: 52px; }
+.no10 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.14em; color: var(--rojo); text-transform: uppercase; }
+</style>
+
+<div class="fase f10a">
+  <div class="cab"><span class="cap">Génesis 42</span><span>versículos 35 al 38</span></div>
+  <div class="q10"><div class="cita c1">“¡José ya no está con nosotros! ¡Simeón ya no está con nosotros! ¡Y ahora quieren llevarse a Benjamín! <b>¡Soy yo el que está sufriendo todas estas cosas!</b>”<span class="ref">GÉNESIS 42:36</span></div></div>
+  <div class="tres10"></div>
+</div>
+
+<div class="fase f10b">
+  <div class="cab"><span class="cap">Génesis 42</span><span>versículos 37 y 38</span></div>
+  <div class="rub"></div>
+  <div class="jac10"><div class="grande">Jacob</div><div class="s">responde</div></div>
+  <div class="col10">
+    <div class="cita o1">“Si no te lo traigo de vuelta, puedes matar a <b>mis dos hijos</b>”<span class="ref">RUBÉN · GÉNESIS 42:37</span></div>
+    <div class="no10 o2">Jacob no acepta</div>
+    <div class="cita o3">“De la tristeza harían descender <b>mis canas a la Tumba</b>”<span class="ref">JACOB · GÉNESIS 42:38</span></div>
+    <div class="def o4"><div class="t">la Tumba <i>(Seol)</i></div><div class="x">no un sepulcro concreto, sino el <b>lugar simbólico</b> donde descansan los muertos</div><div class="s">nota de la TNM en 42:38 · Glosario de la TNM, “Tumba”</div></div>
+  </div>
+</div>
+
+<script>
+const XS = [480, 960, 1440];
+$(".tres10").innerHTML = ["jose", "simeon", "benjamin"].map((k, i) => medallon(k, { estilo: `left:${XS[i] - 135}px` })).join("") +
+  `<svg class="x x0" style="left:${XS[0] - 135}px" viewBox="0 0 270 270"><path d="M 60 60 L 210 210 M 210 60 L 60 210"/></svg>` +
+  `<svg class="x x1" style="left:${XS[1] - 135}px" viewBox="0 0 270 270"><path d="M 60 60 L 210 210 M 210 60 L 60 210"/></svg>` +
+  `<div class="eti e0" style="left:${XS[0]}px; color:var(--tenue)">ya no está</div>` +
+  `<div class="eti e1" style="left:${XS[1]}px; color:var(--tenue)">preso en Egipto</div>` +
+  `<div class="eti e2" style="left:${XS[2]}px; color:var(--cielo)">¿también él?</div>`;
+$(".rub").innerHTML = medallon("ruben");
+const [mJ, mS, mB] = $$(".tres10 .med");
+const tR = at("Rubén ofrece");
+entra(".c1", 0.3, { y: 20 });
+tl.set([mJ, mS, mB], { opacity: 0.22 }, 0);
+tl.to([mJ, mS, mB], { opacity: 0.22, duration: 0.01 }, 0.4);
+tl.to(mJ, { opacity: 1, scale: 1.08, duration: 0.5, ease: "back.out(2)" }, at("José ya no está") - 0.1);
+traza(".x0 path", at("Simeón ya no") - 0.6, 0.5);
+atenua(mJ, at("Simeón ya no") - 0.4, 0.45);
+entra(".e0", at("Simeón ya no") - 0.5, { y: 10 });
+tl.to(mS, { opacity: 1, scale: 1.08, duration: 0.5, ease: "back.out(2)" }, at("Simeón ya no") - 0.1);
+traza(".x1 path", at("Y ahora quieren") - 0.6, 0.5);
+atenua(mS, at("Y ahora quieren") - 0.4, 0.45);
+entra(".e1", at("Y ahora quieren") - 0.5, { y: 10 });
+tl.to(mB, { opacity: 1, scale: 1.08, duration: 0.5, ease: "back.out(2)" }, at("llevarse a Benjamín"));
+entra(".e2", at("llevarse a Benjamín") + 0.4, { y: 10 });
+late(mB, at("Soy yo el que"), { s: 1.06, n: 3 });
+tl.to($(".f10a"), { opacity: 0, duration: 0.5, ease: "none" }, tR - 0.5);
+tl.set(inicial(el(".f10b"), { opacity: 0 }), { opacity: 1 }, tR - 0.1);
+salta(".rub .med", tR, { desde: 0.7 });
+entra(".o1", tR + 0.2, { y: 20 });
+entra(".o2", at("Jacob no acepta"), { y: 12 });
+tl.to($(".rub .med"), { opacity: 0, duration: 0.5 }, at("Jacob no acepta") - 0.3);
+entra(".jac10", at("Jacob no acepta"), { y: 20 });
+entra(".o3", at("de la tristeza"), { y: 20 });
+entra(".o4", at("La Tumba, con mayúscula"), { y: 20 });
+</script>

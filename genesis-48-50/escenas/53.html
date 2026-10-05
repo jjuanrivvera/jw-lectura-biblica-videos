@@ -1,0 +1,93 @@
+<style>
+.f53a { position: absolute; inset: 0; }
+.tit53 { position: absolute; left: 80px; top: 104px; }
+.tit53 .m { font-size: 80px; }
+.dos53 { position: absolute; left: 70px; right: 70px; top: 240px; bottom: 90px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 34px; }
+.pan53 { border-radius: 26px; background: rgba(10, 16, 22, 0.42); border: 3px solid rgba(241, 233, 216, 0.14); padding: 30px 36px; display: flex; flex-direction: column; gap: 22px; }
+.pan53 .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 32px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro); }
+.pan53 .meds { display: flex; justify-content: space-around; align-items: flex-start; margin-top: 30px; }
+.pan53 .med { position: relative; width: 270px; }
+.pan53 .med .n { font-size: 34px; }
+.pan53 .lab { font-family: "Caveat", cursive; font-weight: 700; font-size: 60px; line-height: 1.02; text-align: center; margin-top: 14px; width: 360px; margin-left: -45px; }
+.pan53 .lab b { color: var(--oro); }
+.pan53 .vs { font-family: "Caveat", cursive; font-weight: 700; font-size: 60px; color: var(--tenue); align-self: center; }
+.pan53 .ref { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 30px; line-height: 1.3; color: var(--tenue); margin-top: auto; }
+.pan53 .ref i { color: var(--tiza); }
+.f53b { position: absolute; inset: 0; }
+.mapa.REC { left: 0; top: 0; width: 900px; height: 1080px; }
+.mapa.REC .pie-mapa { left: 20px; right: auto; max-width: 820px; font-size: 20px; }
+.funde53 { left: 800px; }
+.lug53 { position: absolute; left: 960px; right: 70px; top: 130px; bottom: 80px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.lug53 .tj .k { font-size: 34px; }
+.lug53 .tj .x { font-size: 50px; }
+.lug53 .tj .ref { font-size: 26px; }
+.lug53 .tj { padding: 30px 34px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 48 al 50</span><span>los hilos</span></div>
+<div class="fase f53a">
+  <div class="tit53"><div class="m">hilos que cruzan los tres capítulos</div></div>
+  <div class="dos53">
+    <div class="pan53 p1">
+      <div class="k">herencia y autoridad</div>
+      <div class="meds">
+        <div><div class="lab">la herencia <b>doble</b></div></div>
+        <div><div class="lab">la línea <b>real</b></div></div>
+      </div>
+      <div class="ref">“[...] de él vino quien sería el líder, el derecho de primogénito le perteneció a José” · 1&nbsp;Crónicas 5:2</div>
+    </div>
+    <div class="pan53 p2">
+      <div class="k">la espada</div>
+      <div class="meds">
+        <div><div class="lab">Jacob <b>condena</b> su violencia</div></div>
+        <div><div class="lab">con todo el poder, <b>no se venga</b></div></div>
+      </div>
+      <div class="ref">Génesis 49:5-7 · Génesis 50:19-21</div>
+    </div>
+  </div>
+</div>
+<div class="fase f53b">
+  <!--incluir:_rec.html-->
+  <div class="funde-der funde53"></div>
+  <div class="lug53">
+    <div class="tj l1"><div class="k">Belén</div><div class="x">guarda la memoria de <b>Raquel</b> y vuelve con el <b>Mesías</b></div><div class="ref">Génesis 48:7; Miqueas 5:2</div></div>
+    <div class="tj l2"><div class="k">Macpelá</div><div class="x">reúne a <b>tres generaciones</b></div><div class="ref">Génesis 49:31; 50:13</div></div>
+    <div class="tj l3"><div class="k">Siquem</div><div class="x">une la compra de <b>Jacob</b> con la tumba de <b>José</b></div><div class="ref">Génesis 48:22; Josué 24:32</div></div>
+  </div>
+</div>
+
+<script>
+// Retratos: La Atalaya (estudio), junio de 2025.
+const caja = (k) => medallon(k);
+$(".p1 .meds > div:nth-child(1)").insertAdjacentHTML("afterbegin", caja("jose"));
+$(".p1 .meds > div:nth-child(2)").insertAdjacentHTML("afterbegin", caja("juda"));
+$(".p2 .meds > div:nth-child(1)").insertAdjacentHTML("afterbegin", `<div style="display:flex;gap:10px;margin-left:-60px">${medallon("simeon", { estilo: "width:200px" })}${medallon("levi", { estilo: "width:200px" })}</div>`);
+$(".p2 .meds > div:nth-child(2)").insertAdjacentHTML("afterbegin", caja("jose"));
+$$(".p2 .med").forEach((m) => (m.style.position = "relative"));
+$(".p2 .meds > div:nth-child(1) .lab").style.marginLeft = "-40px";
+
+pinta(".marcas", `
+  <circle class="anillo oro a1" cx="${REC.belen[0]}" cy="${REC.belen[1]}" r="62" style="stroke-width:9"/>
+  <circle class="anillo oro a2" cx="${REC.macpela[0]}" cy="${REC.macpela[1]}" r="62" style="stroke-width:9"/>
+  <circle class="anillo oro a3" cx="${REC.siquem[0]}" cy="${REC.siquem[1]}" r="62" style="stroke-width:9"/>
+`);
+const V = { x: 0, y: 0, w: 900, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 280, y: 200, w: 1000, h: 1400 }, V), 0);
+
+const tL = at("Y tres lugares");
+entra(".tit53", 0.3, { y: 16 });
+entra(".p1", 0.6, { y: 24 });
+entra(".p1 .meds > div:nth-child(1) .lab", at("la herencia doble") - 0.2, { y: 10 });
+entra(".p1 .meds > div:nth-child(2) .lab", at("la línea real") - 0.2, { y: 10 });
+entra(".p2", at("Jacob condena") - 0.9, { y: 24 });
+entra([".p2 .meds", ".p2 .ref"], at("Jacob condena") - 0.4, { y: 20 });
+entra(".p2 .meds > div:nth-child(2)", at("y José con todo") - 0.2, { y: 16 });
+sale(".f53a", tL - 0.6, { y: -20, d: 0.5 });
+aparece(".f53b", tL - 0.4, 0.5);
+traza(".a1", at("Belén que guarda") - 0.1, 0.8);
+entra(".l1", at("Belén que guarda") - 0.2, { y: 20 });
+traza(".a2", at("Macpelá que reúne") - 0.1, 0.8);
+entra(".l2", at("Macpelá que reúne") - 0.2, { y: 20 });
+traza(".a3", at("y Siquem") - 0.1, 0.8);
+entra(".l3", at("y Siquem") - 0.2, { y: 20 });
+</script>

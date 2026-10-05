@@ -1,0 +1,46 @@
+<style>
+.col.d29 { left: 1100px; right: 60px; width: auto; top: 110px; bottom: 80px; }
+.pie29 { left: 24px; bottom: 20px; }
+.gr29 { position: absolute; left: 80px; top: 100px; width: 1760px; height: 660px; }
+.gr29 svg { width: 1760px; height: 660px; display: block; }
+.baj29 { position: absolute; left: 80px; right: 80px; top: 790px; display: grid; grid-template-columns: 1fr 1.3fr; column-gap: 26px; align-items: center; }
+</style>
+
+<div class="fase f1-29">
+  <div class="sangre"><div class="kb"><img src="assets/img/carcel.jpg" /></div></div>
+  <div class="velo der"></div>
+  <div class="pie pie29">“Jehová estuvo con José incluso durante los años que pasó en la cárcel, así que lo pusieron a cargo de todos los presos”. <i>La Atalaya</i> (estudio), enero de 2023, pág. 16 (wol.jw.org)</div>
+  <div class="col d29">
+    <div class="b a1">
+      <div class="cita">“Pero Jehová continuó con José. Siguió mostrándole <b>amor leal</b>”<span class="ref">GÉNESIS 39:21</span></div>
+      <div class="def js"><div class="t">amor leal<i>jé·sedh</i></div><div class="x">“se adhiere amorosamente a algo o a alguien hasta que llega a realizarse el <b>propósito</b> pretendido”</div><div class="s"><i>Perspicacia</i>, vol. 1, “Bondad”, pág. 365</div></div>
+    </div>
+  </div>
+</div>
+<div class="fase f2-29">
+  <div class="gr29"><svg viewBox="0 0 1760 660" class="gsvg"></svg></div>
+  <div class="baj29">
+    <div class="cita md">“puso a José a cargo de todos los presos”<span class="ref">GÉNESIS 39:22</span></div>
+    <div class="cita sm pr">“En Egipto, a veces se ponía a un prisionero de confianza (como lo fue José) a cargo de los otros presos, y se le asignaba a atender a los que antes de su confinamiento habían ocupado puestos importantes”<span class="ref">PERSPICACIA, VOL. 2, “PRISIÓN”, PÁGS. 719, 720</span></div>
+  </div>
+</div>
+<div class="cab sobre" style="z-index:3"><span class="cap">Génesis 39</span><span>versículos 20 al 23</span></div>
+
+<script>
+/*incluir:_grafica.js*/
+grafica(".gsvg");
+const tP = at("El jefe de la prisión");
+kb(".f1-29 .kb", 0, tP, { s: 1.08, x: 2 }, { s: 1.0, x: 0 });
+aparece(".pie29", 0.6, 0.5);
+secuencia([[".a1", 0.4]], tP - 0.4);
+entra(".js", at("La palabra hebrea"), { y: 20 });
+desaparece(".f1-29", tP - 0.4, 0.5);
+aparece(".f2-29", tP - 0.3, 0.5);
+pasosPrevios(4, tP - 0.2);
+tl.fromTo($(".gr-oro"), { opacity: 0 }, { opacity: 1, duration: 0.5, immediateRender: false }, tP - 0.2);
+tl.set($(".gr-oro"), { opacity: 0 }, 0);
+paso(4, tP + 0.6, 0.6);
+paso(5, at("a cargo de todos") - 0.2, 0.7);
+entra(".baj29 .cita.md", at("a cargo de todos"), { y: 20 });
+entra(".pr", at("En Egipto"), { y: 20 });
+</script>

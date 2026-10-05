@@ -1,0 +1,43 @@
+<style>
+.esq { position: absolute; left: 60px; top: 120px; width: 1100px; height: 520px; }
+.nod { font-family: "Fraunces"; font-weight: 700; font-size: 52px; fill: var(--tiza); }
+.nod.rosa { fill: var(--rosa); }
+.eti { font-size: 46px; }
+.caja { fill: rgba(10,16,22,0.5); stroke: rgba(241,233,216,0.25); stroke-width: 3; }
+.col { top: 120px; bottom: 90px; right: 64px; width: 640px; }
+.nuzi { position: absolute; left: 60px; top: 660px; width: 1100px; height: 380px; display: grid; grid-template-columns: 330px 1fr; column-gap: 30px; align-items: center; }
+.nuzi svg { width: 330px; height: 360px; }
+.nuzi .cita { font-size: 38px; }
+</style>
+<div class="cab"><span class="cap">Génesis 30</span><span>versículos 3 al 8</span></div>
+<svg class="esq" viewBox="0 0 1100 520">
+  <g class="n1"><rect class="caja" x="20" y="60" width="300" height="110" rx="24"/><text class="nod rosa" x="170" y="132" text-anchor="middle">Raquel</text></g>
+  <g class="f1"><path class="trazo" d="M 330 115 L 470 115"/><path class="trazo" d="M 450 97 L 474 115 L 450 133"/><text class="eti oro" x="400" y="40" text-anchor="middle">da a su sierva</text></g>
+  <g class="n2"><rect class="caja" x="490" y="60" width="270" height="110" rx="24"/><text class="nod" x="625" y="132" text-anchor="middle">Bilhá</text></g>
+  <g class="f2"><path class="trazo" d="M 770 115 L 850 115"/><path class="trazo" d="M 830 97 L 854 115 L 830 133"/></g>
+  <g class="n3"><rect class="caja" x="870" y="60" width="210" height="110" rx="24"/><text class="nod" x="975" y="132" text-anchor="middle">hijo</text></g>
+  <g class="f3"><path d="M 975 180 C 975 330 500 360 170 190" fill="none" stroke="#e9adcc" stroke-width="6" stroke-dasharray="14 10"/><path d="M 186 214 L 166 186 L 200 190" fill="none" stroke="#e9adcc" stroke-width="6"/><text class="eti" x="560" y="330" text-anchor="middle" style="fill:#e9adcc">se cuenta como hijo de Raquel</text></g>
+  <g class="rod"><text class="eti oro" x="560" y="440" text-anchor="middle" style="font-size:58px">“dé a luz sobre mis rodillas” = lo tiene como suyo</text><text class="eti" x="560" y="500" text-anchor="middle" style="font-size:34px;fill:#b3bdc8">nota de la TNM en 30:3 · Perspicacia, vol. 2, “Nacimiento”, pág. 453</text></g>
+</svg>
+<div class="nuzi">
+  <svg class="tab" viewBox="0 0 330 360"></svg>
+  <div class="tx"><div class="cita">“Si Kelim-ninu no tiene [hijos], Kelim-ninu deberá obtener una mujer [una esclava] de la tierra de Lullu para que sea la esposa de Shennima”</div><div class="s">contrato matrimonial de Nuzi (actual Irak) · La Atalaya, 1 de octubre de 2007, pág. 10, nota</div></div>
+</div>
+<div class="col">
+  <div class="b a1"><div class="cita md">“Ten relaciones con ella para que tenga hijos para mí”<span class="ref">GÉNESIS 30:3</span></div></div>
+  <div class="b a2"><div class="def"><div class="t">Concubina</div><div class="x">una <b>esposa secundaria</b>; a menudo, una esclava</div><div class="s">TNM, Glosario · “al hijo que nacía se le consideraba hijo de la mujer libre, su ama” · Perspicacia, vol. 1, “Concubina”, pág. 521</div></div></div>
+  <div class="b a3"><div class="m">una forma de <b>adoptar</b></div><div class="m md">no era un parto sobre sus piernas</div><div class="s">Perspicacia, vol. 2, “Nacimiento”, pág. 453</div></div>
+  <div class="b a4"><div class="m">no era una idea rara</div><div class="m md">en algunos contratos, <b>era una obligación</b></div><div class="m md">Sara había hecho lo mismo con Agar</div><div class="s">Génesis 16:2</div></div>
+</div>
+<script>
+/*incluir:_dibujos.js*/
+pinta(".tab", defsDibujos() + tablilla(40, 30, 250, 300));
+entra(".n1", 0.4, { y: 20 });
+aparece(".f1", at("Entonces Raquel le dio"), 0.5); entra(".n2", at("su sierva Bilhá"), { y: 20 });
+aparece(".f2", at("y el hijo se contaba"), 0.4); entra(".n3", at("y el hijo se contaba"), { y: 20 });
+traza(".f3 path", at("hijo de la señora") - 0.3, 0.9); aparece(".f3 text", at("hijo de la señora") + 0.4, 0.4);
+aparece(".rod", at("Raquel dice literalmente"), 0.5);
+entra(".nuzi", at("En Nuzi"), { y: 30 });
+salta(".tab", at("En Nuzi"), { desde: 0.8 });
+secuencia([[".a1", 0.4], [".a2", at("Era una costumbre")], [".a3", at("Raquel dice literalmente")], [".a4", at("En Nuzi")]]);
+</script>

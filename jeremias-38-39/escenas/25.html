@@ -1,0 +1,76 @@
+<style>
+.q25 { position: absolute; left: 80px; right: 80px; top: 104px; display: flex; flex-direction: column; gap: 12px; }
+.q25 .cita { font-size: 50px; }
+.linea25 { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.linea25 svg { width: 1920px; height: 1080px; }
+.et25 { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; }
+.pt25 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.1em; }
+.corona { position: absolute; left: 0; top: 0; width: 240px; height: 176px; }
+.corona svg { width: 240px; height: 176px; display: block; }
+.brillo { position: absolute; left: 1520px; top: 520px; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(233, 191, 96, 0.45), rgba(233, 191, 96, 0) 70%); }
+.q25b { position: absolute; left: 80px; right: 80px; bottom: 60px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; align-items: end; }
+.q25b .cita { font-size: 46px; }
+.q25b .s { font-size: 27px; }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 39</span><span>Ezequiel 21:26, 27 · Lucas 1:32</span></div>
+
+<div class="q25">
+  <div class="cita c1">“…retira la corona. Ya no será como antes”</div>
+  <div class="cita c2">“Y no será de nadie hasta que venga <b>el que tiene el derecho legal</b>, y a él se la daré”<span class="ref">EZEQUIEL 21:26, 27</span></div>
+</div>
+
+<div class="brillo"></div>
+<div class="linea25"><svg viewBox="0 0 1920 1080">
+  <path class="lin-d" d="M 110 690 L 760 690" stroke="#e9bf60" stroke-width="12" stroke-linecap="round"/>
+  <path class="lin-v" d="M 800 690 L 1560 690" stroke="rgba(241,233,216,0.45)" stroke-width="8" stroke-dasharray="4 22" stroke-linecap="round"/>
+  <circle class="pt-d" cx="110" cy="690" r="16" fill="#e9bf60"/>
+  <circle class="pt-s" cx="760" cy="690" r="16" fill="#e9bf60"/>
+  <circle class="pt-j" cx="1650" cy="690" r="22" fill="#fff1c9" stroke="#e9bf60" stroke-width="6"/>
+  <text class="et25 t-d" x="110" y="760" fill="#f1e9d8" text-anchor="middle">David</text>
+  <text class="pt25 t-l" x="430" y="660" fill="#b3bdc8" text-anchor="middle">LA LÍNEA DE DAVID EN JERUSALÉN</text>
+  <text class="et25 t-s" x="760" y="760" fill="#f1e9d8" text-anchor="middle">Sedequías · 607</text>
+  <text class="et25 t-n" x="1180" y="760" fill="#b3bdc8" text-anchor="middle">“no será de nadie”</text>
+  <text class="et25 t-j" x="1650" y="770" fill="#e9bf60" text-anchor="middle">Jesús</text>
+</svg></div>
+
+<div class="corona"><svg viewBox="0 0 300 220">
+  <defs><linearGradient id="e25-oro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0a8"/><stop offset="0.45" stop-color="#e2b33a"/><stop offset="1" stop-color="#94680f"/></linearGradient>
+  <linearGradient id="e25-oro2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a87812"/><stop offset="0.5" stop-color="#f6d56e"/><stop offset="1" stop-color="#a87812"/></linearGradient></defs>
+  <path d="M 40 162 L 58 70 L 102 128 L 150 38 L 198 128 L 242 70 L 260 162 Z" fill="url(#e25-oro)" stroke="#7a5409" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M 36 160 H 264 L 256 204 H 44 Z" fill="url(#e25-oro2)" stroke="#7a5409" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="58" cy="66" r="11" fill="#fff0a8" stroke="#7a5409" stroke-width="3"/>
+  <circle cx="150" cy="34" r="12" fill="#fff0a8" stroke="#7a5409" stroke-width="3"/>
+  <circle cx="242" cy="66" r="11" fill="#fff0a8" stroke="#7a5409" stroke-width="3"/>
+  <ellipse cx="150" cy="182" rx="15" ry="12" fill="#b3202a" stroke="#5e0f14" stroke-width="3"/>
+  <ellipse cx="96" cy="182" rx="11" ry="9" fill="#2f63b8" stroke="#16305c" stroke-width="3"/>
+  <ellipse cx="204" cy="182" rx="11" ry="9" fill="#2f63b8" stroke="#16305c" stroke-width="3"/>
+  <path d="M 70 150 L 84 96 M 138 120 L 150 70" stroke="rgba(255,255,255,0.55)" stroke-width="5" stroke-linecap="round"/>
+</svg></div>
+
+<div class="q25b">
+  <div class="cita l32">“Y Jehová Dios le dará <b>el trono de David</b> su padre”<span class="ref">LUCAS 1:32</span></div>
+  <div class="s r25">“Al ser descendiente de David, Jesús tenía ‘el derecho legal’ a ser el Rey del Reino mesiánico” · <i>Adoración pura</i>, cap. 8 · <i>Perspicacia</i>, «Tiempos señalados de las naciones»</div>
+</div>
+
+<script>
+aparece(".cab", 0.2, 0.5);
+traza(".lin-d", 0.3, 1.4);
+salta([".pt-d", ".pt-s"], 0.6, { st: 0.6 });
+aparece([".t-d", ".t-s", ".t-l"], 0.9, 0.6);
+// La corona descansa sobre Sedequías, se retira, queda en suspenso y va al que tiene el derecho legal.
+tl.set($(".corona"), { x: 640, y: 470, opacity: 0 }, 0);
+tl.to($(".corona"), { opacity: 1, duration: 0.6 }, 0.9);
+entra(".c1", at("retira la corona") - 0.3, { y: 20 });
+tl.to($(".corona"), { x: 900, y: 400, rotation: -8, duration: 1.6, ease: "power2.inOut" }, at("retira la corona"));
+traza(".lin-v", at("Ya no será") - 0.2, 1.6);
+entra(".c2", at("Y no será de nadie"), { y: 20 });
+aparece(".t-n", at("Y no será de nadie"), 0.5);
+tl.to($(".corona"), { x: 1060, y: 430, rotation: 6, duration: 2.4, ease: "sine.inOut" }, at("Y no será de nadie"));
+aparece(".brillo", at("derecho legal") - 0.3, 0.8);
+salta(".pt-j", at("derecho legal"), {});
+tl.to($(".corona"), { x: 1530, y: 470, rotation: 0, duration: 1.8, ease: "power2.inOut" }, at("derecho legal") + 0.4);
+entra(".t-j", at("Ese es Jesús"), { y: 16 });
+entra(".l32", at("El ángel"), { y: 20 });
+entra(".r25", at("descendiente de David"), { y: 20 });
+</script>

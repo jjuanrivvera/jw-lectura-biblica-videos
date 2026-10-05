@@ -1,0 +1,364 @@
+{
+  "assets": [
+    {
+      "path": "assets/img/abrazo-lfb.jpg",
+      "title": "“José y su padre, Jacob, se vuelven a encontrar”. Lecciones que aprendo de la Biblia",
+      "source": "“José y su padre, Jacob, se vuelven a encontrar”. Lecciones que aprendo de la Biblia",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/almendro.jpg",
+      "title": "almendro",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/aser.jpg",
+      "title": "aser",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/b2-canaan.jpg",
+      "title": "b2 canaan",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/b2-dan.jpg",
+      "title": "b2 dan",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/b2-delta.jpg",
+      "title": "b2 delta",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/b2-recuadro.jpg",
+      "title": "“Pirámide escalonada de Saqqara (Egipto). Al parecer ya estaba en pie en tiempos de Jacob”. Perspicacia",
+      "source": "“Pirámide escalonada de Saqqara (Egipto). Al parecer ya estaba en pie en tiempos de Jacob”. Perspicacia",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/b2-sur.jpg",
+      "title": "b2 sur",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/b3-caminos.jpg",
+      "title": "b3 caminos",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/benjamin-grande.jpg",
+      "title": "benjamin grande",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/benjamin.jpg",
+      "title": "benjamin",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/carro-relieve.jpg",
+      "title": "“Un faraón montado en su carro”. Perspicacia; dibujo ilustrativo · Perspicacia",
+      "source": "“Un faraón montado en su carro”. Perspicacia; dibujo ilustrativo · Perspicacia",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/copa-hist.jpg",
+      "title": "copa hist",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/cosecha-tumba.jpg",
+      "title": "cosecha tumba",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/dan.jpg",
+      "title": "dan",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/egipto-mapa.jpg",
+      "title": "“Pirámide escalonada de Saqqara (Egipto). Al parecer ya estaba en pie en tiempos de Jacob”. Perspicacia",
+      "source": "“Pirámide escalonada de Saqqara (Egipto). Al parecer ya estaba en pie en tiempos de Jacob”. Perspicacia",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/gad.jpg",
+      "title": "gad",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/hebron-calle.jpg",
+      "title": "hebron calle",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/isacar.jpg",
+      "title": "isacar",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/jose-administra.jpg",
+      "title": "“José administrando el alimento en Egipto”. Guía de actividades",
+      "source": "“José administrando el alimento en Egipto”. Guía de actividades",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/jose-llora.jpg",
+      "title": "Los hermanos ante José. Video Jehová siguió mostrando amor leal",
+      "source": "Los hermanos ante José. Video Jehová siguió mostrando amor leal",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/jose-revela.jpg",
+      "title": "jose revela",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/jose.jpg",
+      "title": "jose",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/juda-suplica.jpg",
+      "title": "Judá suplica por Benjamín. Video Jehová siguió mostrando amor leal",
+      "source": "Judá suplica por Benjamín. Video Jehová siguió mostrando amor leal",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/juda.jpg",
+      "title": "juda",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/levi.jpg",
+      "title": "levi",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/mapa-exodo.jpg",
+      "title": "mapa exodo",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/mapa-jacob-ruta.jpg",
+      "title": "mapa jacob ruta",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/mapa-jacob.jpg",
+      "title": "mapa jacob",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/mayordomo.jpg",
+      "title": "“Un mayordomo del antiguo Egipto supervisa las actividades de los trabajadores”. La Atalaya",
+      "source": "“Un mayordomo del antiguo Egipto supervisa las actividades de los trabajadores”. La Atalaya",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/mudanza-hist.jpg",
+      "title": "mudanza hist",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/neftali.jpg",
+      "title": "neftali",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/nilo-valle.jpg",
+      "title": "nilo valle",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/perdon-video.jpg",
+      "title": "“José los perdonó.” Video Aprende de los amigos de Jehová: José",
+      "source": "“José los perdonó.” Video Aprende de los amigos de Jehová: José",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/postrados-video.jpg",
+      "title": "Los hermanos ante José. Video Jehová siguió mostrando amor leal",
+      "source": "Los hermanos ante José. Video Jehová siguió mostrando amor leal",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/reencuentro-hist.jpg",
+      "title": "reencuentro hist",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/ruben.jpg",
+      "title": "ruben",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/saqqara.jpg",
+      "title": "“Pirámide escalonada de Saqqara (Egipto). Al parecer ya estaba en pie en tiempos de Jacob”. Perspicacia",
+      "source": "“Pirámide escalonada de Saqqara (Egipto). Al parecer ya estaba en pie en tiempos de Jacob”. Perspicacia",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/simeon.jpg",
+      "title": "simeon",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/zabulon.jpg",
+      "title": "zabulon",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    }
+  ]
+}

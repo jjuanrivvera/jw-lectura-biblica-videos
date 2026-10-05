@@ -1,0 +1,57 @@
+<style>
+.izq33 { position: absolute; left: 70px; top: 120px; width: 860px; height: 900px; }
+.izq33 .m.tt { font-size: 60px; }
+.cad33 { position: relative; margin-top: 24px; height: 700px; }
+.cad33 svg { position: absolute; left: 0; top: 0; width: 860px; height: 700px; }
+.nd33 { font-family: "Fraunces", serif; font-weight: 700; font-size: 50px; fill: var(--tiza); }
+.nd33.oro { fill: var(--oro); }
+.sub33 { font-family: "Caveat", cursive; font-weight: 700; font-size: 38px; fill: var(--tenue); }
+.der33 { position: absolute; left: 1000px; right: 70px; top: 120px; height: 900px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; text-align: center; }
+.der33 .fila { display: flex; align-items: center; gap: 40px; }
+.der33 .med { position: relative; width: 200px; }
+.der33 .uno { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; line-height: 1.05; text-align: left; }
+.der33 .cifra { font-size: 150px; }
+.der33 .cifra small { font-size: 48px; color: var(--tiza); }
+.der33 .cita { font-size: 46px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 46</span><span>versículos 3, 12 y 23</span></div>
+<div class="izq33w" style="position:absolute; inset:0"><div class="izq33">
+  <div class="m tt">la línea del Mesías, en la lista</div>
+  <div class="cad33"><svg viewBox="0 0 860 700">
+    <path class="lin33" d="M 60 70 V 560" stroke="#e9bf60" stroke-width="7" stroke-linecap="round" />
+    <path class="lin33b" d="M 60 560 V 650" stroke="#e9bf60" stroke-width="7" stroke-dasharray="14 12" stroke-linecap="round" />
+    <g class="k1"><circle cx="60" cy="70" r="22" fill="#e9bf60" /><text class="nd33" x="110" y="86">Judá</text></g>
+    <g class="k2"><circle cx="60" cy="230" r="22" fill="#e9bf60" /><text class="nd33 oro" x="110" y="246">Pérez</text><text class="sub33" x="300" y="246">hijo de Judá y Tamar · 46:12</text></g>
+    <g class="k3"><circle cx="60" cy="390" r="22" fill="#e9bf60" /><text class="nd33 oro" x="110" y="406">Hezrón</text><text class="sub33" x="330" y="406">hijo de Pérez · 46:12</text></g>
+    <g class="k4"><circle cx="60" cy="560" r="22" fill="#f1e9d8" /><text class="nd33" x="110" y="576">el rey David, y Jesús</text><text class="sub33" x="110" y="626">Mateo 1:3 · <tspan font-style="italic">Perspicacia</tspan>, “Pérez” y “Hezrón”</text></g>
+  </svg></div>
+</div></div>
+<div class="der33">
+  <div class="fila"><div class="wd"></div><div class="uno u1"><div>Husim, su</div><div>único hijo · 46:23</div></div></div>
+  <div class="cifra c1"><span class="n33">0</span> <small>hombres</small></div>
+  <div class="s c2">mayores de veinte años, unos dos siglos después, al salir de Egipto · <i>Perspicacia</i>, vol.&nbsp;1, “Dan”, pág.&nbsp;624</div>
+  <div class="cita c3">“Allí te convertiré en <b>una gran nación</b>”<span class="ref">GÉNESIS 46:3</span></div>
+</div>
+
+<script>
+$(".wd").outerHTML = medallon("dan");
+const tH = at("Y Husim");
+tl.set($(".izq33w"), { x: 480 }, 0);
+tl.to($(".izq33w"), { x: 0, duration: 0.9, ease: "power2.inOut" }, tH - 0.9);
+entra(".tt", 0.3, { y: 16 });
+salta(".k1", 0.6, { desde: 0.4 });
+traza(".lin33", at("Pérez y su hijo"), 2.8, { ease: "power1.inOut" });
+salta(".k2", at("Pérez y su hijo"), { desde: 0.4 });
+salta(".k3", at("Hezrón"), { desde: 0.4 });
+salta(".k4", at("David y Jesús"), { desde: 0.4 });
+traza(".lin33b", at("David y Jesús") - 0.2, 0.6);
+tl.set($(".lin33b"), { strokeDasharray: "14 12" }, at("David y Jesús") + 0.45);
+late(".k4 circle", at("bajó a Egipto"), { s: 1.3, n: 3 });
+salta(".der33 .med", tH, { desde: 0.6 });
+entra(".u1", tH + 0.4, { x: -20, y: 0 });
+entra(".c1", at("Unos dos siglos"), { y: 20 });
+cuenta(".n33", 1, 62700, at("Unos dos siglos") + 0.3, 2.0, fmtMiles);
+entra(".c2", at("sesenta y dos mil"), { y: 12 });
+entra(".c3", at("Allí te convertiré"), { y: 16 });
+</script>

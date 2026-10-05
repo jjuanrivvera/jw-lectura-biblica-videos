@@ -1,0 +1,58 @@
+<style>
+.dib { position: absolute; left: 0; top: 0; }
+.col { top: 120px; bottom: 60px; right: 60px; width: 780px; }
+.col .cita { font-size: 48px; }
+.col .m { font-size: 60px; }
+.col .def .x { font-size: 54px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 9</span><span>versículos 8 a 17 · Ezequiel 1:28</span></div>
+<svg class="dib" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="e38-cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3d52" stop-opacity="0"/><stop offset="1" stop-color="#5d7c96" stop-opacity="0.55"/></linearGradient>
+    <linearGradient id="e38-madera" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b98a52"/><stop offset="1" stop-color="#6d4b2c"/></linearGradient>
+  </defs>
+  <rect x="60" y="130" width="1000" height="880" rx="26" fill="url(#e38-cielo)"/>
+  <g class="nubes" fill="rgba(241,233,216,0.13)">
+    <ellipse cx="260" cy="300" rx="190" ry="60"/><ellipse cx="380" cy="270" rx="150" ry="70"/><ellipse cx="820" cy="320" rx="200" ry="60"/><ellipse cx="700" cy="290" rx="140" ry="60"/>
+  </g>
+  <g class="iris" fill="none" stroke-width="30" stroke-linecap="butt">
+    <path d="M 160 900 A 400 400 0 0 1 960 900" stroke="#e05a4a"/>
+    <path d="M 190 900 A 370 370 0 0 1 930 900" stroke="#f08a3a"/>
+    <path d="M 220 900 A 340 340 0 0 1 900 900" stroke="#f2cf4a"/>
+    <path d="M 250 900 A 310 310 0 0 1 870 900" stroke="#6fbf5a"/>
+    <path d="M 280 900 A 280 280 0 0 1 840 900" stroke="#4f95c8"/>
+    <path d="M 310 900 A 250 250 0 0 1 810 900" stroke="#6a5acd"/>
+  </g>
+  <g class="arco">
+    <path d="M 175 900 A 385 385 0 0 1 945 900" stroke="url(#e38-madera)" stroke-width="22" fill="none" stroke-linecap="round"/>
+    <path d="M 175 900 L 945 900" stroke="#e8e0cc" stroke-width="4"/>
+    <path class="flecha" d="M 560 960 L 560 470" stroke="#d9c7a0" stroke-width="8" stroke-linecap="round"/>
+    <path class="flecha" d="M 540 500 L 560 450 L 580 500 Z" fill="#b7bfc6"/>
+    <path class="flecha" d="M 548 960 L 560 930 L 572 960" stroke="#c0392b" stroke-width="6" fill="none"/>
+  </g>
+  <text class="t-arr" x="600" y="440" font-family="Caveat" font-weight="700" font-size="50" fill="#e9bf60">apuntando hacia arriba</text>
+  <text class="t-mismo" x="560" y="1000" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="46" fill="#f1e9d8">la misma palabra: el arco de disparar flechas</text>
+</svg>
+<div class="col">
+  <div class="b a1"><div class="cita">“con ustedes, con sus descendientes y con <b>todos los seres vivos</b> que salieron del arca”<span class="ref">GÉNESIS 9:10</span></div><div class="m">los animales, parte del pacto</div></div>
+  <div class="b a2"><div class="cita">“nunca más traeré un diluvio para destruir a todos los seres vivos ni para arruinar la tierra”<span class="ref">GÉNESIS 9:11</span></div><div class="m">descarta <b>el método</b>, no el juicio</div><div class="s">no promete que no habrá inundaciones locales · 2 Pedro 3:5-7</div></div>
+  <div class="b a3"><div class="cita">“en las nubes pongo mi <b>arcoíris</b>. Y servirá de señal del pacto que establezco con la tierra”<span class="ref">GÉNESIS 9:13</span></div><div class="def"><div class="t">arco iris en hebreo</div><div class="x">no hay palabra aparte: es el <b>arco</b> de disparar flechas</div><div class="s">Perspicacia, vol. 1, “Arco iris”</div></div></div>
+</div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+aparece([".dib rect", ".nubes"], 0.3, 0.8);
+secuencia([[".a1", 0.4], [".a2", at("Promete una sola")], [".a3", at("Y la señal")]]);
+tl.set($$(".iris, .arco, .t-arr, .t-mismo"), { opacity: 0 }, 0);
+tl.to($(".iris"), { opacity: 0.35, duration: 1.2 }, 0.6);
+tl.to($(".iris"), { opacity: 0.9, duration: 1.0 }, at("en las nubes pongo"));
+tl.to($(".iris"), { opacity: 0.3, duration: 0.6 }, at("es la misma del arco"));
+// El arco de guerra aparece de lado y gira hasta quedar como el arco iris, con la flecha hacia arriba.
+tl.fromTo($(".arco"), { opacity: 0, rotation: -90, svgOrigin: "560 900" }, { opacity: 1, rotation: -90, svgOrigin: "560 900", duration: 0.6, immediateRender: false }, at("es la misma del arco"));
+tl.to($(".arco"), { rotation: 0, svgOrigin: "560 900", duration: 1.6, ease: "power2.inOut" }, at("es la misma del arco") + 0.7);
+aparece(".t-mismo", at("es la misma del arco") + 0.3, 0.5);
+aparece(".t-arr", at("apuntando hacia arriba"), 0.5);
+tl.to($(".iris"), { opacity: 1, duration: 1.2 }, at("El arma queda"));
+tl.to($$(".flecha"), { opacity: 0.25, duration: 0.8 }, at("apuntando hacia arriba") + 1.2);
+</script>

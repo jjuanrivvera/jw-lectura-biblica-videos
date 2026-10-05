@@ -1,0 +1,66 @@
+<style>
+.ancho48 { position: absolute; left: 140px; right: 140px; top: 140px; bottom: 100px; }
+.ancho48 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 30px; }
+.ancho48 .cita { font-size: 66px; }
+.ancho48 .cita.xl { font-size: 104px; line-height: 1.08; }
+.izq48 { position: absolute; left: 90px; width: 820px; top: 160px; bottom: 100px; display: flex; flex-direction: column; justify-content: center; gap: 36px; }
+.izq48 .cita { font-size: 60px; }
+.izq48 .clave { align-self: flex-start; font-size: 56px; }
+.cofre48 { position: absolute; left: 960px; top: 170px; width: 900px; height: 760px; }
+.cofre48 text { font-family: "Caveat", cursive; font-weight: 700; font-size: 52px; }
+.pp48 { position: absolute; left: 1000px; top: 940px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 50</span><span class="vv48">versículos 24 al 26</span></div>
+<div class="ancho48">
+  <div class="b b1">
+    <div class="cita">“Estoy a punto de morir, pero <b>Dios se fijará en ustedes</b>. Él de veras los sacará de esta tierra y los llevará a la tierra que juró darles a Abrahán, a Isaac y a Jacob”<span class="ref">JOSÉ · GÉNESIS 50:24</span></div>
+  </div>
+  <div class="b b2">
+    <div class="cita xl">“Llévense de aquí <b>mis huesos</b>”<span class="ref">JOSÉ · GÉNESIS 50:25</span></div>
+    <span class="clave c2">hace <b>jurar</b> a los hijos de Israel</span>
+  </div>
+</div>
+<div class="izq48">
+  <div class="cita i1">“José murió a la edad de <b>110 años</b>. Entonces lo embalsamaron y lo pusieron en un <b>ataúd</b> en Egipto”<span class="ref">GÉNESIS 50:26</span></div>
+  <span class="clave i2">la última imagen de Génesis: un ataúd que <b>espera la salida</b></span>
+</div>
+<svg class="cofre48" viewBox="0 0 900 760">
+  <ellipse class="luz48" cx="400" cy="420" rx="380" ry="240" fill="rgba(233,191,96,0.07)"/>
+  <g class="ataud48">
+    <ellipse cx="380" cy="600" rx="330" ry="34" fill="rgba(0,0,0,0.35)"/>
+    <!-- lado -->
+    <path d="M 640 330 L 720 280 L 720 520 L 640 590 Z" fill="#5a4230"/>
+    <!-- frente -->
+    <rect x="90" y="330" width="550" height="260" fill="#7a5a3a"/>
+    <path d="M 90 395 L 640 395 M 90 460 L 640 460 M 90 525 L 640 525" stroke="#684b30" stroke-width="5"/>
+    <path d="M 110 340 L 110 580 M 620 340 L 620 580" stroke="#5f4630" stroke-width="10"/>
+    <!-- tapa -->
+    <path d="M 70 330 L 160 270 L 740 270 L 660 330 Z" fill="#94714c"/>
+    <path d="M 70 330 L 660 330 L 660 350 L 70 350 Z" fill="#6d5036"/>
+    <path d="M 660 330 L 740 270 L 740 290 L 660 350 Z" fill="#5a4230"/>
+    <path d="M 200 290 L 690 290" stroke="#a88560" stroke-width="4" opacity="0.7"/>
+  </g>
+  <g class="sal48">
+    <path class="fl48" d="M 770 420 L 870 420" fill="none" stroke="#e9bf60" stroke-width="10" stroke-linecap="round"/>
+    <path class="fl48p" d="M 846 396 L 874 420 L 846 444" fill="none" stroke="#e9bf60" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="700" y="520" fill="#e9bf60">la salida</text>
+  </g>
+</svg>
+<div class="pp48"><span class="propio chico">dibujo propio, sin detalles de su forma real</span></div>
+
+<script>
+entra(".cab", 0.2, { y: -10 });
+const tJ = at("Y les hace jurar");
+const tE = at("Lo embalsamaron");
+secuencia([[".b1", 0.3], [".b2", tJ - 0.2]], null);
+entra(".c2", tJ + 0.1, { y: 14 });
+desaparece(".ancho48", tE - 0.5, 0.4);
+entra(".i1", tE - 0.1, { y: 24 });
+aparece(".luz48", tE, 1.0);
+entra(".ataud48", tE + 0.2, { y: 30, d: 0.9 });
+aparece(".pp48", tE + 0.8, 0.5);
+entra(".i2", at("Esa es la última") - 0.1, { y: 16 });
+traza(".fl48", at("espera la salida") - 0.3, 0.6);
+aparece([".fl48p", ".sal48 text"], at("espera la salida") + 0.1, 0.4);
+</script>

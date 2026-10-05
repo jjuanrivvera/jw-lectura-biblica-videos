@@ -1,0 +1,31 @@
+<style>
+.intro { position: absolute; left: 70px; right: 70px; top: 700px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 96px; line-height: 1.05; }
+.leccion .propio { margin-top: -14px; }
+</style>
+
+<div class="seccion"><div class="r">Lecciones y preguntas para pensar</div><div class="t">Jeremías 36</div><svg viewBox="0 0 700 30"><path d="M 10 18 C 200 4 480 28 690 12"/></svg></div>
+<div class="intro">Lo que nos deja el capítulo, para conversar en familia</div>
+
+<div class="leccion l1"><div class="n">1</div><div class="l">Jehová dijo “quizás” después de 23 años. No demos por perdido a nadie.</div><div class="p"><span class="k">PARA PENSAR</span>¿Hay alguien a quien ya dejé de hablarle porque “no va a cambiar”?</div><div class="s">Jeremías 36:3</div></div>
+<div class="leccion l2"><div class="n">2</div><div class="l">A Jeremías le cerraron el templo, y dictó.</div><div class="p"><span class="k">SI SE NOS CIERRA UNA MANERA DE PREDICAR</span>una carta, una llamada, acompañar a otro</div><div class="s">Jeremías 36:5, 6</div></div>
+<div class="leccion l3"><div class="n">3</div><div class="l">Micaya contó lo que oyó en el templo.</div><div class="p"><span class="k">PARA PENSAR</span>Cuando salgo del Salón, ¿podría repetir lo que oí, o solo que “estuvo bonito”?</div><div class="s">Jeremías 36:11-13</div></div>
+<div class="leccion l4"><div class="n">4</div><div class="l">El corazón no se endurece de golpe: se endurece columna por columna.</div><span class="propio">observación propia</span><div class="p"><span class="k">PARA PENSAR</span>¿Cuál fue el último consejo bíblico que me incomodó, y qué hice con él?</div><div class="s">Jeremías 36:23</div></div>
+<div class="leccion l5"><div class="n">5</div><div class="l">Le quemaron meses de trabajo, y Jehová dijo: “Consigue otro rollo”.</div><div class="p"><span class="k">EN FAMILIA</span>Si nos quitaran las Biblias, ¿qué textos tenemos guardados en la cabeza?</div><div class="s">Jeremías 36:28</div></div>
+
+<script>
+entra(".seccion .r", 0.4, { y: -10 });
+entra(".seccion .t", 0.7, { y: 30, d: 0.8 });
+traza(".seccion path", 1.2, 1.0);
+escribe(".intro", 1.6, 2.4);
+sale(".intro", at("Primera") - 0.4);
+const L = [["l1", "Primera"], ["l2", "Segunda"], ["l3", "Tercera"], ["l4", "Cuarta"], ["l5", "Y quinta"]];
+L.forEach(([c, w], i) => {
+  const t = at(w);
+  entra("." + c + " .n", t, { x: -20, y: 0 });
+  escribe("." + c + " .l", t + 0.4, 1.6);
+  if ($("." + c + " .propio")) entra("." + c + " .propio", at("observación propia"), { y: 10 });
+  entra("." + c + " .p", t + 2.4, { y: 20 });
+  aparece("." + c + " .s", t + 2.8);
+  if (i < L.length - 1) sale("." + c, at(L[i + 1][1]) - 0.4, { d: 0.35 });
+});
+</script>

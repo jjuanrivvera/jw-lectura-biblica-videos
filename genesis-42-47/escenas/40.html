@@ -1,0 +1,41 @@
+<style>
+.tit40 { position: absolute; left: 80px; right: 80px; top: 100px; display: flex; align-items: baseline; gap: 26px; }
+.tit40 .m { font-size: 76px; }
+.grid40 { position: absolute; left: 60px; right: 60px; top: 220px; height: 500px; display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 1fr 1fr; gap: 20px; }
+.grid40 .tj { justify-content: space-between; }
+.grid40 .tj .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; line-height: 1.02; }
+.grid40 .tj .ref { font-size: 24px; }
+.cita40 { position: absolute; left: 80px; right: 80px; top: 752px; text-align: center; }
+.cita40 .cita { font-size: 50px; }
+.bajo40 { position: absolute; left: 60px; right: 60px; top: 880px; display: grid; grid-template-columns: 1fr 1.4fr; gap: 20px; }
+.bajo40 .tj .x { font-size: 32px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 47</span><span>versículos 9 al 12</span></div>
+<div class="tit40"><div class="m">“años muy difíciles”</div><span class="f" style="font-size:26px">Génesis 47:9</span></div>
+<div class="grid40">
+  <div class="tj g1"><div class="x">huyó de su hermano, que quería matarlo</div><div class="ref">27:41</div></div>
+  <div class="tj g2"><div class="x">Labán lo engañó y le cambió el salario diez veces</div><div class="ref">29:25; 31:41</div></div>
+  <div class="tj g3"><div class="x">calor de día y frío de noche, con los rebaños</div><div class="ref">31:40</div></div>
+  <div class="tj g4"><div class="x">quedó cojo tras luchar con el ángel</div><div class="ref">32:25, 31</div></div>
+  <div class="tj g5"><div class="x">lo que Simeón y Leví hicieron en Siquem</div><div class="ref">34:30</div></div>
+  <div class="tj g6"><div class="x">se le murió Raquel en el camino</div><div class="ref">35:18, 19</div></div>
+  <div class="tj g7"><div class="x">lloró a José más de veinte años</div><div class="ref">37:35</div></div>
+  <div class="tj g8"><div class="x">temió perder a Benjamín</div><div class="ref">42:36</div></div>
+</div>
+<div class="cita40"><div class="cita c1">“¡Y es que <b>al pobre le pasó de todo</b>!”<span class="ref">SEAMOS VALIENTES AL ANDAR CON DIOS, CAP.&nbsp;7, PÁG.&nbsp;40</span></div></div>
+<div class="bajo40">
+  <div class="tj b1"><div class="k">al salir · 47:10</div><div class="x">Jacob <b>bendice</b> otra vez al faraón</div></div>
+  <div class="tj on b2"><div class="k">José · 47:11, 12</div><div class="x">una propiedad en la mejor parte del país, y <b>alimento</b> para toda la familia</div></div>
+</div>
+
+<script>
+entra(".tit40", 0.2, { y: 16 });
+const pasos40 = [["g1", "Huyó de su hermano"], ["g2", "Labán lo engañó"], ["g3", "Pasó calor"], ["g4", "Quedó cojo"], ["g5", "Sufrió por lo que"], ["g6", "Se le murió Raquel"], ["g7", "Lloró a José"], ["g8", "y temió perder"]];
+entra(pasos40.map(([g]) => `.${g}`), 0.6, { y: 26, st: 0.08 });
+tl.to(pasos40.map(([g]) => $(`.${g}`)), { opacity: 0.3, duration: 0.4 }, 1.6);
+pasos40.forEach(([g, f]) => tl.to($(`.${g}`), { opacity: 1, duration: 0.35 }, at(f) - 0.2));
+entra(".c1", at("Al pobre le pasó"), { y: 20, s: 0.96 });
+entra(".b1", at("Aun así"), { y: 20 });
+entra(".b2", at("Y José les da"), { y: 20 });
+</script>

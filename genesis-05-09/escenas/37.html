@@ -1,0 +1,52 @@
+<style>
+.top { position: absolute; left: 80px; right: 80px; top: 130px; }
+.top .cita { font-size: 58px; }
+.izq { position: absolute; left: 80px; top: 390px; width: 900px; bottom: 70px; }
+.izq > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.izq .m { font-size: 62px; }
+.izq .dato .v { font-size: 64px; }
+.izq .cita { font-size: 46px; }
+.casa { position: absolute; left: 1040px; top: 380px; width: 820px; height: 640px; }
+.ct { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 9</span><span>versículos 5 y 6 · 4:10 · Deuteronomio 22:8</span></div>
+<div class="top"><div class="cita">“Si un hombre derrama la sangre de alguien, otra persona derramará la sangre de ese hombre, porque Dios hizo al ser humano <b>a su imagen</b>”<span class="ref">GÉNESIS 9:6</span></div></div>
+<div class="izq">
+  <div class="b a1"><div class="dato"><div class="v">Caín</div><div class="k">“Jehová no dio autorización a nadie para que ejecutase a Caín”</div><div class="s">Perspicacia, vol. 1, “Delito y castigo”</div></div><div class="m">ahora, por primera vez, <b>autoriza al hombre</b></div></div>
+  <div class="b a2"><div class="cita">“la pena capital regulada por la <b>autoridad debidamente constituida</b>”<span class="ref">PERSPICACIA, VOL. 2, “NOÉ”</span></div><div class="m">no la venganza personal</div><div class="m">la razón: la <b>imagen de Dios</b></div></div>
+  <div class="b a3"><div class="def"><div class="t">culpa de sangre</div><div class="x">ser <b>responsable</b> ante Dios de una vida</div><div class="s">también por no prevenir · Perspicacia, vol. 1, “Culpa de sangre”</div></div><div class="m">el <b>pretil</b>: un muro bajo alrededor del techo</div><div class="s">Deuteronomio 22:8</div></div>
+</div>
+<svg class="casa" viewBox="0 0 820 640">
+  <defs>
+    <linearGradient id="e37-muro" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d9c29a"/><stop offset="1" stop-color="#b89c70"/></linearGradient>
+    <linearGradient id="e37-lado" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a08560"/><stop offset="1" stop-color="#7d6645"/></linearGradient>
+    <linearGradient id="e37-techo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c8b08a"/><stop offset="1" stop-color="#a8906a"/></linearGradient>
+  </defs>
+  <ellipse cx="400" cy="600" rx="380" ry="26" fill="rgba(0,0,0,0.35)"/>
+  <path d="M 120 250 L 560 250 L 560 600 L 120 600 Z" fill="url(#e37-muro)"/>
+  <path d="M 560 250 L 700 180 L 700 530 L 560 600 Z" fill="url(#e37-lado)"/>
+  <path class="techo" d="M 120 250 L 560 250 L 700 180 L 260 180 Z" fill="url(#e37-techo)"/>
+  <path d="M 150 250 L 530 250" stroke="#8a7050" stroke-width="3"/>
+  <rect x="290" y="440" width="100" height="160" rx="6" fill="#5a3b20"/>
+  <rect x="170" y="330" width="70" height="60" fill="#3a2a1c"/><rect x="440" y="330" width="70" height="60" fill="#3a2a1c"/>
+  <path d="M 600 590 L 640 570 L 640 520 L 600 540 Z" fill="#6b5236"/>
+  <g class="escalera" stroke="#6b5236" stroke-width="10" stroke-linecap="round"><path d="M 580 598 L 690 290"/><path d="M 620 600 L 730 300"/></g>
+  <g class="pretil">
+    <path d="M 120 250 L 120 205 L 560 205 L 560 250 Z" fill="#e8d4ae" stroke="#e9bf60" stroke-width="6"/>
+    <path d="M 560 250 L 560 205 L 700 135 L 700 180 Z" fill="#c9b08a" stroke="#e9bf60" stroke-width="6"/>
+    <path d="M 120 205 L 260 135 L 700 135" fill="none" stroke="#e9bf60" stroke-width="6"/>
+  </g>
+  <text class="ct tp" x="300" y="110" fill="#e9bf60">el pretil</text>
+  <path class="fl" d="M 390 118 C 420 130 440 150 450 175" stroke="#e9bf60" stroke-width="5" fill="none" stroke-linecap="round"/>
+</svg>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".top", 0.3, { y: 30 });
+secuencia([[".a1", at("Algo nuevo")], [".a2", at("a cargo de la autoridad")], [".a3", at("El principio llega")]]);
+aparece(".casa", at("El principio llega") - 0.2, 0.6);
+tl.set($$(".pretil, .tp, .fl"), { opacity: 0 }, 0);
+aparece([".pretil", ".tp", ".fl"], at("un pretil"), 0.5);
+late(".pretil", at("un muro bajo"), { s: 1.03, n: 3 });
+</script>

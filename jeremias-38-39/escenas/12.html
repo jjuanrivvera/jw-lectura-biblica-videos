@@ -1,0 +1,58 @@
+<style>
+.retrato { position: absolute; left: 40px; top: 70px; width: 720px; height: 1001px; -webkit-mask-image: radial-gradient(ellipse 62% 58% at 50% 46%, #000 62%, transparent 100%); mask-image: radial-gradient(ellipse 62% 58% at 50% 46%, #000 62%, transparent 100%); }
+.retrato .kb { position: absolute; inset: 0; }
+.retrato img { width: 100%; height: 100%; display: block; }
+.pie12 { left: 60px; bottom: 22px; }
+.col12 { position: absolute; left: 800px; right: 60px; top: 110px; bottom: 90px; }
+.col12 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.lugar12 { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.1em; color: var(--tenue); text-transform: uppercase; }
+.dlg { display: grid; grid-template-columns: 190px 1fr; column-gap: 20px; align-items: baseline; }
+.dlg .quien { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; text-transform: uppercase; text-align: right; }
+.dlg .quien.rey { color: var(--rojo); }
+.dlg .quien.jer { color: var(--oro); }
+.dlg .cita { font-size: 44px; }
+.jura { border-left: 8px solid var(--rojo); padding: 6px 0 6px 26px; }
+.jura .m { font-size: 56px; }
+.jura .s { font-size: 27px; margin-top: 8px; }
+.of { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.of .ch { display: flex; align-items: center; gap: 18px; font-family: "Caveat", cursive; font-weight: 700; font-size: 60px; line-height: 1.05; }
+.of .ch .ok { width: 40px; height: 40px; border-radius: 50%; background: var(--oro); flex: none; }
+.col12 .cita.q17 { font-size: 40px; }
+</style>
+
+<div class="retrato"><div class="kb" data-layout-allow-overflow><img src="assets/img/sedequias.jpg" /></div></div>
+<div class="pie pie12"><i>Dios nos habla mediante Jeremías</i>, pág. 29</div>
+<div class="cab" style="left:800px"><span class="cap">Jeremías 38</span><span>versículos 14 al 18</span></div>
+
+<div class="col12">
+  <div class="b b1">
+    <div class="lugar12">“la tercera entrada, que está en la casa de Jehová” · 38:14</div>
+    <div class="dlg d1"><div class="quien rey">el rey</div><div class="cita">“No me ocultes nada”</div></div>
+    <div class="dlg d2"><div class="quien jer">Jeremías</div><div class="cita">“Si te lo digo, seguro que me vas a matar. Y, si te doy un consejo, <b>no me vas a escuchar</b>”</div></div>
+    <div class="jura j1"><div class="m">juró en secreto que no lo mataría…</div><div class="s">“pero no prometió que prestaría atención a tal verdad” · <i>La Atalaya</i>, 1 de julio de 1980, pág. 25</div></div>
+  </div>
+  <div class="b b2">
+    <div class="cita q17">“Si te rindes ante los príncipes del rey de Babilonia…”<span class="ref">JEREMÍAS 38:17 · “TE RINDES”: LITERALMENTE, “SALES”</span></div>
+    <div class="of">
+      <div class="ch c1"><span class="ok"></span>tú seguirás con vida</div>
+      <div class="ch c2"><span class="ok"></span>esta ciudad no será quemada con fuego</div>
+      <div class="ch c3"><span class="ok"></span>tú y los de tu casa no morirán</div>
+    </div>
+    <div class="propio pr12">la misma oferta que al pueblo (38:2): no hay trato especial · observación propia</div>
+  </div>
+</div>
+
+<script>
+aparece(".cab", 0.2, 0.5);
+entra(".retrato", 0.2, { y: 0, x: -30, d: 0.9 });
+aparece(".pie12", 1.0, 0.5);
+kb(".retrato .kb", 0, DUR, { s: 1.08, y: 1 }, { s: 1.0, y: 0 });
+secuencia([[".b1", 0.6], [".b2", at("Y Jeremías le dio")]], null, { y: 24 });
+entra(".d1", at("No me ocultes"), { x: 20, y: 0 });
+entra(".d2", at("Jeremías fue franco"), { x: 20, y: 0 });
+entra(".j1", at("El rey le juró"), { x: 20, y: 0 });
+entra(".c1", at("seguirás con vida"), { x: 20, y: 0 });
+entra(".c2", at("esta ciudad no"), { x: 20, y: 0 });
+entra(".c3", at("los de tu casa"), { x: 20, y: 0 });
+entra(".pr12", at("La misma salida"), { y: 16 });
+</script>

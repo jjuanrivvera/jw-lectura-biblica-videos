@@ -1,0 +1,50 @@
+<style>
+.mapa.H { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa.H .cam img, .mapa.H .cam svg { width: 2160px; height: 1788px; }
+.col.d43 { left: 1180px; right: 60px; width: auto; top: 110px; bottom: 80px; }
+.cab.d43c { left: 1180px; }
+</style>
+
+<div class="mapa H">
+  <div class="cam">
+    <img src="assets/img/b2-hambre.jpg" />
+    <svg viewBox="0 0 2160 1788"><g class="marcas"></g></svg>
+  </div>
+  <div class="pie-mapa">Mapa: apéndice B2 de la TNM (wol.jw.org) · flechas añadidas: esquema, no rutas</div>
+</div>
+<div class="panel"></div>
+<div class="cab d43c"><span class="cap">Génesis 41</span><span>versículos 53 al 57</span></div>
+<div class="col d43">
+  <div class="b a1">
+    <div class="cita md">“hubo hambre en todos los países, pero en toda la tierra de Egipto <b>había pan</b>”<span class="ref">GÉNESIS 41:54</span></div>
+    <div class="def tt"><div class="t">“toda la tierra”</div><div class="x">los pueblos de alrededor, también <b>Canaán</b>: “el hambre había consumido la tierra de Egipto y la tierra de Canaán”</div><div class="s">Génesis 47:13 · “se extendió muy lejos de las fronteras egipcias”: <i>Perspicacia</i>, vol. 1, “Hambre”, pág. 1082</div></div>
+    <div class="cita sm ve">“gente de toda la tierra llegaba a Egipto para comprarle grano a José”<span class="ref">GÉNESIS 41:57</span></div>
+  </div>
+  <div class="b a2">
+    <div class="m">el hambre empezó “alrededor del año <b>1730 a. E.C.</b> y duró siete años”</div>
+    <div class="cita md">“gracias a esta provisión, no se sabe de ningún súbdito que muriese de hambre”<span class="ref">¡DESPERTAD!, 8 DE JUNIO DE 1987, PÁG. 27</span></div>
+  </div>
+</div>
+
+<script>
+pinta(".marcas", `
+  <path class="fl43 fa" d="M 1116 992 C 900 1080 600 1130 360 1200" stroke="#c0392b" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path class="fl43 fb" d="M 1400 440 C 1250 700 1000 950 800 1080 C 620 1160 480 1200 360 1230" stroke="#c0392b" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path class="fl43 fc" d="M 1226 1208 C 1000 1240 700 1262 380 1276" stroke="#c0392b" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path class="pt43 pa" d="M 400 1170 L 360 1200 L 404 1222" stroke="#c0392b" stroke-width="16" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="pt43 pb" d="M 402 1206 L 360 1230 L 404 1252" stroke="#c0392b" stroke-width="16" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="pt43 pc" d="M 420 1256 L 380 1276 L 422 1298" stroke="#c0392b" stroke-width="16" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle class="anillo oro a-eg" cx="218" cy="1369" r="60"/>
+  <g class="ch-eg"><rect x="80" y="1440" width="360" height="96" rx="20" fill="rgba(15,22,30,0.9)"/><text class="lugar" x="104" y="1504" font-size="56" style="fill:#e9bf60">había pan</text></g>
+  <g class="ch-ca"><rect x="1200" y="860" width="330" height="90" rx="20" fill="rgba(15,22,30,0.9)"/><text class="lugar" x="1222" y="922" font-size="52" style="fill:#ec8a67">Canaán</text></g>`);
+const V = { x: 0, y: 0, w: 1100, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 60, y: 300, w: 1500, h: 1470 }, V), 0);
+traza(".a-eg", 0.6, 0.8);
+aparece(".ch-eg", at("había pan") - 0.2, 0.4);
+secuencia([[".a1", 0.4], [".a2", at("El hambre empezó")]]);
+entra(".tt", at("Toda la tierra son"), { y: 20 });
+aparece(".ch-ca", at("también Canaán") - 0.2, 0.4);
+const tF = at("de todas partes");
+[["fa", "pa"], ["fb", "pb"], ["fc", "pc"]].forEach(([f, p], i) => { traza("." + f, tF + i * 0.4, 1.6); aparece("." + p, tF + i * 0.4 + 1.5, 0.3); });
+entra(".ve", tF, { y: 16 });
+</script>

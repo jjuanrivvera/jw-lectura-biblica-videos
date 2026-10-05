@@ -1,0 +1,28 @@
+<!--lead:1.4-->
+<style>
+.port { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 30px; }
+.port .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 36px; letter-spacing: 0.3em; color: var(--verde); }
+.port .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 110px; padding: 0 60px; line-height: 1.02; }
+.port .t b { color: var(--verde); }
+.port svg { width: 1100px; height: 40px; }
+.port svg path { fill: none; stroke: var(--verde); stroke-width: 8; stroke-linecap: round; }
+.port .s2 { font-family: "Caveat", cursive; font-weight: 700; font-size: 72px; color: var(--oro); }
+.caps { display: flex; gap: 26px; margin-top: 20px; }
+.caps div { width: 150px; height: 150px; border-radius: 26px; border: 5px solid var(--verde); display: flex; align-items: center; justify-content: center; font-family: "Fraunces", serif; font-weight: 700; font-size: 80px; color: var(--verde); }
+</style>
+
+<div class="port">
+  <div class="r">GÉNESIS 5 AL 9</div>
+  <div class="t">Lecciones y <b>preguntas</b> para pensar</div>
+  <svg viewBox="0 0 1100 40" preserveAspectRatio="none"><path d="M 6 24 C 300 6 800 36 1094 14"/></svg>
+  <div class="s2">tres por capítulo</div>
+  <div class="caps"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+</div>
+
+<script>
+entra(".port .r", 0.3, { y: -20 });
+entra(".port .t", 0.5, { y: 40, d: 0.8 });
+traza(".port svg path", 0.9, 1.0);
+escribe(".port .s2", at("Tres por capítulo"), 0.9);
+entra(".caps div", at("con algunas preguntas"), { y: 30, st: 0.15 });
+</script>

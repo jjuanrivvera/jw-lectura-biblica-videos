@@ -1,0 +1,59 @@
+<style>
+.q16 { position: absolute; left: 110px; right: 110px; top: 500px; text-align: center; }
+.q16 .cita { font-size: 44px; }
+.fila16 { position: absolute; left: 50px; right: 50px; top: 110px; height: 230px; }
+.fila16 .med { width: 150px; top: 0; }
+.fila16 .med .n { font-size: 22px; }
+.mesa16 { position: absolute; left: 60px; right: 60px; top: 318px; height: 26px; border-radius: 13px; background: linear-gradient(180deg, #7d5834, #5a3c22); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45); }
+.cuenta16 { position: absolute; left: 90px; right: 90px; top: 760px; display: flex; align-items: baseline; justify-content: center; gap: 22px; }
+.cuenta16 .cifra { font-size: 96px; }
+.cuenta16 .u { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; }
+.cuenta16 .propio { margin-left: 10px; }
+.platos16 { position: absolute; left: 50px; right: 50px; top: 356px; height: 90px; }
+.plato { position: absolute; top: 0; width: 120px; height: 90px; }
+.bajo16 { position: absolute; left: 90px; right: 90px; top: 740px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; }
+.bajo16 .tj .x { font-size: 36px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 43</span><span>versículos 33 y 34</span></div>
+<div class="q16"><div class="cita c1">“Pusieron al mayor donde le correspondía por su derecho de primogénito y al menor donde le correspondía por su edad. Y ellos <b>se miraban unos a otros asombrados</b>”<span class="ref">GÉNESIS 43:33</span></div></div>
+<div class="mesa16"></div>
+<div class="fila16"></div>
+<div class="platos16"></div>
+<div class="cuenta16"><span class="cifra">39.916.800</span><span class="u">maneras de sentar a once en fila (once factorial)</span><span class="propio chico">observación propia</span></div>
+<div class="bajo16">
+  <div class="tj b1"><div class="k">la ración de Benjamín · × 5</div><div class="x">por <b>cariño</b>, y quizá como <b>prueba</b>: “para determinar si había en ellos algún sentimiento recóndito de celos, pero no parecía haberlo”</div><div class="ref"><i>Perspicacia</i>, “José” y “Benjamín”</div></div>
+  <div class="tj on b2"><div class="k">veinte años antes, y esta vez</div><div class="x">la preferencia por un hijo de Raquel acabó en una <b>cisterna</b> (37:3, 4, 24). Ahora “continuaron comiendo y bebiendo con él hasta quedar satisfechos” (43:34)</div></div>
+</div>
+
+<script>
+const ONCE = HIJOS.filter(([k]) => k !== "jose");
+const paso = 1820 / 11;
+const X = (i) => i * paso + (paso - 150) / 2;
+// Desorden inicial fijo (determinista): así "quedarían" si alguien los sentara sin conocerlos.
+const DES = [6, 2, 9, 0, 4, 10, 1, 7, 3, 8, 5];
+$(".fila16").innerHTML = ONCE.map(([k], i) => `<div class="pos16" style="position:absolute;left:0;top:0">${medallon(k, { estilo: `left:${X(DES.indexOf(i))}px` })}</div>`).join("");
+const pos = $$(".pos16");
+// Platos: uno por hermano; el de Benjamín, cinco.
+let pl = "";
+ONCE.forEach(([k], i) => {
+  const n = k === "benjamin" ? 5 : 1;
+  let s = "";
+  for (let j = 0; j < n; j++) s += `<ellipse cx="60" cy="${70 - j * 14}" rx="46" ry="14" fill="#d8c7a4" stroke="#8c7a52" stroke-width="3"/><ellipse cx="60" cy="${64 - j * 14}" rx="30" ry="8" fill="#b9834a"/>`;
+  pl += `<svg class="plato p-${k}" style="left:${X(i) + 15}px" viewBox="0 0 120 90">${s}</svg>`;
+});
+$(".platos16").innerHTML = pl;
+const tS = at("los sientan del mayor");
+const tR = at("José les manda raciones");
+entra(".c1", 0.3, { y: 16 });
+aparece(".mesa16", 0.4, 0.5);
+salta($$(".fila16 .med"), 0.6, { desde: 0.6, st: 0.06 });
+// Del desorden al orden de edad: cada uno se corre a su lugar.
+pos.forEach((p, i) => { const dx = X(i) - X(DES.indexOf(i)); tl.to(p, { x: dx, duration: 1.6, ease: "power3.inOut" }, tS + 0.2 + i * 0.05); });
+entra(".cuenta16", at("Hay casi cuarenta"), { y: 20 });
+sale(".cuenta16", tR - 0.5, { y: -10 });
+salta(".plato", tR, { desde: 0.4, st: 0.05 });
+late(".p-benjamin", at("cinco veces mayor"), { s: 1.18, n: 3 });
+entra(".b1", at("Por cariño"), { y: 20 });
+entra(".b2", at("Veinte años antes"), { y: 20 });
+</script>

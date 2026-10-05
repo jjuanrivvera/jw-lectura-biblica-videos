@@ -1,0 +1,542 @@
+{
+  "duration": 2326.824,
+  "scenes": [
+    {
+      "id": "00",
+      "title": "Vamos a analizar Génesis 1 al 4",
+      "start": 0.0,
+      "duration": 34.68,
+      "beats": [
+        0.1,
+        15.144
+      ],
+      "source": "Génesis 1:1 a 4:26 · Traducción del Nuevo Mundo, edición de estudio",
+      "chapter": "Lectura familiar"
+    },
+    {
+      "id": "01",
+      "title": "Antes de los seis días",
+      "start": 34.68,
+      "duration": 49.968,
+      "beats": [
+        0.1,
+        21.473,
+        31.552
+      ],
+      "source": "Perspicacia, «Creación», págs. 569-571; «Tierra», pág. 1123",
+      "chapter": "Génesis 1 · Versículos 1 y 2"
+    },
+    {
+      "id": "02",
+      "title": "Cuánto dura un día",
+      "start": 84.648,
+      "duration": 58.2,
+      "beats": [
+        0.1,
+        20.052,
+        35.5
+      ],
+      "source": "Perspicacia, «Día», págs. 676, 678; «Creación», pág. 572 · Hebreos 4:1-11",
+      "chapter": "Génesis 1 y 2 · El tiempo"
+    },
+    {
+      "id": "03",
+      "title": "Luz y lumbreras",
+      "start": 142.848,
+      "duration": 58.68,
+      "beats": [
+        17.842
+      ],
+      "source": "Perspicacia, «Creación», pág. 571 · jw.org, «¿Cuándo comenzó Dios a crear el universo?»",
+      "chapter": "Génesis 1 · Días 1 y 4"
+    },
+    {
+      "id": "04",
+      "title": "Un espacio y suelo seco",
+      "start": 201.528,
+      "duration": 58.824,
+      "beats": [
+        0.1,
+        20.828,
+        33.684
+      ],
+      "source": "Génesis 1:6-13 y nota · Perspicacia, «Creación», pág. 571 · jw.org, art. 82",
+      "chapter": "Génesis 1 · Días 2 y 3"
+    },
+    {
+      "id": "05",
+      "title": "Preparar y llenar",
+      "start": 260.352,
+      "duration": 58.608,
+      "beats": [
+        0.1,
+        13.671,
+        30.5
+      ],
+      "source": "Génesis 1:3-31 · Imagen: «La ciencia y el relato de Génesis», pág. 26 · Diagrama de la investigación",
+      "chapter": "Génesis 1 · La secuencia"
+    },
+    {
+      "id": "06",
+      "title": "A imagen de Dios",
+      "start": 318.96,
+      "duration": 57.648,
+      "beats": [
+        0.1,
+        12.447,
+        29.263
+      ],
+      "source": "Perspicacia, «Creación», pág. 570; «Hombre», págs. 1163-1164; «Tierra», págs. 1123-1124",
+      "chapter": "Génesis 1 · Versículos 26 al 31"
+    },
+    {
+      "id": "07",
+      "title": "El descanso y la lupa",
+      "start": 376.608,
+      "duration": 51.528,
+      "beats": [
+        0.1,
+        21.039
+      ],
+      "source": "Perspicacia, «Creación», págs. 570, 572-574; «Sábado», págs. 880-882",
+      "chapter": "Génesis 2 · Un acercamiento"
+    },
+    {
+      "id": "08",
+      "title": "Un nombre y una persona viva",
+      "start": 428.136,
+      "duration": 56.568,
+      "beats": [
+        0.1,
+        17.328,
+        32.092
+      ],
+      "source": "Génesis 2:4, 7 y notas · Perspicacia, «Alma», págs. 95-96; «Tierra», pág. 1123",
+      "chapter": "Génesis 2 · Nombre y vida"
+    },
+    {
+      "id": "09",
+      "title": "Un jardín, trabajo y un límite",
+      "start": 484.704,
+      "duration": 58.392,
+      "beats": [
+        0.1,
+        13.828,
+        26.973,
+        39.434
+      ],
+      "source": "Génesis 2:15-17 · Perspicacia, «Edén», págs. 731-733; «Jardín», pág. 18",
+      "chapter": "Génesis 2 · El jardín"
+    },
+    {
+      "id": "10",
+      "title": "Una ayudante que lo complementa",
+      "start": 543.096,
+      "duration": 57.84,
+      "beats": [
+        0.1,
+        9.421,
+        37.407,
+        42.592
+      ],
+      "source": "Génesis 2:18-25 y notas · La Atalaya, 1 de septiembre de 2009, págs. 13-14",
+      "chapter": "Génesis 2 · El matrimonio"
+    },
+    {
+      "id": "11",
+      "title": "Edén y sus cuatro ríos",
+      "start": 600.936,
+      "duration": 56.424,
+      "beats": [
+        0.1,
+        28.513
+      ],
+      "source": "Génesis 2:10-14 y nota · Perspicacia, «Edén», «Pisón», «Guihón», «Éufrates» · Mapa: Natural Earth",
+      "chapter": "Génesis 2 · Los cuatro ríos"
+    },
+    {
+      "id": "12",
+      "title": "Qué se puede reconocer hoy",
+      "start": 657.36,
+      "duration": 55.392,
+      "beats": [
+        0.1,
+        15.21,
+        30.697
+      ],
+      "source": "Perspicacia, «Edén», pág. 733; «Pisón» · La Atalaya, 15 de enero de 1972, págs. 59-60 · Natural Earth",
+      "chapter": "Génesis 2 · El lugar y el presente"
+    },
+    {
+      "id": "13",
+      "title": "La serpiente y quien estaba detrás",
+      "start": 712.752,
+      "duration": 54.768,
+      "beats": [
+        0.1,
+        18.789
+      ],
+      "source": "Perspicacia, «Serpiente, culebra», «Eva» · La Atalaya, 1 de septiembre de 1984, pág. 31 · Apocalipsis 12:9",
+      "chapter": "Génesis 3 · La serpiente"
+    },
+    {
+      "id": "14",
+      "title": "Cómo cambió la conversación",
+      "start": 767.52,
+      "duration": 57.024,
+      "beats": [
+        12.118,
+        41.157
+      ],
+      "source": "Génesis 2:16-17; 3:1-5 · Perspicacia, «Edén» y «Pecado»",
+      "chapter": "Génesis 3 · El diálogo"
+    },
+    {
+      "id": "15",
+      "title": "Del deseo a la culpa",
+      "start": 824.544,
+      "duration": 60.96,
+      "beats": [
+        0.1,
+        15.342,
+        27.394,
+        43.934
+      ],
+      "source": "Génesis 3:6-14 · Perspicacia, «Adán», «Pecado» · ¡Despertad!, 8 de septiembre de 1998, pág. 26",
+      "chapter": "Génesis 3 · Decisiones y respuestas"
+    },
+    {
+      "id": "16",
+      "title": "Las consecuencias",
+      "start": 885.504,
+      "duration": 61.32,
+      "beats": [
+        0.1,
+        13.934,
+        42.828
+      ],
+      "source": "Génesis 3:14-19 · Perspicacia, «Serpiente», «Dolores de parto» · La Atalaya, 15 de octubre de 1980, pág. 27",
+      "chapter": "Génesis 3 · Las sentencias"
+    },
+    {
+      "id": "17",
+      "title": "La muerte y lo que se heredó",
+      "start": 946.824,
+      "duration": 63.984,
+      "beats": [
+        0.1,
+        19.144,
+        28.197,
+        41.855
+      ],
+      "source": "Perspicacia, «Adán», «Vida», «Pecado» · La Atalaya 2019, núm. 3, pág. 9; mayo de 1976, pág. 280",
+      "chapter": "Génesis 3 · Muerte y descendencia"
+    },
+    {
+      "id": "18",
+      "title": "La primera promesa",
+      "start": 1010.808,
+      "duration": 64.104,
+      "beats": [
+        16.394,
+        30.302,
+        45.736
+      ],
+      "source": "La Atalaya, julio de 2022, párrs. 4-12 · Génesis 3:15 y notas",
+      "chapter": "Génesis 3:15 · La primera profecía"
+    },
+    {
+      "id": "19",
+      "title": "Una promesa que se va aclarando",
+      "start": 1074.912,
+      "duration": 66.456,
+      "beats": [
+        0.1,
+        15.868,
+        28.986,
+        46.355
+      ],
+      "source": "La Atalaya, julio de 2022, párrs. 8-15 · Referencias marginales de Génesis 3:15",
+      "chapter": "Génesis 3:15 · Desarrollo de la promesa"
+    },
+    {
+      "id": "20",
+      "title": "Un nombre, ropa y una salida",
+      "start": 1141.368,
+      "duration": 51.528,
+      "beats": [
+        0.1,
+        19.565,
+        33.631
+      ],
+      "source": "Génesis 3:20-24 · Perspicacia, «Eva», «Vida», «Querubín» · Glosario de la TNM",
+      "chapter": "Génesis 3 · Versículos 20 al 24"
+    },
+    {
+      "id": "21",
+      "title": "Dos hermanos y sus ofrendas",
+      "start": 1192.896,
+      "duration": 54.048,
+      "beats": [
+        13.157
+      ],
+      "source": "«Dios aprobó sus ofrendas», págs. 16-19, párrs. 4-12 · Perspicacia, «Caín», pág. 387 · Hebreos 11:4",
+      "chapter": "Génesis 4 · Las ofrendas"
+    },
+    {
+      "id": "22",
+      "title": "El valor de la fe",
+      "start": 1246.944,
+      "duration": 58.392,
+      "beats": [
+        17.236,
+        33.17
+      ],
+      "source": "«Dios aprobó sus ofrendas», págs. 16-19, párrs. 4-12 · Perspicacia, «Caín», pág. 387 · Hebreos 11:4",
+      "chapter": "Génesis 4 · Las ofrendas"
+    },
+    {
+      "id": "23",
+      "title": "Antes de que ocurriera el crimen",
+      "start": 1305.336,
+      "duration": 49.152,
+      "beats": [
+        0.1,
+        13.881,
+        26.868
+      ],
+      "source": "La Atalaya, 1 de febrero de 1999, pág. 23 · Génesis 4:6, 7",
+      "chapter": "Génesis 4:6, 7 · La advertencia"
+    },
+    {
+      "id": "24",
+      "title": "La muerte de Abel",
+      "start": 1354.488,
+      "duration": 56.328,
+      "beats": [
+        16.065,
+        29.355
+      ],
+      "source": "Génesis 4:8-12 · Perspicacia, «Caín», pág. 387; «Abel», pág. 17",
+      "chapter": "Génesis 4 · El asesinato y la sentencia"
+    },
+    {
+      "id": "25",
+      "title": "Una señal y una tierra sin ubicar",
+      "start": 1410.816,
+      "duration": 56.4,
+      "beats": [
+        0.1,
+        11.355,
+        31.171
+      ],
+      "source": "Génesis 4:15, 16 y nota · Perspicacia, «Caín», pág. 387; «Condición de fugitivo, Tierra de la», pág. 521",
+      "chapter": "Génesis 4 · Señal y destierro"
+    },
+    {
+      "id": "26",
+      "title": "La esposa de Caín",
+      "start": 1467.216,
+      "duration": 55.704,
+      "beats": [
+        0.1,
+        14.144,
+        31.697
+      ],
+      "source": "jw.org, «¿Quién fue la esposa de Caín?» · La Atalaya, 1 de septiembre de 2010, pág. 25",
+      "chapter": "Génesis 4 · La familia de Caín"
+    },
+    {
+      "id": "27",
+      "title": "Ciudad y oficios",
+      "start": 1522.92,
+      "duration": 55.416,
+      "beats": [
+        0.1,
+        15.328,
+        20.065,
+        23.697,
+        34.828
+      ],
+      "source": "Génesis 4:17-22 · Perspicacia, «Caín», «Enoc», «Jabal»",
+      "chapter": "Génesis 4 · Una civilización"
+    },
+    {
+      "id": "28",
+      "title": "Lamec y su defensa",
+      "start": 1578.336,
+      "duration": 50.976,
+      "beats": [
+        0.1,
+        31.065
+      ],
+      "source": "Génesis 4:19, 23, 24 · Perspicacia, «Lamec», pág. 183 · ¡Despertad!, 8 de marzo de 1985, pág. 11",
+      "chapter": "Génesis 4 · Lamec"
+    },
+    {
+      "id": "29",
+      "title": "Set y Enós",
+      "start": 1629.312,
+      "duration": 60.888,
+      "beats": [
+        0.1,
+        16.947,
+        35.052
+      ],
+      "source": "Génesis 4:25, 26 · Perspicacia, «Set», pág. 1014 · Paraíso restaurado, págs. 67-68 · wcg (2025), pág. 16",
+      "chapter": "Génesis 4 · Set y Enós"
+    },
+    {
+      "id": "30",
+      "title": "Tres vidas que se solapan",
+      "start": 1690.2,
+      "duration": 67.344,
+      "beats": [
+        0.1,
+        17.078
+      ],
+      "source": "Génesis 5:3-11 · Perspicacia, «Adán», «Set», «Vida», «Cronología»",
+      "chapter": "Cronología · Tres vidas"
+    },
+    {
+      "id": "31",
+      "title": "Las preguntas que miran al Diluvio",
+      "start": 1757.544,
+      "duration": 54.96,
+      "beats": [
+        11.617,
+        19.921,
+        31.342,
+        37.828
+      ],
+      "source": "Génesis 6:2, 4 y notas · Perspicacia, «Nefilim»",
+      "chapter": "Preguntas complementarias · Génesis 6"
+    },
+    {
+      "id": "32",
+      "title": "El arca como un cofre",
+      "start": 1812.504,
+      "duration": 71.712,
+      "beats": [
+        0.1,
+        16.552,
+        36.855
+      ],
+      "source": "Génesis 6:14-16 y notas · Perspicacia, «Arca» · Dimensiones aproximadas publicadas",
+      "chapter": "Preguntas complementarias · El arca"
+    },
+    {
+      "id": "33",
+      "title": "Construir, esperar y salir",
+      "start": 1884.216,
+      "duration": 68.352,
+      "beats": [
+        0.1,
+        17.605,
+        36.302
+      ],
+      "source": "Génesis 6:3; 7:11, 12; 8:13, 14 · Perspicacia, «Diluvio», «Noé» · jw.org, «El Diluvio de Noé»",
+      "chapter": "Preguntas complementarias · Los tiempos"
+    },
+    {
+      "id": "34",
+      "title": "Ararat y el arcoíris",
+      "start": 1952.568,
+      "duration": 60.456,
+      "beats": [
+        0.1,
+        17.342,
+        35.026
+      ],
+      "source": "Génesis 8:4; 9:13 · Perspicacia, «Ararat», «Arca», «Arco iris», «Diluvio» · Natural Earth",
+      "chapter": "Preguntas complementarias · Límites y certeza"
+    },
+    {
+      "id": "35",
+      "title": "Los hilos de los cuatro capítulos",
+      "start": 2013.024,
+      "duration": 57.288,
+      "beats": [
+        0.1,
+        21.171,
+        35.473
+      ],
+      "source": "Génesis 1:3; 2:7, 17; 3:15, 17-19; 4:10, 12, 25 · Investigación, «Relaciones»",
+      "chapter": "Los hilos · Una sola historia"
+    },
+    {
+      "id": "36",
+      "title": "Lecciones de Génesis 1",
+      "start": 2070.312,
+      "duration": 44.688,
+      "beats": [
+        0.1,
+        27.973
+      ],
+      "source": "Génesis 1:4, 10, 12, 18, 21, 25, 28 · Investigación, «Qué nos llevamos a casa»",
+      "chapter": "Lecciones y preguntas · Génesis 1"
+    },
+    {
+      "id": "37",
+      "title": "Lecciones de Génesis 2",
+      "start": 2115.0,
+      "duration": 46.752,
+      "beats": [
+        0.1,
+        26.842
+      ],
+      "source": "Génesis 2:16, 17, 24 y nota · Investigación, «Qué nos llevamos a casa»",
+      "chapter": "Lecciones y preguntas · Génesis 2"
+    },
+    {
+      "id": "38",
+      "title": "Lecciones de Génesis 3",
+      "start": 2161.752,
+      "duration": 54.456,
+      "beats": [
+        0.1,
+        26.157,
+        39.5
+      ],
+      "source": "Génesis 3:1-5, 12, 13, 15, 21 · Investigación, «Qué nos llevamos a casa»",
+      "chapter": "Lecciones y preguntas · Génesis 3"
+    },
+    {
+      "id": "39",
+      "title": "Lecciones de Génesis 4",
+      "start": 2216.208,
+      "duration": 52.704,
+      "beats": [
+        0.1,
+        24.092,
+        38.013
+      ],
+      "source": "Génesis 4:4-7 · La Atalaya, 1 de febrero de 1999, págs. 22-23",
+      "chapter": "Lecciones y preguntas · Génesis 4"
+    },
+    {
+      "id": "40",
+      "title": "Tres preguntas para conversar",
+      "start": 2268.912,
+      "duration": 44.28,
+      "beats": [
+        0.1,
+        15.118,
+        28.947
+      ],
+      "source": "Investigación, «Tres preguntas para la mesa» · Génesis 3:9; 4:4-9",
+      "chapter": "Conversación en familia"
+    },
+    {
+      "id": "41",
+      "title": "Una historia que sigue",
+      "start": 2313.192,
+      "duration": 13.632,
+      "beats": [
+        0.1
+      ],
+      "source": "Génesis 1:31; 3:15 · Traducción del Nuevo Mundo, edición de estudio",
+      "chapter": "Lectura familiar"
+    }
+  ]
+}

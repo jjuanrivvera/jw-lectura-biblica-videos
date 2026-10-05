@@ -1,0 +1,27 @@
+<style>
+.tres { position: absolute; left: 70px; right: 70px; top: 130px; grid-template-columns: 1fr 1fr 1fr; column-gap: 26px; }
+.tres .tj { min-height: 780px; gap: 22px; }
+.tres .tj .x { font-size: 46px; }
+.tres .big { font-family: "Caveat", cursive; font-weight: 700; font-size: 66px; line-height: 1.02; }
+.dias { display: flex; gap: 26px; margin: 10px 0; }
+.dias .d { width: 110px; height: 110px; border-radius: 50%; border: 5px solid var(--oro); display: flex; align-items: center; justify-content: center; font-family: "Fraunces", serif; font-weight: 700; font-size: 56px; color: var(--oro); }
+.dias .d.on { background: var(--oro); color: #17212b; }
+</style>
+<div class="cab"><span class="cap">Génesis 34</span><span>versículos 13 al 29</span></div>
+<div class="tarjetas tres">
+  <div class="tj t1"><div class="k">La condición · 34:15</div><div class="big">que se circuncidaran</div><div class="def" style="padding:18px 22px"><div class="t">circuncisión</div><div class="x" style="font-size:46px">una pequeña operación en el cuerpo de los varones: <b>la señal del pacto</b></div><div class="s">Génesis 17:11</div></div><div class="m md oro t1b">algo sagrado, usado como trampa</div><span class="propio t1b">observación propia</span></div>
+  <div class="tj t2"><div class="k">34:25</div><div class="big">al tercer día</div><div class="dias"><div class="d d1">1</div><div class="d d2">2</div><div class="d d3">3</div></div><div class="x">“cuando los hombres todavía estaban adoloridos”</div><div class="x t2b">Simeón y Leví atacaron la ciudad</div><div class="ref">compare Josué 5:8 · <i>Perspicacia</i>, vol. 2, “Siquem”, pág. 1035</div><span class="propio" style="font-size:26px;padding:0 12px">observación propia</span></div>
+  <div class="tj t3 on"><div class="k">¿Tenían razón?</div><div class="x">“tenían razón para estar indignados”, pero fue “<b>un castigo excesivo</b>”</div><div class="f"><i>Perspicacia</i>, vol. 1, “Cólera”, pág. 505</div><div class="x t3b">“una afrenta contra su orgullo”</div><div class="f t3b"><i>La Atalaya</i>, 15 de junio de 2010, pág. 16</div><div class="x t3c" style="color:var(--rojo)">“lo único que lograron Simeón y Leví fue empeorar el problema”</div><div class="f t3c"><i>La Atalaya</i>, 1 de septiembre de 2009, pág. 21</div></div>
+</div>
+<script>
+entra(".t1", 0.4, { y: 30 });
+entra(".t1b", at("Algo sagrado"), { y: 16 });
+entra(".t2", at("Al tercer día"), { y: 30 });
+tl.to($(".d1"), { backgroundColor: "#e9bf60", color: "#17212b", duration: 0.3 }, at("Al tercer día") + 0.4);
+tl.to($(".d2"), { backgroundColor: "#e9bf60", color: "#17212b", duration: 0.3 }, at("Al tercer día") + 0.8);
+tl.to($(".d3"), { backgroundColor: "#ec8a67", borderColor: "#ec8a67", color: "#17212b", duration: 0.3 }, at("Al tercer día") + 1.2);
+entra(".t2b", at("Simeón y Leví"), { y: 16 });
+entra(".t3", at("Tenían razón"), { y: 30 });
+entra(".t3b", at("por orgullo"), { y: 16 });
+entra(".t3c", at("La venganza"), { y: 16 });
+</script>

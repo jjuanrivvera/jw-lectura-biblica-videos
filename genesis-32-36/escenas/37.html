@@ -1,0 +1,20 @@
+<style>
+.mapa .cam img, .mapa .cam svg { width: 1944px; height: 2292px; }
+</style>
+<!--incluir:_recuadro.html-->
+<div class="cab sobre"><span class="cap">Hebrón hoy</span><span>Génesis 23:17-20 · 35:27</span></div>
+<div class="col der">
+  <div class="b a1"><div class="cita md">“Se distingue por ser uno de los lugares más antiguos del Oriente Medio que todavía está habitado”</div><div class="m oro">a más de 900 m · a unos 30 km de Jerusalén</div><div class="def"><div class="t">Quiryat-Arbá</div><div class="x">“Ciudad de Arbá”, su nombre antiguo</div><div class="s"><i>Perspicacia</i>, vol. 1, “Hebrón”, pág. 1112</div></div></div>
+  <div class="b a2"><div class="m">la cueva de Macpelá</div><div class="cita md">“debajo de una mezquita musulmana y dentro de un recinto llamado Haram el-Khalil”</div><div class="f"><i>Perspicacia</i>, vol. 2, “Macpelá”, pág. 268</div></div>
+  <div class="b a3"><span class="externa">fuente externa · Wikipedia</span><div class="m">el gran recinto lo construyó <b>Herodes el Grande</b>, el idumeo</div><div class="m md">la única construcción de Herodes que se conserva entera · hoy, dividida entre una mezquita y una sinagoga</div></div>
+</div>
+<script>
+pinta(".marcas", `<circle class="anillo a-h" cx="551" cy="1342" r="46"/><rect class="anillo oro a-mc" x="560" y="1312" width="52" height="52"/>`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 150, y: 1000, w: 800, h: 772 }, V), 0);
+camara(".cam", 0.5, DUR - 1, encuadre({ x: 230, y: 1080, w: 700, h: 675 }, V), "none");
+traza(".a-h", 0.6, 0.7);
+traza(".a-mc", at("La cueva"), 0.7);
+late(".a-mc", at("se identifica"), { s: 1.15, n: 3 });
+secuencia([[".a1", 0.4], [".a2", at("La cueva")], [".a3", at("recinto construido")]]);
+</script>

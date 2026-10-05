@@ -1,0 +1,27 @@
+<style>
+.ilus.i1 { left: 40px; top: 90px; width: 1080px; height: 608px; }
+.ilus.i2 { left: 40px; top: 720px; width: 1080px; height: 330px; }
+.ilus.i2 img { object-position: 50% 45%; }
+.pie-img.p1 { left: 56px; top: 650px; background: rgba(15,22,30,0.82); padding: 3px 10px; border-radius: 8px; font-size: 19px; }
+.pie-img.p2 { left: 56px; top: 1010px; background: rgba(15,22,30,0.82); padding: 3px 10px; border-radius: 8px; font-size: 19px; }
+.col.der { width: 730px; }
+.antes { display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; }
+.antes .tj .x { font-size: 34px; }
+</style>
+<div class="ilus i1"><div class="kb"><img src="assets/img/paces.jpg" /></div></div>
+<div class="pie-img p1">Ilustración: <i>La Atalaya</i> (estudio), diciembre de 2021, pág. 25</div>
+<div class="ilus i2"><div class="kb"><img src="assets/img/abrazo.jpg" /></div></div>
+<div class="pie-img p2">Cartel del video “Jacob, un hombre que amaba la paz” (jw.org, 2022)</div>
+<div class="cab"><span class="cap">Génesis 33</span><span>versículos 5 al 11</span></div>
+<div class="col der">
+  <div class="b a1"><div class="cita md">“Yo ya tengo muchísimos bienes, hermano mío. Esto es tuyo. Quédatelo”<span class="ref">GÉNESIS 33:9</span></div><div class="m">aceptarlo te comprometía:</div><div class="cita md" style="color:var(--oro)">“quedaba obligado a mantener relaciones pacíficas con el que hacía el regalo”</div><div class="f"><i>Perspicacia</i>, vol. 1, “Alimento”, pág. 93</div></div>
+  <div class="b a2"><div class="cita">“He visto tu rostro y ha sido como ver <b>el rostro de Dios</b>, pues me has recibido con gusto”<span class="ref">GÉNESIS 33:10</span></div><div class="m md">en la cara de su hermano veía la respuesta a su oración</div><div class="f"><i>Perspicacia</i>, vol. 2, “Jesucristo”, pág. 82</div></div>
+  <div class="b a3"><div class="def"><div class="t">“el regalo” · 33:11</div><div class="x">literalmente, “<b>mi bendición</b>”</div><div class="s">nota de la TNM en 33:11</div></div>
+    <div class="antes"><div class="tj"><div class="k">Hace 20 años · 27:36</div><div class="x">una bendición <b>separó</b> a los hermanos</div></div><div class="tj on"><div class="k">Ahora · 33:11</div><div class="x">Jacob le da una bendición <b>de su mano</b></div></div></div>
+    <span class="propio">observación propia</span></div>
+</div>
+<script>
+kb(".i1 .kb", 0, DUR, { s: 1.1, x: -2 }, { s: 1.0, x: 1 });
+kb(".i2 .kb", 0, DUR, { s: 1.05 }, { s: 1.12 });
+secuencia([[".a1", 0.4], [".a2", at("Jacob le dijo")], [".a3", at("Y al regalo")]]);
+</script>

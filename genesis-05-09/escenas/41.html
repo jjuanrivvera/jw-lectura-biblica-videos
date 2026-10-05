@@ -1,0 +1,45 @@
+<style>
+.izq { position: absolute; left: 80px; top: 200px; width: 860px; display: flex; flex-direction: column; gap: 40px; }
+.izq .m { font-size: 76px; }
+.izq .duda .t { font-size: 50px; }
+.izq .duda .s { font-size: 30px; }
+.izq .duda ol { margin: 10px 0 0 34px; font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; line-height: 1.1; color: var(--tiza); }
+.der { position: absolute; left: 1010px; right: 70px; top: 200px; display: flex; flex-direction: column; gap: 40px; }
+.der .cita { font-size: 54px; }
+.der .m { font-size: 70px; }
+.lin { position: absolute; left: 0; top: 0; }
+.ll { font-family: "Caveat", cursive; font-weight: 700; font-size: 40px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 9</span><span>versículos 24 a 29</span></div>
+<div class="izq">
+  <div class="m i1">¿por qué a Canaán y no a Cam?</div>
+  <div class="duda i2"><div class="t">el texto no lo explica</div>
+    <ol><li>¿Canaán implicado, y Cam no lo corrigió?</li><li>¿Noé vio en el nieto una tendencia?</li></ol>
+    <div class="s">“Debe entenderse que estos puntos de vista son conjeturales, pues el registro bíblico no da los detalles del incidente” · Perspicacia, vol. 1, “Cam”</div></div>
+</div>
+<div class="der">
+  <div class="m d1">el pasaje <b>no habla del color de la piel</b></div>
+  <div class="cita d2">“Los descendientes de Canaán no eran negros, sino de piel clara”<span class="ref">¡DESPERTAD!, 8/11/1988, PÁG. 21</span></div>
+  <div class="dato d3"><div class="v" style="font-size:60px">≈ 8 siglos</div><div class="k">después: Israel sometió a los cananeos</div><div class="s">Génesis 15:16; Josué · Perspicacia, “Canaán, cananeo”</div></div>
+</div>
+<svg class="lin" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <g class="tl">
+    <rect x="160" y="900" width="1520" height="44" rx="10" fill="#34496a" stroke="#93bbef" stroke-width="3"/>
+    <text x="920" y="931" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="24" fill="#f1e9d8">Noé · 2970 a 2020 a. e. c. · 950 años</text>
+    <path d="M 1120 900 L 1120 944" stroke="#ec8a67" stroke-width="5"/><text class="ll" x="1120" y="885" text-anchor="middle" fill="#ec8a67">el Diluvio</text>
+    <rect x="1712" y="900" width="120" height="44" rx="10" fill="#8a6a22" stroke="#e9bf60" stroke-width="3"/>
+    <text class="ll" x="1772" y="885" text-anchor="middle" fill="#e9bf60">Abrahán</text>
+    <text class="ll" x="1696" y="1000" text-anchor="middle" fill="#f1e9d8">unos 2 años</text>
+  </g>
+</svg>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".i1", 0.4, { y: 30 });
+entra(".i2", at("El texto no"), { y: 30 });
+entra(".d1", at("Lo que sí"), { y: 30 });
+entra(".d2", at("Los descendientes"), { y: 30 });
+entra(".d3", at("La maldición"), { y: 30 });
+aparece(".tl", at("Noé murió"), 0.6);
+</script>

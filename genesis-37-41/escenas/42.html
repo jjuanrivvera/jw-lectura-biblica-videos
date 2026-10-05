@@ -1,0 +1,37 @@
+<style>
+.cont42 { position: absolute; left: 80px; right: 80px; top: 110px; display: grid; grid-template-columns: auto 1fr; column-gap: 50px; align-items: center; }
+.cont42 .cifra { font-size: 190px; }
+.cont42 .cifra small { font-size: 70px; }
+.hijos42 { position: absolute; left: 80px; right: 80px; top: 400px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; }
+.hijos42 .tj { gap: 16px; min-height: 420px; }
+.hijos42 .nom { font-family: "Fraunces", serif; font-weight: 700; font-size: 84px; line-height: 1; color: var(--oro); }
+.hijos42 .sig { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; color: var(--cielo); }
+.hijos42 .cita { font-size: 36px; }
+.sube42 { position: absolute; inset: 0; }
+.tri42 { position: absolute; left: 80px; right: 80px; bottom: 44px; display: flex; justify-content: center; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 41</span><span>versículos 46 al 52</span></div>
+<div class="sube42"><div class="cont42">
+  <div class="cifra"><span class="ed">17</span><small>años</small></div>
+  <div><div class="m">“José tenía <b>30 años</b> cuando se presentó ante el faraón” · 41:46</div><div class="s tr">nota: “ante” también puede ser “cuando empezó a trabajar para” · <b>trece años</b> después de la venta</div></div>
+</div></div>
+<div class="hijos42">
+  <div class="tj h1"><div class="nom">Manasés</div><div class="sig">“el que hace olvidar”</div><div class="cita">“Dios me ha hecho olvidar todas mis desgracias y a toda la casa de mi padre”<span class="ref">GÉNESIS 41:51 Y NOTA</span></div>
+    <div class="m md cielo al" style="font-size:44px">no olvidó a su familia: Dios le alivió el dolor de recordarla</div><div class="ref al"><i>La Atalaya</i>, 1 de mayo de 2015, pág. 12</div></div>
+  <div class="tj h2"><div class="nom">Efraín</div><div class="sig">“doblemente fructífero”</div><div class="cita">“Dios me ha hecho fructífero en la tierra de mis sufrimientos”<span class="ref">GÉNESIS 41:52 Y NOTA</span></div></div>
+</div>
+<div class="tri42"><div class="m md oro">de los dos saldrían <b>dos tribus</b> de Israel · Génesis 48:5 · <i style="font-family:Montserrat;font-size:24px;color:var(--tenue)">Perspicacia, vol. 2, “José”, pág. 126</i></div></div>
+
+<script>
+entra(".cont42", 0.3, { y: 20 });
+cuenta(".ed", 17, 30, 0.8, 1.6);
+entra(".tr", at("trece después"), { y: 12 });
+// Mientras la voz habla de la edad, el bloque ocupa el centro; sube cuando llega Manasés.
+tl.set($(".sube42"), { y: 250 }, 0);
+tl.to($(".sube42"), { y: 0, duration: 0.8, ease: "power2.inOut" }, at("Manasés") - 1.0);
+entra(".h1", at("Manasés"), { y: 24 });
+entra(".al", at("No olvidó"), { y: 12, st: 0.2 });
+entra(".h2", at("Y Efraín"), { y: 24 });
+entra(".tri42", at("De los dos"), { y: 16 });
+</script>

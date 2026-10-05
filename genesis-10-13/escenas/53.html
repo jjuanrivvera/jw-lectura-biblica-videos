@@ -1,0 +1,27 @@
+<style>
+.leccion .l { font-size: 100px; }
+.leccion .p { font-size: 64px; }
+.leccion .s { font-size: 30px; }
+.portada { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; text-align: center; }
+.portada .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 110px; line-height: 1.05; }
+.portada .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.22em; color: var(--verde); text-transform: uppercase; }
+</style>
+
+<div class="seccion"><span class="r">Lecciones y preguntas para pensar</span><span class="t">Génesis 11</span></div>
+<div class="seccion-linea"><svg viewBox="0 0 1740 20" preserveAspectRatio="none" style="width:100%;height:20px"><path d="M 4 10 C 400 4 900 16 1736 8"/></svg></div>
+<div class="leccion l1"><div class="n">1</div><div class="cuerpo"><div class="l">“Así nos <b>haremos famosos</b>”</div><div class="p"><span class="k">PARA PENSAR</span>¿Trabajamos para que nos vean, o para Jehová?</div><div class="s">11:4</div></div></div>
+<div class="leccion l2"><div class="n">2</div><div class="cuerpo"><div class="l">Estar unidos <b>no basta</b>: en Babel lo estaban, y contra Dios</div><div class="p"><span class="k">PARA PENSAR</span>Si cada uno en casa hablara un idioma distinto, ¿qué dejaríamos de poder hacer? ¿Y qué nos une en la congregación?</div><div class="s">11:6 · Sofonías 3:9: “un idioma puro”</div></div></div>
+<div class="leccion l3"><div class="n">3</div><div class="cuerpo"><div class="l">La vida se acorta: “<b>Enséñanos a contar nuestros días</b>”</div><div class="p"><span class="k">PARA PENSAR</span>¿En qué se nos va el tiempo?</div><div class="s">11:10-32 · Salmo 90:12</div></div></div>
+
+<script>
+const t0 = 0.3;
+entra(".seccion", t0, { y: -20 });
+traza(".seccion-linea path", t0 + 0.3, 1.0);
+secuencia([[".l1", at("Primera")], [".l2", at("Segunda")], [".l3", at("Tercera")]], null, { y: 30, d: 0.6 });
+entra(".l1 .p", at("Trabajamos para") - 0.2, { y: 20 });
+entra(".l1 .s", at("Trabajamos para") + 0.2, { y: 10 });
+entra(".l2 .p", at("Si cada uno") - 0.2, { y: 20 });
+entra(".l2 .s", at("Si cada uno") + 0.2, { y: 10 });
+entra(".l3 .p", at("En qué se nos va") - 0.2, { y: 20 });
+entra(".l3 .s", at("En qué se nos va") + 0.2, { y: 10 });
+</script>

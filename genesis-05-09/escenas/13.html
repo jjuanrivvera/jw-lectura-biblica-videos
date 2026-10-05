@@ -1,0 +1,40 @@
+<style>
+.q { position: absolute; left: 80px; right: 80px; top: 130px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; }
+.q .m { font-size: 70px; }
+.q .dato .v { font-size: 80px; }
+.q .dato .k { font-size: 46px; }
+.lt { position: absolute; left: 0; top: 0; }
+.y { font-family: "Fraunces", serif; font-weight: 700; font-size: 44px; }
+.ev { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 6</span><span>versículo 3 · La Atalaya, 15/12/2010, págs. 30, 31</span></div>
+<div class="q">
+  <div class="qa"><div class="m">¿el límite de la vida humana? <b style="color:var(--rojo)">No</b></div><div class="s" style="margin-top:12px">Noé: 950 años · Arpaksad: 438 · Selá: 433 (Génesis 9:29; 11:10-15)</div></div>
+  <div class="dato qb"><div class="v">120 años</div><div class="k">el <b>plazo</b> que Jehová se dio antes de actuar</div><div class="s">no dice que se lo dijera a Noé: expresa un propósito</div></div>
+</div>
+<svg class="lt" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <path class="plazo" d="M 160 560 L 1600 560" stroke="#e9bf60" stroke-width="30" stroke-linecap="round" opacity="0.35"/>
+  <text class="ev t120" x="880" y="535" text-anchor="middle" fill="#e9bf60">120 años de plazo</text>
+  <path class="eje" d="M 140 640 L 1780 640" stroke="#f1e9d8" stroke-width="7" stroke-linecap="round"/>
+  <g class="m0"><circle cx="160" cy="640" r="18" fill="#e9bf60"/><text class="y" x="160" y="720" text-anchor="middle" fill="#e9bf60">2490</text><text class="ev" x="140" y="775" text-anchor="start" fill="#f1e9d8">el decreto</text></g>
+  <g class="m1"><circle cx="400" cy="640" r="16" fill="#93bbef"/><text class="y" x="400" y="720" text-anchor="middle" fill="#93bbef">2470</text><text class="ev" x="380" y="775" text-anchor="start" fill="#f1e9d8">nace Jafet (probablemente)</text></g>
+  <g class="m2"><path d="M 424 640 L 424 820" stroke="#93bbef" stroke-width="4" stroke-dasharray="6 8"/><text class="ev" x="440" y="860" fill="#93bbef">Sem, unos 2 años después · no eran trillizos</text></g>
+  <g class="m3"><rect x="1000" y="610" width="600" height="60" rx="10" fill="rgba(146,209,147,0.28)" stroke="#92d193" stroke-width="4"/><text class="y" x="1000" y="720" fill="#92d193">≈ 2420-2410</text><text class="ev" x="1000" y="775" fill="#f1e9d8">empieza el arca: 40 a 50 años de obra</text></g>
+  <g class="m4"><circle cx="1600" cy="640" r="20" fill="#ec8a67"/><text class="y" x="1640" y="720" fill="#ec8a67">2370</text><text class="ev" x="1640" y="775" fill="#f1e9d8">el Diluvio</text></g>
+  <text x="1780" y="1030" text-anchor="end" font-family="Montserrat" font-weight="500" font-size="22" fill="#b3bdc8">años a. e. c. · Perspicacia, vol. 1, “Cronología”; vol. 2, “Noé” · Génesis 5:32; 11:10</text>
+</svg>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".qa", 0.4, { y: 30 });
+entra(".qb", at("Son el plazo"), { y: 30 });
+traza(".eje", at("Y ese plazo"), 0.8);
+salta(".m0", at("Empezó en"), { desde: 0.4 });
+traza(".plazo", at("Empezó en") + 0.2, 1.6);
+aparece(".t120", at("Empezó en") + 1.2, 0.5);
+salta(".m1", at("Unos veinte años"), { desde: 0.4 });
+aparece(".m2", at("no eran trillizos"), 0.5);
+aparece(".m3", at("Los hijos crecieron"), 0.6);
+salta(".m4", at("empezó la construcción") + 0.3, { desde: 0.4 });
+</script>

@@ -1,0 +1,48 @@
+<style>
+.izq { position: absolute; left: 80px; top: 140px; width: 820px; bottom: 80px; display: flex; flex-direction: column; justify-content: center; gap: 34px; }
+.izq .cita { font-size: 50px; }
+.izq .m { font-size: 62px; }
+.rueda { position: absolute; left: 960px; top: 130px; width: 880px; height: 880px; }
+.rq { font-family: "Caveat", cursive; font-weight: 700; font-size: 60px; }
+.rc { font-family: "Fraunces", serif; font-weight: 700; font-size: 60px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 8</span><span>versículos 21 y 22</span></div>
+<div class="izq">
+  <div class="c1"><div class="cita">“porque el corazón de los hombres tiende al mal <b>desde la juventud</b>”<span class="ref">GÉNESIS 8:21</span></div><div class="m" style="margin-top:20px">el Diluvio no cambió el corazón humano, y aun así <b>prometió</b></div></div>
+  <div class="c2"><div class="cita">“De ahora en adelante, en la tierra siempre habrá siembra y cosecha, frío y calor, verano e invierno, día y noche”<span class="ref">GÉNESIS 8:22</span></div></div>
+</div>
+<svg class="rueda" viewBox="-440 -440 880 880">
+  <defs>
+    <radialGradient id="e34-q1"><stop offset="0.35" stop-color="#5f9e5f" stop-opacity="0.15"/><stop offset="1" stop-color="#5f9e5f" stop-opacity="0.55"/></radialGradient>
+    <radialGradient id="e34-q2"><stop offset="0.35" stop-color="#4f95c8" stop-opacity="0.15"/><stop offset="1" stop-color="#4f95c8" stop-opacity="0.55"/></radialGradient>
+    <radialGradient id="e34-q3"><stop offset="0.35" stop-color="#e9bf60" stop-opacity="0.15"/><stop offset="1" stop-color="#e9bf60" stop-opacity="0.55"/></radialGradient>
+    <radialGradient id="e34-q4"><stop offset="0.35" stop-color="#93bbef" stop-opacity="0.15"/><stop offset="1" stop-color="#6a5acd" stop-opacity="0.5"/></radialGradient>
+  </defs>
+  <g class="giro" data-layout-allow-overlap>
+    <path class="q q1" d="M 0 0 L 0 -400 A 400 400 0 0 1 400 0 Z" fill="url(#e34-q1)" stroke="#17212b" stroke-width="10"/>
+    <path class="q q2" d="M 0 0 L 400 0 A 400 400 0 0 1 0 400 Z" fill="url(#e34-q2)" stroke="#17212b" stroke-width="10"/>
+    <path class="q q3" d="M 0 0 L 0 400 A 400 400 0 0 1 -400 0 Z" fill="url(#e34-q3)" stroke="#17212b" stroke-width="10"/>
+    <path class="q q4" d="M 0 0 L -400 0 A 400 400 0 0 1 0 -400 Z" fill="url(#e34-q4)" stroke="#17212b" stroke-width="10"/>
+    <g class="t1" transform="rotate(45)"><text class="rq" x="0" y="-250" text-anchor="middle" fill="#f1e9d8">siembra</text><text class="rq" x="0" y="-190" text-anchor="middle" fill="#92d193">y cosecha</text></g>
+    <g class="t2" transform="rotate(135)"><text class="rq" x="0" y="-250" text-anchor="middle" fill="#f1e9d8">frío</text><text class="rq" x="0" y="-190" text-anchor="middle" fill="#93bbef">y calor</text></g>
+    <g class="t3" transform="rotate(225)"><text class="rq" x="0" y="-250" text-anchor="middle" fill="#f1e9d8">verano</text><text class="rq" x="0" y="-190" text-anchor="middle" fill="#e9bf60">e invierno</text></g>
+    <g class="t4" transform="rotate(315)"><text class="rq" x="0" y="-250" text-anchor="middle" fill="#f1e9d8">día</text><text class="rq" x="0" y="-190" text-anchor="middle" fill="#c9b8f0">y noche</text></g>
+  </g>
+  <circle r="120" fill="#17212b" stroke="#f1e9d8" stroke-width="6"/>
+  <text class="rc" y="-4" text-anchor="middle" fill="#e9bf60">8:22</text>
+  <text y="44" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="40" fill="#f1e9d8">siempre</text>
+</svg>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".c1", 0.4, { y: 30 });
+atenua(".c1", at("De ahora en adelante") - 0.2, 0.3);
+entra(".c2", at("De ahora en adelante"), { y: 30 });
+aparece(".rueda", 0.6, 0.8);
+tl.set($$(".q, .t1, .t2, .t3, .t4"), { opacity: 0.18 }, 0);
+[[".q1, .t1", "siembra y cosecha"], [".q2, .t2", "frío y calor"], [".q3, .t3", "verano e invierno"], [".q4, .t4", "día y noche"]].forEach(([s, f]) =>
+  tl.to($$(s), { opacity: 1, duration: 0.5 }, at(f)));
+// La rueda gira muy despacio: las estaciones siguen pasando.
+tl.fromTo($(".giro"), { rotation: 0 }, { rotation: 90, svgOrigin: "0 0", duration: DUR, ease: "none", immediateRender: true }, 0);
+</script>

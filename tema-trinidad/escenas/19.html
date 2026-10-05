@@ -1,0 +1,58 @@
+<style>
+.mapa { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 2592px; height: 1444px; }
+.velo { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,26,36,0.97) 0%, rgba(18,26,36,0.93) 46%, rgba(18,26,36,0.2) 62%, rgba(18,26,36,0) 72%); }
+.mk circle { fill: #c8452f; stroke: #fff; stroke-width: 5; }
+.mk text { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; fill: #1d1a17; stroke-width: 9; }
+.izq { position: absolute; left: 90px; width: 900px; top: 110px; bottom: 110px; }
+.izq > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.izq .cita { font-size: 50px; }
+.izq .cita b { color: var(--terra); }
+.izq .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.16em; color: var(--tenue); }
+.izq .def .w { font-size: 60px; }
+.izq .def .x { font-size: 32px; }
+.big { font-family: "Fraunces", serif; font-weight: 700; font-size: 150px; line-height: 1; color: var(--terra); }
+.cmp { display: flex; flex-direction: column; gap: 24px; }
+.cmp .lado { border-radius: 24px; padding: 26px 32px; background: rgba(16,24,34,0.95); border: 3px solid var(--linea); }
+.cmp .lado .cita { font-size: 44px; }
+.cmp .lado.n { border-color: var(--terra); }
+.cmp .propio { margin-top: 4px; }
+.pie-m { right: 40px; top: 24px; }
+.cab2 { position: absolute; left: 90px; top: 40px; font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 0.1em; color: var(--terra); text-transform: uppercase; }
+</style>
+
+<div class="mapa">
+  <div class="cam">
+    <img src="assets/img/mapa-b13.jpg" />
+    <svg viewBox="0 0 2592 1444">
+      <g class="mk m-n"><circle cx="1709" cy="212" r="14"/><text class="halo" x="1735" y="250">Nicea</text></g>
+    </svg>
+  </div>
+</div>
+<div class="velo"></div>
+<div class="cab2">Nicea · año 325</div>
+<div class="pie-img pie-m">Mapa: TNM, apéndice B13</div>
+<div class="izq">
+  <div class="b c1"><div class="big">325</div><div class="def"><div class="t">Término</div><div class="w">concilio</div><div class="x">asamblea de obispos para decidir cuestiones de doctrina. Lo convocó el emperador <b>Constantino</b>, en Nicea (Asia Menor)</div></div></div>
+  <div class="b c2"><div class="k">CONSTANTINO, SEGÚN UN HISTORIADOR</div><div class="cita">“Adoraba al Sol Invicto [...]. Él nunca comprendió muy claramente la doctrina cristiana”.<span class="ref">Henry Chadwick, <i>The Early Church</i> · ¿Debería creer usted en la Trinidad?</span></div><div class="s">Asistieron unos 300 obispos, una fracción del total. Se bautizó en su lecho de muerte.</div></div>
+  <div class="b c3"><div class="k">SEGÚN LA ENCYCLOPÆDIA BRITANNICA</div><div class="cita">Constantino “personalmente propuso [...] la fórmula decisiva”: el Hijo es <b>“consustancial con el Padre”</b>.<span class="ref">¿Debería creer usted en la Trinidad?</span></div><div class="def"><div class="t">Término</div><div class="w">consustancial</div><div class="x">de la misma sustancia. Los obispos, “impresionados por el emperador”, firmaron, con solo dos excepciones</div></div></div>
+  <div class="b c4"><div class="cmp">
+    <div class="lado t"><div class="k">TERTULIANO, C. 230</div><div class="cita">“Hubo un tiempo en que el Hijo no existía”.</div></div>
+    <div class="lado n"><div class="k">EL CREDO DE NICEA, 325</div><div class="cita">Condena a quienes dicen “<b>hubo un tiempo en que [el Hijo] no fue</b>”.</div></div>
+    <span class="propio">comparación propia de las dos frases</span>
+    <div class="ref">La Atalaya, 1/11/1991 · ¿Debería creer usted en la Trinidad?</div></div></div>
+  <div class="b c5"><div class="cita">En Nicea nadie dijo que el espíritu santo fuera <b>una tercera persona</b>.<span class="ref">¿Debería creer usted en la Trinidad?</span></div></div>
+</div>
+
+<script>
+const E0 = encuadre({ x: 0, y: 0, w: 2592, h: 1444 }, { x: 0, y: 0, w: 1920, h: 1080 });
+const E1 = encuadre({ x: 1330, y: 0, w: 780, h: 640 }, { x: 560, y: 0, w: 1360, h: 1080 });
+tl.set($(".cam"), E0, 0);
+tl.to($(".cam"), { ...E1, duration: 3.2, ease: "power2.inOut" }, 0.4);
+entra(".cab2", 0.3, { y: -10 });
+entra(".pie-m", 0.6, { y: -10 });
+aparece(".m-n", 2.5, 0.5);
+secuencia([[".c1", at("En el siglo cuarto")], [".c2", at("Constantino no era cristiano")], [".c3", at("Según una enciclopedia")], [".c4", at("Y un detalle")], [".c5", at("Pero en Nicea nadie")]]);
+tl.set($(".c4 .propio"), { opacity: 0 }, 0);
+tl.to($(".c4 .propio"), { opacity: 1, duration: 0.5 }, at("lo mismo que había escrito"));
+</script>

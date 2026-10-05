@@ -1,0 +1,74 @@
+<style>
+.titulo { position: absolute; left: 80px; right: 80px; top: 44px; display: flex; align-items: baseline; justify-content: space-between; }
+.titulo .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 92px; line-height: 1; letter-spacing: -0.01em; }
+.titulo .t b { color: var(--oro); }
+.titulo .s { font-family: "Caveat", cursive; font-weight: 700; font-size: 60px; color: var(--tenue); }
+.franjas { position: absolute; left: 60px; right: 60px; top: 190px; bottom: 60px; display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 22px; }
+.fr { position: relative; border-radius: 26px; overflow: hidden; background: #0e151c; box-shadow: 0 20px 50px rgba(0,0,0,0.45); }
+.fr .img { position: absolute; inset: 0; }
+.fr .img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.fr .velo { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,21,29,0) 38%, rgba(14,21,29,0.93) 74%); }
+.fr .apag { position: absolute; inset: 0; background: rgba(14,21,29,0.72); }
+.fr .n { position: absolute; left: 26px; top: 20px; font-family: "Fraunces", serif; font-weight: 700; font-size: 120px; line-height: 1; color: var(--tiza); text-shadow: 0 6px 24px rgba(0,0,0,0.7); }
+.fr .k { position: absolute; left: 26px; right: 20px; bottom: 26px; display: flex; flex-direction: column; gap: 6px; }
+.fr .k .m { font-size: 58px; }
+.fr .k .s { font-size: 22px; }
+.fr .borde { position: absolute; inset: 0; border-radius: 26px; border: 5px solid var(--oro); opacity: 0; }
+.barras5 { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.pie { position: absolute; left: 60px; right: 60px; bottom: 16px; font-size: 20px; color: var(--tenue); }
+.final { position: absolute; left: 0; right: 0; top: 440px; text-align: center; }
+.final .m { font-size: 96px; display: inline-block; padding: 26px 60px; border-radius: 30px; background: rgba(14,21,29,0.9); border: 5px solid var(--verde); color: var(--verde); }
+</style>
+
+<div class="titulo"><div class="t">Génesis <b>5 al 9</b></div><div class="s">de Adán a los hijos de Noé</div></div>
+<div class="franjas">
+  <div class="fr f5">
+    <svg class="barras5" viewBox="0 0 340 800" preserveAspectRatio="none">
+      <rect width="340" height="800" fill="#16212c"/>
+      <g fill="#3b4f6e" stroke="#93bbef" stroke-width="2">
+        <rect x="20" y="170" width="140" height="26" rx="6"/><rect x="40" y="212" width="138" height="26" rx="6"/>
+        <rect x="56" y="254" width="136" height="26" rx="6"/><rect x="70" y="296" width="138" height="26" rx="6"/>
+        <rect x="82" y="338" width="134" height="26" rx="6"/><rect x="92" y="380" width="146" height="26" rx="6"/>
+        <rect x="116" y="422" width="55" height="26" rx="6" fill="#8a6a22" stroke="#e9bf60"/>
+        <rect x="124" y="464" width="148" height="26" rx="6"/><rect x="152" y="506" width="118" height="26" rx="6"/>
+        <rect x="180" y="548" width="140" height="26" rx="6"/>
+      </g>
+      <path d="M 272 150 L 272 600" stroke="#ec8a67" stroke-width="4" stroke-dasharray="10 8"/>
+    </svg>
+    <div class="velo"></div><div class="n">5</div>
+    <div class="k"><div class="m">de Adán a Noé</div><div class="m oro">Enoc</div></div>
+    <div class="apag"></div><div class="borde"></div>
+  </div>
+  <div class="fr f6"><div class="img"><img src="assets/img/arca-obra.jpg" style="object-position: 50% 30%"/></div><div class="velo"></div><div class="n">6</div>
+    <div class="k"><div class="m">violencia</div><div class="m oro">el arca</div></div><div class="apag"></div><div class="borde"></div></div>
+  <div class="fr f7"><div class="img"><img src="assets/img/historieta-b.jpg" style="object-position: 30% 50%"/></div><div class="velo"></div><div class="n">7</div>
+    <div class="k"><div class="m">la puerta</div><div class="m oro">el Diluvio</div></div><div class="apag"></div><div class="borde"></div></div>
+  <div class="fr f8"><div class="img"><img src="assets/img/altar.jpg" style="object-position: 50% 80%"/></div><div class="velo"></div><div class="n">8</div>
+    <div class="k"><div class="m">Ararat</div><div class="m oro">el altar</div></div><div class="apag"></div><div class="borde"></div></div>
+  <div class="fr f9"><div class="img"><img src="assets/img/arcoiris.jpg" style="object-position: 30% 50%"/></div><div class="velo"></div><div class="n">9</div>
+    <div class="k"><div class="m">la sangre</div><div class="m oro">el arco iris</div></div><div class="apag"></div><div class="borde"></div></div>
+</div>
+<div class="final"><div class="m">al final: lecciones y preguntas</div></div>
+<div class="pie">Imágenes: Lecciones que aprendo de la Biblia, lecc. 5 y 6 · Historias bíblicas ilustradas, “Noé demuestra que tiene fe” · ¡Por fin restaurada!, pág. 19 (wol.jw.org)</div>
+
+<script>
+entra(".titulo .t", 0.3, { y: -30 });
+escribe(".titulo .s", at("Estos capítulos"), 1.0);
+entra(".fr", 0.6, { y: 40, st: 0.12 });
+aparece(".pie", 1.2, 0.6);
+const caps = [["f5", "En el cinco"], ["f6", "En el seis"], ["f7", "En el siete"], ["f8", "En el ocho"], ["f9", "Y en el nueve"]];
+caps.forEach(([f, frase], i) => {
+  const t = at(frase);
+  tl.to($("." + f + " .apag"), { opacity: 0, duration: 0.5 }, t - 0.2);
+  tl.fromTo($("." + f + " .borde"), { opacity: 0 }, { opacity: 1, duration: 0.4, immediateRender: false }, t - 0.2);
+  tl.to($("." + f), { scale: 1.035, duration: 0.5, ease: "power2.out" }, t - 0.2);
+  const sig = i < caps.length - 1 ? at(caps[i + 1][1]) : at("Al final veremos");
+  tl.to($("." + f + " .borde"), { opacity: 0, duration: 0.4 }, sig - 0.3);
+  tl.to($("." + f), { scale: 1, duration: 0.5, ease: "power2.inOut" }, sig - 0.3);
+  if ($("." + f + " .img")) kb("." + f + " .img", t - 0.2, DUR, { s: 1.12 }, { s: 1.0 });
+});
+tl.set($$(".k .oro"), { opacity: 0 }, 0);
+caps.forEach(([f, frase]) => tl.to($("." + f + " .k .oro"), { opacity: 1, duration: 0.4 }, at(frase) + 1.6));
+atenua(".franjas", at("Al final veremos"), 0.25, 0.6);
+salta(".final", at("Al final veremos") + 0.2, { desde: 0.7 });
+</script>

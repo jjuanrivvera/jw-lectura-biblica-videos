@@ -1,0 +1,48 @@
+<style>
+.perfil { position: absolute; left: 0; top: 120px; width: 1920px; height: 960px; }
+.perfil svg { width: 1920px; height: 960px; }
+.eje { stroke: #3e4b5c; stroke-width: 2; }
+.ej-t { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 24px; fill: var(--tenue); }
+.lugar-p { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; fill: var(--oro); text-anchor: middle; }
+.cota { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; fill: var(--tiza); text-anchor: middle; }
+.titulo28 { position: absolute; left: 90px; top: 110px; }
+.nota28 { position: absolute; left: 90px; right: 90px; bottom: 16px; font-size: 20px; }
+</style>
+<div class="cab"><span class="cap">Génesis 35</span><span>de Sucot a Hebrón, el perfil del camino</span></div>
+<div class="titulo28"><div class="cita">“sube a Betel”<span class="ref">GÉNESIS 35:1</span></div></div>
+<div class="perfil"><svg viewBox="0 120 1920 960" class="pf"></svg></div>
+<div class="nota28 s">Perfil de la investigación, en línea recta entre los lugares, no del camino real. <span class="externa" style="font-size:24px;padding:0 10px">fuente externa</span> alturas: modelo SRTM (OpenTopoData); coordenadas: OpenBible.info · Betel ≈ 900 m y Hebrón más de 900 m: <i>Perspicacia</i> · <span class="propio" style="font-size:24px;padding:0 10px">cálculo propio</span> 111 km</div>
+<script>
+/*incluir:_perfil.js*/
+let g = "";
+[-200, 0, 200, 400, 600, 800, 1000].forEach((e) => {
+  const y = 800 - e * 0.52;
+  g += `<line class="eje" x1="150" y1="${y}" x2="1870" y2="${y}" ${e === 0 ? 'stroke-dasharray="10 8" stroke="#6b7a8c"' : ""}/><text class="ej-t" x="140" y="${y + 8}" text-anchor="end">${e} m</text>`;
+});
+g += `<text class="ej-t" x="1870" y="${800 - 12}" text-anchor="end">nivel del mar</text>`;
+g += `<rect class="benj-r" x="${PX(192.7)}" y="250" width="${PX(232) - PX(192.7)}" height="710" fill="#ec8a67"/><text class="ej-t benj" x="${(PX(192.7) + PX(232)) / 2}" y="990" text-anchor="middle" fill="#ec8a67">territorio de Benjamín (aprox.)</text>`;
+g += `<clipPath id="e28-clip"><rect class="clip-r" x="0" y="0" width="0" height="1200"/></clipPath>`;
+g += `<g clip-path="url(#e28-clip)"><path class="area" d="${PERFIL_AREA}" fill="#e9bf60" opacity="0.12"/><path class="linea-p" d="${PERFIL}" fill="none" stroke="var(--oro)" stroke-width="6" stroke-linejoin="round"/></g>`;
+const L = [["Sucot", 34, 185.9, 60, "c-su"], ["Siquem", 112.6, 94.5, -30, "c-si"], ["Betel", 192.7, 56.4, -30, "c-be"], ["Belén", 253.2, 64.9, -30, "c-bl"], ["Hebrón", 308, 45, -30, "c-he"]];
+L.forEach(([n, x, y, dy, k]) => { g += `<g class="${k}"><circle cx="${PX(x)}" cy="${PY(y)}" r="12" fill="var(--oro)" stroke="#17212b" stroke-width="4"/><text class="lugar-p" x="${Math.min(1810, PX(x))}" y="${PY(y) + dy}">${n}</text></g>`; });
+g += `<g class="k-su"><text class="cota" x="${PX(34) + 110}" y="${PY(185.9) + 70}">≈ −220 m</text></g>`;
+g += `<g class="k-be"><text class="cota" x="${PX(192.7)}" y="${PY(56.4) - 92}">≈ 900 m</text></g>`;
+g += `<g class="k-to"><text class="cota" x="1100" y="215" style="font-size:44px;fill:var(--oro)">≈ 111 km y más de 1.000 m de subida</text></g>`;
+$(".pf").innerHTML = g;
+const T0 = at("Sucot estaba"), T1 = at("de Sucot a Hebrón");
+tl.set($$(".pf g[class]"), { opacity: 0 }, 0);
+tl.set($(".benj-r"), { opacity: 0 }, 0);
+aparece(".c-su", T0, 0.4); aparece(".k-su", T0 + 1.5, 0.4);
+const cr = $(".clip-r");
+tl.to(cr, { attr: { width: PX(40) }, duration: 0.8, ease: "none" }, T0);
+tl.to(cr, { attr: { width: PX(112.6) + 10 }, duration: 1.2, ease: "none" }, at("Siquem") - 0.6);
+tl.to(cr, { attr: { width: PX(192.7) + 10 }, duration: 1.2, ease: "none" }, at("Y Betel") - 0.4);
+tl.to(cr, { attr: { width: 1920 }, duration: 2.0, ease: "none" }, T1 - 0.4);
+aparece(".c-si", at("Siquem"), 0.4);
+aparece(".c-be", at("Y Betel"), 0.4); aparece(".k-be", at("novecientos"), 0.4);
+aparece([".c-bl", ".c-he"], T1 - 0.4, 0.5);
+aparece(".k-to", T1 + 1.2, 0.5);
+aparece(".benj", T1 - 0.4, 0.5);
+aparece(".benj-r", T1 - 0.4, 0.5, 0.12);
+entra(".titulo28", 0.3, { y: 20 });
+</script>

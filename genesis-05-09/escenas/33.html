@@ -1,0 +1,33 @@
+<style>
+.ilus.s1 { left: 60px; top: 120px; width: 1080px; height: 432px; }
+.pie-img.p1 { left: 60px; top: 560px; width: 1080px; font-size: 20px; }
+.ilus.s2 { left: 1220px; top: 120px; width: 640px; height: 900px; }
+.pie-img.p2 { left: 1220px; top: 1030px; width: 640px; font-size: 20px; }
+.bajo { position: absolute; left: 60px; top: 620px; width: 1080px; height: 420px; }
+.bajo > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.bajo .m { font-size: 66px; }
+.bajo .cita { font-size: 48px; }
+.bajo .def .x { font-size: 54px; }
+</style>
+
+<div class="cab sobre"><span class="cap">Génesis 8</span><span>versículos 18 a 21 · 5:29</span></div>
+<div class="ilus s1"><div class="kb"><img src="assets/img/salida.jpg" /></div></div>
+<div class="pie-img p1">La Atalaya, 1 de agosto de 2013, pág. 15 (wol.jw.org)</div>
+<div class="ilus s2"><div class="kb"><img src="assets/img/altar.jpg" /></div></div>
+<div class="pie-img p2">¡Por fin restaurada!, “Dios aprobó sus ofrendas”, pág. 19</div>
+<div class="bajo">
+  <div class="b a1"><div class="m">lo primero: <b>un altar</b></div><div class="m" style="color:var(--tenue);font-size:52px">no una casa, ni un corral</div><div class="s">ofreció de los animales puros, los que había llevado de a siete · Génesis 7:2; 8:20</div></div>
+  <div class="b a2"><div class="cita">“Y a Jehová le llegó un <b>aroma muy agradable</b>”<span class="ref">GÉNESIS 8:21</span></div><div class="def"><div class="t">la nota</div><div class="x">“que <b>calma</b>” · lit. “relajante”</div><div class="s">es la actitud lo que lo calma</div></div></div>
+  <div class="b a3"><div class="cita">“Nunca más maldeciré el suelo por culpa de los hombres”<span class="ref">GÉNESIS 8:21</span></div><div class="m">lo que anunció Lamec al llamarlo <b>Noé</b></div><div class="s">Génesis 5:29 · “Estas palabras se cumplieron cuando terminó la maldición sobre el suelo durante la vida de Noé” · Perspicacia</div></div>
+</div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".s1", 0.3, { y: 30 });
+kb(".s1 .kb", 0.3, DUR, { s: 1.06, x: -1 }, { s: 1.0, x: 1 });
+aparece(".p1", 0.9, 0.5);
+entra(".s2", at("fue un altar"), { y: 30 });
+kb(".s2 .kb", at("fue un altar"), DUR, { s: 1.08, y: 2 }, { s: 1.0, y: 0 });
+aparece(".p2", at("fue un altar") + 0.6, 0.5);
+secuencia([[".a1", at("fue un altar")], [".a2", at("Y a Jehová")], [".a3", at("Jehová respondió")]]);
+</script>

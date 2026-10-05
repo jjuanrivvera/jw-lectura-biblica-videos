@@ -1,0 +1,44 @@
+<style>
+.linea { position: absolute; left: 80px; top: 330px; width: 1760px; height: 330px; }
+.lt { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; fill: #17212b; }
+.lb { font-family: "Caveat", cursive; font-weight: 700; font-size: 48px; fill: var(--tiza); }
+.lb.oro { fill: var(--oro); }
+.cita-t { position: absolute; left: 80px; right: 80px; top: 110px; }
+.cita-t .cita { font-size: 52px; }
+.siervas { position: absolute; left: 80px; right: 80px; top: 720px; bottom: 60px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 50px; }
+.sv { display: grid; grid-template-columns: 170px 1fr; column-gap: 30px; align-items: center; border-radius: 26px; background: rgba(10,16,22,0.42); border: 3px solid rgba(241,233,216,0.12); padding: 20px 28px; }
+.sv .cara { width: 170px; height: 170px; border-radius: 50%; background-image: url("assets/img/lea-raquel.jpg"); background-size: 352px 192px; }
+.sv .m { font-size: 64px; }
+.sv .s { font-size: 24px; }
+.cost { position: absolute; left: 80px; right: 80px; top: 110px; }
+.cost .cita { font-size: 58px; }
+.cost .propio { margin-top: 18px; }
+</style>
+<div class="cab"><span class="cap">Génesis 29</span><span>versículos 26 al 30</span></div>
+<div class="cost"><div class="cita">“Aquí no es costumbre entregar a la hija menor antes de entregar a la mayor”<span class="ref">LABÁN · GÉNESIS 29:26</span></div><div class="m md">siete años antes, al hacer el trato, <b>no dijo nada</b></div><span class="propio">observación propia</span></div>
+<div class="cita-t"><div class="cita">“Termina de celebrar la semana de bodas de esta mujer. Después también recibirás a esta otra”<span class="ref">GÉNESIS 29:27</span></div></div>
+<svg class="linea" viewBox="0 0 1760 330">
+  <g class="t1"><rect x="0" y="120" width="560" height="80" rx="14" fill="#e9bf60"/><text class="lt" x="280" y="174" text-anchor="middle">7 años de trabajo</text></g>
+  <g class="p1"><circle cx="580" cy="160" r="22" fill="#93bbef"/><text class="lb" x="580" y="80" text-anchor="middle">boda con Lea</text></g>
+  <g class="t2"><rect x="604" y="120" width="220" height="80" rx="14" fill="#93bbef"/><text class="lt" x="714" y="174" text-anchor="middle">7 días</text><text class="lb oro" x="714" y="262" text-anchor="middle">la semana de bodas</text></g>
+  <g class="p2"><circle cx="846" cy="160" r="22" fill="#e9adcc"/><text class="lb" x="846" y="80" text-anchor="middle">boda con Raquel</text></g>
+  <g class="t3"><rect x="870" y="120" width="560" height="80" rx="14" fill="#d7a64a"/><text class="lt" x="1150" y="174" text-anchor="middle">7 años más, ya casado</text></g>
+  <g class="mal"><text class="lb" x="1470" y="120" style="fill:#b3bdc8">no: 7 años</text><text class="lb" x="1470" y="170" style="fill:#b3bdc8">más de espera</text><path d="M 1460 150 L 1750 110" stroke="#ec8a67" stroke-width="8" stroke-linecap="round"/></g>
+</svg>
+<div class="siervas">
+  <div class="sv s1"><div class="cara" style="background-position: -6px 0px"></div><div><div class="m"><b style="color:var(--cielo)">Lea</b> recibe a <b>Zilpá</b></div><div class="s">“en el año 1774 a. E.C.” · Perspicacia, vol. 2, “Zilpá”, pág. 1233 · Génesis 29:24</div></div></div>
+  <div class="sv s2"><div class="cara" style="background-position: -180px 0px"></div><div><div class="m"><b style="color:var(--rosa)">Raquel</b> recibe a <b>Bilhá</b></div><div class="s">Génesis 29:29 · las siervas eran de las esposas, no de Jacob</div></div></div>
+</div>
+<script>
+entra(".cost", 0.4, { y: 20 });
+sale(".cost", at("Y propuso") - 0.4);
+entra(".cita-t", at("Y propuso"), { y: 20 });
+crece(".t1 rect", at("Y propuso") + 0.4, 0.8); aparece(".t1 text", at("Y propuso") + 1.0, 0.3);
+salta(".p1", at("Y propuso") + 1.2, { desde: 0.6 });
+crece(".t2 rect", at("La boda se celebraba"), 0.7); aparece(".t2 text", at("La boda se celebraba") + 0.5, 0.3);
+salta(".p2", at("esperó una semana"), { desde: 0.6 });
+aparece(".mal", at("no esperó siete años"), 0.4);
+crece(".t3 rect", at("y trabajó los siete años"), 0.9); aparece(".t3 text", at("y trabajó los siete años") + 0.7, 0.3);
+entra(".s1", at("a Lea Zilpá"), { y: 30 });
+entra(".s2", at("y a Raquel Bilhá"), { y: 30 });
+</script>

@@ -1,0 +1,59 @@
+<style>
+.col-izq .cita { font-size: 50px; }
+.col-izq .m { font-size: 62px; }
+.col-izq .def .x { font-size: 54px; }
+</style>
+
+<div class="mapa pleno"><div class="cam">
+  <img src="assets/img/relieve.jpg" width="3264" height="2880" />
+  <svg width="3264" height="2880" viewBox="0 0 3264 2880">
+    <defs><radialGradient id="e29-zona"><stop offset="0" stop-color="#e9bf60" stop-opacity="0.5"/><stop offset="0.75" stop-color="#e9bf60" stop-opacity="0.25"/><stop offset="1" stop-color="#e9bf60" stop-opacity="0"/></radialGradient></defs>
+    <path class="lago" d=""/><path class="lago l2" d=""/>
+    <path class="rio-h" d="" data-r="e"/><path class="rio" d="" data-r="e"/>
+    <path class="rio-h" d="" data-r="m"/><path class="rio" d="" data-r="m"/>
+    <path class="rio-h" d="" data-r="t"/><path class="rio" d="" data-r="t"/>
+    <text class="et r-ti" x="1665" y="1170" font-size="50">Tigris</text>
+    <g class="zona"><ellipse cx="1700" cy="830" rx="300" ry="190" fill="url(#e29-zona)"/><ellipse cx="1700" cy="830" rx="300" ry="190" fill="none" stroke="#a36a00" stroke-width="6" stroke-dasharray="18 12"/></g>
+    <text class="rot t-zona" x="1450" y="700" font-size="58" fill="#7a4a00">montañas de Ararat · Urartu</text>
+    <g class="ararat"><path d="M 1757 722 L 1792 782 L 1722 782 Z" fill="#5b4430" stroke="#fff" stroke-width="5"/><path d="M 1757 722 L 1768 741 L 1746 741 Z" fill="#fff"/></g>
+    <text class="rot t-ara" x="1757" y="836" font-size="44" fill="#3a2a1c" text-anchor="middle">monte Ararat (el de hoy)</text>
+    <text class="rot t-van" x="1560" y="935" font-size="44" fill="#1f4f78">lago de Van</text>
+    <g class="paises" font-family="Montserrat" font-weight="800" font-size="34" letter-spacing="6" fill="rgba(40,40,40,0.55)">
+      <text x="1250" y="800">TURQUÍA</text><text x="1790" y="640">ARMENIA</text><text x="1860" y="990">IRÁN</text>
+    </g>
+    <text class="rot t-nose" x="1440" y="1090" font-size="50" fill="#a33b1c">dónde se posó el arca: no se sabe</text>
+  </svg>
+</div></div>
+<div class="panel-izq"></div>
+<div class="cab sobre"><span class="cap">Génesis 8</span><span>versículo 4</span></div>
+<div class="col-izq">
+  <div class="b b1"><div class="cita">“las montañas de Ararat”<span class="ref">GÉNESIS 8:4</span></div><div class="m">en <b>plural</b>: no un pico</div></div>
+  <div class="b b2"><div class="def"><div class="t">Ararat</div><div class="x">“una cadena de montañas y una <b>región</b>”</div><div class="s">“en la que convergen Turquía, Irán y Armenia”, en torno al lago de Van · Perspicacia, vol. 1, “Ararat”</div></div></div>
+  <div class="b b3"><div class="m">los asirios: <b>Urartu</b></div><div class="s">inscripciones de Salmanasar I, Asurnasirpal II, Tiglat-piléser III y Sargón II · siglos IX y VIII a. e. c.</div><div class="m" style="font-size:54px">allá huyeron los asesinos de Senaquerib</div><div class="s">2 Reyes 19:37 · también Jeremías 51:27</div></div>
+  <div class="b b4"><div class="m oro">¿dónde exactamente? no se sabe</div><div class="cita" style="font-size:42px">“probablemente no sobre la cima de la cumbre más elevada [...], sino sobre un terreno propicio”<span class="ref">PERSPICACIA, VOL. 1, “ARARAT”</span></div></div>
+</div>
+<div class="pie-mapa" style="left:auto;right:24px">Relieve, ríos y lagos: Natural Earth (dominio público) · región aproximada, no es un límite</div>
+
+<script>
+/*incluir:_rios.js*/
+$$(".lago")[0].setAttribute("d", LAGO_VAN);
+$$(".lago")[1].setAttribute("d", LAGO_URMIA);
+const R = { e: RIO_EUFRATES, m: RIO_MURAT, t: RIO_TIGRIS };
+$$("[data-r]").forEach((p) => p.setAttribute("d", R[p.dataset.r]));
+const V = { x: 760, y: 0, w: 1160, h: 1080 };
+const cam = $(".mapa .cam");
+tl.set(cam, encuadre({ x: 700, y: 300, w: 1900, h: 1770 }, V), 0);
+tl.set($$(".mapa svg text, .zona, .ararat, .paises"), { opacity: 0 }, 0);
+aparece(".r-ti", 0.6, 0.6);
+entra(".cab", 0.2, { y: -20 });
+secuencia([[".b1", 0.4], [".b2", at("No es un pico")], [".b3", at("Los asirios")], [".b4", at("Dónde se detuvo")]]);
+tl.to(cam, { ...encuadre({ x: 1250, y: 520, w: 900, h: 840 }, V), duration: 2.4, ease: "power2.inOut" }, at("No es un pico") - 0.3);
+aparece(".zona", at("es una cadena"), 0.8);
+aparece(".t-van", at("lago de Van"), 0.5);
+aparece(".paises", at("Turquía"), 0.6);
+aparece(".t-zona", at("Urartu"), 0.5);
+salta(".ararat", at("Dónde se detuvo") - 0.2, { desde: 0.3 });
+aparece(".t-ara", at("Dónde se detuvo"), 0.5);
+aparece(".t-nose", at("No se sabe"), 0.5);
+late(".zona", at("un terreno"), { s: 1.04, n: 3 });
+</script>

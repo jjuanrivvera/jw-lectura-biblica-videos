@@ -1,0 +1,67 @@
+<style>
+.img14 { left: 60px; top: 120px; width: 1100px; height: 750px; }
+.pie14 { left: 60px; top: 884px; width: 1100px; }
+.hoy14 { position: absolute; left: 90px; top: 150px; }
+.col14 { position: absolute; left: 1200px; right: 56px; top: 100px; bottom: 60px; }
+.col14 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.col14 .m { font-size: 60px; }
+.col14 .s { font-size: 32px; }
+.esq14 { position: relative; width: 664px; height: 330px; border-radius: 22px; background: rgba(10, 16, 22, 0.5); border: 3px solid rgba(241, 233, 216, 0.14); }
+.esq14 svg { position: absolute; left: 0; top: 0; width: 664px; height: 330px; }
+.esq14 .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; fill: #f1e9d8; }
+.esq14 .o { font-family: "Caveat", cursive; font-weight: 700; font-size: 38px; fill: #e9bf60; }
+.lst14 { display: flex; gap: 14px; flex-wrap: wrap; }
+.lst14 .clave { font-size: 46px; }
+.col14 .externa, .col14 .propio { align-self: flex-start; }
+.col14 .cita { font-size: 40px; }
+</style>
+
+<div class="cab"><span class="cap">Hoy · Siquem</span><span>Génesis 48:22 · Josué 24:32</span></div>
+<div class="ilus img14"><div class="kb"><img src="assets/img/siquem.jpg" /></div></div>
+<div class="pie pie14">“Ruinas de la antigua Siquem” · <i>Perspicacia</i>, “Sucesos de la vida de Jacob”</div>
+<div class="hoy14"><span class="clave">Tell <b>Balata</b>, junto a Nablus</span></div>
+<div class="col14">
+  <div class="b b1">
+    <div class="esq14">
+      <svg viewBox="0 0 664 330">
+        <path class="rn14" d="M 20 172 C 200 150 420 172 640 150" fill="none" stroke="#c88f52" stroke-width="10" stroke-dasharray="22 12" stroke-linecap="round"/>
+        <path class="rs14" d="M 520 20 C 530 120 515 220 528 312" fill="none" stroke="#c88f52" stroke-width="10" stroke-dasharray="22 12" stroke-linecap="round"/>
+        <path class="eb14" d="M 30 140 C 90 60 180 40 260 50 C 340 60 400 90 440 132 Z" fill="#5d7a4e" stroke="#7d9a6b" stroke-width="3"/>
+        <path class="gz14" d="M 30 200 C 90 280 190 300 270 292 C 350 284 410 250 440 206 Z" fill="#5d7a4e" stroke="#7d9a6b" stroke-width="3"/>
+        <text class="t" x="150" y="105">Mte. Ebal</text>
+        <text class="t" x="138" y="258">Mte. Guerizim</text>
+        <circle class="sq14" cx="520" cy="166" r="16" fill="#c0392b" stroke="#fff" stroke-width="5"/>
+        <text class="o so14" x="548" y="230">Siquem</text>
+        <text class="t" x="610" y="48" style="font-size:22px">N ↑</text>
+      </svg>
+    </div>
+    <div class="s r1">en la <b>entrada oriental</b> del valle entre dos montes</div>
+    <div class="lst14"><span class="clave k1"><b>agua</b></span><span class="clave k2">llanura <b>fértil</b></span><span class="clave k3">cruce de <b>caminos</b></span></div>
+    <div class="f">esquema propio, sin escala · <i>Perspicacia</i>, “Siquem”, págs.&nbsp;1035 y 1036</div>
+  </div>
+  <div class="b b2">
+    <div class="m oro">hoy: sus ruinas</div>
+    <div class="s">restos de <b>murallas</b>, <b>puertas</b> y construcciones antiguas</div>
+    <span class="externa chico">fuente externa: Visit Palestine, “Tell Balata Ancient Shechem”</span>
+    <div class="cita">“Una ciudad de Samaria llamada Sicar, cerca del <b>campo que Jacob le había dado a su hijo José</b>”<span class="ref">JUAN 4:5</span></div>
+  </div>
+</div>
+
+<script>
+aparece(".img14", 0.2, 0.7);
+kb(".img14 .kb", 0, DUR, { s: 1.0, x: 0 }, { s: 1.08, x: 1.5 });
+aparece(".pie14", 0.6, 0.5);
+entra(".hoy14", 0.6, { y: -16 });
+secuencia([[".b1", 0.5], [".b2", at("Hoy se visitan") - 0.3]]);
+tl.set([".eb14", ".gz14", ".sq14", ".so14", ".rn14", ".rs14"], { opacity: 0 }, 0);
+aparece([".eb14", ".gz14"], at("entre los montes") - 0.2, 0.6);
+salta(".sq14", at("en la entrada del valle") - 0.1);
+aparece(".so14", at("en la entrada del valle") + 0.2, 0.4);
+entra(".k1", at("Tenía agua") - 0.1, { y: 12 });
+entra(".k2", at("una llanura fértil") - 0.1, { y: 12 });
+entra(".k3", at("dominaba los caminos") - 0.1, { y: 12 });
+traza(".rs14", at("de norte a sur") - 0.1, 0.8);
+traza(".rn14", at("de este a oeste") - 0.1, 0.8);
+tl.set(".b2 .cita", { opacity: 0 }, 0);
+entra(".b2 .cita", at("Jesús habló") - 0.4, { y: 14 });
+</script>

@@ -1,0 +1,47 @@
+<style>
+.puntos49 { position: absolute; left: 60px; top: 120px; width: 860px; height: 560px; }
+.puntos49 svg { width: 860px; height: 560px; }
+.cnt49 { position: absolute; left: 60px; top: 700px; width: 860px; display: flex; align-items: baseline; justify-content: center; gap: 30px; }
+.cnt49 .cifra { font-size: 96px; }
+.cnt49 .u { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; }
+.q49 { position: absolute; left: 60px; top: 830px; width: 860px; }
+.q49 .cita { font-size: 36px; }
+.col49 { position: absolute; left: 990px; right: 60px; top: 110px; bottom: 60px; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.col49 .m.t { font-size: 58px; }
+.col49 .tj .x { font-size: 34px; }
+.col49 .cita { font-size: 34px; }
+</style>
+
+<div class="cab"><span class="cap">Cómo se amarran los seis capítulos</span><span>una familia que llega a ser nación</span></div>
+<div class="izq49" style="position:absolute; inset:0"><div class="puntos49"><svg viewBox="0 0 860 560"><g class="pts"></g></svg></div>
+<div class="cnt49"><span class="cifra c70">70</span><span class="u u1">personas entraron</span><span class="u u2" style="color:var(--oro)">salió un pueblo</span></div>
+<div class="q49"><div class="cita e1">“Los israelitas tuvieron muchos hijos y empezaron a multiplicarse, y <b>llegaron a ser muchos</b>”<span class="ref">ÉXODO 1:7 · APARTE, EN GOSÉN: GÉNESIS 43:32; 46:34; 47:27</span></div></div></div>
+<div class="col49">
+  <div class="m t">la tierra prometida, <b>aunque sea para la tumba</b></div>
+  <div class="tj k1"><div class="k">Abrahán · 23:16-20</div><div class="x">compró la cueva de Macpelá</div></div>
+  <div class="tj k2"><div class="k">Jacob · 47:29-31</div><div class="x">pidió que lo enterraran allí</div></div>
+  <div class="tj on k3"><div class="k">José · 50:25</div><div class="x">pedirá que se lleven sus huesos</div></div>
+</div>
+
+<script>
+// Setenta puntos que se multiplican: posiciones de un generador fijo (render determinista).
+let sem = 21;
+const rnd = () => ((sem = (sem * 9301 + 49297) % 233280) / 233280);
+let s = "";
+for (let i = 0; i < 70; i++) { const x = 230 + rnd() * 400, y = 110 + rnd() * 340; s += `<circle class="d70" cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="13" fill="#e9bf60" stroke="#17212b" stroke-width="2"/>`; }
+for (let i = 0; i < 520; i++) { const x = 20 + rnd() * 820, y = 20 + rnd() * 520; s += `<circle class="dm" cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="7" fill="#e9bf60" opacity="0.75"/>`; }
+$(".pts").innerHTML = s;
+const t70 = at("Entraron setenta");
+const tT = at("Y aunque vivieron");
+tl.set($(".izq49"), { x: 470 }, 0);
+tl.to($(".izq49"), { x: 0, duration: 0.9, ease: "power2.inOut" }, tT - 0.9);
+salta($$(".d70"), 0.4, { desde: 0, st: 0.02, d: 0.3 });
+entra([".c70", ".u1"], 0.6, { y: 12 });
+entra(".e1", at("Así empieza Éxodo") - 0.3, { y: 16 });
+tl.fromTo(inicial(el(".dm"), { opacity: 0 }), { opacity: 0, scale: 0 }, { opacity: 0.75, scale: 1, transformOrigin: "50% 50%", duration: 0.25, stagger: 1.8 / 520, ease: "power1.out", immediateRender: false }, t70 + 0.8);
+entra(".u2", at("salió un pueblo"), { y: 12 });
+entra(".t", tT - 0.2, { y: 16 });
+entra(".k1", at("Abrahán compró"), { y: 16 });
+entra(".k2", at("Jacob pidió"), { y: 16 });
+entra(".k3", at("y José pedirá"), { y: 16 });
+</script>

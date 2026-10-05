@@ -1,0 +1,22 @@
+<style>
+.puerta { position: absolute; left: 30px; top: 140px; width: 1060px; height: 830px; }
+.puerta svg { width: 1060px; height: 830px; }
+.col.der { width: 760px; }
+</style>
+<div class="cab"><span class="cap">Génesis 34</span><span>versículos 5 al 24</span></div>
+<div class="puerta"><svg viewBox="0 0 1100 860" class="dib"></svg></div>
+<div class="f" style="position:absolute;left:60px;bottom:26px">Dibujo propio de una puerta de ciudad, como en los videos anteriores</div>
+<div class="col der">
+  <div class="b a1"><div class="cita md">“Unamos nuestras familias con alianzas matrimoniales. Dennos a sus hijas y tomen a nuestras hijas para ustedes”<span class="ref">GÉNESIS 34:9</span></div><div class="def"><div class="t">alianza matrimonial</div><div class="x">unir dos grupos por medio de <b>matrimonios</b>, “con el fin de conseguir ciertos beneficios mutuos”</div><div class="s"><i>Perspicacia</i>, vol. 1, “Alianza”, pág. 89 · nota de la TNM: “Formemos matrimonios mixtos”</div></div></div>
+  <div class="b a2"><div class="m">Abrahán no quiso una esposa cananea para Isaac</div><div class="f">Génesis 24:3, 4 · y lo mismo Isaac a Jacob, 28:1</div><div class="m oro">aceptar: mezclar la familia de la promesa con un pueblo que adoraba dioses falsos</div><span class="propio">observación propia</span></div>
+  <div class="b a3"><div class="cita md">“Pueden pedirme una dote altísima por la novia”<span class="ref">GÉNESIS 34:12</span></div><div class="def"><div class="t">dote</div><div class="x">el novio la pagaba a la familia de la novia “con objetos de valor, animales o dinero”</div><div class="s">no era comprar a la mujer: “demostraba que una mujer estaba comprometida” · <i>La Atalaya</i> (estudio), febrero de 2022, pág. 30</div></div></div>
+  <div class="b a4"><div class="cita md">“a la puerta de la ciudad”<span class="ref">GÉNESIS 34:20</span></div><div class="m">la plaza, el juzgado y el ayuntamiento, a la vez</div><div class="cita md">“La gente acostumbraba a reunirse delante de las puertas de la ciudad para efectuar allí la mayor parte de las actividades públicas”</div><div class="f"><i>Perspicacia</i>, vol. 2, “Puerta, paso de entrada”, pág. 757</div></div>
+</div>
+<script>
+/*incluir:_puerta.js*/
+pinta(".dib", puertaSVG("e24"));
+aparece(".puerta", 0.3, 0.8);
+atenua(".puerta", at("Es decir") - 0.2, 0.45);
+tl.to($(".puerta"), { opacity: 1, duration: 0.6 }, at("Hamor llevó") - 0.3);
+secuencia([[".a1", 0.4], [".a2", at("Pero Abrahán")], [".a3", at("Siquem ofreció")], [".a4", at("Hamor llevó")]]);
+</script>

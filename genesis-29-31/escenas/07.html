@@ -1,0 +1,33 @@
+<style>
+.marco { position: absolute; left: 60px; top: 120px; width: 1140px; height: 570px; border-radius: 26px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
+.marco .kb { position: absolute; inset: 0; }
+.marco img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pie-img { left: 60px; top: 700px; width: 1140px; }
+.flechas { position: absolute; left: 60px; top: 770px; width: 1140px; height: 290px; }
+.ft { font-family: "Caveat", cursive; font-weight: 700; font-size: 52px; fill: var(--tiza); }
+.ft.oro { fill: var(--oro); }
+.ft.gris { fill: var(--tenue); }
+.col { top: 120px; bottom: 90px; right: 64px; width: 620px; }
+</style>
+<div class="cab"><span class="cap">Génesis 29</span><span>versículo 18</span></div>
+<div class="marco"><div class="kb"><img src="assets/img/dote-vaca.jpg"/></div></div>
+<div class="pie-img">“La dote podía pagarse, por ejemplo, con animales.” Ilustración: <i>La Atalaya</i> (estudio), febrero de 2022, pág. 30 (wol.jw.org)</div>
+<svg class="flechas" viewBox="0 0 1140 290">
+  <g class="f-es"><text class="ft gris" x="0" y="70">“dote” en español:</text><text class="ft gris" x="420" y="70">la novia</text><path d="M 600 52 L 760 52" stroke="#b3bdc8" stroke-width="6" marker-end=""/><path d="M 745 38 L 765 52 L 745 66" fill="none" stroke="#b3bdc8" stroke-width="6"/><text class="ft gris" x="790" y="70">el novio</text>
+    <path class="tacha" d="M 0 50 L 1000 60" stroke="#ec8a67" stroke-width="8" stroke-linecap="round"/></g>
+  <g class="f-mo"><text class="ft oro" x="0" y="200">el mó·har:</text><text class="ft" x="300" y="200">el novio</text><path d="M 480 182 L 640 182" stroke="#e9bf60" stroke-width="8"/><path d="M 622 164 L 646 182 L 622 200" fill="none" stroke="#e9bf60" stroke-width="8"/><text class="ft" x="670" y="200">el padre de la novia</text></g>
+</svg>
+<div class="col">
+  <div class="b a1"><div class="cita">“Estoy dispuesto a trabajar para ti siete años por tu hija menor Raquel”<span class="ref">GÉNESIS 29:18</span></div><div class="m md">un <b>precio</b>, no un salario</div></div>
+  <div class="b a2"><div class="def"><div class="t">Precio de la novia<i>mó·har</i></div><div class="x">lo que el novio pagaba <b>al padre</b> de la muchacha</div><div class="s">Perspicacia, vol. 2, “Matrimonio”, pág. 343</div></div></div>
+  <div class="b a3"><div class="m md">“una compensación por la pérdida de los servicios de la hija”</div><div class="m md">y por lo que costó criarla</div><div class="s">Perspicacia, vol. 2, “Matrimonio”, pág. 343</div><div class="m md rojo">no era comprar a la mujer</div><div class="s">“como si fuera un objeto” · La Atalaya (estudio), febrero de 2022, pág. 30</div></div>
+  <div class="b a4"><div class="m xl oro">con trabajo</div><div class="cita md">“también podía pagarse rindiendo servicios”</div><div class="s">Perspicacia, vol. 1, “Esponsales”, pág. 866</div></div>
+</div>
+<script>
+kb(".marco .kb", 0, DUR, { s: 1.0, x: 0 }, { s: 1.12, x: -3 });
+aparece(".f-es", at("A veces se traduce dote"), 0.5);
+traza(".tacha", at("aquí no paga la novia"), 0.5);
+aparece(".f-mo", at("paga el novio"), 0.5);
+atenua(".f-es", at("Era una compensación"), 0.3);
+secuencia([[".a1", 0.4], [".a2", at("Antes de casarse")], [".a3", at("Era una compensación")], [".a4", at("Pero Jacob llegó")]]);
+</script>

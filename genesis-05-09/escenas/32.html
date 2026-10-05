@@ -1,0 +1,56 @@
+<style>
+.ilus.im { left: 60px; top: 120px; width: 470px; height: 900px; }
+.pie-img.pi { left: 60px; top: 1030px; width: 800px; font-size: 20px; }
+.lt { position: absolute; left: 0; top: 0; }
+.bl { font-family: "Caveat", cursive; font-weight: 700; font-size: 38px; }
+.dd { font-family: "Fraunces", serif; font-weight: 700; font-size: 32px; fill: var(--oro); }
+.top { position: absolute; left: 600px; right: 70px; top: 120px; }
+.top .cita { font-size: 46px; }
+.bajo { position: absolute; left: 600px; right: 70px; top: 700px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+.bajo .dato .v { font-size: 88px; }
+.bajo .dato .k { font-size: 44px; }
+.bajo .m { font-size: 50px; }
+</style>
+
+<div class="cab sobre"><span class="cap">Génesis 8</span><span>versículos 13 a 18</span></div>
+<div class="ilus im"><div class="kb"><img src="assets/img/dentro.jpg" /></div></div>
+<div class="pie-img pi">La Atalaya, 1 de agosto de 2013, “Fue protegido junto ‘con otras siete personas’” (wol.jw.org)</div>
+<div class="top"><div class="cita">“Génesis fecha todas las fases del Diluvio con la precisión de un <b>diario de navegación</b>”<span class="ref">LA ATALAYA, 15/11/2001, PÁG. 30</span></div></div>
+<svg class="lt" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <g class="bandas">
+    <rect class="bn1" x="640" y="400" width="128" height="34" rx="8" fill="#ec8a67"/><text class="bl" x="640" y="390" fill="#ec8a67">40 días de lluvia</text>
+    <rect class="bn2" x="640" y="470" width="480" height="34" rx="8" fill="#4f95c8"/><text class="bl" x="790" y="460" fill="#93bbef">150 días: las aguas dominan</text>
+    <rect class="bn3" x="1120" y="540" width="704" height="34" rx="8" fill="#5f9e5f"/><text class="bl" x="1130" y="530" fill="#92d193">220 días: bajan las aguas y salen</text>
+  </g>
+  <path class="eje" d="M 618 620 L 1840 620" stroke="#f1e9d8" stroke-width="5"/>
+  <g class="tk" stroke="#f1e9d8" stroke-width="4">
+    <path d="M 618 610 L 618 630"/><path d="M 640 610 L 640 630"/><path d="M 768 610 L 768 630"/><path d="M 1120 610 L 1120 630"/><path d="M 1645 610 L 1645 630"/><path d="M 1824 610 L 1824 630"/>
+  </g>
+  <g font-family="Montserrat" font-weight="700" font-size="22" fill="#b3bdc8" text-anchor="middle" class="tn">
+    <text x="612" y="660">−7</text><text x="646" y="660">0</text><text x="768" y="660">40</text><text x="1120" y="660">150</text><text x="1645" y="660">314</text><text x="1824" y="660">370</text>
+  </g>
+  <g class="espera"><rect x="1645" y="596" width="179" height="48" rx="8" fill="rgba(233,191,96,0.3)" stroke="#e9bf60" stroke-width="4"/><text class="bl" x="1735" y="585" text-anchor="middle" fill="#e9bf60">56 días esperando</text></g>
+</svg>
+<div class="bajo">
+  <div class="dato d1"><span class="propio" style="font-size:30px">cuenta día por día: cálculo propio</span><div class="v">370 días</div><div class="k">un año de 360, y diez más</div><div class="s">con la semana previa, 377 · Perspicacia: “un total de 370 días y parte del 371”</div></div>
+  <div class="tareas"><div class="m">“Tenían mucho que hacer”</div><div class="s" style="font-size:28px">dar de comer y beber a los animales · deshacerse de los desperdicios · llevar la cuenta del tiempo · La Atalaya, 15/5/2003</div></div>
+</div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".im", 0.3, { y: 30 });
+kb(".im .kb", 0.3, DUR, { s: 1.06, y: 1 }, { s: 1.0, y: 0 });
+aparece(".pi", 0.9, 0.5);
+entra(".top", 0.4, { y: 30 });
+traza(".eje", 0.8, 0.8);
+aparece([".tk", ".tn"], 1.2, 0.5);
+tl.set($$(".bandas rect, .bandas text, .espera"), { opacity: 0 }, 0);
+[[".bn1", 1.4], [".bn2", 1.9], [".bn3", 2.4]].forEach(([b, t]) => {
+  aparece([b, b + " + text"], t, 0.3);
+  tl.fromTo($(b), { scaleX: 0 }, { scaleX: 1, transformOrigin: "0% 50%", duration: 0.6, immediateRender: false }, t);
+});
+aparece(".espera", at("Esperó cincuenta"), 0.5);
+late(".espera rect", at("Esperó cincuenta") + 0.3, { s: 1.08, n: 3 });
+entra(".d1", at("En total"), { y: 30 });
+entra(".tareas", at("Y no estaban"), { y: 30 });
+</script>

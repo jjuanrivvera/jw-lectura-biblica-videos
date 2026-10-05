@@ -1,0 +1,33 @@
+<style>
+.tres { position: absolute; left: 90px; right: 90px; top: 175px; bottom: 25px; display: flex; flex-direction: column; justify-content: center; gap: 34px; }
+.pq { display: grid; grid-template-columns: 130px 1fr; column-gap: 36px; align-items: start; border-left: 10px solid var(--verde); padding: 12px 0 12px 32px; }
+.pq .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 120px; line-height: 0.9; color: var(--verde); }
+.pq .c { font-family: "Caveat", cursive; font-weight: 700; font-size: 66px; line-height: 1.04; color: var(--tiza); }
+.pq .c b { color: var(--oro); }
+.pq .p { font-family: "Fraunces", serif; font-style: italic; font-weight: 500; font-size: 48px; line-height: 1.16; color: var(--oro); margin-top: 12px; }
+</style>
+
+<div class="seccion"><div class="r">Lecciones y preguntas</div><div class="t">Génesis 6</div></div>
+<svg class="seccion-linea" viewBox="0 0 1740 20" preserveAspectRatio="none"><path d="M 4 12 C 400 4 1200 18 1736 8"/></svg>
+<div class="tres">
+  <div class="pq q1"><div class="n">1</div><div><div class="c">A Jehová <b>le duele</b> el mal</div><div class="p">No es un juez frío</div></div></div>
+  <div class="pq q2"><div class="n">2</div><div><div class="c">Noé hizo todo tal como Dios le había dicho: <b>ni un atajo ni una mejora propia</b></div><div class="p">¿Dónde tiendo yo a cambiar las instrucciones?</div></div></div>
+  <div class="pq q3"><div class="n">3</div><div><div class="c">Noé predicó durante décadas, nadie de fuera le hizo caso, y la Biblia lo llama <b>fiel</b></div><div class="p">¿Cómo medimos el éxito: por los que hacen caso, o por la obediencia?</div></div></div>
+</div>
+
+<script>
+entra(".seccion", 0.3, { y: -20 });
+traza(".seccion-linea path", 0.6, 1.0);
+aparece(".q1", at("Primera") - 0.3, 0.3);
+entra(".q1 .n", at("Primera") - 0.2, { y: 20 });
+entra(".q1 .c", at("Primera"), { y: 20 });
+entra(".q1 .p", at("No es un juez"), { y: 20 });
+aparece(".q2", at("Segunda", at("Primera")) - 0.3, 0.3);
+entra(".q2 .n", at("Segunda", at("Primera")) - 0.2, { y: 20 });
+entra(".q2 .c", at("Segunda", at("Primera")), { y: 20 });
+entra(".q2 .p", at("Dónde tiendo"), { y: 20 });
+aparece(".q3", at("Tercera", at("Segunda")) - 0.3, 0.3);
+entra(".q3 .n", at("Tercera", at("Segunda")) - 0.2, { y: 20 });
+entra(".q3 .c", at("Tercera", at("Segunda")), { y: 20 });
+entra(".q3 .p", at("Cómo medimos"), { y: 20 });
+</script>

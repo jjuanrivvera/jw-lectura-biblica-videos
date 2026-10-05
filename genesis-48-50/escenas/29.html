@@ -1,0 +1,48 @@
+<!--incluir:_g49b-hijo.html-->
+<style>
+.def29 { margin-top: 4px; }
+.def29 .x { font-size: 54px; }
+</style>
+<div class="fase fmapa"><!--incluir:_b6.html--><div class="funde-der"></div></div>
+<div class="cab ch"><span class="cap">Génesis 49</span><span>versículo 20</span></div>
+<div class="hijo gh" style="--c: var(--zilpa)"><img src="assets/img/aser-g.jpg" /></div>
+<div class="pres">
+  <div class="nhijo">Aser<small>quiere decir “feliz”</small></div>
+  <div class="cita">“Aser tendrá <b>pan en abundancia</b> y suministrará <b>comida digna de un rey</b>”<span class="ref">GÉNESIS 49:20</span></div>
+  <div class="def def29"><div class="t">abundancia <i>nota de Génesis 49:20</i></div><div class="x">literalmente, <b>“graso”</b>: alimento rico y de buena calidad</div></div>
+</div>
+<div class="mini"><div class="nhijo">Aser<small>cómo se cumplió</small></div></div>
+<div class="col49">
+  <div class="b b1">
+    <div class="cumple"><div class="k">su territorio</div><div class="x">junto a la costa: <b>tierra fértil</b></div></div>
+    <div class="cita c2">“que moje sus pies <b>en aceite</b>”<span class="ref">MOISÉS · DEUTERONOMIO 33:24</span></div>
+  </div>
+  <div class="b b2">
+    <div class="cita">“Aser se sentó a la orilla del mar <b>sin hacer nada</b>, no se movió de sus puertos”<span class="ref">JUECES 5:17</span></div>
+    <div class="cumple c2"><div class="k">una posibilidad</div><div class="x">quizás <b>la prosperidad</b> le quitó el entusiasmo</div></div>
+  </div>
+</div>
+<div class="fu49 f"><i>La Atalaya</i>, junio de 2025, “Qué nos enseñan las últimas palabras de Jacob (parte 2)”, págs.&nbsp;10 a 11 · <i>Perspicacia</i>, “Aser”, pág.&nbsp;230</div>
+
+<script>
+/*incluir:_g49b-hijo.js*/
+const [ax, ay] = B6.aser;
+pinta(".marcas", `
+  <ellipse class="anillo oro a-a" cx="1525" cy="760" rx="115" ry="470" transform="rotate(5 1525 760)" style="stroke-width:10"/>
+  <g class="lc">${chip(1660, 700, "costa fértil", { fs: 40, cls: "verde" })}</g>
+  <g class="lo">${chip(1600, 1010, "se quedó junto al mar", { fs: 36, cls: "rojo" })}</g>
+`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".fmapa .cam"), encuadre({ x: 1240, y: 260, w: 960, h: 926 }, V), 0);
+hijoEntra(0.3);
+entra(".pres .cita", 0.9, { y: 24 });
+entra(".def29", at("La nota dice") - 0.2, { y: 20 });
+const tM = at("Su territorio");
+hijoAMapa(tM - 0.5);
+secuencia([[".b1", tM], [".b2", at("Pero cuando Débora") - 0.2]]);
+traza(".a-a", tM + 0.4, 0.9);
+aparece(".lc", at("era fértil") - 0.2, 0.4);
+entra(".b1 .c2", at("Moisés lo bendijo") - 0.1, { y: 14 });
+aparece(".lo", at("se quedó a la orilla") - 0.2, 0.4);
+entra(".b2 .c2", at("Quizás la prosperidad") - 0.2, { y: 14 });
+</script>

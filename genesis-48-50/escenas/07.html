@@ -1,0 +1,43 @@
+<style>
+.img07 { left: 60px; top: 120px; width: 1160px; height: 716px; }
+.pie07 { left: 60px; top: 850px; width: 1160px; }
+.col07 { position: absolute; left: 1270px; right: 60px; top: 110px; bottom: 70px; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.col07 .m { font-size: 62px; }
+.col07 .s { font-size: 36px; }
+.col07 .tj .x { font-size: 38px; }
+.col07 .externa, .col07 .clave { align-self: flex-start; }
+.no07 { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; line-height: 1.05; color: var(--rojo); }
+.hoy07 { position: absolute; left: 90px; top: 150px; }
+.bel07 { position: absolute; left: 60px; right: 60px; bottom: 40px; }
+.bel07 .cita { font-size: 44px; }
+</style>
+
+<div class="cab"><span class="cap">Hoy · Belén</span><span>Génesis 35:19, 20; 48:7</span></div>
+<div class="ilus img07"><div class="kb"><img src="assets/img/belen-hoy.jpg" /></div></div>
+<div class="pie pie07">“Vista actual de Belén, el lugar donde nacieron David y Jesús” · <i>Perspicacia</i>, vol.&nbsp;1, “Belén”, pág.&nbsp;302</div>
+<div class="hoy07"><span class="clave">Belén <b>hoy</b></span></div>
+<div class="col07">
+  <div class="m oro c1">la “tumba de Raquel”</div>
+  <div class="s c2">un santuario en la <b>entrada norte</b> de Belén, junto a la carretera de <b>Jerusalén a Hebrón</b></div>
+  <div class="s c3">edificio de <b>tradición religiosa</b>, reformado con el tiempo</div>
+  <span class="externa chico c4">fuente externa: Municipio de Belén, “Rachel’s Tombs”</span>
+  <div class="no07 c5">no es la columna de Jacob</div>
+  <span class="clave c6" style="font-size:46px">identificación <b>incierta</b></span>
+</div>
+<div class="bel07"><div class="cita">la Biblia sí sigue a <b>Belén</b>: allí nació Jesús<span class="ref">MATEO 2:1-6 · MIQUEAS 5:2</span></div></div>
+
+<script>
+aparece(".img07", 0.2, 0.7);
+kb(".img07 .kb", 0, DUR, { s: 1.0, x: 0 }, { s: 1.07, x: -1.5 });
+aparece(".pie07", 0.6, 0.5);
+entra(".hoy07", 0.6, { y: -16 });
+entra(".c1", at("hay un santuario") - 0.3, { y: 16 });
+entra(".c2", at("en la entrada norte"), { y: 12 });
+entra(".c3", at("Es un edificio") - 0.1, { y: 12 });
+aparece(".c4", at("Es un edificio") + 0.6, 0.4);
+entra(".c5", at("No es la columna") - 0.1, { y: 12 });
+entra(".c6", at("no se puede comprobar") - 0.1, { y: 12 });
+const tB = at("Lo que sí se sigue");
+sale(".pie07", tB - 0.4, { y: 0 });
+entra(".bel07", tB, { y: 20 });
+</script>

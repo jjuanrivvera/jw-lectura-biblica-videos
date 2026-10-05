@@ -1,0 +1,63 @@
+<style>
+.tr36 { position: absolute; left: 50px; top: 100px; width: 980px; height: 640px; }
+.tr36 svg { width: 980px; height: 640px; display: block; }
+.e36 { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; fill: var(--tiza); text-anchor: middle; }
+.e36.oro { fill: var(--oro); }
+.e36.gr { fill: #a9b1b9; }
+.map36 { position: absolute; left: 1070px; top: 100px; width: 800px; height: 880px; border-radius: 20px; overflow: hidden; background: #f4e3c3; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); }
+.map36 .cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.map36 .cam img, .map36 .cam svg { position: absolute; left: 0; top: 0; width: 1200px; height: 2411px; }
+.pie36 { left: 1070px; top: 990px; max-width: 800px; }
+.v36 { position: absolute; left: 60px; top: 760px; width: 960px; }
+.c36 { position: absolute; left: 60px; top: 760px; width: 960px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 41</span><span>versículos 5 al 9</span></div>
+<div class="tr36"><svg viewBox="0 0 980 640">
+  <defs><linearGradient id="e36-tallo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7c46a"/><stop offset="1" stop-color="#9c7430"/></linearGradient></defs>
+  <g class="llena36"></g><g class="seca36"></g>
+  <text class="e36 oro t1" x="300" y="620">varias espigas en un tallo</text>
+  <text class="e36 gr t2" x="760" y="620">quemadas por el viento del este</text>
+</svg></div>
+<div class="map36"><div class="cam"><img src="assets/img/egipto.jpg" /><svg viewBox="0 0 1200 2411"><g class="viento"></g></svg></div></div>
+<div class="pie pie36">“MAPA: El antiguo Egipto”, <i>Perspicacia</i>, vol. 1, pág. 531 (wol.jw.org) · flechas añadidas (esquema)</div>
+<div class="v36"><div class="def"><div class="t">el viento del este</div><div class="x">cruzaba zonas desérticas: “era <b>caliente y seco</b>, y quemaba o secaba completamente la vegetación”</div><div class="s"><i>Perspicacia</i>, vol. 2, “Viento”, pág. 1206 · el trigo: “Trigo”, pág. 1160</div></div></div>
+<div class="c36"><div class="cita">“Hoy tengo que confesar mis pecados”<span class="ref">EL COPERO · GÉNESIS 41:9</span></div><div class="m md" style="margin-top:12px">y le habló al faraón del joven hebreo de la prisión</div></div>
+
+<script>
+function tallo36(cx, base, llena, cls, esc) {
+  let s = `<g class="${cls}"><g transform="translate(${cx} ${base}) scale(${esc})"><path d="M 0 0 C -6 -120 4 -240 0 -330" stroke="url(#e36-tallo)" stroke-width="7" fill="none"/>`;
+  for (let i = 0; i < 7; i++) {
+    const y = -170 - i * 24, lado = i % 2 ? 1 : -1, ex = lado * (llena ? 30 : 22), ey = y - 20;
+    s += `<path d="M 0 ${y} Q ${lado * 10} ${y - 8} ${ex} ${ey}" stroke="${llena ? "#c99a45" : "#8a6f4a"}" stroke-width="4" fill="none"/>`;
+    s += llena ? `<ellipse cx="${ex}" cy="${ey}" rx="12" ry="26" fill="#e6b957" stroke="#9c7430" stroke-width="2" transform="rotate(${lado * 28} ${ex} ${ey})"/><path d="M ${ex} ${ey - 26} l ${lado * 8} -22" stroke="#c99a45" stroke-width="2"/>`
+               : `<ellipse cx="${ex}" cy="${ey}" rx="5" ry="24" fill="#8a6f4a" stroke="#5c4a30" stroke-width="2" transform="rotate(${lado * 48} ${ex} ${ey})"/>`;
+  }
+  return s + "</g></g>";
+}
+pinta(".llena36", tallo36(300, 570, true, "tl1", 1.5));
+pinta(".seca36", tallo36(760, 570, false, "tl2", 1.5));
+// Flechas del viento: del desierto del este hacia el valle del Nilo.
+let vv = "";
+[[1180, 420, 640, 470], [1180, 620, 620, 640], [1180, 820, 600, 820], [1180, 1020, 590, 1000]].forEach(([x1, y1, x2, y2], i) => {
+  vv += `<path class="vt vt${i}" d="M ${x1} ${y1} C ${x1 - 150} ${y1 - 40} ${x2 + 200} ${y2 + 40} ${x2} ${y2}" stroke="#c0392b" stroke-width="14" fill="none" stroke-linecap="round"/>`;
+  vv += `<path class="vp vp${i}" d="M ${x2 + 34} ${y2 - 22} L ${x2} ${y2} L ${x2 + 34} ${y2 + 22}" stroke="#c0392b" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+});
+vv += `<g class="vtx"><rect x="700" y="1080" width="470" height="84" rx="18" fill="rgba(15,22,30,0.88)"/><text x="720" y="1136" font-family="Caveat" font-weight="700" font-size="54" fill="#ec8a67">viento del este</text></g>`;
+pinta(".viento", vv);
+const V = { x: 0, y: 0, w: 800, h: 880 };
+tl.set($(".map36 .cam"), encuadre({ x: 0, y: 150, w: 1200, h: 1320 }, V), 0);
+entra(".tl1", 0.5, { y: 30 });
+aparece(".t1", at("varias espigas"), 0.4);
+aparece(".map36", 0.4, 0.5);
+aparece(".pie36", 0.8, 0.4);
+const tV = at("Y el viento del este");
+[0, 1, 2, 3].forEach((i) => { traza(".vt" + i, tV + i * 0.25, 1.2); aparece(".vp" + i, tV + i * 0.25 + 1.1, 0.3); });
+aparece(".vtx", tV + 0.6, 0.4);
+entra(".tl2", at("quemaba") - 0.4, { y: 30 });
+aparece(".t2", at("quemaba"), 0.4);
+entra(".v36", tV + 0.4, { y: 20 });
+const tC = at("Entonces el copero");
+sale(".v36", tC - 0.4, { y: -16 });
+entra(".c36", tC, { y: 20 });
+</script>

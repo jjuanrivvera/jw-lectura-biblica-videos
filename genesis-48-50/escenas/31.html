@@ -1,0 +1,75 @@
+<!--incluir:_g49b-hijo.html-->
+<style>
+.arb31 { position: absolute; left: 10px; top: 80px; width: 880px; height: 960px; }
+.arb31 .arbol { width: 880px; height: 960px; }
+.fmapa .pie-mapa { max-width: 1072px; white-space: nowrap; font-size: 17px; padding: 5px 12px; bottom: 14px; }
+.pres.p31 { left: 920px; }
+.pres.p31 .cita { font-size: 48px; }
+.hijo.m31 { left: 1130px; top: 96px; width: 230px; height: 230px; }
+.mini.n31 { left: 1400px; }
+.col49 { top: 340px; bottom: 100px; }
+.col49 .cita { font-size: 46px; }
+</style>
+<div class="fase fmapa"><!--incluir:_b6.html--><div class="funde-der"></div></div>
+<div class="fase ar31"><div class="arb31"><!--incluir:_g49b-arbol.html--></div></div>
+<div class="cab ch"><span class="cap">Génesis 49</span><span>versículos 22 al 26</span></div>
+<div class="pres p31">
+  <div class="nhijo">José</div>
+  <div class="cita">“José es el retoño de <b>un árbol fructífero</b>, un árbol fructífero que está <b>junto a un manantial</b>, que extiende sus ramas <b>por encima del muro</b>”<span class="ref">GÉNESIS 49:22</span></div>
+</div>
+<div class="hijo m31" style="--c: var(--raquel)"><img src="assets/img/jose-g.jpg" /></div>
+<div class="mini n31"><div class="nhijo">José<small>cómo se cumplió</small></div></div>
+<div class="col49">
+  <div class="b b1">
+    <div class="cumple"><div class="k">las ramas</div><div class="x">de José salieron <b>dos tribus</b>: Efraín y Manasés</div></div>
+  </div>
+  <div class="b b2">
+    <div class="cita">“Pero <b>los arqueros</b> estuvieron acosándolo, dispararon contra él y no dejaron de odiarlo”<span class="ref">GÉNESIS 49:23</span></div>
+    <div class="cumple c2"><div class="k">los arqueros</div><div class="x">recuerdan a <b>los hermanos</b> que lo odiaron y lo vendieron</div></div>
+  </div>
+  <div class="b b3">
+    <div class="cita">“Sin embargo, <b>su arco se mantuvo firme</b> [...] gracias a las manos del poderoso de Jacob”<span class="ref">GÉNESIS 49:24</span></div>
+    <span class="clave c2">“el que fue <b>escogido entre sus hermanos</b>” · 49:26</span>
+  </div>
+</div>
+<div class="fu49 f"><i>La Atalaya</i>, junio de 2025, “Qué nos enseñan las últimas palabras de Jacob (parte 2)”, pág.&nbsp;12 · <i>Perspicacia</i>, “José”, págs.&nbsp;126 a 127</div>
+
+<script>
+const [ex, ey] = B6.efrain, [mx, my] = B6.manasesO, [mex, mey] = B6.manasesE;
+pinta(".marcas", `
+  <ellipse class="anillo oro a-e" cx="${ex + 20}" cy="${ey}" rx="210" ry="120" style="stroke-width:12"/>
+  <ellipse class="anillo oro a-m" cx="${mx}" cy="${my}" rx="260" ry="180" style="stroke-width:12"/>
+  <ellipse class="anillo oro a-me" cx="${mex}" cy="${mey + 40}" rx="230" ry="255" style="stroke-width:12"/>
+  <g class="le">${chip(ex - 300, ey + 110, "Efraín", { fs: 46, cls: "oro" })}</g>
+  <g class="lm">${chip(1290, 1480, "Manasés (oeste)", { fs: 36, cls: "oro", ancla: "der" })}</g>
+  <g class="lm">${chip(2140, 1010, "Manasés (este)", { fs: 36, cls: "oro", ancla: "centro" })}</g>
+`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".fmapa .cam"), encuadre({ x: 1000, y: 700, w: 1350, h: 1500 }, V), 0);
+tl.set($(".fmapa"), { opacity: 0 }, 0);
+// El árbol crece con la cita.
+entra(".pres .nhijo", 0.3, { x: -24, y: 0 });
+entra(".pres .cita", 0.8, { y: 24 });
+aparece(".ar-suelo", 0.4, 0.6);
+tl.fromTo($(".ar-tronco"), { scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 1.2, ease: "power2.out", immediateRender: false }, at("árbol fructífero", 0) - 0.2);
+tl.set($(".ar-tronco"), { scaleY: 0, transformOrigin: "50% 100%" }, 0);
+traza(".ar-ramas path", at("árbol fructífero", 0) + 0.6, 1.2, { st: 0.15 });
+salta(".ar-hojas circle", at("árbol fructífero", 0) + 1.0, { desde: 0.2, st: 0.03, d: 0.5 });
+salta(".ar-frutos circle", at("un árbol fructífero que") + 0.4, { desde: 0.1, st: 0.09, d: 0.4 });
+entra(".ar-agua", at("junto a un manantial") - 0.2, { y: 20 });
+entra(".ar-muro", at("por encima del muro") - 0.6, { y: 30 });
+tl.set($(".ar-muro"), { opacity: 0 }, 0);
+const tM = at("De José salieron");
+sale(".pres", tM - 0.4, { y: -20 });
+tl.to($(".ar31"), { opacity: 0, duration: 0.6 }, tM - 0.2);
+tl.to($(".fmapa"), { opacity: 1, duration: 0.8 }, tM - 0.2);
+salta(".hijo.m31", tM, { desde: 0.6 });
+entra(".mini", tM + 0.3, { x: -24, y: 0 });
+secuencia([[".b1", tM], [".b2", at("Pero los arqueros") - 0.2], [".b3", at("Sin embargo, su arco") - 0.2]]);
+traza(".a-e", at("Efraín y Manasés") - 0.1, 0.7);
+aparece(".le", at("Efraín y Manasés"), 0.4);
+traza([".a-m", ".a-me"], at("y Manasés", at("Efraín")) - 0.1, 0.7);
+aparece(".lm", at("y Manasés", at("Efraín")) + 0.2, 0.4);
+entra(".b2 .c2", at("Recuerdan a los hermanos") - 0.2, { y: 14 });
+entra(".b3 .c2", at("Por eso lo llama") - 0.2, { y: 14 });
+</script>

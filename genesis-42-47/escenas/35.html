@@ -1,0 +1,43 @@
+<style>
+.img35 { position: absolute; inset: 0; overflow: hidden; }
+.img35 .kb { position: absolute; inset: 0; }
+.img35 img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.img35 .velo { background: linear-gradient(180deg, rgba(22, 32, 42, 0.1) 0%, rgba(22, 32, 42, 0.25) 30%, rgba(22, 32, 42, 0.9) 58%, rgba(22, 32, 42, 0.97) 100%); }
+.pie35 { right: 24px; top: 20px; max-width: 900px; }
+.band35 { position: absolute; left: 80px; right: 80px; top: 560px; bottom: 60px; }
+.band35 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 18px; }
+.band35 .cita { font-size: 48px; }
+.band35 .fila { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.band35 .tj { background: rgba(10, 16, 22, 0.78); }
+.band35 .tj .x { font-size: 34px; }
+.band35 .def { background: rgba(15, 22, 30, 0.95); }
+.cab35 { position: absolute; left: 80px; top: 40px; }
+</style>
+
+<div class="img35"><div class="kb"><img src="assets/img/nilo-valle.jpg" /></div><div class="velo"></div></div>
+<div class="pie pie35">“Egipto dependía de un valle angosto y fértil que se extendía a lo largo del Nilo. Al fondo puede apreciarse el brusco paso de la vegetación al desierto”. <i>Perspicacia</i>, vol.&nbsp;1, pág.&nbsp;534</div>
+<div class="cab35"><span class="clave"><b>Génesis 46</b> · versículos 31 al 34</span></div>
+<div class="band35">
+  <div class="b a1"><div class="cita q1">“Así les permitirá vivir en la tierra de Gosén, porque <b>los egipcios detestan a los pastores de ovejas</b>”<span class="ref">GÉNESIS 46:34</span></div></div>
+  <div class="b a2"><div class="m md">¿por qué? No se sabe con seguridad</div>
+    <div class="fila"><div class="tj r1"><div class="k">poca tierra de cultivo</div><div class="x">una franja verde que inundaba el Nilo; los rebaños <b>pisan y comen los sembrados</b></div></div>
+      <div class="tj r2"><div class="k">o las castas</div><div class="x">su sistema de castas ponía a los pastores <b>entre los últimos</b></div></div></div>
+    <div class="f" style="font-size:24px; color:#d5dbe1">“Posiblemente porque el sistema de castas egipcio colocaba a los pastores en uno de los últimos lugares, o quizás porque sintieran un fuerte rechazo hacia quienes buscaban pastos para los rebaños, pues escaseaba la tierra de cultivo” · <i>La Atalaya</i>, 15 de enero de 2004, pág.&nbsp;29</div></div>
+  <div class="b a3"><div class="def d1"><div class="t">asimilarse</div><div class="x">disolverse en otro pueblo hasta <b>perder la propia identidad</b></div></div>
+    <div class="cita sm p1" style="font-size:36px">“De manera sabia y amorosa, José sacó el mejor partido del prejuicio egipcio contra los pastores. Resultó en una salvaguarda para que la familia de Jacob no se contaminase”<span class="ref">PERSPICACIA, VOL.&nbsp;2, “JOSÉ”, PÁG.&nbsp;126</span></div>
+    <div class="m md p2">y no mintieron: eran pastores “desde que éramos jóvenes” · 46:34</div></div>
+</div>
+
+<script>
+const tN = at("No se sabe con seguridad");
+const tJ = at("José sacó partido");
+kb(".img35 .kb", 0, DUR, { s: 1.12, y: -2 }, { s: 1.0, y: 0 });
+aparece(".pie35", 0.6, 0.5);
+entra(".cab35", 0.3, { y: -12 });
+secuencia([[".a1", 0.4], [".a2", tN - 0.3], [".a3", tJ - 0.3]]);
+entra(".r1", at("Egipto vivía de sembrar"), { y: 16 });
+entra(".r2", at("los rebaños necesitan") + 1.2, { y: 16 });
+entra(".d1", at("no se asimilaría"), { y: 16 });
+entra(".p1", tJ + 0.3, { y: 16 });
+entra(".p2", at("Y no tuvieron que mentir"), { y: 16 });
+</script>

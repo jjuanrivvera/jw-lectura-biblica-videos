@@ -1,0 +1,65 @@
+<style>
+.cinta66 { position: absolute; left: 0; top: 950px; width: 1920px; height: 120px; }
+.mapa { left: 0; top: 0; width: 1920px; height: 940px; }
+.mapa .cam img, .mapa .cam svg { width: 2592px; height: 1444px; }
+.velo { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(16,22,42,0.97) 0%, rgba(16,22,42,0.95) 40%, rgba(16,22,42,0.3) 54%, rgba(16,22,42,0) 64%), linear-gradient(0deg, rgba(16,22,42,1) 0%, rgba(16,22,42,0) 12%); }
+.colm { position: absolute; left: 80px; top: 110px; height: 800px; width: 860px; }
+.colm > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.colm .cita { font-size: 46px; }
+.colm .cita b { color: var(--oro-claro); }
+.colm .s { font-size: 32px; color: var(--papel); }
+.colm .s b { color: var(--oro-claro); }
+.ficha { display: grid; grid-template-columns: auto 1fr; gap: 10px 24px; font-family: "Montserrat", sans-serif; font-size: 30px; color: var(--papel); }
+.ficha .k { font-weight: 800; font-size: 24px; letter-spacing: 0.12em; text-transform: uppercase; color: #7fb2d9; padding-top: 5px; }
+.pie-m { right: 30px; top: 880px; font-size: 24px; }
+.cab span:last-child { background: rgba(12,18,34,0.86); padding: 4px 14px; border-radius: 10px; color: var(--papel); }
+</style>
+
+<div class="mapa">
+  <div class="cam">
+    <img src="assets/img/mapa-b13.jpg" />
+    <svg viewBox="0 0 2592 1444">
+      <path class="hilo ruta" d="M 2215 1174 C 2310 980, 2320 800, 2281 706 C 2050 600, 1750 520, 1495 497 C 1250 470, 1050 400, 820 300" style="stroke-width: 12" />
+      <g class="mk mkj"><circle cx="2215" cy="1174" r="22" fill="#10162a" stroke="#ebbd5c" stroke-width="8" /><text x="2250" y="1240" font-family="Montserrat" font-weight="800" font-size="46" fill="#10162a" stroke="#fff" stroke-width="12" style="paint-order: stroke">Jerusalén</text></g>
+      <g class="mk mka"><circle cx="2281" cy="706" r="18" fill="#10162a" stroke="#ebbd5c" stroke-width="7" /><text x="2310" y="690" font-family="Montserrat" font-weight="800" font-size="42" fill="#10162a" stroke="#fff" stroke-width="12" style="paint-order: stroke">Antioquía</text></g>
+      <g class="mk mke"><circle cx="1495" cy="497" r="18" fill="#10162a" stroke="#ebbd5c" stroke-width="7" /><text x="1520" y="575" font-family="Montserrat" font-weight="800" font-size="42" fill="#10162a" stroke="#fff" stroke-width="12" style="paint-order: stroke">Éfeso</text></g>
+    </svg>
+  </div>
+  <div class="velo"></div>
+  <div class="pie-img pie-m">Mapa: apéndice B13 de la TNM, “La difusión del cristianismo”</div>
+</div>
+
+<div class="cab"><span class="sec">Hechos</span><span>libro 44 de 66</span></div>
+
+<div class="colm">
+  <div class="b h0">
+    <div class="ficha"><span class="k">Escritor</span><span>Lucas</span><span class="k">Para</span><span>Teófilo</span><span class="k">Abarca</span><span>del 33 al 61 e. c., unos 28 años</span><span class="k">Sigue a</span><span>Pedro (caps. 1-12) y Pablo (caps. 13-28)</span></div>
+    <div class="cita c18">“Serán mis testigos en Jerusalén, en toda Judea y Samaria, y <b>hasta la parte más lejana de la tierra</b>”.<span class="ref">Hechos 1:8</span></div>
+  </div>
+  <div class="b h1"><div class="s">Primero entre los judíos; luego, entre gente de <b>todas las naciones</b>: la bendición prometida a Abrahán.</div>
+    <div class="cita">Dios dirigió su atención a las naciones “para sacar de entre ellas <b>un pueblo para su nombre</b>”.<span class="ref">Hechos 15:14</span></div></div>
+  <div class="b h2"><div class="cita">“En el año 36 de nuestra era se reveló otro aspecto del secreto sagrado: también habría <b>personas no judías</b> que gobernarían con Jesús”.<span class="ref">Acerquémonos a Jehová, cap. 19, pág. 197</span></div></div>
+  <div class="b h3"><div class="s">Congregaciones nuevas, de judíos y no judíos, que necesitaban <b>enseñanza, ánimo y corrección</b>.</div><div class="cita">Para eso están <b>las cartas</b>.</div></div>
+</div>
+
+<svg class="cinta66" viewBox="0 0 1920 120"></svg>
+
+<script>
+/*incluir:_libros.js*/
+/*incluir:_cinta66.js*/
+cinta66();
+entra(".cab", 0.3, { y: -10 });
+entra(".cinta66", 0.4, { y: 20 });
+focoCinta([5], 0.8);
+aparece(".mapa", 0.1, 0.6);
+gsap.set($(".cam"), { scale: 0.748, x: -10, y: -110 });
+camara(".cam", 0.5, DUR - 0.5, { scale: 0.79, x: -120, y: -170 }, "none");
+aparece(".mkj", 1.0, 0.4);
+traza(".ruta", at("serán mis testigos"), 5);
+aparece(".mka", at("serán mis testigos") + 2.0, 0.4);
+aparece(".mke", at("serán mis testigos") + 3.4, 0.4);
+entra(".pie-m", 1.2, { y: 10 });
+gsap.set($(".c18"), { opacity: 0 });
+entra(".c18", at("Empieza con una orden"), { y: 16 });
+secuencia([[".h0", 0.6], [".h1", at("Abarca unos veintiocho")], [".h2", at("En el año treinta y seis")], [".h3", at("Pero esas congregaciones")]]);
+</script>

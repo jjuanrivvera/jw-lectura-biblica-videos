@@ -1,0 +1,43 @@
+<!--lead:2.6-->
+<style>
+.ilus.fondo { left: 0; top: 0; width: 1920px; height: 1080px; border-radius: 0; box-shadow: none; }
+.oscuro { position: absolute; left: 0; right: 0; top: 0; height: 560px; background: linear-gradient(0deg, rgba(23,33,43,0) 0%, rgba(23,33,43,0.88) 40%, #17212b 75%); }
+.fila { position: absolute; left: 60px; right: 60px; top: 110px; height: 300px; }
+.fila svg { width: 1800px; height: 300px; }
+.gt { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; text-anchor: middle; }
+.flecha-e { fill: none; stroke: var(--verde); stroke-width: 10; stroke-linecap: round; }
+.pie-img.pf { left: 40px; bottom: 20px; background: rgba(15,22,30,0.8); padding: 4px 12px; border-radius: 8px; font-size: 21px; }
+.celos { position: absolute; left: 60px; top: 420px; }
+</style>
+<div class="capcard cc"><div class="num">Génesis 33</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">el abrazo de Esaú</div><div class="edad">hacia el 1761 antes de nuestra era</div></div>
+<div class="fase fp">
+<div class="ilus fondo"><div class="kb"><img src="assets/img/jacob-camina.jpg" /></div></div>
+<div class="oscuro"></div>
+<div class="pie-img pf">Ilustración: <i>Seamos valientes al andar con Dios</i>, cap. 7, pág. 40 (wol.jw.org)</div>
+<div class="fila"><svg viewBox="0 0 1800 300">
+  <g class="g-r"><circle cx="200" cy="120" r="42" fill="var(--rosa)"/><circle cx="270" cy="140" r="24" fill="var(--rosa)"/><text class="gt" x="235" y="230" fill="var(--rosa)">Raquel y José</text></g>
+  <path class="escudo" d="M 120 60 C 180 20 300 20 350 70 C 360 150 320 200 235 250 C 150 200 110 150 120 60 Z" fill="none" stroke="var(--oro)" stroke-width="6" stroke-dasharray="14 10"/>
+  <g class="g-l"><circle cx="560" cy="120" r="42" fill="var(--oro)"/><circle cx="630" cy="140" r="24" fill="var(--oro)"/><circle cx="680" cy="110" r="24" fill="var(--oro)"/><circle cx="730" cy="140" r="24" fill="var(--oro)"/><text class="gt" x="640" y="230" fill="var(--oro)">Lea y sus hijos</text></g>
+  <g class="g-s"><circle cx="960" cy="120" r="42" fill="var(--cielo)"/><circle cx="1030" cy="140" r="24" fill="var(--cielo)"/><circle cx="1080" cy="110" r="24" fill="var(--cielo)"/><text class="gt" x="1020" y="230" fill="var(--cielo)">las siervas y sus hijos</text></g>
+  <g class="jac"><circle cx="0" cy="0" r="34" fill="var(--rojo)" stroke="#fff" stroke-width="5"/><text class="gt" x="0" y="100" fill="var(--rojo)">Jacob</text></g>
+  <g class="esa"><path class="flecha-e" d="M 1780 120 L 1640 120 M 1680 90 L 1640 120 L 1680 150"/><text class="gt" x="1700" y="220" fill="var(--verde)">Esaú</text></g>
+  <text class="gt adel" x="1400" y="270" fill="var(--tiza)" font-size="40">se adelantó a todos · 33:3</text>
+</svg></div>
+<div class="celos"><span class="propio">observación propia</span> <span class="f">&nbsp;la preferencia ayuda a entender los celos contra José (Génesis 37) · orden: 33:2 · <i>Perspicacia</i>, vol. 2, “Raquel”, pág. 787</span></div>
+<div class="cab sobre"><span class="cap">Génesis 33</span><span>versículos 1 al 3</span></div>
+</div>
+<script>
+capitulo(".cc", 0.3, at("Jacob ve") - 0.2);
+aparece(".fp", at("Jacob ve") + 0.45, 0.5);
+kb(".fondo .kb", at("Jacob ve"), DUR, { s: 1.1, x: 2 }, { s: 1.0, x: 0 });
+aparece(".esa", at("ve venir"), 0.5);
+entra(".g-s", at("las siervas"), { y: 30 });
+entra(".g-l", at("Lea con"), { y: 30 });
+entra(".g-r", at("y Raquel"), { y: 30 });
+traza(".escudo", at("posición más segura") - 0.4, 1.0);
+entra(".celos", at("Esa preferencia"), { y: 20 });
+tl.set($(".jac"), { x: 420, y: 40 }, 0);
+aparece(".jac", at("y Raquel") + 0.4, 0.4);
+tl.to($(".jac"), { x: 1400, y: 120, duration: 2.4, ease: "power1.inOut" }, at("se adelantó") - 0.8);
+aparece(".adel", at("se adelantó") + 1.0, 0.4);
+</script>

@@ -1,0 +1,20 @@
+<style>
+.leccion .l { font-size: 84px; }
+.leccion .p { font-size: 54px; }
+</style>
+
+<div class="seccion"><span class="r">Lecciones y preguntas para pensar</span><span class="t">Jeremías 39</span></div>
+<div class="seccion-linea"><svg viewBox="0 0 1740 20" preserveAspectRatio="none" style="width:100%;height:20px"><path d="M 4 10 C 400 4 900 16 1736 8"/></svg></div>
+<div class="leccion l1"><div class="n">1</div><div class="cuerpo"><div class="l">Jehová cumplió <b>con fecha y lugar</b> lo que había anunciado</div><div class="p"><span class="k">PARA PENSAR</span>¿Hay alguna promesa de Jehová que, en la práctica, trato como si no se fuera a cumplir?</div><div class="s">39:1-7 · <i>La Atalaya</i>, mayo de 2025: los desterrados lo vieron, y eso los convenció de que también cumpliría su promesa de liberarlos</div></div></div>
+<div class="leccion l2"><div class="n">2</div><div class="cuerpo"><div class="l">La ayuda llegó de donde no la esperaba: <b>un extranjero y el rey que quemó la ciudad</b></div><div class="p"><span class="k">PARA PENSAR</span>¿Me desespero cuando la ayuda de Jehová no llega por el camino que me había imaginado?</div><div class="s">38:10-13; 39:11-14</div></div></div>
+<div class="leccion l3"><div class="n">3</div><div class="cuerpo"><div class="l">Jehová le nombró su miedo a Ébed-Mélec y <b>premió su confianza</b></div><div class="p"><span class="k">PARA PENSAR</span>¿Le he contado a Jehová, con nombre y apellido, lo que me da miedo?</div><div class="s">39:17, 18</div></div></div>
+
+<script>
+entra(".seccion", 0.3, { y: -20 });
+traza(".seccion-linea path", 0.6, 1.0);
+secuencia([[".l1", at("Primera")], [".l2", at("Segunda")], [".l3", at("Tercera")]], null, { y: 30, d: 0.6 });
+[["l1", "Hay alguna promesa"], ["l2", "Me desespero"], ["l3", "Le he contado"]].forEach(([l, f]) => {
+  entra("." + l + " .p", at(f) - 0.2, { y: 20 });
+  entra("." + l + " .s", at(f) + 0.2, { y: 10 });
+});
+</script>

@@ -1,0 +1,93 @@
+<style>
+.mapa.M27 { left: 0; top: 0; width: 1240px; height: 1080px; background: #e2e5c8; }
+.mapa.M27 .cam img, .mapa.M27 .cam svg { width: 2862px; height: 2970px; }
+.funde27 { left: 1120px; }
+.pie27 { left: 24px; bottom: 20px; }
+.km27 { position: absolute; left: 30px; top: 30px; padding: 14px 26px; border-radius: 20px; background: rgba(15, 22, 30, 0.9); display: flex; align-items: baseline; gap: 14px; }
+.km27 .cifra { font-size: 84px; }
+.km27 .u { font-family: "Caveat", cursive; font-weight: 700; font-size: 48px; color: var(--tiza); }
+.col27 { position: absolute; left: 1270px; right: 56px; top: 70px; bottom: 70px; }
+.col27 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.col27 .cita { font-size: 42px; }
+.via27 { display: flex; flex-wrap: wrap; gap: 12px; }
+.via27 span { font-family: "Fraunces", serif; font-weight: 700; font-size: 42px; padding: 8px 18px 6px; border-radius: 14px; border: 3px solid rgba(233, 191, 96, 0.6); }
+</style>
+
+<div class="mapa M27"><div class="cam">
+  <img src="assets/img/b2-meso.jpg" />
+  <svg viewBox="0 0 2862 2970">
+    <path class="ruta-h r27h" stroke-width="36" d=""/><path class="ruta r27" stroke-width="18" d=""/>
+    <circle class="anillo a-ur" cx="2605" cy="2812" r="52"/>
+    <circle class="anillo oro a-har" cx="97" cy="270" r="56"/>
+    <g class="lunas"></g>
+    <g class="viaj"><circle r="30" fill="#c0392b" stroke="#fff" stroke-width="8"/></g>
+  </svg>
+</div></div>
+<div class="funde-der funde27"></div>
+<div class="pie pie27">Mapa: apéndice B2 de la TNM (wol.jw.org) · ruta como en “El mundo de los patriarcas”, <i>Veamos “la buena tierra”</i></div>
+<div class="km27"><span class="cifra"><span class="k960">0</span></span><span class="u">km, de Ur a Harán</span></div>
+
+<div class="col27">
+  <div class="b a1">
+    <div class="cita">“Taré salió de Ur de los caldeos y se llevó a su hijo Abrán, a su nieto Lot [...] y a su nuera Sarái [...]. Fueron con él hacia la tierra de Canaán”<span class="ref">GÉNESIS 11:31</span></div>
+    <div class="via27"><span>Taré</span><span>Abrán</span><span>Sarái</span><span>Lot</span></div>
+  </div>
+  <div class="b a2">
+    <div class="m md">la orden era para <b>Abrán</b> <span style="color:var(--tenue)">(Hechos 7:2-4)</span></div>
+    <div class="cita">“la Biblia atribuye el traslado a Taré debido a que era el <b>cabeza de familia</b>”<span class="ref">PERSPICACIA, VOL. 2, “TARÉ”, PÁG. 1087</span></div>
+  </div>
+  <div class="b a3">
+    <div class="m md">unos 960 km, <b>Éufrates arriba</b></div>
+    <div class="def"><div class="t">Harán<i>acadio: Harranu</i></div><div class="x">“<b>Camino</b>”</div><div class="s">“quizás debido a que estaba en la ruta de caravanas” · <i>Perspicacia</i>, vol. 1, “Harán”, pág. 1088</div></div>
+  </div>
+  <div class="b a4">
+    <div class="m md">y allí se quedaron</div>
+    <div class="cita">“posiblemente porque Taré estaba muy enfermo y ya no podía viajar más”<span class="ref">LA ATALAYA NÚM. 3 DE 2017, PÁG. 14</span></div>
+  </div>
+  <div class="b a5">
+    <div class="cita">“solían servir a otros dioses”<span class="ref">JOSUÉ 24:2 · QUIZÁS AL DIOS LUNA SIN</span></div>
+    <div class="m md">Ur y Harán: dos centros de adoración a la <b>luna</b></div>
+    <div class="f"><i>Perspicacia</i>, vol. 2, “Luna”, pág. 261, y “Taré”, pág. 1087 · Taré muere en Harán a los 205 años (11:32)</div>
+  </div>
+</div>
+
+<script>
+const P = (u, v) => [(u - 330) * 9, (v - 50) * 9];
+const RUTA = [[619.5, 362.5], [610, 352.5], [600.5, 345.75], [590, 340], [577.5, 332.5], [567.5, 320], [560, 302.5], [553.25, 291.5], [550, 275], [545, 265], [532.5, 253.75], [522.5, 250], [510, 247.5], [492.5, 240], [480, 225], [462.5, 212.5], [442.5, 200], [425, 202.5], [413.25, 198], [410, 190], [400, 175], [390, 162.5], [380, 152.5], [362.5, 138.75], [347.5, 132.5], [341.25, 115], [340, 95], [340.75, 80]];
+const D = "M " + RUTA.map((p) => P(...p).map((n) => n.toFixed(0)).join(" ")).join(" L ");
+$(".r27h").setAttribute("d", D); $(".r27").setAttribute("d", D);
+// Medias lunas sobre Ur y Harán (dos centros de culto a la luna).
+const luna = (x, y) => `<g class="lu"><g transform="translate(${x} ${y})"><path d="M 0 -52 A 52 52 0 1 0 38 36 A 44 44 0 1 1 0 -52 Z" fill="#f3e3a0" stroke="#8a6d1a" stroke-width="5"/></g></g>`;
+pinta(".lunas", luna(2720, 2700) + luna(210, 170));
+const V = { x: 0, y: 0, w: 1240, h: 1080 };
+const S = 0.95, RW = 1240 / S, RH = 1080 / S;
+const region = (x, y) => ({ x: Math.min(2862 - RW, Math.max(0, x - RW / 2)), y: Math.min(2970 - RH, Math.max(0, y - RH / 2)), w: RW, h: RH });
+const pts = medirCamino(".r27");
+tl.set($(".cam"), encuadre(region(2605, 2812), V), 0);
+// El viajero recorre el Éufrates y la cámara lo sigue; el contador suma los kilómetros.
+const t0 = at("salió de Ur") + 0.2, t1 = at("hasta Harán");
+preparaTrazos([".r27h", ".r27"]);
+tl.fromTo($$(".r27h, .r27"), { strokeDashoffset: (i, p) => _largos.get(p) }, { strokeDashoffset: 0, duration: t1 - t0, ease: "power1.inOut", immediateRender: false }, t0);
+tl.set($$(".r27h, .r27"), { strokeDashoffset: (i, p) => _largos.get(p) }, 0);
+// Todo se calcula antes: el callback solo coloca al viajero y la cámara.
+const VIAJ = el(".viaj"), CAM = $(".cam");
+const CAMS = pts.map(([x, y]) => encuadre(region(x, y), V));
+const TR = pts.map(([x, y]) => "translate(" + x.toFixed(1) + " " + y.toFixed(1) + ")");
+const st = { k: 0 };
+VIAJ.forEach((e) => e.setAttribute("transform", TR[0]));
+tl.to(st, { k: 1, duration: t1 - t0, ease: "power1.inOut", onUpdate: () => {
+  const i = Math.min(TR.length - 1, Math.round(st.k * (TR.length - 1)));
+  VIAJ.forEach((e) => e.setAttribute("transform", TR[i]));
+  gsap.set(CAM, CAMS[i]);
+} }, t0);
+cuenta(".k960", 0, 960, t0, t1 - t0);
+traza(".a-ur", 0.5, 0.6);
+traza(".a-har", t1 - 0.2, 0.6);
+secuencia([[".a1", 0.4], [".a2", at("El relato")], [".a3", at("Remontaron")], [".a4", at("Y allí se quedaron")], [".a5", at("Taré y los suyos")]]);
+entra(".via27 span", at("con Abrán") - 0.2, { y: 12, st: 0.25 });
+// Al final, el recorrido entero, con las dos lunas.
+camara(".cam", at("Taré y los suyos") - 0.4, 2.2, encuadre({ x: -120, y: -90, w: 3100, h: 3150 }, V));
+desaparece(".km27", at("Taré y los suyos") - 0.4, 0.5);
+salta(".lu", at("dios luna") - 0.2, { desde: 0.4, st: 0.3 });
+aparece(".pie27", 0.6, 0.5);
+</script>

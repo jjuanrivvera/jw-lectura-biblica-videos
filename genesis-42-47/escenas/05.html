@@ -1,0 +1,97 @@
+<style>
+.mapa.E { left: 0; top: 0; width: 1060px; height: 1080px; background: #f3e3c3; }
+.mapa.E .cam img, .mapa.E .cam svg { width: 1200px; height: 2411px; }
+.funde05 { left: 960px; }
+.col05 { position: absolute; left: 1090px; right: 70px; top: 100px; bottom: 80px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.col05 .lista { display: flex; flex-wrap: wrap; gap: 14px; }
+.col05 .lista span { font-family: "Caveat", cursive; font-weight: 700; font-size: 48px; padding: 4px 22px 2px; border-radius: 14px; background: rgba(236, 138, 103, 0.14); border: 3px solid rgba(236, 138, 103, 0.55); color: var(--tiza); }
+.f2 .mapa.B2 { left: 0; top: 0; width: 1920px; height: 1080px; }
+.kmbox { position: absolute; left: 70px; top: 120px; padding: 22px 34px 26px; border-radius: 24px; background: rgba(15, 22, 30, 0.96); }
+.kmbox .cifra { font-size: 118px; }
+.kmbox .u { font-family: "Caveat", cursive; font-weight: 700; font-size: 52px; color: var(--tiza); }
+.kmbox .s { font-size: 26px; margin-top: 8px; }
+.dias05 { position: absolute; right: 60px; bottom: 70px; width: 760px; padding: 22px 30px; border-radius: 22px; background: #0f161e; }
+.dias05 .m { font-size: 60px; }
+.dias05 .f { margin-top: 10px; }
+.q05 { position: absolute; right: 60px; top: 110px; width: 800px; padding: 20px 30px; border-radius: 22px; background: #0f161e; }
+.q05 .m { font-size: 58px; }
+.q05 .f { margin-top: 8px; }
+</style>
+
+<div class="fase f1">
+  <div class="mapa E"><div class="cam"><img src="assets/img/egipto-mapa.jpg" /><svg viewBox="0 0 1200 2411"><g class="marcasE"></g></svg></div>
+    <div class="pie-mapa">“MAPA: El antiguo Egipto”, <i>Perspicacia</i>, vol.&nbsp;1, pág.&nbsp;531 (wol.jw.org) · marcas añadidas</div></div>
+  <div class="funde-der funde05"></div>
+  <div class="col05">
+    <div class="m e1">rodeado de <b>desierto</b> y de <b>mar</b></div>
+    <div class="m oro e2">una sola puerta por tierra: el istmo del noreste</div>
+    <div class="cita sm e3">“el istmo del Sinaí, situado al NE., formaba un puente con el continente asiático”<span class="ref">PERSPICACIA, VOL.&nbsp;1, “EGIPTO, EGIPCIO”, PÁG.&nbsp;766</span></div>
+    <div class="lista e4"><span class="l1">caravanas</span><span class="l2">inmigrantes</span><span class="l3">ejércitos invasores</span></div>
+    <div class="m e5">y por ahí entraron <b>los diez</b></div>
+  </div>
+</div>
+
+<div class="fase f2">
+  <!--incluir:_b2.html-->
+  <div class="q05"><div class="m">¿En qué ciudad vendía José el grano?</div><div class="f">La Biblia no lo dice. La capital estaba, al parecer, en el Bajo (norte) Egipto · <i>Perspicacia</i>, vol.&nbsp;2, “Menfis”, pág.&nbsp;363</div></div>
+  <div class="kmbox"><div><span class="cifra"><span class="km">0</span></span> <span class="u">km por la costa</span></div><div class="s">de Hebrón a On · unos 390 en línea recta</div></div>
+  <div class="dias05"><div class="m">a pie, <b>de 22 a 27 días</b> de ida</div><div class="f">a razón de 80 km en “cuatro o cinco días a pie” (<i>La Atalaya</i>, 1 de agosto de 2014, pág.&nbsp;13)</div><span class="propio chico" style="margin-top:10px">distancias y días: cálculo propio de la investigación</span></div>
+</div>
+
+<script>
+// Fase 1: el mapa de Egipto de Perspicacia. Puerta: el istmo entre el Mediterráneo y el golfo de Suez.
+$(".marcasE").innerHTML = `
+  <ellipse class="puerta" cx="700" cy="450" rx="95" ry="150" fill="rgba(192,57,43,0.26)" stroke="#c0392b" stroke-width="7" stroke-dasharray="20 14"/>
+  <g class="lpu"><rect x="846" y="626" width="330" height="58" rx="14" fill="rgba(15,22,30,0.92)"/><text class="lugar" x="864" y="665" font-size="33" style="fill:#f0a47e">la única puerta</text></g>
+  <g class="flechasE" fill="none" stroke="#b8430f" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path class="fe1" d="M 1060 390 C 960 400 880 420 810 440"/><path class="fe2" d="M 1060 450 C 960 455 880 460 810 468"/><path class="fe3" d="M 1060 510 C 960 505 880 500 810 496"/>
+    <path class="fe1" d="M 830 422 L 800 441 L 832 456"/><path class="fe2" d="M 830 452 L 800 468 L 830 484"/><path class="fe3" d="M 832 480 L 800 496 L 830 512"/>
+  </g>
+  <g class="desE"><text class="lugar" x="100" y="900" font-size="46" style="fill:#8a5a1c">desierto</text><text class="lugar" x="880" y="800" font-size="46" style="fill:#8a5a1c">desierto</text></g>
+  <g class="marE"><text class="lugar azul" x="1000" y="200" font-size="44">mar</text><text class="lugar azul" x="786" y="1040" font-size="40">mar</text></g>`;
+const VE = { x: 0, y: 0, w: 1060, h: 1080 };
+tl.set($(".mapa.E .cam"), encuadre({ x: 0, y: 40, w: 1200, h: 1222 }, VE), 0);
+const tD = at("Luego venía el delta");
+entra(".e1", 0.3, { y: 20 });
+aparece(".desE", at("desierto"), 0.5);
+aparece(".marE", at("de mar"), 0.5);
+entra(".e2", at("una sola puerta"), { y: 20 });
+aparece(".puerta", at("una sola puerta") + 0.2, 0.6);
+aparece(".lpu", at("el istmo"), 0.5);
+entra(".e3", at("el puente de tierra"), { y: 16 });
+traza(".fe1", at("las caravanas"), 0.9);
+entra(".l1", at("las caravanas"), { y: 10 });
+traza(".fe2", at("los inmigrantes"), 0.9);
+entra(".l2", at("los inmigrantes"), { y: 10 });
+traza(".fe3", at("los ejércitos"), 0.9);
+entra(".l3", at("los ejércitos"), { y: 10 });
+entra(".e5", at("Y por ahí entraron"), { y: 16 });
+late(".puerta", at("Y por ahí entraron") + 0.3, { s: 1.08, n: 3 });
+tl.to($(".f1"), { opacity: 0, duration: 0.6, ease: "none" }, tD - 0.5);
+// Fase 2: el B2, del delta al viaje entero.
+const FULL = "M 2114 1025 C 2140 1062 2092 1076 2052 1098 C 2020 1122 2006 1160 1990 1180 C 1950 1150 1880 1105 1811 1041 C 1780 1090 1740 1132 1690 1180 C 1600 1230 1500 1252 1350 1290 C 1150 1332 950 1370 800 1395 C 720 1408 670 1392 630 1372 C 600 1356 572 1348 540 1400 C 500 1470 452 1552 405 1630 C 368 1700 336 1745 316 1776";
+pinta(".f2 .marcas", `
+  <g class="qOn"><circle class="anillo oro" cx="316" cy="1776" r="24" style="stroke-width:6"/><rect x="186" y="1750" width="96" height="52" rx="12" fill="rgba(15,22,30,0.92)"/><text class="lugar" x="212" y="1789" font-size="38" style="fill:#e9bf60">¿?</text></g>
+  <g class="qMe"><circle class="anillo oro" cx="294" cy="1944" r="24" style="stroke-width:6"/><rect x="164" y="1896" width="96" height="52" rx="12" fill="rgba(15,22,30,0.92)"/><text class="lugar" x="190" y="1935" font-size="38" style="fill:#e9bf60">¿?</text></g>
+  <g class="delt"><rect x="30" y="1560" width="270" height="56" rx="12" fill="rgba(15,22,30,0.92)"/><text class="lugar" x="48" y="1599" font-size="34" style="fill:#93bbef">delta del Nilo</text></g>
+  <path class="ruta-h full-h" stroke-width="26" d="${FULL}"/><path class="ruta full" stroke-width="13" d="${FULL}"/>
+  <circle class="anillo a-heb2" cx="2114" cy="1025" r="30" style="stroke-width:7"/>`);
+const V = { x: 0, y: 0, w: 1920, h: 1080 };
+const DELTA = encuadre({ x: 0, y: 1300, w: 1200, h: 675 }, V);
+const TODO = encuadre({ x: 150, y: 802, w: 2200, h: 1238 }, V);
+tl.set($(".f2 .cam"), DELTA, 0);
+aparece(".f2", tD - 0.5, 0.6);
+aparece(".delt", tD, 0.5);
+entra(".q05", at("En qué ciudad"), { y: -16 });
+aparece([".qOn", ".qMe"], at("En qué ciudad") + 0.4, 0.5);
+late([".qOn circle", ".qMe circle"], at("la Biblia no lo dice"), { s: 1.2, n: 3 });
+const tK = at("De Hebrón a On");
+sale(".q05", tK - 0.5, { y: -16 });
+desaparece(".delt", tK - 0.5, 0.4);
+camara(".f2 .cam", tK - 0.6, 1.8, TODO);
+aparece(".a-heb2", tK, 0.4);
+traza([".full-h", ".full"], tK + 0.6, 5.5, { ease: "power1.inOut" });
+entra(".kmbox", tK + 0.2, { y: -16 });
+cuenta(".km", 0, 440, tK + 0.6, 5.5);
+entra(".dias05", at("a pie"), { y: 20 });
+</script>

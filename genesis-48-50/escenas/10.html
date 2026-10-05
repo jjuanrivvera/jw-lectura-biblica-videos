@@ -1,0 +1,64 @@
+<style>
+.dib10 { position: absolute; left: 60px; top: 112px; width: 1000px; height: 820px; }
+.dib10 .manos, .dib10 .jose10 { position: absolute; left: 0; top: 0; width: 1000px; height: 820px; }
+.dib10 .mn-rectos { display: none; }
+.nm10 { position: absolute; top: 944px; width: 420px; margin-left: -210px; text-align: center; font-family: "Fraunces", serif; font-weight: 700; font-size: 50px; line-height: 1; }
+.bd10 { position: absolute; top: 862px; width: 300px; margin-left: -150px; text-align: center; }
+.bd10 .clave { font-size: 38px; padding: 2px 16px 0; }
+.jl10 { position: absolute; left: 860px; top: 230px; font-family: "Caveat", cursive; font-weight: 700; font-size: 48px; color: var(--cielo); }
+.col10 { position: absolute; left: 1110px; right: 70px; top: 110px; bottom: 70px; }
+.col10 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+.col10 .cita { font-size: 50px; }
+.col10 .b2 .cita { padding-left: 60px; }
+.col10 .cita.md { font-size: 46px; }
+.col10 .def .x { font-size: 54px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 48</span><span>versículos 15 al 20</span></div>
+<div class="dib10">
+  <!--incluir:_manos.html-->
+  <svg class="jose10" viewBox="0 0 1000 820">
+    <g class="jbr10">
+      <path d="M 985 345 C 940 390 890 470 790 548" fill="none" stroke="#2d4f7a" stroke-width="56" stroke-linecap="round"/>
+      <path d="M 985 345 C 940 390 890 470 790 548" fill="none" stroke="#e8e1d2" stroke-width="40" stroke-linecap="round"/>
+      <g transform="translate(780 552) rotate(52)"><path d="M -32 -20 C -38 4 -36 24 -26 36 L -24 58 C -22 66 -12 66 -11 58 L -9 44 L -6 66 C -4 74 6 74 7 66 L 8 46 L 12 62 C 14 70 24 70 24 62 L 22 42 L 30 50 C 36 54 42 48 38 42 L 30 24 C 36 6 36 -10 32 -20 Z" fill="#cda27a" stroke="#93bbef" stroke-width="4"/></g>
+    </g>
+  </svg>
+</div>
+<div class="jl10">la mano de José</div>
+<div class="nm10" style="left:296px;">Manasés</div>
+<div class="nm10" style="left:824px;">Efraín</div>
+<div class="bd10 bm" style="left:296px;"><span class="clave">bendecido</span></div>
+<div class="bd10 be" style="left:824px;"><span class="clave">bendecido</span></div>
+<div class="col10">
+  <div class="b b1">
+    <div class="cita md">“El Dios verdadero, que ha sido <b>mi pastor</b> durante toda mi vida hasta este día […], bendiga a los muchachos”<span class="ref">JACOB · GÉNESIS 48:15, 16</span></div>
+    <div class="def d1"><div class="t">“que ellos lleven mi nombre”</div><div class="x">que <b>continúen</b> la familia del pacto</div><div class="s">nota de Génesis 48:16: o “perpetúen”</div></div>
+  </div>
+  <div class="b b2">
+    <div class="cita">“Así no, padre mío, <b>el primogénito es este</b>. Pon tu mano derecha sobre su cabeza”<span class="ref">JOSÉ · GÉNESIS 48:18</span></div>
+  </div>
+  <div class="b b3">
+    <div class="cita">“<b>Lo sé, hijo mío, lo sé.</b> Él también se convertirá en un pueblo, y también será importante. Pero su hermano menor llegará a ser <b>más importante</b>”<span class="ref">JACOB · GÉNESIS 48:19</span></div>
+  </div>
+</div>
+
+<script>
+aparece(".dib10", 0.2, 0.6);
+aparece(".nm10", 0.5, 0.5);
+tl.set($(".dib10 .jose10"), { opacity: 0 }, 0);
+secuencia([[".b1", 0.4], [".b2", at("José trata de mover") - 0.3], [".b3", at("Pero Jacob se resiste") - 0.2]]);
+tl.set(".d1", { opacity: 0 }, 0);
+entra(".d1", at("lleven su nombre") - 0.2, { y: 16 });
+// La mano de José entra, intenta llevar la derecha de Jacob hacia Manasés y Jacob se resiste.
+const tJ = at("José trata de mover");
+tl.fromTo($(".jbr10"), { x: 150, y: -50 }, { x: 0, y: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, tJ - 0.2);
+tl.to($(".dib10 .jose10"), { opacity: 1, duration: 0.4 }, tJ - 0.2);
+entra(".jl10", tJ + 0.4, { y: 10 });
+tl.to($$(".dib10 .mn-derx, .dib10 .mn-derx2, .dib10 .mn-pd, .jbr10"), { x: -40, duration: 0.5, ease: "power1.inOut", yoyo: true, repeat: 3 }, at("Así no") );
+const tR = at("Pero Jacob se resiste");
+tl.to($(".jbr10"), { x: 150, y: -50, duration: 1.0, ease: "power2.in" }, tR);
+tl.to($(".dib10 .jose10"), { opacity: 0, duration: 0.5 }, tR + 0.6);
+sale(".jl10", tR + 0.2, { y: -10 });
+salta([".bm", ".be"], at("Los dos son bendecidos") - 0.1, { st: 0.25 });
+</script>

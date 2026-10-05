@@ -1,0 +1,161 @@
+<style>
+.esq { position: absolute; left: 30px; top: 96px; width: 1100px; height: 830px; }
+.esq svg { width: 1100px; height: 830px; }
+.muro-f { fill: rgba(233, 191, 96, 0.08); }
+.muro { fill: none; stroke: #d8c7a3; stroke-width: 13; stroke-linejoin: round; }
+.muro2 { fill: none; stroke: #6d5b43; stroke-width: 4; stroke-linejoin: round; }
+.casa { fill: rgba(241, 233, 216, 0.30); }
+.templo { fill: rgba(233, 191, 96, 0.22); stroke: var(--oro); stroke-width: 4; }
+.cerco { fill: none; stroke: #9c6b3f; stroke-width: 18; stroke-linecap: round; }
+.cerco2 { fill: none; stroke: #5a3d22; stroke-width: 18; stroke-dasharray: 10 22; }
+.camino { fill: none; stroke: rgba(241, 233, 216, 0.55); stroke-width: 5; stroke-dasharray: 14 12; }
+.tienda { fill: #e07a5f; stroke: #7a2e1c; stroke-width: 2; }
+.equis path { stroke: #ff6b4a; stroke-width: 11; stroke-linecap: round; fill: none; }
+.brecha { fill: none; stroke: #ff5a36; stroke-width: 16; stroke-linecap: round; }
+.et { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; fill: var(--tiza); }
+.et.oro { fill: var(--oro); }
+.et.rojo { fill: var(--rojo); }
+.col1 { position: absolute; left: 1170px; right: 60px; top: 110px; height: 640px; }
+.col1 .ranura { position: relative; height: 236px; }
+.col1 .ranura > div { position: absolute; left: 0; right: 0; top: 0; }
+.col1 .gauge { position: absolute; left: 0; right: 0; top: 268px; }
+.col1 .q1 { padding-top: 18px; }
+.gauge { border-radius: 26px; background: rgba(10, 16, 22, 0.42); border: 3px solid rgba(241, 233, 216, 0.12); padding: 22px 28px 26px; }
+.gauge .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro); }
+.gauge svg { display: block; width: 100%; height: 104px; margin-top: 14px; }
+.gauge .barra { position: relative; height: 34px; border-radius: 17px; background: rgba(241, 233, 216, 0.12); margin-top: 16px; overflow: hidden; }
+.gauge .barra .f { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; border-radius: 17px; background: linear-gradient(90deg, #c0392b, #e9bf60 60%); transform-origin: 0 50%; }
+.lt .tick { position: absolute; top: -9px; width: 4px; height: 26px; border-radius: 2px; background: rgba(241, 233, 216, 0.35); }
+.lt .r0, .lt .r1 { position: absolute; top: 26px; font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 25px; color: var(--tenue); white-space: nowrap; }
+.lt .r0 { left: 0; }
+.lt .r1 { right: 0; text-align: right; }
+.lt .r0 b, .lt .r1 b { color: var(--oro); }
+.lt .marca { position: absolute; top: -66px; left: 0; width: 0; height: 50px; }
+.lt .marca .mes { position: absolute; left: 0; top: 0; transform: translateX(-50%); font-family: "Fraunces", serif; font-weight: 700; font-size: 38px; color: var(--oro); white-space: nowrap; }
+.lt .cap38 { position: absolute; top: -92px; height: 40px; border: 4px solid var(--cielo); border-bottom: none; border-radius: 14px 14px 0 0; }
+.lt .cap38 .rot { position: absolute; right: 0; bottom: 50px; display: flex; align-items: center; gap: 18px; white-space: nowrap; font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; color: var(--cielo); }
+</style>
+
+<div class="cab"><span class="cap">Antes de empezar</span><span>Jeremías 37:5, 21; 52:4-6</span></div>
+
+<div class="esq"><svg viewBox="0 0 1100 830">
+  <g class="caminos">
+    <path class="camino c1" d="M 575 170 L 575 8"/>
+    <path class="camino c2" d="M 790 400 L 1092 400"/>
+    <path class="camino c3" d="M 610 690 L 640 826"/>
+    <path class="camino c4" d="M 350 450 L 8 450"/>
+  </g>
+  <g class="ciudad"></g>
+  <path class="cerco" d="M 575 118 A 318 318 0 1 1 574.9 118"/>
+  <path class="cerco2" d="M 575 118 A 318 318 0 1 1 574.9 118"/>
+  <g class="tiendas"></g>
+  <g class="equis">
+    <path class="x1" d="M 557 104 L 593 140 M 593 104 L 557 140"/>
+    <path class="x2" d="M 875 382 L 911 418 M 911 382 L 875 418"/>
+    <path class="x3" d="M 612 742 L 648 778 M 648 742 L 612 778"/>
+    <path class="x4" d="M 239 432 L 275 468 M 275 432 L 239 468"/>
+  </g>
+  <path class="brecha" d="M 498 196 L 520 178 L 536 200 L 556 180 L 578 196"/>
+  <text class="et oro t-muro" x="846" y="118">muro de asedio</text>
+  <text class="et oro t-muro2" x="890" y="160" style="font-size:32px">Jeremías 52:4</text>
+  <text class="et rojo t-ejer" x="20" y="92">ejército de Babilonia</text>
+  <text class="et t-pausa" x="20" y="780" style="font-size:40px">pausa: el ejército del faraón (37:5)</text>
+  <text class="et rojo t-brecha halo-o" x="420" y="262" style="font-size:42px" stroke-width="10">la brecha</text>
+</svg></div>
+
+<div class="col1">
+  <div class="ranura">
+    <div class="def d1"><div class="t">sitiar</div><div class="x">rodear una ciudad y <b>encerrarla</b></div></div>
+    <div class="cita md q1">“al cabo de dieciocho meses de sitio”<span class="ref">PERSPICACIA, «JERUSALÉN»</span></div>
+  </div>
+  <div class="gauge g1"><div class="k">lo que había dentro</div>
+    <svg class="panes" viewBox="0 0 640 104"></svg>
+    <div class="barra"><div class="f"></div></div>
+    <div class="f" style="margin-top:12px">esquema: nadie salía a los campos ni entraba con comida</div>
+  </div>
+</div>
+
+<div class="lt" style="top:990px">
+  <div class="eje"></div><div class="lleno" style="width:100%"></div>
+  <div class="ticks"></div>
+  <div class="marca"><span class="mes">mes 1</span></div>
+  <div class="cap38" style="left:74%;width:26%"><div class="rot">cap. 38: fase final <span class="propio chico">deducción de la investigación</span></div></div>
+  <div class="r0">609 a. e. c. · <b>día 10 del mes 10</b></div>
+  <div class="r1"><b>día 9 del mes 4</b> · 607 a. e. c.</div>
+</div>
+
+<script>
+// Ciudad: casas en posiciones fijas (generador determinista) dentro de la muralla.
+const P = [[478, 196], [652, 186], [738, 244], [782, 360], [764, 520], [708, 646], [612, 700], [522, 690], [426, 612], [372, 470], [382, 326]];
+const dentro = (x, y) => { let c = false; for (let i = 0, j = P.length - 1; i < P.length; j = i++) { const [xi, yi] = P[i], [xj, yj] = P[j]; if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) c = !c; } return c; };
+let sem = 11; const azar = () => ((sem = (sem * 9301 + 49297) % 233280) / 233280);
+let casas = "";
+for (let k = 0; k < 170 && casas.split("<rect").length < 80; k++) {
+  const x = 380 + azar() * 400, y = 200 + azar() * 490, w = 16 + azar() * 16, h = 12 + azar() * 12;
+  if (dentro(x, y) && dentro(x + w, y + h) && !(x > 600 && x < 720 && y > 250 && y < 350)) casas += `<rect class="casa" x="${x.toFixed(0)}" y="${y.toFixed(0)}" width="${w.toFixed(0)}" height="${h.toFixed(0)}" rx="2"/>`;
+}
+const pol = "M " + P.map((p) => p.join(" ")).join(" L ") + " Z";
+pinta(".ciudad", `<path class="muro-f" d="${pol}"/><path class="muro" d="${pol}"/><path class="muro2" d="${pol}"/>${casas}<rect class="templo" x="606" y="258" width="104" height="80" rx="6"/><text class="et oro" x="530" y="450" style="font-size:52px">Jerusalén</text>`);
+// Tiendas del ejército alrededor, en anillo.
+let t = "";
+for (let i = 0; i < 44; i++) {
+  const a = (i / 44) * Math.PI * 2, r = 372 + (i % 3) * 14;
+  const x = 575 + Math.cos(a) * r * 1.02, y = 436 + Math.sin(a) * r * 0.97;
+  if (x < 20 || x > 1080 || y < 20 || y > 815) continue;
+  t += `<path class="tienda" d="M ${(x - 13).toFixed(1)} ${(y + 10).toFixed(1)} L ${x.toFixed(1)} ${(y - 13).toFixed(1)} L ${(x + 13).toFixed(1)} ${(y + 10).toFixed(1)} Z"/>`;
+}
+pinta(".tiendas", t);
+// Seis panes: se van apagando mes a mes.
+let panes = "<defs><radialGradient id='e01-pan' cx='40%' cy='35%' r='70%'><stop offset='0' stop-color='#f3c783'/><stop offset='0.6' stop-color='#c98a41'/><stop offset='1' stop-color='#8a5421'/></radialGradient></defs>";
+for (let i = 0; i < 6; i++) {
+  const cx = 55 + i * 106;
+  panes += `<g class="pan pan${i}"><ellipse cx="${cx}" cy="96" rx="40" ry="7" fill="rgba(0,0,0,0.25)"/><ellipse cx="${cx}" cy="56" rx="46" ry="36" fill="url(#e01-pan)"/><path d="M ${cx - 20} 40 q 8 10 0 22 M ${cx} 36 q 8 12 0 26 M ${cx + 20} 40 q 8 10 0 22" stroke="#7a4516" stroke-width="4" fill="none" stroke-linecap="round"/></g>`;
+}
+pinta(".panes", panes);
+let ticks = "";
+for (let m = 0; m <= 18; m++) ticks += `<div class="tick" style="left:calc(${(m / 18) * 100}% - 2px)"></div>`;
+$(".ticks").innerHTML = ticks;
+
+aparece(".cab", 0.2, 0.5);
+traza(".muro", 0.4, 1.4);
+aparece([".muro-f", ".muro2", ".casa", ".templo"], 1.0, 0.8);
+aparece(".ciudad .et", 1.4, 0.6);
+entra(".d1", at("Sitiar"), { x: 30, y: 0 });
+traza(".caminos path", at("rodearla") - 0.2, 1.0, { st: 0.12 });
+salta(".tienda", at("rodearla"), { st: 0.025, desde: 0.2 });
+aparece(".t-ejer", at("rodearla") + 0.6, 0.5);
+traza(".cerco", at("muro de asedio"), 1.8);
+aparece([".cerco2", ".t-muro", ".t-muro2"], at("muro de asedio") + 1.5, 0.6);
+salta(".equis path", at("Nadie salía"), { st: 0.25 });
+entra(".g1", at("lo que había dentro") - 0.3, { x: 30, y: 0 });
+
+// Los meses: la línea se llena y los panes se acaban.
+const t0 = at("cada mes"), t1 = at("dieciocho meses") + 0.4;
+aparece([".lt .eje", ".lt .ticks", ".lt .r0", ".lt .r1"], at("final del sitio"), 0.6);
+tl.fromTo($(".lt .lleno"), { scaleX: 0 }, { scaleX: 1, duration: t1 - t0, ease: "none", immediateRender: false }, t0);
+tl.set($(".lt .lleno"), { scaleX: 0 }, 0);
+aparece(".lt .marca", t0, 0.3);
+tl.fromTo($(".lt .marca"), { x: 0 }, { x: 1760, duration: t1 - t0, ease: "none", immediateRender: false }, t0);
+cuenta(".lt .marca .mes", 1, 18, t0, t1 - t0, (v) => "mes " + Math.max(1, Math.round(v)));
+desaparece(".lt .marca", at("El capítulo treinta y ocho") - 0.4, 0.4);
+tl.fromTo($(".gauge .barra .f"), { scaleX: 1 }, { scaleX: 0.06, duration: t1 - t0, ease: "none", immediateRender: false }, t0);
+for (let i = 5; i >= 0; i--) tl.to($(".pan" + i), { opacity: 0.12, duration: 0.5 }, t0 + ((5 - i + 0.5) / 6) * (t1 - t0));
+
+// La pausa: el ejército se retira y vuelve.
+atenua(".tienda", at("Hubo una pausa"), 0.15, 0.8);
+atenua([".cerco", ".cerco2"], at("Hubo una pausa"), 0.3, 0.8);
+aparece(".t-pausa", at("Hubo una pausa") + 0.3, 0.5);
+tl.to($$(".tienda"), { opacity: 1, duration: 0.6 }, at("volvieron"));
+tl.to([$(".cerco"), $(".cerco2")], { opacity: 1, duration: 0.6 }, at("volvieron"));
+desaparece(".t-pausa", at("volvieron") + 0.4, 0.4);
+
+// La brecha.
+traza(".brecha", at("La muralla cedió"), 0.6);
+late(".brecha", at("La muralla cedió") + 0.7, { s: 1.08, n: 3 });
+aparece(".t-brecha", at("La muralla cedió") + 0.4, 0.4);
+sale(".d1", at("dieciocho meses") - 0.5, { d: 0.35 });
+entra(".q1", at("dieciocho meses"), { x: 30, y: 0 });
+
+// El capítulo 38, al final del cerco.
+entra(".lt .cap38", at("El capítulo treinta y ocho"), { y: 16 });
+</script>

@@ -1,0 +1,47 @@
+<style>
+.ilu22 { position: absolute; left: 180px; top: 110px; width: 640px; height: 360px; }
+.pie22 { left: 180px; top: 480px; width: 640px; }
+.her22 { position: absolute; left: 70px; top: 590px; width: 860px; height: 420px; display: flex; align-items: center; justify-content: center; gap: 60px; }
+.her22 .med { position: relative; width: 230px; }
+.her22 .t { font-family: "Caveat", cursive; font-weight: 700; font-size: 52px; color: var(--raquel); max-width: 280px; line-height: 1.02; }
+.col22 { position: absolute; left: 990px; right: 70px; top: 110px; bottom: 70px; }
+.col22 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.col22 .cita { font-size: 50px; }
+.cumple22 { display: grid; grid-template-columns: 1fr 70px 1fr; align-items: center; gap: 10px; }
+.cumple22 .tj .x { font-size: 34px; }
+.cumple22 svg { width: 70px; height: 50px; }
+.cumple22 svg path { fill: none; stroke: var(--oro); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 44</span><span>versículos 27 al 34</span></div>
+<div class="ilus ilu22"><div class="kb"><img src="assets/img/juda-suplica.jpg" /></div></div>
+<div class="pie-img pie22">Judá suplica por Benjamín. Video <i>Jehová siguió mostrando amor leal</i> (jw.org, 2020), minuto 23:27</div>
+<div class="her22"><div class="wj"></div><div class="wb"></div><div class="t">los dos hijos de Raquel</div></div>
+<div class="col22">
+  <div class="b a1">
+    <div class="cita q1">“Ustedes saben bien que <b>mi esposa solo me dio dos hijos</b>”<span class="ref">JACOB, CITADO POR JUDÁ · GÉNESIS 44:27</span></div>
+    <div class="def d1"><div class="t">Raquel</div><div class="x">la esposa preferida: Jacob estimó a sus hijos “más que a todos los demás”</div><div class="s"><i>Perspicacia</i>, vol.&nbsp;2, “Raquel”, pág.&nbsp;787</div></div>
+    <div class="m md sr">veinte años antes, esa preferencia llenó de odio a los hermanos (37:4). Ahora Judá la menciona <b>sin rencor</b></div>
+  </div>
+  <div class="b a2">
+    <div class="cita q2">“Así que, por favor, mi señor, <b>permite que sea yo y no el muchacho</b> el que se quede como esclavo tuyo”<span class="ref">GÉNESIS 44:33</span></div>
+    <div class="cumple22"><div class="tj c1"><div class="k">43:9</div><div class="x">“Yo asumo la responsabilidad”</div></div><svg class="fl22" viewBox="0 0 70 50"><path d="M 6 25 H 58 M 42 10 L 60 25 L 42 40" /></svg><div class="tj on c2"><div class="k">44:33</div><div class="x">lo cumple: <b>se ofrece</b></div></div></div>
+  </div>
+</div>
+
+<script>
+$(".wj").outerHTML = medallon("jose");
+$(".wb").outerHTML = medallon("benjamin");
+const tO = at("Y la oferta");
+kb(".ilu22 .kb", 0, DUR, { s: 1.0 }, { s: 1.1, y: -2 });
+aparece([".ilu22", ".pie22"], 0.2, 0.6);
+secuencia([[".a1", 0.3], [".a2", tO - 0.3]]);
+entra(".d1", at("Es Raquel"), { y: 16 });
+entra(".sr", at("Veinte años antes"), { y: 16 });
+salta(".her22 .med", at("solo me dio dos hijos"), { desde: 0.6, st: 0.2 });
+entra(".her22 .t", at("solo me dio dos hijos") + 0.6, { x: -20, y: 0 });
+late(".her22 .r-jose", at("Y José también"), { s: 1.1, n: 3 });
+entra(".c1", tO + 2.5, { x: -20, y: 0 });
+traza(".fl22 path", at("Lo que prometió") - 0.4, 0.5);
+entra(".c2", at("Lo que prometió"), { x: -20, y: 0 });
+</script>

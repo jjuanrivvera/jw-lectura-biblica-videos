@@ -1,0 +1,50 @@
+{
+  "assets": [
+    {
+      "path": "assets/abel.jpg",
+      "sha256": "52105f75c8e59701e9a8d56c1ebed13655ad5c51a560263061c0df95970d9843",
+      "bytes": 99674
+    },
+    {
+      "path": "assets/cain.jpg",
+      "sha256": "482750830e5dfd169ccd96b430f6170c6cc34968edff430a549f4d3019a82cce",
+      "bytes": 102626
+    },
+    {
+      "path": "assets/creacion.jpg",
+      "sha256": "a32eaf730dbaf927f89e5e4445c6d7e5a3bd69543163a3b75a0c9ae791d8cec4",
+      "bytes": 143042
+    },
+    {
+      "path": "assets/fonts/Caveat.ttf",
+      "sha256": "0bdb6b660482d31531b3945849fba5916b3ef8695da7024a9e6b9ee3c4157988",
+      "bytes": 403648
+    },
+    {
+      "path": "assets/fonts/Fraunces-Italic.ttf",
+      "sha256": "b24448c43702fac4ee856781d461a0dfba8d8e594b6e8e190234b75fed2c0e01",
+      "bytes": 414904
+    },
+    {
+      "path": "assets/fonts/Fraunces.ttf",
+      "sha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+      "bytes": 360440
+    },
+    {
+      "path": "assets/fonts/Montserrat.ttf",
+      "sha256": "0f7b311b2f3279e4eef9b2f968bcdbab6e28f4daeb1f049f4f278a902bcd82f7",
+      "bytes": 744936
+    },
+    {
+      "path": "assets/gsap.min.js",
+      "sha256": "c174bfce53a729418d57a8ad8625e7247c793a22fef8e2851e3cfa3de9cd8280",
+      "bytes": 72779
+    }
+  ],
+  "illustrations": {
+    "creacion.jpg": "/media/a3/a32eaf730dbaf927f89e5e4445c6d7e5a3bd69543163a3b75a0c9ae791d8cec4.jpg",
+    "cain.jpg": "/media/48/482750830e5dfd169ccd96b430f6170c6cc34968edff430a549f4d3019a82cce.jpg",
+    "abel.jpg": "/media/52/52105f75c8e59701e9a8d56c1ebed13655ad5c51a560263061c0df95970d9843.jpg"
+  },
+  "source": "fuente/investigacion.html; originales en ~/repos/jw/media; fuentes y GSAP locales del proyecto genesis-24-28"
+}

@@ -1,0 +1,36 @@
+<style>
+.cab.sobre span { background: rgba(15,22,30,0.82); }
+.lim { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.et2 { font-family: "Caveat"; font-weight: 700; font-size: 60px; fill: #1b2733; }
+.dos { position: absolute; left: 80px; right: 80px; top: 110px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+.dos .dato { background: rgba(23,33,43,0.93); }
+.dos .dato .v { font-size: 50px; }
+.fin { position: absolute; left: 80px; right: 80px; top: 110px; padding: 20px 32px; border-radius: 26px; background: rgba(23,33,43,0.93); }
+.fin .m { font-size: 62px; }
+.fuente-p { position: absolute; left: 80px; bottom: 16px; font-size: 21px; color: #1b2733; }
+</style>
+<svg class="lienzo" viewBox="0 0 1920 1080"></svg>
+<svg class="lim" viewBox="0 0 1920 1080">
+  <path class="linea" d="M 960 380 L 960 1060" stroke="#8a1c10" stroke-width="10" stroke-dasharray="26 18"/>
+  <g class="fl"><path d="M 600 900 L 180 900" stroke="#6b4a8a" stroke-width="14" stroke-linecap="round"/><path d="M 214 870 L 170 900 L 214 930" fill="none" stroke="#6b4a8a" stroke-width="14" stroke-linecap="round"/><text class="et2 halo" x="390" y="870" text-anchor="middle" style="stroke-width:10px">Labán vuelve a Harán</text></g>
+  <g class="fj"><path d="M 1320 900 L 1740 900" stroke="#8c6a30" stroke-width="14" stroke-linecap="round"/><path d="M 1706 870 L 1750 900 L 1706 930" fill="none" stroke="#8c6a30" stroke-width="14" stroke-linecap="round"/><text class="et2 halo" x="1530" y="870" text-anchor="middle" style="stroke-width:10px">Jacob sigue hacia Mahanaim</text></g>
+</svg>
+<div class="cab sobre"><span class="cap">Génesis 31</span><span>versículos 51 al 55</span></div>
+<div class="dos">
+  <div class="dato d1" style="border-color:#c9a2d4"><div class="k">Labán invoca</div><div class="v">“el Dios de Abrahán y el Dios de Nacor”</div><div class="s">Génesis 31:53</div></div>
+  <div class="dato d2" style="border-color:#e9bf60"><div class="k">Jacob jura</div><div class="v">“por el Dios a quien temía su padre Isaac”</div><div class="s">Génesis 31:53</div></div>
+</div>
+<div class="fin"><div class="m">besó a sus nietos y a sus hijas, los bendijo y se fue</div><div class="s">Génesis 31:55 · “el registro bíblico ya no lo vuelve a mencionar más” · Perspicacia, vol. 2, “Labán”, pág. 177</div></div>
+<div class="fuente-p">dibujo propio, no a escala · Génesis 31:52; 32:1, 2</div>
+<script>
+/*incluir:_dibujos.js*/
+/*incluir:_pacto.js*/
+pinta(".lienzo", pactoEscena());
+traza(".linea", 0.5, 1.2);
+entra(".d1", at("Labán invocó"), { y: 20 });
+entra(".d2", at("Jacob juró"), { y: 20 });
+sale([".d1", ".d2"], at("Comieron y a la mañana") - 0.4);
+entra(".fin", at("Comieron y a la mañana"), { y: 20 });
+traza(".fl path", at("y se fue"), 0.8); aparece(".fl text", at("y se fue") + 0.3, 0.4);
+traza(".fj path", at("y se fue") + 0.6, 0.8); aparece(".fj text", at("y se fue") + 0.9, 0.4);
+</script>

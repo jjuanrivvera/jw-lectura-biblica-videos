@@ -1,0 +1,57 @@
+<style>
+.mapa.D { left: 0; top: 0; width: 820px; height: 1080px; background: #cfd9c4; }
+.mapa.D .cam img, .mapa.D .cam svg { width: 2000px; height: 2380px; }
+.mapa.D .pie-mapa { top: 20px; bottom: auto; }
+.funde36 { left: 720px; }
+.col36 { position: absolute; left: 860px; right: 70px; top: 100px; bottom: 60px; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.col36 .def .x { font-size: 54px; }
+.col36 .tj .x { font-size: 34px; }
+.col36 .caja .s { font-size: 27px; color: #d5dbe1; }
+.col36 .caja .s b { color: var(--tiza); }
+.col36 .caja { display: flex; flex-direction: column; gap: 12px; }
+.col36 .caja .i { display: grid; grid-template-columns: 30px 1fr; column-gap: 10px; align-items: start; }
+.col36 .caja .i .p { font-family: "Fraunces", serif; font-weight: 700; font-size: 30px; color: var(--rosa); line-height: 1.2; }
+.cab.d36 { left: 860px; }
+</style>
+
+<div class="mapa D"><div class="cam"><img src="assets/img/b2-dan.jpg" /><svg viewBox="0 0 2000 2380"><g class="marcasD"></g></svg></div>
+  <div class="pie-mapa">Mapa: apéndice B2 de la TNM (wol.jw.org) · marcas añadidas</div></div>
+<div class="funde-der funde36"></div>
+<div class="cab d36"><span class="cap">Beer-Seba hoy</span><span>Génesis 46:1</span></div>
+<div class="col36">
+  <div class="def d1"><div class="t">Beer-Seba</div><div class="x">“Pozo del Juramento, o: <b>Pozo de Siete</b>”</div><div class="s"><i>Perspicacia</i>, vol.&nbsp;1, “Beer-seba”, pág.&nbsp;298</div></div>
+  <div class="tj on d2"><div class="k">el extremo sur</div><div class="x">se decía “<b>desde Dan hasta Beer-seba</b>”</div><div class="ref"><i>Perspicacia</i>, vol.&nbsp;1, pág.&nbsp;298</div></div>
+  <div class="tj d3"><div class="k">sus ruinas</div><div class="x">Tell es-Sabaʽ, a unos <b>4 km</b> al este de la ciudad moderna</div><div class="ref"><i>Perspicacia</i>, vol.&nbsp;1, pág.&nbsp;299</div></div>
+  <div class="caja d4">
+    <div class="i i1"><span class="p">·</span><span class="s">una ciudad <b>amurallada</b>, con puerta, de la época de los reyes de Israel, y un gran <b>altar de cuatro cuernos</b> (excavada entre 1969 y 1976)</span></div>
+    <div class="i i2"><span class="p">·</span><span class="s">lo más antiguo hallado es de <b>siglos después</b> de los patriarcas</span></div>
+    <div class="i i3"><span class="p">·</span><span class="s">parque nacional y <b>patrimonio mundial de la UNESCO</b> desde 2005</span></div>
+    <span class="externa chico">fuente externa: Wikipedia, “Tel Be'er Sheva”; UNESCO, “Biblical Tels”</span>
+  </div>
+</div>
+
+<script>
+$(".marcasD").innerHTML = `
+  <circle class="anillo oro a-dan" cx="1655" cy="252" r="44" style="stroke-width:10"/>
+  <circle class="anillo oro a-bs" cx="1017" cy="2107" r="44" style="stroke-width:10"/>
+  <path class="flD" d="M 1620 320 C 1500 840 1260 1540 1060 2040" stroke="#c0392b" stroke-width="12" fill="none" stroke-linecap="round" stroke-dasharray="26 18"/>
+  <path class="flD2" d="M 1590 290 L 1628 240 L 1660 302 M 1030 1990 L 1040 2070 L 1112 2038" stroke="#c0392b" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+const V = { x: 0, y: 0, w: 820, h: 1080 };
+const TODO = encuadre({ x: 97, y: 0, w: 1807, h: 2380 }, V);
+const CERCA = encuadre({ x: 675, y: 1480, w: 683, h: 900 }, V);
+tl.set($(".mapa.D .cam"), TODO, 0);
+const tR = at("Sus ruinas");
+entra(".d1", 0.3, { y: 16 });
+traza(".a-dan", at("desde Dan"), 0.6);
+traza(".a-bs", at("hasta Beer-Seba") - 0.1, 0.6);
+traza(".flD", at("desde Dan"), 1.4);
+tl.set($(".flD"), { strokeDasharray: "26 18" }, at("desde Dan") + 1.45);
+aparece(".flD2", at("desde Dan") + 1.2, 0.4);
+entra(".d2", at("llegó a ser el límite"), { y: 16 });
+camara(".mapa.D .cam", tR - 0.4, 1.8, CERCA);
+desaparece([".flD", ".flD2", ".a-dan"], tR - 0.4, 0.4);
+entra(".d3", tR, { y: 16 });
+entra(".d4", at("Allí se excavó"), { y: 16 });
+entra(".i2", at("Lo más antiguo"), { y: 10 });
+entra(".i3", at("Hoy es patrimonio"), { y: 10 });
+</script>

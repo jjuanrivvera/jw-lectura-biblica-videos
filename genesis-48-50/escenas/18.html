@@ -1,0 +1,56 @@
+<style>
+.ret18 { position: absolute; left: 0; top: 0; width: 960px; height: 1080px; }
+.ret18 .hijo { width: 400px; height: 400px; top: 230px; }
+.ret18 .h1 { left: 70px; }
+.ret18 .h2 { left: 500px; }
+.ret18 .nhijo { position: absolute; top: 660px; width: 400px; text-align: center; font-size: 76px; }
+.ret18 .n1 { left: 70px; }
+.ret18 .n2 { left: 500px; }
+.ret18 .lazo { position: absolute; left: 70px; width: 830px; top: 800px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; color: var(--tenue); }
+.ret18 .lazo b { color: var(--lea); }
+.col18 { position: absolute; left: 1000px; right: 70px; top: 110px; bottom: 80px; }
+.col18 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.col18 .cita { font-size: 50px; }
+.col18 .cita.sm { font-size: 42px; }
+.col18 .def .x { font-size: 54px; }
+.ira18 { align-self: flex-start; }
+</style>
+
+<div class="fase ret18">
+  <div class="hijo lea h1"><img src="assets/img/simeon-g.jpg" /></div>
+  <div class="hijo lea h2"><img src="assets/img/levi-g.jpg" /></div>
+  <div class="nhijo n1">Simeón</div>
+  <div class="nhijo n2">Leví</div>
+  <div class="lazo">hijos del mismo padre y de <b>la misma madre, Lea</b></div>
+</div>
+<div class="cab" style="left:1000px"><span class="cap">Génesis 49</span><span>versículos 5 al 7</span></div>
+<div class="col18">
+  <div class="b b1">
+    <div class="cita">“Simeón y Leví son hermanos. Sus armas son <b>instrumentos de violencia</b>”<span class="ref">GÉNESIS 49:5</span></div>
+    <div class="cita sm c2">“Al tercer día, cuando los hombres todavía estaban adoloridos, Simeón y Leví [...] tomaron una espada cada uno y fueron a la ciudad”<span class="ref">GÉNESIS 34:25 · SIQUEM, DESPUÉS DE LA VIOLACIÓN DE DINA</span></div>
+  </div>
+  <div class="b b2">
+    <div class="cita">“Por gusto <b>dejaron cojos a toros</b>”<span class="ref">GÉNESIS 49:6</span></div>
+    <div class="def"><div class="t">desjarretar<i>nota de Génesis 49:6</i></div><div class="x">cortarle a un animal <b>los tendones de las patas</b>, para dejarlo inútil</div><div class="s"><i>La Atalaya</i> (estudio), junio de 2025, parte 1, págs.&nbsp;4 a 5</div></div>
+  </div>
+  <div class="b b3">
+    <div class="cita">“<b>Maldita sea su ira</b>, porque es cruel, y maldita sea su furia, porque es despiadada. Yo los dispersaré en Jacob. Los esparciré en Israel”<span class="ref">GÉNESIS 49:7</span></div>
+    <span class="clave ira18">lo que maldice es <b>su ira</b></span>
+  </div>
+</div>
+
+<script>
+salta(".ret18 .h1", 0.3, { desde: 0.85, d: 0.8, ease: "power3.out" });
+salta(".ret18 .h2", 0.55, { desde: 0.85, d: 0.8, ease: "power3.out" });
+entra(".ret18 .nhijo", 0.8, { y: 18, st: 0.2 });
+entra(".lazo", 2.4, { y: 14 });
+const tD = at("Jacob añade");
+const tM = at("Y concluye");
+secuencia([[".b1", 0.4], [".b2", tD - 0.2], [".b3", tM - 0.2]]);
+entra(".c2", at("Después de que violaron") - 0.2, { y: 20 });
+entra(".b2 .def", at("según la nota") - 0.2, { y: 20 });
+entra(".ira18", at("Lo que maldice") - 0.2, { y: 16 });
+// Las dos caras se apagan un poco cuando se habla de la violencia, y vuelven al final.
+atenua(".ret18 .hijo img", at("los dos mataron"), 0.55, 0.8);
+tl.to($$(".ret18 .hijo img"), { opacity: 1, duration: 0.8 }, at("Lo que maldice"));
+</script>

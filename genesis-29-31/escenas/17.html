@@ -1,0 +1,18 @@
+<style>
+.nota { position: absolute; right: 116px; bottom: 100px; width: 760px; height: 330px; }
+.nota > div { position: absolute; left: 0; right: 0; bottom: 0; }
+.nota .cita { font-size: 46px; }
+</style>
+<div class="cab"><span class="cap">Génesis 30</span><span>versículos 5 al 8</span></div>
+<!--incluir:_marcador.html-->
+<div class="nota">
+  <div class="n1"><div class="cita">“He tenido grandes luchas con mi hermana. ¡Y he vencido!”<span class="ref">GÉNESIS 30:8</span></div><div class="def" style="margin-top:14px"><div class="t">Literalmente</div><div class="x">luchas “de Dios”: <b>enormes</b></div><div class="s">TNM de 1987, nota en 30:8</div></div></div>
+  <div class="n2"><div class="m">oraba, y a veces <b style="color:var(--oro)">se adelantaba</b></div><div class="s">“esa no era la forma en la que Dios le iba a dar hijos” · La Atalaya, 1 de octubre de 2007, pág. 10</div></div>
+</div>
+<script>
+/*incluir:_marcador.js*/
+marcador(["rub", "sim", "lev", "jud"], [[".h-dan", at("Dan juez"), "raq"], [".h-nef", at("Y Neftalí"), "raq"]]);
+entra(".nota .n1", at("He tenido grandes luchas"), { y: 20 });
+sale(".nota .n1", at("Raquel oraba") - 0.3);
+entra(".nota .n2", at("Raquel oraba"), { y: 20 });
+</script>

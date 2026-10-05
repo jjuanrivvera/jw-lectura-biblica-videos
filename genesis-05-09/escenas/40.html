@@ -1,0 +1,42 @@
+<style>
+.esq { position: absolute; left: 0; top: 0; }
+.nn { font-family: "Fraunces", serif; font-weight: 700; font-size: 50px; }
+.nl { font-family: "Caveat", cursive; font-weight: 700; font-size: 48px; }
+.col { top: 120px; bottom: 60px; right: 60px; width: 760px; }
+.col .cita { font-size: 48px; }
+.col .m { font-size: 60px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 9</span><span>versículos 20 a 23</span></div>
+<svg class="esq" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs><linearGradient id="e40-tela" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9a36a"/><stop offset="1" stop-color="#8a6a3a"/></linearGradient></defs>
+  <g class="tienda"><path d="M 380 700 L 560 430 L 740 700 Z" fill="url(#e40-tela)" stroke="#5a4020" stroke-width="6" stroke-linejoin="round"/><path d="M 560 430 L 530 700 L 590 700 Z" fill="#3a2a14"/><path d="M 340 700 L 780 700" stroke="#5a4020" stroke-width="6"/>
+    <text class="nl" x="560" y="760" text-anchor="middle" fill="#b3bdc8">la tienda de Noé</text></g>
+  <g class="cam"><circle cx="220" cy="430" r="62" fill="rgba(236,138,103,0.2)" stroke="#ec8a67" stroke-width="6"/><text class="nn" x="220" y="447" text-anchor="middle" fill="#ec8a67">Cam</text>
+    <path d="M 270 390 C 300 300 320 240 360 200" stroke="#ec8a67" stroke-width="6" fill="none" stroke-dasharray="4 12" stroke-linecap="round"/>
+    <text class="nl" x="120" y="180" fill="#ec8a67">“se lo contó a sus dos hermanos”</text></g>
+  <g class="hnos">
+    <circle cx="900" cy="880" r="56" fill="rgba(233,191,96,0.2)" stroke="#e9bf60" stroke-width="6"/><text class="nn" x="900" y="897" text-anchor="middle" fill="#e9bf60" style="font-size:44px">Sem</text>
+    <circle cx="1080" cy="880" r="56" fill="rgba(233,191,96,0.2)" stroke="#e9bf60" stroke-width="6"/><text class="nn" x="1080" y="897" text-anchor="middle" fill="#e9bf60" style="font-size:40px">Jafet</text>
+    <path class="manto" d="M 900 812 C 950 790 1030 830 1080 812 L 1080 834 C 1030 852 950 812 900 834 Z" fill="#8f6ab0" stroke="#c9b8f0" stroke-width="3"/>
+    <text class="nl" x="990" y="975" text-anchor="middle" fill="#c9b8f0">un manto entre los dos</text></g>
+  <g class="atras"><path d="M 840 880 C 760 870 720 820 700 740" stroke="#e9bf60" stroke-width="8" fill="none" stroke-linecap="round" stroke-dasharray="18 12"/>
+    <path d="M 682 766 L 698 732 L 722 760" stroke="#e9bf60" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text class="nl" x="560" y="1040" text-anchor="middle" fill="#e9bf60">caminando hacia atrás, para no mirar</text></g>
+</svg>
+<div class="col">
+  <div class="b a1"><div class="m">Noé bebió del vino y quedó <b>descubierto</b> en su tienda</div><div class="cita" style="font-size:44px">“Este relato no indica que Noé fuese un borracho. La Biblia lo incluye para una mejor comprensión del suceso que siguió”<span class="ref">PERSPICACIA, VOL. 2, “NOÉ”</span></div></div>
+  <div class="b a2"><div class="cita">“Cam, el padre de Canaán, vio la desnudez de su padre y <b>se lo contó</b> a sus dos hermanos”<span class="ref">GÉNESIS 9:22</span></div></div>
+  <div class="b a3"><div class="cita">“Sem y Jafet tomaron un manto entre los dos [...] y entraron <b>caminando hacia atrás</b>”<span class="ref">GÉNESIS 9:23</span></div><div class="m">dos se toman el trabajo de <b>no mirar</b>; el otro, el de <b style="color:var(--rojo)">contarlo</b></div></div>
+</div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+aparece(".tienda", 0.4, 0.8);
+tl.set($$(".cam, .hnos, .atras"), { opacity: 0 }, 0);
+secuencia([[".a1", 0.4], [".a2", at("Cam, el padre")], [".a3", at("Sem y Jafet")]]);
+aparece(".cam", at("Cam, el padre"), 0.6);
+aparece(".hnos", at("Sem y Jafet"), 0.6);
+aparece(".atras", at("caminando hacia atrás"), 0.6);
+tl.fromTo($(".hnos"), { x: 120 }, { x: 0, duration: 3.0, ease: "power1.inOut", immediateRender: false }, at("caminando hacia atrás"));
+</script>

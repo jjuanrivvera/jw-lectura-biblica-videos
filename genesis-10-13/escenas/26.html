@@ -1,0 +1,56 @@
+<style>
+.ar26 { position: absolute; inset: 0; }
+.ar26 svg { width: 1920px; height: 1080px; display: block; }
+.p26 { font-family: "Fraunces", serif; font-weight: 700; font-size: 62px; text-anchor: middle; fill: var(--tiza); }
+.p26.oro { fill: var(--oro); }
+.s26 { font-family: "Caveat", cursive; font-weight: 700; font-size: 40px; text-anchor: middle; fill: var(--cielo); }
+.r26 { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; text-anchor: middle; fill: #f7b8a3; }
+.lbl26 { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; fill: #92d193; }
+.q26 { position: absolute; left: 90px; width: 860px; top: 760px; }
+.q26 .cita { font-size: 50px; }
+.fin26 { position: absolute; left: 1000px; right: 90px; top: 790px; }
+.fin26 .m { font-size: 62px; }
+.fu26 { position: absolute; left: 90px; right: 90px; bottom: 16px; }
+</style>
+
+<div class="ar26"><svg viewBox="0 0 1920 1080">
+  <g class="tare"><text class="p26" x="960" y="120">Taré</text><text class="s26" x="960" y="166">posiblemente, “Íbice”, una cabra montés</text></g>
+  <path class="rm" d="M 960 186 V 240 M 380 240 H 1490 M 380 240 V 290 M 960 240 V 290 M 1490 240 V 290" fill="none" stroke="rgba(241,233,216,0.5)" stroke-width="5"/>
+  <g class="har"><text class="p26" x="1490" y="350">Harán</text><text class="r26" x="1490" y="400">† en Ur, antes que su padre</text></g>
+  <path class="rh" d="M 1490 420 V 470 M 1290 470 H 1690 M 1290 470 V 510 M 1490 470 V 510 M 1690 470 V 510" fill="none" stroke="rgba(241,233,216,0.5)" stroke-width="5"/>
+  <g class="hij"><text class="p26 lot" x="1290" y="570">Lot</text><text class="p26" x="1490" y="570" style="font-size:54px">Milcá</text><text class="p26" x="1690" y="570" style="font-size:54px">Iscá</text></g>
+  <g class="nac"><text class="p26" x="960" y="350">Nacor</text></g>
+  <path class="cas" d="M 1000 372 C 1080 470 1300 470 1440 540" fill="none" stroke="#e9adcc" stroke-width="5" stroke-dasharray="12 9"/>
+  <text class="s26 casl" x="1170" y="500" style="fill:#e9adcc">se casó con su tío</text>
+  <g class="abr"><text class="p26 oro" x="380" y="350">Abrán</text><text class="s26" x="380" y="398">“Padre Es Alto”</text></g>
+  <g class="sar"><text class="p26 oro" x="660" y="350">Sarái</text><text class="s26" x="660" y="398">posiblemente,</text><text class="s26" x="660" y="438">“Contenciosa”</text><path d="M 488 332 H 552" stroke="#e9bf60" stroke-width="5"/></g>
+  <g class="est"><rect x="300" y="462" width="440" height="80" rx="20" fill="rgba(236,138,103,0.14)" stroke="#ec8a67" stroke-width="4"/><text class="r26" x="520" y="516">sin hijos</text></g>
+  <path class="ado" d="M 1250 590 C 1050 700 760 690 600 552" fill="none" stroke="#92d193" stroke-width="6"/>
+  <path class="adop" d="M 588 584 L 598 550 L 632 562" fill="none" stroke="#92d193" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="lbl26 adl" x="880" y="690">huérfano: sus tíos lo adoptaron</text>
+</svg></div>
+<div class="q26"><div class="cita">“Pero Sarái era <b>estéril</b>; no tenía hijos”<span class="ref">GÉNESIS 11:30</span></div></div>
+<div class="fin26"><div class="m">a esta pareja sin hijos, Jehová le va a prometer <b>una gran nación</b> <span style="color:var(--tenue)">(12:2)</span></div></div>
+<div class="fu26 f">Génesis 11:27-32 · nombres: <i>Perspicacia</i>, “Abrahán”, “Sara”, “Taré” · “lo adoptaron”: <i>Imitemos su fe</i>, cap. 3</div>
+
+<script>
+entra(".tare", 0.4, { y: 16 });
+traza(".rm", 1.4, 1.0);
+entra(".har", at("Su hijo Harán") - 0.1, { y: 16 });
+traza(".rh", at("dejó a Lot") - 0.3, 0.6);
+entra(".hij", at("dejó a Lot"), { y: 16 });
+entra(".nac", at("Milcá") - 0.1, { y: 16 });
+traza(".cas", at("se casó con su tío"), 0.8);
+aparece(".casl", at("tío") + 0.2, 0.4);
+entra(".abr", at("Abrán se casó") - 0.2, { y: 16 });
+entra(".sar", at("con Sarái") - 0.1, { y: 16 });
+entra(".q26", at("Y el versículo") - 0.1, { y: 20 });
+salta(".est", at("estéril"), { desde: 0.6 });
+late(".lot", at("Lot quedó"), { s: 1.2, n: 3 });
+traza(".ado", at("sus tíos") - 0.2, 1.0);
+aparece(".adop", at("lo adoptaron") - 0.3, 0.3);
+entra(".adl", at("lo adoptaron") - 0.4, { y: 10 });
+aparece(".fu26", 1.5, 0.5);
+entra(".fin26", at("A esta pareja") - 0.2, { y: 20 });
+late([".abr", ".sar"], at("gran nación") - 0.6, { s: 1.08, n: 3 });
+</script>
