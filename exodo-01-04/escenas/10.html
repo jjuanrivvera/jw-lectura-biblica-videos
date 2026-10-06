@@ -1,0 +1,33 @@
+<style>
+.ilus.i10 { left: 80px; top: 130px; width: 900px; height: 450px; }
+.dcha { position: absolute; left: 1020px; right: 80px; top: 130px; height: 460px; }
+.dcha .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.dcha .cita { font-size: 52px; }
+.dcha .m { font-size: 62px; }
+.tres { position: absolute; left: 80px; right: 80px; top: 640px; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 26px; }
+.tres .p { border-radius: 26px; border: 3px solid rgba(241, 233, 216, 0.2); background: rgba(10, 16, 22, 0.52); padding: 14px 26px 18px; min-height: 250px; }
+.tres .p .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 54px; color: var(--oro); line-height: 1; }
+.tres .p .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; line-height: 1.05; margin-top: 10px; }
+.tres .p .s { font-size: 26px; margin-top: 6px; }
+.tres .p.on { border-color: var(--oro); background: rgba(233, 191, 96, 0.08); }
+</style>
+<div class="cab"><span class="cap">Éxodo 2</span><span>versículos 4 a 10</span></div>
+<div class="ilus i10 im"><div class="kb"><img src="assets/img/f16.jpg"/></div></div>
+<div class="pie-img" style="left:80px;top:592px;width:900px;font-size:24px">Míriam y la hija del faraón · <i>Mi libro de historias bíblicas</i>, historia 28</div>
+<div class="dcha">
+  <div class="b b1"><div class="m rojo">La hija del faraón</div><div class="cita">“Al abrirla, vio al bebé, que estaba llorando. Ella se compadeció de él y dijo: ‘Es uno de los niños de los hebreos’”<span class="ref">ÉXODO 2:6</span></div></div>
+  <div class="b b2"><div class="m cielo">Míriam</div><div class="cita">“¿Quieres que vaya a buscar a una hebrea para que amamante al niño por ti?”<span class="ref">ÉXODO 2:7</span></div></div>
+  <div class="b b3"><div class="m oro">Moisés</div><div class="cita">“Ella lo llamó Moisés y dijo: ‘Es porque lo saqué del agua’”<span class="ref">ÉXODO 2:10</span></div></div>
+</div>
+<div class="tres">
+  <div class="p p1"><div class="n">Jokébed</div><div class="x">escondió, preparó la canasta y crió a su hijo</div><div class="s">recibió un pago por hacerlo</div></div>
+  <div class="p p2"><div class="n">Míriam</div><div class="x">vigiló a distancia y propuso una nodriza hebrea</div><div class="s">Números 26:59: hermana de Moisés</div></div>
+  <div class="p p3"><div class="n">La princesa</div><div class="x">se compadeció, lo adoptó y le dio un nombre</div><div class="s">Hechos 7:22: recibió toda la educación egipcia</div></div>
+</div>
+<div class="fuente">TNM, Éxodo 2:4-10 · Hechos 7:20-22 · <i>Perspicacia</i>, «Míriam», «Adopción»</div>
+<script>
+entra(".im", 0.5, { y: 30 });
+kb(".im .kb", 0.5, DUR, { s: 1.0 }, { s: 1.07, x: 1.5 });
+secuencia([[".b1", at("Entonces la hija del faraón")], [".b2", at("La hermana, Míriam")], [".b3", at("Cuando el niño creció")]], null);
+prepara(".tres .p", 0.8, 0.22); ilumina(".p1", at("Así Jokébed")); ilumina(".p2", at("La hermana, Míriam") + 0.4); ilumina(".p3", at("Hechos siete"));
+</script>

@@ -1,0 +1,61 @@
+<!--lead:2.8-->
+<style>
+.cc .num { font-size: 210px; }
+.pts { position: absolute; left: 80px; top: 150px; width: 900px; height: 700px; }
+.pts svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.chips { position: absolute; left: 1010px; right: 80px; top: 140px; display: flex; flex-wrap: wrap; gap: 12px 14px; }
+.chip2 { padding: 2px 20px 4px; border-radius: 40px; border: 3px solid rgba(241, 233, 216, 0.3); font-family: "Fraunces", serif; font-weight: 600; font-size: 38px; background: rgba(10, 16, 22, 0.5); }
+.chip2.jose { border-color: var(--oro); color: var(--oro); }
+.col02 { position: absolute; left: 1010px; right: 80px; top: 520px; bottom: 100px; }
+.col02 .b { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 22px; justify-content: flex-start; }
+.col02 .m { font-size: 72px; }
+.col02 .s { font-size: 34px; }
+.nota-pts { position: absolute; left: 80px; top: 870px; width: 900px; text-align: center; }
+.nota-pts .m { font-size: 62px; }
+</style>
+<div class="capcard cc">
+  <div class="num">Éxodo 1</div>
+  <svg viewBox="0 0 820 40"><path d="M 10 22 C 200 10 420 34 810 16"/></svg>
+  <div class="sub">la opresión no detiene el crecimiento</div>
+</div>
+<div class="fase f2">
+<div class="cab"><span class="cap">Éxodo 1</span><span>versículos 1 a 7</span></div>
+<div class="pts"><svg viewBox="0 0 900 700"><g class="g70"></g><g class="gmuchos"></g></svg></div>
+<div class="nota-pts"><div class="m oro n70">70 · la familia que entró con Jacob</div></div>
+<div class="chips">
+  <span class="chip2">Rubén</span><span class="chip2">Simeón</span><span class="chip2">Leví</span><span class="chip2">Judá</span>
+  <span class="chip2">Isacar</span><span class="chip2">Zabulón</span><span class="chip2">Benjamín</span><span class="chip2">Dan</span>
+  <span class="chip2">Neftalí</span><span class="chip2">Gad</span><span class="chip2">Aser</span><span class="chip2 jose">José ya estaba en Egipto</span>
+</div>
+<div class="col02">
+  <div class="b b1"><div class="m rojo">No es el pueblo entero que saldría siglos después</div><div class="s">“En total, los descendientes de Jacob eran 70.” · Éxodo 1:5</div></div>
+  <div class="b b2"><div class="m cielo">Hechos 7:14 dice 75</div><div class="s">Sigue la traducción griega antigua, que cuenta a otros descendientes. Son criterios de cómputo diferentes; la TNM lo explica en su nota de estudio.</div></div>
+  <div class="b b3"><div class="m oro">“llenaron la región”</div><div class="s">“Los israelitas tuvieron muchos hijos y empezaron a multiplicarse, y llegaron a ser muchos y muy poderosos a un ritmo extraordinario” · Éxodo 1:7. El crecimiento es una bendición y cumple la promesa a Abrahán (Génesis 12:2; 15:5).</div></div>
+</div>
+<div class="fuente">TNM, Éxodo 1:1-7 y nota de estudio; Hechos 7:14 · <i>Perspicacia</i>, «Israel en Egipto» · Esquema propio: no es una escala demográfica</div>
+</div>
+<script>
+const NS = "http://www.w3.org/2000/svg";
+const g70 = $(".g70"), gm = $(".gmuchos");
+for (let i = 0; i < 70; i++) {
+  const c = document.createElementNS(NS, "circle");
+  c.setAttribute("cx", 45 + (i % 10) * 90); c.setAttribute("cy", 50 + Math.floor(i / 10) * 92); c.setAttribute("r", 30);
+  c.setAttribute("fill", "#93bbef"); c.setAttribute("class", "p7");
+  g70.appendChild(c);
+}
+for (let i = 0; i < 360; i++) {
+  const c = document.createElementNS(NS, "circle");
+  c.setAttribute("cx", 22 + (i % 24) * 37); c.setAttribute("cy", 22 + Math.floor(i / 24) * 45); c.setAttribute("r", 14);
+  c.setAttribute("fill", "#92d193"); c.setAttribute("class", "pm"); gm.appendChild(c);
+}
+capitulo(".cc", 0.2, at("El libro vuelve") - 0.9);
+aparece(".f2", at("El libro vuelve") - 0.7, 0.6);
+entra(".chip2", at("El libro vuelve") + 0.8, { y: 14, st: 0.28, d: 0.4 });
+entra(".p7", at("En total"), { y: 0, s: 0.2, st: 0.025, d: 0.3 });
+entra(".n70", at("eran setenta"), { y: 18 });
+secuencia([[".b1", at("Ese setenta")], [".b2", at("Hechos siete")], [".b3", at("Después murieron")]], null);
+atenua(".p7", at("Después murieron"), 0.15, 0.6);
+entra(".pm", at("Después murieron") + 0.8, { y: 0, s: 0.2, st: 0.012, d: 0.3 });
+atenua(".chip2", at("Después murieron"), 0.2, 0.5);
+sale(".n70", at("Después murieron"), { y: 0, d: 0.4 });
+</script>

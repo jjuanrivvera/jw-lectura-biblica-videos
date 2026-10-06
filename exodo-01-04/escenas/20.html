@@ -1,0 +1,36 @@
+<style>
+.mapa.m20 { left: 0; top: 0; width: 1180px; height: 1080px; background: #e4d6b7; }
+.mapa.m20 .cam img, .mapa.m20 .cam svg { width: 3200px; height: 4623px; }
+.col20 { position: absolute; left: 1200px; right: 56px; top: 100px; bottom: 90px; }
+.col20 .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.col20 .m { font-size: 64px; }
+.col20 .cita { font-size: 46px; }
+.col20 .s { font-size: 30px; }
+.col20 .ext { display: inline-block; font-family: "Caveat", cursive; font-weight: 700; font-size: 34px; color: var(--rosa); border: 3px dotted var(--rosa); border-radius: 12px; padding: 1px 14px 0; align-self: flex-start; }
+.col20 .cd { border-radius: 26px; border: 3px solid rgba(241, 233, 216, 0.2); background: rgba(10, 16, 22, 0.55); padding: 18px 26px 22px; }
+.col20 .cd .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 50px; color: var(--oro); line-height: 1; }
+.col20 .cd .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; line-height: 1.05; margin-top: 6px; }
+</style>
+<div class="cab" style="left:1200px;right:56px"><span class="cap">Éxodo 3</span><span>Qué hay hoy</span></div>
+<div class="mapa m20"><div class="cam"><img src="assets/img/b3.jpg"/>
+  <svg viewBox="0 0 3200 4623">
+    <circle class="anillo ar" cx="1739" cy="3770" r="100" style="stroke-width:22"/>
+    <g class="ct"><path d="M 1739 3872 L 1739 4090" stroke="#c0392b" stroke-width="18"/><rect x="1180" y="4090" width="1100" height="190" rx="26" fill="rgba(192,57,43,0.95)"/><text x="1730" y="4170" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="62" fill="#fff6e8">Jebel Musa · tradición</text><text x="1730" y="4246" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="52" fill="#fff6e8">sur de la península del Sinaí</text></g>
+    <ellipse class="hueco ao" cx="2760" cy="3400" rx="330" ry="430" style="stroke-width:24;stroke:#d99a14"/>
+    <g class="co"><rect x="2380" y="2730" width="800" height="190" rx="26" fill="rgba(217,154,20,0.95)"/><text x="2780" y="2810" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="62" fill="#1b1b1b">Otra propuesta</text><text x="2780" y="2886" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="52" fill="#1b1b1b">noroeste de Arabia</text></g>
+  </svg></div></div>
+<div class="funde-der" style="left:1060px"></div>
+<div class="pie" style="left:24px;bottom:20px">TNM, apéndice B3 · el marcador “Mte. Sinaí, Horeb” es el del mapa; los círculos son propuestas, no una ruta</div>
+<div class="col20">
+  <div class="b b1"><div class="m oro">Horeb y Sinaí</div><div class="cita">Las publicaciones los relacionan, pero reconocen que el lugar exacto <b>no se conoce con seguridad</b>.</div><div class="s">TNM, Éxodo 3:1; 4:27 · <i>Perspicacia</i>, «Horeb» y «Sinaí»</div></div>
+  <div class="b b2"><div class="cd"><div class="n">Tradición cristiana</div><div class="x">el sur de la península del Sinaí, en el área de Jebel Musa</div></div><div class="cd" style="border-color:#d99a14"><div class="n" style="color:#d99a14">Otros autores</div><div class="x">montañas del noroeste de Arabia, en la antigua región de Madián</div></div><span class="ext">fuente externa: J. K. Hoffmeier, Biblical Archaeology Society, “Where Is Mount Sinai?”</span></div>
+  <div class="b b3"><div class="m rojo">Ninguna inscripción ni hallazgo</div><div class="cita md">identifica de forma concluyente una cumbre como el Horeb de Moisés. La propuesta saudí no debe presentarse como certeza.</div><div class="s">En el relato, el monte sigue siendo “la montaña del Dios verdadero”.</div></div>
+</div>
+<script>
+const V20 = { x: 0, y: 0, w: 1180, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 1300, y: 2700, w: 1900, h: 1700 }, V20), 0);
+secuencia([[".b1", 0.6], [".b2", at("La tradición cristiana")], [".b3", at("Ninguna inscripción")]], null, { y: 0 });
+salta(".ar", at("La tradición cristiana") + 0.8); aparece(".ct", at("La tradición cristiana") + 1.1, 0.4);
+traza(".ao", at("Otros autores"), 1.6); aparece(".co", at("Otros autores") + 0.8, 0.4);
+
+</script>

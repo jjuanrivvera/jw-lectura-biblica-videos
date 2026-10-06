@@ -1,0 +1,37 @@
+<style>
+.ilus.i23 { left: 80px; top: 130px; width: 900px; height: 592px; }
+.dcha23 { position: absolute; left: 1060px; right: 80px; top: 130px; bottom: 100px; }
+.dcha23 .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.dcha23 .cita { font-size: 50px; }
+.dcha23 .m { font-size: 64px; }
+.dcha23 .def .x { font-size: 50px; }
+.dcha23 .def .s { font-size: 29px; }
+.fila23 { position: absolute; left: 80px; width: 940px; top: 785px; display: flex; gap: 16px; }
+.fila23 .p { flex: 1; border-radius: 22px; border: 3px solid rgba(241, 233, 216, 0.22); background: rgba(10, 16, 22, 0.55); padding: 12px 18px 14px; text-align: center; }
+.fila23 .p .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 36px; color: var(--oro); }
+.fila23 .p .s { font-size: 25px; margin-top: 2px; }
+</style>
+<div class="cab"><span class="cap">Éxodo 4</span><span>versículos 18 a 23</span></div>
+<div class="ilus i23 im"><div class="kb"><img src="assets/img/f35.jpg"/></div></div>
+<div class="pie-img" style="left:80px;top:728px;width:900px;font-size:25px">Historieta “Moisés vuelve a Egipto”, <i>Historias bíblicas ilustradas</i></div>
+<div class="fila23">
+  <div class="p q1"><div class="n">Pide permiso</div><div class="s">a Jetró: “Vete en paz”</div></div>
+  <div class="p q2"><div class="n">Jehová le asegura</div><div class="s">que murieron quienes querían matarlo</div></div>
+  <div class="p q3"><div class="n">Emprende el viaje</div><div class="s">con Zípora, sus hijos y la vara</div></div>
+</div>
+<div class="dcha23">
+  <div class="b b0"><div class="m cielo">Pide permiso a Jetró</div><div class="cita">“Permíteme que me vaya, por favor.” [...] “Vete en paz”<span class="ref">ÉXODO 4:18</span></div><div class="cita md" style="font-size:44px">“Ve, vuelve a Egipto, porque han muerto todos los hombres que querían matarte”<span class="ref">ÉXODO 4:19</span></div></div>
+  <div class="b b1"><div class="m rojo">Faraón se resistirá</div><div class="cita">“Israel es mi hijo, mi primogénito. Por eso te digo: deja salir de aquí a mi hijo para que pueda adorarme. Pero, si te niegas a dejarlo salir, voy a matar a tu hijo, tu primogénito”<span class="ref">ÉXODO 4:22, 23</span></div></div>
+  <div class="b b2"><div class="def"><div class="t">Primogénito</div><div class="x">el hijo con una <b>posición especial</b> dentro de la familia</div><div class="s">Al llamar a Israel “mi primogénito”, Jehová destaca una relación de pacto. No dice que otras naciones no sean obra suya (Deuteronomio 14:1, 2).</div></div></div>
+</div>
+<div class="fuente">TNM, Éxodo 4:18-23 · El capítulo no dice por qué ruta volvió la familia · Éxodo 18:4 nombra a Eliézer</div>
+<script>
+entra(".im", 0.5, { y: 30 });
+kb(".im .kb", 0.5, DUR, { s: 1.0 }, { s: 1.05, x: 1.2 });
+entra(".q1", 0.8, { y: 20 }); entra(".q2", at("Y Jehová le aseguró"), { y: 20 }); entra(".q3", at("Moisés emprendió"), { y: 20 });
+entra(".b0", 0.8, { x: 30, y: 0 });
+sale(".b0", at("Jehová le anunció") - 0.4, { y: 0, d: 0.4 });
+entra(".b1", at("Jehová le anunció"), { x: 30, y: 0 });
+sale(".b1", at("El primogénito era") - 0.4, { y: 0, d: 0.4 });
+entra(".b2", at("El primogénito era"), { x: 30, y: 0 });
+</script>

@@ -1,0 +1,36 @@
+<style>
+.mapa.m6 { left: 0; top: 0; width: 1150px; height: 1080px; background: #cfdcc0; }
+.mapa.m6 .cam img, .mapa.m6 .cam svg { width: 2100px; height: 1247px; }
+.col6 { position: absolute; left: 1180px; right: 56px; top: 110px; bottom: 80px; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.cd6 { border-radius: 26px; border: 3px solid rgba(241, 233, 216, 0.2); background: rgba(10, 16, 22, 0.55); padding: 14px 26px 16px; }
+.cd6 .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 58px; color: var(--oro); line-height: 1; }
+.cd6 .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; line-height: 1.05; margin-top: 6px; }
+.cd6 .s { font-size: 26px; margin-top: 6px; }
+.cd6 .ext { display: inline-block; margin-top: 8px; font-family: "Caveat", cursive; font-weight: 700; font-size: 36px; color: var(--rosa); border: 3px dotted var(--rosa); border-radius: 12px; padding: 1px 14px 0; }
+.cd6.on { border-color: var(--oro); background: rgba(233, 191, 96, 0.09); }
+.aviso6 { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; line-height: 1.05; color: var(--cielo); }
+</style>
+<div class="cab" style="left:1180px;right:56px;top:28px"><span class="cap">Éxodo 1</span><span>Qué hay hoy</span></div>
+<div class="mapa m6"><div class="cam"><img src="assets/img/b2-delta.jpg"/>
+  <svg viewBox="0 0 2100 1247">
+    <ellipse class="hueco hz" cx="352" cy="500" rx="300" ry="190" style="stroke-width:14"/>
+    <g class="c6"><rect x="560" y="360" width="470" height="92" rx="20" fill="rgba(192,57,43,0.93)"/><text x="795" y="424" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="64" fill="#fff6e8">propuestas</text></g>
+  </svg></div></div>
+<div class="funde-der" style="left:1010px"></div>
+<div class="pie" style="left:24px;bottom:20px">TNM, apéndice B2 “Génesis y los viajes de los patriarcas” · marca añadida</div>
+<div class="col6">
+  <div class="cd6 g1"><div class="n">Gosén</div><div class="x">probablemente el este del delta, quizá junto al Wadi Tumilat</div><div class="s">Hoy, un corredor cultivado que conecta el delta oriental con el canal de Suez · <i>Perspicacia</i>, «Gosén»</div><span class="ext">fuente externa: Studia Antiqua et Archaeologica, 2025</span></div>
+  <div class="cd6 g2"><div class="n">Pitom</div><div class="x">Tel el Maskhuta, o Tel el Retaba</div><div class="s">Tel el Retaba: fortaleza ramésida, aún en excavación · <i>Perspicacia</i>, «Pitom»</div><span class="ext">fuente externa: Univ. de Varsovia</span></div>
+  <div class="cd6 g3"><div class="n">Raamsés</div><div class="x">Qantir (cerca de Faqus) o Tanis</div><div class="s">Hoy Qantir es un sitio arqueológico con restos dispersos · <i>Perspicacia</i>, «Raamsés, Ramesés»</div></div>
+</div>
+<script>
+const V6 = { x: 0, y: 0, w: 1150, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 0, y: 150, w: 2100, h: 1097 }, V6), 0);
+camara(".cam", at("Solo en parte"), 3.0, encuadre({ x: 0, y: 250, w: 1000, h: 900 }, V6));
+traza(".hz", at("Solo en parte") + 1, 1.6);
+aparece(".c6", at("Solo en parte") + 2.4, 0.5);
+entra(".g1", at("Gosén se sitúa"), { x: 30, y: 0 });
+entra(".g2", at("Para Pitom"), { x: 30, y: 0 });
+entra(".g3", at("Raamsés puede ser"), { x: 30, y: 0 });
+atenua([".g1"], at("Para Pitom"), 0.45, 0.4); atenua([".g2"], at("Raamsés puede ser"), 0.45, 0.4);
+</script>

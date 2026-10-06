@@ -1,0 +1,38 @@
+<style>
+.dos { position: absolute; left: 90px; right: 90px; top: 330px; display: grid; grid-template-columns: 1fr 120px 1fr; align-items: center; }
+.lado { border-radius: 30px; padding: 34px 40px 40px; background: rgba(10, 16, 22, 0.5); border: 4px solid rgba(241, 233, 216, 0.16); min-height: 330px; }
+.lado .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tenue); }
+.lado .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 72px; line-height: 1.05; margin-top: 10px; }
+.lado .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 58px; line-height: 1.08; margin-top: 14px; }
+.lado.j { border-color: var(--oro); }
+.lado.j .t { color: var(--oro); }
+.lado.r { border-color: var(--rojo); }
+.lado.r .t { color: var(--rojo); }
+.vs { font-family: "Caveat", cursive; font-weight: 700; font-size: 90px; text-align: center; color: var(--tenue); }
+.disc { position: absolute; left: 90px; right: 90px; top: 540px; }
+.disc .cita { font-size: 50px; }
+.disc .cita u { text-decoration: none; background: linear-gradient(transparent 62%, rgba(236, 138, 103, 0.55) 62%); }
+.pie3 { position: absolute; left: 90px; right: 90px; top: 770px; display: flex; gap: 26px; align-items: center; }
+.pie3 .m { font-size: 62px; }
+</style>
+<div class="cab"><span class="cap">Éxodo 1</span><span>versículos 8 a 10</span></div>
+<div class="dos">
+  <div class="lado j"><div class="k">Antes</div><div class="t">José</div><div class="x">un benefactor conocido</div></div>
+  <div class="vs">→</div>
+  <div class="lado r"><div class="k">Después</div><div class="t">Un rey nuevo</div><div class="x">“no conocía a José”</div></div>
+</div>
+<div class="disc">
+  <div class="cita md q1">“El pueblo de Israel es más numeroso y poderoso que <u>nosotros</u>. Tenemos que actuar con astucia para que no sigan multiplicándose. De lo contrario, si estalla una guerra, se unirán a <u>nuestros enemigos</u>, pelearán contra nosotros y se irán del país”<span class="ref">ÉXODO 1:9, 10</span></div>
+</div>
+<div class="pie3"><div class="m cielo n1">no reconocía ni quería respetar lo que José hizo por Egipto</div></div>
+<div class="fuente">TNM, Éxodo 1:8-10 · <i>Perspicacia</i>, «Faraón» · La Biblia no da el nombre del faraón ni la dinastía</div>
+<script>
+entra(".lado.j", 0.6, { x: -40, y: 0 });
+entra(".vs", at("Pasó el tiempo"), { s: 0.5, y: 0 });
+entra(".lado.r", at("Pasó el tiempo") + 0.4, { x: 40, y: 0 });
+entra(".n1", at("No significa"), { y: 20 });
+entra(".q1", at("Le dijo a su pueblo"), { y: 30 });
+tl.to($(".n1"), { opacity: 0, duration: 0.4 }, at("Le dijo a su pueblo") - 0.4);
+camara(".dos", at("Le dijo a su pueblo") - 0.3, 0.7, { y: -200 });
+atenua([".dos"], at("Fíjate cómo habla"), 0.35, 0.6);
+</script>

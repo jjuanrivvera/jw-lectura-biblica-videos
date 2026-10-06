@@ -1,0 +1,46 @@
+<style>
+.ti { position: absolute; left: 0; right: 0; top: 36px; text-align: center; }
+.ti .a { font-family: "Fraunces", serif; font-weight: 700; font-size: 112px; line-height: 1; letter-spacing: -0.02em; }
+.ti .b { font-family: "Caveat", cursive; font-weight: 700; font-size: 58px; color: var(--oro); margin-top: 4px; }
+.cards { position: absolute; left: 60px; right: 60px; top: 220px; bottom: 150px; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 24px; }
+.card { position: relative; border-radius: 28px; overflow: hidden; background: #0f161e; border: 4px solid rgba(241, 233, 216, 0.16); }
+.card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.card .vel { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(23, 33, 43, 0.15) 20%, rgba(23, 33, 43, 0.93) 76%); }
+.card .n { position: absolute; left: 28px; top: 16px; font-family: "Fraunces", serif; font-weight: 700; font-size: 74px; line-height: 1; color: var(--oro); text-shadow: 0 3px 14px rgba(0, 0, 0, 0.7); }
+.card .cl { position: absolute; left: 20px; right: 20px; bottom: 20px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.card .cl .clave { font-size: 54px; }
+.pieabajo { position: absolute; left: 0; right: 0; bottom: 78px; text-align: center; }
+.pieabajo .m { font-size: 70px; }
+</style>
+<div class="ti"><div class="a">Éxodo 1 al 4</div><div class="b">lectura bíblica en familia</div></div>
+<div class="cards">
+  <div class="card k1"><img src="assets/img/f05.jpg" style="object-position:34% 50%"/><div class="vel"></div><div class="n">Éxodo 1</div>
+    <div class="cl"><span class="clave c1a">un faraón nuevo</span><span class="clave c1b">dos parteras</span></div></div>
+  <div class="card k2"><img src="assets/img/f16.jpg" style="object-position:30% 50%"/><div class="vel"></div><div class="n">Éxodo 2</div>
+    <div class="cl"><span class="clave c2a">una canasta</span><span class="clave c2b">Madián</span></div></div>
+  <div class="card k3"><img src="assets/img/f25.jpg" style="object-position:62% 50%"/><div class="vel"></div><div class="n">Éxodo 3</div>
+    <div class="cl"><span class="clave c3a">una zarza</span><span class="clave c3b">un nombre</span></div></div>
+  <div class="card k4"><img src="assets/img/f30.jpg"/><div class="vel"></div><div class="n">Éxodo 4</div>
+    <div class="cl"><span class="clave c4a">señales</span><span class="clave c4b">Aarón</span><span class="clave c4c">los ancianos creen</span></div></div>
+</div>
+<div class="pieabajo"><div class="m oro fin0">Al final: lecciones y preguntas para pensar</div></div>
+<div class="fuente" style="bottom:14px;text-align:center;font-size:24px">Ilustraciones: <i>Seamos valientes al andar con Dios</i> · <i>Lecciones que aprendo de la Biblia</i> · <i>Mi libro de historias bíblicas</i></div>
+<script>
+entra(".ti", 0.3, { y: -20 });
+entra(".card", 0.5, { y: 50, st: 0.12 });
+atenua(".card", 1.6, 0.45, 0.5);
+const on = (k, t) => { camara(".k" + k, t, 0.4, { opacity: 1, borderColor: "#e9bf60" }); };
+on(1, at("En el uno")); on(2, at("En el dos")); on(3, at("En el tres")); on(4, at("Y en el cuatro"));
+[2, 3, 4].forEach((k, i) => atenua(".k" + (k - 1), at(["En el dos", "En el tres", "Y en el cuatro"][i]), 0.45, 0.4));
+entra(".c1a", at("un faraón nuevo"), { x: -20, y: 0 });
+entra(".c1b", at("dos parteras"), { x: -20, y: 0 });
+entra(".c2a", at("lo salva una canasta"), { x: -20, y: 0 });
+entra(".c2b", at("huye a Madián"), { x: -20, y: 0 });
+entra(".c3a", at("una zarza"), { x: -20, y: 0 });
+entra(".c3b", at("su nombre"), { x: -20, y: 0 });
+entra(".c4a", at("le da señales"), { x: -20, y: 0 });
+entra(".c4b", at("su hermano Aarón"), { x: -20, y: 0 });
+entra(".c4c", at("los ancianos de Israel"), { x: -20, y: 0 });
+camara(".card", at("Al final") - 0.2, 0.6, { opacity: 1 });
+entra(".fin0", at("Al final"), { y: 24 });
+</script>

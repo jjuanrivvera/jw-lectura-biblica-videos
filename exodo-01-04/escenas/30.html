@@ -1,0 +1,27 @@
+<style>
+.leccion .l { font-size: 126px; }
+.leccion .p { font-size: 70px; }
+.leccion .cuerpo { gap: 40px; }
+.leccion .s { font-size: 36px; }
+.leccion .n { font-size: 270px; }
+.leccion { grid-template-columns: 260px 1fr; }
+.pro-l { position: absolute; right: 90px; top: 74px; font-size: 34px; }
+</style>
+
+<div class="seccion"><span class="r">Lecciones y preguntas para pensar</span><span class="t">Éxodo 4</span></div>
+<div class="seccion-linea"><svg viewBox="0 0 1740 20" preserveAspectRatio="none" style="width:100%;height:20px"><path d="M 4 10 C 400 4 900 16 1736 8"/></svg></div>
+<div class="propio chico pro-l">observación propia</div>
+<div class="leccion l1"><div class="n">1</div><div class="cuerpo"><div class="l">Podemos reconocer una limitación y <b>aceptar apoyo</b></div><div class="p"><span class="k">PARA PENSAR</span>En casa, ¿cómo repartimos una tarea según las habilidades de cada uno?</div><div class="s">Jehová le dio a Moisés un portavoz sin quitarle su responsabilidad · Éxodo 4:10-16</div></div></div>
+<div class="leccion l2"><div class="n">2</div><div class="cuerpo"><div class="l">La obediencia incluye <b>la propia vida familiar</b></div><div class="p"><span class="k">PARA PENSAR</span>¿Obedezco por convicción?</div><div class="s">Quien lleva un encargo también debe cuidar lo que Jehová pide en su hogar · Éxodo 4:24-26</div></div></div>
+<div class="leccion l3"><div class="n">3</div><div class="cuerpo"><div class="l">Escuchar que alguien ve nuestro dolor <b>puede devolver esperanza</b></div><div class="p"><span class="k">PARA PENSAR</span>¿Escucho sin distraerme y actúo con cariño?</div><div class="s">Los israelitas creyeron al saber que Jehová se había fijado en ellos · Éxodo 4:31</div></div></div>
+<script>
+entra(".seccion", 0.3, { y: -20 });
+traza(".seccion-linea path", 0.6, 1.0);
+secuencia([[".l1", at("Primera")], [".l2", at("Segunda")], [".l3", at("Tercera")]], null, { y: 30, d: 0.6 });
+entra(".l1 .p", at("en casa, cómo repartimos") - 0.2, { y: 20 });
+entra(".l1 .s", at("en casa, cómo repartimos") + 0.3, { y: 10 });
+entra(".l2 .p", at("obedezco por convicción") - 0.2, { y: 20 });
+entra(".l2 .s", at("obedezco por convicción") + 0.3, { y: 10 });
+entra(".l3 .p", at("escucho sin distraerme") - 0.2, { y: 20 });
+entra(".l3 .s", at("escucho sin distraerme") + 0.3, { y: 10 });
+</script>

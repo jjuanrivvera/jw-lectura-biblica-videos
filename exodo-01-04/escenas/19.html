@@ -1,0 +1,42 @@
+<style>
+.pasos19 { position: absolute; left: 70px; right: 70px; top: 270px; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 44px; }
+.ps { position: relative; border-radius: 28px; border: 3px solid rgba(241, 233, 216, 0.2); background: rgba(10, 16, 22, 0.55); padding: 22px 26px 26px; min-height: 330px; }
+.ps .nn { font-family: "Fraunces", serif; font-weight: 700; font-size: 70px; color: var(--oro); line-height: 1; }
+.ps .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 58px; line-height: 1.04; margin-top: 8px; }
+.ps .r { font-size: 28px; margin-top: 10px; color: var(--tenue); font-weight: 700; letter-spacing: 0.06em; }
+.ps::after { content: "→"; position: absolute; right: -44px; top: 50%; font-family: "Fraunces", serif; font-size: 52px; color: var(--tenue); }
+.ps:last-child::after { content: ""; }
+.prov { position: absolute; left: 90px; right: 90px; top: 520px; }
+.prov .cita { font-size: 46px; }
+.reg { display: flex; gap: 26px; margin-top: 22px; }
+.reg .it { flex: 1; border-radius: 24px; border: 3px solid var(--oro); padding: 16px 24px 18px; background: rgba(233, 191, 96, 0.07); display: flex; align-items: center; gap: 22px; }
+.reg .it svg { width: 96px; height: 96px; flex: none; }
+.reg .it .t { font-family: "Caveat", cursive; font-weight: 700; font-size: 64px; line-height: 1; }
+.reg .it .t small { display: block; font-family: "Montserrat", sans-serif; font-size: 27px; color: var(--tenue); font-weight: 600; }
+.nota19 { position: absolute; left: 90px; right: 90px; top: 880px; font-size: 32px; }
+</style>
+<div class="cab"><span class="cap">Éxodo 3</span><span>versículos 16 a 22</span></div>
+<div class="pasos19">
+  <div class="ps s1"><div class="nn">1</div><div class="x">reunir a los ancianos de Israel</div><div class="r">3:16</div></div>
+  <div class="ps s2"><div class="nn">2</div><div class="x">ir al rey y pedir tres días en el desierto</div><div class="r">3:18</div></div>
+  <div class="ps s3"><div class="nn">3</div><div class="x">el rey no aceptará sin presión</div><div class="r">3:19</div></div>
+  <div class="ps s4"><div class="nn">4</div><div class="x">señales poderosas</div><div class="r">3:20</div></div>
+</div>
+<div class="prov pv">
+  <div class="cita">“De ningún modo se irán con las manos vacías. Cada mujer tendrá que pedirles objetos de plata, objetos de oro y ropa a su vecina”<span class="ref">ÉXODO 3:21, 22</span></div>
+  <div class="reg">
+    <div class="it r1"><svg viewBox="0 0 96 96"><circle cx="48" cy="48" r="38" fill="#cfd6df"/><circle cx="48" cy="48" r="28" fill="none" stroke="#9aa6b3" stroke-width="5"/></svg><div class="t">plata</div></div>
+    <div class="it r2"><svg viewBox="0 0 96 96"><circle cx="48" cy="48" r="38" fill="#e9bf60"/><circle cx="48" cy="48" r="28" fill="none" stroke="#b98d28" stroke-width="5"/></svg><div class="t">oro</div></div>
+    <div class="it r3"><svg viewBox="0 0 96 96"><path d="M 20 24 L 40 14 L 56 24 L 76 14 L 88 36 L 72 44 L 72 84 L 28 84 L 28 44 L 12 36 Z" fill="#93bbef"/></svg><div class="t">ropa</div></div>
+    <div class="it r4"><div class="t">años de trabajo<small>sin salario</small></div></div>
+  </div>
+</div>
+<div class="s nota19 nt">Se cumple en Éxodo 12:35, 36: los egipcios llegaron a dar lo que se les pidió. La Biblia lo presenta como <b>una provisión de Dios</b>, no como un saqueo secreto.</div>
+<div class="fuente">TNM, Éxodo 3:16-22; 12:35, 36 · Pedir tres días era la solicitud inicial, no el plan final</div>
+<script>
+prepara(".ps", 0.6, 0.22); ilumina(".s1", 0.8); ilumina(".s2", at("Luego irían")); ilumina(".s3", at("Jehová ya sabía")); ilumina(".s4", at("anunció señales"));
+camara(".pasos19", at("Y el pueblo no saldría") - 0.3, 0.7, { y: -130 });
+entra(".pv .cita", at("Y el pueblo no saldría"), { y: 26 });
+entra(".r1", at("plata"), { y: 20 }); entra(".r2", at("de oro"), { y: 20 }); entra(".r3", at("ropa a su vecina"), { y: 20 }); entra(".r4", at("Después de años"), { y: 20 });
+entra(".nt", at("Éxodo doce"), { y: 20 });
+</script>

@@ -1,0 +1,37 @@
+<style>
+.izq15 { position: absolute; left: 90px; width: 900px; top: 130px; bottom: 100px; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.izq15 .cita { font-size: 50px; }
+.der15 { position: absolute; left: 1050px; right: 90px; top: 130px; bottom: 100px; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.vb { display: flex; align-items: baseline; gap: 24px; }
+.vb .m { font-size: 110px; }
+.vb .p { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 34px; color: var(--tenue); letter-spacing: 0.05em; }
+.pat { display: flex; gap: 14px; }
+.pat span { font-family: "Fraunces", serif; font-weight: 700; font-size: 46px; padding: 2px 22px 4px; border-radius: 40px; border: 3px solid var(--oro); color: var(--oro); }
+.def15 { position: absolute; left: 90px; right: 90px; top: 330px; }
+.def15 .x { font-size: 68px; }
+.def15 .def .s { font-size: 36px; }
+.def15 .def .t { font-size: 34px; }
+</style>
+<div class="cab"><span class="cap">Éxodo 2</span><span>versículos 23 a 25</span></div>
+<div class="izq15">
+  <div class="cita q1">“Pasó mucho tiempo y el rey de Egipto murió. Aun así, los israelitas siguieron lamentándose por su esclavitud y quejándose. Y sus súplicas por ayuda siguieron subiendo al Dios verdadero”<span class="ref">ÉXODO 2:23</span></div>
+  <div class="cita q2">“Dios oyó sus lamentos y recordó el pacto que había hecho con Abrahán, Isaac y Jacob. Por tanto, Dios se fijó en los israelitas y los tuvo en cuenta”<span class="ref">ÉXODO 2:24, 25</span></div>
+</div>
+<div class="der15">
+  <div class="vb v1"><span class="m oro">oyó</span><span class="p">sus lamentos</span></div>
+  <div class="vb v2"><span class="m oro">recordó</span><span class="p">el pacto</span></div>
+  <div class="pat pa"><span>Abrahán</span><span>Isaac</span><span>Jacob</span></div>
+  <div class="vb v3"><span class="m oro">se fijó</span><span class="p">en los israelitas</span></div>
+  <div class="vb v4"><span class="m oro">los tuvo en cuenta</span></div>
+</div>
+<div class="def15"><div class="def d15"><div class="t">Recordar <i>en la Biblia</i></div><div class="x">no es que Dios hubiera <b>olvidado</b>: es el momento en que actúa de acuerdo con una promesa</div><div class="s">Conecta el sufrimiento de ese momento con la palabra dada a los patriarcas (Génesis 15:13-16)</div></div></div>
+<div class="fuente">TNM, Éxodo 2:23-25 · Génesis 15:13-16</div>
+<script>
+entra(".q1", 0.6, { y: 30 });
+atenua(".q1", at("Con el tiempo"), 0.25, 0.5);
+entra(".q2", at("Con el tiempo"), { y: 30 });
+prepara(".vb, .pat", 0.8, 0.2);
+ilumina(".v1", at("Dios oyó")); ilumina(".v2", at("recordó el pacto")); ilumina(".pat", at("Abrahán")); ilumina(".v3", at("se fijó")); ilumina(".v4", at("los tuvo en cuenta"));
+atenua([".izq15", ".der15"], at("Recordar no significa") - 0.4, 0, 0.5);
+entra(".d15", at("Recordar no significa"), { y: 30 });
+</script>
