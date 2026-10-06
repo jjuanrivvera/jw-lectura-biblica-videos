@@ -1,0 +1,78 @@
+<style>
+.ilus.duerme { left: 60px; top: 240px; width: 1000px; height: 563px; }
+.pie { position: absolute; left: 60px; top: 822px; width: 1000px; font-size: 24px; color: var(--tenue); }
+.arbol { position: absolute; left: 40px; top: 80px; width: 1000px; height: 1000px; }
+.arbol svg { width: 1000px; height: 1000px; }
+.lb { position: absolute; font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; white-space: nowrap; }
+.lb-h, .lb-c { padding: 0 18px; border-radius: 12px; background: rgba(18,26,42,0.85); }
+.lb-h { left: 680px; top: 630px; color: var(--hierro); }
+.lb-c { left: 680px; top: 712px; color: var(--cobre); }
+.fuente { left: 1110px; }
+.lb-cielo { left: 700px; top: 110px; color: var(--cielo); }
+.siete { display: flex; gap: 14px; margin-top: 6px; }
+.siete div { width: 78px; height: 78px; border-radius: 14px; border: 4px solid var(--oro); display: flex; align-items: center; justify-content: center; font-family: "Fraunces", serif; font-weight: 700; font-size: 42px; color: var(--oro); }
+</style>
+
+<div class="cab"><span class="cap">Daniel 4</span><span class="vv">versículos 4 al 16</span></div>
+<div class="ilus duerme"><div class="kb"><img src="assets/img/lff-rey-duerme.jpg" /></div></div>
+<div class="pie">Video <i>El Reino de Dios empezó a gobernar en 1914</i>, minuto 0:41 (jw.org)</div>
+<div class="arbol"><!--arbol--></div>
+<div class="lb lb-cielo">“llegó a los cielos”</div>
+<div class="lb lb-h">hierro</div>
+<div class="lb lb-c">cobre</div>
+
+<div class="col">
+  <div class="b b1"><div class="cita">“Estaba <b>tranquilo en mi casa</b> y disfrutaba de prosperidad en mi palacio”<span class="ref">DANIEL 4:4</span></div><div class="s">Los sabios de Babilonia no pudieron explicar el sueño (4:7).</div></div>
+  <div class="b b2"><div class="cita">“Vi un <b>árbol altísimo</b> en medio de la tierra”<span class="ref">DANIEL 4:10</span></div><div class="cita">“Su copa <b>llegó a los cielos</b>”<span class="ref">DANIEL 4:11</span></div></div>
+  <div class="b b3"><div class="cita">“Los animales del campo buscaban su sombra y las aves del cielo vivían en sus ramas. <b>Todo ser vivo comía de él</b>”<span class="ref">DANIEL 4:12</span></div></div>
+  <div class="b b4"><div class="def"><div class="t">Vigilante</div><div class="x">un centinela: alguien que observa y vela</div><div class="s">Daniel 4:13 lo llama “un santo”: un ángel, un representante de Dios · <i>Profecías de Daniel</i>, pág. 86</div></div></div>
+  <div class="b b5"><div class="cita">“¡<b style="color:var(--fuego)">Corten el árbol</b>, córtenle las ramas, quítenle las hojas y esparzan su fruto!”<span class="ref">DANIEL 4:14</span></div></div>
+  <div class="b b6"><div class="cita">“Dejen el <b>tocón</b> con sus raíces en la tierra, con una <b>atadura de hierro y de cobre</b>”<span class="ref">DANIEL 4:15</span></div></div>
+  <div class="b b7"><div class="cita">“En vez del de un ser humano, que se le dé el de un animal, y que pasen <b>siete tiempos</b> por él”<span class="ref">DANIEL 4:16</span></div><div class="siete"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div></div></div>
+</div>
+
+<script>
+/*incluir:_arbol.js*/
+$(".arbol").innerHTML = arbolSVG("a02");
+const tVio = at("Esto fue lo que");
+aparece(".duerme", 0.3, 0.8);
+kb(".duerme .kb", 0.3, tVio, { s: 1.0 }, { s: 1.1, x: -2 });
+aparece(".pie", 0.6, 0.5);
+entra(".cab", 0.3, { y: -10 });
+sale([".duerme", ".pie"], tVio - 0.5);
+// El árbol crece desde el suelo.
+aparece(".arbol .suelo", tVio, 0.6);
+aparece(".arbol .raices", tVio + 0.2, 0.6);
+const alto = $(".arbol .alto");
+tl.fromTo(alto, { scale: 0.15, opacity: 0, transformOrigin: "500px 900px" }, { scale: 1, opacity: 1, duration: 2.2, ease: "power2.out", immediateRender: false }, at("un árbol altísimo"));
+inicial([alto], { opacity: 0 });
+aparece(".arbol .tocon", at("un árbol altísimo"), 0.6);
+inicial(el(".arbol .cara"), { opacity: 0 });
+inicial(el([".arbol .rayo", ".arbol .banda-h", ".arbol .banda-c", ".arbol .brote", ".arbol .corte", ".arbol .ave", ".arbol .fruto", ".arbol .animal"]), { opacity: 0 });
+entra(".lb-cielo", at("llegó a los cielos"), { y: 20 });
+salta(".arbol .animal", at("sombra a los animales"), { desde: 0.5, st: 0.3 });
+aparece(".arbol .ave", at("casa a las aves"), 0.4);
+tl.fromTo(el(".arbol .ave"), { y: 30 }, { y: 0, duration: 1.2, stagger: 0.12, ease: "power2.out", immediateRender: false }, at("casa a las aves"));
+salta(".arbol .fruto", at("todo ser vivo comía"), { desde: 0.2, st: 0.06 });
+sale(".lb-cielo", at("Daba sombra"));
+// El vigilante: una luz que baja.
+aparece(".arbol .rayo", at("Entonces bajó"), 1.0);
+const tCorten = at("Corten el árbol");
+desaparece(".arbol .rayo", tCorten + 3, 1.0);
+traza(".arbol .corte", tCorten, 0.6);
+// El árbol cae: gira sobre el corte y se va.
+tl.to(alto, { rotation: 14, x: 140, y: 40, opacity: 0, transformOrigin: "500px 760px", duration: 1.8, ease: "power2.in" }, tCorten + 0.7);
+desaparece(".arbol .animal", tCorten + 1.2, 0.8);
+aparece(".arbol .cara", tCorten + 1.6, 0.5);
+tl.set(".arbol .corte", { strokeDasharray: "4 18", strokeDashoffset: 0 }, tCorten + 0.7);
+desaparece(".arbol .corte", tCorten + 2.6, 0.6);
+const tToc = at("Dejen el tocón");
+// Cámara: después del corte, acercamiento al tocón.
+tl.to($(".arbol"), { scale: 1.6, y: -230, transformOrigin: "500px 820px", duration: 1.6, ease: "power2.inOut" }, tToc - 1.2);
+salta(".arbol .banda-h", at("atadura de hierro"), { desde: 1.3 });
+salta(".arbol .banda-c", at("y de cobre"), { desde: 1.3 });
+entra(".lb-h", at("atadura de hierro"), { x: -20, y: 0 });
+entra(".lb-c", at("y de cobre"), { x: -20, y: 0 });
+secuencia([[".b1", 0.5], [".b2", tVio + 0.6], [".b3", at("Daba sombra")], [".b4", at("Entonces bajó")], [".b5", tCorten - 0.2], [".b6", tToc - 0.2], [".b7", at("Y siguió hablando")]]);
+entra(el(".siete div"), at("que pasen siete tiempos"), { y: 20, st: 0.18 });
+</script>

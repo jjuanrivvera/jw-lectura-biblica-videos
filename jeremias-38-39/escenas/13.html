@@ -1,0 +1,45 @@
+<style>
+.dos { position: absolute; left: 70px; right: 70px; top: 120px; height: 700px; display: grid; grid-template-columns: 1fr 6px 1fr; column-gap: 44px; }
+.dos .sep { background: linear-gradient(180deg, rgba(241, 233, 216, 0), rgba(241, 233, 216, 0.35), rgba(241, 233, 216, 0)); border-radius: 3px; }
+.lado { display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.lado .big { font-family: "Caveat", cursive; font-weight: 700; font-size: 124px; line-height: 0.95; }
+.lado .cita { font-size: 42px; }
+.lado .def .x { font-size: 50px; }
+.lado .s { font-size: 27px; }
+.porfavor { display: inline-block; }
+.abajo13 { position: absolute; left: 70px; right: 70px; bottom: 64px; display: flex; gap: 30px; align-items: baseline; padding: 20px 28px; border-radius: 22px; background: rgba(10, 16, 22, 0.42); border: 3px solid rgba(233, 191, 96, 0.45); }
+.abajo13 .m { font-size: 62px; white-space: nowrap; }
+.abajo13 .s { font-size: 27px; }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 38</span><span>versículos 19 y 20</span></div>
+
+<div class="dos">
+  <div class="lado izq13">
+    <div class="big rojo b1">“Les tengo miedo”</div>
+    <div class="cita q19">“Les tengo miedo a los judíos que se han pasado al bando de los caldeos. Porque, si me entregan en sus manos, ellos tal vez me traten con crueldad”<span class="ref">JEREMÍAS 38:19 · EL REY</span></div>
+    <div class="def d13"><div class="t">desertores</div><div class="x">judíos que ya se habían <b>rendido</b> a los caldeos</div></div>
+    <div class="s s13">“temía represalias de los judíos que se habían pasado a los caldeos, por lo que no obedeció el consejo inspirado de Jeremías” · <i>Perspicacia</i>, «Sedequías»</div>
+  </div>
+  <div class="sep"></div>
+  <div class="lado der13">
+    <div class="big oro b2">“No serás entregado”</div>
+    <div class="cita q20">“No serás entregado en sus manos. <b class="porfavor">Por favor</b>, obedece la voz de Jehová y haz lo que te estoy diciendo; así te irá bien y seguirás viviendo”<span class="ref">JEREMÍAS 38:20</span></div>
+  </div>
+</div>
+
+<div class="abajo13"><div class="m oro">sin amargarse</div><div class="s">“A pesar de que este monarca lo había entregado a quienes deseaban su muerte, el profeta le rogó más tarde que obedeciera la voz de Jehová” · <i>La Atalaya</i>, 15 de marzo de 2011 · “sin amargarse”: <i>La Atalaya</i>, 1 de julio de 1977</div></div>
+
+<script>
+aparece(".cab", 0.2, 0.5);
+escribe(".b1", at("Les tengo miedo") - 0.1, 1.0);
+entra(".q19", at("judíos que"), { y: 20 });
+entra(".d13", at("Eran los desertores"), { y: 20 });
+entra(".s13", at("Temía"), { y: 16 });
+aparece(".sep", at("Jeremías le respondió") - 0.4, 0.6);
+escribe(".b2", at("No serás entregado"), 1.0);
+entra(".q20", at("Por favor"), { y: 20 });
+late(".porfavor", at("Por favor") + 0.8, { s: 1.12, n: 3 });
+atenua(".izq13", at("Por favor"), 0.45);
+entra(".abajo13", at("Se lo rogó"), { y: 24 });
+</script>

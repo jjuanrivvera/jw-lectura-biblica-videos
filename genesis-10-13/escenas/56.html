@@ -1,0 +1,32 @@
+<style>
+.fon56 { position: absolute; inset: 0; overflow: hidden; }
+.fon56 img { position: absolute; inset: -20px; width: calc(100% + 40px); height: calc(100% + 40px); object-fit: cover; opacity: 0.22; filter: blur(3px) saturate(0.7); }
+.fon56::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 62% 58% at 50% 50%, rgba(23, 33, 43, 0.4), rgba(23, 33, 43, 0.94) 100%); }
+.cie56 { position: absolute; inset: 0; }
+.linea56 { position: absolute; left: 240px; right: 240px; top: 250px; height: 20px; }
+.linea56 svg { width: 100%; height: 20px; display: block; }
+.linea56 path { stroke: var(--oro); stroke-width: 8; stroke-linecap: round; fill: none; }
+.q56 { position: absolute; left: 150px; right: 150px; top: 290px; bottom: 120px; }
+.q56 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 30px; }
+.q56 .cita { font-size: 76px; line-height: 1.15; }
+.q56 .cita .ref { font-size: 34px; margin-top: 26px; }
+.q56 .m { font-size: 84px; }
+</style>
+
+<div class="fon56"><img src="assets/img/salida-ur.jpg" /></div>
+<div class="cie56">
+  <div class="linea56"><svg viewBox="0 0 1440 20" preserveAspectRatio="none"><path d="M 4 10 H 1436"/></svg></div>
+  <div class="q56">
+    <div class="b c1"><div class="cita">“Sal de tu país, deja a tus parientes y a los de la casa de tu padre y vete al país que <b>yo te mostraré</b>”<span class="ref">GÉNESIS 12:1</span></div></div>
+    <div class="b c2"><div class="m">Y Abrán <b>salió</b>,</div><div class="cita">“porque él esperaba la ciudad que tiene <b>fundamentos verdaderos</b>, de la que Dios es diseñador y constructor”<span class="ref">HEBREOS 11:10</span></div></div>
+  </div>
+</div>
+
+<script>
+aparece(".fon56", 0, 1.2);
+traza(".linea56 path", 0.3, 1.4);
+secuencia([[".c1", 0.6], [".c2", at("Y Abrán salió") - 0.2]], null, { y: 30, d: 0.9 });
+entra(".c2 .cita", at("porque esperaba") - 0.3, { y: 24, d: 0.8 });
+tl.to($(".cie56"), { opacity: 0, duration: 1.4, ease: "none" }, DUR - 1.6);
+tl.to($(".fon56"), { opacity: 0, duration: 1.4, ease: "none" }, DUR - 1.6);
+</script>

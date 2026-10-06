@@ -1,0 +1,46 @@
+<style>
+.mapa.C { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa.C .cam img, .mapa.C .cam svg { width: 2870px; height: 2240px; }
+.col.d15 { left: 1180px; right: 60px; width: auto; top: 110px; bottom: 80px; }
+.cab.d15c { left: 1180px; }
+</style>
+
+<!--incluir:_caravana.html-->
+<div class="cab d15c"><span class="cap">El camino a Egipto hoy</span><span>37:25</span></div>
+<div class="col d15">
+  <div class="b a1">
+    <div class="def"><div class="t">la Vía del Mar</div><div class="x">el camino de la costa</div><div class="s">nombre que viene de la traducción latina de Isaías 9:1</div></div>
+    <div class="def ho"><div class="t">Camino de Horus</div><div class="x">el tramo del Sinaí, con <b>pozos a un día de marcha</b></div><div class="s">de la fortaleza de Tjaru, en la frontera del delta, hasta Rafia; el ejército de Tutmosis III tardó diez días en cruzarlo</div></div>
+    <span class="externa chico">fuentes externas: “Via Maris” y “Way of Horus”, Wikipedia</span>
+  </div>
+  <div class="b a2">
+    <div class="cita md">por ahí entraban a Egipto “las caravanas de mercaderes (Gé 37:25), inmigrantes y, con el tiempo, ejércitos invasores”<span class="ref">PERSPICACIA, VOL. 1, “EGIPTO, EGIPCIO”, PÁG. 766</span></div>
+    <div class="m md hy">hoy: carreteras, y la frontera entre Egipto y la Franja de Gaza</div>
+    <span class="externa chico hy">fuente externa</span>
+  </div>
+</div>
+
+<script>
+const COSTA = "M 2044 1047 L 1994 1112 L 1890 1190 L 1760 1255 L 1630 1294 L 1500 1333 L 1300 1363 L 1064 1404 L 910 1463 L 768 1467 L 674 1392";
+let pz = "";
+[[1880, 1196], [1640, 1291], [1380, 1352], [1130, 1394], [890, 1466]].forEach(([x, y], i) => { pz += `<circle class="pozo" cx="${x}" cy="${y}" r="17" fill="#fff" stroke="#1f5d99" stroke-width="7"/>`; });
+pinta(".marcas", `
+  <path class="ruta-h vm-h" stroke-width="40" d="${COSTA}"/><path class="ruta vm" stroke-width="20" stroke="#1f5d99" d="${COSTA}"/>
+  <text class="lugar azul vm-t halo" x="620" y="1225" font-size="76" stroke-width="16" transform="rotate(-4 620 1225)">Vía del Mar</text>
+  <path class="llave" d="M 700 1560 L 700 1600 L 1960 1600 L 1960 1560" stroke="#c0392b" stroke-width="8" fill="none"/>
+  <text class="lugar rojo llave-t halo" x="1330" y="1670" font-size="52" stroke-width="12" text-anchor="middle">el tramo del Sinaí: “Camino de Horus”</text>
+  <g class="pozos">${pz}</g>
+  <text class="lugar azul pozos-t halo" x="980" y="1330" font-size="42" stroke-width="10">pozos (esquema)</text>`);
+const V = { x: 0, y: 0, w: 1100, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 500, y: 700, w: 1700, h: 1300 }, V), 0);
+traza([".vm-h", ".vm"], 0.6, 2.4, { ease: "none" });
+aparece(".vm-t", at("Vía del Mar") - 0.2, 0.5);
+traza(".llave", at("Camino de Horus"), 1.2);
+aparece(".llave-t", at("Camino de Horus") + 0.3, 0.5);
+tl.fromTo($$(".pozo"), { opacity: 0 }, { opacity: 1, duration: 0.3, stagger: 0.25, immediateRender: false }, at("pozos") - 0.2);
+tl.set($$(".pozo"), { opacity: 0 }, 0);
+aparece(".pozos-t", at("pozos"), 0.4);
+secuencia([[".a1", 0.4], [".a2", at("Por ahí")]]);
+entra(".ho", at("Los egipcios"), { y: 20 });
+entra(".hy", at("Hoy lo recorren"), { y: 16, st: 0.2 });
+</script>

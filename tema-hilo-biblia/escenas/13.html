@@ -1,0 +1,127 @@
+<style>
+.ret { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+.pz { position: absolute; width: 640px; height: 330px; border-radius: 24px; background: var(--panel); border: 3px solid var(--linea); padding: 22px 28px; display: flex; flex-direction: column; gap: 10px; }
+.pz .q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.14em; text-transform: uppercase; color: #cf7f93; }
+.pz .cita { font-size: 36px; line-height: 1.24; }
+.pz .cita b { color: var(--oro-claro); }
+.pz .ref { font-size: 24px; margin-top: 6px; }
+.pz .s { font-size: 28px; color: var(--papel); }
+.pz1 { left: 80px; top: 120px; height: 500px; }
+.pz2 { right: 80px; top: 120px; height: 360px; }
+.pz3 { left: 80px; top: 650px; height: 260px; }
+.pz4 { right: 80px; top: 540px; height: 370px; }
+.centro { position: absolute; left: 760px; top: 380px; width: 400px; height: 400px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  border: 5px dashed rgba(246,217,143,0.75); background: radial-gradient(circle, rgba(235,189,92,0.18), rgba(16,22,42,0.2) 70%); }
+.centro .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 64px; color: var(--oro-claro); }
+.centro .s { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 28px; color: var(--tenue); }
+
+.estatua { position: absolute; left: 110px; top: 110px; width: 520px; height: 870px; border-radius: 20px; overflow: hidden; background: #efe9dc; box-shadow: 0 24px 60px rgba(0,0,0,0.45); }
+.estatua img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.piedra { position: absolute; left: 660px; top: 760px; font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; color: var(--papel); }
+.col { left: 700px; right: 80px; width: auto; top: 120px; bottom: 120px; }
+.col .cita { font-size: 56px; }
+.col .cita b { color: var(--oro-claro); }
+.col .s { font-size: 36px; }
+.fb .pie-img { left: 110px; top: 992px; font-size: 24px; }
+
+.fc .lam { position: absolute; left: 80px; right: 80px; top: 120px; height: 90px; display: flex; align-items: center; }
+.fc .lam .s { font-size: 32px; }
+.fc .lam .s b { color: #cfa6c8; }
+.menores { position: absolute; left: 80px; right: 80px; top: 230px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.mn { height: 232px; border-radius: 20px; background: var(--panel); border: 3px solid var(--linea); padding: 18px 22px; display: flex; flex-direction: column; gap: 8px; }
+.mn .q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.12em; text-transform: uppercase; color: #cfa6c8; }
+.mn .x { font-family: "Fraunces", serif; font-weight: 500; font-size: 30px; line-height: 1.22; color: var(--papel); }
+.mn .x b { color: var(--oro-claro); }
+.mn .r { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; color: var(--tenue); margin-top: auto; }
+.mn.on { border-color: var(--oro); }
+.fc .fin { position: absolute; left: 80px; right: 80px; bottom: 40px; text-align: center; font-family: "Fraunces", serif; font-weight: 600; font-size: 40px; color: var(--oro-claro); }
+</style>
+
+<div class="cab"><span class="sec">Los profetas</span><span>17 libros</span></div>
+
+<div class="fase fa">
+  <svg class="ret" viewBox="0 0 1920 1080">
+    <path class="hilo r1" d="M 800 480 L 720 430" /><path class="hilo r2" d="M 1120 480 L 1200 420" />
+    <path class="hilo r3" d="M 800 700 L 720 740" /><path class="hilo r4" d="M 1130 640 L 1200 680" />
+  </svg>
+  <div class="centro"><div class="n">el Mesías</div><div class="s">un retrato que se completa</div></div>
+  <div class="pz pz1"><div class="q">Isaías</div><div class="cita">“Nos ha nacido un niño […] La expansión de su gobierno y <b>la paz no tendrán fin en el trono de David</b>”.<span class="ref">Isaías 9:6, 7</span></div>
+    <div class="cita i2">“Lo traspasaron <b>por nuestros pecados</b>”.<span class="ref">Isaías 53:5</span></div></div>
+  <div class="pz pz2"><div class="q">Miqueas</div><div class="cita">“Y de ti, <b>Belén Efrata</b> […] de ti saldrá para mí el que será gobernante en Israel”.<span class="ref">Miqueas 5:2</span></div></div>
+  <div class="pz pz3"><div class="q">Jeremías</div><div class="cita">“Haré <b>un nuevo pacto</b> con la casa de Israel y con la casa de Judá”.<span class="ref">Jeremías 31:31</span></div></div>
+  <div class="pz pz4"><div class="q">Ezequiel</div><div class="cita">“No será de nadie <b>hasta que venga el que tiene el derecho legal</b>”.<span class="ref">Ezequiel 21:27</span></div><div class="s">El último rey de la familia de David cae en 607 a. e. c.</div></div>
+</div>
+
+<div class="fase fb">
+  <div class="estatua"><img src="assets/img/b9-estatua.jpg" /></div>
+  <div class="pie-img">Apéndice B9 de la TNM, “Las potencias mundiales predichas por Daniel”</div>
+  <div class="col">
+    <div class="b d1"><div class="s">Una estatua enorme: la sucesión de potencias mundiales. Una piedra la golpea en los pies.</div>
+      <div class="cita">“Este reino <b>hará añicos y pondrá fin a todos esos reinos</b>, y será el único que permanecerá para siempre”.<span class="ref">Daniel 2:44</span></div></div>
+    <div class="b d2"><div class="cita">“Y Daniel hasta dijo exactamente cuándo empezaría su ministerio y cuándo moriría”.<span class="ref">Acerquémonos a Jehová, cap. 19, pág. 194 · Daniel 9:25-27</span></div></div>
+  </div>
+</div>
+
+<div class="fase fc">
+  <div class="lam"><div class="s"><b>Lamentaciones:</b> Jeremías llora la caída de Jerusalén (607 a. e. c.). Después, los <b>doce profetas menores</b>:</div></div>
+  <div class="menores">
+    <div class="mn mn-os"><div class="q">Oseas</div><div class="x">El pueblo buscará <b>“a David su rey”</b>.</div><div class="r">Oseas 3:5</div></div>
+    <div class="mn mn-joe"><div class="q">Joel</div><div class="x">“Todo el que invoque <b>el nombre de Jehová</b> será salvado”.</div><div class="r">Joel 2:32</div></div>
+    <div class="mn mn-am"><div class="q">Amós</div><div class="x">“Levantaré <b>la cabaña de David</b>, que está caída”.</div><div class="r">Amós 9:11</div></div>
+    <div class="mn mn-abd"><div class="q">Abdías</div><div class="x">“<b>El reinado llegará a ser de Jehová</b>”.</div><div class="r">Abdías 21</div></div>
+    <div class="mn mn-jon"><div class="q">Jonás</div><div class="x">Tres días en el pez: <b>señal de Jesús en la tumba</b>.</div><div class="r">Mateo 12:40</div></div>
+    <div class="mn mn-miq"><div class="q">Miqueas</div><div class="x">El gobernante nacerá en <b>Belén</b>.</div><div class="r">Miqueas 5:2</div></div>
+    <div class="mn mn-na"><div class="q">Nahúm</div><div class="x">“El que lleva buenas noticias, <b>el que proclama la paz</b>”.</div><div class="r">Nahúm 1:15</div></div>
+    <div class="mn mn-hab"><div class="q">Habacuc</div><div class="x">“Se cumplirá sin ninguna duda. <b>¡No llegará tarde!</b>”.</div><div class="r">Habacuc 2:3</div></div>
+    <div class="mn mn-sof"><div class="q">Sofonías</div><div class="x">“Busquen a Jehová todos ustedes, <b>los mansos</b>”.</div><div class="r">Sofonías 2:3</div></div>
+    <div class="mn mn-ag"><div class="q">Ageo</div><div class="x">“<b>Sacudiré todas las naciones</b>”.</div><div class="r">Ageo 2:7</div></div>
+    <div class="mn mn-zac"><div class="q">Zacarías</div><div class="x">“Tu rey viene […] <b>humilde y va montado en un burro</b>”.</div><div class="r">Zacarías 9:9</div></div>
+    <div class="mn mn-mal"><div class="q">Malaquías</div><div class="x">“Voy a enviar a <b>mi mensajero</b>, y él despejará el camino”.</div><div class="r">Malaquías 3:1</div></div>
+  </div>
+  <div class="fin">Así se cierran las Escrituras Hebreas: solo falta que llegue la persona.</div>
+</div>
+
+<script>
+const tB = at("Y Daniel ve") - 0.3;
+const tC = at("Entre ellos está también") - 0.3;
+entra(".cab", 0.3, { y: -10 });
+entra(".centro", 0.5, { y: 0, s: 0.85, d: 0.8 });
+const pzs = [[".pz1", ".r1", at("Isaías dice")], [".pz2", ".r2", at("Miqueas dice")], [".pz3", ".r3", at("Jeremías anuncia")], [".pz4", ".r4", at("Ezequiel ve caer")]];
+pzs.forEach(([p, r, t], i) => { aparece(p, 1.0 + i * 0.2, 0.5, 0.3); traza(r, t - 0.2, 0.5); tl.to($(p), { opacity: 1, duration: 0.4 }, t); });
+gsap.set($(".i2"), { opacity: 0 });
+entra(".i2", at("También dice que sufriría"), { y: 14 });
+tl.to($(".fa"), { opacity: 0, duration: 0.5 }, tB);
+aparece(".fb", tB + 0.1, 0.4);
+entra(".estatua", tB + 0.2, { y: 30 });
+entra(".fb .pie-img", tB + 0.8, { y: 10 });
+secuencia([[".d1", tB + 0.4], [".d2", at("Daniel hasta indicó")]], tC);
+
+tl.to($(".fb"), { opacity: 0, duration: 0.5 }, tC);
+aparece(".fc", tC + 0.1, 0.4);
+entra(".fc .lam", tC + 0.3, { y: 14 });
+aparece(".mn-os", at("Después vienen los doce") + 0.00, 0.4, 0.35);
+tl.to($(".mn-os"), { opacity: 1, borderColor: "#ebbd5c", duration: 0.4 }, at("Oseas: el pueblo"));
+aparece(".mn-joe", at("Después vienen los doce") + 0.12, 0.4, 0.35);
+tl.to($(".mn-joe"), { opacity: 1, borderColor: "#ebbd5c", duration: 0.4 }, at("Joel: todo"));
+aparece(".mn-am", at("Después vienen los doce") + 0.24, 0.4, 0.35);
+tl.to($(".mn-am"), { opacity: 1, borderColor: "#ebbd5c", duration: 0.4 }, at("Amós: Jehová"));
+aparece(".mn-abd", at("Después vienen los doce") + 0.36, 0.4, 0.35);
+tl.to($(".mn-abd"), { opacity: 1, borderColor: "#ebbd5c", duration: 0.4 }, at("Abdías, el libro"));
+aparece(".mn-jon", at("Después vienen los doce") + 0.48, 0.4, 0.35);
+tl.to($(".mn-jon"), { opacity: 1, borderColor: "#ebbd5c", duration: 0.4 }, at("Jonás pasó"));
+aparece(".mn-miq", at("Después vienen los doce") + 0.60, 0.4, 0.35);
+tl.to($(".mn-miq"), { opacity: 1, borderColor: "#ebbd5c", duration: 0.4 }, at("Miqueas, ya lo vimos"));
+aparece(".mn-na", at("Después vienen los doce") + 0.72, 0.4, 0.35);
+tl.to($(".mn-na"), { opacity: 1, borderColor: "#ebbd5c", duration: 0.4 }, at("Nahúm anuncia"));
+aparece(".mn-hab", at("Después vienen los doce") + 0.84, 0.4, 0.35);
+tl.to($(".mn-hab"), { opacity: 1, borderColor: "#ebbd5c", duration: 0.4 }, at("Habacuc asegura"));
+aparece(".mn-sof", at("Después vienen los doce") + 0.96, 0.4, 0.35);
+tl.to($(".mn-sof"), { opacity: 1, borderColor: "#ebbd5c", duration: 0.4 }, at("Sofonías invita"));
+aparece(".mn-ag", at("Después vienen los doce") + 1.08, 0.4, 0.35);
+tl.to($(".mn-ag"), { opacity: 1, borderColor: "#ebbd5c", duration: 0.4 }, at("Ageo anuncia"));
+aparece(".mn-zac", at("Después vienen los doce") + 1.20, 0.4, 0.35);
+tl.to($(".mn-zac"), { opacity: 1, borderColor: "#ebbd5c", duration: 0.4 }, at("Zacarías ve"));
+aparece(".mn-mal", at("Después vienen los doce") + 1.32, 0.4, 0.35);
+tl.to($(".mn-mal"), { opacity: 1, borderColor: "#ebbd5c", duration: 0.4 }, at("Y Malaquías, el último"));
+entra(".fc .fin", at("Así se cierran"), { y: 14 });
+</script>

@@ -1,0 +1,43 @@
+<!--lead:2.6-->
+<style>
+.q { position: absolute; left: 80px; right: 80px; top: 360px; text-align: center; }
+.q .cita { font-size: 110px; }
+.dos { position: absolute; left: 80px; right: 80px; top: 330px; bottom: 60px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 50px; }
+.her { display: grid; grid-template-columns: 300px 1fr; column-gap: 34px; align-items: center; border-radius: 30px; background: rgba(10,16,22,0.42); border: 3px solid rgba(241,233,216,0.12); padding: 26px 32px; }
+.her .cara { width: 300px; height: 300px; border-radius: 50%; background-image: url("assets/img/lea-raquel.jpg"); background-size: 621px 339px; }
+.her .nom { font-family: "Fraunces"; font-weight: 700; font-size: 64px; }
+.her .fila { font-family: "Caveat"; font-weight: 700; font-size: 58px; line-height: 1.1; margin-top: 8px; }
+.her .fila .k { font-family: "Montserrat"; font-weight: 800; font-size: 24px; letter-spacing: 0.14em; color: var(--tenue); text-transform: uppercase; display: block; }
+.def-e { position: absolute; left: 80px; right: 80px; top: 330px; }
+.def-e .def .x { font-size: 60px; }
+.jac { position: absolute; left: 80px; right: 80px; top: 330px; }
+.jac .cita { font-size: 60px; }
+</style>
+<div class="capcard cc"><div class="num">Génesis 30</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">los hijos, las mandrágoras y el rebaño</div><div class="edad">1774 a 1761 antes de nuestra era</div></div>
+<div class="fase fb">
+  <div class="cab"><span class="cap">Génesis 30</span><span>versículos 1 y 2</span></div>
+  <div class="q"><div class="cita">“Dame hijos. Si no, me moriré”<span class="ref">RAQUEL · GÉNESIS 30:1</span></div></div>
+  <div class="def-e"><div class="def"><div class="t">No poder tener hijos, en aquel tiempo</div><div class="x">“una deshonra, una aflicción, un castigo y una de las peores desdichas”</div><div class="s">Perspicacia, vol. 1, “Esterilidad”, pág. 875 · y su hermana ya tenía cuatro</div></div></div>
+  <div class="jac"><div class="cita">“¿Acaso estoy yo en el lugar de Dios? Él es el que no te ha dejado tener hijos”<span class="ref">JACOB · GÉNESIS 30:2</span></div></div>
+  <div class="dos">
+    <div class="her h1"><div class="cara" style="background-position: -11px 0px"></div><div><div class="nom" style="color:var(--rosa)">Raquel</div><div class="fila"><span class="k">tenía</span>el amor de Jacob</div><div class="fila"><span class="k">quería</span><b style="color:var(--oro)">hijos</b></div></div></div>
+    <div class="her h2"><div class="cara" style="background-position: -11px 0px"></div><div><div class="nom" style="color:var(--cielo)">Lea</div><div class="fila"><span class="k">tenía</span>los hijos</div><div class="fila"><span class="k">quería</span><b style="color:var(--oro)">el amor</b></div></div></div>
+  </div>
+  <div class="fuente">“Cada una deseaba lo que la otra tenía” · La Atalaya, 1 de octubre de 2007, págs. 9, 10</div>
+</div>
+<script>
+const tF = at("Raquel empezó") - 0.3;
+capitulo(".cc", 0.3, tF - 0.5);
+aparece(".fb", tF, 0.5);
+entra(".q", tF + 0.2, { y: 20 });
+tl.to($(".q"), { y: -300, scale: 0.6, duration: 0.8, ease: "power2.inOut" }, at("En aquel tiempo") - 0.9);
+entra(".def-e", at("En aquel tiempo"), { y: 20 });
+sale(".def-e", at("Jacob le contestó") - 0.4);
+entra(".jac", at("Jacob le contestó"), { y: 20 });
+sale(".jac", at("Raquel tenía el amor") - 0.4);
+entra(".h1", at("Raquel tenía el amor"), { y: 30 });
+entra(".h2", at("Lea tenía los hijos"), { y: 30 });
+aparece(".fuente", at("Lea tenía los hijos"), 0.4);
+// Retrato de Raquel: el de la derecha de la imagen.
+$(".h1 .cara").style.backgroundPosition = "-316px 0px";
+</script>

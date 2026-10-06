@@ -1,0 +1,81 @@
+<style>
+.eti { font-size: 52px; }
+.chips { position: absolute; left: 80px; top: 118px; display: flex; flex-direction: column; gap: 16px; }
+.chip { display: flex; align-items: center; gap: 18px; padding: 10px 26px 10px 16px; border-radius: 40px; background: rgba(23,33,43,0.9); }
+.chip .i { width: 50px; height: 50px; border-radius: 50%; background: var(--oro); color: #17212b; font-family: "Montserrat"; font-weight: 800; font-size: 30px; display: flex; align-items: center; justify-content: center; }
+.chip .m { font-size: 56px; }
+.cab.sobre span { background: rgba(15, 22, 30, 0.8); }
+.ini { position: absolute; left: 80px; top: 118px; padding: 18px 30px; border-radius: 24px; background: rgba(23,33,43,0.9); }
+.ini .cita { font-size: 56px; }
+.def-b { position: absolute; left: 80px; top: 118px; width: 640px; }
+.cist { position: absolute; right: 70px; top: 640px; width: 520px; height: 400px; border-radius: 26px; background: rgba(23,33,43,0.93); border: 3px solid var(--cielo); }
+.cist svg { position: absolute; left: 0; top: 0; }
+.cist .m { position: absolute; left: 24px; top: 14px; font-size: 48px; color: var(--cielo); }
+.fuente-p { position: absolute; left: 80px; bottom: 16px; font-size: 21px; color: var(--tiza); opacity: 0.85; }
+.propio-p { position: absolute; right: 80px; top: 118px; }
+</style>
+
+<svg class="lienzo" viewBox="0 0 1920 1080"></svg>
+<svg class="lienzo etiquetas" viewBox="0 0 1920 1080">
+  <g class="e-pozo"><path class="guia" d="M 755 780 L 700 780"/><text class="eti oro" x="690" y="796" text-anchor="end">beʼér: un hoyo hasta el agua</text></g>
+  <g class="e-agua"><text class="eti cielo" x="120" y="1010">agua natural, bajo tierra</text></g>
+  <g class="e-brocal"><path class="guia" d="M 700 540 L 600 470"/><text class="eti osc" x="380" y="455">brocal</text></g>
+  <g class="e-pilon"><path class="guia" d="M 1160 540 L 1210 470"/><text class="eti osc" x="1150" y="455">pilón para abrevar</text></g>
+  <g class="e-piedra"><path class="guia" d="M 836 440 L 836 380"/><text class="eti osc" x="836" y="366" text-anchor="middle">“una gran piedra”</text></g>
+  <g class="polvo"><circle cx="760" cy="380" r="6" fill="#a58a5f"/><circle cx="790" cy="400" r="4" fill="#a58a5f"/><circle cx="740" cy="420" r="5" fill="#a58a5f"/><circle cx="810" cy="360" r="4" fill="#a58a5f"/><circle cx="700" cy="400" r="6" fill="#a58a5f"/></g>
+</svg>
+<div class="cab sobre"><span class="cap">Génesis 29</span><span>versículos 2 y 3</span></div>
+
+<div class="cist">
+  <svg viewBox="0 0 520 400" width="520" height="400">
+    <path d="M 60 120 C 90 96 130 100 150 116 C 170 92 220 96 230 124 C 260 124 270 150 250 160 L 70 160 C 40 160 40 130 60 120 Z" fill="#dfe6ee"/>
+    <path d="M 100 172 l -8 20 M 150 172 l -8 20 M 200 172 l -8 20" stroke="#93bbef" stroke-width="5" stroke-linecap="round"/>
+    <rect x="30" y="220" width="460" height="10" fill="#b9b36b"/>
+    <path d="M 230 230 L 230 262 C 150 272 130 300 130 330 L 130 370 L 390 370 L 390 330 C 390 300 370 272 290 262 L 290 230 Z" fill="#2a1d12" stroke="#6d6457" stroke-width="6"/>
+    <path d="M 136 330 L 384 330 L 384 366 L 136 366 Z" fill="#3f86c8"/>
+    <text class="eti" x="300" y="310" style="font-size:40px">agua de lluvia</text>
+  </svg>
+  <div class="m">cisterna ≠ pozo</div>
+</div>
+
+<div class="ini"><div class="cita">“un pozo en el campo”<span class="ref">GÉNESIS 29:2</span></div></div>
+<div class="chips">
+  <div class="chip c1"><div class="i">1</div><div class="m mano">que no entre suciedad</div></div>
+  <div class="chip c2"><div class="i">2</div><div class="m mano">que no caigan animales ni personas</div></div>
+  <div class="chip c3"><div class="i">3</div><div class="m mano">menos evaporación (de las cisternas)</div></div>
+</div>
+<div class="fuente-p">Perspicacia, vol. 2, “Pozo”, págs. 692, 693 · vol. 1, “Cisterna”, págs. 489, 490 · dibujo propio, no a escala</div>
+
+<script>
+/*incluir:_dibujos.js*/
+/*incluir:_pozo.js*/
+pinta(".lienzo", pozoEscena());
+const E = (s) => root.querySelector(".lienzo " + s);
+// Corte del terreno: el subsuelo se descubre de arriba abajo cuando la voz explica qué es un pozo.
+tl.set([E(".hoyo"), E(".napa")], { opacity: 0 }, 0);
+entra(".ini", 0.4, { y: 20 });
+sale(".ini", at("La piedra tapaba") - 0.5);
+aparece(E(".reb1"), at("tres rebaños"), 0.5);
+aparece(E(".reb2"), at("tres rebaños") + 0.3, 0.5);
+aparece(E(".reb3"), at("tres rebaños") + 0.6, 0.5);
+tl.set(E(".tapa"), { opacity: 0 }, 0);
+salta(E(".tapa"), at("una gran piedra"), { desde: 0.6, r: 0 });
+aparece(".e-piedra", at("una gran piedra") + 0.4, 0.4);
+aparece(E(".hoyo"), at("en hebreo beér"), 0.8);
+aparece(".e-pozo", at("un hoyo"), 0.4);
+aparece(E(".napa"), at("un agua natural"), 0.8);
+aparece(".e-agua", at("un agua natural") + 0.3, 0.4);
+entra(".cist", at("No es una cisterna"), { y: 30 });
+sale(".cist", at("Alrededor tenía") - 0.2, { y: 20 });
+aparece(".e-brocal", at("un brocal"), 0.4);
+late(E(".brocal"), at("un brocal"), { s: 1.04, n: 1 });
+aparece(".e-pilon", at("pilones"), 0.4);
+[".e-pozo", ".e-agua", ".e-brocal", ".e-pilon", ".e-piedra"].forEach((s) => atenua(s, at("La piedra tapaba"), 0.0, 0.4));
+entra(".c1", at("suciedad"), { x: -30, y: 0 });
+entra(".c2", at("no cayeran animales"), { x: -30, y: 0 });
+entra(".c3", at("Sin tapa"), { x: -30, y: 0 });
+tl.set(".polvo", { opacity: 0 }, 0);
+tl.fromTo($(".polvo"), { opacity: 0, x: -120, y: -30 }, { opacity: 1, x: 40, y: 60, duration: 2.2, ease: "power1.out", immediateRender: false }, at("el viento lo llenaba"));
+tl.to($(".polvo"), { opacity: 0, duration: 0.6 }, at("el viento lo llenaba") + 2.2);
+tl.to(E(".sol-g"), { scale: 1.25, transformOrigin: "1500px 130px", duration: 1.2, ease: "power2.out" }, at("el sol se llevaba"));
+</script>

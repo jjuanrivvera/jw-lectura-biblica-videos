@@ -1,0 +1,70 @@
+<style>
+.f20a { position: absolute; left: 90px; right: 90px; top: 60px; height: 400px; }
+.f20a svg { width: 1740px; height: 250px; display: block; }
+.nd20 { font-family: "Fraunces", serif; font-weight: 700; font-size: 52px; text-anchor: middle; fill: var(--tiza); }
+.nd20s { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.1em; text-anchor: middle; fill: var(--tenue); }
+.q20 { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 8px; }
+.q20 .cita { font-size: 36px; }
+.f20b { position: absolute; left: 90px; right: 90px; top: 540px; bottom: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.pan20 { border-radius: 24px; background: rgba(10, 16, 22, 0.45); border: 3px solid rgba(241, 233, 216, 0.14); padding: 16px 24px 20px; display: flex; flex-direction: column; gap: 6px; }
+.pan20 svg { width: 100%; height: 220px; display: block; }
+.pan20 .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro); }
+.pan20 .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; line-height: 1.05; }
+.pan20 .s { font-size: 22px; }
+.pan20.on { border-color: rgba(146, 209, 147, 0.7); }
+</style>
+
+<div class="f20a">
+  <svg viewBox="0 0 1740 250">
+    <g class="n1"><rect x="20" y="40" width="420" height="130" rx="24" fill="rgba(10,16,22,0.5)" stroke="rgba(241,233,216,0.3)" stroke-width="3"/><text class="nd20" x="230" y="114">Babel</text><text class="nd20s" x="230" y="152">GÉNESIS 11</text></g>
+    <path class="l1" d="M 450 105 H 640 M 616 84 L 642 105 L 616 126" fill="none" stroke="#e9bf60" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <g class="n2"><rect x="660" y="40" width="420" height="130" rx="24" fill="rgba(10,16,22,0.5)" stroke="rgba(241,233,216,0.3)" stroke-width="3"/><text class="nd20" x="870" y="114">Babilonia</text><text class="nd20s" x="870" y="152">LA MISMA CIUDAD</text></g>
+    <path class="l2" d="M 1090 105 H 1236 M 1212 84 L 1238 105 L 1212 126" fill="none" stroke="#e9bf60" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <g class="n3"><rect x="1250" y="40" width="490" height="130" rx="24" fill="rgba(236,138,103,0.12)" stroke="#ec8a67" stroke-width="4"/><text class="nd20" x="1495" y="114" style="fill:#f7b8a3;font-size:48px">Babilonia la Grande</text><text class="nd20s" x="1495" y="152">APOCALIPSIS 17:5</text></g>
+  </svg>
+  <div class="q20">
+    <div class="cita qa">“la gente se llevó sus creencias falsas y las extendió por el mundo”<span class="ref">¡LAS NACIONES SABRÁN QUE YO SOY JEHOVÁ!, CAP. 15</span></div>
+    <div class="cita qb">“todo el <b>imperio mundial de la religión falsa</b>”, que “nació hace más de 4.000 años en la antigua ciudad de Babilonia”<span class="ref">APOCALIPSIS: ¡SE ACERCA SU MAGNÍFICA CULMINACIÓN!, CAP. 33</span></div>
+  </div>
+</div>
+
+<div class="f20b">
+  <div class="pan20 p1"><div class="k">Babel · Génesis 11</div><svg viewBox="0 0 520 220"><g class="g1"></g></svg><div class="x">idiomas para <b style="color:var(--rojo)">confundir y esparcir</b></div></div>
+  <div class="pan20 p2"><div class="k">Pentecostés · Hechos 2</div><svg viewBox="0 0 520 220"><g class="g2"></g></svg><div class="x">idiomas para <b>iluminar y reunir</b></div><div class="s">“contrarrestó lo que pasó en la Torre de Babel” · <i>La Atalaya</i>, septiembre de 2026, pág. 16</div></div>
+  <div class="pan20 p3 on"><div class="k">Sofonías 3:9</div><svg viewBox="0 0 520 220"><g class="g3"></g></svg><div class="x">“un <b>idioma puro</b> [...] le sirvan <b>hombro a hombro</b>”</div></div>
+</div>
+
+<script>
+// Doce puntos de colores: en Babel salen en todas las direcciones; en Pentecostés llegan al centro; con el idioma puro, en fila, hombro a hombro.
+const COL = ["#93b3f5", "#f29b85", "#9bd8a0", "#e9bf60"];
+const ang = (i) => (i / 12) * Math.PI * 2;
+let a = "", b = "", c = "";
+for (let i = 0; i < 12; i++) {
+  a += `<circle class="d1" cx="260" cy="110" r="13" fill="${COL[i % 4]}"/>`;
+  b += `<circle class="d2" cx="${(260 + Math.cos(ang(i)) * 200).toFixed(1)}" cy="${(110 + Math.sin(ang(i)) * 90).toFixed(1)}" r="13" fill="${COL[i % 4]}"/>`;
+  c += `<circle class="d3" cx="${(260 + Math.cos(ang(i)) * 200).toFixed(1)}" cy="${(110 + Math.sin(ang(i)) * 90).toFixed(1)}" r="13" fill="${COL[i % 4]}"/>`;
+}
+pinta(".g1", a); pinta(".g2", b); pinta(".g3", c);
+// La cadena de nombres abre al centro y sube cuando llegan los tres paneles.
+tl.set($(".f20a"), { y: 250 }, 0);
+tl.to($(".f20a"), { y: 0, duration: 0.8, ease: "power2.inOut" }, at("Siglos después") - 0.9);
+entra(".n1", 0.5, { y: 20 });
+traza(".l1", at("se llevó") - 0.2, 0.5);
+entra(".n2", at("se llevó") + 0.2, { y: 20 });
+entra(".qa", at("creencias falsas") - 0.3, { y: 16 });
+traza(".l2", at("Apocalipsis") - 0.3, 0.5);
+salta(".n3", at("Babilonia la Grande") - 0.4, { desde: 0.6 });
+entra(".qb", at("imperio mundial") - 0.2, { y: 16 });
+const tP = at("Siglos después");
+entra(".p1", tP - 0.2, { y: 24 });
+tl.fromTo($$(".d1"), { x: 0, y: 0, opacity: 0 }, { x: (i) => Math.cos(ang(i)) * 210, y: (i) => Math.sin(ang(i)) * 95, opacity: 1, duration: 1.6, ease: "power2.out", immediateRender: false }, tP + 0.3);
+tl.set($$(".d1"), { opacity: 0 }, 0);
+entra(".p2", at("Pentecostés") - 0.2, { y: 24 });
+tl.fromTo($$(".d2"), { x: 0, y: 0, opacity: 1 }, { x: (i) => -Math.cos(ang(i)) * 150, y: (i) => -Math.sin(ang(i)) * 55, duration: 1.8, ease: "power2.inOut", immediateRender: false }, at("iluminar") - 0.6);
+tl.set($$(".d2"), { opacity: 0 }, 0);
+tl.set($$(".d2"), { opacity: 1 }, at("Pentecostés"));
+entra(".p3", at("Sofonías") - 0.2, { y: 24 });
+tl.fromTo($$(".d3"), { x: 0, y: 0 }, { x: (i) => 40 + i * 40 - (260 + Math.cos(ang(i)) * 200), y: (i) => 110 - (110 + Math.sin(ang(i)) * 90), duration: 1.8, ease: "power2.inOut", immediateRender: false }, at("hombro a hombro") - 1.4);
+tl.set($$(".d3"), { opacity: 0 }, 0);
+tl.set($$(".d3"), { opacity: 1 }, at("Sofonías"));
+</script>

@@ -1,0 +1,14 @@
+{
+  "duration": 46.752,
+  "assertions": [
+    {
+      "kind": "appearsBy",
+      "selector": "#escena-37 .title",
+      "bySec": 0.8
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#escena-37 .title"
+    }
+  ]
+}

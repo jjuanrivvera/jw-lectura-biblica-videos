@@ -1,0 +1,58 @@
+<style>
+.img45 { position: absolute; left: 0; top: 0; width: 1080px; height: 1080px; overflow: hidden; }
+.img45 .kb { position: absolute; inset: 0; }
+.img45 img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.img45.a img { object-position: 42% 50%; }
+.pos45 { left: 90px; top: 250px; width: 896px; height: 504px; border: 5px solid rgba(241, 233, 216, 0.9); }
+.img45 .vel { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(23,33,43,0) 62%, rgba(23,33,43,0.95) 100%); }
+.pie45 { left: 24px; bottom: 22px; max-width: 980px; }
+.pie45.pb { left: 90px; top: 770px; bottom: auto; max-width: 896px; }
+.cab45 { left: 1120px; }
+.col45 { position: absolute; left: 1120px; right: 70px; top: 120px; bottom: 80px; }
+.col45 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+.col45 .cita { font-size: 50px; }
+.col45 .cita.sm { font-size: 42px; }
+.col45 .tj .x { font-size: 38px; }
+.col45 .tj.q { border-color: var(--cielo); }
+.col45 .tj.q .k { color: var(--cielo); }
+.col45 .clave { align-self: flex-start; }
+</style>
+
+<div class="img45 a"><div class="kb"><img src="assets/img/perdon-ljf.jpg" /></div><div class="vel"></div></div>
+<div class="ilus pos45"><div class="kb"><img src="assets/img/postrados-video.jpg" /></div></div>
+<div class="pie pie45 pa">Los hermanos de José. Video <i>Aprende de los amigos de Jehová: José</i> (jw.org), minuto 1:45 · ilustra a los hermanos; no reconstruye Génesis 50</div>
+<div class="pie pie45 pb">Los hermanos ante José. Video <i>Jehová siguió mostrando amor leal</i> (jw.org, 2020), minuto 16:15</div>
+<div class="cab cab45"><span class="cap">Génesis 50</span><span>versículos 15 al 18</span></div>
+<div class="col45">
+  <div class="b b1">
+    <div class="cita">“Quizás José nos guarde <b>rencor</b> y nos haga pagar por todo el daño que le hicimos”<span class="ref">LOS HERMANOS · GÉNESIS 50:15</span></div>
+    <span class="clave c1b">perdonados <b>diecisiete años antes</b> · 45:4-15</span>
+  </div>
+  <div class="b b2">
+    <div class="cita sm">“Te ruego, por favor, que <b>perdones</b> la ofensa de tus hermanos”<span class="ref">EL MENSAJE ATRIBUIDO A JACOB · GÉNESIS 50:17</span></div>
+    <div class="tj q d1"><div class="k">no se sabe</div><div class="x">Génesis no cuenta antes ese mandato: <b>¿lo dio Jacob?</b></div></div>
+    <span class="clave c2b">“José se echó a <b>llorar</b>” · 50:17</span>
+  </div>
+  <div class="b b3">
+    <div class="cita">“¡Aquí nos tienes, somos tus <b>esclavos</b>!”<span class="ref">LOS HERMANOS · GÉNESIS 50:18</span></div>
+    <span class="clave c3b">otra vez inclinados, <b>como en los sueños</b> · 37:7-9</span>
+  </div>
+</div>
+
+<script>
+const tC = at("caen ante él");
+aparece(".img45.a", 0, 0.6);
+kb(".img45.a .kb", 0, DUR, { s: 1.04 }, { s: 1.16, x: -1 });
+aparece(".pa", 0.6, 0.5);
+entra(".cab45", 0.2, { y: -10 });
+secuencia([[".b1", 0.3], [".b2", at("Le mandan decir") - 0.2], [".b3", at("Y sus hermanos van") - 0.2]]);
+entra(".c1b", at("Los había perdonado") - 0.1, { y: 14 });
+entra(".d1", at("Génesis no cuenta") - 0.1, { y: 20 });
+entra(".c2b", at("José se echa") - 0.1, { y: 14 });
+atenua(".img45.a", tC - 0.8, 0.35, 0.6);
+entra(".pos45", tC - 0.6, { s: 0.94, y: 20 });
+desaparece(".pa", tC - 0.8, 0.4);
+aparece(".pb", tC - 0.4, 0.5);
+kb(".pos45 .kb", tC - 0.6, DUR, { s: 1.0 }, { s: 1.06 });
+entra(".c3b", at("Otra vez") - 0.1, { y: 14 });
+</script>

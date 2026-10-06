@@ -1,0 +1,39 @@
+<style>
+.tit32 { position: absolute; left: 80px; right: 80px; top: 104px; display: flex; align-items: baseline; gap: 30px; }
+.tit32 .m { font-size: 64px; }
+.tabla.t32 { top: 210px; grid-template-columns: 260px 1fr 1fr; }
+.tabla.t32 .c { font-size: 40px; }
+.tabla.t32 .h { font-size: 30px; }
+.dif32 { position: absolute; left: 80px; right: 80px; bottom: 56px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.dif32 .m { font-size: 72px; }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 38 y 39</span><span>el hilo que los une</span></div>
+<div class="tit32"><div class="m oro">dos hombres con miedo, y la misma promesa</div></div>
+
+<div class="tabla t32">
+  <div class="h h0"></div><div class="h h1">Sedequías</div><div class="h h2">Ébed-Mélec</div>
+  <div class="rt r1">el miedo</div><div class="c c11">“Les tengo miedo” <small>38:19</small></div><div class="c c12">“los hombres que te dan miedo” <small>39:17</small></div>
+  <div class="rt r2">la promesa</div><div class="c si c21">“No serás entregado” <small>38:20</small></div><div class="c si c22">“no serás entregado” <small>39:17</small></div>
+  <div class="rt r3">qué hizo</div><div class="c dif c31">le hizo caso a su miedo</div><div class="c c32">confió: “porque confiaste en mí” <small>39:18</small></div>
+  <div class="rt r4">cómo terminó</div><div class="c dif c41">perdió a sus hijos y los ojos <small>39:6, 7</small></div><div class="c c42">salió con vida <small>39:18</small></div>
+</div>
+
+<div class="dif32"><div class="m d1">la diferencia no la hizo el miedo, sino <b>a quién le hizo caso</b> cada uno</div><div class="propio chico d2" style="align-self:center">el hilo es observación propia</div></div>
+
+<script>
+aparece(".cab", 0.2, 0.5);
+entra(".tit32", at("un hilo"), { y: 16 });
+entra([".h1", ".h2", ".h0"], at("El rey dijo") - 0.4, { y: 6 });
+entra(".r1", at("El rey dijo"), { y: 6 });
+entra(".c11", at("Les tengo miedo"), { y: 6 });
+entra(".c12", at("los hombres que"), { y: 6 });
+entra([".r2", ".c21", ".c22"], at("A los dos"), { y: 6, st: 0.25 });
+entra([".r3", ".c31"], at("El rey le hizo"), { y: 6, st: 0.2 });
+entra(".r4", at("perdió") - 0.3, { y: 6 });
+entra(".c41", at("perdió"), { y: 6 });
+entra(".c32", at("confió"), { y: 6 });
+entra(".c42", at("salió con vida"), { y: 6 });
+entra(".d1", at("La diferencia"), { y: 20 });
+entra(".d2", at("cada uno"), { y: 10 });
+</script>

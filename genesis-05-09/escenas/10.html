@@ -1,0 +1,39 @@
+<style>
+.top { position: absolute; left: 80px; right: 80px; top: 130px; display: grid; grid-template-columns: 700px 1fr; column-gap: 60px; align-items: start; }
+.top .def .x { font-size: 70px; }
+.top .cita { font-size: 50px; }
+.cad { position: absolute; left: 0; top: 0; }
+.lbl { font-family: "Caveat", cursive; font-weight: 700; font-size: 48px; }
+.ref2 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 3px; }
+.cansado { position: absolute; left: 80px; top: 470px; }
+.cansado .m { font-size: 62px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 5</span><span>versículos 28 y 29</span></div>
+<div class="top">
+  <div class="def d1"><div class="t">Noé <i>Nó·aj</i></div><div class="x">probablemente <b>“descanso”</b> o <b>“consuelo”</b></div><div class="s">nota de la TNM en Génesis 5:29</div></div>
+  <div class="cita c1">“Este hijo nos <b>aliviará</b> del trabajo y del esfuerzo doloroso de nuestras manos a causa del suelo que Jehová ha maldecido”<span class="ref">GÉNESIS 5:29</span></div>
+</div>
+<div class="cansado"><div class="m">le puso el nombre de <b>lo que le faltaba</b></div></div>
+<svg class="cad" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <path class="lin" d="M 160 800 L 1760 800" stroke="#f1e9d8" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <g class="k1"><circle cx="220" cy="800" r="22" fill="#ec8a67"/><text class="ref2" x="220" y="760" text-anchor="middle" fill="#ec8a67">GÉNESIS 3:17</text><text class="lbl" x="220" y="870" text-anchor="middle" fill="#f1e9d8">el suelo, maldito</text></g>
+  <g class="k2"><circle cx="880" cy="800" r="22" fill="#e9bf60"/><text class="ref2" x="880" y="760" text-anchor="middle" fill="#e9bf60">GÉNESIS 5:29</text><text class="lbl" x="880" y="870" text-anchor="middle" fill="#f1e9d8">Lamec nombra a Noé</text></g>
+  <g class="k3"><circle cx="1700" cy="800" r="22" fill="#92d193"/><text class="ref2" x="1700" y="760" text-anchor="middle" fill="#92d193">GÉNESIS 8:21</text><text class="lbl" x="1700" y="870" text-anchor="end" fill="#f1e9d8">“Nunca más maldeciré el suelo”</text></g>
+  <path class="llave" d="M 220 930 C 220 960 250 960 400 960 L 900 960 C 950 960 960 990 960 990 C 960 990 970 960 1020 960 L 1540 960 C 1690 960 1700 960 1700 930" stroke="#e9bf60" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <text class="lbl l1500" x="960" y="1040" text-anchor="middle" fill="#e9bf60">más de 1.500 años</text>
+</svg>
+<div class="fuente" style="bottom:auto;top:1000px;left:1200px;text-align:right;right:60px;display:none"></div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".d1", at("Noé, en hebreo") - 0.3, { y: 30 });
+entra(".c1", at("Dijo"), { y: 30 });
+entra(".cansado", at("Lamec estaba cansado"), { y: 20 });
+traza(".lin", at("Lamec le puso") , 1.0);
+salta(".k1", at("a causa del suelo"), { desde: 0.4 });
+salta(".k2", at("Lamec le puso") + 0.4, { desde: 0.4 });
+salta(".k3", at("Nunca más"), { desde: 0.4 });
+traza(".llave", at("Entre la maldición"), 1.2);
+aparece(".l1500", at("mil quinientos"), 0.5);
+</script>

@@ -1,0 +1,66 @@
+<style>
+.mapa.REC { left: 0; top: 0; width: 1000px; height: 1080px; }
+.mapa.REC .pie-mapa { max-width: 900px; z-index: 3; top: 10px; bottom: auto; font-size: 20px; }
+.funde49 { left: 880px; }
+.cab49 { left: 1040px; }
+.cad49 { position: absolute; left: 1040px; right: 60px; top: 100px; bottom: 60px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+.es49 { display: grid; grid-template-columns: 210px 1fr; column-gap: 20px; align-items: center; padding: 14px 20px; border-radius: 20px; background: rgba(10, 16, 22, 0.5); border: 3px solid rgba(241, 233, 216, 0.14); }
+.es49 .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--oro); line-height: 1.2; }
+.es49 .x { font-family: "Fraunces", serif; font-weight: 500; font-size: 32px; line-height: 1.2; }
+.es49 .x b { color: var(--oro); }
+.es49.fe { border-color: var(--oro); }
+.fl49 { height: 22px; display: flex; justify-content: center; }
+.fl49 svg { width: 40px; height: 22px; }
+.p144 { margin-left: 230px; }
+.fin49 { position: absolute; left: 1040px; right: 60px; top: 100px; bottom: 60px; display: flex; flex-direction: column; justify-content: center; gap: 40px; }
+.fin49 .m { font-size: 112px; }
+.fin49 .clave { font-size: 62px; }
+</style>
+
+<!--incluir:_rec.html-->
+<div class="funde-der funde49"></div>
+<div class="cab cab49"><span class="cap">Un juramento que cruza la Biblia</span><span></span></div>
+<div class="cad49">
+  <div class="es49 s1"><div class="r">Génesis 50:25</div><div class="x">“Llévense de aquí <b>mis huesos</b>”</div></div>
+  <div class="fl49 a1"><svg viewBox="0 0 40 22"><path d="M 4 4 L 20 18 L 36 4" fill="none" stroke="#e9bf60" stroke-width="5" stroke-linecap="round"/></svg></div>
+  <div class="es49 s2"><div class="r">Éxodo 13:19</div><div class="x">“Moisés se llevó los <b>huesos de José</b>”</div></div>
+  <span class="propio chico p144">unos 144 años después: cálculo propio (1657 a 1513 a.&nbsp;e.&nbsp;c.)</span>
+  <div class="fl49 a2"><svg viewBox="0 0 40 22"><path d="M 4 4 L 20 18 L 36 4" fill="none" stroke="#e9bf60" stroke-width="5" stroke-linecap="round"/></svg></div>
+  <div class="es49 s3"><div class="r">Josué 24:32</div><div class="x">“Los huesos de José, que los israelitas habían traído de Egipto, los enterraron en <b>Siquem</b>, en la parte del campo que Jacob les había comprado [...] a los hijos de Hamor”</div></div>
+  <div class="fl49 a3"><svg viewBox="0 0 40 22"><path d="M 4 4 L 20 18 L 36 4" fill="none" stroke="#e9bf60" stroke-width="5" stroke-linecap="round"/></svg></div>
+  <div class="es49 fe s4"><div class="r">Hebreos 11:22</div><div class="x">“<b>Por la fe</b>, José [...] dio instrucciones acerca de sus huesos cuando se acercaba a su fin”</div></div>
+</div>
+<div class="fin49"><div class="m oro f1">Jacob, en Macpelá</div><div class="m oro f2">José, en Siquem</div><span class="clave f3" style="align-self:flex-start">los dos, en la <b>tierra prometida</b></span></div>
+
+<script>
+pinta(".marcas", `
+  <circle class="as" cx="867" cy="345" r="62" fill="none" stroke="#d99a14" stroke-width="10"/>
+  <g class="ls">${chip(800, 262, "José, en Siquem", { fs: 50, cls: "oro", ancla: "der" })}</g>
+  <circle class="am" cx="657" cy="1413" r="62" fill="none" stroke="#d99a14" stroke-width="10"/>
+  <g class="lm">${chip(600, 1665, "Jacob, en Macpelá", { fs: 50, cls: "oro" })}</g>
+`);
+const V = { x: 0, y: 0, w: 1000, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 190, y: 120, w: 1500, h: 1620 }, V), 0);
+entra(".cab49", 0.2, { y: -10 });
+entra(".s1", 0.3, { x: 20, y: 0 });
+const t2 = at("En Éxodo trece");
+aparece(".a1", t2 - 0.4, 0.3);
+entra(".s2", t2 - 0.2, { x: 20, y: 0 });
+entra(".p144", at("ciento cuarenta y cuatro") - 0.1, { y: 10 });
+const t3 = at("En Josué veinticuatro");
+aparece(".a2", t3 - 0.4, 0.3);
+entra(".s3", t3 - 0.2, { x: 20, y: 0 });
+traza(".as", at("en Siquem", 0) - 0.2, 0.8);
+aparece(".ls", at("en Siquem", 0) + 0.3, 0.4);
+const t4 = at("Y Hebreos once");
+aparece(".a3", t4 - 0.4, 0.3);
+entra(".s4", t4 - 0.2, { x: 20, y: 0 });
+const tF = at("Jacob, en Macpelá");
+traza(".am", tF - 0.2, 0.8);
+aparece(".lm", tF + 0.2, 0.4);
+late(".as", at("José, en Siquem"), { s: 1.12, n: 1 });
+sale(".cad49", tF - 0.5, { y: -10 });
+entra(".f1", tF - 0.1, { y: 16 });
+entra(".f2", at("José, en Siquem") - 0.1, { y: 16 });
+entra(".f3", at("los dos, en") - 0.1, { y: 16 });
+</script>

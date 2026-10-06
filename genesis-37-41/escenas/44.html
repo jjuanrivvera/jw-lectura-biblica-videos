@@ -1,0 +1,65 @@
+<style>
+.map44 { position: absolute; left: 0; top: 0; width: 1300px; height: 1080px; overflow: hidden; background: #f4e3c3; }
+.map44 .cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.map44 .cam img, .map44 .cam svg { position: absolute; left: 0; top: 0; width: 2000px; height: 1200px; }
+.map44 .pie-mapa { z-index: 2; }
+.caja44 { position: absolute; left: 880px; top: 60px; width: 420px; height: 1000px; border-radius: 26px; background: rgba(23, 33, 43, 0.93); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); }
+.obe44 { position: absolute; left: 900px; top: 90px; width: 380px; height: 960px; }
+.obe44 svg { width: 380px; height: 960px; display: block; }
+.e44 { font-family: "Caveat", cursive; font-weight: 700; font-size: 40px; fill: var(--tiza); text-anchor: middle; }
+.e44.oro { fill: var(--oro); }
+.col.d44 { left: 1340px; right: 50px; width: auto; top: 110px; bottom: 80px; }
+.cab.d44c { left: 1340px; }
+.d44 .def .x { font-size: 44px; }
+</style>
+
+<div class="map44"><div class="cam"><img src="assets/img/egipto-norte.jpg" /><svg viewBox="0 0 2000 1200"><g class="marcas"></g></svg></div>
+  <div class="pie-mapa">“MAPA: El antiguo Egipto”, <i>Perspicacia</i>, vol. 1, pág. 531 (wol.jw.org) · marcas añadidas</div></div>
+<div class="funde-der" style="left:1220px"></div>
+<div class="caja44"></div>
+<div class="obe44"><svg viewBox="0 0 380 960">
+  <defs>
+    <linearGradient id="e44-granito" x1="0" x2="1"><stop offset="0" stop-color="#7a3b2e"/><stop offset="0.45" stop-color="#b86a52"/><stop offset="1" stop-color="#6a3226"/></linearGradient>
+    <filter id="e44-grano" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="9"/><feColorMatrix type="matrix" values="0 0 0 0 0.2  0 0 0 0 0.08  0 0 0 0 0.05  0 0 0 0.35 0"/></filter>
+    <clipPath id="e44-forma"><path d="M 150 900 L 164 170 L 190 120 L 216 170 L 230 900 Z"/></clipPath>
+  </defs>
+  <path d="M 0 900 H 380" stroke="#8a6a3e" stroke-width="6"/>
+  <g class="obel"><path d="M 150 900 L 164 170 L 190 120 L 216 170 L 230 900 Z" fill="url(#e44-granito)"/><rect x="140" y="110" width="100" height="800" filter="url(#e44-grano)" clip-path="url(#e44-forma)"/><path d="M 190 120 L 216 170 L 230 900 L 190 900 Z" fill="rgba(0,0,0,0.18)"/></g>
+  <g class="per44"><circle cx="290" cy="848" r="8" fill="#93bbef"/><path d="M 290 857 V 880 M 290 880 L 284 900 M 290 880 L 296 900 M 290 864 L 282 876 M 290 864 L 298 876" stroke="#93bbef" stroke-width="5" stroke-linecap="round"/><text class="e44" x="300" y="940">1,70 m</text></g>
+  <g class="cota44"><path d="M 80 120 V 900 M 68 120 H 92 M 68 900 H 92" stroke="#e9bf60" stroke-width="4"/><text class="e44 oro" x="70" y="80">unos 21 m</text></g>
+</svg></div>
+<div class="cab d44c"><span class="cap">On hoy</span><span>41:45 · Jeremías 43:13</span></div>
+<div class="col d44">
+  <div class="b a1">
+    <div class="def"><div class="t">On</div><div class="x">“a poca distancia al NE. de El Cairo, en la orilla oriental del Nilo y cerca de donde sus aguas se dividen para formar la región del <b>Delta</b>”</div><div class="s"><i>Perspicacia</i>, vol. 2, “On”, pág. 549</div></div>
+    <div class="m md he">los griegos: <b>Heliópolis</b>, “Ciudad del Sol”</div>
+    <div class="cita sm je">“hará pedazos las columnas de Bet-Semes”; nota: “los obeliscos”<span class="ref">JEREMÍAS 43:13 Y NOTAS</span></div>
+  </div>
+  <div class="b a2">
+    <div class="m md">queda “un único obelisco de granito rojo que data del reinado de <b>Sesostris I</b>”</div>
+    <div class="f"><i>Perspicacia</i>, vol. 2, “On”, pág. 550</div>
+    <span class="externa chico">bajo los barrios de Matariya y Ain Shams · unos 21 m · el obelisco en pie más antiguo del mundo · se excava allí desde 2012</span>
+    <div class="m md cielo ya">ya estaba allí cuando José se casó con la hija del sacerdote de On</div>
+    <span class="propio chico ya">cálculo propio con fechas de la JW y de los historiadores</span>
+  </div>
+</div>
+
+<script>
+pinta(".marcas", `<circle class="anillo a-on" cx="716" cy="732" r="48"/>
+  <g class="ch-on"><rect x="150" y="620" width="520" height="92" rx="20" fill="rgba(15,22,30,0.9)"/><text class="lugar" x="172" y="682" font-size="50" style="fill:#e9bf60">hoy, bajo El Cairo</text></g>`);
+const V = { x: 0, y: 0, w: 1300, h: 1080 };
+tl.set($(".map44 .cam"), encuadre({ x: 100, y: 150, w: 1500, h: 1246 }, V), 0);
+camara(".map44 .cam", 0.4, at("Bajo los barrios") - 0.4, encuadre({ x: 250, y: 300, w: 1200, h: 997 }, V), "power1.inOut");
+camara(".map44 .cam", at("Bajo los barrios") - 0.6, 1.6, encuadre({ x: 0, y: 300, w: 1200, h: 997 }, V));
+entra(".caja44", at("un obelisco") - 0.8, { x: 40, y: 0 });
+traza(".a-on", 0.6, 0.8);
+aparece(".ch-on", at("Muy poco"), 0.4);
+secuencia([[".a1", 0.4], [".a2", at("Bajo los barrios")]]);
+entra(".he", at("Los griegos"), { y: 12 });
+entra(".je", at("Jeremías"), { y: 16 });
+tl.fromTo($(".obel"), { scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 1.6, ease: "power2.out", immediateRender: false }, at("un obelisco") - 0.3);
+tl.set($(".obel"), { scaleY: 0, transformOrigin: "50% 100%" }, 0);
+entra(".per44", at("veintiún metros") - 0.4, { y: 10 });
+aparece(".cota44", at("veintiún metros") - 0.2, 0.5);
+entra(".ya", at("Ya estaba allí"), { y: 12, st: 0.2 });
+</script>

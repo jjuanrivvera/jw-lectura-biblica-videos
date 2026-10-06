@@ -1,0 +1,45 @@
+<style>
+.esq { position: absolute; left: 60px; top: 110px; width: 1120px; height: 620px; }
+.col { top: 120px; bottom: 90px; right: 64px; width: 640px; }
+.robos { position: absolute; left: 80px; right: 80px; bottom: 60px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+.robos .dato .v { font-size: 56px; }
+.eti { font-size: 46px; }
+</style>
+<div class="cab"><span class="cap">Génesis 31</span><span>versículos 19 y 20</span></div>
+<svg class="esq" viewBox="0 0 1120 620"></svg>
+<div class="col">
+  <div class="b a1"><div class="cita md">“Labán había ido a esquilar sus ovejas”<span class="ref">GÉNESIS 31:19</span></div><div class="def"><div class="t">Esquilar</div><div class="x">cortarle la <b>lana</b> a la oveja, una vez al año, en <b>primavera</b></div><div class="s">La Atalaya, 1 de noviembre de 2012, pág. 27</div></div></div>
+  <div class="b a2"><div class="m md">“semejante a una cosecha. Iba acompañado de banquetes y regocijo”</div><div class="s">Perspicacia, vol. 2, “Oveja”, pág. 564</div><div class="m md">los contratos de pastoreo “empezaban y terminaban en la época del esquilado”</div><div class="s">La Atalaya, 1 de marzo de 2015, pág. 12</div></div>
+  <div class="b a3"><div class="m">se fue <b style="color:var(--oro)">sin avisar</b></div><div class="cita md">“tenía miedo de que me fueras a quitar a tus hijas por la fuerza”<span class="ref">GÉNESIS 31:31</span></div></div>
+</div>
+<div class="robos">
+  <div class="dato r1"><div class="k">Jacob</div><div class="v">“fue más listo que” Labán: lit. le <b style="color:var(--oro)">“robó el corazón”</b></div><div class="s">TNM de 1987, notas en 31:20, 26</div></div>
+  <div class="dato r2"><div class="k">Raquel</div><div class="v">le robó los <b style="color:var(--oro)">ídolos domésticos</b></div><div class="s">Génesis 31:19 · <span style="color:var(--cielo)">el juego de palabras: observación propia</span></div></div>
+</div>
+<script>
+/*incluir:_dibujos.js*/
+// Antes y después de la esquila: la oveja con su lana, la lana cortada y la oveja esquilada.
+const lanaCortada = [[560, 540, 34], [610, 548, 30], [660, 536, 36], [600, 512, 28], [640, 506, 26], [700, 548, 28]].map(([x, y, r]) => '<circle cx="' + x + '" cy="' + y + '" r="' + r + '" fill="' + G("lana") + '" stroke="#9d9380" stroke-width="2"/>').join("");
+const esquilada = (x, y, k) => '<g transform="translate(' + x + ' ' + y + ') scale(' + k + ')">' +
+  '<ellipse cx="0" cy="2" rx="50" ry="8" fill="rgba(0,0,0,0.22)"/>' +
+  [[-26, 0], [-12, 2], [16, 2], [28, 0]].map(([lx, ly]) => '<rect x="' + (lx - 5) + '" y="-34" width="10" height="' + (34 + ly) + '" rx="5" fill="#3b312a"/>').join("") +
+  '<path d="M -40 -50 C -42 -70 -10 -76 14 -74 C 36 -72 48 -62 48 -50 C 48 -36 30 -30 4 -30 C -24 -30 -38 -36 -40 -50 Z" fill="#efe4d0" stroke="#b9a98c" stroke-width="2"/>' +
+  '<path d="M 44 -64 C 56 -76 78 -74 84 -60 C 89 -48 82 -40 70 -40 C 58 -40 48 -46 44 -54 Z" fill="#3e342d"/>' +
+  '<circle cx="72" cy="-58" r="3.4" fill="#f4ecd8"/></g>';
+pinta(".esq", defsDibujos() +
+  '<path d="M 0 560 C 300 540 700 575 1120 550 L 1120 620 L 0 620 Z" fill="' + G("pasto") + '"/>' +
+  sol(1000, 110, 50) +
+  '<g class="ov">' + oveja(230, 560, 2.3) + '<text class="eti" x="260" y="610" text-anchor="middle">con lana</text></g>' +
+  '<g class="lana">' + lanaCortada + '<text class="eti oro" x="630" y="460" text-anchor="middle">la lana</text></g>' +
+  '<g class="esquil">' + esquilada(900, 560, 2.3) + '<text class="eti" x="920" y="610" text-anchor="middle">esquilada</text></g>' +
+  '<g class="tijera"><g transform="translate(520 300) rotate(-20)"><path d="M 0 0 L 150 -20 L 150 -6 Z" fill="#c9ccd2" stroke="#6d7078" stroke-width="3"/><path d="M 0 10 L 150 30 L 150 16 Z" fill="#c9ccd2" stroke="#6d7078" stroke-width="3"/><circle cx="-24" cy="-6" r="18" fill="none" stroke="#7a5332" stroke-width="10"/><circle cx="-24" cy="20" r="18" fill="none" stroke="#7a5332" stroke-width="10"/></g></g>' +
+  '<text class="eti oro" x="820" y="200">primavera</text>');
+aparece(".esq", 0.2, 0.5);
+entra(".esq .tijera", at("Esquilar es"), { x: 60, y: 0 });
+entra(".esq .lana", at("cortarles la lana") + 0.2, { y: -30 });
+entra(".esq .esquil", at("cortarles la lana") + 0.6, { x: 40, y: 0 });
+secuencia([[".a1", 0.4], [".a2", at("y era trabajo")], [".a3", at("Jacob se fue sin avisar")]]);
+atenua(".esq", at("El texto dice"), 0.25);
+entra(".r1", at("El texto dice"), { y: 30 });
+entra(".r2", at("Y en ese mismo momento"), { y: 30 });
+</script>

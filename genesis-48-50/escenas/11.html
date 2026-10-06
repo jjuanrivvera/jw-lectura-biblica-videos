@@ -1,0 +1,58 @@
+<style>
+.tar11 { position: absolute; left: 70px; right: 70px; top: 110px; display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 26px; }
+.tar11 .tj .x { font-size: 50px; }
+.tar11 .tj { min-height: 270px; }
+.tar11 .tj .k { font-size: 28px; }
+.cen11 { position: absolute; left: 70px; right: 70px; top: 525px; }
+.cen11 .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tenue); }
+.gr11 { margin-top: 18px; display: grid; grid-template-columns: 300px 1fr; row-gap: 10px; align-items: center; }
+.gr11 .c { font-family: "Fraunces", serif; font-weight: 700; font-size: 38px; }
+.gr11 .c small { display: block; font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 24px; color: var(--tenue); }
+.bar11 { height: 66px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; color: #17212b; transform-origin: 0 50%; }
+.bar11 .v { font-family: "Fraunces", serif; font-size: 36px; }
+.bar11.e { background: var(--oro); }
+.bar11.m { background: #93bbef; }
+.sep11 { grid-column: 1 / span 2; height: 12px; }
+.no11 { position: absolute; left: 70px; right: 70px; bottom: 54px; display: flex; justify-content: space-between; align-items: flex-end; }
+.no11 .m { font-size: 62px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 48</span><span>cómo se cumplió el versículo 19</span></div>
+<div class="tw11" style="position:absolute; left:0; top:0; width:1920px; height:1080px;"><div class="tar11">
+  <div class="tj on a1"><div class="k">en el desierto</div><div class="x">Efraín encabeza una <b>división de tres tribus</b>: Efraín, Manasés y Benjamín</div><div class="ref">Números 2:18-24</div></div>
+  <div class="tj on a2"><div class="k">Josué</div><div class="x">el sucesor de Moisés era <b>de Efraín</b></div><div class="ref">Números 13:8, 16</div></div>
+  <div class="tj on a3"><div class="k">con el tiempo</div><div class="x">“Efraín” llegó a representar al <b>reino de diez tribus</b></div><div class="ref"><i>Perspicacia</i>, “Efraín”, págs.&nbsp;764 y 765</div></div>
+</div></div>
+<div class="cen11">
+  <div class="t">hombres registrados para la guerra · una misma escala</div>
+  <div class="gr11">
+    <div class="c g1">primer censo<small>Números 1:33, 35</small></div>
+    <div class="bar11 e b1" style="width:999px"><span>Efraín</span><span class="v">40.500</span></div>
+    <div></div>
+    <div class="bar11 m b2" style="width:794px"><span>Manasés</span><span class="v">32.200</span></div>
+    <div class="sep11"></div>
+    <div class="c g2">segundo censo<small>Números 26:34, 37</small></div>
+    <div class="bar11 e b3" style="width:802px"><span>Efraín</span><span class="v">32.500</span></div>
+    <div></div>
+    <div class="bar11 m b4" style="width:1300px"><span>Manasés</span><span class="v">52.700</span></div>
+  </div>
+</div>
+<div class="no11"><div class="m oro n1">no decía que ganaría todos los censos</div><span class="propio chico n2">barras a escala: gráfico propio</span></div>
+
+<script>
+entra(".a1", 0.6, { y: 20 });
+entra(".a2", at("Josué, el sucesor") - 0.2, { y: 20 });
+entra(".a3", at("con el tiempo") - 0.2, { y: 20 });
+const tP = at("Pero importancia");
+centra(".tw11", 260, tP - 0.7, 0.8);
+entra(".cen11 .t", tP - 0.2, { y: 10 });
+const barra = (s, t) => { aparece(s, t, 0.2); tl.fromTo($(s), { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.out", immediateRender: false }, t); };
+entra(".g1", at("En el primer censo") - 0.2, { x: -20, y: 0 });
+barra(".b1", at("cuarenta mil quinientos") - 0.3);
+barra(".b2", at("treinta y dos mil doscientos") - 0.3);
+entra(".g2", at("En el segundo") - 0.2, { x: -20, y: 0 });
+barra(".b4", at("cincuenta y dos mil setecientos") - 0.3);
+barra(".b3", at("treinta y dos mil quinientos") - 0.3);
+aparece(".n2", at("En el segundo") + 0.5, 0.4);
+entra(".n1", at("La profecía no decía") - 0.1, { y: 16 });
+</script>

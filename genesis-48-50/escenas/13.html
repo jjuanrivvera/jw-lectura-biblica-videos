@@ -1,0 +1,75 @@
+<style>
+.mapa.REC { left: 0; top: 0; width: 1120px; height: 1080px; }
+.funde13 { left: 1000px; }
+.cab13 { left: 1130px; }
+.col13 { position: absolute; left: 1130px; right: 60px; top: 110px; bottom: 70px; }
+.col13 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.col13 .cita { font-size: 48px; }
+.col13 .cita.sm2 { font-size: 40px; }
+.col13 .def .x { font-size: 54px; }
+.col13 .tj .x { font-size: 38px; }
+.hom13 { position: relative; width: 730px; height: 330px; }
+.hom13 svg { position: absolute; left: 0; top: 0; width: 730px; height: 330px; }
+.hom13 .l { position: absolute; font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; line-height: 1; }
+.col13 .clave { align-self: flex-start; }
+</style>
+
+<!--incluir:_rec.html-->
+<div class="funde-der funde13"></div>
+<div class="cab cab13"><span class="cap">Génesis 48</span><span>versículos 21 y 22</span></div>
+<div class="col13">
+  <div class="b b1">
+    <div class="cita">“Dios de veras seguirá con ustedes y <b>los devolverá</b> a la tierra de sus antepasados”<span class="ref">JACOB · GÉNESIS 48:21</span></div>
+    <div class="cita">“Y a ti te doy <b>una porción de tierra</b> más que a tus hermanos”<span class="ref">GÉNESIS 48:22</span></div>
+  </div>
+  <div class="b b2">
+    <div class="hom13">
+      <svg viewBox="0 0 730 330">
+        <path class="cielo13" d="M 0 330 L 0 250 C 90 240 150 200 210 150 C 260 108 300 92 360 92 C 430 92 470 120 520 170 C 580 228 650 250 730 256 L 730 330 Z" fill="#5d7a4e"/>
+        <path d="M 0 330 L 0 286 C 120 280 200 250 260 205 C 300 175 330 168 360 168 C 410 168 450 190 500 228 C 560 272 650 290 730 292 L 730 330 Z" fill="#43603a"/>
+        <path class="hm13" d="M 150 250 C 190 160 260 92 360 92 C 450 92 500 130 540 190" fill="none" stroke="#e9bf60" stroke-width="9" stroke-linecap="round" stroke-dasharray="20 14"/>
+      </svg>
+      <div class="l l1" style="left:300px; top:20px; color:var(--oro)">un hombro</div>
+      <div class="l l2" style="left:520px; top:110px; color:var(--tiza)">una ladera</div>
+    </div>
+    <div class="def"><div class="t">Porción</div><div class="x">literalmente, <b>un hombro</b>: una parte de tierra que sobresale</div><div class="s">nota de Génesis 48:22: o “una ladera de montaña”; lit. “un hombro”</div></div>
+    <div class="tj on sq"><div class="k">Siquem</div><div class="x">el nombre significa <b>hombro</b></div><div class="ref"><i>Perspicacia</i>, “Hombro”, págs.&nbsp;1166 y 1167</div></div>
+  </div>
+  <div class="b b3">
+    <div class="cita sm2">“Una tierra que les quité a los <b>amorreos</b> con mi espada y mi arco”<span class="ref">GÉNESIS 48:22</span></div>
+    <div class="f am">amorreos: una tribu cananea · <i>Perspicacia</i>, “Amorreo”</div>
+    <div class="cita sm2 c33">“[…] pagó <b>100 piezas de dinero</b> por una parte del campo […]. Les compró esa parte a los hijos de Hamor”<span class="ref">GÉNESIS 33:19</span></div>
+    <span class="clave fe">habla con fe de la <b>conquista futura</b></span>
+    <div class="f fe2"><i>Perspicacia</i>, “Jacob”, pág.&nbsp;12: “al parecer”</div>
+  </div>
+</div>
+
+<script>
+const [sx, sy] = REC.siquem;
+pinta(".marcas", `
+  <circle class="anillo oro a-sq" cx="${sx}" cy="${sy}" r="70" style="stroke-width:9"/>
+  <g class="h1">${chip(400, sy + 120, "Siquem: “hombro”", { fs: 42, cls: "oro" })}</g>
+  <g class="h2">${chip(400, sy + 200, "aquí compró un campo", { fs: 40 })}</g>
+  <g class="h3">${chip(400, sy + 272, "aquí, un día, los huesos de José", { fs: 32, cls: "cielo" })}</g>
+`);
+const V = { x: 0, y: 0, w: 1000, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 200, y: 100, w: 1300, h: 1400 }, V), 0);
+camara(".cam", at("una porción de tierra") - 0.5, 2.5, encuadre({ x: 300, y: 80, w: 880, h: 950 }, V));
+const tP = at("Porción quiere decir");
+secuencia([[".b1", 0.4], [".b2", tP - 0.3], [".b3", at("Jacob dice que") - 0.3]]);
+traza(".a-sq", at("una porción de tierra"), 0.9);
+traza(".hm13", tP + 0.6, 1.2);
+tl.set([".l1", ".l2"], { opacity: 0 }, 0);
+aparece(".l1", at("un hombro") , 0.4);
+aparece(".l2", at("una ladera"), 0.4);
+tl.set(".b2 .def", { opacity: 0 }, 0);
+entra(".b2 .def", at("una parte de tierra") - 0.4, { y: 14 });
+entra(".sq", at("Siquem, que significa") - 0.3, { y: 14 });
+aparece(".h1", at("Siquem, que significa"), 0.5);
+aparece(".am", at("amorreos") + 0.3, 0.4);
+entra(".c33", at("Pero Génesis treinta") - 0.2, { y: 14 });
+aparece(".h2", at("compró en paz"), 0.5);
+entra(".fe", at("Al parecer") - 0.1, { y: 12 });
+aparece(".fe2", at("Al parecer") + 0.4, 0.4);
+aparece(".h3", at("los huesos de José") - 0.2, 0.5);
+</script>

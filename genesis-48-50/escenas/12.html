@@ -1,0 +1,42 @@
+<style>
+.tit12 { position: absolute; left: 80px; top: 110px; }
+.tit12 .m { font-size: 84px; }
+.fila12 { position: absolute; left: 60px; right: 60px; top: 260px; display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 22px; }
+.c12 { border-radius: 24px; background: rgba(10, 16, 22, 0.45); border: 3px solid rgba(241, 233, 216, 0.14); padding: 26px 24px; display: flex; flex-direction: column; gap: 12px; min-height: 400px; }
+.c12 .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 76px; line-height: 1; color: var(--oro); }
+.c12 .v { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 28px; color: var(--tenue); letter-spacing: 0.04em; }
+.c12 .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 56px; line-height: 1.04; }
+.c12 .ref { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 22px; color: var(--tenue); margin-top: auto; }
+.c12.ult { border-color: var(--oro); background: rgba(233, 191, 96, 0.08); }
+.fl12 { position: absolute; left: 60px; right: 60px; top: 670px; height: 40px; }
+.fl12 path { fill: none; stroke: rgba(233, 191, 96, 0.6); stroke-width: 6; stroke-linecap: round; }
+.no12 { position: absolute; left: 80px; right: 80px; top: 740px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 50px; align-items: start; }
+.no12 .m { font-size: 72px; }
+.no12 .s { font-size: 32px; margin-top: 10px; }
+.no12 .tj .x { font-size: 44px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis</span><span>un hilo del libro</span></div>
+<div class="tit12"><div class="m">el menor delante del mayor</div></div>
+<div class="fila12">
+  <div class="c12 k1"><div class="n">Abel</div><div class="v">antes que Caín</div><div class="x">aprobado por su <b>fe</b> y su ofrenda</div><div class="ref">Génesis 4:4, 5 · Hebreos 11:4</div></div>
+  <div class="c12 k2"><div class="n">Isaac</div><div class="v">antes que Ismael</div><div class="x">el hijo de la <b>promesa</b></div><div class="ref">Génesis 17:19-21</div></div>
+  <div class="c12 k3"><div class="n">Jacob</div><div class="v">antes que Esaú</div><div class="x">escogido <b>antes de nacer</b></div><div class="ref">Génesis 25:23</div></div>
+  <div class="c12 k4"><div class="n">José</div><div class="v">antes que Rubén</div><div class="x">la <b>parte doble</b> que perdió Rubén</div><div class="ref">1 Crónicas 5:1, 2</div></div>
+  <div class="c12 ult k5"><div class="n">Efraín</div><div class="v">antes que Manasés</div><div class="x">“llegará a ser <b>más importante</b>”</div><div class="ref">Génesis 48:19</div></div>
+</div>
+<svg class="fl12" viewBox="0 0 1800 40" preserveAspectRatio="none"><path class="fl" d="M 20 20 L 1780 20"/></svg>
+<div class="no12">
+  <div><div class="m rojo r1">no es una regla</div><div class="s r2">cada caso tiene <b>su razón</b> en el relato; José recibe la parte doble, pero el rey prometido vendrá de <b>Judá</b> (Génesis 49:10)</div></div>
+  <div class="tj on r3"><div class="k">lo que tienen en común</div><div class="x">la voluntad de Jehová <b>no depende</b> de quién nació primero</div><div class="ref"><i>Perspicacia</i>, “Primogenitura”, pág.&nbsp;718</div></div>
+</div>
+
+<script>
+entra(".tit12", 0.3, { y: 16 });
+const ks = [["k1", "Abel"], ["k2", "Isaac"], ["k3", "Jacob, José"], ["k4", "José y ahora"], ["k5", "ahora Efraín"]];
+ks.forEach(([k, f]) => entra(`.${k}`, at(f) - 0.25, { y: 30 }));
+traza(".fl12 .fl", at("Abel") - 0.2, 4.0, { ease: "none" });
+entra(".r1", at("Pero no es una regla") - 0.1, { y: 16 });
+entra(".r2", at("cada caso tiene") - 0.1, { y: 12 });
+entra(".r3", at("Lo que tienen en común") - 0.2, { y: 16 });
+</script>

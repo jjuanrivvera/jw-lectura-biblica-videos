@@ -1,0 +1,35 @@
+<style>
+.foto-full { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; }
+.foto-full .kb { position: absolute; inset: 0; }
+.foto-full img { width: 100%; height: 100%; object-fit: cover; }
+.velo { position: absolute; right: 0; top: 0; bottom: 0; width: 1000px; background: linear-gradient(90deg, rgba(23,33,43,0) 0%, rgba(23,33,43,0.9) 22%, rgba(23,33,43,0.96) 100%); }
+.noche { position: absolute; inset: 0; background: rgba(8, 16, 40, 0.55); }
+.cielo-s { position: absolute; left: 60px; top: 120px; width: 300px; height: 300px; }
+.col { top: 110px; bottom: 110px; right: 60px; width: 780px; }
+.cab.sobre span { background: rgba(15,22,30,0.8); }
+</style>
+<div class="foto-full"><div class="kb"><img src="assets/img/jacob-trabajo.jpg"/></div></div>
+<div class="noche"></div>
+<svg class="cielo-s" viewBox="0 0 300 300"></svg>
+<div class="velo"></div>
+<div class="cab sobre"><span class="cap">Génesis 31</span><span>versículos 40 al 42</span></div>
+<div class="col">
+  <div class="b a1"><div class="cita">“Durante el día me consumía el calor y durante la noche me moría de frío. Hasta el sueño se me iba”<span class="ref">GÉNESIS 31:40</span></div><div class="m md">de noche, al raso, con un manto de piel de oveja</div><div class="s">La Atalaya, 1 de noviembre de 2012, págs. 27, 28</div></div>
+  <div class="b a2"><div class="def"><div class="t">“El Dios a quien Isaac teme”<i>pá·jadh</i></div><div class="x">lit. “el temor de Isaac”: un <b>temor reverente</b>, el miedo a desagradarle</div><div class="s">notas de la TNM en 31:42, 53 · Perspicacia, vol. 2, “Pavor”, págs. 606, 607</div></div></div>
+  <div class="b a3"><div class="cita">“Pero Dios vio mi sufrimiento y mi duro trabajo”<span class="ref">GÉNESIS 31:42</span></div></div>
+</div>
+<div class="pie-foto">“Jacob trabajó 20 años para Labán, que se aprovechó de él. Durante ese tiempo, Jehová bendijo a Jacob.” Ilustración: La Atalaya (estudio), abril de 2023, pág. 15 (wol.jw.org)</div>
+<script>
+/*incluir:_dibujos.js*/
+pinta(".cielo-s", defsDibujos() + sol(150, 150, 70, "s") + luna(150, 150, 70, "l"));
+kb(".foto-full .kb", 0, DUR, { s: 1.05, x: 3 }, { s: 1.16, x: -4 });
+tl.set($(".noche"), { opacity: 0 }, 0);
+tl.set($(".cielo-s .l"), { opacity: 0 }, 0);
+salta(".cielo-s .s", at("Durante el día"), { desde: 0.5 });
+tl.to($(".cielo-s .s"), { opacity: 0, duration: 0.5 }, at("durante la noche"));
+tl.to($(".cielo-s .l"), { opacity: 1, duration: 0.5 }, at("durante la noche"));
+tl.to($(".noche"), { opacity: 1, duration: 0.8 }, at("durante la noche"));
+tl.to($(".noche"), { opacity: 0, duration: 0.8 }, at("Jacob termina"));
+atenua(".cielo-s", at("Jacob termina"), 0);
+secuencia([[".a1", 0.4], [".a2", at("Jacob termina")], [".a3", at("Pero Dios vio")]]);
+</script>

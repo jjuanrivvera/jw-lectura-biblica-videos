@@ -1,0 +1,52 @@
+<style>
+.eje30 { position: absolute; left: 90px; right: 90px; top: 150px; height: 250px; }
+.eje30 svg { width: 1740px; height: 250px; display: block; }
+.et30 { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; }
+.pt30 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.1em; }
+.miedo30 { position: absolute; left: 90px; right: 90px; top: 430px; display: flex; align-items: baseline; gap: 24px; }
+.miedo30 .m { font-size: 58px; white-space: nowrap; }
+.miedo30 .s { font-size: 27px; }
+.dosq { position: absolute; left: 90px; right: 90px; top: 560px; bottom: 150px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; }
+.dosq .tj .x { font-size: 40px; }
+.dosq .tj .s { font-size: 24px; }
+.pie30 { position: absolute; left: 90px; right: 90px; bottom: 60px; display: flex; gap: 22px; align-items: center; }
+.pie30 .f { font-size: 22px; }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 39</span><span>versículos 15 al 17</span></div>
+
+<div class="eje30"><svg viewBox="0 0 1740 250">
+  <path class="eje" d="M 20 150 H 1720" stroke="rgba(241,233,216,0.35)" stroke-width="8" stroke-linecap="round"/>
+  <circle class="p1" cx="560" cy="150" r="18" fill="#e9bf60"/>
+  <text class="et30 t1" x="560" y="220" text-anchor="middle" fill="#e9bf60">el mensaje · Jeremías todavía preso (39:15)</text>
+  <path class="br" d="M 1180 110 V 190" stroke="#ec8a67" stroke-width="10" stroke-linecap="round"/>
+  <text class="pt30 t2" x="1180" y="90" text-anchor="middle" fill="#ec8a67">LA CAÍDA · 39:1-14</text>
+  <path class="vuelta" d="M 1560 140 C 1500 20 700 10 590 120" stroke="#93bbef" stroke-width="7" fill="none" stroke-dasharray="4 14" stroke-linecap="round"/>
+  <path class="vp" d="M 612 88 L 586 126 L 632 128" stroke="#93bbef" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="et30 t3" x="1580" y="220" text-anchor="middle" fill="#93bbef">en el libro: 39:15-18</text>
+</svg></div>
+
+<div class="miedo30"><div class="m rojo">tenía miedo</div><div class="s">“después de rescatarlo, Ébed-Mélec sintió miedo de que los príncipes le hicieran daño” · <i>La Atalaya</i>, noviembre de 2019, párr. 17</div></div>
+
+<div class="dosq">
+  <div class="tj q16"><div class="k">39:16</div><div class="x">“Voy a cumplir mis palabras sobre esta ciudad, palabras de calamidad y no de cosas buenas, y <b>ese día las verás cumplirse</b>”</div><div class="s">“sería testigo de la destrucción... Sin embargo, no tendría que temerla” · <i>La Atalaya</i>, 15/6/1979</div></div>
+  <div class="tj q17 on"><div class="k">39:17</div><div class="x">“Pero yo te rescataré ese día [...], y <b>no serás entregado en manos de los hombres que te dan miedo</b>”</div></div>
+</div>
+
+<div class="pie30"><div class="f">“El libro no sigue un orden cronológico, sino más bien temático” · <i>Perspicacia</i>, «Jeremías, Libro de»</div><div class="propio chico">por eso se lee ya cumplido: observación propia</div></div>
+
+<script>
+aparece(".cab", 0.2, 0.5);
+traza(".eje", 0.3, 1.0);
+salta(".br", 0.9, {});
+aparece(".t2", 1.0, 0.4);
+aparece(".t3", at("volviendo atrás") - 0.3, 0.4);
+traza(".vuelta", at("volviendo atrás"), 1.6);
+traza(".vp", at("volviendo atrás") + 1.5, 0.3);
+salta(".p1", at("Antes de la caída"), {});
+aparece(".t1", at("todavía estaba preso"), 0.5);
+entra(".miedo30", at("tenía miedo"), { y: 16 });
+entra(".q16", at("Voy a cumplir"), { y: 24 });
+entra(".q17", at("Pero yo te rescataré"), { y: 24 });
+entra(".pie30", at("El libro va"), { y: 12 });
+</script>

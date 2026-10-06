@@ -1,0 +1,44 @@
+<!--incluir:_naciones.html-->
+<div class="colN">
+  <div class="cabN"><div class="r c-jafet">Jafet</div><div class="v c-jafet">14 <small>familias</small></div><div class="d">hacia el norte y el oeste</div></div>
+  <div class="slot">
+    <div class="b ley">
+      <div class="leyN">
+        <div><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="14" fill="#93b3f5" stroke="#fff" stroke-width="5"/></svg>identificación firme</div>
+        <div><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="13" fill="#fff" stroke="#93b3f5" stroke-width="7"/></svg>probable: “se cree”, “parece”</div>
+        <div><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="14" fill="none" stroke="#93b3f5" stroke-width="6" stroke-dasharray="6 5"/></svg>solo una posibilidad, con “?”</div>
+      </div>
+      <div class="f">“desde el Cáucaso en dirección E. hasta Asia central, y en dirección O. a través del Asia Menor hacia las islas y los litorales de Europa, y quizás hasta España” · <i>Perspicacia</i>, vol. 2, “Jafet”, pág. 13</div>
+    </div>
+    <div class="b nom">
+      <div class="def"><div class="t">Jafet<i>Yé·feth</i></div><div class="x">“Que Él Conceda <b>Amplio Espacio</b>”</div><div class="s">un juego de palabras con la bendición de Noé: que Dios “conceda amplio espacio” a Jafet (9:27) · <i>Perspicacia</i>, vol. 2, “Jafet”, pág. 13</div></div>
+    </div>
+    <div class="b lista">
+      <div class="itN i1"><span class="a c-jafet">Javán</span><span class="b2">jonios, griegos</span></div>
+      <div class="itN i2"><span class="a c-jafet">Madái</span><span class="b2">medos, al sur del Caspio: de ahí “Irán”</span></div>
+      <div class="itN i3"><span class="a c-jafet">Kitim</span><span class="b2">Chipre</span></div>
+      <div class="f">cada identificación, con las palabras de <i>Perspicacia</i> en su entrada: “se dice”, “se cree”, “por lo general concuerdan”</div>
+    </div>
+  </div>
+</div>
+
+<script>
+/*incluir:_naciones_lib.js*/
+pintaPueblos();
+PUEBLOS.forEach((p) => tl.set($(pb(p[1])), { opacity: 0 }, 0));
+const TODO = { x: 0, y: 0, w: 2400, h: 1840 };
+tl.set($(".cam"), encuadre(TODO, VN), 0);
+aparece(".pieN", 0.5, 0.5);
+entra(".cabN", at("Los hijos de Jafet") - 0.3, { y: 24 });
+rama("J", at("se esparcieron"), 0.32);
+secuencia([[".ley", at("se esparcieron") + 0.4], [".nom", at("Jafet significa")], [".lista", at("Javán")]]);
+camara(".cam", at("Javán") - 0.4, 1.6, encuadre({ x: 330, y: 330, w: 900, h: 705 }, VN));
+late(pb("Javán"), at("Javán") + 1.0, { s: 1.25, n: 3 });
+entra(".i1", at("Javán"), { y: 14 });
+camara(".cam", at("Madái") - 0.4, 1.8, encuadre({ x: 1320, y: 470, w: 900, h: 705 }, VN));
+late(pb("Madái"), at("Madái") + 1.2, { s: 1.25, n: 3 });
+entra(".i2", at("Madái"), { y: 14 });
+camara(".cam", at("Kitim") - 0.5, 1.6, encuadre({ x: 700, y: 560, w: 900, h: 705 }, VN));
+late(pb("Kitim"), at("Kitim") + 1.0, { s: 1.25, n: 2 });
+entra(".i3", at("Kitim"), { y: 14 });
+</script>

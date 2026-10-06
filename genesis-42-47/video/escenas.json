@@ -1,0 +1,344 @@
+[
+ {
+  "num": "00",
+  "titulo": "Apertura",
+  "start": 0,
+  "dur": 47.892
+ },
+ {
+  "num": "01",
+  "titulo": "Veintidós años",
+  "start": 47.892,
+  "dur": 41.7
+ },
+ {
+  "num": "02",
+  "titulo": "El hambre llega a Canaán",
+  "start": 89.592,
+  "dur": 22.1
+ },
+ {
+  "num": "03",
+  "titulo": "Diez, y uno en casa",
+  "start": 111.692,
+  "dur": 29.436
+ },
+ {
+  "num": "04",
+  "titulo": "Hasta Beer-Seba, y dos caminos",
+  "start": 141.128,
+  "dur": 27.924
+ },
+ {
+  "num": "05",
+  "titulo": "La puerta de Egipto",
+  "start": 169.052,
+  "dur": 40.236
+ },
+ {
+  "num": "06",
+  "titulo": "Rostro a tierra",
+  "start": 209.288,
+  "dur": 37.14
+ },
+ {
+  "num": "07",
+  "titulo": "¡Ustedes son espías!",
+  "start": 246.428,
+  "dur": 39.132
+ },
+ {
+  "num": "08",
+  "titulo": "Estamos pagando",
+  "start": 285.56,
+  "dur": 41.1
+ },
+ {
+  "num": "09",
+  "titulo": "La plata en la boca del costal",
+  "start": 326.66,
+  "dur": 37.884
+ },
+ {
+  "num": "10",
+  "titulo": "Soy yo el que sufre",
+  "start": 364.544,
+  "dur": 36.804
+ },
+ {
+  "num": "11",
+  "titulo": "La frontera del noreste hoy",
+  "start": 401.348,
+  "dur": 38.628
+ },
+ {
+  "num": "12",
+  "titulo": "Judá, fiador",
+  "start": 439.976,
+  "dur": 43.124
+ },
+ {
+  "num": "13",
+  "titulo": "Los mejores productos del país",
+  "start": 483.1,
+  "dur": 38.316
+ },
+ {
+  "num": "14",
+  "titulo": "No tengan miedo",
+  "start": 521.416,
+  "dur": 40.332
+ },
+ {
+  "num": "15",
+  "titulo": "Tres mesas",
+  "start": 561.748,
+  "dur": 43.956
+ },
+ {
+  "num": "16",
+  "titulo": "Por orden de edad",
+  "start": 605.704,
+  "dur": 36.804
+ },
+ {
+  "num": "17",
+  "titulo": "La copa de plata",
+  "start": 642.508,
+  "dur": 24.812
+ },
+ {
+  "num": "18",
+  "titulo": "¿Adivinaba José?",
+  "start": 667.32,
+  "dur": 40.884
+ },
+ {
+  "num": "19",
+  "titulo": "De mayor a menor",
+  "start": 708.204,
+  "dur": 33.444
+ },
+ {
+  "num": "20",
+  "titulo": "El error que Dios descubrió",
+  "start": 741.648,
+  "dur": 38.94
+ },
+ {
+  "num": "21",
+  "titulo": "Judá habla",
+  "start": 780.588,
+  "dur": 30.684
+ },
+ {
+  "num": "22",
+  "titulo": "Permite que sea yo",
+  "start": 811.272,
+  "dur": 33.708
+ },
+ {
+  "num": "23",
+  "titulo": "Otro corazón",
+  "start": 844.98,
+  "dur": 40.428
+ },
+ {
+  "num": "24",
+  "titulo": "Yo soy José",
+  "start": 885.408,
+  "dur": 41.804
+ },
+ {
+  "num": "25",
+  "titulo": "Para salvar vidas",
+  "start": 927.212,
+  "dur": 49.692
+ },
+ {
+  "num": "26",
+  "titulo": "Dos años de hambre, y cinco más",
+  "start": 976.904,
+  "dur": 23.172
+ },
+ {
+  "num": "27",
+  "titulo": "El perdón",
+  "start": 1000.076,
+  "dur": 30.708
+ },
+ {
+  "num": "28",
+  "titulo": "Los carros del faraón",
+  "start": 1030.784,
+  "dur": 42.132
+ },
+ {
+  "num": "29",
+  "titulo": "Beer-Seba",
+  "start": 1072.916,
+  "dur": 30.74
+ },
+ {
+  "num": "30",
+  "titulo": "No tengas miedo de bajar a Egipto",
+  "start": 1103.656,
+  "dur": 38.916
+ },
+ {
+  "num": "31",
+  "titulo": "Rumbo a Gosén",
+  "start": 1142.572,
+  "dur": 20.364
+ },
+ {
+  "num": "32",
+  "titulo": "Las setenta personas",
+  "start": 1162.936,
+  "dur": 45.612
+ },
+ {
+  "num": "33",
+  "titulo": "Nombres que dicen algo",
+  "start": 1208.548,
+  "dur": 25.86
+ },
+ {
+  "num": "34",
+  "titulo": "El abrazo en Gosén",
+  "start": 1234.408,
+  "dur": 26.196
+ },
+ {
+  "num": "35",
+  "titulo": "Pastores",
+  "start": 1260.604,
+  "dur": 42.204
+ },
+ {
+  "num": "36",
+  "titulo": "Beer-Seba hoy",
+  "start": 1302.808,
+  "dur": 30.012
+ },
+ {
+  "num": "37",
+  "titulo": "Gosén hoy",
+  "start": 1332.82,
+  "dur": 34.62
+ },
+ {
+  "num": "38",
+  "titulo": "Ante el faraón",
+  "start": 1367.44,
+  "dur": 30.02
+ },
+ {
+  "num": "39",
+  "titulo": "Ciento treinta años",
+  "start": 1397.46,
+  "dur": 39.156
+ },
+ {
+  "num": "40",
+  "titulo": "Años muy difíciles",
+  "start": 1436.616,
+  "dur": 39.252
+ },
+ {
+  "num": "41",
+  "titulo": "La tierra de Ramesés",
+  "start": 1475.868,
+  "dur": 39.204
+ },
+ {
+  "num": "42",
+  "titulo": "Plata, ganado y tierras",
+  "start": 1515.072,
+  "dur": 39.828
+ },
+ {
+  "num": "43",
+  "titulo": "La quinta parte",
+  "start": 1554.9,
+  "dur": 37.452
+ },
+ {
+  "num": "44",
+  "titulo": "No me entierres en Egipto",
+  "start": 1592.352,
+  "dur": 42.78
+ },
+ {
+  "num": "45",
+  "titulo": "¿Cama o bastón?",
+  "start": 1635.132,
+  "dur": 33.78
+ },
+ {
+  "num": "46",
+  "titulo": "On y Hebrón hoy",
+  "start": 1668.912,
+  "dur": 35.1
+ },
+ {
+  "num": "47",
+  "titulo": "Los sueños y la plata",
+  "start": 1704.012,
+  "dur": 29.364
+ },
+ {
+  "num": "48",
+  "titulo": "Judá y las canas de Jacob",
+  "start": 1733.376,
+  "dur": 27.324
+ },
+ {
+  "num": "49",
+  "titulo": "Una familia que llega a ser nación",
+  "start": 1760.7,
+  "dur": 29.724
+ },
+ {
+  "num": "50",
+  "titulo": "Lecciones de Génesis 42",
+  "start": 1790.424,
+  "dur": 43.764
+ },
+ {
+  "num": "51",
+  "titulo": "Lecciones de Génesis 43",
+  "start": 1834.188,
+  "dur": 37.356
+ },
+ {
+  "num": "52",
+  "titulo": "Lecciones de Génesis 44",
+  "start": 1871.544,
+  "dur": 39.828
+ },
+ {
+  "num": "53",
+  "titulo": "Lecciones de Génesis 45",
+  "start": 1911.372,
+  "dur": 36.156
+ },
+ {
+  "num": "54",
+  "titulo": "Lecciones de Génesis 46",
+  "start": 1947.528,
+  "dur": 37.884
+ },
+ {
+  "num": "55",
+  "titulo": "Lecciones de Génesis 47",
+  "start": 1985.412,
+  "dur": 42.036
+ },
+ {
+  "num": "56",
+  "titulo": "Cierre",
+  "start": 2027.448,
+  "dur": 12.328
+ }
+]

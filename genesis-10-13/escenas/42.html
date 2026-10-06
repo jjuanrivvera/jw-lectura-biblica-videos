@@ -1,0 +1,47 @@
+<style>
+.ilu42 { position: absolute; left: 0; top: 0; width: 960px; height: 1080px; overflow: hidden; }
+.ilu42 .kb { position: absolute; inset: 0; }
+.ilu42 img { width: 960px; height: 1080px; object-fit: cover; object-position: 64% 50%; display: block; }
+.funde42 { position: absolute; left: 830px; top: 0; width: 160px; height: 1080px; background: linear-gradient(90deg, rgba(23, 33, 43, 0), #17212b 92%); }
+.pie42 { left: 24px; bottom: 20px; max-width: 880px; }
+.col42 { position: absolute; left: 1010px; right: 64px; top: 70px; bottom: 70px; }
+.col42 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.col42 .cita { font-size: 44px; }
+.reg42 { display: flex; flex-wrap: wrap; gap: 12px; }
+.reg42 span { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; line-height: 1; padding: 8px 18px 6px; border-radius: 14px; border: 3px solid rgba(233, 191, 96, 0.5); }
+</style>
+
+<div class="ilu42"><div class="kb"><img src="assets/img/sarai-palacio.jpg" /></div></div>
+<div class="funde42"></div>
+<div class="pie pie42">“El palacio del Faraón estaba lleno de tentaciones, pero Sara fue leal a su esposo”. <i>La Atalaya</i> núm. 3 de 2017, “Una mujer hermosa” (wol.jw.org)</div>
+
+<div class="col42">
+  <div class="b a1">
+    <div class="m">unos <b>65 años</b>, y seguía siendo hermosa</div>
+    <div class="f"><i>Perspicacia</i>, vol. 2, “Sara”, pág. 965</div>
+  </div>
+  <div class="b a2">
+    <div class="m md">la casa del <b>faraón</b>, el rey de Egipto: la Biblia no da su nombre</div>
+    <div class="reg42"><span>ovejas</span><span>vacas</span><span>burros</span><span>burras</span><span>camellos</span><span>siervos</span><span>siervas</span></div>
+    <div class="f">Génesis 12:15, 16 · sobre los camellos, las dudas de algunos “no son concluyentes” (<i>Imitemos su fe</i>, cap. 3) · el faraón: <i>Perspicacia</i>, vol. 1, “Faraón”, pág. 917</div>
+  </div>
+  <div class="b a3">
+    <div class="cita">“Pero Jehová les mandó <b>severos castigos</b> al faraón y a los de su casa debido a Sarái, la esposa de Abrán”<span class="ref">GÉNESIS 12:17</span></div>
+  </div>
+  <div class="b a4">
+    <div class="cita">“¿No ves que <b>estuve a punto</b> de casarme con ella?”<span class="ref">GÉNESIS 12:19</span></div>
+    <div class="def"><div class="t">el verbo hebreo</div><div class="x">indica una acción que <b>no se completó</b></div><div class="s">“No; a Faraón se le impidió tomar como esposa a Sara (Sarai)” · <i>La Atalaya</i>, 1 de febrero de 1992, pág. 31</div></div>
+  </div>
+  <div class="b a5">
+    <div class="cita">“hasta que salieran del país junto con <b>todo lo que tenían</b>”<span class="ref">GÉNESIS 12:20</span></div>
+    <div class="cita sm">“Él no permitió que ningún hombre los oprimiera”<span class="ref">SALMO 105:14</span></div>
+  </div>
+</div>
+
+<script>
+kb(".kb", 0, DUR, { s: 1.12, x: -2 }, { s: 1.0, x: 0 });
+aparece(".pie42", 0.6, 0.5);
+secuencia([[".a1", 0.4], [".a2", at("La llevaron")], [".a3", at("Pero Jehová")], [".a4", at("Y el faraón")], [".a5", at("Y los despidió")]]);
+entra(".reg42 span", at("ovejas") - 0.2, { y: 14, st: 0.4 });
+entra(".a4 .def", at("El verbo") - 0.2, { y: 18 });
+</script>

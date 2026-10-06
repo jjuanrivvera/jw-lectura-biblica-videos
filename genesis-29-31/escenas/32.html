@@ -1,0 +1,33 @@
+<style>
+/*incluir:_ruta.css*/
+.dias-m { position: absolute; left: 40px; top: 400px; padding: 16px 30px; border-radius: 24px; background: rgba(23,33,43,0.9); text-align: center; }
+.dias-m .k { font-family: "Montserrat"; font-weight: 800; font-size: 24px; letter-spacing: 0.16em; color: #c9a2d4; }
+.dias-m .grande { font-size: 150px; line-height: 1; color: #e0b8ea; margin-top: 18px; }
+</style>
+<!--incluir:_ruta.html-->
+<div class="cab sobre"><span class="cap">Génesis 31</span><span>versículos 22 al 25</span></div>
+<div class="dias-m"><div class="k">LABÁN · DÍA</div><div class="grande dn">1</div></div>
+<div class="col">
+  <div class="b a1"><div class="m xl oro">al 3.<sup>er</sup> día</div><div class="m">le avisan a Labán</div><div class="s">Génesis 31:22 · quizá tardó más en salir, “mientras terminaba de esquilar y lo organizaba todo” · Perspicacia, vol. 2, “Jacob”, pág. 10</div></div>
+  <div class="b a2"><div class="m xl oro">7 días</div><div class="m md">“en una afanosa persecución a lomos de sus camellos”</div><div class="s">Génesis 31:23 · Perspicacia, vol. 2, “Jacob”, pág. 10</div></div>
+  <div class="b a3"><div class="m">“no inferior a 560 Km.”</div><div class="s">Perspicacia, vol. 2, “Jacob”, pág. 10</div><div class="m oro">560 km ÷ 7 días ≥ 80 km por día</div><div class="m md">por el camino probable, unos 650 km</div><span class="propio">cálculo propio</span></div>
+  <div class="b a4"><div class="m">lo alcanza en las montañas de <b style="color:var(--oro)">Galaad</b></div><div class="m md">“al N. del valle torrencial de Jaboq”</div><div class="s">Perspicacia, vol. 1, “Galeed”, pág. 986 · el punto exacto no se sabe</div></div>
+</div>
+<script>
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+const cam = $(".cam");
+tl.set(cam, encuadre({ x: 1100, y: 120, w: 2400, h: 2640 }, V), 0);
+tl.set([$(".vado"), $(".car.jac")], { opacity: 0 }, 0);
+aparece([".l-ha", ".l-da", ".r-eu", ".rh1", ".rj1", ".rh2", ".rj2", ".rh3", ".rj3"], 0.2, 0.5, 0.45);
+aparece(".l-ga", 0.2, 0.5);
+tl.set($(".car.lab"), { opacity: 0 }, 0);
+tl.set($(".car.lab"), { opacity: 1 }, at("Reunió a sus hermanos"));
+const tP = at("Reunió a sus hermanos");
+const tFin = at("Lo alcanzó") + 0.6;
+traza([".rhl", ".rl"], tP, tFin - tP, { ease: "none" });
+recorre(".car.lab", ".todo", tP, tFin - tP, { ease: "none" });
+aparece(".dias-m", tP, 0.4);
+cuenta(".dn", 1, 7, tP, tFin - tP - 0.4);
+late(".ovalo", at("Lo alcanzó") + 0.4, { s: 1.12, n: 3 });
+secuencia([[".a1", 0.4], [".a2", tP], [".a3", at("Desde Harán hasta")], [".a4", at("Lo alcanzó")]]);
+</script>

@@ -1,0 +1,40 @@
+<style>
+.izq30 { position: absolute; left: 90px; top: 130px; width: 1000px; bottom: 80px; }
+.izq30 .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.shad { font-family: "Fraunces", serif; font-weight: 700; font-size: 150px; line-height: 1; color: var(--oro); }
+.prom { display: flex; gap: 22px; }
+.prom .tj { flex: 1; align-items: center; text-align: center; }
+.prom .tj .x { font-size: 54px; font-family: "Caveat", cursive; font-weight: 700; }
+.col.der { width: 720px; }
+.col30 svg { width: 520px; height: 560px; display: block; margin: 0 auto; }
+</style>
+<div class="cab"><span class="cap">Génesis 35</span><span>versículos 9 al 15</span></div>
+<div class="izq30">
+  <div class="b i1"><div class="cita">“ya no te llamarás Jacob, sino que tu nombre será Israel”<span class="ref">GÉNESIS 35:10</span></div><div class="m">y se presenta como “el Dios Todopoderoso” · 35:11</div><div class="shad">ʼEl Schad·dái</div><div class="def"><div class="t">Todopoderoso</div><div class="x">comunica “la idea de <b>fuerza o poder</b>”</div><div class="s">el mismo título que usó con Abrahán (17:1) · <i>Perspicacia</i>, vol. 2, “Todopoderoso”, págs. 1139, 1140</div></div></div>
+  <div class="b i2"><div class="m">lo que un pastor con once hijos no podía imaginar:</div><div class="prom"><div class="tj p1"><div class="x">naciones</div></div><div class="tj p2"><div class="x">la tierra</div></div><div class="tj p3 on"><div class="x" style="color:var(--oro)">reyes</div></div></div><div class="cita md">literalmente, “Y reyes saldrán de tus lomos”</div><div class="f">nota de la TNM en 35:11</div><div class="m md p4">el primer rey, Saúl, fue de Benjamín · después David, de Judá, “el primer rey de una larga lista”</div><div class="f p4"><i>La Atalaya</i> (estudio), junio de 2025, pág. 5 · <span class="propio" style="font-size:24px;padding:0 10px">observación propia</span> lo que un pastor no podía imaginar</div></div>
+</div>
+<div class="col der">
+  <div class="b a1 col30"><svg viewBox="0 0 520 560" class="colum"></svg>
+    <div class="def"><div class="t">ofrenda líquida</div><div class="x">“Ofrenda de <b>vino</b> que se derramaba sobre el altar”</div><div class="s">TNM, glosario · 35:14: y también aceite</div></div>
+    <div class="f">no era para adorarla: “en reconocimiento del trato especial que Jehová le había dispensado en ese preciso lugar” · <i>Perspicacia</i>, vol. 1, “Columna”, pág. 510</div></div>
+</div>
+<script>
+$(".colum").innerHTML = `<defs><linearGradient id="e30-pi" x1="0" x2="1"><stop offset="0" stop-color="#7d766c"/><stop offset="0.45" stop-color="#b8b0a2"/><stop offset="1" stop-color="#6c665d"/></linearGradient><linearGradient id="e30-vi" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#8e2a3a"/><stop offset="1" stop-color="#5e1826"/></linearGradient></defs>
+  <ellipse cx="250" cy="540" rx="150" ry="16" fill="#000" opacity="0.3"/>
+  <path d="M 190 540 L 200 170 C 205 150 290 145 300 170 L 312 540 Z" fill="url(#e30-pi)" stroke="#57524b" stroke-width="3"/>
+  <path d="M 214 250 L 240 260 M 262 330 L 290 322 M 220 420 L 250 430" stroke="#6d675f" stroke-width="3"/>
+  <g class="jarra"><path d="M 360 40 C 330 40 320 70 330 95 C 336 110 370 120 395 110 C 420 100 428 70 410 50 Z" fill="#b5764a" stroke="#6f4528" stroke-width="3"/><path d="M 330 95 L 305 118" stroke="#b5764a" stroke-width="12" stroke-linecap="round"/></g>
+  <path class="chorro" d="M 303 120 C 290 140 270 150 262 168 C 258 200 262 260 258 330" fill="none" stroke="url(#e30-vi)" stroke-width="9" stroke-linecap="round"/>
+  <path class="mancha" d="M 205 172 C 230 160 280 162 296 176 L 292 260 C 280 250 270 300 262 330 C 250 280 225 250 210 262 Z" fill="#7a2233" opacity="0.55"/>`;
+secuencia([[".i1", 0.4], [".i2", at("Y le promete")]]);
+entra(".p1", at("Y le promete") + 0.5, { y: 20 });
+entra(".p2", at("Y le promete") + 1.0, { y: 20 });
+entra(".p3", at("reyes"), { y: 20, s: 0.8 });
+entra(".p4", at("El primer rey"), { y: 16 });
+atenua(".izq30", at("Jacob levantó") - 0.2, 0.25);
+aparece(".a1", at("Jacob levantó") - 0.3, 0.5);
+tl.set($$(".colum .jarra, .colum .chorro, .colum .mancha"), { opacity: 0 }, 0);
+tl.fromTo($(".colum .jarra"), { opacity: 0, rotation: 0, svgOrigin: "370 80" }, { opacity: 1, rotation: -25, svgOrigin: "370 80", duration: 0.8, immediateRender: false }, at("derramó"));
+traza(".colum .chorro", at("derramó") + 0.6, 1.0);
+aparece(".colum .mancha", at("ofrenda líquida"), 1.2, 0.55);
+</script>

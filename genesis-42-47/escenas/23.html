@@ -1,0 +1,40 @@
+<style>
+.tabla.t23 { top: 110px; grid-template-columns: 250px 1fr 1fr; row-gap: 12px; }
+.tabla.t23 .c { font-size: 30px; padding: 10px 18px; }
+.tabla.t23 .h { font-size: 30px; }
+.tabla.t23 .rt { font-size: 24px; }
+.pie23 { position: absolute; left: 80px; right: 80px; top: 880px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+.pie23 .cita { font-size: 30px; }
+.nota23 { position: absolute; left: 80px; bottom: 16px; }
+</style>
+
+<div class="cab"><span class="cap">De Génesis 37 a Génesis 44</span><span>los mismos hermanos, otro corazón</span></div>
+<div class="nota23"><span class="propio chico">tabla propia con los versículos indicados</span></div>
+<div class="guia23" style="position:absolute; left:340px; right:80px; top:360px; text-align:center"><div class="m" style="font-size:76px">la misma oportunidad, y esta vez <b>eligieron lo contrario</b></div></div>
+<div class="tabla t23">
+  <div class="h h0"></div><div class="h h1">Génesis 37</div><div class="h h2">Génesis 44</div>
+  <div class="rt f1">El hijo de Raquel</div><div class="c f1">José, el preferido: <b>lo odiaban</b> <small>37:3, 4</small></div><div class="c si f1">Benjamín, el preferido: <b>lo defienden</b> <small>44:20, 30</small></div>
+  <div class="rt f2">La plata</div><div class="c f2">lo venden por <b>veinte piezas de plata</b> <small>37:28</small></div><div class="c si f2">una copa de plata lo hace esclavo, y <b>no lo abandonan</b> <small>44:12, 13</small></div>
+  <div class="rt f3">Judá</div><div class="c f3">“Vamos a vendérselo a los ismaelitas” <small>37:27</small></div><div class="c si f3">“Permite que sea yo y no el muchacho” <small>44:33</small></div>
+  <div class="rt f4">El padre</div><div class="c f4">le mienten con una túnica manchada de sangre <small>37:31-33</small></div><div class="c si f4">temen tanto su dolor que <b>prefieren la esclavitud</b> <small>44:30, 34</small></div>
+  <div class="rt f5">La culpa</div><div class="c f5">la esconden</div><div class="c si f5">la confiesan: “El Dios verdadero ha descubierto el error” <small>44:16</small></div>
+</div>
+<div class="pie23">
+  <div class="cita sm p1">“Había desaparecido el espíritu envidioso que unos veintidós años atrás les había movido a vender a su hermano”<span class="ref">PERSPICACIA, VOL.&nbsp;2, “JOSÉ”, PÁG.&nbsp;125</span></div>
+  <div class="cita sm p2">“Judá era un hombre nuevo. No solo mostró arrepentimiento, sino <b>consideración, generosidad y compasión</b>”<span class="ref">LA ATALAYA, 1 DE MAYO DE 2015, PÁG.&nbsp;15</span></div>
+</div>
+
+<script>
+entra([".h1", ".h2"], 0.3, { y: -16, st: 0.2 });
+entra(".guia23", 0.6, { y: 20 });
+sale(".guia23", at("Al preferido de Raquel") - 0.5, { y: -20 });
+entra($$(".tabla.t23 .rt"), 0.8, { x: -20, y: 0, st: 0.15 });
+aparece(".nota23", 0.8, 0.5);
+entra($$(".tabla.t23 .c.f1"), at("Al preferido de Raquel"), { y: 20, st: 0.12 });
+entra($$(".tabla.t23 .c.f2"), at("Antes lo vendieron"), { y: 20, st: 0.12 });
+entra($$(".tabla.t23 .c.f3"), at("Antes Judá"), { y: 20, st: 0.12 });
+entra($$(".tabla.t23 .c.f4"), at("Antes engañaron"), { y: 20, st: 0.12 });
+entra($$(".tabla.t23 .c.f5"), at("Antes escondieron"), { y: 20, st: 0.12 });
+entra(".p1", at("La envidia"), { y: 20 });
+entra(".p2", at("Y Judá era"), { y: 20 });
+</script>

@@ -1,0 +1,79 @@
+<style>
+.cab22 { position: absolute; left: 90px; right: 90px; top: 40px; height: 230px; }
+.cab22 > .b { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 40px; }
+.cab22 .cita { font-size: 52px; text-align: center; }
+.cab22 .tj { padding: 18px 28px; max-width: 560px; }
+.cab22 .tj .x { font-size: 44px; }
+.cab22 .m { font-size: 60px; }
+.gr22 { position: absolute; inset: 0; }
+.gr22 svg { width: 1920px; height: 1080px; display: block; }
+.v22 { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; text-anchor: middle; fill: var(--tiza); }
+.nm22 { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; fill: var(--tenue); }
+.an22 { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; fill: var(--oro); }
+.fu22 { position: absolute; left: 90px; bottom: 14px; }
+</style>
+
+<div class="cab22">
+  <div class="b a1"><div class="cita">“Esta es la historia de <b>Sem</b>”<span class="ref">GÉNESIS 11:10 · DIEZ GENERACIONES, HASTA ABRÁN</span></div></div>
+  <div class="b a2">
+    <div class="tj"><div class="k">Génesis 5</div><div class="x">cada vida termina: “y entonces <b>murió</b>”</div></div>
+    <div class="tj on"><div class="k">Génesis 11</div><div class="x">la misma fórmula, <b>sin</b> “entonces murió”</div></div>
+    <div class="m ab">la lista queda abierta: <b>lleva a Abrán</b></div>
+  </div>
+  <div class="b a3"><div class="cita" style="font-size:40px">“cuanto más se alejaba la humanidad del modelo original perfecto, <b>menos tiempo vivía</b>”<span class="ref">¡DESPERTAD!, MAYO DE 2006, PÁG. 8</span></div></div>
+</div>
+
+<div class="gr22"><svg viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="g22-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9c7d6"/><stop offset="1" stop-color="#7d8fa3"/></linearGradient>
+    <linearGradient id="g22-d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0c96e"/><stop offset="1" stop-color="#b8892e"/></linearGradient>
+    <linearGradient id="g22-ab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a8dca8"/><stop offset="1" stop-color="#5f9f63"/></linearGradient>
+  </defs>
+  <g class="sal"><rect x="120" y="844" width="1720" height="12" fill="#92d193" opacity="0.8"/><text class="an22" x="1850" y="1062" style="fill:#92d193;text-anchor:end;font-size:38px">franja verde: 70 u 80 años · Salmo 90:10</text></g>
+  <g class="cols"></g>
+  <path class="suelo" d="M 110 900 H 1850" stroke="rgba(241,233,216,0.5)" stroke-width="4"/>
+  <g class="dil"><path d="M 988 290 V 900" stroke="#ec8a67" stroke-width="5" stroke-dasharray="14 10"/><text class="an22" x="1000" y="318" style="fill:#ec8a67">el Diluvio</text></g>
+  <g class="esc"><g class="e2"><path d="M 1090 621 H 1340" stroke="#e9bf60" stroke-width="4" stroke-dasharray="10 8"/><text class="an22" x="1350" y="612">unos 450</text></g><g class="e3"><path d="M 1342 751 H 1592" stroke="#e9bf60" stroke-width="4" stroke-dasharray="10 8"/><text class="an22" x="1600" y="742">unos 240</text></g></g>
+</svg></div>
+<div class="fu22 f">años de vida según Génesis 5; 9:29; 11:10-32; 25:7 · sumas propias; coinciden con <i>Perspicacia</i>, “Duración de la vida”, pág. 725</div>
+
+<script>
+const V = [["Adán", 930], ["Set", 912], ["Enós", 905], ["Quenán", 910], ["Mahalalel", 895], ["Jared", 962], ["Enoc", 365], ["Matusalén", 969], ["Lamec", 777], ["Noé", 950],
+  ["Sem", 600], ["Arpaksad", 438], ["Selá", 433], ["Éber", 464], ["Péleg", 239], ["Reú", 239], ["Serug", 230], ["Nacor", 148], ["Taré", 205], ["Abrahán", 175]];
+const K = 0.62, X0 = 150, P = 84, AN = 62;
+let s = "";
+V.forEach(([n, a], i) => {
+  const x = X0 + i * P + (i >= 10 ? 26 : 0), h = a * K, g = i === 19 ? "g22-ab" : i >= 10 ? "g22-d" : "g22-a";
+  s += `<g class="c c${i}"><rect class="br" x="${x}" y="${900 - h}" width="${AN}" height="${h}" rx="6" fill="url(#${g})"/>`;
+  s += `<text class="v22" x="${x + AN / 2}" y="${900 - h - 14}">${a}</text>`;
+  s += `<text class="nm22" transform="translate(${x + AN / 2 + 8} 928) rotate(40)">${n}</text></g>`;
+});
+pinta(".cols", s);
+const barras = (ids, t, d = 0.5, st = 0.08) => {
+  const els = ids.map((i) => $(".c" + i));
+  tl.fromTo(els.map((e) => e.querySelector(".br")), { scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 1, duration: d, stagger: st, ease: "power2.out", immediateRender: false }, t);
+  tl.set(els.map((e) => e.querySelector(".br")), { scaleY: 0, transformOrigin: "50% 100%" }, 0);
+  tl.fromTo(els.flatMap((e) => [...e.querySelectorAll("text")]), { opacity: 0 }, { opacity: 1, duration: 0.3, stagger: st / 2, immediateRender: false }, t + d * 0.6);
+  tl.set(els.flatMap((e) => [...e.querySelectorAll("text")]), { opacity: 0 }, 0);
+};
+// Los rótulos de la cabecera empiezan grandes y bajos; suben cuando aparece la gráfica.
+tl.set($(".cab22"), { y: 300, scale: 1.1, transformOrigin: "50% 50%" }, 0);
+secuencia([[".a1", 0.4], [".a2", at("con la fórmula")], [".a3", at("Cuanto más")]]);
+entra(".ab", at("La lista queda") - 0.2, { y: 16 });
+const tG = at("Y se ve");
+tl.to($(".cab22"), { y: 0, scale: 1, duration: 0.8, ease: "power2.inOut" }, tG - 0.9);
+traza(".suelo", tG - 0.3, 0.6);
+barras([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tG, 0.5, 0.07);
+entra(".dil", tG + 0.9, { y: 10 });
+barras([10], at("Sem vivió") - 0.1, 0.6);
+barras([11], at("Arpaksad") - 0.1, 0.6);
+barras([12, 13], at("Arpaksad") + 0.9, 0.5, 0.25);
+barras([14], at("Péleg") - 0.1, 0.6);
+barras([15, 16], at("Péleg") + 0.9, 0.5, 0.25);
+barras([17], at("Nacor") - 0.1, 0.6);
+barras([18, 19], at("Nacor") + 0.9, 0.5, 0.25);
+entra(".e2", at("cuatrocientos treinta") + 0.4, { y: 10 });
+entra(".e3", at("doscientos treinta") + 0.4, { y: 10 });
+entra(".sal", at("Cuanto más") - 0.4, { y: 10 });
+aparece(".fu22", tG + 1.0, 0.5);
+</script>

@@ -1,0 +1,35 @@
+<style>
+.sangre img { object-position: 50% 40%; }
+.col10 { position: absolute; left: 1360px; right: 50px; top: 120px; bottom: 80px; }
+.col10 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.col10 .cita { font-size: 40px; }
+.col10 .num30 { font-family: "Fraunces", serif; font-weight: 700; font-size: 130px; line-height: 0.9; color: var(--oro); }
+.col10 .num30 small { font-size: 64px; }
+.col10 .m { font-size: 58px; }
+.col10 .s { font-size: 26px; }
+.pie10 { left: 80px; top: 96px; }
+</style>
+
+<div class="sangre"><div class="kb" data-layout-allow-overflow><img src="assets/img/ebed-rey.jpg" /></div></div>
+<div class="velo vd" style="background:linear-gradient(90deg, rgba(23,33,43,0) 56%, rgba(23,33,43,0.86) 68%, rgba(23,33,43,0.96) 100%)"></div>
+<div class="cab sobre"><span class="cap">Jeremías 38</span><span>versículos 8 al 10</span></div>
+<div class="pie pie10"><i>Guía de actividades</i>, 28 de septiembre a 4 de octubre de 2026</div>
+
+<div class="col10">
+  <div class="b q10"><div class="cita">“¡Oh, mi señor el rey, lo que esos hombres le han hecho al profeta Jeremías es <b>muy cruel</b>! Lo han arrojado a la cisterna, y allí se va a morir de hambre, porque ya no queda pan en la ciudad”<span class="ref">JEREMÍAS 38:9</span></div>
+    <div class="s">“Habló con Sedequías en público” · <i>La Atalaya</i>, 1 de mayo de 2012, pág. 31</div></div>
+  <div class="b b30"><div class="num30 n30">30 <small>hombres</small></div>
+  <div class="m p30">¿para qué tantos?</div>
+  <div class="s s30">“Es probable que Sedequías no mandase a Ébed-mélec tomar 30 hombres consigo porque todos fuesen necesarios para sacar a Jeremías de la cisterna, sino para que pudieran enfrentarse a cualquier posible interferencia de los príncipes o los sacerdotes”</div>
+  <div class="f f30"><i>Perspicacia</i>, «Ébed-mélec»</div></div>
+</div>
+
+<script>
+kb(".sangre .kb", 0, DUR, { s: 1.14, x: 3, y: 2 }, { s: 1.02, x: -1, y: 0 });
+aparece([".cab", ".pie10"], 0.3, 0.6);
+aparece(".vd", 0.2, 0.8);
+secuencia([[".q10", at("Oh, mi señor") - 0.4], [".b30", at("Y el rey que")]], null, { y: 24 });
+entra(".n30", at("treinta hombres"), { x: 30, y: 0 });
+entra(".p30", at("Por qué tantos"), { y: 20 });
+entra([".s30", ".f30"], at("Probablemente"), { y: 20, st: 0.3 });
+</script>

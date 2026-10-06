@@ -1,0 +1,127 @@
+<style>
+.a01 { position: absolute; left: 90px; right: 90px; top: 150px; height: 760px; display: grid; grid-template-columns: 420px 1fr; column-gap: 80px; align-items: center; }
+.a01 .med { position: relative; width: 400px; }
+.a01 .med .n { font-size: 34px; }
+.a01 .lado { display: flex; flex-direction: column; gap: 34px; }
+.a01 .fila { display: grid; grid-template-columns: 250px 1fr; column-gap: 30px; align-items: baseline; padding-bottom: 26px; border-bottom: 3px solid rgba(241, 233, 216, 0.12); }
+.a01 .fila .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro); }
+.a01 .fila .m { font-size: 70px; }
+.a01 .fila .ref { display: block; font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 24px; color: var(--tenue); margin-top: 6px; }
+/* Línea de tiempo 1752-1709: x = 120 + (1752 - año) * 39 */
+.lt01 { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.lt01 svg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.et01 { position: absolute; width: 640px; margin-left: -320px; text-align: center; white-space: nowrap; }
+.et01 .a { font-family: "Fraunces", serif; font-weight: 700; font-size: 40px; color: var(--tiza); line-height: 1; }
+.et01 .d { font-family: "Caveat", cursive; font-weight: 700; font-size: 42px; line-height: 1.02; color: var(--tenue); margin-top: 6px; }
+.et01.oro .a { color: var(--oro); }
+.et01.oro .d { color: var(--tiza); }
+.et01.calc .a { color: var(--cielo); }
+.banda { position: absolute; height: 54px; border-radius: 12px; display: flex; align-items: center; padding-left: 14px; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 21px; letter-spacing: 0.03em; text-transform: uppercase; color: #17212b; white-space: nowrap; overflow: hidden; }
+.eje01 { position: absolute; left: 120px; width: 1680px; top: 596px; height: 6px; border-radius: 3px; background: rgba(241, 233, 216, 0.4); }
+.cal01 { position: absolute; left: 1100px; top: 528px; }
+/* Los 430 años: x = 160 + (1943 - año) * 1600 / 430 */
+.b01 { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.b01 .barra { position: absolute; top: 540px; height: 70px; border-radius: 14px; }
+.b01 .t215 { position: absolute; top: 470px; width: 800px; text-align: center; font-family: "Fraunces", serif; font-weight: 700; font-size: 60px; color: var(--tiza); }
+.b01 .t215 small { font-family: "Caveat", cursive; font-size: 44px; color: var(--tenue); margin-left: 12px; }
+.b01 .y { position: absolute; top: 640px; width: 520px; margin-left: -260px; text-align: center; font-family: "Fraunces", serif; font-weight: 700; font-size: 44px; }
+.b01 .y .d { display: block; font-family: "Caveat", cursive; font-size: 40px; color: var(--tenue); margin-top: 4px; }
+.b01 .total { position: absolute; left: 160px; width: 1600px; top: 800px; text-align: center; }
+.b01 .total .m { font-size: 84px; }
+.b01 .llave { position: absolute; left: 160px; top: 740px; width: 1600px; height: 50px; }
+.b01 .llave path { fill: none; stroke: var(--oro); stroke-width: 6; stroke-linecap: round; }
+</style>
+
+<div class="cab"><span class="cap">Contexto</span><span>de Génesis 41 a Génesis 47</span></div>
+
+<div class="fase a01">
+  <!--RETRATO-->
+  <div class="lado">
+    <div class="fila f1"><span class="r">En Egipto</span><span><span class="m">José vende el grano</span><span class="ref">Génesis 41:57</span></span></div>
+    <div class="fila f2"><span class="r">En Canaán</span><span><span class="m rojo">Jacob lo da por muerto</span><span class="ref">Génesis 37:33-35</span></span></div>
+    <div class="fila f3"><span class="r">Los hermanos</span><span><span class="m">cargan con lo que hicieron</span><span class="ref">Génesis 42:21</span></span></div>
+  </div>
+</div>
+
+<div class="fase lt01">
+  <div class="eje01"></div>
+  <div class="banda b-esc" style="left:198px; width:507px; top:470px; background:#b3bdc8;">José: esclavo y preso</div>
+  <div class="banda b-gob" style="left:705px; width:1095px; top:470px; background:#e9bf60;">José gobierna Egipto</div>
+  <div class="banda b-abu" style="left:705px; width:273px; top:640px; background:#92c7a0;">7 de abundancia</div>
+  <div class="banda b-ham" style="left:978px; width:273px; top:640px; background:#ec8a67;">7 de hambre</div>
+  <div class="banda b-gos" style="left:1056px; width:744px; top:708px; background:#93bbef;">la familia en Gosén</div>
+  <div class="et01 e1750" style="left:198px; top:350px; width:390px; margin-left:-195px;"><div class="a">1750</div><div class="d">vendido, 17 años</div></div>
+  <div class="et01 e1737" style="left:705px; top:350px;"><div class="a">1737</div><div class="d">ante el faraón, 30 años</div></div>
+  <div class="et01 calc e1730" style="left:978px; top:532px;"><div class="d" style="margin:0;font-size:34px;color:var(--cielo)">h. 1730</div></div>
+  <div class="et01 oro e1728" style="left:1056px; top:790px;"><div class="a">1728</div><div class="d">José se da a conocer</div><div class="d">Jacob entra en Egipto, 130 años</div></div>
+  <div class="et01 e1711" style="left:1719px; top:790px; width:400px; margin-left:-200px;"><div class="a">1711</div><div class="d">muere Jacob, 147 años</div></div>
+  <svg viewBox="0 0 1920 1080"><g class="pts01">
+    <circle class="p p1750" cx="198" cy="599" r="15" fill="#f1e9d8" />
+    <circle class="p p1737" cx="705" cy="599" r="15" fill="#f1e9d8" />
+    <circle class="p p1730" cx="978" cy="599" r="15" fill="#93bbef" />
+    <circle class="p p1728" cx="1056" cy="599" r="19" fill="#e9bf60" stroke="#17212b" stroke-width="5" />
+    <circle class="p p1711" cx="1719" cy="599" r="15" fill="#f1e9d8" />
+  </g></svg>
+  <div class="cal01"><span class="propio chico">h. 1730: año calculado (cálculo propio)</span></div>
+  <div class="pie" style="right:60px; bottom:24px;">Años: <i>Perspicacia</i>, “Jacob”, vol.&nbsp;2, págs.&nbsp;11, 12; “Egipto, egipcio”, vol.&nbsp;1, pág.&nbsp;767; “Israel”, vol.&nbsp;1, pág.&nbsp;1263</div>
+</div>
+
+<div class="fase b01">
+  <div class="tit01b" style="position:absolute; left:0; right:0; top:230px; text-align:center"><div class="m" style="font-size:80px">la mudanza de Génesis 46 cae <b>justo en medio</b></div></div>
+  <div class="barra ba1" style="left:160px; width:800px; background:#b3bdc8;"></div>
+  <div class="barra ba2" style="left:960px; width:800px; background:#93bbef;"></div>
+  <div class="t215 t1" style="left:160px;">215 años<small>en Canaán</small></div>
+  <div class="t215 t2" style="left:960px;">215 años<small>en Egipto</small></div>
+  <div class="y y1943" style="left:160px; margin-left:-40px; text-align:left;">1943<span class="d">Abrahán entra en Canaán</span></div>
+  <div class="y oro y1728" style="left:960px; color:var(--oro);">1728<span class="d">Jacob entra en Egipto</span></div>
+  <div class="y y1513" style="left:1760px; margin-left:-480px; text-align:right; width:520px;">1513<span class="d">el éxodo</span></div>
+  <svg class="llave" viewBox="0 0 1600 50"><path d="M 6 6 Q 6 26 60 26 L 740 26 Q 800 26 800 46 Q 800 26 860 26 L 1540 26 Q 1594 26 1594 6" /></svg>
+  <div class="total"><div class="m oro">430 años <span style="color:var(--tiza)">· Éxodo 12:40</span></div></div>
+  <div class="pie" style="right:60px; bottom:24px;"><i>Perspicacia</i>, vol.&nbsp;1, “Cronología”, pág.&nbsp;597</div>
+</div>
+
+<script>
+$(".a01").insertAdjacentHTML("afterbegin", medallon("jose", { clase: "raquel" }));
+const tV = at("Lo vendieron");
+const tM = at("Esa mudanza");
+// Fase A: dónde quedó cada uno.
+aparece(".a01 .med", 0.3, 0.6);
+entra(".f1", at("vendiendo grano"), { x: 40, y: 0 });
+entra(".f2", at("Jacob lo da"), { x: 40, y: 0 });
+entra(".f3", at("los hermanos cargan"), { x: 40, y: 0 });
+sale(".a01", tV - 0.7, { y: -30 });
+// Fase B: la línea de tiempo.
+aparece(".eje01", tV - 0.3, 0.4);
+salta(".p1750", tV, { desde: 0 });
+entra(".e1750", tV + 0.2, { y: -16 });
+tl.fromTo(inicial(el(".b-esc"), { opacity: 0 }), { opacity: 1, clipPath: "inset(0 100% 0 0 round 12px)" }, { clipPath: "inset(0 0% 0 0 round 12px)", duration: 1.6, ease: "power1.inOut", immediateRender: false }, tV + 0.5);
+const tA = at("Siete años de abundancia");
+salta(".p1737", tA - 0.4, { desde: 0 });
+entra(".e1737", tA - 0.3, { y: -16 });
+tl.fromTo(inicial(el(".b-abu"), { opacity: 0 }), { opacity: 1, clipPath: "inset(0 100% 0 0 round 12px)" }, { clipPath: "inset(0 0% 0 0 round 12px)", duration: 1.2, ease: "power1.inOut", immediateRender: false }, tA);
+const tH = at("empieza el hambre");
+salta(".p1730", tH, { desde: 0 });
+tl.fromTo(inicial(el(".b-ham"), { opacity: 0 }), { opacity: 1, clipPath: "inset(0 100% 0 0 round 12px)" }, { clipPath: "inset(0 0% 0 0 round 12px)", duration: 1.2, ease: "power1.inOut", immediateRender: false }, tH);
+entra(".e1730", tH + 0.2, { y: 10 });
+aparece(".cal01", tH + 0.6, 0.5);
+const t28 = at("En el mil setecientos veintiocho");
+tl.fromTo(inicial(el(".b-gob"), { opacity: 0 }), { opacity: 1, clipPath: "inset(0 100% 0 0 round 12px)" }, { clipPath: "inset(0 0% 0 0 round 12px)", duration: 1.4, ease: "power1.inOut", immediateRender: false }, tA - 0.2);
+salta(".p1728", t28, { desde: 0, d: 0.7 });
+entra(".e1728", t28 + 0.2, { y: 16 });
+late(".p1728", t28 + 1.0, { s: 1.4, n: 3 });
+tl.fromTo(inicial(el(".b-gos"), { opacity: 0 }), { opacity: 1, clipPath: "inset(0 100% 0 0 round 12px)" }, { clipPath: "inset(0 0% 0 0 round 12px)", duration: 1.6, ease: "power1.inOut", immediateRender: false }, t28 + 0.3);
+salta(".p1711", t28 + 1.2, { desde: 0 });
+entra(".e1711", t28 + 1.4, { y: 16 });
+aparece(".lt01 .pie", tV + 0.5, 0.5);
+// Fase C: la cámara se aleja hasta los 430 años.
+tl.to($(".lt01"), { opacity: 0, scale: 0.35, x: -40, y: -40, transformOrigin: "55% 55%", duration: 1.0, ease: "power2.in" }, tM - 0.6);
+tl.fromTo(inicial(el(".ba1"), { opacity: 0 }), { opacity: 1, scaleX: 0, transformOrigin: "100% 50%" }, { scaleX: 1, duration: 1.2, ease: "power2.out", immediateRender: false }, at("doscientos quince años desde"));
+tl.fromTo(inicial(el(".ba2"), { opacity: 0 }), { opacity: 1, scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 1.2, ease: "power2.out", immediateRender: false }, at("y otros doscientos"));
+entra(".y1728", tM + 0.7, { y: 20 });
+entra(".tit01b", tM + 0.4, { y: 16 });
+entra([".t1", ".y1943"], at("doscientos quince años desde") + 0.3, { y: 16, st: 0.2 });
+entra([".t2", ".y1513"], at("y otros doscientos") + 0.3, { y: 16, st: 0.2 });
+traza(".b01 .llave path", at("Juntos"), 1.0);
+entra(".b01 .total", at("Juntos") + 0.5, { y: 20 });
+aparece(".b01 .pie", at("Juntos") + 0.8, 0.5);
+</script>

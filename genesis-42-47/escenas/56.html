@@ -1,0 +1,24 @@
+<style>
+.fondo56 { position: absolute; inset: 0; overflow: hidden; }
+.fondo56 .kb { position: absolute; inset: 0; }
+.fondo56 img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.7) brightness(0.32); }
+.fondo56::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(22, 32, 42, 0.35), rgba(22, 32, 42, 0.9) 100%); }
+.cierre56 { position: absolute; left: 160px; right: 160px; top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 30px; }
+.cierre56 .cita { font-size: 84px; line-height: 1.15; }
+.cierre56 .cita .ref { font-size: 36px; margin-top: 30px; }
+.cierre56 svg { width: 700px; height: 34px; }
+.cierre56 svg path { fill: none; stroke: var(--oro); stroke-width: 7; stroke-linecap: round; }
+</style>
+
+<div class="fondo56"><div class="kb"><img src="assets/img/jose-revela.jpg" /></div></div>
+<div class="cierre56">
+  <div class="cita c1">“No fueron ustedes los que me enviaron aquí, <b>sino el Dios verdadero</b>”<span class="ref">GÉNESIS 45:8</span></div>
+  <svg viewBox="0 0 700 34"><path d="M 10 18 C 200 6 460 28 690 12" /></svg>
+</div>
+
+<script>
+aparece(".fondo56", 0, 1.0);
+kb(".fondo56 .kb", 0, DUR, { s: 1.08 }, { s: 1.0 });
+entra(".c1", 0.4, { y: 30, d: 1.0 });
+traza(".cierre56 svg path", at("Génesis cuarenta y cinco") - 0.2, 1.0);
+</script>

@@ -1,0 +1,20 @@
+.mapa { left: 0; top: 0; width: 1920px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 5000px; height: 3800px; }
+.lugar { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 84px; fill: #1b2733; stroke-width: 22px; }
+.lugar.gr { font-size: 116px; fill: #8a1c10; }
+.pt { fill: #fff; stroke: #1b2733; stroke-width: 12; }
+.ruta-h { stroke-width: 56; }
+.ruta { stroke-width: 28; stroke: #c0392b; }
+.ruta.rl { stroke: #6b1f7a; stroke-dasharray: 60 40; }
+.seg { fill: none; stroke: none; }
+.car.jac circle { fill: #e9bf60; stroke: #3b2a10; stroke-width: 10; }
+.car.lab circle { fill: #7d2f8f; stroke: #fff; stroke-width: 10; }
+.rio-t { font-family: "Fraunces", serif; font-style: italic; font-weight: 700; font-size: 110px; fill: #1f5fa8; stroke-width: 22px; }
+.anillo-v { fill: rgba(31,95,168,0.18); stroke: #1f5fa8; stroke-width: 14; }
+.ovalo { fill: rgba(233,191,96,0.25); stroke: #8a5a00; stroke-width: 14; stroke-dasharray: 36 22; }
+.esquina { position: absolute; left: 0; top: 0; width: 700px; height: 420px; background: radial-gradient(ellipse 100% 100% at 0 0, #17212b 38%, rgba(23,33,43,0.85) 55%, rgba(23,33,43,0) 100%); }
+.col { top: 110px; bottom: 100px; right: 60px; width: 760px; }
+.pie-mapa { top: auto; bottom: 22px; left: auto; right: 60px; max-width: 760px; }
+.cuenta { display: flex; align-items: baseline; gap: 20px; }
+.cuenta .grande { font-size: 170px; color: var(--oro); }
+.cuenta .m { font-size: 80px; }

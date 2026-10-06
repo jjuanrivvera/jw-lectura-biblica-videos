@@ -1,0 +1,39 @@
+<!--lead:2.6-->
+<style>
+.dos { position: absolute; left: 80px; right: 80px; top: 120px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+.dos .dato .v { font-size: 46px; font-family: "Fraunces"; font-weight: 500; color: var(--tiza); line-height: 1.2; }
+.orden { position: absolute; left: 120px; right: 120px; top: 440px; text-align: center; }
+.orden .cita { font-size: 76px; }
+.betel { position: absolute; left: 80px; right: 80px; top: 120px; bottom: 60px; display: grid; grid-template-columns: 420px 1fr; column-gap: 50px; align-items: center; }
+.betel svg { width: 420px; height: 620px; }
+.betel .cita { font-size: 50px; }
+</style>
+<div class="capcard cc"><div class="num">Génesis 31</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">la huida y el pacto de Galeed</div><div class="edad">1761 antes de nuestra era</div></div>
+<div class="fase fb">
+  <div class="cab"><span class="cap">Génesis 31</span><span>versículos 1 al 3 y 13</span></div>
+  <div class="dos">
+    <div class="dato d1"><div class="k">los hijos de Labán</div><div class="v">“Jacob se ha quedado con todo lo que le pertenecía a nuestro padre”</div><div class="s">Génesis 31:1</div></div>
+    <div class="dato d2"><div class="k">la cara de Labán</div><div class="v">“su actitud hacia él no era igual que antes”</div><div class="s">Génesis 31:2</div></div>
+  </div>
+  <div class="orden"><div class="cita">“Regresa a la tierra de tus padres y adonde están tus parientes. Yo continuaré contigo”<span class="ref">JEHOVÁ · GÉNESIS 31:3</span></div></div>
+  <div class="betel">
+    <svg class="col-b" viewBox="0 0 420 620"></svg>
+    <div><div class="cita">“Yo soy el Dios verdadero, que se te apareció en Betel, donde ungiste una columna y donde me hiciste un voto”<span class="ref">GÉNESIS 31:13</span></div><div class="m md" style="margin-top:24px">veinte años después, <b style="color:var(--oro)">Jehová había cumplido su parte</b></div><div class="s">el voto: Génesis 28:20-22</div></div>
+  </div>
+</div>
+<script>
+/*incluir:_dibujos.js*/
+pinta(".col-b", defsDibujos() + '<ellipse cx="210" cy="590" rx="170" ry="22" fill="rgba(0,0,0,0.3)"/>' +
+  '<path d="M 150 590 L 140 170 C 140 130 170 104 210 104 C 250 104 280 132 276 172 L 270 590 Z" fill="' + G("piedra") + '" stroke="#4d473f" stroke-width="4"/>' +
+  '<path d="M 170 150 C 190 132 230 130 250 146 L 246 240 C 230 250 196 250 176 238 Z" fill="rgba(233,191,96,0.55)"/>' +
+  '<path d="M 210 60 C 196 80 196 94 210 100 C 224 94 224 80 210 60 Z" fill="#e9bf60"/>' +
+  '<text class="eti oro" x="210" y="40" text-anchor="middle" style="font-size:44px">Betel</text>');
+const tF = at("Los hijos de Labán") - 0.3;
+capitulo(".cc", 0.3, tF - 0.5);
+aparece(".fb", tF, 0.5);
+entra(".d1", tF + 0.2, { y: 20 });
+entra(".d2", at("y Labán ya no lo miraba"), { y: 20 });
+entra(".orden", at("Entonces Jehová le dijo"), { y: 30 });
+sale([".d1", ".d2", ".orden"], at("El ángel se presentó") - 0.5);
+entra(".betel", at("El ángel se presentó"), { y: 30 });
+</script>

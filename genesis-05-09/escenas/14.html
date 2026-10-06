@@ -1,0 +1,54 @@
+<style>
+.fa .c5 { position: absolute; left: 80px; right: 80px; top: 150px; }
+.fa .c5 .cita { font-size: 64px; }
+.fa .c5 .cita i { font-style: normal; color: var(--rojo); }
+.viol { position: absolute; left: 80px; right: 80px; top: 470px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; align-items: center; }
+.viol .pal { font-family: "Caveat", cursive; font-weight: 700; font-size: 190px; line-height: 1; color: var(--rojo); }
+.viol .ref { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.1em; color: var(--oro); }
+.viol .no { font-family: "Caveat", cursive; font-weight: 700; font-size: 60px; color: var(--tenue); text-decoration: line-through; text-decoration-thickness: 4px; }
+.viol .si { font-family: "Caveat", cursive; font-weight: 700; font-size: 72px; }
+.fb .c6 { position: absolute; left: 80px; right: 80px; top: 140px; }
+.fb .c6 .cita { font-size: 60px; }
+.notas { position: absolute; left: 80px; right: 80px; top: 420px; display: grid; grid-template-columns: 1fr 1fr 1.2fr; column-gap: 34px; }
+.notas .def .x { font-size: 58px; }
+.c8 { position: absolute; left: 80px; right: 80px; top: 790px; }
+.c8 .cita { font-size: 62px; }
+</style>
+
+<div class="fase fa">
+  <div class="cab"><span class="cap">Génesis 6</span><span>versículos 5 y 11</span></div>
+  <div class="c5"><div class="cita">“los pensamientos de su corazón estaban inclinados <i>solo</i> hacia el mal <i>todo el tiempo</i>”<span class="ref">GÉNESIS 6:5</span></div></div>
+  <div class="viol">
+    <div><div class="ref">GÉNESIS 6:11 · “LLENA DE”</div><div class="pal">violencia</div></div>
+    <div><div class="no n1">idolatría</div><div class="no n2">inmoralidad</div><div class="si">ese fue <b>el cargo</b></div></div>
+  </div>
+</div>
+<div class="fase fb">
+  <div class="cab"><span class="cap">Génesis 6</span><span>versículos 6 a 8</span></div>
+  <div class="c6"><div class="cita">“Jehová sintió pesar por haber creado al hombre en la tierra; sintió un <b>gran dolor en el corazón</b>”<span class="ref">GÉNESIS 6:6</span></div></div>
+  <div class="notas">
+    <div class="def d1"><div class="t">las notas</div><div class="x">“<b>tristeza</b>”</div><div class="s">nota de la TNM</div></div>
+    <div class="def d2"><div class="t">las notas</div><div class="x">“se sintió <b>herido</b>”</div><div class="s">dolor, no un enfado frío</div></div>
+    <div class="def d3"><div class="t">“sintió pesar”</div><div class="x">un <b>cambio de actitud</b></div><div class="s">“se relaciona con un cambio de actitud o intención” · La Atalaya, 1/1/2004 · no se equivocó</div></div>
+  </div>
+  <div class="c8"><div class="cita">“Sin embargo, <b>Noé tuvo la aprobación</b> de Jehová”<span class="ref">GÉNESIS 6:8</span></div></div>
+</div>
+
+<script>
+entra(".fa .cab", 0.2, { y: -20 });
+entra(".c5", 0.4, { y: 30 });
+tl.set($$(".c5 i"), { color: "#f1e9d8" }, 0);
+tl.to($$(".c5 i"), { color: "#ec8a67", duration: 0.4, stagger: 0.5 }, at("todo el tiempo") - 0.9);
+escribe(".viol .pal", at("llena de violencia") + 0.3, 1.0);
+aparece(".viol .ref", at("llena de violencia"), 0.4);
+entra(".n1", at("No dice"), { y: 16 });
+entra(".n2", at("No dice") + 0.5, { y: 16 });
+entra(".si", at("Ese fue"), { y: 16 });
+sale(".fa", at("Jehová sintió") - 0.45, { d: 0.4 });
+entra(".fb .cab", at("Jehová sintió"), { y: -20 });
+entra(".c6", at("Jehová sintió"), { y: 30 });
+entra(".d1", at("tristeza"), { y: 30 });
+entra(".d2", at("se sintió herido"), { y: 30 });
+entra(".d3", at("Y sentir pesar"), { y: 30 });
+entra(".c8", at("La prueba"), { y: 30 });
+</script>

@@ -1,0 +1,56 @@
+<style>
+.fam { position: absolute; left: 820px; top: 150px; width: 1040px; height: 844px; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
+.fam img, .fam svg { position: absolute; left: 0; top: 0; width: 1040px; height: 844px; }
+.pie01 { left: 820px; top: 1006px; }
+.col.izq01 { left: 70px; width: 700px; top: 110px; bottom: 90px; }
+.grupo { display: grid; grid-template-columns: 1fr; gap: 6px; padding: 16px 24px; border-radius: 20px; background: rgba(10, 16, 22, 0.42); border: 3px solid rgba(241, 233, 216, 0.12); }
+.grupo .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 25px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tenue); }
+.grupo .v { font-family: "Caveat", cursive; font-weight: 700; font-size: 58px; line-height: 1.02; }
+.grupo .v b { color: var(--oro); }
+.grupo .n { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 24px; color: var(--cielo); }
+.g-raq { border-color: rgba(233, 191, 96, 0.7); }
+.g-lea { border-color: rgba(236, 138, 103, 0.7); }
+.g-sie { border-color: rgba(147, 187, 239, 0.7); }
+.r1 { fill: none; stroke: #d99a14; stroke-width: 9; }
+.r2 { fill: none; stroke: #c0392b; stroke-width: 9; }
+.r3 { fill: none; stroke: #1f5d99; stroke-width: 9; }
+.tag01 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; }
+</style>
+
+<div class="fam"><img src="assets/img/familia.jpg" />
+<svg viewBox="0 0 1200 974">
+  <g class="raq"><circle class="r1" cx="703" cy="355" r="60"/><circle class="r1" cx="661" cy="584" r="60"/><circle class="r1" cx="746" cy="811" r="60"/><text class="tag01" x="770" y="300" fill="#8a5a00">† 35:19</text></g>
+  <g class="lea"><circle class="r2" cx="319" cy="355" r="60"/><circle class="r2" cx="112" cy="584" r="60"/><circle class="r2" cx="319" cy="811" r="60"/></g>
+  <g class="sie"><circle class="r3" cx="875" cy="355" r="60"/><circle class="r3" cx="1046" cy="355" r="60"/><circle class="r3" cx="832" cy="584" r="60"/><circle class="r3" cx="1002" cy="584" r="60"/><circle class="r3" cx="918" cy="811" r="60"/><circle class="r3" cx="1088" cy="811" r="60"/></g>
+</svg></div>
+<div class="pie pie01">“La familia de Jacob”, <i>La Atalaya</i> (estudio), junio de 2025, pág. 2 (wol.jw.org)</div>
+
+<div class="col izq01">
+  <div class="b a1">
+    <div class="s">Génesis 35:27 · Jacob, en Hebrón, junto a su padre Isaac</div>
+    <div class="cita">“Esta es la <b>historia</b> de Jacob”<span class="ref">GÉNESIS 37:2</span></div>
+    <div class="def"><div class="t">historia<i>toledhóhth</i></div><div class="x">“historias” u “orígenes”</div><div class="s">divide Génesis en partes: desde aquí, qué pasó con los hijos de Jacob, <b>sobre todo con José</b></div></div>
+    <div class="f"><i>Perspicacia</i>, vol. 1, “Génesis, Libro de”, pág. 1014</div>
+  </div>
+  <div class="b a2">
+    <div class="grupo g-raq gr1"><div class="k">hijos de Raquel, que ya había muerto</div><div class="v"><b>José</b> y Benjamín</div></div>
+    <div class="grupo g-lea gr2"><div class="k">hijos de Lea</div><div class="v">Rubén, <b>el mayor</b>, y Judá</div><div class="n">y también Simeón, Leví, Isacar, Zabulón y Dina</div></div>
+    <div class="grupo g-sie gr3"><div class="k">hijos de las siervas Bilhá y Zilpá</div><div class="v">Dan, Neftalí, Gad y Aser</div><div class="n">los que pastoreaban con José · 37:2</div></div>
+  </div>
+</div>
+
+<script>
+entra(".fam", 0.3, { y: 30, d: 0.8 });
+aparece(".pie01", 0.8, 0.5);
+secuencia([[".a1", 0.5], [".a2", at("José y Benjamín") - 0.2]]);
+entra(".a1 .def", at("La palabra hebrea"), { y: 20 });
+entra(".a1 .f", at("La palabra hebrea") + 0.4, { y: 10 });
+entra(".gr1", at("José y Benjamín"), { x: -30, y: 0 });
+traza(".raq circle", at("José y Benjamín") + 0.1, 0.7, { st: 0.15 });
+aparece(".raq text", at("que ya había muerto"), 0.4);
+entra(".gr2", at("Rubén, el mayor"), { x: -30, y: 0 });
+traza(".lea circle", at("Rubén, el mayor"), 0.7, { st: 0.15 });
+entra(".gr3", at("hijos de las siervas"), { x: -30, y: 0 });
+traza(".sie circle", at("hijos de las siervas"), 0.8, { st: 0.1 });
+late(".raq circle:nth-child(2)", at("pastoreaban con José"), { s: 1.15, n: 3 });
+</script>

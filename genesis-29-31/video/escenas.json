@@ -1,0 +1,302 @@
+[
+ {
+  "num": "00",
+  "titulo": "Apertura",
+  "start": 0,
+  "dur": 39.228
+ },
+ {
+  "num": "01",
+  "titulo": "Veinte años",
+  "start": 39.228,
+  "dur": 34.044
+ },
+ {
+  "num": "02",
+  "titulo": "Génesis 29: el país de los orientales",
+  "start": 73.272,
+  "dur": 24.624
+ },
+ {
+  "num": "03",
+  "titulo": "Un pozo en el campo",
+  "start": 97.896,
+  "dur": 39.06
+ },
+ {
+  "num": "04",
+  "titulo": "Esperar a que estén todos",
+  "start": 136.956,
+  "dur": 39.036
+ },
+ {
+  "num": "05",
+  "titulo": "Raquel, la piedra y el beso",
+  "start": 175.992,
+  "dur": 38.196
+ },
+ {
+  "num": "06",
+  "titulo": "Labán corre",
+  "start": 214.188,
+  "dur": 31.596
+ },
+ {
+  "num": "07",
+  "titulo": "El precio de la novia",
+  "start": 245.784,
+  "dur": 43.284
+ },
+ {
+  "num": "08",
+  "titulo": "Cuánto valían siete años",
+  "start": 289.068,
+  "dur": 32.148
+ },
+ {
+  "num": "09",
+  "titulo": "Lea y Raquel",
+  "start": 321.216,
+  "dur": 37.572
+ },
+ {
+  "num": "10",
+  "titulo": "La boda y el velo",
+  "start": 358.788,
+  "dur": 45.876
+ },
+ {
+  "num": "11",
+  "titulo": "La semana de bodas",
+  "start": 404.664,
+  "dur": 46.956
+ },
+ {
+  "num": "12",
+  "titulo": "Dos esposas",
+  "start": 451.62,
+  "dur": 23.892
+ },
+ {
+  "num": "13",
+  "titulo": "Lea y sus cuatro hijos",
+  "start": 475.512,
+  "dur": 61.5
+ },
+ {
+  "num": "14",
+  "titulo": "Harán hoy",
+  "start": 537.012,
+  "dur": 40.548
+ },
+ {
+  "num": "15",
+  "titulo": "Génesis 30: Dame hijos",
+  "start": 577.56,
+  "dur": 36.744
+ },
+ {
+  "num": "16",
+  "titulo": "La sierva Bilhá",
+  "start": 614.304,
+  "dur": 43.596
+ },
+ {
+  "num": "17",
+  "titulo": "Dan y Neftalí",
+  "start": 657.9,
+  "dur": 29.628
+ },
+ {
+  "num": "18",
+  "titulo": "La cuenta de los hijos",
+  "start": 687.528,
+  "dur": 23.196
+ },
+ {
+  "num": "19",
+  "titulo": "Las mandrágoras",
+  "start": 710.724,
+  "dur": 45.852
+ },
+ {
+  "num": "20",
+  "titulo": "Isacar, Zabulón y Dina",
+  "start": 756.576,
+  "dur": 36.228
+ },
+ {
+  "num": "21",
+  "titulo": "Dios se acordó de Raquel",
+  "start": 792.804,
+  "dur": 31.932
+ },
+ {
+  "num": "22",
+  "titulo": "Los presagios de Labán",
+  "start": 824.736,
+  "dur": 28.356
+ },
+ {
+  "num": "23",
+  "titulo": "Un trato que parecía malo",
+  "start": 853.092,
+  "dur": 37.356
+ },
+ {
+  "num": "24",
+  "titulo": "Las varas peladas",
+  "start": 890.448,
+  "dur": 41.7
+ },
+ {
+  "num": "25",
+  "titulo": "Lo que no se veía",
+  "start": 932.148,
+  "dur": 45.132
+ },
+ {
+  "num": "26",
+  "titulo": "El sueño y la bendición",
+  "start": 977.28,
+  "dur": 38.052
+ },
+ {
+  "num": "27",
+  "titulo": "Génesis 31: Regresa",
+  "start": 1015.332,
+  "dur": 32.256
+ },
+ {
+  "num": "28",
+  "titulo": "La reunión en el campo",
+  "start": 1047.588,
+  "dur": 28.524
+ },
+ {
+  "num": "29",
+  "titulo": "La esquila",
+  "start": 1076.112,
+  "dur": 30.708
+ },
+ {
+  "num": "30",
+  "titulo": "La huida",
+  "start": 1106.82,
+  "dur": 41.988
+ },
+ {
+  "num": "31",
+  "titulo": "El Éufrates hoy",
+  "start": 1148.808,
+  "dur": 33.828
+ },
+ {
+  "num": "32",
+  "titulo": "La persecución",
+  "start": 1182.636,
+  "dur": 28.98
+ },
+ {
+  "num": "33",
+  "titulo": "Galaad hoy",
+  "start": 1211.616,
+  "dur": 33.372
+ },
+ {
+  "num": "34",
+  "titulo": "La advertencia a Labán",
+  "start": 1244.988,
+  "dur": 32.964
+ },
+ {
+  "num": "35",
+  "titulo": "Los ídolos domésticos",
+  "start": 1277.952,
+  "dur": 16.26
+ },
+ {
+  "num": "36",
+  "titulo": "Las tablillas de Nuzi",
+  "start": 1294.212,
+  "dur": 38.268
+ },
+ {
+  "num": "37",
+  "titulo": "La silla del camello",
+  "start": 1332.48,
+  "dur": 34.14
+ },
+ {
+  "num": "38",
+  "titulo": "Veinte años de trabajo",
+  "start": 1366.62,
+  "dur": 39.42
+ },
+ {
+  "num": "39",
+  "titulo": "Calor de día, frío de noche",
+  "start": 1406.04,
+  "dur": 32.868
+ },
+ {
+  "num": "40",
+  "titulo": "El pacto",
+  "start": 1438.908,
+  "dur": 33.228
+ },
+ {
+  "num": "41",
+  "titulo": "Galeed y Atalaya",
+  "start": 1472.136,
+  "dur": 43.692
+ },
+ {
+  "num": "42",
+  "titulo": "El límite y la despedida",
+  "start": 1515.828,
+  "dur": 23.772
+ },
+ {
+  "num": "43",
+  "titulo": "¿Dónde estaba Galeéd?",
+  "start": 1539.6,
+  "dur": 29.34
+ },
+ {
+  "num": "44",
+  "titulo": "La promesa de Betel",
+  "start": 1568.94,
+  "dur": 21.132
+ },
+ {
+  "num": "45",
+  "titulo": "Los otros hilos",
+  "start": 1590.072,
+  "dur": 33.42
+ },
+ {
+  "num": "46",
+  "titulo": "Lecciones de Génesis 29",
+  "start": 1623.492,
+  "dur": 43.188
+ },
+ {
+  "num": "47",
+  "titulo": "Lecciones de Génesis 30",
+  "start": 1666.68,
+  "dur": 34.932
+ },
+ {
+  "num": "48",
+  "titulo": "Lecciones de Génesis 31",
+  "start": 1701.612,
+  "dur": 37.452
+ },
+ {
+  "num": "49",
+  "titulo": "Cierre",
+  "start": 1739.064,
+  "dur": 14.412
+ }
+]

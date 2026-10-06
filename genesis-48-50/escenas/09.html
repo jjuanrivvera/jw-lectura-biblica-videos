@@ -1,0 +1,62 @@
+<style>
+.dib09 { position: absolute; left: 60px; top: 112px; width: 1000px; height: 820px; }
+.dib09 .manos { width: 1000px; height: 820px; }
+.lb09 { position: absolute; font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; line-height: 1; text-align: center; }
+.lb09 small { display: block; font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.08em; color: var(--tenue); margin-top: 6px; }
+.nm09 { position: absolute; top: 944px; width: 400px; margin-left: -200px; text-align: center; font-family: "Fraunces", serif; font-weight: 700; font-size: 50px; line-height: 1; }
+.nm09 small { font-family: "Caveat", cursive; font-size: 44px; color: var(--tenue); margin-left: 10px; }
+.vista09 { position: absolute; left: 60px; top: 74px; }
+.vista09 .s { font-size: 28px; }
+.col09 { position: absolute; left: 1110px; right: 70px; top: 110px; bottom: 70px; }
+.col09 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.col09 .def .x { font-size: 58px; }
+.col09 .cita { font-size: 50px; }
+.col09 .m { font-size: 64px; }
+.col09 .clave { align-self: flex-start; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 48</span><span>versículos 13 y 14</span></div>
+<div class="dib09"><!--incluir:_manos.html--></div>
+<div class="vista09"><div class="s">visto de frente: la derecha de Jacob queda a tu izquierda</div></div>
+<div class="lb09 der09" style="left:70px; top:430px; width:250px; color:var(--oro)">su mano<br/>derecha</div>
+<div class="lb09 izq09" style="left:840px; top:430px; width:230px; color:var(--tenue)">su mano<br/>izquierda</div>
+<div class="nm09 n1" style="left:296px;">Manasés<small>el mayor</small></div>
+<div class="nm09 n2" style="left:824px;">Efraín<small>el menor</small></div>
+<div class="col09">
+  <div class="b b1">
+    <div class="def"><div class="t">La mano derecha</div><div class="x">la de la <b>precedencia</b>: sobre el que recibía el <b>primer lugar</b></div><div class="s"><i>Perspicacia</i>, “Efraín”, págs.&nbsp;764 y 765</div></div>
+    <div class="m oro jo">José los coloca por edad</div>
+    <div class="f jo2">Génesis 48:13</div>
+  </div>
+  <div class="b b2">
+    <div class="m">Jacob <b style="color:var(--oro)">cruza los brazos</b></div>
+    <div class="cita">“Él puso así las manos <b>a propósito</b>, aunque sabía que Manasés era el primogénito”<span class="ref">GÉNESIS 48:14</span></div>
+    <span class="clave cl">no fue un <b>descuido</b></span>
+  </div>
+</div>
+
+<script>
+const tC = at("Pero Jacob cruza");
+tl.set($(".dib09 .mn-rectos"), { opacity: 0 }, 0);
+aparece(".dib09", 0.2, 0.6);
+entra(".vista09", 0.6, { y: -10 });
+entra(".b1", 0.4, { y: 20 });
+entra(".jo", at("Así que José coloca") - 0.2, { y: 14 });
+aparece(".jo2", at("Así que José coloca") + 0.3, 0.4);
+// José los coloca: brazos rectos, Manasés frente a la derecha.
+tl.to($(".dib09 .mn-rectos"), { opacity: 1, duration: 0.6 }, at("Así que José coloca"));
+entra(".der09", at("frente a la mano derecha") - 0.2, { y: 10 });
+entra(".n1", at("a Manasés") - 0.1, { y: 12 });
+entra(".n2", at("y a Efraín") - 0.1, { y: 12 });
+entra(".izq09", at("frente a la izquierda") - 0.1, { y: 10 });
+// Jacob cruza los brazos.
+sale(".b1", tC - 0.5, { y: -16 });
+entra(".b2 .m", tC - 0.1, { y: 16 });
+tl.to($(".dib09 .mn-rectos"), { opacity: 0, duration: 0.4 }, tC + 0.2);
+traza([".dib09 .mn-izqx", ".dib09 .mn-izqx2"], tC + 0.3, 1.1);
+traza([".dib09 .mn-derx", ".dib09 .mn-derx2"], tC + 0.6, 1.1);
+aparece([".dib09 .mn-pi", ".dib09 .mn-pd"], tC + 1.6, 0.3);
+late(".n2", at("sobre la cabeza de Efraín"), { s: 1.1, n: 1 });
+entra(".b2 .cita", at("Y el texto aclara") - 0.2, { y: 16 });
+entra(".cl", at("No fue el descuido") - 0.1, { y: 14 });
+</script>

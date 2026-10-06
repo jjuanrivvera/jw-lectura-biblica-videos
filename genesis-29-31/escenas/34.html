@@ -1,0 +1,33 @@
+<style>
+.q1 { position: absolute; left: 80px; right: 80px; top: 110px; }
+.q1 .cita { font-size: 60px; }
+.esq { position: absolute; left: 80px; top: 330px; width: 1760px; height: 420px; }
+.nomb { font-family: "Fraunces"; font-weight: 700; font-size: 60px; fill: var(--tiza); }
+.via { font-family: "Caveat"; font-weight: 700; font-size: 54px; fill: var(--tiza); }
+.abajo { position: absolute; left: 80px; right: 80px; top: 770px; bottom: 50px; }
+.abajo > div { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.abajo .cita { font-size: 48px; }
+</style>
+<div class="cab"><span class="cap">Génesis 31</span><span>versículos 24 al 30</span></div>
+<div class="q1"><div class="cita">“Cuidado con lo que le dices a Jacob, sea bueno o malo”<span class="ref">DIOS A LABÁN, EN UN SUEÑO · GÉNESIS 31:24</span></div><div class="m md" style="margin-top:10px">lit. “desde lo bueno hasta lo malo” <span class="s">· nota de la TNM</span></div></div>
+<svg class="esq" viewBox="0 0 1760 420">
+  <g class="lab"><rect x="0" y="150" width="300" height="120" rx="26" fill="rgba(125,47,143,0.35)" stroke="#c9a2d4" stroke-width="4"/><text class="nomb" x="150" y="228" text-anchor="middle">Labán</text></g>
+  <g class="jac"><rect x="1460" y="150" width="300" height="120" rx="26" fill="rgba(233,191,96,0.2)" stroke="#e9bf60" stroke-width="4"/><text class="nomb" x="1610" y="228" text-anchor="middle">Jacob</text></g>
+  <g class="v1"><path d="M 310 180 C 600 40 1000 40 1450 180" fill="none" stroke="#92d193" stroke-width="8" stroke-dasharray="18 12"/><text class="via" x="880" y="60" text-anchor="middle">por las buenas: promesas para que vuelva</text>
+    <g class="x1" transform="translate(880 104)"><path d="M -40 -40 L 40 40 M 40 -40 L -40 40" stroke="#ec8a67" stroke-width="16" stroke-linecap="round"/></g></g>
+  <g class="v2"><path d="M 310 240 C 600 380 1000 380 1450 240" fill="none" stroke="#ec8a67" stroke-width="8" stroke-dasharray="18 12"/><text class="via" x="880" y="410" text-anchor="middle">por las malas: amenazas</text>
+    <g class="x2" transform="translate(880 318)"><path d="M -40 -40 L 40 40 M 40 -40 L -40 40" stroke="#ec8a67" stroke-width="16" stroke-linecap="round"/></g></g>
+</svg>
+<div class="abajo">
+  <div class="p1"><span class="propio">no le prohibía hablar, sino hacerle algo: observación propia</span><div class="s">Perspicacia solo dice: “debido a una advertencia de Dios, no hizo ningún daño a Jacob” (vol. 2, “Labán”, pág. 177)</div></div>
+  <div class="p2"><div class="cita">“Yo podría hacerles daño, pero el Dios del padre de ustedes me dijo anoche: ‘Cuidado con lo que le dices a Jacob, sea bueno o malo’”<span class="ref">LABÁN · GÉNESIS 31:29</span></div></div>
+  <div class="p3"><div class="cita" style="font-size:66px">“¿Pero por qué me robaste mis dioses?”<span class="ref">LABÁN · GÉNESIS 31:30</span></div></div>
+</div>
+<script>
+entra(".q1", 0.4, { y: 20 });
+entra(".lab", 0.9, { x: -30, y: 0 }); entra(".jac", 1.2, { x: 30, y: 0 });
+traza(".v1 path", at("No le prohibía hablar"), 0.8); aparece(".v1 text", at("ni por las buenas"), 0.4); salta(".x1", at("ni por las buenas") + 0.5, { desde: 0.3 });
+traza(".v2 path", at("ni por las malas"), 0.8); aparece(".v2 text", at("ni por las malas"), 0.4); salta(".x2", at("ni por las malas") + 0.5, { desde: 0.3 });
+secuencia([[".p1", at("No le prohibía hablar")], [".p2", at("Labán admitió")], [".p3", at("Y al final salió")]]);
+atenua(".esq", at("Y al final salió"), 0.3);
+</script>

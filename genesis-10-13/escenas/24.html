@@ -1,0 +1,58 @@
+<style>
+.arr24 { position: absolute; left: 90px; right: 90px; top: 50px; height: 250px; }
+.arr24 > .b { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 30px; text-align: center; }
+.arr24 .grande { font-size: 90px; }
+.arr24 .cita { font-size: 56px; }
+.eq24 { font-family: "Fraunces", serif; font-weight: 700; font-size: 130px; line-height: 1; }
+.eq24 b { color: var(--oro); }
+.re24 { position: absolute; inset: 0; }
+.re24 svg { width: 1920px; height: 1080px; display: block; }
+.tk24 { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 26px; fill: var(--tenue); text-anchor: middle; }
+.mk24 { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; fill: var(--tiza); text-anchor: middle; }
+.mk24.oro { fill: var(--oro); }
+.mk24.ver { fill: #92d193; }
+.aba24 { position: absolute; left: 90px; right: 90px; top: 780px; bottom: 40px; }
+.aba24 > .b { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 40px; }
+.aba24 .m { font-size: 60px; text-align: center; }
+</style>
+
+<div class="arr24">
+  <div class="b a1"><div class="grande">¿Tuvo Taré a Abrán a los 70?</div><div class="m rojo no24" style="font-size:80px">no exactamente</div></div>
+  <div class="b a2"><div class="cita">“Después de que Taré cumplió <b>70 años</b>, fue padre de Abrán, Nacor y Harán”<span class="ref">GÉNESIS 11:26</span></div></div>
+  <div class="b a3"><div class="eq24">205 − 75 = <b>130</b></div></div>
+</div>
+
+<div class="re24"><svg viewBox="0 0 1920 1080">
+  <g class="regla">
+    <rect x="160" y="540" width="1600" height="40" rx="12" fill="rgba(241,233,216,0.1)" stroke="rgba(241,233,216,0.35)" stroke-width="3"/>
+    <g class="tks"></g>
+    <text class="mk24" x="160" y="470" style="fill:var(--tenue);font-size:40px">Taré nace</text>
+  </g>
+  <g class="m70"><rect x="706" y="536" width="12" height="48" fill="#e9bf60"/><path d="M 712 530 V 420" stroke="#e9bf60" stroke-width="4"/><text class="mk24 oro" x="712" y="400">70: desde aquí, tres hijos</text></g>
+  <g class="m205"><rect x="1754" y="530" width="12" height="60" fill="#ec8a67"/><path d="M 1760 530 V 420" stroke="#ec8a67" stroke-width="4"/><text class="mk24" x="1760" y="400" style="fill:#f7b8a3;text-anchor:end">205: muere en Harán (11:32)</text></g>
+  <g class="b75"><path d="M 1174 620 V 650 H 1760 V 620" fill="none" stroke="#92d193" stroke-width="5"/><text class="mk24 ver" x="1790" y="708" style="text-anchor:end">75 años: sale de Harán después de morir su padre</text></g>
+  <g class="m130"><circle cx="1174" cy="560" r="26" fill="#92d193" stroke="#fff" stroke-width="5"/><path d="M 1174 530 V 470" stroke="#92d193" stroke-width="4"/><text class="mk24 ver" x="1174" y="452">130: nace Abrán</text></g>
+</svg></div>
+
+<div class="aba24">
+  <div class="b c1"><div class="f" style="font-size:28px;text-align:center">Génesis 11:32; 12:4 · Hechos 7:4</div></div>
+  <div class="b c2"><div class="m">Abrán va primero por ser <b>el más importante</b>; el primogénito fue, muy probablemente, <b>Harán</b></div></div>
+</div>
+<div class="f" style="position:absolute;left:90px;right:90px;bottom:16px;text-align:center">“solo tenemos que seguir leyendo el relato bíblico” · <i>La Atalaya</i>, 15 de julio de 1994, pág. 30 · <i>Perspicacia</i>, vol. 1, “Abrahán”, pág. 30</div>
+
+<script>
+const X = (a) => 160 + a * (1600 / 205);
+let tk = "";
+for (let a = 0; a <= 200; a += 25) tk += `<path d="M ${X(a).toFixed(1)} 580 V 596" stroke="rgba(241,233,216,0.5)" stroke-width="3"/><text class="tk24" x="${X(a).toFixed(1)}" y="626">${a}</text>`;
+pinta(".tks", tk);
+secuencia([[".a1", 0.4], [".a2", at("Dice que", 5)], [".a3", at("Doscientos cinco menos") - 0.2]]);
+entra(".no24", at("No exactamente") - 0.2, { y: 14 });
+aparece(".regla", 1.0, 0.6);
+salta(".m70", at("setenta años") - 0.1, { desde: 0.5 });
+salta(".m205", at("Taré murió") + 0.2, { desde: 0.5 });
+traza(".b75 path", at("Abrán salió") - 0.1, 0.9);
+entra(".b75 text", at("Abrán salió") + 0.4, { y: 10 });
+secuencia([[".c1", at("Basta seguir")], [".c2", at("Abrán aparece")]]);
+salta(".m130", at("ciento treinta") - 0.2, { desde: 0.4 });
+late(".m130 circle", at("ciento treinta") + 0.5, { s: 1.3, n: 3 });
+</script>

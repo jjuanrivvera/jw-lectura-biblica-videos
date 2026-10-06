@@ -1,0 +1,33 @@
+<style>
+.tres { position: absolute; left: 90px; right: 90px; top: 175px; bottom: 25px; display: flex; flex-direction: column; justify-content: center; gap: 34px; }
+.pq { display: grid; grid-template-columns: 130px 1fr; column-gap: 36px; align-items: start; border-left: 10px solid var(--verde); padding: 12px 0 12px 32px; }
+.pq .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 120px; line-height: 0.9; color: var(--verde); }
+.pq .c { font-family: "Caveat", cursive; font-weight: 700; font-size: 66px; line-height: 1.04; color: var(--tiza); }
+.pq .c b { color: var(--oro); }
+.pq .p { font-family: "Fraunces", serif; font-style: italic; font-weight: 500; font-size: 48px; line-height: 1.16; color: var(--oro); margin-top: 12px; }
+</style>
+
+<div class="seccion"><div class="r">Lecciones y preguntas</div><div class="t">Génesis 5</div></div>
+<svg class="seccion-linea" viewBox="0 0 1740 20" preserveAspectRatio="none"><path d="M 4 12 C 400 4 1200 18 1736 8"/></svg>
+<div class="tres">
+  <div class="pq q1"><div class="n">1</div><div><div class="c">La vida larga no arregla el problema de fondo: <b>solo lo alarga</b></div><div class="p">¿Qué haría uno distinto si le dieran novecientos años?</div></div></div>
+  <div class="pq q2"><div class="n">2</div><div><div class="c">Enoc anduvo con Dios trescientos años, <b>sin congregación y sin Biblia</b></div><div class="p">¿Te has sentido el único de tu salón o de tu trabajo que piensa así? Él estuvo ahí primero</div></div></div>
+  <div class="pq q3"><div class="n">3</div><div><div class="c">Lamec no alcanzó a ver lo que esperaba, <b>y sirvió igual</b></div><div class="p">No todo lo que uno siembra da fruto dentro de su propia vida</div></div></div>
+</div>
+
+<script>
+entra(".seccion", 0.3, { y: -20 });
+traza(".seccion-linea path", 0.6, 1.0);
+aparece(".q1", at("Primera") - 0.3, 0.3);
+entra(".q1 .n", at("Primera") - 0.2, { y: 20 });
+entra(".q1 .c", at("Primera"), { y: 20 });
+entra(".q1 .p", at("Qué haría"), { y: 20 });
+aparece(".q2", at("Segunda", at("Primera")) - 0.3, 0.3);
+entra(".q2 .n", at("Segunda", at("Primera")) - 0.2, { y: 20 });
+entra(".q2 .c", at("Segunda", at("Primera")), { y: 20 });
+entra(".q2 .p", at("Te has sentido"), { y: 20 });
+aparece(".q3", at("Tercera", at("Segunda")) - 0.3, 0.3);
+entra(".q3 .n", at("Tercera", at("Segunda")) - 0.2, { y: 20 });
+entra(".q3 .c", at("Tercera", at("Segunda")), { y: 20 });
+entra(".q3 .p", at("No todo lo que"), { y: 20 });
+</script>

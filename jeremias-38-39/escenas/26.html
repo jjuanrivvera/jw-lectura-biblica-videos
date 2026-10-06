@@ -1,0 +1,58 @@
+<style>
+.sangre img { object-position: 62% 50%; }
+.velo26 { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(23, 33, 43, 0.97) 0%, rgba(23, 33, 43, 0.9) 34%, rgba(23, 33, 43, 0.35) 56%, rgba(23, 33, 43, 0) 70%); }
+.col26 { position: absolute; left: 80px; top: 120px; width: 900px; bottom: 90px; }
+.col26 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.col26 .m { font-size: 62px; }
+.col26 .cita { font-size: 44px; }
+.col26 .s { font-size: 27px; }
+.fechas { display: flex; flex-direction: column; gap: 14px; }
+.fechas .fe { display: grid; grid-template-columns: 230px 1fr; column-gap: 20px; align-items: baseline; }
+.fechas .fe b { font-family: "Fraunces", serif; font-weight: 700; font-size: 50px; color: var(--oro); line-height: 1; }
+.fechas .fe span { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; line-height: 1.05; }
+.ayunos { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.ayunos .a { border-radius: 18px; padding: 14px 16px; background: rgba(10, 16, 22, 0.5); border: 3px solid rgba(241, 233, 216, 0.14); text-align: center; }
+.ayunos .a b { display: block; font-family: "Fraunces", serif; font-weight: 700; font-size: 40px; color: var(--oro); }
+.ayunos .a span { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 22px; color: var(--tiza); }
+</style>
+
+<div class="sangre"><div class="kb" data-layout-allow-overflow><img src="assets/img/destruccion.jpg" /></div></div>
+<div class="velo26"></div>
+<div class="cab sobre"><span class="cap">Jeremías 39</span><span>versículos 8 al 10</span></div>
+<div class="pie" style="right:24px;bottom:20px"><i>Lecciones que aprendo de la Biblia</i>, lección 58, “La destrucción de Jerusalén”</div>
+
+<div class="col26">
+  <div class="b b1">
+    <div class="m oro">un mes después</div>
+    <div class="fechas">
+      <div class="fe f1"><b>día 7 · mes 5</b><span>llega Nebuzaradán, el jefe de la guardia</span></div>
+      <div class="fe f2"><b>día 10</b><span>entra en la ciudad</span></div>
+    </div>
+    <div class="s s1">mes de ab: “parte de julio y parte de agosto” · 2 Reyes 25:8; Jeremías 52:12 · <i>Perspicacia</i>, «Ab» y «Nebuzaradán»</div>
+  </div>
+  <div class="b b2">
+    <div class="cita">“Entonces los caldeos quemaron la casa del rey y las casas del pueblo, y demolieron las murallas de Jerusalén”<span class="ref">JEREMÍAS 39:8</span></div>
+    <div class="cita q2b" style="font-size:38px">“<b>Quemó la casa de Jehová</b>, la casa del rey y todas las casas de Jerusalén”<span class="ref">JEREMÍAS 52:13</span></div>
+  </div>
+  <div class="b b3">
+    <div class="m">al destierro: la gente que quedaba y <b>los desertores</b></div>
+    <div class="m rojo" style="font-size:52px">en Judá: algunos de los más pobres</div>
+    <div class="s">“viñas y campos para que trabajaran”; la nota dice: “O quizás ‘y trabajos forzados’” · 39:9, 10</div>
+  </div>
+  <div class="b b4">
+    <div class="m">esas fechas, con ayunos</div>
+    <div class="ayunos"><div class="a"><b>mes 4</b><span>la brecha</span></div><div class="a"><b>mes 5</b><span>el incendio</span></div><div class="a"><b>mes 10</b><span>¿el comienzo del sitio?</span></div></div>
+    <div class="cita" style="font-size:44px">“fiestas alegres. Así que amen la verdad y la paz”<span class="ref">ZACARÍAS 8:19</span></div>
+    <div class="f"><i>Perspicacia</i>, «Ayuno» · Zacarías 7:3-5</div>
+  </div>
+</div>
+
+<script>
+kb(".sangre .kb", 0, DUR, { s: 1.0, x: 0 }, { s: 1.1, x: -2 });
+aparece([".cab", ".pie"], 0.3, 0.6);
+secuencia([[".b1", 0.5], [".b2", at("Los caldeos quemaron")], [".b3", at("A la gente")], [".b4", at("Esas fechas")]], null, { y: 24 });
+entra(".f1", at("día siete"), { x: 20, y: 0 });
+entra(".f2", at("el día diez"), { x: 20, y: 0 });
+entra(".s1", at("entró en la ciudad"), { y: 12 });
+entra(".q2b", at("También quemaron"), { y: 16 });
+</script>

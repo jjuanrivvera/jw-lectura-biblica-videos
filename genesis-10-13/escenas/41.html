@@ -1,0 +1,57 @@
+<style>
+.ar41 { position: absolute; left: 60px; top: 90px; width: 820px; height: 560px; }
+.ar41 svg { width: 820px; height: 560px; display: block; }
+.p41 { font-family: "Fraunces", serif; font-weight: 700; font-size: 64px; text-anchor: middle; fill: var(--tiza); }
+.p41.oro { fill: var(--oro); }
+.s41 { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; text-anchor: middle; fill: var(--tenue); }
+.q41 { position: absolute; left: 70px; width: 800px; top: 690px; }
+.q41 .cita { font-size: 42px; }
+.col41 { position: absolute; left: 960px; right: 70px; top: 70px; bottom: 70px; }
+.col41 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.col41 .cita { font-size: 42px; }
+.col41 .grande { font-size: 110px; }
+</style>
+
+<div class="ar41"><svg viewBox="0 0 820 560">
+  <text class="p41 ta" x="410" y="78">Taré</text>
+  <g class="ma"><text class="s41" x="112" y="78" style="fill:#e9adcc;font-size:52px">una madre</text></g>
+  <g class="mb"><text class="s41" x="708" y="78" style="fill:#93bbef;font-size:52px">otra madre</text></g>
+  <path class="rt" d="M 386 102 L 222 336 M 434 102 L 598 336" fill="none" stroke="rgba(241,233,216,0.6)" stroke-width="6" stroke-linecap="round"/>
+  <path class="rma" d="M 112 100 L 186 336" fill="none" stroke="#e9adcc" stroke-width="6" stroke-linecap="round"/>
+  <path class="rmb" d="M 708 100 L 634 336" fill="none" stroke="#93bbef" stroke-width="6" stroke-linecap="round"/>
+  <g class="ab"><text class="p41 oro" x="200" y="410">Abrán</text></g>
+  <g class="sa"><text class="p41 oro" x="620" y="410">Sarái</text></g>
+  <g class="es"><path d="M 318 390 H 502" stroke="#e9bf60" stroke-width="5" stroke-dasharray="14 10"/><text class="s41" x="410" y="372" style="fill:#e9bf60">esposos</text></g>
+  <text class="s41 mh" x="410" y="506" style="fill:var(--tiza);font-size:52px">medio hermanos</text>
+</svg></div>
+<div class="q41"><div class="cita">“Somos hijos del <b>mismo padre</b> pero de <b>distintas madres</b>. Y ahora también es mi esposa”<span class="ref">GÉNESIS 20:12</span></div></div>
+
+<div class="col41">
+  <div class="b a1"><div class="grande">¿Mintió? <b style="color:var(--oro)">No.</b></div><div class="m">Sarái era de verdad su <b>media hermana</b></div></div>
+  <div class="b a2">
+    <div class="cita">“no era raro que los hombres influyentes de Egipto <b>secuestraran mujeres casadas</b> y luego mataran al esposo”<span class="ref">LA ATALAYA NÚM. 3 DE 2017, PÁG. 15</span></div>
+    <div class="f">un papiro antiguo habla de un faraón que mandó tomar a una mujer y matar a su esposo: el miedo de Abrán “no era infundado” · <i>Perspicacia</i>, vol. 2, “Sara”, pág. 965</div>
+  </div>
+  <div class="b a3">
+    <div class="m">si mataban a Abrán, <b>no habría descendencia</b> prometida</div>
+    <div class="cita">“Ambos sabían que nada era más importante que el propósito de Dios de producir una descendencia especial y una nación mediante Abrahán”<span class="ref">LA ATALAYA NÚM. 3 DE 2017, PÁG. 15</span></div>
+  </div>
+  <div class="b a4">
+    <div class="cita">condenar la mentira “no significa que una persona esté obligada a divulgar información verídica a quien <b>no tenga derecho a conocerla</b>”<span class="ref">PERSPICACIA, VOL. 2, “MENTIRA”, PÁGS. 367-369</span></div>
+  </div>
+  <div class="b a5">
+    <div class="cita">“en ninguna parte de las Escrituras se <b>censura</b> a Abrahán por haber hecho esto”<span class="ref">PERSPICACIA, VOL. 2, “SARA”, PÁG. 965</span></div>
+  </div>
+</div>
+
+<script>
+// El árbol está desde el principio; las líneas de los padres llegan con la voz.
+entra([".ta", ".ab", ".sa"], 0.4, { y: 16, st: 0.15 });
+entra(".es", 1.0, { y: 10 });
+entra(".mh", at("media hermana") - 0.3, { y: 10 });
+traza(".rt", at("mismo padre") - 0.3, 0.6);
+entra([".ma", ".mb"], at("distintas madres") - 0.4, { y: 10, st: 0.15 });
+traza([".rma", ".rmb"], at("distintas madres") - 0.2, 0.6);
+entra(".q41", at("distintas madres") + 0.2, { y: 20 });
+secuencia([[".a1", 0.4], [".a2", at("Y el peligro")], [".a3", at("Si mataban")], [".a4", at("Condenar")], [".a5", at("Y en ninguna parte")]]);
+</script>

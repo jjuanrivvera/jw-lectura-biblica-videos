@@ -1,0 +1,47 @@
+<style>
+.graf { position: absolute; left: 80px; top: 200px; width: 1760px; height: 560px; }
+.gt { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; fill: var(--tiza); }
+.gv { font-family: "Fraunces", serif; font-weight: 700; font-size: 50px; fill: #17212b; }
+.tick { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 28px; fill: var(--tenue); }
+.kg { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 26px; fill: var(--cielo); }
+.tit { position: absolute; left: 80px; right: 80px; top: 100px; display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; }
+.tit .m { font-size: 80px; }
+.nota { position: absolute; left: 80px; right: 80px; bottom: 36px; display: flex; gap: 30px; align-items: center; }
+.nota .dato { flex: 1; }
+.nota .dato .v { font-size: 64px; }
+</style>
+<div class="cab"><span class="cap">Génesis 29</span><span>¿cuánto valía la oferta?</span></div>
+<div class="tit"><div class="m">siete años de jornal, en <b style="color:var(--oro)">siclos</b> de plata</div></div>
+<svg class="graf" viewBox="0 0 1760 560">
+  <g class="barra1"><text class="gt" x="0" y="60">7 años de jornal en la antigua Babilonia</text>
+    <rect class="b1a" x="0" y="90" width="378" height="110" rx="14" fill="#e9bf60"/>
+    <rect class="b1b" x="378" y="90" width="378" height="110" rx="0" fill="rgba(233,191,96,0.4)" stroke="#e9bf60" stroke-width="4" stroke-dasharray="14 10"/>
+    <text class="gv v1" x="350" y="164" text-anchor="end">42</text><text class="gv v2" x="740" y="164" text-anchor="end" style="fill:#f1e9d8">84 siclos</text></g>
+  <g class="barra2"><text class="gt" x="0" y="290">lo que mandaría la Ley en un caso grave</text>
+    <rect class="b2" x="0" y="320" width="450" height="110" rx="14" fill="#93bbef"/><text class="gv" x="430" y="394" text-anchor="end">50 siclos</text></g>
+  <path class="eje" d="M 0 470 L 1700 470" stroke="#b3bdc8" stroke-width="4"/>
+  <g class="ticks">
+    <text class="tick" x="0" y="510" text-anchor="middle">0</text><text class="tick" x="450" y="510" text-anchor="middle">50</text><text class="tick" x="900" y="510" text-anchor="middle">100</text><text class="tick" x="1350" y="510" text-anchor="middle">150 siclos</text>
+    <text class="kg" x="450" y="548" text-anchor="middle">≈ 0,57 kg</text><text class="kg" x="900" y="548" text-anchor="middle">≈ 1,14 kg</text>
+  </g>
+</svg>
+<div class="nota">
+  <div class="dato n1"><div class="v">½ a 1 siclo</div><div class="k">de jornal al mes</div><div class="s">cita de Gordon Wenham en La Atalaya, 15 de octubre de 2003, pág. 29</div></div>
+  <div class="dato n2"><div class="v">1 siclo ≈ 11,4 g</div><div class="k">un peso, no una moneda</div><div class="s">Perspicacia, vol. 2, “Siclo”, pág. 1020 · Deuteronomio 22:29</div></div>
+  <div class="dato n3"><div class="v" style="font-size:54px">“muy generoso”</div><div class="k">un regalo de boda</div><div class="s">La Atalaya, 15 de octubre de 2003, pág. 29 · <span style="color:var(--cielo)">kilos: cálculo propio</span></div></div>
+</div>
+<script>
+entra(".tit", 0.3, { y: -20 });
+traza(".eje", 0.6, 0.8); aparece(".ticks", 1.0, 0.5);
+aparece(".barra1 .gt", at("En la antigua Babilonia"), 0.4);
+crece(".b1a", at("entre medio siclo"), 0.8);
+crece(".b1b", at("entre cuarenta y dos"), 0.9);
+aparece(".v1", at("entre cuarenta y dos") + 0.2, 0.3); aparece(".v2", at("ochenta y cuatro siclos"), 0.3);
+entra(".n1", at("entre medio siclo"), { y: 20 });
+aparece(".barra2 .gt", at("La Ley mandaría"), 0.4);
+crece(".b2", at("cincuenta siclos en un caso"), 0.8);
+aparece(".barra2 .gv", at("cincuenta siclos en un caso") + 0.6, 0.3);
+entra(".n2", at("Un siclo era un peso"), { y: 20 });
+late(".kg", at("algo más de medio kilo"), { s: 1.2, n: 1 });
+entra(".n3", at("Jacob ofreció"), { y: 20 });
+</script>

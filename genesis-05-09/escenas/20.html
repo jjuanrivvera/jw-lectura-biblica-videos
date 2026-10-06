@@ -1,0 +1,40 @@
+<style>
+.ilus.im { left: 60px; top: 120px; width: 600px; height: 900px; }
+.pie-img.pi { left: 60px; top: 1030px; width: 900px; font-size: 20px; }
+.der { position: absolute; left: 720px; right: 70px; top: 130px; bottom: 60px; }
+.der > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.der .def .x { font-size: 60px; }
+.cad { display: flex; align-items: center; gap: 18px; flex-wrap: nowrap; }
+.cad .p { border-radius: 22px; padding: 14px 22px; background: rgba(10,16,22,0.5); border: 3px solid rgba(241,233,216,0.16); }
+.cad .p .h { font-family: "Fraunces", serif; font-style: italic; font-weight: 600; font-size: 46px; color: var(--cielo); }
+.cad .p .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; line-height: 1.05; }
+.cad .p.fin { border-color: var(--oro); }
+.cad .fl { font-family: "Fraunces", serif; font-size: 56px; color: var(--oro); }
+.der .m { font-size: 62px; }
+</style>
+
+<div class="cab sobre"><span class="cap">Génesis 6</span><span>versículos 14 y 16</span></div>
+<div class="ilus im"><div class="kb"><img src="assets/img/brea.jpg" /></div></div>
+<div class="pie-img pi">Imite su fe, cap. 2, “Andaba con el Dios verdadero” (wol.jw.org)</div>
+<div class="der">
+  <div class="b a1"><div class="def"><div class="t">madera de gófer <i>gó·fer</i></div><div class="x">un <b>árbol resinoso</b>, “no identificado con certeza”</div><div class="s">los hebraístas lo relacionan con el ciprés, que resiste muy bien el agua y la putrefacción · Perspicacia, “Árbol resinoso”</div></div></div>
+  <div class="b a2"><div class="m">el alquitrán</div>
+    <div class="cad"><div class="p c1"><div class="h">kó·fer</div><div class="x">alquitrán</div></div><div class="fl f1">←</div><div class="p c2"><div class="h">ka·fár</div><div class="x">“cubrir”</div></div></div>
+    <div class="cad"><div class="p c3"><div class="x">cubrir, <b>expiar</b> los pecados</div></div><div class="fl f2">→</div><div class="p fin c4"><div class="h">kó·fer</div><div class="x">“<b style="color:var(--oro)">precio de rescate</b>”</div></div></div>
+    <div class="s">Perspicacia, vol. 1, “Betún”; vol. 2, “Rescate”</div></div>
+  <div class="b a3"><div class="duda"><div class="t">el tsó·har: ¿ventana o techo?</div><div class="s">“no está del todo claro qué era este tsó·har o cómo se construyó” · Perspicacia, “Arca” · si era una abertura de un codo alrededor, unos 140 m² de ventilación</div></div></div>
+</div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".im", 0.3, { y: 30 });
+kb(".im .kb", 0.3, DUR, { s: 1.12, y: 3 }, { s: 1.0, y: 0 });
+aparece(".pi", 0.9, 0.5);
+secuencia([[".a1", 0.5], [".a2", at("Y el arca se cubrió")], [".a3", at("Del tsójar")]]);
+tl.set($$(".cad .p, .cad .fl"), { opacity: 0 }, 0);
+entra(".c1", at("En hebreo, kófer"), { y: 20 });
+entra([".f1", ".c2"], at("del verbo"), { y: 20, st: 0.2 });
+entra(".c3", at("para cubrir los pecados"), { y: 20 });
+entra([".f2", ".c4"], at("precio de rescate"), { y: 20, st: 0.2 });
+late(".c4", at("La misma raíz"), { s: 1.06, n: 3 });
+</script>

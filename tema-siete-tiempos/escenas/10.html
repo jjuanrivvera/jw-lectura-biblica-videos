@@ -1,0 +1,50 @@
+<style>
+.linaje { position: absolute; left: 0; top: 190px; width: 1920px; height: 420px; }
+.linaje svg { width: 1920px; height: 420px; }
+.nom { font-family: "Caveat", cursive; font-weight: 700; font-size: 58px; }
+.nom-s { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 0.04em; }
+.citas { position: absolute; left: 140px; right: 140px; top: 620px; height: 380px; }
+.citas .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.citas .cita { font-size: 58px; }
+.citas .s { font-size: 30px; }
+</style>
+<div class="cab"><span class="cap">La promesa a David</span><span>y el tocón que vuelve a brotar</span></div>
+<div class="linaje"><svg viewBox="0 0 1920 420">
+  <path class="ln ln1" d="M 160 200 L 980 200" fill="none" stroke="var(--oro)" stroke-width="10" stroke-linecap="round"/>
+  <path class="ln ln2" d="M 1000 200 L 1600 200" fill="none" stroke="var(--tenue)" stroke-width="6" stroke-linecap="round" stroke-dasharray="6 22"/>
+  <path class="ln ln3" d="M 1610 200 L 1760 200" fill="none" stroke="var(--verde)" stroke-width="10" stroke-linecap="round"/>
+  <g class="nd n-jese"><circle cx="160" cy="200" r="22" fill="var(--oro)"/><text class="nom" x="160" y="140" text-anchor="middle" fill="var(--tiza)">Jesé</text><text class="nom-s" x="160" y="262" text-anchor="middle" fill="var(--tenue)">padre de David</text></g>
+  <g class="nd n-david"><circle cx="370" cy="200" r="26" fill="var(--oro)"/><text class="nom" x="370" y="140" text-anchor="middle" fill="var(--oro)">David</text><text class="nom-s" x="370" y="304" text-anchor="middle" fill="var(--tenue)">la promesa</text></g>
+  <g class="nd n-reyes"><circle cx="560" cy="200" r="16" fill="var(--oro)"/><circle cx="660" cy="200" r="16" fill="var(--oro)"/><circle cx="760" cy="200" r="16" fill="var(--oro)"/><text class="nom" x="660" y="140" text-anchor="middle" fill="var(--tiza)">reyes de Judá</text></g>
+  <g class="nd n-sede"><circle cx="960" cy="200" r="22" fill="var(--fuego)"/><text class="nom" x="960" y="140" text-anchor="middle" fill="var(--fuego)">Sedequías</text><text class="nom-s" x="960" y="262" text-anchor="middle" fill="var(--fuego)">607 a. e. c.</text></g>
+  <g class="nd n-vacio"><text class="nom" x="1300" y="160" text-anchor="middle" fill="var(--tenue)">trono vacío</text></g>
+  <g class="nd n-tocon"><g transform="translate(80 0)">
+    <path d="M 1010 250 L 1070 250 C 1070 290 1074 320 1080 340 L 1000 340 C 1006 320 1010 290 1010 250 Z" fill="#7a4e2c"/><ellipse cx="1040" cy="250" rx="30" ry="9" fill="#e9c58c"/>
+    <rect x="1004" y="276" width="72" height="16" rx="5" fill="#a9b3bd"/><rect x="1002" y="304" width="76" height="16" rx="5" fill="#d08a55"/>
+  </g><text class="nom-s" x="1120" y="390" text-anchor="middle" fill="var(--tenue)">tocón atado</text></g>
+  <g class="nd n-jesus"><circle cx="1690" cy="200" r="30" fill="var(--verde)"/><text class="nom" x="1690" y="138" text-anchor="middle" fill="var(--verde)">Jesús</text><text class="nom-s" x="1690" y="268" text-anchor="middle" fill="var(--verde)">el derecho legal</text>
+    <path d="M 1690 168 C 1688 130 1694 110 1690 86" fill="none" stroke="var(--verde)" stroke-width="0"/></g>
+</svg></div>
+<div class="citas">
+  <div class="b b1"><div class="cita">“Estableceré con firmeza el trono de su reino <b>para siempre</b>”<span class="ref">2 SAMUEL 7:13</span></div></div>
+  <div class="b b2"><div class="cita">“No le voy a mentir a David. Su descendencia durará para siempre, <b>su trono durará tanto como el sol</b>”<span class="ref">SALMO 89:35, 36</span></div></div>
+  <div class="b b3"><div class="cita">“<b>Del tocón de Jesé crecerá una ramita</b>, y un brote de sus raíces dará fruto”<span class="ref">ISAÍAS 11:1</span></div><div class="s">El brote de un tocón representa el renuevo de la gobernación de un linaje · <i>Perspicacia</i>, vol. 2, pág. 1120</div></div>
+  <div class="b b4"><div class="cita">“Jehová Dios le dará <b>el trono de David su padre</b> [...]. Su Reino no tendrá fin”<span class="ref">LUCAS 1:32, 33 · EL ÁNGEL A MARÍA</span></div></div>
+</div>
+<script>
+entra(".cab", 0.3, { y: -10 });
+const t0 = 0.6;
+salta(".n-jese", t0, { desde: 0.5 });
+traza(".ln1", t0 + 0.2, 1.6);
+salta(".n-david", t0 + 0.5, { desde: 0.5 });
+salta(".n-reyes", t0 + 1.0, { desde: 0.5 });
+salta(".n-sede", at("Cómo encaja"), { desde: 0.5 });
+traza(".ln2", at("con un trono vacío"), 1.4);
+tl.set(".ln2", { strokeDasharray: "6 22", strokeDashoffset: 0 }, at("con un trono vacío") + 1.45);
+aparece(".n-vacio", at("con un trono vacío") + 0.6, 0.6);
+salta(".n-tocon", at("Con la imagen del tocón"), { desde: 0.4 });
+late(".n-jese circle", at("Jesé era el padre"), { s: 1.6 });
+traza(".ln3", at("Jesús, descendiente de David"), 0.8);
+salta(".n-jesus", at("Jesús, descendiente de David"), { desde: 0.4 });
+secuencia([[".b1", 0.6], [".b2", at("Y un salmo")], [".b3", at("Isaías lo dijo")], [".b4", at("Y siglos después")]]);
+</script>

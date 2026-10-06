@@ -1,0 +1,31 @@
+<style>
+.izq { position: absolute; left: 80px; top: 120px; width: 860px; bottom: 80px; display: flex; flex-direction: column; gap: 28px; justify-content: center; }
+.izq .cita { font-size: 54px; }
+.izq .quien { font-family: "Montserrat"; font-weight: 800; font-size: 26px; letter-spacing: 0.16em; color: var(--tenue); }
+.der { position: absolute; right: 80px; top: 120px; width: 820px; bottom: 80px; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.der svg { width: 820px; height: 330px; }
+.contra { border-left: 10px solid var(--oro); padding-left: 30px; }
+</style>
+<div class="cab"><span class="cap">Génesis 30</span><span>versículos 27 al 30</span></div>
+<div class="izq">
+  <div class="l1"><div class="quien">LABÁN</div><div class="cita">“Los presagios me indican que Jehová me está bendiciendo gracias a ti”<span class="ref">GÉNESIS 30:27</span></div></div>
+  <div class="l2 contra"><div class="quien">JACOB</div><div class="cita">“Desde que llegué, Jehová te ha bendecido”<span class="ref">GÉNESIS 30:30</span></div></div>
+</div>
+<div class="der">
+  <svg class="cielo-n" viewBox="0 0 820 330"></svg>
+  <div class="d1"><div class="def"><div class="t">Presagio · agüero</div><div class="x">una señal que se busca para <b>adivinar</b> lo oculto</div><div class="s">nota de la TNM en 30:27 · en Mesopotamia se miraban, por ejemplo, el hígado de un animal o los astros</div></div></div>
+  <div class="d2"><div class="m md">la adivinación: “en claro contraste y abierta oposición a la Santa Biblia”</div><div class="s">Perspicacia, vol. 1, “Adivinación”, pág. 51 · Deuteronomio 18:10-12 · la influencia de “los adoradores de la Luna”: Perspicacia, vol. 2, “Labán”, pág. 177</div></div>
+</div>
+<script>
+/*incluir:_dibujos.js*/
+let est = "";
+[[80, 60, 5], [180, 130, 4], [300, 50, 6], [420, 150, 3], [540, 70, 5], [700, 120, 4], [760, 40, 3], [250, 250, 4], [620, 260, 5], [100, 220, 3]].forEach(([x, y, r]) => est += '<circle cx="' + x + '" cy="' + y + '" r="' + r + '" fill="#fff6d6"/>');
+pinta(".cielo-n", defsDibujos() + '<g class="estrellas">' + est + '</g>' + luna(430, 170, 90, "lu") + '<text class="eti cielo" x="300" y="310" style="font-size:44px">Harán: el culto a Sin, dios de la Luna</text>');
+aparece(".cielo-n .estrellas", 0.5, 0.8);
+salta(".cielo-n .lu", 0.8, { desde: 0.7 });
+aparece(".cielo-n text", 1.4, 0.5);
+entra(".l1", 0.4, { y: 20 });
+entra(".d1", at("Un presagio"), { y: 20 });
+entra(".d2", at("La Biblia condena"), { y: 20 });
+entra(".l2", at("y Jacob se la aclaró"), { y: 20 });
+</script>

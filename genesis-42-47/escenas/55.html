@@ -1,0 +1,31 @@
+<style>
+.leccion .l { font-size: 88px; }
+.leccion .fu { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 26px; line-height: 1.3; color: #d5dbe1; margin-top: -18px; }
+.leccion .fu i { color: var(--tiza); }
+.leccion .p { font-size: 60px; }
+.leccion .propio { font-size: 32px; margin-top: -16px; }
+.portada { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.portada .t1 { font-family: "Fraunces", serif; font-weight: 700; font-size: 150px; line-height: 1; }
+.portada .t2 { font-family: "Caveat", cursive; font-weight: 700; font-size: 84px; color: var(--verde); margin-top: 20px; }
+.portada svg { width: 760px; height: 36px; margin-top: 14px; }
+.portada svg path { fill: none; stroke: var(--verde); stroke-width: 7; stroke-linecap: round; }
+.pista.lec { position: absolute; left: 0; right: 0; bottom: 60px; }
+.pista.lec span.on { background: var(--verde); border-color: var(--verde); }
+</style>
+
+<div class="seccion"><span class="r">Lecciones</span><span class="t">Génesis 47</span></div>
+<svg class="seccion-linea" viewBox="0 0 1740 20" preserveAspectRatio="none"><path d="M 4 10 C 400 4 1200 16 1736 8" /></svg>
+<div class="leccion le0"><div class="n">1</div><div class="cuerpo"><div class="l">Años difíciles, y <b>no dejó de adorar a Dios</b></div><div class="fu">“En el nuevo mundo, sus años no serán pocos ni difíciles” · <i>Seamos valientes al andar con Dios</i>, cap.&nbsp;7, pág.&nbsp;41</div><div class="p pr0"><span class="k">PREGUNTA PARA PENSAR</span>¿Qué nos ayuda a seguir adorando a Jehová en años difíciles?</div></div></div>
+<div class="leccion le1"><div class="n">2</div><div class="cuerpo"><div class="l">Todo lo cobrado, <b>a la casa del faraón</b></div><div class="fu">47:14</div><div class="p pr1"><span class="k">PREGUNTA PARA PENSAR</span>¿Cuidamos con honradez lo que se nos confía?</div></div></div>
+<div class="leccion le2"><div class="n">3</div><div class="cuerpo"><div class="l">Pidió ser enterrado <b>donde Dios había prometido</b></div><div class="fu">no donde estaba cómodo · 47:30</div><span class="propio chico">observación propia</span><div class="p pr2"><span class="k">PREGUNTA PARA PENSAR</span>¿Qué ven nuestros hijos en nuestras decisiones: que creemos en las promesas de Jehová?</div></div></div>
+<div class="pista lec"><span class="hecho">42</span><span class="hecho">43</span><span class="hecho">44</span><span class="hecho">45</span><span class="hecho">46</span><span class="on">47</span></div>
+
+<script>
+entra(".seccion", 0.3, { y: -20 });
+traza(".seccion-linea path", 0.6, 1.0);
+entra(".pista.lec", 0.8, { y: 16 });
+secuencia([[".le0", at("Primera") - 0.2], [".le1", at("Segunda") - 0.2], [".le2", at("Tercera") - 0.2]], null, { y: 30, d: 0.6 });
+entra(".pr0", at("Qué nos ayuda") - 0.3, { x: -30, y: 0 });
+entra(".pr1", at("Cuidamos con honradez") - 0.3, { x: -30, y: 0 });
+entra(".pr2", at("Qué ven nuestros") - 0.3, { x: -30, y: 0 });
+</script>

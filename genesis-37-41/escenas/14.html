@@ -1,0 +1,44 @@
+<style>
+.col.d14 { left: 1120px; right: 60px; width: auto; top: 110px; bottom: 80px; }
+.pie14 { left: 24px; bottom: 20px; }
+.tel14 svg { width: 100%; display: block; }
+.et14 { font-family: "Caveat", cursive; font-weight: 700; font-size: 34px; fill: #f1e9d8; text-anchor: middle; paint-order: stroke; stroke: rgba(17, 25, 33, 0.92); stroke-width: 7px; stroke-linejoin: round; }
+.tel14 .l { font-family: "Caveat", cursive; font-weight: 700; font-size: 38px; fill: var(--tiza); }
+</style>
+
+<div class="sangre"><div class="kb"><img src="assets/img/dotan-foto.jpg" /></div></div>
+<div class="velo der"></div>
+<div class="pie pie14">“Vista desde Tell Dothan”. <i>Perspicacia</i>, vol. 1, pág. 950 (wol.jw.org)</div>
+<div class="cab sobre" style="z-index:3"><span class="cap">Dotán hoy</span><span>Génesis 37:17 · 2 Reyes 6</span></div>
+<div class="col d14">
+  <div class="b a1">
+    <div class="def"><div class="t">Dotán</div><div class="x"><b>Tell Dothan</b>: una colina en una pequeña llanura entre las colinas de Samaria y el Carmelo</div><div class="s">“a 16 Km. al NNE. de Samaria” · <i>Perspicacia</i>, vol. 1, “Dotán”, pág. 721</div></div>
+    <div class="tel14 tt"><svg viewBox="0 0 700 250" class="tel-svg"></svg></div>
+    <div class="m md cielo lp">la llanura de pastos que buscaban los hermanos</div>
+  </div>
+  <div class="b a2">
+    <div class="cita md">“¡La región montañosa estaba llena de caballos y carros de fuego alrededor de Eliseo!”<span class="ref">2 REYES 6:17</span></div>
+    <div class="f">un ejército sirio rodeó Dotán para atrapar al profeta · <i>Perspicacia</i>, vol. 1, “Dotán”, pág. 722</div>
+    <span class="externa chico ex14">hoy en Cisjordania · excavado entre 1953 y 1964: una ciudad cananea amurallada y un gran edificio israelita destruido por el fuego · casi todo, cubierto otra vez de tierra · un “pozo de José” de la tradición, sin ninguna prueba</span>
+  </div>
+</div>
+
+<script>
+// Un tel en corte: ciudades una encima de otra.
+const CAP = ["#6f5a44", "#80684e", "#917757", "#a18663", "#b09470"];
+let t = `<path d="M 0 212 L 700 212 L 700 250 L 0 250 Z" fill="#4c3b2b"/>`;
+CAP.forEach((c, i) => {
+  const y0 = 212 - i * 34, y1 = y0 - 34, e = 40 + i * 44;
+  t += `<path class="capa c${i}" d="M ${e} ${y0} C ${e + 40} ${y1 + 4} ${700 - e - 40} ${y1 + 4} ${700 - e} ${y0} Z" fill="${c}" stroke="#3a2c20" stroke-width="3"/>`;
+});
+t += `<text class="et14 ct0" x="350" y="200">la ciudad más antigua</text><text class="et14 ct4" x="350" y="64">la más reciente</text>`;
+$(".tel-svg").innerHTML = t;
+kb(".kb", 0, DUR, { s: 1.1, x: 2 }, { s: 1.0, x: 0 });
+aparece(".pie14", 0.6, 0.5);
+secuencia([[".a1", 0.4], [".a2", at("Siglos después")]]);
+entra(".tt", at("Un tel"), { y: 20 });
+CAP.forEach((c, i) => entra(".c" + i, at("Un tel") + 0.2 + i * 0.3, { y: 20, d: 0.4 }));
+aparece([".ct0", ".ct4"], at("reconstruida"), 0.5);
+entra(".lp", at("Esta es la llanura"), { y: 16 });
+entra(".ex14", at("Hoy está"), { y: 16 });
+</script>

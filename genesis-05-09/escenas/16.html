@@ -1,0 +1,52 @@
+<style>
+.ilus.im { left: 60px; top: 130px; width: 1140px; height: 380px; }
+.pie-img.pi { left: 60px; top: 520px; width: 1140px; }
+.col { top: 120px; bottom: auto; height: 460px; right: 60px; width: 620px; }
+.col .m { font-size: 62px; }
+.dib { position: absolute; left: 0; top: 0; }
+.rt { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; fill: var(--tiza); paint-order: stroke; stroke: #17212b; stroke-width: 8px; }
+.tv { position: absolute; left: 80px; right: 80px; top: 870px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+.tv .def .x { font-size: 54px; }
+.tv .def .s { font-size: 24px; }
+</style>
+
+<div class="cab sobre"><span class="cap">Génesis 6</span><span>versículos 14 a 16 · Éxodo 2:3</span></div>
+<div class="ilus im"><div class="kb"><img src="assets/img/arca-anotada.jpg" /></div></div>
+<div class="pie-img pi">El arca a lo lejos. Imite su fe, cap. 2, pág. 20 · recuadro y medidas añadidos en la investigación, con Perspicacia, “Arca”</div>
+<div class="col">
+  <div class="b a1"><div class="m">un <b>cajón</b>, no un barco</div><div class="s">fondo plano · esquinas cuadradas · Perspicacia, vol. 1, “Arca”</div></div>
+  <div class="b a2"><div class="m">sin proa, sin timón, sin velas</div><div class="m oro">hermética y que flote</div></div>
+</div>
+<svg class="dib" width="1920" height="1080" viewBox="0 0 1920 1080"><g class="arca-g"></g>
+  <g class="rots">
+    <text class="rt r1" x="150" y="640">tres cubiertas</text>
+    <text class="rt r2" x="1250" y="840" fill="#e9bf60" style="fill:#e9bf60">puerta en un lado</text>
+    <text class="rt r3" x="600" y="620">abertura cerca del techo</text>
+  </g>
+  <path class="fl1" d="M 395 650 L 420 700" stroke="#e9bf60" stroke-width="5" stroke-linecap="round"/>
+  <path class="fl3" d="M 900 628 L 930 682" stroke="#f1e9d8" stroke-width="5" stroke-linecap="round"/>
+</svg>
+<div class="tv">
+  <div class="def d1"><div class="t">arca <i>te·váh</i></div><div class="x">lit. “<b>cofre</b>”, una caja enorme</div><div class="s">nota de la TNM en Génesis 6:14</div></div>
+  <div class="def d2"><div class="t">la otra vez: Éxodo 2:3</div><div class="x">la <b>cesta</b> del bebé Moisés</div><div class="s">dos veces en la Biblia, y las dos para salvar una vida del agua</div></div>
+</div>
+
+<script>
+/*incluir:_arca.js*/
+$(".arca-g").innerHTML = arcaSVG(200, 690, 1300);
+tl.set($(".arca-g"), { opacity: 0 }, 0);
+entra(".cab", 0.2, { y: -20 });
+entra(".im", 0.3, { y: 30 });
+kb(".im .kb", 0.3, DUR, { s: 1.08 }, { s: 1.0 });
+aparece(".pi", 0.9, 0.5);
+secuencia([[".a1", 0.6], [".a2", at("No necesitaba")]]);
+tl.to($(".arca-g"), { opacity: 1, duration: 0.8 }, at("fondo plano") - 0.4);
+tl.set($$(".ar-cubiertas, .ar-tsohar, .rots text, .fl1, .fl3"), { opacity: 0 }, 0);
+aparece(".ar-cubiertas", at("tres cubiertas"), 0.5);
+aparece([".r1", ".fl1"], at("tres cubiertas"), 0.5);
+aparece([".r2"], at("una puerta"), 0.5);
+late(".ar-puerta", at("una puerta"), { s: 1.12, n: 3 });
+aparece([".ar-tsohar", ".r3", ".fl3"], at("una abertura"), 0.5);
+entra(".d1", at("La palabra hebrea"), { y: 30 });
+entra(".d2", at("Tevá aparece"), { y: 30 });
+</script>

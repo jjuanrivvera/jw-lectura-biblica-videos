@@ -1,0 +1,62 @@
+<style>
+.hd { position: absolute; top: 110px; height: 150px; width: 820px; border-radius: 22px; overflow: hidden; }
+.hd img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hd .v { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(16,22,42,0.9), rgba(16,22,42,0.45)); }
+.hd .t { position: absolute; left: 30px; top: 30px; font-family: "Fraunces", serif; font-weight: 700; font-size: 56px; color: var(--papel); }
+.hd .t small { display: block; font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 24px; color: var(--tenue); margin-top: 4px; }
+.hl { left: 80px; }
+.hr { right: 80px; }
+.filas { position: absolute; left: 80px; right: 80px; top: 285px; }
+.fila { position: relative; height: 98px; display: grid; grid-template-columns: 820px 120px 820px; align-items: center; }
+.fila .l, .fila .r { font-family: "Fraunces", serif; font-weight: 500; font-size: 34px; line-height: 1.15; }
+.fila .l { color: var(--tenue); }
+.fila .r { color: var(--papel); }
+.fila .l i, .fila .r i { font-family: "Montserrat", sans-serif; font-style: normal; font-weight: 600; font-size: 26px; color: var(--tenue); margin-left: 12px; }
+.fila .fl { text-align: center; }
+.fila .fl svg { width: 90px; height: 30px; }
+.cierre { position: absolute; left: 120px; right: 120px; top: 380px; height: 520px; border-radius: 30px; background: rgba(16,22,42,0.95); border: 3px solid rgba(246,217,143,0.6);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; text-align: center; padding: 0 60px; }
+.cierre .titulo { font-size: 84px; color: var(--oro-claro); }
+.cierre .s { font-size: 34px; color: var(--papel); }
+.cierre .s b { color: var(--cielo); }
+.cierre .ref { font-size: 24px; }
+.ncielo { position: absolute; left: 80px; right: 80px; top: 995px; text-align: center; font-family: "Montserrat", sans-serif; font-size: 26px; white-space: nowrap; color: var(--papel); }
+.ncielo b { color: var(--cielo); }
+.pies { position: absolute; left: 80px; right: 80px; top: 262px; display: flex; justify-content: space-between; font-family: "Montserrat", sans-serif; font-size: 20px; color: var(--tenue); }
+</style>
+
+<div class="cab"><span class="sec">El principio y el final</span><span></span></div>
+<div class="hd hl"><img src="assets/img/my-expulsados.jpg" style="object-position: 50% 30%" /><div class="v"></div><div class="t">Génesis 1 a 3<small>lo que se perdió</small></div></div>
+<div class="hd hr"><img src="assets/img/v-paraiso.jpg" style="object-position: 50% 60%" /><div class="v"></div><div class="t">Apocalipsis 20 a 22<small>lo que vuelve</small></div></div>
+<div class="filas" data-layout-allow-overlap></div>
+<div class="ncielo">Nuevo cielo: <b>un nuevo gobierno celestial</b> · nueva tierra: <b>una nueva sociedad</b> · <i>Acerquémonos a Jehová</i>, cap. 8, pág. 82</div>
+<div class="cierre" data-layout-allow-overlap>
+  <div class="titulo">Lo que se perdió al principio vuelve al final.</div>
+  <div class="s">Comparación hecha con los versículos de la TNM.</div>
+</div>
+
+<script>
+const PARES = [
+  ["“Se bloqueó el camino que llevaba al árbol de la vida”", "3:24", "“En las dos orillas del río había árboles de vida”", "22:2"],
+  ["“De Edén salía un río que regaba el jardín”", "2:10", "“Un río de agua de vida […] que salía del trono de Dios”", "22:1"],
+  ["La serpiente engaña: “De ningún modo morirán”", "3:4", "“El Diablo […] fue arrojado al lago de fuego”", "20:10"],
+  ["“El suelo está maldito por tu culpa”", "3:17", "“Ya no habrá ninguna maldición”", "22:3"],
+  ["“Polvo eres y al polvo volverás”", "3:19", "“La muerte ya no existirá”", "21:4"],
+  ["“Se escondieron de la vista de Jehová Dios”", "3:8", "“La tienda de Dios está con la humanidad”", "21:3"],
+  ["“Dios creó los cielos y la tierra”", "1:1", "“Un nuevo cielo y una nueva tierra”", "21:1"],
+];
+pinta(".filas", PARES.map(([a, ra, b, rb], i) => '<div class="fila f' + i + '"><div class="l">' + a + "<i>" + ra + '</i></div><div class="fl"><svg viewBox="0 0 90 30"><path class="hilo" d="M 6 15 L 70 15 M 58 4 L 76 15 L 58 26" style="stroke-width: 6"/></svg></div><div class="r">' + b + "<i>" + rb + "</i></div></div>").join(""));
+entra(".cab", 0.3, { y: -10 });
+entra(".hl", 0.4, { x: -30, y: 0 });
+entra(".hr", 0.7, { x: 30, y: 0 });
+const T = ["En Génesis se bloquea", "En Génesis, de Edén", "Allí la serpiente", "El suelo está maldito", "Polvo eres", "Adán y Eva se escondieron", "Y si la Biblia empieza"].map((p) => at(p));
+const R = ["en las dos orillas", "un río de agua", "aquí es destruida", "ya no habrá ninguna", "la muerte ya no", "la tienda de Dios", "termina con"].map((p) => at(p));
+T.forEach((t, i) => {
+  entra(".f" + i + " .l", t, { x: -24, y: 0 });
+  traza(".f" + i + " .hilo", R[i] - 0.6, 0.5);
+  entra(".f" + i + " .r", R[i] - 0.1, { x: 24, y: 0 });
+});
+entra(".ncielo", at("un nuevo gobierno celestial"), { y: 12 });
+atenua([".filas", ".ncielo"], at("Lo que se perdió"), 0.12, 0.5);
+salta(".cierre", at("Lo que se perdió"), { desde: 0.9, ease: "power3.out" });
+</script>

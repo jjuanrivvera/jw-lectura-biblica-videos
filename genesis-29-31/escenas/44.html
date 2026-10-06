@@ -1,0 +1,28 @@
+<style>
+.tit { position: absolute; left: 80px; right: 80px; top: 100px; }
+.tit .m { font-size: 76px; }
+.tres { position: absolute; left: 80px; right: 80px; top: 230px; bottom: 200px; display: grid; grid-template-rows: repeat(3, 1fr); row-gap: 22px; }
+.fila { display: grid; grid-template-columns: 1fr 90px 1.3fr; align-items: center; column-gap: 20px; border-radius: 24px; background: rgba(10,16,22,0.42); border: 3px solid rgba(241,233,216,0.12); padding: 14px 28px; }
+.fila .p { font-family: "Fraunces"; font-weight: 700; font-size: 50px; color: var(--oro); }
+.fila .p small { display: block; font-family: "Montserrat"; font-size: 22px; letter-spacing: 0.12em; color: var(--tenue); font-weight: 700; }
+.fila .fl { font-family: "Montserrat"; font-weight: 800; font-size: 60px; color: var(--tenue); text-align: center; }
+.fila .c { font-family: "Fraunces"; font-weight: 500; font-size: 38px; line-height: 1.2; }
+.fila .c small { display: block; font-family: "Montserrat"; font-size: 22px; color: var(--tenue); margin-top: 4px; }
+.baston { position: absolute; left: 80px; right: 80px; bottom: 40px; }
+.baston .cita { font-size: 42px; }
+</style>
+<div class="cab"><span class="cap">Los hilos</span><span>Génesis 28:15 → 29 a 31</span></div>
+<div class="tit"><div class="m">la promesa de <b style="color:var(--oro)">Betel</b>, cumplida punto por punto</div></div>
+<div class="tres">
+  <div class="fila f1"><div class="p">“Yo estoy contigo”<small>GÉNESIS 28:15</small></div><div class="fl">→</div><div class="c">“Los presagios me indican que Jehová me está bendiciendo gracias a ti”<small>Labán · 30:27; 30:30</small></div></div>
+  <div class="fila f2"><div class="p">“te protegeré”<small>GÉNESIS 28:15</small></div><div class="fl">→</div><div class="c">“Dios no le ha permitido hacerme daño”<small>31:7 · y le habló a Labán en sueños, 31:24</small></div></div>
+  <div class="fila f3"><div class="p">“te haré volver”<small>GÉNESIS 28:15</small></div><div class="fl">→</div><div class="c">“Regresa a la tierra de tus padres [...]. Yo continuaré contigo”<small>31:3</small></div></div>
+</div>
+<div class="baston"><div class="cita">“Cuando crucé el Jordán, solo tenía mi bastón, pero ahora tengo tanto que he llegado a formar dos campamentos”<span class="ref">GÉNESIS 32:10 · LA RELACIÓN ENTRE LOS VERSÍCULOS: OBSERVACIÓN PROPIA</span></div></div>
+<script>
+entra(".tit", 0.3, { y: -20 });
+entra(".f1", at("Yo estoy contigo"), { y: 20 });
+entra(".f2", at("Te protegeré"), { y: 20 });
+entra(".f3", at("Te haré volver"), { y: 20 });
+entra(".baston", at("Regresa a la tierra") + 1.5, { y: 20 });
+</script>

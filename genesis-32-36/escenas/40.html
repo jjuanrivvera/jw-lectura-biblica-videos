@@ -1,0 +1,33 @@
+<style>
+.hor { position: absolute; left: 60px; right: 60px; top: 130px; display: grid; grid-template-columns: repeat(7, 1fr); column-gap: 16px; }
+.hor .h { border-radius: 18px; border: 3px solid var(--cielo); background: rgba(10,16,22,0.5); text-align: center; padding: 22px 6px; font-family: "Fraunces", serif; font-weight: 700; font-size: 40px; }
+.hor .h.ana { border-color: var(--oro); color: var(--oro); }
+.tit40 { position: absolute; left: 60px; top: 260px; }
+.izq40 { position: absolute; left: 60px; top: 360px; width: 900px; display: flex; flex-direction: column; gap: 22px; }
+.der40 { position: absolute; left: 1020px; right: 60px; top: 330px; display: flex; flex-direction: column; gap: 22px; }
+.term { display: grid; grid-template-columns: 150px 1fr; align-items: center; column-gap: 20px; }
+.term svg { width: 150px; height: 330px; }
+</style>
+<div class="cab"><span class="cap">Génesis 36</span><span>versículos 20 al 30</span></div>
+<div class="hor"><div class="h">Lotán</div><div class="h">Sobal</div><div class="h">Zibeón</div><div class="h ana">Aná</div><div class="h">Disón</div><div class="h">Ézer</div><div class="h">Disán</div></div>
+<div class="tit40 m md" style="color:var(--cielo)">los jeques horeos, “hijos de Seír” · 36:20-30</div>
+<div class="izq40">
+  <div class="def d1"><div class="t">horeos<i>jor</i></div><div class="x">quizá “<b>morador de cuevas</b>”, de <i>jor</i>, “agujero”</div><div class="s">vivían en Seír antes que los descendientes de Esaú · <i>Perspicacia</i>, vol. 1, “Horeo”, pág. 1173</div></div>
+  <div class="m md d2">los de Esaú se emparentaron con ellos, y después los desplazaron · Deuteronomio 2:12</div>
+</div>
+<div class="der40">
+  <div class="cita md d3">“encontró aguas termales en el desierto mientras estaba cuidando los burros de su padre”<span class="ref">GÉNESIS 36:24</span></div>
+  <div class="term d4"><svg viewBox="0 0 170 380" class="ter"></svg><div><div class="def"><div class="t">aguas termales<i>hai·ye·mím</i></div><div class="x">la Vulgata: “<b>aguas calientes</b>”</div><div class="s">TNM de 1987, nota en 36:24</div></div><span class="externa" style="margin-top:14px">baños de Afra, al norte de Tafila: unos 15 manantiales, de 45 a 48 °C · pvt.jo</span><div class="f" style="margin-top:10px;font-size:24px">tan raro que servía para identificar a un hombre <span class="propio" style="font-size:24px;padding:0 10px">observación propia</span></div></div></div>
+</div>
+<script>
+$(".ter").innerHTML = `<rect x="60" y="20" width="50" height="300" rx="25" fill="#26313f" stroke="#b3bdc8" stroke-width="5"/><circle cx="85" cy="330" r="42" fill="#c0392b" stroke="#b3bdc8" stroke-width="5"/><rect class="mercurio" x="74" y="60" width="22" height="270" rx="11" fill="#c0392b"/>${[0, 1, 2, 3, 4, 5].map((i) => `<line x1="112" y1="${60 + i * 45}" x2="130" y2="${60 + i * 45}" stroke="#b3bdc8" stroke-width="4"/>`).join("")}<text x="135" y="72" font-family="Montserrat" font-weight="800" font-size="24" fill="var(--tiza)">48°</text>`;
+tl.set($(".ter .mercurio"), { scaleY: 0.15, svgOrigin: "85 330" }, 0);
+tl.to($(".ter .mercurio"), { scaleY: 1, svgOrigin: "85 330", duration: 1.8, ease: "power2.out" }, at("cuarenta y ocho") - 1.2);
+entra(".hor .h", 0.4, { st: 0.15, y: 20 });
+entra(".tit40", 0.9, { y: 10 });
+entra(".d1", at("Su nombre"), { y: 20 });
+entra(".d2", at("Los descendientes"), { y: 20 });
+late(".hor .ana", at("Aná"), { s: 1.12, n: 3 });
+entra(".d3", at("Aná") + 0.4, { y: 20 });
+entra(".d4", at("En una tierra"), { y: 20 });
+</script>

@@ -1,0 +1,56 @@
+<style>
+.tit46 { position: absolute; left: 80px; top: 96px; display: flex; align-items: baseline; gap: 26px; }
+.tit46 .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.18em; color: var(--tenue); text-transform: uppercase; }
+.tt46 { position: absolute; left: 290px; top: 74px; font-size: 84px; white-space: nowrap; }
+.jud46 { position: absolute; left: 80px; right: 80px; top: 220px; display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 26px; }
+.jud46 .tj { min-height: 380px; }
+.jud46 .tj .x { font-size: 36px; }
+.jud46 .tj .big { font-family: "Caveat", cursive; font-weight: 700; font-size: 52px; line-height: 1.05; }
+.fin46 { position: absolute; left: 80px; right: 80px; top: 650px; display: grid; grid-template-columns: 1fr 1.1fr; column-gap: 30px; align-items: center; }
+.gr46 { position: absolute; left: 80px; top: 200px; width: 1760px; height: 660px; }
+.gr46 svg { width: 1760px; height: 660px; display: block; }
+.he46 { position: absolute; left: 80px; right: 80px; bottom: 44px; display: grid; grid-template-columns: 1.4fr 1fr; column-gap: 30px; align-items: end; }
+.chips46 { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+.chips46 span { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; padding: 8px 16px; border-radius: 12px; border: 3px solid var(--oro); color: var(--oro); }
+</style>
+
+<div class="tit46"><span class="r">los hilos</span></div>
+<div class="m tt46 ta">Judá cambia</div><div class="m tt46 tb">“Jehová estaba con José”</div>
+<div class="jud46">
+  <div class="tj j1" style="border-color:rgba(236,138,103,0.6)"><div class="k" style="color:var(--rojo)">en Dotán</div><div class="big">propone vender a su hermano</div><div class="x">“Vamos a vendérselo a los ismaelitas”</div><div class="ref">GÉNESIS 37:27</div></div>
+  <div class="tj j2"><div class="k">con Tamar</div><div class="big">falla, y lo reconoce</div><div class="x">“Ella es más justa que yo”</div><div class="ref">GÉNESIS 38:26</div></div>
+  <div class="tj j3 on"><div class="k">en Egipto, años después</div><div class="big">se ofrece como esclavo por Benjamín</div><div class="x">“permite que sea yo y no el muchacho el que se quede como esclavo tuyo”</div><div class="ref">GÉNESIS 44:33</div></div>
+</div>
+<div class="fin46">
+  <div class="m oro f1">Génesis 38 no interrumpe la historia de José: <b style="color:var(--tiza)">prepara la de Judá</b></div>
+  <div class="cita f2">“El cetro no se apartará de Judá”<span class="ref">GÉNESIS 49:10 · POR MEDIO DE PÉREZ</span></div>
+</div>
+<div class="gr46"><svg viewBox="0 0 1760 660" class="gsvg"></svg></div>
+<div class="he46">
+  <div class="cita md h1">“Y los patriarcas se pusieron celosos de José y lo vendieron a Egipto. Pero <b>Dios estaba con él</b>”<span class="ref">HECHOS 7:9</span></div>
+  <div class="chips46 h2"><span>39:2</span><span>39:3</span><span>39:21</span><span>39:23</span></div>
+</div>
+
+<script>
+/*incluir:_grafica.js*/
+grafica(".gsvg");
+entra([".tit46 .r", ".ta"], 0.3, { y: 16 });
+entra(".j1", at("En Dotán"), { y: 24 });
+entra(".j2", at("con Tamar"), { y: 24 });
+entra(".j3", at("y en Egipto"), { y: 24 });
+entra(".f1", at("Génesis treinta y ocho"), { y: 20 });
+entra(".f2", at("de quien vendría"), { y: 20 });
+const tH = at("Y el último hilo");
+sale([".jud46", ".fin46", ".ta"], tH - 0.4, { y: -16 });
+entra(".tb", tH, { y: 16 });
+aparece(".gr46", tH - 0.2, 0.4);
+[0, 1, 2, 3, 4, 5, 6, 7].forEach((i) => paso(i, tH + 0.4 + i * 0.45, 0.35));
+tl.set($(".gr-orol"), { opacity: 0 }, 0);
+traza(".gr-orol", at("Jehová estaba con José") - 0.2, 1.6);
+tl.fromTo($(".gr-orot"), { opacity: 0 }, { opacity: 1, duration: 0.5, immediateRender: false }, at("Jehová estaba con José"));
+tl.set($(".gr-orot"), { opacity: 0 }, 0);
+entra(".h2", at("repite cuatro veces"), { y: 12 });
+tl.fromTo($$(".chips46 span"), { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, stagger: 0.15, ease: "back.out(2)", immediateRender: false }, at("repite cuatro veces"));
+tl.set($$(".chips46 span"), { opacity: 0 }, 0);
+entra(".h1", at("Esteban"), { y: 20 });
+</script>

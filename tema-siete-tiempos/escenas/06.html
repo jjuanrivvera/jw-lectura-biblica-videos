@@ -1,0 +1,32 @@
+<style>
+.ilus.img { left: 60px; top: 240px; width: 1000px; height: 563px; }
+.pie { position: absolute; left: 60px; top: 822px; width: 1000px; font-size: 24px; color: var(--tenue); }
+.trono-b { display: grid; grid-template-columns: 260px 1fr; gap: 30px; align-items: center; }
+.trono-b svg { width: 260px; height: 312px; }
+.tablilla { padding: 28px 32px; border-radius: 26px 26px 40px 30px; background: linear-gradient(160deg, #c9a27a, #8f6a48); color: #2a1a0c; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+.tablilla .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.16em; color: #3a2410; }
+.tablilla .t { font-family: "Fraunces", serif; font-weight: 600; font-size: 42px; line-height: 1.2; margin-top: 10px; }
+</style>
+<div class="cab"><span class="cap">Daniel 4</span><span>versículos 34 al 37</span></div>
+<div class="ilus img"><div class="kb"><img src="assets/img/lff-rey-alaba.jpg" /></div></div>
+<div class="pie">Video <i>El Reino de Dios empezó a gobernar en 1914</i>, minuto 1:41 (jw.org)</div>
+<div class="col">
+  <div class="b b1"><div class="cita">“Cuando terminó ese periodo [...] levanté la mirada hacia los cielos y <b>recobré el juicio</b>”<span class="ref">DANIEL 4:34</span></div><div class="cita">“Su dominio es un <b>dominio eterno</b>”</div></div>
+  <div class="b b2"><div class="trono-b"><div class="tr"><!--trono--></div><div><div class="m oro">el trono, reservado</div><div class="s">Nadie lo sucedió como único soberano; quizás su hijo <b>Evil-merodac</b> gobernó en funciones · <i>Profecías de Daniel</i>, pág. 88</div></div></div></div>
+  <div class="b b3"><div class="cita">“<b>Se me devolvió el reino</b>, y mi grandeza aumentó todavía más”<span class="ref">DANIEL 4:36</span></div></div>
+  <div class="b b4"><div class="tablilla"><div class="k">FUERA DE LA BIBLIA</div><div class="t">“Un texto cuneiforme fragmentario se refiere aparentemente a algún trastorno mental de Nabucodonosor”</div></div><div class="s">El erudito John E. Goldingay, citado en <i>Profecías de Daniel</i>, pág. 94</div></div>
+  <div class="b b5"><div class="m">la lección del rey</div><div class="cita">Jehová “puede <b>humillar a los que se comportan con orgullo</b>”<span class="ref">DANIEL 4:37</span></div></div>
+</div>
+<script>
+/*incluir:_trono.js*/
+$(".tr").innerHTML = tronoSVG("t06");
+inicial(el(".tr .tr-borde"), { opacity: 0 });
+entra(".cab", 0.3, { y: -10 });
+aparece(".img", 0.3, 0.8);
+kb(".img .kb", 0.3, DUR, { s: 1.0 }, { s: 1.12, y: -2 });
+aparece(".pie", 0.6, 0.5);
+const tR = at("Mientras tanto");
+secuencia([[".b1", 0.5], [".b2", tR], [".b3", at("Y cuando se cumplieron")], [".b4", at("Hay un dato interesante")], [".b5", at("La carta termina")]]);
+inicial(el(".tr .tr-cinta"), { opacity: 0 });
+salta(".tr .tr-cinta", at("el trono estaba reservado"), { desde: 1.4 });
+</script>

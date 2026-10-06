@@ -1,0 +1,46 @@
+<!--incluir:_naciones.html-->
+<div class="colN">
+  <div class="cabN"><div class="r c-sem">Sem</div><div class="v c-sem">26 <small>familias</small></div><div class="d">en medio</div></div>
+  <div class="slot">
+    <div class="b lista">
+      <div class="itN i1"><span class="a c-sem">Elam</span><span class="b2">elamitas, suroeste de Irán</span></div>
+      <div class="itN i2"><span class="a c-sem">Asur</span><span class="b2">asirios: en hebreo, la misma palabra</span></div>
+      <div class="itN i3"><span class="a c-sem">Aram</span><span class="b2">arameos, o sirios</span></div>
+      <div class="itN i5"><span class="a c-sem">Joctán</span><span class="b2">sus trece hijos: tribus de Arabia</span></div>
+      <div class="itN i4"><span class="a c-sem">Arpaksad</span><span class="b2">el antepasado de <b style="color:var(--oro)">los hebreos</b></span></div>
+    </div>
+    <div class="b nom">
+      <div class="def"><div class="t">Sem<i>Génesis 10:1, 21</i></div><div class="x">“<b>Nombre</b>; <b>Fama</b>”</div><div class="s"><i>Perspicacia</i>, vol. 2, “Sem”, pág. 990</div></div>
+      <div class="cita sm">“era hermano de Jafet, el mayor”<span class="ref">GÉNESIS 10:21 · NOTA: “O QUIZÁS ‘ERA EL HERMANO MAYOR DE JAFET’”</span></div>
+      <div class="m md may">probablemente, <b>más joven</b> que Jafet: va primero por ser el más destacado</div>
+      <div class="f may"><i>Perspicacia</i>, vol. 2, “Sem”, pág. 990; vol. 1, “Abrahán”, pág. 30</div>
+    </div>
+    <div class="b total">
+      <div class="m" style="font-size:84px"><span class="c-jafet">14</span> + <span class="c-cam">30</span> + <span class="c-sem">26</span> = <b>70</b></div>
+      <div class="cita sm">“De estas familias proceden todas las naciones que poblaron la tierra después del Diluvio”<span class="ref">GÉNESIS 10:32</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/*incluir:_naciones_lib.js*/
+pintaPueblos();
+PUEBLOS.forEach((p) => tl.set($(pb(p[1])), { opacity: p[0] === "S" ? 0 : 0.45 }, 0));
+const TODO = { x: 0, y: 0, w: 2400, h: 1840 };
+tl.set($(".cam"), encuadre(TODO, VN), 0);
+aparece(".pieN", 0.5, 0.5);
+entra(".cabN", 0.4, { y: 24 });
+camara(".cam", at("en medio") - 0.6, 2.0, encuadre({ x: 700, y: 600, w: 1600, h: 1252 }, VN));
+secuencia([[".lista", at("elamitas") - 0.4], [".nom", at("Sem significa")], [".total", at("De estas familias")]]);
+entra(".i1", at("elamitas") - 0.2, { y: 14 }); salta(pb("Elam"), at("elamitas"), { desde: 0.3 });
+entra(".i2", at("asirios") - 0.2, { y: 14 }); salta(pb("Asur"), at("asirios"), { desde: 0.3 });
+entra(".i3", at("arameos") - 0.2, { y: 14 }); salta(pb("Aram"), at("arameos"), { desde: 0.3 });
+entra(".i4", at("hebreos") - 0.2, { y: 14 });
+entra(".i5", at("tribus árabes") - 0.2, { y: 14 }); salta(pb("Joctán"), at("tribus árabes"), { desde: 0.3 });
+salta(pb("Lud"), at("hebreos") + 0.6, { desde: 0.3 });
+entra(".nom .cita", at("Aparece primero") - 0.2, { y: 16 });
+entra(".may", at("más joven"), { y: 14 });
+const tT = at("De estas familias");
+camara(".cam", tT - 0.4, 2.0, encuadre(TODO, VN));
+PUEBLOS.filter((p) => p[0] !== "S").forEach((p) => tl.to($(pb(p[1])), { opacity: 1, duration: 0.6 }, tT + 0.4));
+</script>

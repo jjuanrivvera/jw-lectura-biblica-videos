@@ -1,0 +1,55 @@
+<style>
+.mapa.B2 { left: 0; top: 0; width: 1920px; height: 1080px; }
+.cab.sobre { z-index: 3; right: auto; gap: 30px; }
+.hoy11 { position: absolute; left: 880px; top: 100px; width: 590px; display: flex; flex-direction: column; gap: 18px; }
+.hoy11 .def { background: rgba(23, 33, 43, 0.95); }
+.hoy11 .def .x { font-size: 44px; }
+.der11 { position: absolute; right: 50px; bottom: 70px; width: 820px; }
+.der11 > .b { position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; gap: 14px; }
+.der11 .caja { background: #0f161e; }
+.der11 .caja .m { font-size: 56px; }
+.der11 .caja .s { font-size: 26px; margin-top: 6px; }
+.fx11 { position: absolute; left: 60px; bottom: 24px; max-width: 980px; }
+.fx11 .f { background: rgba(15, 22, 30, 0.95); padding: 6px 14px; border-radius: 10px; }
+</style>
+
+<!--incluir:_b2.html-->
+<div class="cab sobre"><span class="cap">El camino a Egipto hoy</span><span>la frontera del noreste</span></div>
+<div class="hoy11">
+  <div class="def d1"><div class="t">Sur <i>“muro”</i></div><div class="x">¿un <b>muro</b> de defensa a lo largo del istmo, o una <b>fila de fortalezas</b>?</div><div class="s">“se necesitan más pruebas” · <i>Perspicacia</i>, vol.&nbsp;2, “Sur, I”, pág.&nbsp;1076</div></div>
+</div>
+<div class="der11">
+  <div class="b b1"><div class="caja"><div class="m rosa" style="color:var(--rosa)">Camino de Horus</div><div class="s">la ruta egipcia de la costa: unos <b>180 km</b>, con fortines, pozos y graneros cada día de marcha</div></div><span class="externa chico">fuente externa: Wikipedia, “Way of Horus”, “Tjaru”</span></div>
+  <div class="b b2"><div class="caja"><div class="m rosa" style="color:var(--rosa)">un papiro egipcio</div><div class="s">de siglos después (Anastasi VI): la frontera dejó pasar a unos pastores de Edom “para mantenerlos vivos a ellos y a sus rebaños”</div></div><span class="externa chico">fuente externa: intertextual.bible, “Papyrus Anastasi VI”</span></div>
+  <div class="b b3"><div class="caja"><div class="m" style="color:#7fb5ea">hoy: el Canal de Suez</div><div class="s">abierto en 1869, cruza la franja del istmo</div></div><span class="externa chico">fuente externa</span></div>
+</div>
+
+<script>
+const HORUS = "M 815 1351 C 900 1372 1000 1360 1150 1332 C 1300 1300 1420 1270 1500 1250 C 1580 1228 1650 1190 1709 1152";
+const CANAL = "M 834 1201 C 820 1280 805 1340 801 1391 C 790 1450 776 1490 773 1522 C 782 1570 800 1600 812 1630";
+const MURO = "M 800 1215 C 786 1290 772 1350 768 1400 C 758 1460 746 1500 742 1540 C 752 1600 780 1640 796 1680";
+let torres = "";
+[[781, 1310], [768, 1400], [746, 1500], [770, 1610]].forEach(([x, y]) => { torres += `<g transform="translate(${x} ${y})"><g class="tw"><rect x="-13" y="-26" width="26" height="30" fill="#c0392b" stroke="#fff" stroke-width="3"/><path d="M -13 -26 v -8 h 7 v 6 h 6 v -6 h 7 v 6 h 6 v -6 h 7 v 8" fill="#c0392b" stroke="#fff" stroke-width="2.5"/></g></g>`; });
+pinta(".marcas", `
+  <ellipse class="anillo a-sur" cx="1052" cy="1422" rx="96" ry="52" style="stroke-width:7"/>
+  <path class="muro" d="${MURO}" stroke="#c0392b" stroke-width="12" stroke-dasharray="20 14" fill="none" stroke-linecap="round"/>
+  <g class="torres">${torres}</g>
+  <path class="ruta-h ho-h" stroke-width="30" d="${HORUS}"/><path class="ruta ho" stroke-width="15" style="stroke:#c2477e" d="${HORUS}"/>
+  <g class="ptH"><circle cx="815" cy="1351" r="11" fill="#c2477e" stroke="#fff" stroke-width="4"/><rect x="842" y="1284" width="290" height="44" rx="10" fill="rgba(15,22,30,0.94)"/><text class="lugar" x="856" y="1315" font-size="26" style="fill:#e9adcc">Tjaru (Tell Hebua)</text></g>
+  <g class="ptR"><circle cx="1709" cy="1152" r="11" fill="#c2477e" stroke="#fff" stroke-width="4"/><rect x="1545" y="1140" width="110" height="44" rx="10" fill="rgba(15,22,30,0.94)"/><text class="lugar" x="1559" y="1171" font-size="26" style="fill:#e9adcc">Rafah</text></g>
+  <path class="canal" d="${CANAL}" stroke="#3d8fe0" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <g class="lcanal"><rect x="826" y="1540" width="230" height="44" rx="10" fill="rgba(15,22,30,0.94)"/><text class="lugar" x="840" y="1571" font-size="26" style="fill:#7fb5ea">Canal de Suez</text></g>`);
+const V = { x: 0, y: 0, w: 1920, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 600, y: 1060, w: 1220, h: 686 }, V), 0);
+traza(".a-sur", at("Sur, que significa"), 0.8);
+entra(".d1", at("Sur, que significa") + 0.2, { y: -16 });
+traza(".muro", at("un muro de defensa"), 1.4);
+tl.set($(".muro"), { strokeDasharray: "20 14" }, at("un muro de defensa") + 1.45);
+salta(".torres .tw", at("una fila de fortalezas"), { desde: 0, st: 0.15 });
+const tH = at("Camino de Horus");
+traza([".ho-h", ".ho"], tH - 0.2, 3.0);
+aparece([".ptH", ".ptR"], tH + 0.3, 0.5);
+secuencia([[".b1", tH], [".b2", at("Un papiro egipcio")], [".b3", at("Hoy esa franja")]]);
+traza(".canal", at("Hoy esa franja"), 1.6);
+aparece(".lcanal", at("Canal de Suez"), 0.5);
+</script>

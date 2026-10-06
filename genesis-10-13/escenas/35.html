@@ -1,0 +1,59 @@
+<style>
+.sangre img { object-position: 50% 100%; }
+.velo35 { position: absolute; left: 0; right: 0; top: 0; height: 560px; background: linear-gradient(180deg, rgba(23, 33, 43, 0.97) 0%, rgba(23, 33, 43, 0.9) 58%, rgba(23, 33, 43, 0) 100%); }
+.pie35 { right: 24px; bottom: 20px; max-width: 900px; }
+.mt35 { position: absolute; inset: 0; }
+.mt35 svg { width: 1920px; height: 1080px; display: block; }
+.m35 { font-family: "Caveat", cursive; font-weight: 700; font-size: 58px; fill: #fff; paint-order: stroke; stroke: rgba(17, 25, 33, 0.9); stroke-width: 12px; stroke-linejoin: round; text-anchor: middle; }
+.top35 { position: absolute; left: 90px; right: 90px; top: 40px; height: 380px; }
+.top35 > .b { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 40px; }
+.top35 .cita { font-size: 50px; flex: 1.3; }
+.top35 .def { flex: 1; align-self: center; }
+.top35 .def .x { font-size: 54px; }
+.alt35 { display: flex; align-items: center; gap: 30px; flex: 1; }
+.alt35 svg { width: 200px; height: 180px; flex: none; }
+.alt35 .m { font-size: 58px; }
+</style>
+
+<div class="sangre"><div class="kb"><img src="assets/img/siquem.jpg" /></div></div>
+<div class="velo35"></div>
+<div class="mt35"><svg viewBox="0 0 1920 1080">
+  <g class="lg"><text class="m35" x="300" y="430">Guerizim</text></g>
+  <g class="le"><text class="m35" x="1700" y="470">Ebal</text></g>
+  <g class="lv"><path d="M 960 640 V 720" stroke="#fff" stroke-width="5"/><path d="M 944 700 L 960 724 L 976 700" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"/><text class="m35" x="960" y="624">el valle de Siquem</text></g>
+</svg></div>
+<div class="pie pie35">“Los montes Guerizim (izquierda) y Ebal (derecha), que se yerguen sobre Siquem”. <i>Perspicacia</i>, vol. 1, pág. 331 (wol.jw.org)</div>
+
+<div class="top35">
+  <div class="b a1">
+    <div class="cita">“Abrán atravesó ese país hasta llegar a la región de <b>Siquem</b>, cerca de los árboles grandes de Moré”<span class="ref">GÉNESIS 12:6</span></div>
+    <div class="def"><div class="t">Moré</div><div class="x">tal vez, el nombre del <b>primer dueño</b> del terreno</div><div class="s"><i>Perspicacia</i>, vol. 2, “Moré”, pág. 425</div></div>
+  </div>
+  <div class="b a2">
+    <div class="def"><div class="t">Siquem</div><div class="x">“<b>Hombro</b>; Porción Saliente [de Tierra]”</div><div class="s"><i>Perspicacia</i>, vol. 2, “Siquem”, pág. 1035</div></div>
+    <div class="m md" style="flex:1.2">en el valle entre <b>Guerizim</b> y <b>Ebal</b>, a unos <b>48 km</b> al norte de Jerusalén</div>
+  </div>
+  <div class="b a3">
+    <div class="cita" style="text-align:center">“Por aquel entonces, los <b>cananeos</b> vivían en el país”<span class="ref">GÉNESIS 12:6</span></div>
+  </div>
+  <div class="b a4">
+    <div class="cita">“Voy a darle esta tierra a tu <b>descendencia</b>”<span class="ref">GÉNESIS 12:7</span></div>
+    <div class="alt35"><svg viewBox="0 0 200 180">
+      <defs><radialGradient id="g35-p" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#c9c2b2"/><stop offset="1" stop-color="#7b7466"/></radialGradient></defs>
+      <path d="M 70 70 C 80 40 110 30 100 10 C 130 30 130 60 120 70 Z" fill="#ffb13b" opacity="0.9"/>
+      <g stroke="#4f4a40" stroke-width="3" fill="url(#g35-p)"><ellipse cx="60" cy="160" rx="38" ry="18"/><ellipse cx="140" cy="160" rx="38" ry="18"/><ellipse cx="100" cy="152" rx="36" ry="18"/><ellipse cx="72" cy="126" rx="34" ry="17"/><ellipse cx="128" cy="126" rx="34" ry="17"/><ellipse cx="100" cy="100" rx="40" ry="18"/></g>
+    </svg><div class="m">el primer <b>altar</b> para Jehová</div></div>
+  </div>
+</div>
+
+<script>
+kb(".kb", 0, DUR, { s: 1.06 }, { s: 1.0 });
+aparece(".pie35", 0.6, 0.5);
+secuencia([[".a1", 0.4], [".a2", at("Siquem significa")], [".a3", at("Por aquel entonces")], [".a4", at("Allí Jehová")]]);
+entra(".a1 .def", at("Moré") - 0.2, { y: 16 });
+entra(".a2 .m", at("estaba en este valle") - 0.3, { y: 16 });
+entra(".lv", at("este valle") - 0.2, { y: 12 });
+entra(".lg", at("Guerizim") - 0.2, { y: 12 });
+entra(".le", at("Ebal") - 0.2, { y: 12 });
+entra(".alt35", at("construyó un altar") - 0.3, { y: 16 });
+</script>

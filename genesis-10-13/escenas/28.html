@@ -1,0 +1,35 @@
+<!--lead:2.4-->
+<style>
+.sangre img { object-position: 35% 40%; }
+.pie28 { left: 24px; bottom: 20px; max-width: 980px; }
+.col28 { position: absolute; left: 1080px; right: 60px; top: 90px; bottom: 90px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.col28 .cita { font-size: 50px; }
+.col28 .cita.g { font-size: 64px; }
+</style>
+
+<div class="fase fb">
+  <div class="sangre"><div class="kb"><img src="assets/img/salida-ur.jpg" /></div></div>
+  <div class="velo der"></div>
+  <div class="pie pie28">“Abrahán y Sara estuvieron dispuestos a dejar atrás las comodidades que tenían en Ur”. <i>Imitemos su fe</i>, cap. 3 (wol.jw.org)</div>
+  <div class="col28">
+    <div class="cita g c1">“Sal de tu país, deja a tus parientes y a los de la casa de tu padre y vete al país que <b>yo te mostraré</b>”<span class="ref">GÉNESIS 12:1</span></div>
+    <div class="def c2"><div class="t">no era la primera vez<i>Hechos 7:2, 3</i></div><div class="x">se lo mandó en <b>Ur</b> y se lo repitió en <b>Harán</b></div><div class="s">“cuando él estaba en Mesopotamia, antes de establecerse en Harán” (Hechos 7:2) · nota de estudio de Hechos 7:3</div></div>
+    <div class="cita c3">“Salió aunque <b>no sabía adónde iba</b>”<span class="ref">HEBREOS 11:8</span></div>
+  </div>
+</div>
+
+<div class="capcard cc"><div class="fondo"><img src="assets/img/empaca-lfb.jpg" /></div><div class="num">Génesis 12</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">“Sal de tu país”</div><div class="edad">Ur · la promesa · Canaán · Egipto</div>
+  <div class="pista"><span class="hecho">10</span><span class="hecho">11</span><span class="on">12</span><span>13</span></div></div>
+
+<script>
+capitulo(".cc", 0.2, at("Jehová le dijo") - 0.5);
+aparece(".cc .fondo", 0.1, 0.8);
+entra(".cc .pista", 0.9, { y: 16 });
+tl.fromTo($(".fb"), { opacity: 0 }, { opacity: 1, duration: 0.6, immediateRender: false }, at("Jehová le dijo") - 0.4);
+tl.set($(".fb"), { opacity: 0 }, 0);
+kb(".kb", 0, DUR, { s: 1.12, x: 3 }, { s: 1.0, x: 0 });
+entra(".c1", at("Sal de tu país") - 0.3, { y: 24 });
+entra(".c2", at("No era la primera") - 0.2, { y: 20 });
+entra(".c3", at("Y Abrán salió") - 0.2, { y: 20 });
+aparece(".pie28", at("Jehová le dijo"), 0.5);
+</script>

@@ -1,0 +1,27 @@
+<style>
+.leccion .l { font-size: 100px; }
+.leccion .p { font-size: 64px; }
+.leccion .s { font-size: 30px; }
+.portada { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; text-align: center; }
+.portada .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 110px; line-height: 1.05; }
+.portada .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.22em; color: var(--verde); text-transform: uppercase; }
+</style>
+
+<div class="seccion"><span class="r">Lecciones y preguntas para pensar</span><span class="t">Génesis 41</span></div>
+<div class="seccion-linea"><svg viewBox="0 0 1740 20" preserveAspectRatio="none" style="width:100%;height:20px"><path d="M 4 10 C 400 4 900 16 1736 8"/></svg></div>
+<div class="leccion l1"><div class="n">1</div><div class="cuerpo"><div class="l">José esperó trece años y nunca perdió <b>la humildad, la fe ni su carácter amable</b></div><div class="p"><span class="k">PARA PENSAR</span>Si llevamos tiempo sufriendo una injusticia, ¿qué nos ayuda a no desesperarnos?</div><div class="s"><i>La Atalaya</i>, 1 de febrero de 2015, pág. 15</div></div></div>
+<div class="leccion l2"><div class="n">2</div><div class="cuerpo"><div class="l">Delante del hombre más poderoso de Egipto, José dijo: <b>“Yo no soy nadie”</b></div><div class="p"><span class="k">PARA PENSAR</span>¿Busco que me reconozcan a mí, o a Jehová?</div><div class="s">41:16 · <i>La Atalaya</i>, 1 de febrero de 2015, pág. 15</div></div></div>
+<div class="leccion l3"><div class="n">3</div><div class="cuerpo"><div class="l">José puso a sus hijos nombres que recordaban <b>lo que Dios había hecho</b> por él</div><div class="p"><span class="k">PARA PENSAR</span>¿Repasamos en familia lo bueno que Jehová ha hecho por nosotros, aun en los años difíciles?</div><div class="s">41:51, 52</div></div></div>
+
+<script>
+const t0 = 0.3;
+entra(".seccion", t0, { y: -20 });
+traza(".seccion-linea path", t0 + 0.3, 1.0);
+secuencia([[".l1", at("Primera")], [".l2", at("Segunda")], [".l3", at("Tercera")]], null, { y: 30, d: 0.6 });
+entra(".l1 .p", at("Si llevamos tiempo") - 0.2, { y: 20 });
+entra(".l1 .s", at("Si llevamos tiempo") + 0.2, { y: 10 });
+entra(".l2 .p", at("Busco que me reconozcan") - 0.2, { y: 20 });
+entra(".l2 .s", at("Busco que me reconozcan") + 0.2, { y: 10 });
+entra(".l3 .p", at("Repasamos en familia") - 0.2, { y: 20 });
+entra(".l3 .s", at("Repasamos en familia") + 0.2, { y: 10 });
+</script>

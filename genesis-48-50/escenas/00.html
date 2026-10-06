@@ -1,0 +1,62 @@
+<style>
+.tit00 { position: absolute; left: 0; right: 0; top: 0; height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.tit00 .grande { font-size: 176px; }
+.tit00 .grande span { color: var(--oro); }
+.tit00 .sub { font-family: "Caveat", cursive; font-weight: 700; font-size: 80px; color: var(--tiza); margin-top: 18px; }
+.tit00 svg { width: 940px; height: 36px; margin-top: 10px; }
+.tit00 svg path { fill: none; stroke: var(--oro); stroke-width: 7; stroke-linecap: round; }
+.cab00 { position: absolute; left: 70px; right: 70px; top: 46px; display: flex; justify-content: space-between; align-items: baseline; }
+.cab00 .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 76px; line-height: 1; }
+.cab00 .t span { color: var(--oro); }
+.cab00 .l { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; color: var(--oro); }
+.grid00 { position: absolute; left: 70px; right: 70px; top: 170px; bottom: 54px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; }
+.cuad { position: relative; overflow: hidden; border-radius: 24px; border: 4px solid rgba(241, 233, 216, 0.16); background: #0f171f; box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5); }
+.cuad .kb { position: absolute; inset: 0; }
+.cuad img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cuad .vel { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 16, 22, 0) 38%, rgba(10, 16, 22, 0.92) 80%); }
+.cuad .apaga { position: absolute; inset: 0; background: rgba(12, 18, 24, 0.74); }
+.cuad .num { position: absolute; left: 30px; bottom: 150px; font-family: "Fraunces", serif; font-weight: 700; font-size: 128px; line-height: 1; color: var(--oro); text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6); }
+.cuad .k { position: absolute; left: 30px; right: 26px; bottom: 30px; font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; line-height: 1.0; color: var(--tiza); text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8); }
+.c48 { background: radial-gradient(ellipse 80% 70% at 50% 35%, #263646, #121b24); }
+.c48 .manos { position: absolute; left: 50%; top: 36px; width: 520px; margin-left: -260px; height: 395px; }
+.c49 img { object-position: 50% 50%; }
+.c50 img { object-position: 40% 50%; }
+</style>
+
+<div class="tit00">
+  <div class="grande">Génesis <span>48</span> al <span>50</span></div>
+  <svg viewBox="0 0 940 36"><path d="M 20 22 C 250 8 540 30 920 14" /></svg>
+  <div class="sub">los últimos capítulos del libro</div>
+</div>
+
+<div class="cab00"><div class="t">Génesis <span>48</span> al <span>50</span></div><div class="l">al final: todo Génesis, y las lecciones</div></div>
+
+<div class="grid00">
+  <div class="cuad c48"><!--incluir:_manos.html--><div class="vel"></div><div class="num">48</div><div class="k">Jacob adopta a los hijos de José y cruza las manos</div><div class="apaga"></div></div>
+  <div class="cuad c49"><div class="kb" data-layout-allow-overflow><img src="assets/img/jacob-doce.jpg" /></div><div class="vel"></div><div class="num">49</div><div class="k">las palabras a los doce hijos; muere Jacob</div><div class="apaga"></div></div>
+  <div class="cuad c50"><div class="kb" data-layout-allow-overflow><img src="assets/img/perdon-ljf.jpg" /></div><div class="vel"></div><div class="num">50</div><div class="k">el entierro, el perdón y los huesos de José</div><div class="apaga"></div></div>
+</div>
+
+<script>
+tl.set($(".c48 .mn-rectos"), { opacity: 0 }, 0);
+entra(".tit00 .grande", 0.4, { y: 50, d: 0.9 });
+traza(".tit00 svg path", 1.0, 0.9);
+escribe(".tit00 .sub", at("los últimos capítulos"), 1.2);
+const t48 = at("En el cuarenta y ocho");
+sale(".tit00", t48 - 1.0, { y: -40, d: 0.5 });
+entra(".cab00 .t", t48 - 0.6, { y: -20 });
+aparece(".cuad", t48 - 0.7, 0.6);
+const orden = [["c48", t48], ["c49", at("En el cuarenta y nueve")], ["c50", at("En el cincuenta")]];
+orden.forEach(([c, t], i) => {
+  const sig = i < orden.length - 1 ? orden[i + 1][1] : at("Al final veremos");
+  tl.fromTo($(`.${c} .apaga`), { opacity: 1 }, { opacity: 0, duration: 0.5, ease: "power1.out", immediateRender: false }, t - 0.1);
+  tl.fromTo($(`.${c}`), { borderColor: "rgba(241,233,216,0.16)", scale: 1 }, { borderColor: "rgba(233,191,96,0.95)", scale: 1.03, duration: 0.5, ease: "power2.out", immediateRender: false }, t - 0.1);
+  tl.to($(`.${c}`), { borderColor: "rgba(241,233,216,0.22)", scale: 1, duration: 0.5, ease: "power2.inOut" }, sig - 0.2);
+  if (c !== "c48") kb(`.${c} .kb`, t - 0.1, sig + 0.4, { s: 1.0 }, { s: 1.08 });
+});
+// Las manos se cruzan cuando la voz lo dice.
+traza([".c48 .mn-izqx", ".c48 .mn-izqx2"], at("cruza las manos") - 0.2, 1.0);
+traza([".c48 .mn-derx", ".c48 .mn-derx2"], at("cruza las manos"), 1.0);
+aparece(".c48 .mn-pi, .c48 .mn-pd", at("cruza las manos") + 0.7, 0.3);
+escribe(".cab00 .l", at("Al final veremos"), 1.2);
+</script>

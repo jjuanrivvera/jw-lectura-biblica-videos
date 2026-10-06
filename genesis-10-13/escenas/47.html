@@ -1,0 +1,91 @@
+<style>
+.sangre img { object-position: 50% 45%; }
+.pie47 { right: 64px; top: 20px; }
+.velo47 { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(23, 33, 43, 0.94) 0%, rgba(23, 33, 43, 0.88) 34%, rgba(23, 33, 43, 0.4) 48%, rgba(23, 33, 43, 0) 60%); }
+.col47a { position: absolute; left: 80px; width: 800px; top: 90px; bottom: 90px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.col47a .grande { font-size: 92px; }
+.col47a .cita { font-size: 44px; }
+.mapa.R47 { left: 0; top: 0; width: 1240px; height: 1080px; background: #e2e5c8; }
+.mapa.R47 .cam img, .mapa.R47 .cam svg { width: 2088px; height: 2436px; }
+.funde47 { left: 1120px; }
+.pie47b { left: 24px; bottom: 20px; }
+.col47 { position: absolute; left: 1270px; right: 56px; top: 70px; bottom: 70px; }
+.col47 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+.hip47 { display: flex; align-items: center; gap: 22px; }
+.hip47 .pt { flex: none; width: 44px; height: 44px; border-radius: 50%; border: 7px dashed; }
+.hip47 .m { font-size: 62px; }
+.sod47 { align-self: flex-start; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 76px; padding: 14px 34px 12px; border-radius: 22px; background: #f1e9d8; color: #1b2733; }
+.fase2-47 { background: #17212b; }
+</style>
+
+<div class="fase fase2-47">
+  <div class="mapa R47"><div class="cam">
+    <img src="assets/img/b2-recuadro.jpg" />
+    <svg viewBox="0 0 2088 2436">
+      <circle class="hA" cx="1105" cy="1932" r="64" fill="rgba(47,143,255,0.22)" stroke="#1f5d99" stroke-width="8" stroke-dasharray="20 12"/>
+      <g class="chipm cA"><rect x="790" y="1596" width="340" height="76" rx="16"/><text x="960" y="1648" text-anchor="middle" font-size="42">¿bajo el agua?</text></g>
+      <path class="lA" d="M 1000 1672 L 1078 1872" fill="none" stroke="#1b2733" stroke-width="6"/>
+      <circle class="hB" cx="1330" cy="1640" r="56" fill="rgba(236,138,103,0.22)" stroke="#a8321c" stroke-width="8" stroke-dasharray="20 12"/>
+      <circle class="hB" cx="1318" cy="2250" r="56" fill="rgba(236,138,103,0.22)" stroke="#a8321c" stroke-width="8" stroke-dasharray="20 12"/>
+      <g class="chipm cB"><rect x="1398" y="1604" width="232" height="72" rx="16"/><text x="1514" y="1653" text-anchor="middle" font-size="40">¿al este?</text></g>
+      <g class="chipm cB"><rect x="1386" y="2214" width="290" height="72" rx="16"/><text x="1531" y="2263" text-anchor="middle" font-size="40">¿al sureste?</text></g>
+      <circle class="hueco q47" cx="1200" cy="1995" r="62"/>
+    </svg>
+  </div></div>
+  <div class="funde-der funde47"></div>
+  <div class="pie pie47b">Mapa: apéndice B2 de la TNM, recuadro (wol.jw.org) · marcas añadidas</div>
+  <div class="col47">
+    <div class="b b1">
+      <div class="hip47 h1"><span class="pt" style="border-color:#5f9fd8;background:rgba(47,143,255,0.25)"></span><div class="m">unos: <b>bajo el agua</b></div></div>
+      <div class="hip47 h2"><span class="pt" style="border-color:#ec8a67;background:rgba(236,138,103,0.25)"></span><div class="m">otros: <b>al este y al sureste</b> del mar</div></div>
+      <div class="f"><i>Perspicacia</i>, vol. 2, “Mar Salado”, págs. 307, 308</div>
+    </div>
+    <div class="b b2">
+      <div class="m md">por eso el mapa la marca así:</div>
+      <div class="sod47">Sodoma (?)</div>
+      <div class="f">así la marcan el apéndice B2 de la TNM y “El mundo de los patriarcas”, en <i>Veamos “la buena tierra”</i></div>
+    </div>
+  </div>
+</div>
+
+<div class="fase fase1-47">
+  <div class="sangre"><div class="kb"><img src="assets/img/mar-salado.jpg" /></div></div>
+  <div class="velo47"></div>
+  <div class="pie pie47">“Acantilados de piedra caliza en la costa occidental del mar Salado”. <i>Perspicacia</i>, vol. 2, pág. 308 (wol.jw.org)</div>
+  <div class="col47a">
+    <div class="grande">¿Dónde estaba Sodoma?</div>
+    <div class="m ns47">No se sabe <b>con certeza</b></div>
+    <div class="cita pg47">“Por lo general se cree que Sodoma y Gomorra estaban situadas <b>cerca del extremo S. del mar Salado</b>”<span class="ref">PERSPICACIA, VOL. 2, “MAR SALADO”, PÁGS. 307, 308</span></div>
+    <div class="m md mm47">el mar Salado: el <b>mar Muerto</b></div>
+  </div>
+</div>
+
+<script>
+// Fase 1: la foto del mar Salado.
+kb(".kb", 0, 12, { s: 1.1, x: -2 }, { s: 1.0, x: 0 });
+aparece(".pie47", 0.6, 0.5);
+// La pregunta abre centrada y el bloque sube cuando llega la cita.
+tl.set($(".col47a"), { y: 230 }, 0);
+tl.to($(".col47a"), { y: 0, duration: 0.8, ease: "power2.inOut" }, at("Por lo general") - 0.8);
+entra(".col47a .grande", 0.4, { y: 24 });
+entra(".ns47", at("No se sabe") - 0.2, { y: 16 });
+entra(".pg47", at("Por lo general") - 0.2, { y: 20 });
+entra(".mm47", at("el mar Muerto") - 0.2, { y: 16 });
+// Fase 2: el mapa y las dos opiniones.
+const t2 = at("Unos piensan") - 0.5;
+tl.to($(".fase1-47"), { opacity: 0, duration: 0.6, ease: "none" }, t2);
+const V = { x: 0, y: 0, w: 1240, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 760, y: 1450, w: 1100, h: 958 }, V), 0);
+secuencia([[".b1", t2 + 0.3], [".b2", at("Por eso el mapa")]]);
+entra(".h1", at("Unos piensan") - 0.1, { y: 16 });
+salta(".hA", at("bajo el agua") - 0.2, { desde: 0.4 });
+entra(".cA", at("bajo el agua") - 0.1, { y: 12 });
+traza(".lA", at("bajo el agua") + 0.1, 0.4);
+entra(".h2", at("otros al este") - 0.2, { y: 16 });
+salta(".hB", at("otros al este") - 0.1, { desde: 0.4, st: 0.2 });
+entra(".cB", at("otros al este"), { y: 12, st: 0.2 });
+salta(".sod47", at("la marca con") - 0.2, { desde: 0.6 });
+traza(".q47", at("signo de interrogación") - 0.3, 0.7);
+tl.set($(".q47"), { strokeDasharray: "18 12" }, at("signo de interrogación") + 0.45);
+late(".q47", at("signo de interrogación") + 0.5, { s: 1.12, n: 3 });
+</script>

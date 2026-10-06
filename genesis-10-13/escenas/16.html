@@ -1,0 +1,71 @@
+<style>
+.esc16 { position: absolute; inset: 0; }
+.esc16 svg { width: 1920px; height: 1080px; display: block; }
+.n16 { font-family: "Fraunces", serif; font-weight: 700; font-size: 44px; text-anchor: middle; fill: var(--oro); }
+.d16 { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 26px; text-anchor: middle; fill: var(--tenue); }
+.p16 { font-family: "Caveat", cursive; font-weight: 700; font-size: 38px; fill: #92d193; }
+.q16 { font-family: "Fraunces", serif; font-weight: 700; font-size: 220px; text-anchor: middle; fill: #ec8a67; }
+.tt16 { position: absolute; left: 90px; top: 50px; display: flex; align-items: baseline; gap: 26px; }
+.tt16 .grande { font-size: 76px; }
+.tt16 .s { font-size: 30px; }
+.cap16 { position: absolute; left: 90px; width: 980px; top: 170px; }
+.cap16 .m { font-size: 56px; }
+.fu16 { position: absolute; left: 90px; right: 90px; bottom: 16px; }
+</style>
+
+<div class="tt16"><div class="grande">Torres-templo, a escala</div><div class="s">de perfil · la raya verde es una persona de 1,70 m</div></div>
+<div class="esc16"><svg viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="g16-lad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b98a52"/><stop offset="1" stop-color="#6e4a26"/></linearGradient>
+    <linearGradient id="g16-edi" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6f8fb8"/><stop offset="1" stop-color="#48648c"/></linearGradient>
+  </defs>
+  <path class="suelo" d="M 60 900 H 1860" stroke="rgba(241,233,216,0.5)" stroke-width="4"/>
+  <g class="escala"><path d="M 1100 352 H 1350 M 1100 338 V 366 M 1225 344 V 360 M 1350 338 V 366" stroke="#f1e9d8" stroke-width="5"/><text class="d16" x="1225" y="404" style="fill:var(--tiza)">50 metros</text></g>
+  <g class="t-ur"></g><g class="t-bo"></g><g class="t-ed"></g><g class="t-et"></g>
+  <g class="babel"><path d="M 1640 900 V 700 H 1680 V 560 H 1720 V 430 H 1760 V 330 H 1800" fill="none" stroke="#ec8a67" stroke-width="7" stroke-dasharray="18 14"/><path d="M 1860 900 V 700 H 1820 V 560 H 1810 V 430 H 1805 V 330 H 1800" fill="none" stroke="#ec8a67" stroke-width="7" stroke-dasharray="18 14"/><text class="q16" x="1750" y="760">?</text></g>
+  <g class="lb-ur"><text class="n16" x="242" y="946">Ur</text><text class="d16" x="242" y="982">61 × 46 m · 21 de alto</text></g>
+  <g class="lb-bo"><text class="n16" x="667" y="946">Borsipa</text><text class="d16" x="667" y="982">83 m de base · 47 de alto</text></g>
+  <g class="lb-ed"><text class="n16" x="985" y="946" style="fill:#9fbde0">10 pisos</text><text class="d16" x="985" y="982">unos 30 m</text></g>
+  <g class="lb-et"><text class="n16" x="1327" y="946">Etemenanki</text><text class="d16" x="1327" y="982">91 m de base · unos 91 de alto</text></g>
+  <g class="lb-ba"><text class="n16" x="1750" y="946" style="fill:#ec8a67">Babel</text><text class="d16" x="1750" y="982">sin medidas en la Biblia</text></g>
+  <g class="pers"><rect x="76" y="891.5" width="6" height="8.5" fill="#92d193"/><path d="M 79 886 L 79 850 L 118 824" fill="none" stroke="#92d193" stroke-width="3"/><text class="p16" x="124" y="826">1,70 m</text></g>
+</svg></div>
+<div class="cap16"><div class="m c1">La Biblia no da <b>ninguna medida</b>: ni altura, ni base, ni pisos</div><div class="m c2" style="margin-top:14px">más de <b>dos docenas</b> de estructuras parecidas, ninguna “con seguridad” la torre</div></div>
+<div class="fu16 f">Ur y Borsipa: <i>La Atalaya</i>, 1/9/1961, págs. 541, 542; <i>Perspicacia</i>, “Ur” · Etemenanki: “con una altura de 91 m”, <i>Perspicacia</i>, “El Imperio babilonio”; “91.44 metros en cuadro”, <i>La Atalaya</i>, 1961 · dos docenas: <i>¡Despertad!</i>, 22/1/1989, pág. 21 · escalones aproximados; diez pisos, referencia general</div>
+
+<script>
+// 5 píxeles por metro; el suelo está en y = 900.
+const S = 5, Y0 = 900;
+function torre(cx, base, alto, pisos, cima, clase) {
+  let s = "";
+  const h = (alto / pisos) * S;
+  for (let i = 0; i < pisos; i++) {
+    const w = (base - (base - cima) * (i / Math.max(1, pisos - 1))) * S;
+    s += `<rect class="pz" x="${(cx - w / 2).toFixed(1)}" y="${(Y0 - (i + 1) * h).toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" fill="url(#g16-lad)" stroke="#e9bf60" stroke-width="3"/>`;
+  }
+  pinta(clase, s);
+}
+torre(242, 61, 21, 3, 37, ".t-ur");
+torre(667, 83, 47, 7, 44, ".t-bo");
+torre(1327, 91, 91, 7, 48, ".t-et");
+let e = `<rect x="${985 - 50}" y="${Y0 - 150}" width="100" height="150" fill="url(#g16-edi)" stroke="#9fbde0" stroke-width="3"/>`;
+for (let i = 1; i < 10; i++) e += `<path d="M ${935} ${Y0 - i * 15} H ${1035}" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>`;
+pinta(".t-ed", e);
+function crece(sel, t, d = 1.0) {
+  tl.fromTo($$(sel + " .pz, " + sel + " > rect"), { scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 1, duration: d / 2, stagger: d / 10, ease: "power2.out", immediateRender: false }, t);
+  tl.set($$(sel + " .pz, " + sel + " > rect"), { scaleY: 0, transformOrigin: "50% 100%" }, 0);
+}
+entra(".tt16", 0.3, { y: -16 });
+traza(".babel path", 0.7, 1.4);
+salta(".babel text", at("Cuánto medía") + 0.4, { desde: 0.4 });
+entra(".c1", at("La Biblia no lo dice") - 0.2, { y: 14 });
+entra(".lb-ba", at("no lo dice"), { y: 10 });
+traza(".suelo", at("Pero sí") - 0.3, 0.8);
+entra(".escala", at("zigurats reales"), { y: 10 });
+crece(".t-ur", at("El de Ur") - 0.2); entra(".lb-ur", at("El de Ur"), { y: 10 }); entra(".pers", at("veintiún"), { y: 10 });
+crece(".t-bo", at("Borsipa") - 0.3, 1.4); entra(".lb-bo", at("Borsipa"), { y: 10 });
+crece(".t-ed", at("edificio") - 0.2, 0.6); tl.fromTo($$(".t-ed path"), { opacity: 0 }, { opacity: 1, duration: 0.4, immediateRender: false }, at("edificio") + 0.3); tl.set($$(".t-ed path"), { opacity: 0 }, 0); entra(".lb-ed", at("edificio"), { y: 10 });
+crece(".t-et", at("Etemenanki") - 0.2, 1.8); entra(".lb-et", at("Etemenanki") + 0.3, { y: 10 });
+entra(".c2", at("En Mesopotamia") - 0.2, { y: 14 });
+aparece(".fu16", at("zigurats reales"), 0.5);
+</script>

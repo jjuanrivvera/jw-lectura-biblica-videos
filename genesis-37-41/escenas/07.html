@@ -1,0 +1,89 @@
+<style>
+.mapa.T { left: 0; top: 0; width: 1000px; height: 1080px; }
+.mapa.T .cam img, .mapa.T .cam svg { width: 1600px; height: 2700px; }
+.col.d07 { left: 1060px; right: 60px; width: auto; top: 110px; bottom: 90px; }
+.cab.d07c { left: 1060px; }
+.km { display: flex; align-items: baseline; gap: 18px; }
+.km .cifra { font-size: 140px; }
+.km .u { font-family: "Caveat", cursive; font-weight: 700; font-size: 64px; }
+.km .de { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 0.08em; color: var(--tenue); text-transform: uppercase; }
+</style>
+
+<!--incluir:_tierra.html-->
+<div class="cab d07c"><span class="cap">Génesis 37</span><span>versículos 12 al 17</span></div>
+<div class="col d07">
+  <div class="b a1">
+    <div class="m md">los hermanos pastorean cerca de <b>Siquem</b> · 37:12</div>
+    <div class="def"><div class="t">el valle de Hebrón</div><div class="x">nota: o “de la llanura baja”: una <b>hondonada</b> entre colinas</div><div class="s">Hebrón está “a más de 900 m. sobre el nivel del mar” · <i>Perspicacia</i>, vol. 1, “Hebrón”, pág. 1112</div></div>
+    <div class="cita aq">“¡Aquí estoy para lo que mandes!”<span class="ref">GÉNESIS 37:13</span></div>
+    <div class="f aq">sabiendo que sus hermanos lo odiaban</div>
+  </div>
+  <div class="b a2">
+    <div class="de km-de" style="font-family:Montserrat,sans-serif;font-weight:700;font-size:30px;letter-spacing:0.08em;color:var(--tenue);text-transform:uppercase">de Hebrón a Siquem</div>
+    <div class="km"><span class="cifra"><span class="k80">0</span></span><span class="u">kilómetros</span></div>
+    <div class="m md dias">cuatro o cinco días <b>a pie</b></div>
+    <div class="def sq"><div class="t">Siquem</div><div class="x">“lugar donde hacía poco habían hecho <b>muchos enemigos</b>”</div><div class="s">por lo que hicieron Simeón y Leví en Génesis 34 · <i>La Atalaya</i>, 1 de agosto de 2014, pág. 13</div></div>
+  </div>
+  <div class="b a3">
+    <div class="cita md">“Oí que dijeron: ‘Vámonos a <b>Dotán</b>’”<span class="ref">GÉNESIS 37:17</span></div>
+    <div class="km"><span class="cifra">+<span class="k22">0</span></span><span class="u">km más</span></div>
+    <div class="m oro total">unos <b>100 km</b> en total</div>
+    <div class="f">80 y 22 km: <i>La Atalaya</i>, 1 de agosto de 2014, pág. 13 · “a unos 100 Km. al N. de Hebrón”: <i>Perspicacia</i>, vol. 2, “Jacob”, pág. 11</div>
+  </div>
+  <div class="b a4">
+    <div class="m md">Dotán estaba junto a un <b>camino de caravanas</b></div>
+    <div class="cita md">“en la dehesa por la que pasaba la ruta que conectaba Galaad (al E. del Jordán) con la costa del mar Mediterráneo y Egipto”<span class="ref">PERSPICACIA, VOL. 1, “DOTÁN”, PÁGS. 721, 722</span></div>
+    <div class="def"><div class="t">dehesa</div><div class="x">un campo de <b>pasto</b> para el ganado</div></div>
+  </div>
+</div>
+
+<script>
+const RUTA1 = "M 651 2374 L 657 2314 L 639 2240 L 671 2186 L 729 2114 L 786 2014 L 833 1967 L 871 1929 L 903 1796 L 900 1700 L 894 1617 L 900 1529 L 911 1449 L 893 1386 L 900 1243 L 914 1119 L 929 1014 L 971 871 L 991 794";
+const RUTA2 = "M 991 794 L 950 771 L 871 714 L 816 634 L 843 500 L 879 386 L 899 323";
+pinta(".marcas", `
+  <path class="ruta-h r1h" stroke-width="30" d="${RUTA1}"/><path class="ruta r1" stroke-width="14" d="${RUTA1}"/>
+  <path class="ruta-h r2h" stroke-width="30" d="${RUTA2}"/><path class="ruta r2" stroke-width="14" d="${RUTA2}"/>
+  <path class="flecha punt car" stroke-width="16" stroke="#1f5d99" d="M 1600 150 L 1200 190 L 1000 214 L 899 323 L 500 489 L 200 560 L 20 600"/>
+  <path class="flecha carp" stroke-width="16" stroke="#1f5d99" d="M 70 560 L 20 600 L 76 626"/>
+  <text class="lugar azul car-t halo" x="1250" y="150" font-size="52" stroke-width="12">desde Galaad</text>
+  <text class="lugar azul car-t halo" x="60" y="690" font-size="52" stroke-width="12">a la costa y a Egipto</text>
+  <circle class="anillo a-heb" cx="651" cy="2374" r="46"/>
+  <circle class="anillo a-siq" cx="991" cy="794" r="46"/>
+  <circle class="anillo oro a-dot" cx="899" cy="323" r="46"/>
+  <g class="jose7"><circle r="24" fill="#c0392b" stroke="#fff" stroke-width="7"/></g>
+  <text class="lugar rojo aprox halo" x="1000" y="1560" font-size="46" stroke-width="12">camino aproximado</text>`);
+const V = { x: 0, y: 0, w: 1000, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 180, y: 1700, w: 1000, h: 1080 }, V), 0);
+traza(".a-heb", 0.8, 0.8);
+late(".a-heb", at("valle de Hebrón"), { s: 1.2, n: 3 });
+// De Hebrón a Siquem: la cámara se abre y José sube por la sierra.
+const tS = at("Siquem estaba");
+camara(".cam", tS - 1.2, 2.0, encuadre({ x: 0, y: 700, w: 1600, h: 1728 }, V));
+traza([".r1h", ".r1"], tS, 4.6, { ease: "none" });
+recorre(".jose7", ".r1", tS, 4.6, { ease: "none" });
+cuenta(".k80", 0, 80, tS, 2.4);
+traza(".a-siq", tS + 4.4, 0.7);
+aparece(".aprox", tS + 1.5, 0.5);
+desaparece(".aprox", at("En Siquem no") - 0.5, 0.4);
+late(".a-siq", at("muchos enemigos") - 0.6, { s: 1.25, n: 3 });
+// De Siquem a Dotán.
+const tD = at("se fueron a Dotán");
+camara(".cam", at("En Siquem no") - 0.3, 2.0, encuadre({ x: 300, y: 150, w: 1000, h: 1080 }, V));
+traza([".r2h", ".r2"], tD, 2.4, { ease: "none" });
+recorre(".jose7", ".r2", tD, 2.4, { ease: "none" });
+cuenta(".k22", 0, 22, at("veintidós"), 1.0);
+traza(".a-dot", tD + 2.2, 0.7);
+// El camino de las caravanas, de Galaad a la costa.
+const tR = at("Dotán estaba junto");
+camara(".cam", tR - 0.6, 2.0, encuadre({ x: 0, y: 0, w: 1600, h: 1728 }, V));
+traza(".car", at("unía Galaad"), 2.6, { ease: "none" });
+tl.set($(".car"), { strokeDasharray: "26 20" }, at("unía Galaad") + 2.65);
+aparece(".carp", at("unía Galaad") + 2.5, 0.3);
+aparece(".car-t", at("unía Galaad") + 0.4, 0.5, 1);
+secuencia([[".a1", 0.5], [".a2", tS - 0.2], [".a3", at("En Siquem no")], [".a4", tR]]);
+entra(".a1 .def", at("valle de Hebrón"), { y: 20 });
+entra(".aq", at("Aquí estoy"), { y: 20, st: 0.2 });
+entra(".dias", at("cuatro o cinco"), { y: 16 });
+entra(".sq", at("Y allí"), { y: 20 });
+entra(".total", at("unos cien"), { y: 16 });
+</script>

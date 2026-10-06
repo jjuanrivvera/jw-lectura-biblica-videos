@@ -1,0 +1,48 @@
+<style>
+.mapa.al { left: 0; top: 0; width: 1180px; height: 1080px; background: #e3ddd2; }
+.mapa.al .cam img, .mapa.al .cam svg { width: 2400px; height: 2502px; }
+.col23 { position: absolute; left: 1210px; right: 64px; top: 100px; bottom: 80px; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.col23 .cita { font-size: 46px; }
+.col23 .m { font-size: 58px; }
+.col23 .s { font-size: 26px; }
+.este { fill: none; stroke: #c0392b; stroke-width: 16; stroke-linecap: round; stroke-dasharray: 34 24; }
+</style>
+
+<div class="mapa al"><div class="cam"><img src="assets/img/alrededores.jpg" />
+  <svg viewBox="0 0 2400 2502">
+    <path class="este e1" d="M 1450 520 C 1700 470 1980 470 2330 520 M 2290 488 L 2340 520 L 2292 556"/>
+    <path class="ruta-h rh" stroke-width="40" d="M 1414 536 C 1340 640 1250 780 1160 920"/>
+    <path class="r23" stroke="#c0392b" stroke-width="20" fill="none" stroke-linecap="round" d="M 1414 536 C 1340 640 1250 780 1160 920"/>
+    <circle class="anillo a-m" cx="1414" cy="536" r="56" style="stroke:#1f5d99;stroke-width:18"/>
+    <circle class="anillo oro a-g" cx="1160" cy="920" r="60" style="stroke-width:20"/>
+    <g class="c-am"><rect x="1840" y="330" width="500" height="110" rx="22" fill="rgba(192,57,43,0.94)"/><text x="2090" y="402" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="64" fill="#fff6e8">a Ammón, al este</text></g>
+    <g class="c-g"><rect x="1010" y="1010" width="760" height="110" rx="22" fill="rgba(23,33,43,0.92)"/><text x="1390" y="1084" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="64" fill="#e9bf60">aquí lo alcanza Johanán</text></g>
+    <g class="c-5"><rect x="1300" y="760" width="520" height="150" rx="22" fill="rgba(23,33,43,0.92)"/><text x="1560" y="826" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="50" fill="#f1e9d8">≈ 5 km al suroeste</text><text x="1560" y="884" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="44" fill="#93bbef">medición propia</text></g>
+    <g class="c-q"><circle cx="1960" cy="660" r="74" fill="rgba(23,33,43,0.92)"/><text x="1960" y="696" text-anchor="middle" font-family="Fraunces" font-weight="700" font-size="100" fill="#ec8a67">?</text></g>
+  </svg></div></div>
+<div class="funde-der" style="left:1060px"></div>
+<div class="pie" style="left:24px;bottom:20px"><i>Perspicacia</i>, mapa “Jerusalén y sus alrededores” · rutas y marcas añadidas</div>
+<div class="cab" style="left:1210px;right:64px"><span class="cap">Jeremías 41</span><span>versículos 10 al 12</span></div>
+
+<div class="col23">
+  <div class="cita a23">se llevó “al resto de la gente de Mizpá, incluidas <b>las hijas del rey</b>” y se puso en marcha “para pasar a la tierra de los ammonitas”<span class="ref">JEREMÍAS 41:10</span></div>
+  <div class="cita b23">“lo encontraron junto a <b>las grandes aguas de Gabaón</b>”<span class="ref">JEREMÍAS 41:12</span></div>
+  <div class="m rojo c23">la Biblia no explica ese rodeo</div>
+</div>
+
+<script>
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 1000, y: 250, w: 1400, h: 1000 }, V), 0);
+aparece(".cab", 0.2, 0.5);
+salta(".a-m", 0.5);
+entra(".a23", at("Ismael se lleva"), { x: 30, y: 0 });
+traza(".e1", at("ammonitas") - 0.3, 1.6);
+aparece(".c-am", at("al este"), 0.4);
+traza([".rh", ".r23"], at("Johanán y los jefes"), 2.0);
+salta(".a-g", at("Gabaón") - 0.2);
+entra(".b23", at("encuentran"), { x: 30, y: 0 });
+aparece(".c-g", at("Gabaón") + 0.3, 0.4);
+aparece(".c-5", at("cinco kilómetros"), 0.4);
+salta(".c-q", at("Ammón estaba"));
+entra(".c23", at("La Biblia no explica"), { y: 20 });
+</script>

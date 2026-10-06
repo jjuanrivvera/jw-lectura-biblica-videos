@@ -1,0 +1,50 @@
+<style>
+.tit28 { position: absolute; left: 0; right: 0; top: 104px; text-align: center; }
+.tit28 .m { font-size: 70px; }
+.arbol { position: absolute; left: 80px; top: 220px; width: 940px; height: 800px; }
+.arbol svg { position: absolute; left: 0; top: 0; width: 940px; height: 800px; }
+.nodo { position: absolute; left: 60px; width: 860px; border-radius: 24px; padding: 20px 28px; background: rgba(10, 16, 22, 0.5); border: 3px solid rgba(146, 209, 147, 0.55); }
+.nodo .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 60px; line-height: 1.05; }
+.nodo .x { font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 30px; line-height: 1.3; color: var(--tenue); margin-top: 6px; }
+.nodo .x b { color: var(--tiza); }
+.n1 { top: 0; } .n2 { top: 230px; } .n3 { top: 500px; border-color: var(--oro); background: rgba(233, 191, 96, 0.08); }
+.otro { position: absolute; left: 1090px; right: 70px; top: 240px; bottom: 150px; border-radius: 28px; padding: 30px; background: rgba(10, 16, 22, 0.5); border: 3px solid rgba(236, 138, 103, 0.6); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-align: center; }
+.sello28 { width: 300px; height: 300px; border-radius: 50%; overflow: hidden; position: relative; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5); }
+.sello28 img { position: absolute; width: 670px; left: -330px; top: -114px; }
+.otro .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 52px; }
+.otro .m { font-size: 56px; }
+.pr28 { position: absolute; left: 0; right: 0; bottom: 60px; text-align: center; }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 39</span><span>versículos 13 y 14</span></div>
+<div class="tit28"><div class="m">Guedalías: <b>“Jehová Es Grande”</b></div></div>
+
+<div class="arbol">
+  <svg viewBox="0 0 940 800"><path class="rama r1" d="M 120 150 V 230" stroke="#92d193" stroke-width="8" stroke-linecap="round"/><path class="rama r2" d="M 120 400 V 500" stroke="#92d193" stroke-width="8" stroke-linecap="round"/></svg>
+  <div class="nodo n1"><div class="n">Safán</div><div class="x">tres hijos y un nieto suyos, entre los amigos de Jeremías</div></div>
+  <div class="nodo n2"><div class="n">Ahicam, su hijo</div><div class="x">“<b>ayudó a Jeremías</b> y evitó que lo entregaran en manos del pueblo para matarlo” (26:24)</div></div>
+  <div class="nodo n3"><div class="n">Guedalías, hijo de Ahicam</div><div class="x">“se lo entregaron a Guedalías, hijo de Ahicam, hijo de Safán, <b>para llevarlo a su casa</b>” (39:14)</div></div>
+</div>
+
+<div class="otro">
+  <div class="sello28"><img src="assets/img/sellos.jpg" /></div>
+  <div class="n">Guedalías, hijo de Pasjur</div>
+  <div class="m rojo">pedía su muerte · 38:1, 4</div>
+  <div class="f">su sello: <i>Dios nos habla mediante Jeremías</i>, cap. 5, recuadro</div>
+</div>
+
+<div class="pr28"><span class="propio">el mismo nombre y dos corazones distintos: observación propia</span></div>
+<div class="fuente" style="bottom:24px;font-size:21px">“tres hijos y un nieto de Safán”: <i>Dios nos habla mediante Jeremías</i>, cap. 5, párr. 14 · nombre: <i>Perspicacia</i></div>
+
+<script>
+aparece(".cab", 0.2, 0.5);
+entra(".n3", 0.8, { x: -30, y: 0 });
+entra(".n2", at("hijo de Ahicam") + 0.2, { x: -30, y: 0 });
+traza(".r2", at("hijo de Ahicam") + 0.4, 0.5);
+entra(".n1", at("Safán") + 0.2, { x: -30, y: 0 });
+traza(".r1", at("Safán") + 0.4, 0.5);
+late(".n2", at("Ahicam el padre"), { s: 1.03, n: 1 });
+entra(".otro", at("vimos a otro"), { x: 30, y: 0 });
+entra(".tit28", at("El mismo nombre"), { y: -20 });
+aparece([".pr28", ".fuente"], at("dos corazones"), 0.5);
+</script>

@@ -1,0 +1,130 @@
+{
+  "assets": [
+    {
+      "path": "assets/img/almendro.jpg",
+      "title": "almendro",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/contrato.jpg",
+      "title": "contrato",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/dote-vaca.jpg",
+      "title": "“La dote podía pagarse, por ejemplo, con animales.” Ilustración: La Atalaya",
+      "source": "“La dote podía pagarse, por ejemplo, con animales.” Ilustración: La Atalaya",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/familia-jacob.jpg",
+      "title": "“La familia de Jacob”. Gráfico: La Atalaya (estudio), junio de 2025 (wol.jw.org) · Benjamín nació después, en Canaán (35:16-18)",
+      "source": "“La familia de Jacob”. Gráfico: La Atalaya (estudio), junio de 2025 (wol.jw.org) · Benjamín nació después, en Canaán (35:16-18)",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/haran-hoy.jpg",
+      "title": "haran hoy",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/hombres-haran.jpg",
+      "title": "“Hombres de Harán hablando de Labán y su hija Raquel con Jacob.” Ilustración: Mi libro de historias bíblicas; “Raquel cuida las ovejas de su padre.” Ilustración: Mi libro de historias bíblicas",
+      "source": "“Hombres de Harán hablando de Labán y su hija Raquel con Jacob.” Ilustración: Mi libro de historias bíblicas; “Raquel cuida las ovejas de su padre.” Ilustración: Mi libro de historias bíblicas",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/jacob-trabajo.jpg",
+      "title": "jacob trabajo",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/lea-raquel.jpg",
+      "title": "Retratos de Lea y de Raquel, “¿Qué aprendemos de las mujeres de la Biblia?”, jw.org (wol.jw.org) · montaje de la investigación",
+      "source": "Retratos de Lea y de Raquel, “¿Qué aprendemos de las mujeres de la Biblia?”, jw.org (wol.jw.org) · montaje de la investigación",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/mandragora.jpg",
+      "title": "“La mandrágora, de la misma familia que la patata, produce un fruto amarillento del tamaño aproximado de una ciruela.” Foto: Perspicacia, vol. 1, “Plantas de la Biblia”, pág. 544 (wol.jw.org)",
+      "source": "“La mandrágora, de la misma familia que la patata, produce un fruto amarillento del tamaño aproximado de una ciruela.” Foto: Perspicacia, vol. 1, “Plantas de la Biblia”, pág. 544 (wol.jw.org)",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/mapa-b2.jpg",
+      "title": "mapa b2",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/mapa-b6-anotado.jpg",
+      "title": "mapa b6 anotado",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/mapa-b6.jpg",
+      "title": "mapa b6",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/mapa-tres.jpg",
+      "title": "mapa tres",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/raquel-ovejas.jpg",
+      "title": "“Hombres de Harán hablando de Labán y su hija Raquel con Jacob.” Ilustración: Mi libro de historias bíblicas; “Raquel cuida las ovejas de su padre.” Ilustración: Mi libro de historias bíblicas",
+      "source": "“Hombres de Harán hablando de Labán y su hija Raquel con Jacob.” Ilustración: Mi libro de historias bíblicas; “Raquel cuida las ovejas de su padre.” Ilustración: Mi libro de historias bíblicas",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    }
+  ]
+}

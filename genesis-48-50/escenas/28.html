@@ -1,0 +1,54 @@
+<!--incluir:_g49b-hijo.html-->
+<div class="fase fmapa"><!--incluir:_b6.html--><div class="funde-der"></div></div>
+<div class="cab ch"><span class="cap">Génesis 49</span><span>versículo 19</span></div>
+<div class="hijo gh" style="--c: var(--zilpa)"><img src="assets/img/gad-g.jpg" /></div>
+<div class="pres">
+  <div class="nhijo">Gad<small>quiere decir “buena fortuna”</small></div>
+  <div class="cita">“A Gad lo atacará <b>una banda de ladrones</b>, pero él <b>se defenderá</b> e irá detrás de ellos”<span class="ref">GÉNESIS 49:19</span></div>
+</div>
+<div class="mini"><div class="nhijo">Gad<small>cómo se cumplió</small></div></div>
+<div class="col49">
+  <div class="b b1">
+    <div class="cumple"><div class="k">con Rubén · Números 32:1</div><div class="x">tierras <b>al este del Jordán</b>, por sus buenos pastos</div></div>
+    <div class="cumple c2"><div class="k">1 Crónicas 5:18-22</div><div class="x">expuesto a los vecinos, <b>tuvo que defenderse</b>; pidieron ayuda a Dios</div></div>
+  </div>
+  <div class="b b2">
+    <div class="cumple"><div class="k">no solo lo suyo</div><div class="x">sus guerreros <b>cruzaron el Jordán</b> para ayudar a las otras tribus</div></div>
+    <div class="cita c2">“No han abandonado a sus hermanos en todo este tiempo, hasta el día de hoy”<span class="ref">JOSUÉ 22:3</span></div>
+  </div>
+</div>
+<div class="fu49 f"><i>La Atalaya</i>, junio de 2025, “Qué nos enseñan las últimas palabras de Jacob (parte 2)”, págs.&nbsp;9 a 10 · <i>Perspicacia</i>, “Gad”, págs.&nbsp;979 a 980</div>
+
+<script>
+/*incluir:_g49b-hijo.js*/
+const [gx, gy] = B6.gad, [rx, ry] = B6.ruben;
+pinta(".marcas", `
+  <ellipse class="anillo oro a-g" cx="${gx}" cy="${gy}" rx="190" ry="250" style="stroke-width:10"/>
+  <ellipse class="anillo a-r" cx="${rx}" cy="${ry + 20}" rx="210" ry="150" style="stroke-width:8;stroke:#d99a14;stroke-dasharray:22 14"/>
+  <g class="lp">${chip(2190, 1860, "buenos pastos", { fs: 30, cls: "verde" })}</g>
+  ${flecha(2470, 1990, 2345, 2030, "v1", { color: "#c0392b", w: 14 })}
+  ${flecha(2470, 2130, 2375, 2115, "v2", { color: "#c0392b", w: 14 })}
+  <g class="lv">${chip(2115, 1955, "pueblos vecinos", { fs: 34, cls: "rojo" })}</g>
+  ${flecha(1960, 2060, 1665, 2060, "ay", { color: "#d99a14", w: 18 })}
+  <g class="lay">${chip(1700, 1990, "cruzan a ayudar", { fs: 32, cls: "oro" })}</g>
+`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".fmapa .cam"), encuadre({ x: 1560, y: 1640, w: 1040, h: 1003 }, V), 0);
+hijoEntra(0.3);
+entra(".pres .cita", 0.9, { y: 24 });
+const tM = at("Gad escogió");
+hijoAMapa(tM - 0.5);
+secuencia([[".b1", tM], [".b2", at("Y no se quedó") - 0.2]]);
+traza(".a-g", tM + 0.4, 0.8);
+traza(".a-r", at("con Rubén") , 0.8);
+aparece(".lp", at("buenos pastos") - 0.2, 0.4);
+const tV = at("Pero allí quedaba");
+entra(".b1 .c2", tV - 0.1, { y: 14 });
+traza(".v1", tV + 0.2, 0.6); aparece(".v1-p", tV + 0.7, 0.2);
+traza(".v2", tV + 0.5, 0.6); aparece(".v2-p", tV + 1.0, 0.2);
+aparece(".lv", tV + 0.4, 0.4);
+const tC = at("sus guerreros cruzaron");
+traza(".ay", tC, 0.9); aparece(".ay-p", tC + 0.8, 0.2);
+aparece(".lay", tC + 0.6, 0.4);
+entra(".b2 .c2", at("Josué reconoció") - 0.2, { y: 14 });
+</script>

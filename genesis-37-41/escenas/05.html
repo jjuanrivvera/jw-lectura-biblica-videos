@@ -1,0 +1,101 @@
+<style>
+.vin05 { position: absolute; left: 60px; top: 104px; width: 1029px; height: 504px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); }
+.vin05 img { position: absolute; left: 0; top: 0; width: 1029px; height: auto; transform-origin: 50% 0; }
+.pie05 { left: 60px; top: 616px; max-width: 1029px; }
+.campo05 { position: absolute; left: 40px; top: 660px; width: 1070px; height: 400px; }
+.campo05 svg { width: 1070px; height: 400px; display: block; }
+.et5 { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; fill: var(--tiza); text-anchor: middle; }
+.et5.oro { fill: var(--oro); }
+.col.d05 { left: 1150px; right: 60px; width: auto; top: 100px; bottom: 80px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 37</span><span>versículos 5 al 8</span></div>
+<div class="vin05"><img src="assets/img/suenos-hist.jpg" /></div>
+<div class="pie pie05">Página 2 de la historia bíblica ilustrada <i>Los hijos de Jacob</i> (jw.org, 2013): la única ilustración de la JW de estos sueños</div>
+
+<div class="campo05"><svg viewBox="0 0 1070 400">
+  <defs>
+    <linearGradient id="e05-tallo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0c96a"/><stop offset="1" stop-color="#a97a2f"/></linearGradient>
+    <linearGradient id="e05-suelo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b5436"/><stop offset="1" stop-color="#3c2e1e"/></linearGradient>
+    <radialGradient id="e05-era" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#b09062"/><stop offset="1" stop-color="#7a6040"/></radialGradient>
+  </defs>
+  <g class="sueno">
+    <path d="M 0 330 C 200 318 420 338 640 326 C 820 316 960 332 1070 324 L 1070 400 L 0 400 Z" fill="url(#e05-suelo)"/>
+    <g class="gavs"></g>
+    <text class="et5 oro t-jose" x="535" y="390">la de José</text>
+  </g>
+  <g class="pasos">
+    <path d="M 0 330 C 200 318 420 338 640 326 C 820 316 960 332 1070 324 L 1070 400 L 0 400 Z" fill="url(#e05-suelo)"/>
+    <g class="p1"><g class="espigas1"></g>
+      <path d="M 250 150 C 300 150 330 185 322 232 C 312 200 290 184 250 182 Z" fill="#c7ccd4" stroke="#7d8591" stroke-width="3"/>
+      <path d="M 250 166 L 196 222" stroke="#7a5a36" stroke-width="12" stroke-linecap="round"/>
+      <text class="et5" x="190" y="385">se siega con la hoz</text></g>
+    <g class="p2"><g class="una"></g><text class="et5" x="535" y="385">se ata: una <tspan class="oro">gavilla</tspan></text></g>
+    <g class="p3"><ellipse cx="880" cy="318" rx="160" ry="34" fill="url(#e05-era)"/><g class="monton"></g><text class="et5" x="880" y="385">se apila en la era</text></g>
+  </g>
+</svg></div>
+
+<div class="col d05">
+  <div class="b a1">
+    <div class="cita md">“Estábamos amarrando <b>gavillas</b> de grano en medio del campo, y entonces mi gavilla se levantó y se quedó de pie. Luego sus gavillas se pusieron alrededor de la mía y <b>se inclinaron</b> ante ella”<span class="ref">GÉNESIS 37:7</span></div>
+  </div>
+  <div class="b a2">
+    <div class="def"><div class="t">gavillas</div><div class="x">nota: o “<b>atados</b>”: manojos de espigas recién segadas</div><div class="s">“se recogía, se ataba en gavillas y se apilaba en montones, probablemente en la era” · <i>Perspicacia</i>, vol. 2, “Segador, siega”, pág. 986</div></div>
+    <div class="m md tr05">la familia de Jacob también cultivaba <b>trigo</b></div>
+    <div class="f tr05"><i>Perspicacia</i>, vol. 1, “Agricultura”, pág. 66</div>
+    <div class="m md cielo tb05">el sueño salía del trabajo de cada día</div>
+    <span class="propio tb05">observación propia</span>
+  </div>
+  <div class="b a3">
+    <div class="cita">“¿Acaso vas a ser <b>rey</b> sobre nosotros y nos vas a gobernar?”<span class="ref">GÉNESIS 37:8</span></div>
+  </div>
+</div>
+
+<script>
+// Una gavilla: tallos dorados atados por la mitad, con las espigas arriba.
+function gavilla(cx, base, esc, clase) {
+  let s = `<g class="${clase}"><g transform="translate(${cx} ${base}) scale(${esc})"><g class="gv">`;
+  for (let i = 0; i < 13; i++) {
+    const a = (i - 6) / 6, xb = a * 20, xt = a * 34, xm = a * 8;
+    s += `<path d="M ${xb.toFixed(1)} 0 Q ${xm.toFixed(1)} -70 ${xt.toFixed(1)} -142" stroke="url(#e05-tallo)" stroke-width="5" fill="none" stroke-linecap="round"/>`;
+    s += `<ellipse cx="${xt.toFixed(1)}" cy="-156" rx="6" ry="17" fill="#e6b957" stroke="#9c7430" stroke-width="2" transform="rotate(${(a * 14).toFixed(1)} ${xt.toFixed(1)} -156)"/>`;
+    s += `<path d="M ${xt.toFixed(1)} -172 l ${(a * 6).toFixed(1)} -16" stroke="#c99a45" stroke-width="2"/>`;
+  }
+  s += `<path d="M -16 -62 C -6 -56 6 -56 16 -62" stroke="#7a5a36" stroke-width="9" fill="none" stroke-linecap="round"/></g></g></g>`;
+  return s;
+}
+// El sueño: la gavilla de José en el centro y las once alrededor.
+const XS = [60, 140, 220, 300, 380, 458, 612, 690, 770, 850, 930];
+let g = gavilla(535, 330, 1.25, "gj");
+XS.forEach((x, i) => { g += gavilla(x, 330 + (i % 2) * 6, 0.8, "gh gh" + i); });
+pinta(".gavs", g);
+let e1 = "";
+for (let i = 0; i < 7; i++) { const x = 110 + i * 22; e1 += `<path d="M ${x} 330 Q ${x - 4} 250 ${x + 6} 190" stroke="url(#e05-tallo)" stroke-width="5" fill="none"/><ellipse cx="${x + 6}" cy="176" rx="6" ry="16" fill="#e6b957" stroke="#9c7430" stroke-width="2"/>`; }
+pinta(".espigas1", e1);
+pinta(".una", gavilla(535, 330, 1.05, "g1"));
+pinta(".monton", gavilla(820, 318, 0.8, "m1") + gavilla(880, 314, 0.86, "m2") + gavilla(940, 318, 0.8, "m3") + gavilla(850, 300, 0.7, "m4") + gavilla(912, 300, 0.7, "m5"));
+
+entra(".vin05", 0.2, { y: 30, d: 0.8 });
+aparece(".pie05", 0.6, 0.5);
+kb(".vin05 img", 0, at("Una gavilla es"), { s: 1.05 }, { s: 1.0 });
+secuencia([[".a1", 0.5], [".a2", at("Una gavilla es")], [".a3", at("Y sus hermanos")]]);
+// Sueño: aparecen las doce, la de José se levanta y las demás se inclinan hacia ella.
+aparece(".sueno", 0.6, 0.6);
+entra(".gavs .gh", 0.9, { y: 20, st: 0.05 });
+entra(".gj", 1.2, { y: 20 });
+tl.fromTo($(".gj .gv"), { scaleY: 0.72, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 0.9, ease: "back.out(2)", immediateRender: false }, at("se levantó"));
+tl.set($(".gj .gv"), { scaleY: 0.72, transformOrigin: "50% 100%" }, 0);
+XS.forEach((x, i) => {
+  const r = x < 535 ? 18 : -18;
+  tl.fromTo($(".gh" + i + " .gv"), { rotation: 0, transformOrigin: "50% 100%" }, { rotation: r, duration: 0.9, ease: "power2.inOut", immediateRender: false }, at("se inclinaron") + i * 0.04);
+});
+aparece(".t-jose", at("se levantó") + 0.3, 0.4);
+// Qué es una gavilla: la hoz, el atado, la era.
+desaparece(".sueno", at("Una gavilla es") - 0.4, 0.4);
+aparece(".pasos", at("Una gavilla es") - 0.2, 0.3);
+entra(".p1", at("Una gavilla es"), { y: 20 });
+entra(".p2", at("atado"), { y: 20 });
+entra(".p3", at("a la era") - 0.2, { y: 20 });
+entra(".tr05", at("La familia de Jacob"), { y: 16 });
+entra(".tb05", at("el sueño salía"), { y: 16 });
+</script>

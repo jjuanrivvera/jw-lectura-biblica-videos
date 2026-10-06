@@ -1,0 +1,27 @@
+<style>
+.leccion .l { font-size: 100px; }
+.leccion .p { font-size: 64px; }
+.leccion .s { font-size: 30px; }
+.portada { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; text-align: center; }
+.portada .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 110px; line-height: 1.05; }
+.portada .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.22em; color: var(--verde); text-transform: uppercase; }
+</style>
+
+<div class="seccion"><span class="r">Lecciones y preguntas para pensar</span><span class="t">Génesis 40</span></div>
+<div class="seccion-linea"><svg viewBox="0 0 1740 20" preserveAspectRatio="none" style="width:100%;height:20px"><path d="M 4 10 C 400 4 900 16 1736 8"/></svg></div>
+<div class="leccion l1"><div class="n">1</div><div class="cuerpo"><div class="l">José notó <b>las caras tristes</b> de otros cuando él mismo estaba preso</div><div class="p"><span class="k">PARA PENSAR</span>¿Me doy cuenta de cuándo alguien a mi lado está mal?</div><div class="s">40:6, 7 · <i>La Atalaya</i>, 1 de febrero de 2015, pág. 13</div></div></div>
+<div class="leccion l2"><div class="n">2</div><div class="cuerpo"><div class="l">José dio <b>el mérito a Dios</b>, y dijo la verdad aunque fuera una mala noticia</div><div class="p"><span class="k">PARA PENSAR</span>¿A quién le doy el mérito cuando algo me sale bien?</div><div class="s">40:8 · <i>La Atalaya</i>, 1 de febrero de 2015, pág. 14</div></div></div>
+<div class="leccion l3"><div class="n">3</div><div class="cuerpo"><div class="l">El copero se olvidó de quien lo había ayudado, pero <b>Jehová no se olvidó</b> de José</div><div class="p"><span class="k">PARA PENSAR</span>¿Me acuerdo de agradecer a quien me ayudó?</div><div class="s">40:23 · <i>La Atalaya</i>, 1 de febrero de 2015, pág. 14</div></div></div>
+
+<script>
+const t0 = 0.3;
+entra(".seccion", t0, { y: -20 });
+traza(".seccion-linea path", t0 + 0.3, 1.0);
+secuencia([[".l1", at("Primera")], [".l2", at("Segunda")], [".l3", at("Tercera")]], null, { y: 30, d: 0.6 });
+entra(".l1 .p", at("Me doy cuenta") - 0.2, { y: 20 });
+entra(".l1 .s", at("Me doy cuenta") + 0.2, { y: 10 });
+entra(".l2 .p", at("A quién le doy") - 0.2, { y: 20 });
+entra(".l2 .s", at("A quién le doy") + 0.2, { y: 10 });
+entra(".l3 .p", at("Me acuerdo de agradecer") - 0.2, { y: 20 });
+entra(".l3 .s", at("Me acuerdo de agradecer") + 0.2, { y: 10 });
+</script>

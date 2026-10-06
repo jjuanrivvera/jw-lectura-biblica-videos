@@ -1,0 +1,28 @@
+<style>
+.mapa .cam img, .mapa .cam svg { width: 1944px; height: 2292px; }
+.anos { display: grid; grid-template-columns: auto 1fr auto; align-items: center; column-gap: 16px; font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; }
+.anos .barra { height: 16px; border-radius: 8px; background: var(--oro); transform-origin: 0 50%; }
+.alon svg { width: 300px; height: 300px; display: block; }
+.alon { display: grid; grid-template-columns: 300px 1fr; column-gap: 20px; align-items: center; }
+</style>
+<!--incluir:_recuadro.html-->
+<div class="cab sobre"><span class="cap">Génesis 35</span><span>versículos 6 al 8</span></div>
+<div class="col der">
+  <div class="b a1"><div class="def"><div class="t">El-Betel</div><div class="x">‘<b>Dios de Betel</b>’</div><div class="s">nota de la TNM en 35:7</div></div><div class="cita md">“lo que en realidad estaba diciendo era ‘Dios está en Betel’”</div><div class="f"><i>Perspicacia</i>, vol. 1, “El-betel”, pág. 784 · Luz, el nombre antiguo: “Almendro”</div></div>
+  <div class="b a2"><div class="cita md">Débora, “la nodriza de Rebeca”<span class="ref">GÉNESIS 35:8</span></div><div class="def"><div class="t">nodriza</div><div class="x">“Mujer que amamanta y cuida a un niño que <b>no es suyo</b>”</div><div class="s"><i>Perspicacia</i>, vol. 2, “Nodriza”, pág. 495 · se fue con Rebeca, 24:59</div></div></div>
+  <div class="b a3"><div class="anos"><span>boda de Rebeca</span><div class="barra"></div><span>Betel</span></div><div class="m oro">unos 125 años después</div><div class="f"><i>Perspicacia</i>, vol. 1, “Débora”, pág. 642</div></div>
+  <div class="b a4"><div class="alon"><svg viewBox="0 0 800 820" class="arb"></svg><div class="def"><div class="t">Alón-Bacut</div><div class="x">‘<b>roble del llanto</b>’</div><div class="s">nota de la TNM en 35:8</div></div></div><div class="cita md">el nombre “indica cuánto la querían Jacob y su familia”</div><div class="f"><i>Perspicacia</i>, vol. 1, “Débora”, pág. 642</div></div>
+</div>
+<script>
+/*incluir:_arbol.js*/
+$(".arb").innerHTML = arbolSVG("e29", false);
+pinta(".marcas", `<path class="flecha r1" stroke-width="12" stroke="#d99a14" d="M 797 274 C 780 420 760 560 737 715"/><circle class="anillo a-b" cx="737" cy="715" r="50"/>`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 300, y: 100, w: 1000, h: 964 }, V), 0);
+traza(".r1", 0.3, 1.2);
+traza(".a-b", 1.2, 0.7);
+late(".a-b", at("El-Betel"), { s: 1.2, n: 3 });
+secuencia([[".a1", 0.4], [".a2", at("Allí murió")], [".a3", at("Murió unos")], [".a4", at("La enterraron")]]);
+tl.fromTo($(".anos .barra"), { scaleX: 0 }, { scaleX: 1, duration: 1.6, ease: "power1.inOut", immediateRender: false }, at("Murió unos"));
+tl.set($(".anos .barra"), { scaleX: 0 }, 0);
+</script>

@@ -1,0 +1,58 @@
+<style>
+.perfil { position: absolute; left: 60px; top: 140px; width: 1100px; height: 860px; border-radius: 26px; overflow: hidden; }
+.pt { font-family: "Caveat", cursive; font-weight: 700; font-size: 48px; paint-order: stroke; stroke-linejoin: round; }
+.pb { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 3px; }
+.col { top: 120px; bottom: 60px; right: 60px; width: 660px; }
+.col .m { font-size: 60px; }
+.col .dato .v { font-size: 96px; }
+.col .dato .k { font-size: 48px; }
+.lista { display: flex; flex-direction: column; gap: 10px; }
+.lista .m { font-size: 56px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 7 y 8</span><span>Perspicacia, vol. 1, “Diluvio” y recuadro, págs. 327, 328</span></div>
+<svg class="perfil" viewBox="0 0 1100 860">
+  <defs>
+    <linearGradient id="e26-mar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b82b8"/><stop offset="1" stop-color="#0f3050"/></linearGradient>
+    <linearGradient id="e26-roca" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a6a45"/><stop offset="1" stop-color="#3a2a1c"/></linearGradient>
+  </defs>
+  <rect width="1100" height="860" fill="#1d2a36"/>
+  <g class="hoy">
+    <path d="M 0 250 L 560 250 L 560 570 L 0 570 Z" fill="url(#e26-mar)"/>
+    <path d="M 0 570 L 560 570 L 600 186 L 1100 186 L 1100 860 L 0 860 Z" fill="url(#e26-roca)"/>
+    <path d="M 0 250 L 580 250" stroke="#dfeef8" stroke-width="4"/>
+    <g class="cota"><path d="M 90 250 L 90 570 M 76 250 L 104 250 M 76 570 L 104 570" stroke="#f1e9d8" stroke-width="5"/><text class="pt" x="120" y="430" fill="#f1e9d8" stroke="#0f3050" stroke-width="8">océanos: 4 km de media</text></g>
+    <g class="cota2"><path d="M 1040 186 L 1040 250 M 1026 186 L 1054 186 M 1026 250 L 1054 250" stroke="#f1e9d8" stroke-width="5"/><text class="pt" x="1020" y="160" text-anchor="end" fill="#f1e9d8" stroke="#1d2a36" stroke-width="8">tierra firme: 800 m de media</text></g>
+    <text class="pb" x="30" y="236" fill="#dfeef8">NIVEL DEL MAR</text>
+  </g>
+  <g class="nivelado">
+    <rect x="0" y="0" width="1100" height="860" fill="#1d2a36"/>
+    <path d="M 0 442 L 1100 442 L 1100 860 L 0 860 Z" fill="url(#e26-roca)"/>
+    <rect class="capa" x="0" y="250" width="1100" height="192" fill="url(#e26-mar)"/>
+    <path d="M 0 250 L 1100 250" stroke="#dfeef8" stroke-width="4"/>
+    <g><path d="M 90 250 L 90 442 M 76 250 L 104 250 M 76 442 L 104 442" stroke="#f1e9d8" stroke-width="5"/><text class="pt" x="120" y="360" fill="#f1e9d8" stroke="#0f3050" stroke-width="8">2.400 m de agua sobre todo el planeta</text></g>
+    <text class="pt" x="30" y="560" fill="#e9bf60" stroke="#3a2a1c" stroke-width="8">si se nivelara la superficie</text>
+  </g>
+  <text x="1080" y="840" text-anchor="end" font-family="Montserrat" font-weight="600" font-size="20" fill="#b3bdc8">esquema a escala vertical · 1 km = 80 px</text>
+</svg>
+<div class="col">
+  <div class="b a1"><div class="m">¿adónde se fue? <b>Sigue aquí</b></div><div class="dato"><div class="v">70 %</div><div class="k">del planeta, cubierto de agua</div><div class="s">unos 1.400 millones de km³</div></div></div>
+  <div class="b a2"><div class="cita" style="font-size:44px">“Si se nivelase la superficie del planeta, quedaría completamente cubierta de agua hasta una altura de <b>2.400 m</b>”<span class="ref">PERSPICACIA, VOL. 1, PÁG. 328</span></div></div>
+  <div class="b a3"><div class="m">la corteza <b>cambió</b> bajo el peso del agua</div><div class="lista"><div class="m l1">· montañas nuevas</div><div class="m l2">· otras subieron</div><div class="m l3">· mares más hondos</div></div><div class="s">la corteza “es relativamente delgada [...] y se extiende sobre una masa blanda”</div></div>
+  <div class="b a4"><div class="m">montañas más bajas: <b>hacía falta mucha menos agua</b></div></div>
+</div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+aparece(".perfil", 0.3, 0.6);
+tl.set($$(".cota, .cota2, .nivelado"), { opacity: 0 }, 0);
+aparece(".cota", at("Los océanos"), 0.5);
+aparece(".cota2", at("y la tierra firme"), 0.5);
+aparece(".nivelado", at("Si se nivelara") + 0.2, 1.0);
+tl.fromTo($(".capa"), { attr: { height: 0 } }, { attr: { height: 192 }, duration: 1.6, ease: "power2.out", immediateRender: false }, at("Si se nivelara") + 0.6);
+desaparece(".nivelado", at("El peso del agua"), 0.8);
+secuencia([[".a1", 0.4], [".a2", at("Si se nivelara")], [".a3", at("El peso del agua")], [".a4", at("Montañas más bajas")]]);
+entra(".l1", at("montañas nuevas"), { y: 10 });
+entra(".l2", at("otras subieron"), { y: 10 });
+entra(".l3", at("y los mares"), { y: 10 });
+</script>

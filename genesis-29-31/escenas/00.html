@@ -1,0 +1,52 @@
+<style>
+.mapa { left: 0; top: 0; width: 1040px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 770px; height: 800px; }
+.anillo { fill: none; stroke: #ffd35c; stroke-width: 7; }
+.sombra-der { position: absolute; left: 960px; top: 0; width: 120px; height: 1080px; background: linear-gradient(90deg, rgba(23,33,43,0), #17212b); }
+.tit { position: absolute; left: 1100px; right: 70px; top: 70px; }
+.tit .a { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.2em; color: var(--tenue); }
+.tit .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 98px; line-height: 1; margin-top: 12px; white-space: nowrap; }
+.tit .t b { color: var(--oro); }
+.tit .m { font-size: 62px; color: var(--oro); margin-top: 16px; }
+.lista { position: absolute; left: 1100px; right: 50px; top: 420px; display: flex; flex-direction: column; gap: 34px; }
+.fila { display: grid; grid-template-columns: 96px 1fr; column-gap: 28px; align-items: center; }
+.fila .c { width: 96px; height: 96px; border-radius: 50%; background: #c8322f; color: #fff; display: flex; align-items: center; justify-content: center; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 42px; box-shadow: 0 0 0 5px #fff; }
+.fila .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 62px; line-height: 1.02; }
+.fila .x b { color: var(--oro); }
+.final { position: absolute; left: 1100px; right: 70px; bottom: 60px; padding: 18px 30px; border: 4px solid var(--verde); border-radius: 24px; background: rgba(23,33,43,0.95); }
+.final .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.18em; color: var(--verde); }
+.final .m { font-size: 56px; margin-top: 4px; }
+</style>
+
+<div class="mapa">
+  <div class="cam">
+    <img src="assets/img/mapa-tres.jpg" />
+    <svg viewBox="0 0 770 800">
+      <circle class="anillo a29" cx="486" cy="198" r="50"/>
+      <circle class="anillo a30" cx="582" cy="198" r="50"/>
+      <circle class="anillo a31" cx="232" cy="668" r="50"/>
+    </svg>
+  </div>
+  <div class="pie-mapa">Mapa: apéndice B2 de la TNM, “Génesis y los viajes de los patriarcas” (wol.jw.org) · línea, números y rótulo de la investigación</div>
+</div>
+<div class="sombra-der"></div>
+
+<div class="tit"><div class="a">LECTURA BÍBLICA</div><div class="t">Génesis <b>29</b> al <b>31</b></div><div class="m mano">veinte años de Jacob en Harán</div></div>
+
+<div class="lista">
+  <div class="fila f29"><div class="c">29</div><div class="x"><b>el pozo</b>, siete años y la boda</div></div>
+  <div class="fila f30"><div class="c">30</div><div class="x"><b>los hijos</b> y el rebaño</div></div>
+  <div class="fila f31"><div class="c">31</div><div class="x"><b>la huida</b> y el pacto de Galeed</div></div>
+</div>
+
+<div class="final"><div class="r">AL FINAL DEL VIDEO</div><div class="m mano">lecciones y preguntas para pensar</div></div>
+
+<script>
+tl.set($(".cam"), { scale: 1.35, x: 0, y: 0 }, 0);
+tl.to($(".cam"), { scale: 1.42, x: -30, y: -40, duration: DUR, ease: "none" }, 0);
+entra(".tit", 0.4, { y: -30 });
+const caps = [["29", at("En el veintinueve")], ["30", at("En el treinta nacen")], ["31", at("en el treinta y uno")]];
+caps.forEach(([n, t]) => { entra(".f" + n, t, { x: 40, y: 0 }); traza(".a" + n, t, 0.7); });
+caps.forEach(([n], i) => { if (i < caps.length - 1) atenua(".a" + n, caps[i + 1][1], 0.35); });
+salta(".final", at("Al final veremos"), { desde: 0.85 });
+</script>

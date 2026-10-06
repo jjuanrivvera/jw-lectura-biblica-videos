@@ -1,0 +1,32 @@
+<!--lead:2.6-->
+<style>
+.tabla { top: 160px; grid-template-columns: 220px 1fr 1fr; }
+.tabla .c { display: block; font-size: 48px; min-height: 230px; }
+.tabla .c small { font-size: 24px; margin-top: 10px; }
+.tabla .rt { font-size: 30px; }
+.tabla .c b { color: var(--oro); }
+.tabla .c.dif b { color: var(--rojo); }
+.nota { position: absolute; left: 80px; right: 80px; top: 930px; }
+.nota .m { font-size: 60px; }
+</style>
+
+<div class="capcard"><div class="num">Génesis 9</div><svg viewBox="0 0 820 40"><path d="M 10 22 C 220 6 600 36 810 16"/></svg><div class="sub">la vida, la sangre y el arco iris</div></div>
+<div class="fase fx">
+  <div class="cab"><span class="cap">Génesis 9</span><span>versículos 1 a 7 · 1:28-30</span></div>
+  <div class="tabla">
+    <div></div><div class="h h1">en Edén · Génesis 1</div><div class="h h2">después del Diluvio · Génesis 9</div>
+    <div class="rt r1">el mandato</div><div class="c r1 si">“Tengan muchos hijos, multiplíquense y llenen la tierra”<small>1:28</small></div><div class="c r1 si">“Tengan muchos hijos, multiplíquense y llenen la tierra”<small>9:1 · palabra por palabra</small></div>
+    <div class="rt r2">los animales</div><div class="c r2">“tengan <b>autoridad</b> sobre los peces del mar, los animales voladores de los cielos y todos los seres vivos”<small>1:28 · sin miedo de por medio</small></div><div class="c r2 dif">“seguirán teniéndoles <b>miedo y terror</b>”<small>9:2 · la autoridad sigue; se perdió la confianza del animal</small></div>
+    <div class="rt r3">la comida</div><div class="c r3"><b>vegetal</b><small>1:29, 30</small></div><div class="c r3 dif">se añade <b>la carne</b>, con la sangre apartada<small>9:3, 4</small></div>
+  </div>
+</div>
+
+<script>
+capitulo(".capcard", 0.2, LEAD - 0.1);
+const T0 = LEAD + 0.35;
+entra(".cab", T0, { y: -20 });
+entra([".h1", ".h2"], T0 + 0.1, { y: 6, st: 0.2 });
+entra(".r1", at("Tengan muchos hijos"), { y: 6, st: 0.15 });
+entra(".r2", at("Pero en Edén"), { y: 6, st: 0.15 });
+entra(".r3", at("Y la dieta"), { y: 6, st: 0.15 });
+</script>

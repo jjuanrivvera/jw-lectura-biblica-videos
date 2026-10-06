@@ -1,0 +1,49 @@
+{
+  "assets": [
+    {
+      "path": "assets/img/jehoiaquim.jpg",
+      "title": "jehoiaquim",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/plano.jpg",
+      "title": "plano",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/sedequias.jpg",
+      "title": "sedequias",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/tabla.jpg",
+      "title": "tabla",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    },
+    {
+      "path": "assets/img/templo.jpg",
+      "title": "templo",
+      "source": "Referencia WOL no anotada; localizar manualmente",
+      "source_url": "",
+      "url": "",
+      "rights": "Titular: Watch Tower Bible and Tract Society of Pennsylvania.",
+      "manual": true
+    }
+  ]
+}

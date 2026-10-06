@@ -1,0 +1,52 @@
+<!--lead:2.4-->
+<style>
+.ilu03 { position: absolute; left: 0; top: 0; width: 700px; height: 1080px; overflow: hidden; }
+.ilu03 img { position: absolute; left: 0; top: 0; width: 700px; height: 1108px; object-fit: cover; }
+.ilu03 .kb { position: absolute; inset: 0; }
+.funde03 { position: absolute; left: 560px; top: 0; width: 160px; height: 1080px; background: linear-gradient(90deg, rgba(23, 33, 43, 0), #17212b 90%); }
+.pie03 { left: 24px; bottom: 20px; max-width: 640px; }
+.col.d03 { left: 770px; right: 70px; width: auto; top: 110px; bottom: 90px; }
+.chips { display: flex; gap: 16px; flex-wrap: wrap; }
+.chips span { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; line-height: 1; padding: 8px 22px 6px; border-radius: 16px; border: 3px solid rgba(147, 187, 239, 0.7); color: var(--cielo); }
+.cab.d03c { left: 770px; }
+</style>
+
+<div class="capcard cc"><div class="num">Génesis 37</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">vendido por sus hermanos</div><div class="edad">1750 antes de nuestra era · José tiene 17 años</div>
+  <div class="pista"><span class="on">37</span><span>38</span><span>39</span><span>40</span><span>41</span></div></div>
+
+<div class="fase fp">
+  <div class="ilu03"><div class="kb"><img src="assets/img/jacob-jose.jpg" /></div></div>
+  <div class="funde03"></div>
+  <div class="pie pie03">“Jacob bendijo a José por su fe y rectitud”. <i>La Atalaya</i>, 1 de agosto de 2014, pág. 12 (wol.jw.org)</div>
+  <div class="cab d03c"><span class="cap">Génesis 37</span><span>versículos 1 al 4</span></div>
+  <div class="col d03">
+    <div class="b a1">
+      <div class="m xl">José, <b>17 años</b></div>
+      <div class="s">cuida los rebaños con los hijos de las siervas Bilhá y Zilpá · 37:2</div>
+      <div class="chips"><span>Dan</span><span>Neftalí</span><span>Gad</span><span>Aser</span></div>
+    </div>
+    <div class="b a2">
+      <div class="m md">“un <b>mal informe</b>” · <span style="color:var(--rojo)">no era un chisme</span></div>
+      <div class="cita md">“aunque era el menor, no se unió a ellos en sus malas acciones, sino que, movido por un sentido de responsabilidad, le llevó a su padre un mal informe sobre ellos”<span class="ref">PERSPICACIA, VOL. 2, “JOSÉ”, PÁG. 122</span></div>
+      <div class="m cielo md nd">la Biblia no dice qué habían hecho</div>
+      <div class="f nd"><i>La Atalaya</i>, 1 de agosto de 2014, pág. 11</div>
+    </div>
+    <div class="b a3">
+      <div class="def"><div class="t">Israel</div><div class="x">“<b>Contendiente</b> [Perseverante] <b>con Dios</b>”</div><div class="s">el capítulo llama al padre Jacob, y también Israel · <i>Perspicacia</i>, vol. 1, “Israel”, pág. 1263</div></div>
+      <div class="cita">“Israel quería a José más que a sus demás hijos porque era <b>el hijo de su vejez</b>”<span class="ref">GÉNESIS 37:3</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const t0 = at("José tiene");
+capitulo(".cc", 0.3, t0 - 0.45);
+entra(".cc .pista", 0.9, { y: 20 });
+aparece(".fp", t0 - 0.1, 0.6);
+kb(".ilu03 .kb", t0, DUR, { s: 1.08, y: 1 }, { s: 1.0, y: 0 });
+secuencia([[".a1", t0 + 0.2], [".a2", at("mal informe")], [".a3", at("Al padre")]]);
+entra(".chips span", at("hijos de Bilhá") + 0.2, { y: 16, st: 0.12 });
+entra(".a2 .cita", at("No era un chisme"), { y: 20 });
+entra(".nd", at("La Biblia no dice"), { y: 16 });
+entra(".a3 .cita", at("E Israel quería"), { y: 20 });
+</script>

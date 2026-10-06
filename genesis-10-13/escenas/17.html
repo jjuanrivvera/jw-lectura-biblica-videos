@@ -1,0 +1,29 @@
+<style>
+.sangre img { object-position: 30% 50%; }
+.pie17 { left: 24px; bottom: 20px; max-width: 900px; }
+.col17 { position: absolute; left: 1080px; right: 60px; top: 110px; bottom: 90px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.col17 .cita { font-size: 44px; }
+.hoy17 .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.16em; color: var(--oro); text-transform: uppercase; }
+.hoy17 .v { font-family: "Fraunces", serif; font-weight: 700; font-size: 70px; line-height: 1.05; }
+.hoy17 .v small { display: block; font-family: "Caveat", cursive; font-size: 54px; color: var(--tiza); margin-top: 6px; }
+</style>
+
+<div class="sangre"><div class="kb"><img src="assets/img/babilonia-ruinas.jpg" /></div></div>
+<div class="velo der"></div>
+<div class="pie pie17">Ruinas de la antigua Babilonia. <i>Perspicacia</i>, vol. 1, “El Imperio babilonio”, pág. 324 (wol.jw.org)</div>
+<div class="cab sobre" style="z-index:3"><span class="cap">Babel, hoy</span><span></span></div>
+
+<div class="col17">
+  <div class="hoy17 h1"><div class="k">las ruinas de Babilonia</div><div class="v">cerca de Hilla, en Irak</div></div>
+  <div class="hoy17 h2"><div class="k">Etemenanki · “según algunos, la torre de Babel”</div><div class="v">hoy casi no queda nada<small>los constructores de la zona se llevaron “casi todo ladrillo”</small></div><div class="f" style="margin-top:8px">Cottrell, citado en <i>La Atalaya</i>, 15 de octubre de 1961 · <i>Perspicacia</i>, vol. 2, “El Imperio babilonio”</div></div>
+  <div class="hoy17 h3"><div class="k">Borsipa · Birs Nimrud</div><div class="v">a unos 16 km del centro<small>“otros creen” que sus restos son los de la torre de Babel</small></div><div class="f" style="margin-top:8px"><i>La Atalaya</i>, 1 de septiembre de 1961, págs. 541, 542</div></div>
+</div>
+
+<script>
+kb(".kb", 0, DUR, { s: 1.12, x: -2 }, { s: 1.0, x: 0 });
+aparece(".pie17", 0.6, 0.5);
+entra(".cab", 0.3, { y: -16 });
+entra(".h1", 0.8, { y: 20 });
+entra(".h2", at("Algunos creen") - 0.2, { y: 20 });
+entra(".h3", at("Otros creen") - 0.2, { y: 20 });
+</script>

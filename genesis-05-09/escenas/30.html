@@ -1,0 +1,58 @@
+<style>
+.perf { position: absolute; left: 0; top: 0; }
+.pt { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; paint-order: stroke; stroke: #17212b; stroke-width: 10px; stroke-linejoin: round; }
+.pa { font-family: "Fraunces", serif; font-weight: 700; font-size: 56px; paint-order: stroke; stroke: #17212b; stroke-width: 10px; }
+.top { position: absolute; left: 80px; right: 80px; top: 120px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; }
+.top .m { font-size: 62px; }
+.nombres .m { font-size: 56px; }
+.sello { position: absolute; left: 1180px; top: 640px; padding: 14px 30px; border: 6px solid var(--rojo); border-radius: 20px; transform: rotate(-5deg);
+  font-family: "Caveat", cursive; font-weight: 700; font-size: 60px; line-height: 1.05; color: var(--rojo); background: rgba(23,33,43,0.85); }
+.sello small { display: block; font-family: "Montserrat", sans-serif; font-size: 20px; font-weight: 600; color: var(--tenue); }
+</style>
+
+<div class="cab"><span class="cap">El Ararat hoy</span><span>Perspicacia, vol. 1, “Ararat”</span></div>
+<svg class="perf" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="e30-cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#17212b" stop-opacity="0"/><stop offset="0.5" stop-color="#2a3d52" stop-opacity="0.6"/><stop offset="1" stop-color="#6d8aa3" stop-opacity="0.55"/></linearGradient>
+    <linearGradient id="e30-roca" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#8b7564"/><stop offset="0.5" stop-color="#5e4c40"/><stop offset="1" stop-color="#2f2621"/></linearGradient>
+    <linearGradient id="e30-roca2" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#7a6a5c"/><stop offset="1" stop-color="#3a302a"/></linearGradient>
+    <linearGradient id="e30-nieve" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.6" stop-color="#e4edf5"/><stop offset="1" stop-color="#b8cadb"/></linearGradient>
+    <clipPath id="e30-cima"><rect x="0" y="0" width="1920" height="369"/></clipPath>
+  </defs>
+  <rect x="0" y="300" width="1920" height="780" fill="url(#e30-cielo)"/>
+  <g transform="translate(0 120)">
+  <path class="chico" d="M 1080 1080 C 1250 880 1400 520 1500 419 C 1560 470 1700 760 1920 900 L 1920 1080 Z" fill="url(#e30-roca2)"/>
+  <path class="grande" d="M 0 1080 C 200 1000 420 700 560 480 C 620 390 670 262 700 240 C 740 262 800 360 880 480 C 980 640 1150 880 1400 1080 Z" fill="url(#e30-roca)"/>
+  <path class="nieve" clip-path="url(#e30-cima)" d="M 0 1080 C 200 1000 420 700 560 480 C 620 390 670 262 700 240 C 740 262 800 360 880 480 C 980 640 1150 880 1400 1080 Z" fill="url(#e30-nieve)"/>
+  <path class="nieve-borde" d="M 614 369 C 640 380 660 360 690 378 C 720 392 740 366 770 380 C 790 388 800 372 807 369" stroke="#b8cadb" stroke-width="3" fill="none"/>
+  <g class="cot1"><path d="M 700 240 L 280 240" stroke="#e9bf60" stroke-width="4" stroke-dasharray="10 8"/><text class="pa" x="120" y="228" fill="#e9bf60">5.165 m</text></g>
+  <g class="cotn"><path d="M 930 240 L 930 369 M 916 240 L 944 240 M 916 369 L 944 369" stroke="#f1e9d8" stroke-width="5"/><text class="pt" x="960" y="320" fill="#f1e9d8">nieves perpetuas: los últimos 900 m</text></g>
+  <g class="cot2"><path d="M 1500 419 L 1780 419" stroke="#93bbef" stroke-width="4" stroke-dasharray="10 8"/><text class="pa" x="1560" y="405" fill="#93bbef">3.914 m</text></g>
+  <g class="dist"><path d="M 700 900 L 1500 900" stroke="#f1e9d8" stroke-width="6"/><path d="M 700 880 L 700 920 M 1500 880 L 1500 920" stroke="#f1e9d8" stroke-width="6"/><text class="pt" x="1100" y="880" text-anchor="middle" fill="#f1e9d8">≈ 11 km entre las cumbres</text></g>
+  </g>
+  <text x="1880" y="1060" text-anchor="end" font-family="Montserrat" font-weight="600" font-size="20" fill="#b3bdc8">perfil esquemático · altura exagerada para que se vean los dos picos</text>
+</svg>
+<div class="top">
+  <div class="t1"><div class="m">hoy: <b>dos picos</b></div><div class="s">el segundo, al sureste · primera ascensión conocida a la cima: Parrot, en 1829</div></div>
+  <div class="nombres">
+    <div class="m n1">turcos: <b>Agri Dagi</b>, “Monte del Arca”</div>
+    <div class="m n2">persas: <b>Kuhi-Nuh</b>, “Montaña de Noé”</div>
+  </div>
+</div>
+<div class="sello">tradición, no texto bíblico<small>“Los informes sobre el hallazgo de los restos del arca aún carecen de confirmación”</small></div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".t1", 0.4, { y: 30 });
+tl.set($$(".grande, .chico, .nieve, .nieve-borde, .cot1, .cotn, .cot2, .dist"), { opacity: 0 }, 0);
+tl.fromTo($(".grande"), { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 0.5);
+tl.fromTo($(".chico"), { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 0.9);
+aparece(".cot1", at("cinco mil ciento"), 0.5);
+aparece([".nieve", ".nieve-borde"], at("nieves perpetuas") - 0.6, 0.8);
+aparece(".cotn", at("nieves perpetuas"), 0.5);
+aparece(".cot2", at("tres mil novecientos"), 0.5);
+aparece(".dist", at("once kilómetros"), 0.5);
+entra(".n1", at("Agri Dagi"), { y: 20 });
+entra(".n2", at("Kuhi Nuh"), { y: 20 });
+salta(".sello", at("Que el arca"), { desde: 1.5, ease: "power4.out", d: 0.4 });
+</script>

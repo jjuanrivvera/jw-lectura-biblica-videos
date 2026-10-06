@@ -1,0 +1,50 @@
+<!--lead:2.0-->
+<style>
+.mapa.B2 { left: 0; top: 0; width: 1180px; height: 1080px; }
+.funde29 { left: 1080px; }
+.col29 { position: absolute; left: 1215px; right: 60px; top: 110px; bottom: 70px; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.col29 .tj .x { font-size: 34px; }
+.col29 .cita { font-size: 44px; }
+.cab.d29 { left: 1215px; }
+.mapa.B2 .pie-mapa { top: 20px; bottom: auto; }
+</style>
+
+<!--incluir:_b2.html-->
+<div class="funde-der funde29"></div>
+<div class="cab d29"><span class="cap">Génesis 46</span><span>versículo 1</span></div>
+<div class="col29">
+  <div class="cita q1">“Al llegar a Beer-Seba, le hizo sacrificios <b>al Dios de su padre Isaac</b>”<span class="ref">GÉNESIS 46:1</span></div>
+  <div class="tj h1"><div class="k">Abrahán · 21:33</div><div class="x">plantó un tamarisco e <b>invocó el nombre de Jehová</b></div></div>
+  <div class="tj h2"><div class="k">Isaac · 26:24, 25</div><div class="x">“No tengas miedo, porque yo estoy contigo”; y construyó un altar</div></div>
+  <div class="tj on h3"><div class="k">Jacob</div><div class="x">salió por aquí a los <b>77</b> años, rumbo a Harán; ahora sale a los <b>130</b></div><div class="ref"><i>Perspicacia</i>, vol.&nbsp;2, “Jacob”, págs.&nbsp;8, 11</div></div>
+</div>
+
+<div class="capcard cc"><div class="fondo"><img src="assets/img/mudanza-hist.jpg" /></div>
+  <div class="dentro"><div class="num">Génesis 46</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16" /></svg><div class="sub">Jacob baja a Egipto</div>
+  <div class="pista"><span class="hecho">42</span><span class="hecho">43</span><span class="hecho">44</span><span class="hecho">45</span><span class="on">46</span><span>47</span></div></div></div>
+
+<script>
+const HB = "M 2114 1025 C 2140 1062 2092 1076 2052 1098 C 2020 1122 2006 1160 1990 1180";
+pinta(".marcas", `
+  <path class="ruta-h hb-h" stroke-width="14" d="${HB}"/><path class="ruta hb" stroke-width="7" style="stroke:#d99a14" d="${HB}"/>
+  <circle class="anillo a-heb" cx="2114" cy="1025" r="20" style="stroke-width:5"/>
+  <circle class="anillo oro a-bs" cx="1990" cy="1180" r="22" style="stroke-width:6"/>
+  <g class="altar"><g transform="translate(1958 1152)"><g class="alt"><rect x="-14" y="-10" width="28" height="18" rx="2" fill="#8a7a66" stroke="#4d4033" stroke-width="2"/><path d="M -14 -10 h 28" stroke="#4d4033" stroke-width="2"/><path class="fuego" d="M -6 -10 C -10 -20 -2 -24 0 -32 C 2 -24 10 -20 6 -10 Z" fill="#e2733a"/></g></g></g>
+  <g class="viaj"><circle r="12" fill="#d99a14" stroke="#fff" stroke-width="4"/></g>`);
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 1680, y: 762, w: 737, h: 675 }, V), 0);
+const t0 = at("Jacob sale con todo");
+capitulo(".cc", 0.3, t0 - 0.5);
+entra(".cc .pista", 1.0, { y: 20 });
+kb(".cc .fondo", 0, t0, { s: 1.12 }, { s: 1.0 });
+traza(".a-heb", t0, 0.5);
+traza([".hb-h", ".hb"], t0 + 0.3, 2.2);
+recorre(".viaj", ".hb", t0 + 0.3, 2.2);
+traza(".a-bs", at("en Beer-Seba") - 0.1, 0.6);
+salta(".alt", at("ofrece sacrificios"), { desde: 0 });
+entra(".q1", at("ofrece sacrificios") - 0.2, { y: 16 });
+entra(".h1", at("Allí Abrahán"), { y: 16 });
+entra(".h2", at("Allí Jehová"), { y: 16 });
+entra(".h3", at("Y por allí"), { y: 16 });
+late(".a-bs", at("Ahora sale otra vez"), { s: 1.3, n: 3 });
+</script>

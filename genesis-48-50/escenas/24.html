@@ -1,0 +1,75 @@
+<style>
+.dib24 { position: absolute; left: 0; top: 0; width: 1040px; height: 1080px; }
+.dib24 svg { width: 1040px; height: 1080px; }
+.et24 { font-family: "Caveat", cursive; font-weight: 700; font-size: 52px; fill: var(--oro); }
+.funde24 { left: 940px; }
+.col24 { position: absolute; left: 1060px; right: 70px; top: 110px; bottom: 80px; }
+.col24 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.col24 .cita { font-size: 50px; }
+.col24 .clave { align-self: flex-start; }
+.pp24 { position: absolute; left: 60px; bottom: 40px; }
+</style>
+
+<div class="fase dib24"><svg viewBox="0 0 1040 1080"><g class="vina24"></g></svg></div>
+<div class="funde-der funde24"></div>
+<div class="cab" style="left:1060px"><span class="cap">Génesis 49</span><span>versículos 11 y 12</span></div>
+<div class="col24">
+  <div class="b b1">
+    <div class="cita">“Él <b>atará su burro a una vid</b> y la cría de su burro a una vid selecta. <b>Lavará su ropa en vino</b> y su manto en la sangre de las uvas”<span class="ref">GÉNESIS 49:11</span></div>
+  </div>
+  <div class="b b2">
+    <span class="clave c1">tantas vides que <b>no importa perder alguna</b></span>
+    <div class="m md oro c2">poesía de riqueza</div>
+    <div class="m md c3">no es una descripción física del Mesías</div>
+    <div class="f"><i>Perspicacia</i>, “Siló”, pág.&nbsp;1025</div>
+  </div>
+</div>
+
+<script>
+// Una vid en espaldera: tronco, copa de hojas a lo largo del alambre y racimos colgando.
+function vid(x, y, s, fila) {
+  const racimo = (cx, cy) => {
+    let g = "";
+    [[4, 0], [3, 1], [3, 2], [2, 3], [1, 4]].forEach(([n, f]) => {
+      for (let i = 0; i < n; i++) g += `<circle cx="${(cx + (i - (n - 1) / 2) * 15 * s).toFixed(1)}" cy="${(cy + f * 13 * s).toFixed(1)}" r="${(8.5 * s).toFixed(1)}" fill="${(i + f) % 2 ? "#5b2d6e" : "#6f3a85"}" stroke="#3b1b48" stroke-width="${(1.6 * s).toFixed(1)}"/>`;
+    });
+    return `<g class="rac24 r${fila}">${g}<circle cx="${(cx - 9 * s).toFixed(1)}" cy="${(cy + 2 * s).toFixed(1)}" r="${(3 * s).toFixed(1)}" fill="#c9a6d8" opacity="0.7"/></g>`;
+  };
+  const j = (k) => ((x * 7 + k * 13) % 11) - 5;
+  const hojas = [-95, -62, -30, 0, 30, 62, 95].map((dx, i) =>
+    `<ellipse cx="${(x + dx * s).toFixed(1)}" cy="${(y - 150 * s + ((i % 2 ? -14 : 6) + j(i) * 2) * s).toFixed(1)}" rx="${((34 + j(i + 3)) * s).toFixed(1)}" ry="${((26 + j(i + 5) * 0.6) * s).toFixed(1)}" fill="${i % 3 ? "#5f8f3e" : "#79a94b"}" stroke="#3e6527" stroke-width="${(2 * s).toFixed(1)}"/>`).join("");
+  return `<g class="vid24 f${fila}">
+    <path d="M ${x} ${y} C ${x - 8 * s} ${y - 50 * s} ${x + 10 * s} ${y - 90 * s} ${x} ${y - 140 * s}" fill="none" stroke="#5a3d24" stroke-width="${16 * s}" stroke-linecap="round"/>
+    <path d="M ${x - 120 * s} ${y - 140 * s} L ${x + 120 * s} ${y - 140 * s}" stroke="#8f8574" stroke-width="${3 * s}"/>
+    ${hojas}${racimo(x - 60 * s, y - 118 * s)}${racimo(x + 4 * s, y - 112 * s)}${racimo(x + 64 * s, y - 120 * s)}</g>`;
+};
+let v = `<defs><linearGradient id="cielo24-${ID}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d2a36"/><stop offset="0.62" stop-color="#5a5a4a"/><stop offset="1" stop-color="#c7925a"/></linearGradient>
+  <radialGradient id="sol24-${ID}" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffe2a0" stop-opacity="0.95"/><stop offset="1" stop-color="#ffe2a0" stop-opacity="0"/></radialGradient></defs>
+  <rect x="0" y="0" width="1040" height="640" fill="url(#cielo24-${ID})"/>
+  <circle cx="760" cy="500" r="190" fill="url(#sol24-${ID})"/>
+  <circle cx="760" cy="500" r="52" fill="#ffe7b0"/>
+  <path d="M 0 520 C 160 440 300 470 420 500 C 560 430 720 450 860 500 C 940 470 1000 480 1040 490 L 1040 640 L 0 640 Z" fill="#4a4a3a"/>
+  <path d="M 0 575 C 200 530 380 560 560 545 C 740 530 900 560 1040 548 L 1040 640 L 0 640 Z" fill="#3f4232"/>
+  <path d="M 0 600 C 260 560 700 560 1040 590 L 1040 1080 L 0 1080 Z" fill="#3a3a26"/>
+  <path d="M 0 700 C 300 670 700 680 1040 700 L 1040 1080 L 0 1080 Z" fill="#46452c"/>
+  <path d="M 0 860 C 320 840 700 845 1040 860 L 1040 1080 L 0 1080 Z" fill="#524f31"/>`;
+[90, 230, 370, 510, 650, 790, 930].forEach((x) => (v += vid(x, 630, 0.55, 3)));
+[60, 270, 480, 690, 900].forEach((x) => (v += vid(x, 760, 0.8, 2)));
+[200, 540, 880].forEach((x) => (v += vid(x, 960, 1.25, 1)));
+// La cuerda atada al tronco de la vid del frente, que sale del cuadro hacia el burro.
+v += `<path class="cuerda24" d="M -20 900 C 60 920 120 900 175 880" fill="none" stroke="#c8a46a" stroke-width="9" stroke-linecap="round"/>
+  <ellipse class="nudo24" cx="200" cy="878" rx="26" ry="12" fill="none" stroke="#c8a46a" stroke-width="9"/>
+  <text class="et24 e24" x="40" y="1030">aquí se ataría el burro</text>`;
+pinta(".vina24", v);
+salta(".vid24.f3", 0.3, { st: 0.07, desde: 0.6, d: 0.5 });
+salta(".vid24.f2", 0.7, { st: 0.09, desde: 0.6, d: 0.5 });
+salta(".vid24.f1", 1.1, { st: 0.12, desde: 0.6, d: 0.6 });
+const tB = at("atará su burro");
+traza(".cuerda24", tB, 0.8);
+aparece(".nudo24", tB + 0.6, 0.3);
+aparece(".e24", tB + 0.8, 0.4);
+secuencia([[".b1", 0.4], [".b2", at("Solo ataría") - 0.2]]);
+entra(".c2", at("Es poesía") - 0.2, { y: 14 });
+entra(".c3", at("no una descripción") - 0.2, { y: 14 });
+late(".rac24.r1", at("Lavará su ropa"), { s: 1.12, n: 1 });
+</script>

@@ -1,0 +1,40 @@
+<style>
+.silla { position: absolute; left: 60px; top: 110px; width: 1160px; height: 900px; }
+.et { font-family: "Caveat"; font-weight: 700; font-size: 48px; fill: var(--tiza); }
+.et.o { fill: var(--oro); }
+.col { top: 120px; bottom: 90px; right: 64px; width: 620px; }
+.fuente-p { position: absolute; left: 80px; bottom: 16px; font-size: 21px; color: var(--tenue); }
+</style>
+<div class="cab"><span class="cap">Génesis 31</span><span>versículos 32 al 35</span></div>
+<svg class="silla" viewBox="0 0 1160 900">
+  <defs><linearGradient id="tela-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9483a"/><stop offset="1" stop-color="#7a2a22"/></linearGradient>
+  <linearGradient id="mimbre" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b58b5a"/><stop offset="0.5" stop-color="#d6b98c"/><stop offset="1" stop-color="#9c7445"/></linearGradient></defs>
+  <g class="tienda"><path d="M 20 820 L 580 120 L 1140 820 Z" fill="rgba(125,90,55,0.25)" stroke="#8c6541" stroke-width="5"/><text class="et" x="580" y="200" text-anchor="middle">la tienda de Raquel</text></g>
+  <g class="armazon"><path d="M 300 820 L 330 520 M 860 820 L 830 520" stroke="#6d4a2c" stroke-width="22" stroke-linecap="round"/>
+    <path d="M 290 540 C 400 470 760 470 870 540" fill="none" stroke="#6d4a2c" stroke-width="26" stroke-linecap="round"/></g>
+  <g class="canasta"><path d="M 360 560 L 800 560 L 770 780 L 390 780 Z" fill="url(#mimbre)" stroke="#6d4a2c" stroke-width="5"/>
+    <path d="M 370 610 L 790 610 M 375 660 L 785 660 M 380 710 L 780 710 M 385 755 L 775 755" stroke="#8c6541" stroke-width="4"/>
+    <text class="et" x="580" y="850" text-anchor="middle">la canasta de la silla</text></g>
+  <g class="idolos"><g transform="translate(470 700)"><circle cx="0" cy="-58" r="17" fill="#e9bf60"/><path d="M -18 -40 L 18 -40 L 24 40 L -24 40 Z" fill="#e9bf60" stroke="#8a5a00" stroke-width="3"/></g>
+    <g transform="translate(560 710)"><circle cx="0" cy="-52" r="15" fill="#e9bf60"/><path d="M -16 -36 L 16 -36 L 22 30 L -22 30 Z" fill="#e9bf60" stroke="#8a5a00" stroke-width="3"/></g>
+    <g transform="translate(650 700)"><circle cx="0" cy="-58" r="17" fill="#e9bf60"/><path d="M -18 -40 L 18 -40 L 24 40 L -24 40 Z" fill="#e9bf60" stroke="#8a5a00" stroke-width="3"/></g>
+    <text class="et o" x="920" y="700">ídolos</text><path d="M 910 690 L 690 690" stroke="#e9bf60" stroke-width="4" stroke-dasharray="4 8"/></g>
+  <g class="cojin"><path d="M 330 560 C 330 500 830 500 830 560 L 830 580 L 330 580 Z" fill="url(#tela-s)" stroke="#5a1c16" stroke-width="4"/>
+    <text class="et o" x="580" y="460" text-anchor="middle">aquí estaba sentada Raquel</text><path d="M 580 470 L 580 510" stroke="#e9bf60" stroke-width="5"/></g>
+</svg>
+<div class="col">
+  <div class="b a1"><div class="m">quien los tenga, <b style="color:var(--rojo)">morirá</b></div><div class="m md">Jacob, seguro de su casa · Génesis 31:32</div><div class="m md">Labán busca en todas las tiendas</div><div class="s">Génesis 31:33</div></div>
+  <div class="b a2"><div class="cita md">“los había escondido en la canasta de la silla que las mujeres usaban para montar en camello y se había sentado encima”<span class="ref">GÉNESIS 31:34</span></div></div>
+  <div class="b a3"><div class="cita md">“No te enojes, señor mío, pero no puedo levantarme en tu presencia. Estoy con lo que es habitual entre las mujeres”<span class="ref">GÉNESIS 31:35</span></div><div class="m md">es decir, la <b style="color:var(--oro)">menstruación</b></div><div class="s">Perspicacia, vol. 2, “Menstruación”, pág. 365</div></div>
+  <div class="b a4"><div class="m">años después: “los dioses extranjeros”</div><div class="m md">enterrados junto a <b style="color:var(--oro)">Siquem</b></div><div class="s">Génesis 35:2, 4 · “Jacob no tenía ningún interés en la idolatría” · Perspicacia, vol. 2, “Terafim”, pág. 1105</div></div>
+</div>
+<div class="fuente-p">dibujo propio, no a escala · la forma de la silla es supuesta</div>
+<script>
+aparece(".tienda", 0.3, 0.6);
+entra(".armazon", 0.8, { y: 20 });
+entra(".canasta", at("Raquel los había escondido"), { y: 20 });
+entra(".idolos", at("en la canasta de su silla") , { y: -40 });
+entra(".cojin", at("y se había sentado encima"), { y: -30 });
+secuencia([[".a1", 0.4], [".a2", at("Raquel los había escondido")], [".a3", at("Se excusó")], [".a4", at("Años después")]]);
+atenua(".silla", at("Años después"), 0.3);
+</script>

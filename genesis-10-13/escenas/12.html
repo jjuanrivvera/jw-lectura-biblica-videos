@@ -1,0 +1,60 @@
+<!--lead:2.4-->
+<style>
+.mapa.M12 { left: 760px; top: 0; width: 1160px; height: 1080px; background: #e2e5c8; }
+.mapa.M12 .cam img, .mapa.M12 .cam svg { width: 2862px; height: 2970px; }
+.funde12 { position: absolute; left: 760px; top: 0; width: 140px; height: 1080px; background: linear-gradient(270deg, rgba(23, 33, 43, 0), #17212b 92%); }
+.pie12 { right: 24px; bottom: 20px; }
+.col12 { position: absolute; left: 70px; width: 720px; top: 70px; bottom: 70px; }
+.col12 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.col12 .cita { font-size: 50px; }
+</style>
+
+<div class="fase fb">
+  <div class="mapa M12"><div class="cam">
+    <img src="assets/img/b2-meso.jpg" />
+    <svg viewBox="0 0 2862 2970">
+      <g class="sinar-g"><ellipse class="sinar" cx="2150" cy="2350" rx="560" ry="330" fill="rgba(233,191,96,0.22)" stroke="#d99a14" stroke-width="10" transform="rotate(38 2150 2350)"/></g>
+      <path class="ruta-h ll-h" stroke-width="40" d="M 1700 1720 C 1790 1840 1880 1960 1960 2100"/><path class="flecha ll" stroke-width="20" d="M 1700 1720 C 1790 1840 1880 1960 1960 2100"/>
+      <path class="flecha llp" stroke-width="20" d="M 1908 2066 L 1964 2108 L 1974 2040"/>
+      <circle class="anillo oro a-bab" cx="2009" cy="2173" r="52"/>
+      <g class="chip-e"><rect x="2020" y="1760" width="540" height="104" rx="22" fill="rgba(15,22,30,0.9)"/><text x="2050" y="1830" font-family="Caveat" font-weight="700" font-size="62" fill="#f1e9d8">hacia el este · 11:2</text></g>
+    </svg>
+  </div></div>
+  <div class="funde12"></div>
+  <div class="pie pie12">Mapa: apéndice B2 de la TNM (wol.jw.org) · marcas añadidas</div>
+  <div class="col12">
+    <div class="b a1">
+      <div class="cita">“Toda la tierra seguía teniendo <b>un mismo idioma</b> y un solo conjunto de palabras”<span class="ref">GÉNESIS 11:1</span></div>
+      <div class="def lab"><div class="t">idioma<i>en hebreo</i></div><div class="x">literalmente, “<b>labio</b>”</div><div class="s">la nota: “un solo vocabulario” · <i>Perspicacia</i>, vol. 2, “Lenguaje”, págs. 203, 204</div></div>
+      <div class="m md heb">el que Dios le dio a Adán: el que después se llamó <b>hebreo</b></div>
+      <div class="f heb"><i>Perspicacia</i>, vol. 1, “Hebreo, II”, pág. 1100</div>
+    </div>
+    <div class="b a2">
+      <div class="cita">“Descubrieron una llanura en la tierra de <b>Sinar</b> y se establecieron allí”<span class="ref">GÉNESIS 11:2</span></div>
+      <div class="def"><div class="t">Sinar</div><div class="x">la zona entre el <b>Tigris</b> y el <b>Éufrates</b> que después se llamó <b>Babilonia</b></div><div class="s">el nombre original de la región · <i>Perspicacia</i>, vol. 2, “Sinar”, pág. 1034</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="capcard cc"><div class="fondo"><img src="assets/img/babel-lfb.jpg" /></div><div class="num">Génesis 11</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">una torre, muchas lenguas</div><div class="edad">Babel · la línea de Sem · la familia de Taré</div>
+  <div class="pista"><span class="hecho">10</span><span class="on">11</span><span>12</span><span>13</span></div></div>
+
+<script>
+capitulo(".cc", 0.2, at("Toda la tierra") - 0.5);
+aparece(".cc .fondo", 0.1, 0.8);
+entra(".cc .pista", 0.9, { y: 16 });
+tl.fromTo($(".fb"), { opacity: 0 }, { opacity: 1, duration: 0.6, immediateRender: false }, at("Toda la tierra") - 0.4);
+tl.set($(".fb"), { opacity: 0 }, 0);
+const V = { x: 0, y: 0, w: 1160, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 1650, y: 700, w: 1212, h: 1128 }, V), 0);
+secuencia([[".a1", at("Toda la tierra")], [".a2", at("La gente se desplazó")]]);
+entra(".lab", at("en hebreo") - 0.2, { y: 18 });
+entra(".heb", at("Era el que"), { y: 14 });
+camara(".cam", at("La gente se desplazó") - 0.4, 2.2, encuadre({ x: 1650, y: 1640, w: 1212, h: 1128 }, V));
+traza([".ll-h", ".ll"], at("hacia el este") - 0.2, 1.4, { ease: "power1.inOut" });
+aparece(".llp", at("hacia el este") + 1.1, 0.3);
+entra(".chip-e", at("hacia el este"), { y: 16 });
+traza(".sinar", at("Sinar") - 0.2, 1.2);
+traza(".a-bab", at("Sinar") + 0.8, 0.6);
+late(".sinar-g", at("Babilonia") - 0.3, { s: 1.03, n: 3 });
+</script>

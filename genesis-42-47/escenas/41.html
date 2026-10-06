@@ -1,0 +1,48 @@
+<style>
+.mapa.B2 { left: 0; top: 0; width: 1100px; height: 1080px; }
+.funde41 { left: 1000px; }
+.col41 { position: absolute; left: 1110px; right: 60px; top: 100px; bottom: 60px; }
+.col41 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.col41 .def .x { font-size: 44px; }
+.col41 .tj .x { font-size: 32px; }
+.col41 .caja .s { font-size: 26px; color: #d5dbe1; }
+.col41 .caja .s b { color: var(--tiza); }
+.col41 .caja { display: flex; flex-direction: column; gap: 10px; }
+.cab.d41 { left: 1110px; }
+</style>
+
+<!--incluir:_b2.html-->
+<div class="funde-der funde41"></div>
+<div class="cab d41"><span class="cap">Ramesés hoy</span><span>Génesis 47:11</span></div>
+<div class="col41">
+  <div class="b a1">
+    <div class="cita sm q1" style="font-size:40px">“Les dio una propiedad en la mejor parte del país, <b>en la tierra de Ramesés</b>”<span class="ref">GÉNESIS 47:11</span></div>
+    <div class="def d1"><div class="t">Ramesés</div><div class="x">del egipcio: “<b>Ra</b> [el dios-sol] <b>Lo Ha Engendrado</b>”</div><div class="s">un distrito dentro de Gosén, o bien otro nombre de Gosén · <i>Perspicacia</i>, vol.&nbsp;2, págs.&nbsp;778, 779</div></div>
+    <div class="tj d2"><div class="k">no hace falta relacionarlo con Ramsés II</div><div class="x">el nombre ya se usaba en tiempos de José</div></div>
+  </div>
+  <div class="b a2">
+    <div class="tj d3"><div class="k">siglos después · Éxodo 1:11; 12:37</div><div class="x">los israelitas esclavizados <b>construyeron allí una ciudad</b>, y de allí salieron en el éxodo</div></div>
+    <div class="tj on d4"><div class="k">dónde estaba: no es seguro</div><div class="x">¿en San el-Hagar, al noreste del delta, o en <b>Qantir</b>, unos 20 km al sur?</div><div class="ref"><i>Perspicacia</i>, vol.&nbsp;2, pág.&nbsp;779</div></div>
+    <div class="caja d5"><div class="s">hoy la mayoría de los arqueólogos la sitúa en <b>Qantir</b>, un pueblo agrícola, a unos 2 km de <b>Tell el-Dab’a</b>, la antigua Avaris</div><span class="externa chico">fuente externa: Wikipedia, “Pi-Ramesses”, “Tell el-Dab'a”</span></div>
+  </div>
+</div>
+
+<script>
+pinta(".marcas", `
+  <ellipse class="anillo oro a-ra" cx="465" cy="1452" rx="150" ry="46" style="stroke-width:6"/>
+  <g class="pT"><circle cx="623" cy="1337" r="10" fill="#e9bf60" stroke="#17212b" stroke-width="3"/><rect x="642" y="1300" width="220" height="40" rx="9" fill="rgba(15,22,30,0.94)"/><text class="lugar" x="654" y="1328" font-size="24" style="fill:#e9bf60">¿San el-Hagar?</text></g>
+  <g class="pQ"><circle cx="584" cy="1422" r="10" fill="#e9bf60" stroke="#17212b" stroke-width="3"/><rect x="604" y="1404" width="140" height="40" rx="9" fill="rgba(15,22,30,0.94)"/><text class="lugar" x="616" y="1432" font-size="24" style="fill:#e9bf60">¿Qantir?</text></g>`);
+const V = { x: 0, y: 0, w: 1100, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 220, y: 1140, w: 720, h: 707 }, V), 0);
+const tM = at("Más tarde");
+entra(".q1", 0.3, { y: 16 });
+traza(".a-ra", 0.6, 0.9);
+entra(".d1", 1.2, { y: 16 });
+entra(".d2", at("No hace falta"), { y: 16 });
+secuencia([[".a1", 0.2], [".a2", tM - 0.3]]);
+entra(".d3", tM, { y: 16 });
+entra(".d4", tM + 3.5, { y: 16 });
+aparece([".pT", ".pQ"], at("Dónde estaba") + 0.3, 0.5);
+entra(".d5", at("Hoy la mayoría"), { y: 16 });
+late(".pQ circle", at("la sitúa en Cantir"), { s: 1.4, n: 3 });
+</script>

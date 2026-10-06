@@ -1,0 +1,48 @@
+<!--lead:2.4-->
+<style>
+.col.d30 { left: 1100px; right: 60px; width: auto; top: 110px; bottom: 80px; }
+.pie30 { left: 24px; bottom: 20px; }
+.f30 .sangre img { object-position: 30% 50%; }
+.dos30 { display: grid; grid-template-columns: 1fr; gap: 14px; }
+</style>
+
+<div class="capcard cc"><div class="num">Génesis 40</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">el copero y el panadero</div><div class="edad">en la prisión del rey</div>
+  <div class="pista"><span class="hecho">37</span><span class="hecho">38</span><span class="hecho">39</span><span class="on">40</span><span>41</span></div></div>
+
+<div class="fase fp f30">
+  <div class="sangre"><div class="kb"><img src="assets/img/presos.jpg" /></div></div>
+  <div class="velo der"></div>
+  <div class="pie pie30">“José trataba a los demás presos con bondad y dignidad”. <i>La Atalaya</i>, 1 de febrero de 2015, pág. 13 (wol.jw.org)</div>
+  <div class="cab sobre" style="z-index:3"><span class="cap">Génesis 40</span><span>versículos 1 al 8</span></div>
+  <div class="col d30">
+    <div class="b a1">
+      <div class="m">el jefe de los <b>coperos</b> y el jefe de los <b>panaderos</b> del faraón</div>
+      <div class="s">“pecaron contra su señor” · 40:1 · no se sabe qué hicieron</div>
+    </div>
+    <div class="b a2">
+      <div class="def"><div class="t">copero</div><div class="x">servía el vino al rey y lo <b>probaba antes</b>: “la vida del rey estaba en juego”</div><div class="s"><i>Perspicacia</i>, vol. 1, “Copero”, pág. 549</div></div>
+      <div class="m md co2">podía llegar a ser <b>consejero del rey</b></div>
+      <div class="f co2"><i>La Atalaya</i>, 1 de febrero de 2015, pág. 13, nota · Nehemías tuvo ese cargo: Nehemías 1:11</div>
+      <div class="s co3">el panadero: “En el antiguo Egipto había más de noventa variedades de pan” (misma nota)</div>
+    </div>
+    <div class="b a3">
+      <div class="cita md">“¿Por qué tienen hoy esas caras tan tristes?”<span class="ref">GÉNESIS 40:7</span></div>
+      <div class="m md cielo li">en Egipto, “libros complicados para la interpretación de los sueños”</div>
+      <div class="f li"><i>Perspicacia</i>, vol. 2, “Sueños”, pág. 1063 · en la prisión: “no tenemos ningún intérprete” (40:8)</div>
+      <div class="cita dn">“¿No le pertenecen a Dios las interpretaciones? Cuéntenme sus sueños, por favor”<span class="ref">GÉNESIS 40:8</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const t0 = at("El jefe de los coperos");
+capitulo(".cc", 0.3, t0 - 0.45);
+entra(".cc .pista", 0.9, { y: 20 });
+aparece(".fp", t0 - 0.1, 0.6);
+kb(".f30 .kb", t0, DUR, { s: 1.08, x: -2 }, { s: 1.0, x: 0 });
+secuencia([[".a1", t0 + 0.3], [".a2", at("El copero servía")], [".a3", at("Una mañana")]]);
+entra(".co2", at("consejero"), { y: 12, st: 0.2 });
+entra(".co3", at("consejero") + 1.2, { y: 10 });
+entra(".li", at("libros complicados"), { y: 12, st: 0.2 });
+entra(".dn", at("José les dice"), { y: 16 });
+</script>

@@ -1,0 +1,69 @@
+<style>
+.sangre img { object-position: 50% 50%; }
+.velo01 { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(23, 33, 43, 0.97) 0%, rgba(23, 33, 43, 0.93) 38%, rgba(23, 33, 43, 0.55) 56%, rgba(23, 33, 43, 0.05) 78%); }
+.col01 { position: absolute; left: 80px; top: 70px; bottom: 80px; width: 1000px; }
+.ano { font-family: "Fraunces", serif; font-weight: 700; font-size: 170px; line-height: 1; }
+.ano small { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 40px; letter-spacing: 0.12em; color: var(--oro); margin-left: 18px; }
+.ruinas01 { font-family: "Caveat", cursive; font-weight: 700; font-size: 70px; color: var(--rojo); margin-top: 6px; }
+/* Franja de meses: del 4.º al 8.º, con el tramo de la lectura iluminado. */
+.meses { position: absolute; left: 0; width: 1000px; top: 330px; height: 150px; }
+.meses .mes { position: absolute; top: 40px; width: 190px; height: 92px; border-radius: 16px; border: 3px solid rgba(241, 233, 216, 0.18); background: rgba(10, 16, 22, 0.55); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.meses .mes .o { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.08em; color: var(--tenue); }
+.meses .mes .nm { font-family: "Fraunces", serif; font-weight: 600; font-size: 34px; color: var(--tiza); }
+.meses .tramo { position: absolute; top: 30px; height: 112px; left: 196px; width: 600px; border-radius: 20px; border: 5px solid var(--oro); background: rgba(233, 191, 96, 0.10); transform-origin: 0 50%; }
+.meses .k { position: absolute; top: -34px; left: 196px; width: 600px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 48px; color: var(--oro); }
+.lugares { position: absolute; left: 0; top: 520px; display: flex; gap: 18px; }
+.lugares .lg { padding: 10px 26px 8px; border-radius: 40px; background: rgba(233, 191, 96, 0.14); border: 3px solid rgba(233, 191, 96, 0.7); font-family: "Fraunces", serif; font-weight: 600; font-size: 44px; }
+.lugares + .k2 { position: absolute; left: 0; top: 610px; font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; color: var(--tenue); }
+.paso { position: absolute; left: 0; right: 0; top: 700px; display: grid; grid-template-columns: 1fr 90px 1fr; align-items: center; column-gap: 10px; }
+.paso .tj .x { font-size: 38px; }
+.paso .fl { width: 90px; height: 50px; }
+.paso .fl path { fill: none; stroke: var(--oro); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.paso .tj.rojo { border-color: var(--rojo); }
+.f01 { position: absolute; left: 0; right: 0; top: 880px; }
+</style>
+
+<div class="sangre"><div class="kb" data-layout-allow-overflow><img src="assets/img/ruinas.jpg" /></div></div>
+<div class="velo01"></div>
+<div class="pie" style="right:24px;bottom:20px"><i>Lecciones que aprendo de la Biblia</i>, lección 58</div>
+
+<div class="col01">
+  <div class="ano a01">607 <small>ANTES DE NUESTRA ERA</small></div>
+  <div class="ruinas01">Jerusalén, en ruinas</div>
+  <div class="meses">
+    <div class="mes m4" style="left:0"><span class="o">4.º MES</span><span class="nm">Tamuz</span></div>
+    <div class="mes m5" style="left:205px"><span class="o">5.º MES</span><span class="nm">Ab</span></div>
+    <div class="mes m6" style="left:410px"><span class="o">6.º MES</span><span class="nm">Elul</span></div>
+    <div class="mes m7" style="left:615px"><span class="o">7.º MES</span><span class="nm">Tisri</span></div>
+    <div class="mes m8" style="left:820px"><span class="o">8.º MES</span><span class="nm">Hesván</span></div>
+    <div class="tramo"></div>
+    <div class="k">pocos meses</div>
+  </div>
+  <div class="lugares"><span class="lg g1">Ramá</span><span class="lg g2">Mizpá</span><span class="lg g3">Gabaón</span><span class="lg g4">cerca de Belén</span></div>
+  <div class="k2">todo muy cerca de Jerusalén</div>
+  <div class="paso">
+    <div class="tj p1"><div class="k">Jeremías 39:14</div><div class="x">en casa de Guedalías, <b>“entre el pueblo”</b></div></div>
+    <svg class="fl" viewBox="0 0 90 50"><path class="fl1" d="M 6 25 H 80 M 62 10 L 82 25 L 62 40"/></svg>
+    <div class="tj p2 rojo"><div class="k">Jeremías 40:1</div><div class="x"><b>“esposado”</b>, entre los desterrados</div></div>
+  </div>
+  <div class="f01 f">“Más adelante, lo hallaron entre otros judíos que iban al cautiverio y fue liberado nuevamente” · <i>Dios nos habla mediante Jeremías</i>, cap. 2, párr. 25</div>
+</div>
+
+<script>
+kb(".sangre .kb", 0, DUR, { s: 1.14, x: 3 }, { s: 1.02, x: -2 });
+entra(".a01", 0.4, { y: 30, d: 0.7 });
+escribe(".ruinas01", at("ruinas") - 0.3, 0.9);
+entra(".meses .mes", at("pocos meses") - 0.4, { y: 20, st: 0.08 });
+tl.fromTo($(".meses .tramo"), { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 1.2, ease: "power2.inOut", immediateRender: false }, at("entre el quinto"));
+tl.set($(".meses .tramo"), { opacity: 0 }, 0);
+escribe(".meses .k", at("entre el quinto") + 0.6, 0.7);
+salta(".g1", at("en Ramá"));
+salta(".g2", at("en Mizpá"));
+salta(".g3", at("en Gabaón"));
+salta(".g4", at("cerca de Belén"));
+escribe(".k2", at("muy cerca") , 0.9);
+entra(".p1", at("El capítulo treinta"), { x: -30, y: 0 });
+traza(".fl1", at("Pero el cuarenta") - 0.1, 0.6);
+entra(".p2", at("Pero el cuarenta"), { x: 30, y: 0 });
+entra(".f01", at("Solo sabemos"), { y: 14 });
+</script>

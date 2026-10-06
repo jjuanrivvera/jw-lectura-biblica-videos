@@ -1,0 +1,61 @@
+<style>
+.mapa.REC { left: 0; top: 0; width: 1120px; height: 1080px; }
+.funde06 { left: 1000px; }
+.col06 { position: absolute; left: 1130px; right: 70px; top: 110px; bottom: 80px; }
+.col06 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+.col06 .cita { font-size: 48px; }
+.col06 .def .x { font-size: 60px; }
+.col06 .tj .x { font-size: 38px; }
+.lin06 { display: flex; flex-direction: column; gap: 16px; }
+.lin06 .it { display: grid; grid-template-columns: 150px 1fr; align-items: baseline; gap: 18px; border-bottom: 3px solid rgba(241, 233, 216, 0.12); padding-bottom: 10px; }
+.lin06 .it .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--oro); }
+.lin06 .it .m { font-size: 56px; }
+.lin06 .it .ref { display: block; font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 24px; color: var(--tenue); margin-top: 2px; }
+.mq06 .cita { font-size: 40px; }
+.w06 { display: flex; flex-direction: column; gap: 28px; }
+.cab06 { left: 1130px; }
+.col06 .clave { align-self: flex-start; }
+</style>
+
+<!--incluir:_rec.html-->
+<div class="funde-der funde06"></div>
+<div class="cab cab06"><span class="cap">Génesis 48</span><span>versículo 7</span></div>
+<div class="col06">
+  <div class="b b1">
+    <div class="cita">“Raquel murió a mi lado en la tierra de Canaán […] la enterré allí <b>en el camino a Efrat, es decir, Belén</b>”<span class="ref">JACOB · GÉNESIS 48:7</span></div>
+  </div>
+  <div class="b b2">
+    <div class="tj"><div class="k">Raquel, la madre de José</div><div class="x">murió al dar a luz a <b>Benjamín</b></div><div class="ref">Génesis 35:16-19</div></div>
+    <div class="cita c35" style="font-size:44px">“Jacob levantó una <b>columna</b> sobre la tumba de ella”<span class="ref">GÉNESIS 35:20</span></div>
+  </div>
+  <div class="b b3">
+    <div class="w06"><div class="def"><div class="t">Efrata <i>Efrat</i></div><div class="x">quiere decir <b>fertilidad</b>: Belén o sus alrededores</div><div class="s"><i>Perspicacia</i>, “Efrata”, pág.&nbsp;765</div></div>
+    <div class="lin06">
+      <div class="it i1"><span class="r">Rut</span><span><span class="m">allí vivió su familia</span><span class="ref">Rut 1:2</span></span></div>
+      <div class="it i2"><span class="r">David</span><span><span class="m">allí nació</span><span class="ref">1 Samuel 17:12</span></span></div>
+    </div>
+    <div class="mq06"><div class="cita">“Y de ti, <b>Belén Efrata</b> […], de ti saldrá para mí el que será <b>gobernante en Israel</b>”<span class="ref">MIQUEAS 5:2</span></div></div></div>
+  </div>
+</div>
+
+<script>
+const [bx, by] = REC.belen;
+pinta(".marcas", `
+  <circle class="anillo oro a-bel" cx="${bx}" cy="${by}" r="70" style="stroke-width:9"/>
+  <g class="ch1">${chip(990, 1170, "aquí enterró a Raquel", { fs: 38, cls: "oro" })}</g>
+  <g class="ch2">${chip(990, 1250, "Efrata: fertilidad", { fs: 36, cls: "cielo" })}</g>
+`);
+const V = { x: 0, y: 0, w: 1000, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 100, y: 450, w: 1500, h: 1620 }, V), 0);
+camara(".cam", at("Raquel murió a mi lado"), 2.6, encuadre({ x: 90, y: 450, w: 1500, h: 1620 }, V));
+const t0 = at("Raquel murió a mi lado");
+secuencia([[".b1", 0.4], [".b2", at("Raquel, la madre") - 0.2], [".b3", at("Efrata quiere decir") - 0.2]]);
+traza(".a-bel", at("es decir, Belén") - 0.4, 0.9);
+aparece(".ch1", at("es decir, Belén") + 0.3, 0.5);
+entra(".c35", at("Jacob levantó") - 0.2, { y: 16 });
+aparece(".ch2", at("Efrata quiere decir") + 0.4, 0.5);
+centra(".w06", 230, at("familia de Rut") - 0.7);
+entra(".i1", at("familia de Rut") - 0.2, { x: -20, y: 0 });
+entra(".i2", at("nació David") - 0.2, { x: -20, y: 0 });
+entra(".mq06", at("Miqueas anunció") - 0.2, { y: 16 });
+</script>

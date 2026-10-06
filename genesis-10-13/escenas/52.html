@@ -1,0 +1,31 @@
+<style>
+.leccion .l { font-size: 100px; }
+.leccion .p { font-size: 64px; }
+.leccion .s { font-size: 30px; }
+.portada { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; text-align: center; }
+.portada .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 110px; line-height: 1.05; }
+.portada .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.22em; color: var(--verde); text-transform: uppercase; }
+</style>
+
+<div class="portada"><div class="r">al final, todas juntas</div><div class="t">Lecciones y preguntas para pensar</div></div>
+<div class="seccion"><span class="r">Lecciones y preguntas para pensar</span><span class="t">Génesis 10</span></div>
+<div class="seccion-linea"><svg viewBox="0 0 1740 20" preserveAspectRatio="none" style="width:100%;height:20px"><path d="M 4 10 C 400 4 900 16 1736 8"/></svg></div>
+<div class="leccion l1"><div class="n">1</div><div class="cuerpo"><div class="l">Todos venimos de <b>la misma familia</b></div><div class="p"><span class="k">PARA PENSAR</span>¿Qué decimos cuando salen chistes racistas en la escuela o en el trabajo?</div><div class="s">10:32 · Hechos 17:26: “De un solo hombre creó todas las naciones humanas”</div></div></div>
+<div class="leccion l2"><div class="n">2</div><div class="cuerpo"><div class="l">Nemrod fue famoso, pero <b>en oposición a Jehová</b></div><div class="p"><span class="k">PARA PENSAR</span>¿A quién admiramos en casa, y por qué?</div><div class="s">10:9</div></div></div>
+<div class="leccion l3"><div class="n">3</div><div class="cuerpo"><div class="l">A Jehová le importan los pueblos, <b>uno por uno</b></div><div class="p"><span class="k">PARA PENSAR</span>¿De cuál de las tres ramas venimos? No se puede saber, y da igual.</div><div class="s">la tabla guarda setenta familias con nombre · 10:32</div></div></div>
+
+<script>
+entra(".portada .r", 0.3, { y: 20 });
+entra(".portada .t", 0.6, { y: 40, d: 0.8 });
+sale(".portada", at("Génesis diez") - 0.6, { y: -40, d: 0.5 });
+const t0 = at("Génesis diez");
+entra(".seccion", t0, { y: -20 });
+traza(".seccion-linea path", t0 + 0.3, 1.0);
+secuencia([[".l1", at("Primera")], [".l2", at("Segunda")], [".l3", at("Tercera")]], null, { y: 30, d: 0.6 });
+entra(".l1 .p", at("Qué decimos") - 0.2, { y: 20 });
+entra(".l1 .s", at("Qué decimos") + 0.2, { y: 10 });
+entra(".l2 .p", at("A quién admiramos") - 0.2, { y: 20 });
+entra(".l2 .s", at("A quién admiramos") + 0.2, { y: 10 });
+entra(".l3 .p", at("De cuál de las tres") - 0.2, { y: 20 });
+entra(".l3 .s", at("De cuál de las tres") + 0.2, { y: 10 });
+</script>

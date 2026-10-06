@@ -1,0 +1,65 @@
+<style>
+.ret21 { position: absolute; left: 0; top: 0; width: 900px; height: 1080px; }
+.ret21 .hijo { left: 150px; top: 150px; width: 600px; height: 600px; }
+.ret21 .nhijo { position: absolute; left: 50px; width: 800px; top: 790px; text-align: center; }
+.col21 { position: absolute; left: 960px; right: 70px; top: 110px; bottom: 80px; }
+.col21 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+.col21 .cita { font-size: 48px; }
+.col21 .def .x { font-size: 54px; }
+.col21 .clave { align-self: flex-start; }
+.lis21 { display: flex; flex-direction: column; gap: 22px; }
+.lis21 .r { display: grid; grid-template-columns: 70px 1fr; column-gap: 20px; align-items: baseline; }
+.lis21 .r .i { font-family: "Fraunces", serif; font-weight: 700; font-size: 56px; color: var(--oro); }
+.lis21 .r .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 60px; line-height: 1.02; }
+.lis21 .r .x small { display: block; font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.08em; color: var(--tenue); margin-top: 4px; }
+.dos21 { display: flex; flex-direction: column; gap: 22px; }
+.dos21 .tj .x { font-size: 38px; }
+</style>
+
+<div class="fase ret21">
+  <div class="hijo lea"><img src="assets/img/juda-g.jpg" /></div>
+  <div class="nhijo">Judá<small>“elogiado” · hijo de Lea</small></div>
+</div>
+<div class="cab" style="left:960px"><span class="cap">Génesis 49</span><span>versículos 8 y 9</span></div>
+<div class="col21">
+  <div class="b b1">
+    <div class="cita">“A ti, Judá, <b>tus hermanos te alabarán</b>. Pondrás tu mano sobre el cuello de tus enemigos”<span class="ref">GÉNESIS 49:8</span></div>
+    <div class="def"><div class="t">Judá</div><div class="x">quiere decir <b>elogiado</b></div><div class="s">Lea: “Esta vez alabaré a Jehová” · Génesis 29:35 · <i>Perspicacia</i>, “Judá”, pág.&nbsp;149</div></div>
+    <span class="clave cl1">la mano sobre el cuello: <b>victoria</b></span>
+  </div>
+  <div class="b b2">
+    <div class="cita">“Judá es un <b>cachorro de león</b> [...]. ¿Y quién se atreve a despertar a un león?”<span class="ref">GÉNESIS 49:9</span></div>
+    <span class="clave cl2"><b>fuerza</b> y <b>dignidad de rey</b></span>
+  </div>
+  <div class="b b3">
+    <div class="cumple"><div class="k">cómo se cumplió</div></div>
+    <div class="lis21">
+      <div class="r r1"><span class="i">1</span><span class="x">en el desierto, <b>marchaba al frente</b><small>NÚMEROS 10:14</small></span></div>
+      <div class="r r2"><span class="i">2</span><span class="x">Jehová lo escogió para <b>empezar la lucha</b> contra los cananeos<small>“SUBIRÁ LA TRIBU DE JUDÁ” · JUECES 1:2</small></span></div>
+      <div class="r r3"><span class="i">3</span><span class="x">con David, de Judá, <b>la línea de los reyes</b></span></div>
+    </div>
+    <div class="f"><i>La Atalaya</i> (estudio), junio de 2025, parte 1, págs.&nbsp;5 a 6 · <i>Perspicacia</i>, “Judá”, págs.&nbsp;151 a 153</div>
+  </div>
+  <div class="b b4">
+    <div class="m md oro">el mismo Judá</div>
+    <div class="dos21">
+      <div class="tj d1"><div class="k">antes · Génesis 37:27</div><div class="x">“Vamos a <b>vendérselo</b> a los ismaelitas”</div></div>
+      <div class="tj on d2"><div class="k">después · Génesis 44:33</div><div class="x">“Permite que <b>sea yo y no el muchacho</b> el que se quede como esclavo tuyo”</div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+salta(".ret21 .hijo", 0.3, { desde: 0.85, d: 0.8, ease: "power3.out" });
+entra(".ret21 .nhijo", 0.7, { y: 20 });
+kb(".ret21 .hijo img", 0.3, DUR, { s: 1.0 }, { s: 1.08 });
+secuencia([[".b1", 0.4], [".b2", at("Judá es un cachorro") - 0.2], [".b3", at("En el desierto") - 0.2], [".b4", at("Era el mismo") - 0.2]]);
+entra(".b1 .def", at("Judá quiere decir") - 0.2, { y: 20 });
+entra(".cl1", at("una imagen de victoria") - 0.3, { y: 14 });
+entra(".cl2", at("fuerza y dignidad") - 0.2, { y: 14 });
+entra(".r1", at("En el desierto"), { x: -20, y: 0 });
+entra(".r2", at("Después de Josué"), { x: -20, y: 0 });
+entra(".r3", at("Y con David"), { x: -20, y: 0 });
+entra(".d1", at("propuesto vender") - 0.3, { y: 20 });
+entra(".d2", at("se ofreció como esclavo") - 0.3, { y: 20 });
+</script>

@@ -1,0 +1,63 @@
+<style>
+.mapa.E { left: 70px; top: 110px; width: 700px; height: 900px; border-radius: 22px; background: #f3e3c3; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
+.mapa.E .cam img, .mapa.E .cam svg { width: 1200px; height: 2411px; }
+.foto46 { position: absolute; left: 70px; top: 110px; width: 700px; height: 820px; }
+.pie46 { left: 70px; top: 940px; width: 700px; }
+.mapa.R { left: 0; top: 0; width: 1000px; height: 1080px; background: #cfd9c4; }
+.mapa.R .cam img, .mapa.R .cam svg { width: 2088px; height: 2436px; }
+.funde46 { position: absolute; left: 940px; top: 0; bottom: 0; width: 140px; background: linear-gradient(90deg, rgba(23, 33, 43, 0), #17212b 92%); }
+.col46 { position: absolute; left: 830px; right: 70px; top: 110px; bottom: 70px; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.col46b { position: absolute; left: 1060px; right: 70px; top: 110px; bottom: 70px; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.col46 .def .x, .col46b .def .x { font-size: 46px; }
+.col46 .tj .x, .col46b .tj .x { font-size: 34px; }
+.col46 .caja .s, .col46b .caja .s { font-size: 27px; color: #d5dbe1; }
+.col46 .caja .s b, .col46b .caja .s b { color: var(--tiza); }
+.col46 .caja, .col46b .caja { display: flex; flex-direction: column; gap: 10px; }
+</style>
+
+<div class="fase f1">
+  <div class="cab"><span class="cap">On hoy</span><span>Génesis 41:45; 46:20</span></div>
+  <div class="mapa E"><div class="cam"><img src="assets/img/egipto-mapa.jpg" /><svg viewBox="0 0 1200 2411"><g class="marcasE"></g></svg></div>
+    <div class="pie-mapa">“MAPA: El antiguo Egipto”, <i>Perspicacia</i>, vol.&nbsp;1, pág.&nbsp;531 · marcas añadidas</div></div>
+  <div class="ilus foto46"><div class="kb"><img src="assets/img/saqqara.jpg" /></div></div>
+  <div class="pie-img pie46">“Pirámide escalonada de Saqqara (Egipto). Al parecer ya estaba en pie en tiempos de Jacob”. <i>Perspicacia</i>, vol.&nbsp;1, pág.&nbsp;530</div>
+  <div class="col46">
+    <div class="def d1"><div class="t">On · Heliópolis</div><div class="x">“<b>Ciudad del Sol</b>”, el principal centro de la adoración egipcia al Sol</div><div class="s"><i>Perspicacia</i>, vol.&nbsp;2, “On”, pág.&nbsp;550</div></div>
+    <div class="caja d2"><div class="s">hoy está bajo <b>El Cairo</b>: el barrio de <b>Ain Shams</b> (“Ojo del Sol”) ocupa parte de la ciudad antigua, y las ruinas quedan en el vecino barrio de <b>Matariya</b></div><span class="externa chico">fuente externa: Wikipedia, “Ain Shams”</span></div>
+    <div class="tj on d3"><div class="k">cerca, junto a Menfis</div><div class="x">la pirámide escalonada de <b>Saqqara</b>, en pie en tiempos de Jacob</div></div>
+  </div>
+</div>
+
+<div class="fase f2">
+  <div class="mapa R"><div class="cam"><img src="assets/img/b2-recuadro.jpg" /><svg viewBox="0 0 2088 2436"><g class="marcasR"></g></svg></div>
+    <div class="pie-mapa">Mapa: apéndice B2 de la TNM, recuadro (wol.jw.org) · marcas añadidas</div></div>
+  <div class="funde46"></div>
+  <div class="cab" style="left:1060px"><span class="cap">Hebrón hoy</span><span>Génesis 47:29, 30</span></div>
+  <div class="col46b">
+    <div class="def d4"><div class="t">la cueva de Macpelá</div><div class="x">bajo una <b>mezquita</b>, dentro del recinto Haram el‑Khalil</div><div class="s"><i>Perspicacia</i>, vol.&nbsp;2, “Macpelá”, pág.&nbsp;268</div></div>
+    <div class="caja d5"><div class="s">un gran recinto de piedra de tiempos de <b>Herodes</b>, casi entero; lugar sagrado para <b>judíos, cristianos y musulmanes</b>; la cueva <b>no se excava</b></div><span class="externa chico">fuente externa: Wikipedia, “Cave of the Patriarchs”</span></div>
+  </div>
+</div>
+
+<script>
+$(".marcasE").innerHTML = `<circle class="a-on" cx="458" cy="516" r="44" fill="none" stroke="#c0392b" stroke-width="9"/><circle class="a-nof" cx="448" cy="582" r="34" fill="none" stroke="#d99a14" stroke-width="7"/>`;
+$(".marcasR").innerHTML = `<circle class="a-mac" cx="657" cy="1413" r="26" fill="none" stroke="#d99a14" stroke-width="8"/><rect class="a-lab" x="676" y="1404" width="316" height="158" rx="22" fill="none" stroke="#d99a14" stroke-width="7"/>`;
+const tB = at("Y en Hebrón");
+const tS = at("Cerca está");
+tl.set($(".mapa.E .cam"), encuadre({ x: 200, y: 220, w: 560, h: 720 }, { x: 0, y: 0, w: 700, h: 900 }), 0);
+aparece(".mapa.E", 0.2, 0.6);
+traza(".a-on", 0.8, 0.7);
+entra(".d1", 0.4, { y: 16 });
+entra(".d2", at("Hoy está bajo"), { y: 16 });
+traza(".a-nof", tS - 0.4, 0.6);
+entra(".d3", tS, { y: 16 });
+aparece([".foto46", ".pie46"], tS + 0.8, 0.8);
+kb(".foto46 .kb", tS + 0.8, tB, { s: 1.0 }, { s: 1.08 });
+tl.to($(".f1"), { opacity: 0, duration: 0.5, ease: "none" }, tB - 0.5);
+tl.set(inicial(el(".f2"), { opacity: 0 }), { opacity: 1 }, tB - 0.1);
+tl.set($(".mapa.R .cam"), encuadre({ x: 180, y: 1140, w: 830, h: 815 }, { x: 0, y: 0, w: 1000, h: 1080 }), 0);
+traza(".a-mac", tB + 0.4, 0.7);
+traza(".a-lab", tB + 0.8, 0.9);
+entra(".d4", tB, { y: 16 });
+entra(".d5", at("dentro de un gran recinto"), { y: 16 });
+</script>

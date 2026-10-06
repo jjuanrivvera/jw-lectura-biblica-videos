@@ -1,0 +1,53 @@
+<style>
+.fa { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 180px 80px; gap: 20px; }
+.fa .cita { font-size: 66px; line-height: 1.25; }
+.peti { position: absolute; left: 90px; right: 90px; top: 140px; }
+.pe { display: grid; grid-template-columns: 760px 120px 1fr; align-items: center; height: 200px; }
+.pe .q { font-family: "Fraunces", serif; font-weight: 600; font-size: 56px; line-height: 1.12; color: var(--papel); }
+.pe .fl svg { width: 100px; height: 40px; }
+.pe .x { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 38px; line-height: 1.25; color: var(--papel); }
+.pe .x span { display: block; font-size: 24px; font-weight: 500; color: var(--tenue); margin-top: 6px; }
+.pe .x b { color: var(--oro-claro); }
+.hilofin { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+.hilofin text { font-family: "Montserrat", sans-serif; font-weight: 800; }
+.ult { position: absolute; left: 0; right: 0; top: 960px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 66px; color: var(--oro-claro); }
+</style>
+
+<div class="fase fa">
+  <div class="cita">“Padre nuestro que estás en los cielos, que tu nombre sea santificado. Que venga tu Reino. Que se haga tu voluntad, como en el cielo, también en la tierra”.<span class="ref">Mateo 6:9, 10</span></div>
+</div>
+
+<div class="fase fb">
+  <div class="peti">
+    <div class="pe p1"><div class="q">Que tu nombre sea santificado</div><div class="fl"><svg viewBox="0 0 100 40"><path class="hilo h1" d="M 6 20 L 80 20 M 66 8 L 86 20 L 66 32" style="stroke-width: 6" /></svg></div><div class="x x1">La calumnia de Edén, <b>respondida</b>.<span>Génesis 3:4, 5</span></div></div>
+    <div class="pe p2"><div class="q">Que venga tu Reino</div><div class="fl"><svg viewBox="0 0 100 40"><path class="hilo h2" d="M 6 20 L 80 20 M 66 8 L 86 20 L 66 32" style="stroke-width: 6" /></svg></div><div class="x x2">La descendencia prometida, <b>gobernando</b>.<span>Génesis 3:15</span></div></div>
+    <div class="pe p3"><div class="q">Que se haga tu voluntad en la tierra</div><div class="fl"><svg viewBox="0 0 100 40"><path class="hilo h3" d="M 6 20 L 80 20 M 66 8 L 86 20 L 66 32" style="stroke-width: 6" /></svg></div><div class="x x3">El propósito del principio, <b>cumplido</b>.<span>Génesis 1:28</span></div></div>
+  </div>
+  <svg class="hilofin" viewBox="0 0 1920 1080">
+    <path class="hilo hf" d="M 150 860 C 450 800, 650 920, 960 860 S 1500 800, 1770 860" style="stroke-width: 9" />
+    <circle class="nf1" cx="150" cy="860" r="16" fill="#10162a" stroke="#f6d98f" stroke-width="6" />
+    <circle class="nf2" cx="1770" cy="860" r="16" fill="#10162a" stroke="#f6d98f" stroke-width="6" />
+    <text class="tf1" x="150" y="920" text-anchor="start" font-size="30" fill="#f3ead8">Génesis</text>
+    <text class="tf2" x="1770" y="920" text-anchor="end" font-size="30" fill="#f3ead8">Apocalipsis</text>
+  </svg>
+  <div class="ult">lo que Jehová prometió en Edén</div>
+</div>
+
+<script>
+const tB = at("Después de recorrer") - 0.3;
+entra(".fa .cita", 0.4, { y: 30, d: 0.9 });
+tl.to($(".fa"), { opacity: 0, duration: 0.5 }, tB);
+aparece(".fb", tB + 0.1, 0.4);
+[["1", "Que tu nombre sea santificado"], ["2", "Que venga tu Reino"], ["3", "Que se haga tu voluntad en"]].forEach(([n, p]) => {
+  const t = at(p, tB);
+  aparece(".p" + n + " .q", tB + 0.3 + n * 0.3, 0.5, 0.35);
+  tl.to($(".p" + n + " .q"), { opacity: 1, duration: 0.4 }, t);
+  traza(".h" + n, t + 1.2, 0.5);
+  entra(".x" + n, t + 1.5, { x: 20, y: 0 });
+});
+const tE = at("Es la Biblia entera");
+aparece([".nf1", ".tf1"], tE, 0.4);
+traza(".hf", tE + 0.2, 2.6);
+aparece([".nf2", ".tf2"], tE + 2.6, 0.4);
+escribe(".ult", at("estamos pidiendo exactamente"), 1.6);
+</script>

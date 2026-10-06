@@ -1,0 +1,63 @@
+<style>
+.gran { position: absolute; left: 120px; right: 120px; top: 120px; bottom: 120px; display: flex; flex-direction: column; justify-content: center; gap: 36px; }
+.gran .cita { font-size: 76px; }
+.marg { align-self: flex-start; display: flex; gap: 24px; align-items: center; padding: 18px 30px; border: 3px dashed var(--cielo); border-radius: 18px; }
+.marg .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.16em; color: var(--cielo); }
+.marg .v { font-family: "Fraunces", serif; font-weight: 700; font-size: 50px; color: var(--cielo); }
+.defs { position: absolute; left: 100px; right: 100px; top: 150px; bottom: 120px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.defs .def { align-self: center; }
+.defs .def .x { font-size: 64px; }
+.gr { font-family: "Fraunces", serif; font-style: italic; font-weight: 700; font-size: 110px; line-height: 1; color: var(--cielo); }
+.lin { position: absolute; left: 0; top: 140px; width: 1920px; height: 420px; }
+.lin svg { width: 1920px; height: 420px; }
+.yy { font-family: "Fraunces", serif; font-weight: 700; font-size: 58px; }
+.ll { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; }
+.igual { position: absolute; left: 140px; right: 140px; top: 600px; display: grid; grid-template-columns: 1fr 120px 1fr; align-items: center; text-align: center; }
+.igual .p { border: 4px solid var(--oro); border-radius: 24px; padding: 26px; background: rgba(18,26,42,0.95); }
+.igual .p .m { font-size: 70px; }
+.igual .p .s { margin-top: 6px; }
+.igual .eq { font-family: "Fraunces", serif; font-weight: 700; font-size: 130px; color: var(--oro); }
+</style>
+<div class="fase f-a">
+<div class="gran"><div class="cita">“Jerusalén será pisoteada por las naciones <b>hasta que se cumplan los tiempos señalados de las naciones</b>”<span class="ref">LUCAS 21:24 · JESÚS</span></div><div class="marg"><div class="k">REFERENCIA MARGINAL DE LA TNM</div><div class="v">Daniel 4:25</div></div></div>
+</div>
+<div class="fase f-b">
+<div class="defs">
+  <div class="def d1"><div class="t">“Tiempos señalados” · griego</div><div class="gr">kairós</div><div class="x">un periodo definido, con principio y fin</div><div class="s">“No alude a un periodo vago o indefinido, sino a un tiempo fijo” · nota de estudio de Lucas 21:24</div></div>
+  <div class="def d2"><div class="t">“Naciones” · griego</div><div class="gr">éthnos</div><div class="x">las naciones no judías</div><div class="s">De ahí la expresión “tiempos de los gentiles” · nota de estudio de Lucas 21:24</div></div>
+</div>
+</div>
+<div class="fase f-c">
+<div class="lin"><svg viewBox="0 0 1920 420">
+  <path class="eje" d="M 230 220 L 1500 220" stroke="var(--oro)" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path class="sigue" d="M 1510 220 L 1760 220" stroke="var(--oro)" stroke-width="12" stroke-linecap="round" fill="none" stroke-dasharray="6 26"/>
+  <path class="punta" d="M 1740 190 L 1790 220 L 1740 250" stroke="var(--oro)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <g class="m607"><circle cx="230" cy="220" r="24" fill="var(--fuego)"/><text class="yy" x="230" y="150" text-anchor="middle" fill="var(--fuego)">607 a. e. c.</text><text class="ll" x="230" y="310" text-anchor="middle" fill="var(--tiza)">cae Jerusalén</text></g>
+  <g class="m33"><circle cx="1260" cy="220" r="24" fill="var(--cielo)"/><text class="yy" x="1260" y="150" text-anchor="middle" fill="var(--cielo)">33 e. c.</text><text class="ll" x="1260" y="310" text-anchor="middle" fill="var(--tiza)">Jesús: “hasta que se cumplan”</text></g>
+  <g class="m640"><text class="ll" x="710" y="190" text-anchor="middle" fill="var(--oro)">más de 600 años</text></g>
+  <g class="m-q"><text class="yy" x="1790" y="150" text-anchor="middle" fill="var(--oro)">?</text></g>
+</svg></div>
+<div class="igual"><div class="p p1"><div class="m">“siete tiempos”</div><div class="s">Daniel 4:16</div></div><div class="eq">=</div><div class="p p2"><div class="m oro">“tiempos señalados de las naciones”</div><div class="s">Lucas 21:24</div></div></div>
+</div>
+<script>
+const tB = at("Dos palabras griegas");
+const tC = at("Jesús dijo esto");
+entra(".gran .cita", 0.5, { y: 30 });
+salta(".marg", at("La Traducción del Nuevo"), { desde: 0.8 });
+sale(".gran", tB - 0.5);
+entra(".d1", tB, { y: 40 });
+entra(".d2", tB + 0.6, { y: 40 });
+late(".d1 .gr", at("La primera es"), { s: 1.08, n: 3 });
+late(".d2 .gr", at("La segunda es"), { s: 1.08, n: 3 });
+sale([".d1", ".d2"], tC - 0.5);
+salta(".m607", tC, { desde: 0.5 });
+traza(".eje", tC + 0.2, 1.6);
+salta(".m33", tC + 1.0, { desde: 0.5 });
+aparece(".m640", tC + 1.6, 0.5);
+traza([".sigue", ".punta"], at("y la cuenta seguía"), 1.0);
+tl.set(".sigue", { strokeDasharray: "6 26", strokeDashoffset: 0 }, at("y la cuenta seguía") + 1.05);
+salta(".m-q", at("y la cuenta seguía") + 0.8, { desde: 0.4 });
+entra(".p1", at("Los siete tiempos de Daniel"), { x: -40, y: 0 });
+salta(".igual .eq", at("son el mismo periodo"), { desde: 0.4 });
+entra(".p2", at("son el mismo periodo") + 0.3, { x: 40, y: 0 });
+</script>

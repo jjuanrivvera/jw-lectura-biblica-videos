@@ -1,0 +1,48 @@
+<style>
+.vin40 { position: absolute; left: 60px; top: 100px; width: 520px; height: 880px; border-radius: 20px; overflow: hidden; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
+.vin40 img { position: absolute; left: 0; top: 0; width: 1544px; height: auto; transform-origin: 0 0; }
+.pie40 { left: 60px; top: 990px; max-width: 520px; }
+.col.d40 { left: 640px; right: 60px; width: auto; top: 100px; bottom: 70px; }
+.cab.d40c { left: 640px; }
+.cuatro { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.cuatro .def { padding: 18px 26px 20px; }
+.cuatro .def .x { font-size: 50px; }
+.cuatro .def .s { font-size: 22px; }
+.fin40 .m { font-size: 72px; }
+</style>
+
+<div class="cab d40c"><span class="cap">Génesis 41</span><span>versículos 37 al 44</span></div>
+<div class="vin40"><img src="assets/img/salva-hist.jpg" /></div>
+<div class="pie pie40">Página 2 de <i>José salva a muchos</i> (jw.org, 2013): el faraón le pone el collar; pasa el carro</div>
+<div class="col d40">
+  <div class="b a1">
+    <div class="cita">“¿Acaso encontraremos otro hombre como este, que tiene el espíritu de Dios?”<span class="ref">GÉNESIS 41:38</span></div>
+    <div class="cuatro">
+      <div class="def k1"><div class="t">anillo de sellar</div><div class="x">sellaba documentos <b>en nombre del rey</b></div><div class="s"><i>Perspicacia</i>, vol. 1, “Anillo”, pág. 141</div></div>
+      <div class="def k2"><div class="t">lino fino</div><div class="x">la tela de los <b>reyes</b> y de los altos funcionarios</div><div class="s"><i>Perspicacia</i>, vol. 2, “Lino, I”, pág. 243</div></div>
+      <div class="def k3"><div class="t">collar de oro</div><div class="x">de los hombres de <b>alto rango</b></div><div class="s"><i>Perspicacia</i>, vol. 1, “Collar”, pág. 507</div></div>
+      <div class="def k4"><div class="t">el segundo carro</div><div class="x">“solo era menos importante que el de Faraón”</div><div class="s"><i>Perspicacia</i>, vol. 1, “Carro”, pág. 435</div></div>
+    </div>
+    <div class="f k5">“Esta manera de investir de autoridad está atestiguada por inscripciones y pinturas murales egipcias” · <i>Perspicacia</i>, vol. 2, “José”, pág. 124</div>
+  </div>
+  <div class="b a2">
+    <div class="m xl oro">“¡Avrékh!”</div>
+    <div class="def"><div class="t">nota de 41:43</div><div class="x">“se usaba para exigir que se le mostrara <b>honra y respeto</b> a alguien”; quizás “doblad la rodilla”</div><div class="s">“todavía no ha sido posible determinar con exactitud el verdadero significado” · <i>Perspicacia</i>, vol. 1, “Avrekj”, pág. 256</div></div>
+  </div>
+  <div class="b a3 fin40">
+    <div class="m">empezó el día en <b>prisión</b> y lo terminó como el <b>segundo hombre más poderoso</b> de Egipto</div>
+    <div class="f"><i>La Atalaya</i>, 1 de febrero de 2015, pág. 15</div>
+  </div>
+</div>
+
+<script>
+entra(".vin40", 0.2, { y: 30, d: 0.8 });
+aparece(".pie40", 0.6, 0.5);
+tl.fromTo($(".vin40 img"), { scale: 1.0, x: 0, y: 0 }, { scale: 1.0, x: 0, y: -380, duration: DUR, ease: "none", immediateRender: false }, 0);
+secuencia([[".a1", 0.4], [".a2", at("Avréj") - 0.4], [".a3", at("José empezó")]]);
+entra(".k1", at("Su anillo"), { y: 20 });
+entra(".k2", at("Ropa de lino"), { y: 20 });
+entra(".k3", at("Un collar"), { y: 20 });
+entra(".k4", at("segundo carro"), { y: 20 });
+entra(".k5", at("segundo carro") + 1.2, { y: 10 });
+</script>

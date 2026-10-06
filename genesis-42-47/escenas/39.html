@@ -1,0 +1,45 @@
+<style>
+.q39 { position: absolute; left: 90px; right: 90px; top: 100px; }
+.q39 .cita { font-size: 46px; }
+.bar39 { position: absolute; left: 90px; right: 90px; top: 360px; height: 440px; }
+.fb { position: absolute; left: 0; right: 0; height: 64px; display: grid; grid-template-columns: 190px 1fr; align-items: center; }
+.fb .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 40px; }
+.fb .pista39 { position: relative; height: 52px; }
+.fb .b { position: absolute; left: 0; top: 0; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 16px; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; color: #17212b; transform-origin: 0 50%; }
+.fb .b small { font-weight: 600; font-size: 20px; margin-left: 10px; }
+.fb .ya { position: absolute; top: -8px; height: 68px; border-left: 6px solid #f1e9d8; }
+.fb .ya span { position: absolute; left: 10px; top: -34px; white-space: nowrap; font-family: "Caveat", cursive; font-weight: 700; font-size: 34px; color: var(--tiza); }
+.bajo39 { position: absolute; left: 90px; right: 90px; top: 770px; height: 260px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; }
+.bajo39 .def .x { font-size: 44px; }
+.bajo39 .cita { font-size: 32px; }
+.fte39 { position: absolute; right: 90px; top: 322px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 47</span><span>versículos 7 al 10</span></div>
+<div class="q39"><div class="cita c1">“Llevo 130 años <b>yendo y viniendo</b>. Han sido años muy difíciles, pero han sido <b>pocos</b> comparados con los años que mis antepasados pasaron yendo y viniendo”<span class="ref">JACOB AL FARAÓN · GÉNESIS 47:9</span></div></div>
+<div class="ben39" style="position:absolute; left:90px; right:90px; top:560px; display:grid; grid-template-columns:1fr 1fr; gap:26px"><div class="tj b39"><div class="k">Jacob bendice al faraón · 47:7, 10</div><div class="x" style="font-size:36px">un saludo que le deseaba el <b>bienestar</b></div><div class="ref"><i>Perspicacia</i>, vol.&nbsp;1, “Bendición”, pág.&nbsp;311</div></div><div class="tj on b39b"><div class="k">“¿Qué edad tienes?” · 47:8</div><div class="x" style="font-size:36px">ciento treinta años</div></div></div>
+<div class="fte39"><span class="f">años que vivió cada uno · Génesis 11:32; 25:7; 35:28; 47:28; 50:26</span></div>
+<div class="bar39"></div>
+<div class="bajo39">
+  <div class="def d1"><div class="t">residente forastero <i>guer</i></div><div class="x">vivía fuera de su tierra, <b>sin ser dueño</b> de ella y con derechos limitados</div><div class="s">“yendo y viniendo”: “viviendo como extranjero” (nota de la TNM) · <i>Perspicacia</i>, vol.&nbsp;2, pág.&nbsp;825</div></div>
+  <div class="cita h1">“Declararon públicamente que eran <b>extranjeros y residentes temporales</b> en la tierra”<span class="ref">HEBREOS 11:13</span></div>
+</div>
+
+<script>
+const V = [["Taré", 205, "#b3bdc8"], ["Abrahán", 175, "#e9bf60"], ["Isaac", 180, "#e9bf60"], ["Jacob", 147, "#93bbef"], ["José", 110, "#b3bdc8"]];
+const ancho = 1540 / 210;
+$(".bar39").innerHTML = V.map(([n, a, c], i) => `<div class="fb f${i}" style="top:${i * 76}px"><div class="n">${n}</div><div class="pista39"><div class="b" style="width:${a * ancho}px; background:${c}">${a}</div>` +
+  (n === "Jacob" ? `<div class="ya" style="left:${130 * ancho}px"><span data-layout-allow-overflow>130 ante el faraón</span></div>` : "") + `</div></div>`).join("");
+const tP = at("Abrahán vivió");
+entra(".c1", 0.3, { y: 16 });
+centra(".q39", 180, tP - 0.9);
+entra(".b39", 0.6, { y: 20 });
+entra(".b39b", at("Qué edad tienes"), { y: 20 });
+sale(".ben39", tP - 1.0, { y: -20 });
+aparece(".fte39", tP - 0.5, 0.5);
+entra($$(".fb .n"), tP - 0.6, { x: -20, y: 0, st: 0.1 });
+tl.fromTo(inicial(el(".fb .b"), { opacity: 0 }), { opacity: 1, scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.out", stagger: 0.25, immediateRender: false }, tP - 0.4);
+aparece(".fb .ya", at("Abrahán vivió") + 2.4, 0.5);
+entra(".d1", at("Y yendo y viniendo"), { y: 16 });
+entra(".h1", at("Así vivieron"), { y: 16 });
+</script>

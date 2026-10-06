@@ -1,0 +1,52 @@
+<style>
+.ar36 { position: absolute; left: 90px; right: 90px; top: 60px; height: 360px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
+.ar36 .def .x { font-size: 60px; }
+.sem36 svg { width: 100%; height: 340px; display: block; }
+.e36 { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; fill: var(--tiza); text-anchor: middle; }
+.ca36 { position: absolute; left: 70px; right: 70px; top: 480px; bottom: 60px; }
+.ca36 svg.hilo { position: absolute; left: 0; top: 0; width: 1780px; height: 540px; }
+.nod36 { position: absolute; top: 60px; width: 400px; height: 420px; border-radius: 26px; background: rgba(10, 16, 22, 0.55); border: 3px solid rgba(233, 191, 96, 0.35); padding: 22px 26px; display: flex; flex-direction: column; gap: 12px; }
+.nod36 .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.12em; color: var(--oro); text-transform: uppercase; }
+.nod36 .x { font-family: "Fraunces", serif; font-weight: 500; font-size: 38px; line-height: 1.18; }
+.nod36 .x b { color: var(--oro); }
+.nod36.on { border-color: var(--oro); background: rgba(233, 191, 96, 0.08); }
+</style>
+
+<div class="ar36">
+  <div class="def d1"><div class="t">descendencia<i>zé·raʽ</i></div><div class="x">“<b>semilla</b>”, del verbo <b>za·ráʽ</b>, “sembrar”</div><div class="s sg">va en singular, aunque puede referirse a muchos · <i>Perspicacia</i>, vol. 1, “Descendencia, semilla”, págs. 659, 660</div></div>
+  <div class="sem36"><svg viewBox="0 0 700 340">
+    <defs><radialGradient id="g36-s" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#c79a62"/><stop offset="1" stop-color="#7c5530"/></radialGradient><linearGradient id="g36-t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b4a2e"/><stop offset="1" stop-color="#3d2a19"/></linearGradient></defs>
+    <path d="M 60 250 C 200 236 500 236 640 250 L 640 330 L 60 330 Z" fill="url(#g36-t)"/>
+    <ellipse class="semilla" cx="350" cy="270" rx="34" ry="22" fill="url(#g36-s)" stroke="#5a3b20" stroke-width="3"/>
+    <path class="tallo" d="M 350 256 C 352 210 346 170 350 110" fill="none" stroke="#6fbf6a" stroke-width="10" stroke-linecap="round"/>
+    <path class="hoja1" d="M 350 150 C 310 130 280 140 262 164 C 296 172 326 168 350 150 Z" fill="#7fcf78" stroke="#4f9a4a" stroke-width="3"/>
+    <path class="hoja2" d="M 350 122 C 390 96 424 104 442 128 C 406 140 376 138 350 122 Z" fill="#7fcf78" stroke="#4f9a4a" stroke-width="3"/>
+    <text class="e36 et1" x="350" y="54">una semilla… y lo que brota de ella</text>
+  </svg></div>
+</div>
+
+<div class="ca36">
+  <svg class="hilo" viewBox="0 0 1780 540"><path class="hl" d="M 200 40 C 400 10 480 10 660 40 S 940 70 1120 40 S 1400 10 1580 40" fill="none" stroke="#e9bf60" stroke-width="6" stroke-linecap="round"/></svg>
+  <div class="nod36 n1" style="left:0"><div class="k">Génesis 3:15</div><div class="x">en Edén, Jehová promete una “<b>descendencia</b>”</div></div>
+  <div class="nod36 n2 on" style="left:460px"><div class="k">Génesis 12:7</div><div class="x">“Voy a darle esta tierra a tu <b>descendencia</b>”</div></div>
+  <div class="nod36 n3" style="left:920px"><div class="k">Gálatas 3:16</div><div class="x">“No dice ‘y a tus descendientes’ [...], sino que dice ‘y a tu descendencia’, refiriéndose a <b>uno solo: Cristo</b>”</div></div>
+  <div class="nod36 n4" style="left:1380px"><div class="k">Gálatas 3:29</div><div class="x">“si le pertenecen a Cristo, entonces son <b>descendencia de Abrahán</b>”</div></div>
+</div>
+
+<script>
+tl.set($(".ar36"), { y: 200 }, 0);
+entra(".d1", 0.4, { y: 24 });
+aparece(".sem36 svg > path:first-of-type", 0.8, 0.5);
+salta(".semilla", at("semilla") - 0.2, { desde: 0.3 });
+traza(".tallo", at("sembrar"), 1.0);
+salta([".hoja1", ".hoja2"], at("sembrar") + 0.8, { desde: 0.2, st: 0.3 });
+entra(".sg", at("Va en singular") - 0.2, { y: 12 });
+entra(".et1", at("Va en singular"), { y: 10 });
+tl.to($(".ar36"), { y: 0, duration: 0.8, ease: "power2.inOut" }, at("Con esa palabra") - 0.8);
+entra(".n2", at("Con esa palabra") - 0.2, { y: 26 });
+entra(".n1", at("promesa de Edén") - 0.3, { y: 26 });
+traza(".hl", at("Génesis tres") - 0.2, 1.6);
+entra(".n3", at("Pablo") - 0.2, { y: 26 });
+late(".n3", at("uno solo") - 0.1, { s: 1.03, n: 3 });
+entra(".n4", at("Y añade") - 0.2, { y: 26 });
+</script>

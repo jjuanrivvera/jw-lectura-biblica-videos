@@ -1,0 +1,39 @@
+<style>
+.ilu42 { position: absolute; left: 60px; top: 120px; width: 560px; height: 560px; }
+.pie42 { left: 60px; top: 690px; width: 560px; }
+.nota42 { position: absolute; left: 60px; top: 800px; width: 560px; }
+.nota42 .tj .x { font-size: 32px; }
+.pasos42 { position: absolute; left: 680px; right: 60px; top: 110px; bottom: 70px; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+.paso42 { display: grid; grid-template-columns: 76px 1fr; align-items: center; column-gap: 20px; padding: 14px 20px; border-radius: 20px; background: rgba(10, 16, 22, 0.5); border: 3px solid rgba(241, 233, 216, 0.14); }
+.paso42 .n { width: 70px; height: 70px; border-radius: 50%; background: var(--oro); color: #17212b; display: flex; align-items: center; justify-content: center; font-family: "Fraunces", serif; font-weight: 700; font-size: 44px; }
+.paso42 .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; line-height: 1.02; }
+.paso42 .x small { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 22px; color: var(--tenue); margin-left: 12px; }
+.pasos42 .cita { font-size: 40px; margin-top: 6px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 47</span><span>versículos 13 al 21</span></div>
+<div class="ilus ilu42"><div class="kb"><img src="assets/img/jose-administra.jpg" /></div></div>
+<div class="pie-img pie42">“José administrando el alimento en Egipto”. <i>Guía de actividades</i>, junio de 2020, pág.&nbsp;3</div>
+<div class="nota42"><div class="tj n1"><div class="k">el grano era del faraón</div><div class="x">guardado en los años buenos (41:34); José lo vendía, y lo cobrado <b>no era suyo</b></div></div></div>
+<div class="pasos42">
+  <div class="paso42 s1"><div class="n">1</div><div class="x">la <b>plata</b> de Egipto y de Canaán, a la casa del faraón <small>47:14</small></div></div>
+  <div class="paso42 s2"><div class="n">2</div><div class="x">su <b>ganado</b>: caballos, rebaños, manadas y burros <small>47:17</small></div></div>
+  <div class="paso42 s3"><div class="n">3</div><div class="x">al año siguiente, <b>sus tierras y ellos mismos</b> <small>47:18-20</small></div></div>
+  <div class="cita sm q3">“Cómpranos y compra nuestras tierras, y danos comida a cambio. [...] Danos semillas para que sobrevivamos”<span class="ref">LA GENTE A JOSÉ · GÉNESIS 47:19</span></div>
+  <div class="paso42 s4"><div class="n">4</div><div class="x">la gente, <b>a las ciudades</b>, donde estaba el grano <small>47:21</small></div></div>
+  <div class="f f4" style="font-size:24px">“sin duda para facilitar la distribución del grano”; “debió ser una medida temporal” · <i>Perspicacia</i>, vol.&nbsp;2, “José”, pág.&nbsp;126</div>
+</div>
+
+<script>
+kb(".ilu42 .kb", 0, DUR, { s: 1.0 }, { s: 1.08 });
+aparece([".ilu42", ".pie42"], 0.2, 0.6);
+entra([".s1", ".s2", ".s3", ".s4"], 0.5, { x: 30, y: 0, st: 0.15 });
+tl.to([$(".s2"), $(".s3"), $(".s4")], { opacity: 0.35, duration: 0.4 }, 1.4);
+late(".s1", at("José recoge"), { s: 1.03, n: 1 });
+entra(".n1", at("el grano era del faraón"), { y: 16 });
+tl.to($(".s2"), { opacity: 1, duration: 0.4 }, at("Cuando se acaba la plata"));
+tl.to($(".s3"), { opacity: 1, duration: 0.4 }, at("Al año siguiente"));
+entra(".q3", at("Cómpranos"), { y: 16 });
+tl.to($(".s4"), { opacity: 1, duration: 0.4 }, at("Y José lleva"));
+entra(".f4", at("Y José lleva") + 0.4, { y: 10 });
+</script>

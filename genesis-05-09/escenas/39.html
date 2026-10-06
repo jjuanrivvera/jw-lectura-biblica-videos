@@ -1,0 +1,38 @@
+<style>
+.ilus.im { left: 60px; top: 130px; width: 640px; height: 640px; }
+.pie-img.pi { left: 60px; top: 780px; width: 640px; font-size: 20px; }
+.prisma { position: absolute; left: 60px; top: 830px; width: 640px; height: 200px; }
+.der { position: absolute; left: 760px; right: 60px; top: 130px; bottom: 60px; }
+.der > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.der .cita { font-size: 46px; }
+.der .m { font-size: 60px; }
+.pactos { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; }
+.pactos .dato .v { font-size: 50px; }
+.pactos .dato .k { font-size: 40px; }
+</style>
+
+<div class="cab sobre"><span class="cap">Génesis 9</span><span>versículos 12 a 17 · Isaías 54:9, 10</span></div>
+<div class="ilus im"><div class="kb"><img src="assets/img/arcoiris.jpg" /></div></div>
+<div class="pie-img pi">Lecciones que aprendo de la Biblia, lección 6, pág. 20 (wol.jw.org)</div>
+<svg class="prisma" viewBox="0 0 640 200">
+  <circle cx="200" cy="100" r="70" fill="rgba(147,187,239,0.22)" stroke="#93bbef" stroke-width="4"/>
+  <path d="M 0 90 L 150 90" stroke="#fff8e6" stroke-width="8"/>
+  <g stroke-width="6"><path d="M 250 90 L 600 30" stroke="#e05a4a"/><path d="M 250 96 L 600 70" stroke="#f2cf4a"/><path d="M 250 102 L 600 110" stroke="#6fbf5a"/><path d="M 250 108 L 600 150" stroke="#4f95c8"/><path d="M 250 114 L 600 190" stroke="#6a5acd"/></g>
+  <text x="200" y="196" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="34" fill="#f1e9d8">cada gota, un prisma diminuto</text>
+</svg>
+<div class="der">
+  <div class="b a1"><div class="m">¿la primera vez? <b>muy probablemente</b></div><div class="cita">“si se hubiese visto con anterioridad, no hubiera tenido sentido el que Dios lo usase de señal sobresaliente de su pacto”<span class="ref">PERSPICACIA, VOL. 1, “ARCO IRIS”</span></div><div class="s">hay quienes piensan lo contrario; la Biblia no lo zanja</div></div>
+  <div class="b a2"><div class="m">dos pactos <b>distintos</b></div><div class="pactos">
+    <div class="dato"><div class="v">Génesis 6:18</div><div class="k">salvar a una familia</div><div class="s">se cumplió al salir del arca</div></div>
+    <div class="dato" style="border-color:var(--oro)"><div class="v">Génesis 9</div><div class="k">con toda criatura viviente</div><div class="s">sin fecha de vencimiento</div></div></div></div>
+  <div class="b a3"><div class="cita">“Tal como he jurado que las aguas de Noé no volverán a cubrir la tierra, juro que no volveré a indignarme contigo”<span class="ref">ISAÍAS 54:9</span></div><div class="m">si aquella se cumple desde hace milenios, <b>esta también</b></div></div>
+</div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".im", 0.3, { y: 30 });
+kb(".im .kb", 0.3, DUR, { s: 1.1, x: -2 }, { s: 1.0, x: 0 });
+aparece(".pi", 0.9, 0.5);
+aparece(".prisma", 1.2, 0.8);
+secuencia([[".a1", 0.4], [".a2", at("Son dos pactos")], [".a3", at("Isaías lo usa")]]);
+</script>

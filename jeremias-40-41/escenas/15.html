@@ -1,0 +1,101 @@
+<!--lead:2.6-->
+<style>
+.mesa { position: absolute; left: 30px; top: 150px; width: 1060px; height: 820px; }
+.mesa svg { width: 1060px; height: 820px; }
+.col15 { position: absolute; left: 1110px; right: 64px; top: 110px; bottom: 80px; }
+.col15 .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.col15 .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.16em; color: var(--oro); }
+.col15 .m { font-size: 62px; }
+.col15 .cita { font-size: 50px; }
+.col15 .s { font-size: 27px; }
+.col15 .nota { font-family: "Montserrat", sans-serif; font-size: 26px; color: var(--tenue); }
+.col15 .nota b { color: var(--tiza); }
+.leyenda15 { position: absolute; left: 60px; top: 110px; }
+.leyenda15 .m { font-size: 66px; color: var(--oro); }
+</style>
+
+<div class="capcard cc">
+  <div class="num">Jeremías 41</div>
+  <svg viewBox="0 0 820 40"><path d="M 10 22 C 200 10 420 34 810 16"/></svg>
+  <div class="sub">una comida, una cisterna y el miedo</div>
+</div>
+
+<div class="fase f2">
+<div class="cab"><span class="cap">Jeremías 41</span><span>versículos 1 al 3</span></div>
+<div class="leyenda15"><div class="m l15">“Mientras comían juntos en Mizpá”</div></div>
+<div class="mesa"><svg viewBox="0 0 1060 820">
+  <defs>
+    <radialGradient id="e15-luz" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="rgba(255,196,110,0.42)"/><stop offset="0.5" stop-color="rgba(255,170,80,0.12)"/><stop offset="1" stop-color="rgba(255,170,80,0)"/></radialGradient>
+    <linearGradient id="e15-tabla" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a87648"/><stop offset="1" stop-color="#6b4527"/></linearGradient>
+    <linearGradient id="e15-canto" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a3a20"/><stop offset="1" stop-color="#3a2514"/></linearGradient>
+    <radialGradient id="e15-pan" cx="0.45" cy="0.4" r="0.6"><stop offset="0" stop-color="#f0cf96"/><stop offset="0.7" stop-color="#c98d4a"/><stop offset="1" stop-color="#8f5a2a"/></radialGradient>
+    <linearGradient id="e15-barro" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7a3f1f"/><stop offset="0.4" stop-color="#c06a38"/><stop offset="1" stop-color="#6a3519"/></linearGradient>
+    <radialGradient id="e15-llama" cx="0.5" cy="0.7" r="0.6"><stop offset="0" stop-color="#fff3c4"/><stop offset="0.5" stop-color="#ffc35a"/><stop offset="1" stop-color="rgba(255,130,40,0)"/></radialGradient>
+    <filter id="e15-veta" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.006 0.18" numOctaves="2" seed="9"/><feColorMatrix type="matrix" values="0 0 0 0 0.2  0 0 0 0 0.12  0 0 0 0 0.05  0 0 0 0.5 -0.12"/></filter>
+    <clipPath id="e15-tope"><path d="M 140 470 L 920 470 L 1000 560 L 60 560 Z"/></clipPath>
+  </defs>
+  <g class="calor"><ellipse cx="560" cy="420" rx="520" ry="340" fill="url(#e15-luz)"/></g>
+  <!-- mesa baja -->
+  <path d="M 140 470 L 920 470 L 1000 560 L 60 560 Z" fill="url(#e15-tabla)"/>
+  <rect x="50" y="460" width="960" height="110" filter="url(#e15-veta)" clip-path="url(#e15-tope)"/>
+  <path d="M 60 560 L 1000 560 L 1000 600 L 60 600 Z" fill="url(#e15-canto)"/>
+  <path d="M 110 600 L 110 700 M 950 600 L 950 700" stroke="#3a2514" stroke-width="26" stroke-linecap="round"/>
+  <ellipse cx="530" cy="740" rx="500" ry="40" fill="rgba(0,0,0,0.35)"/>
+  <!-- dos panes redondos -->
+  <ellipse cx="300" cy="510" rx="120" ry="34" fill="url(#e15-pan)"/>
+  <path d="M 230 504 C 270 494 330 494 370 504 M 246 518 C 280 510 320 510 354 518" stroke="rgba(120,70,30,0.6)" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="470" cy="532" rx="96" ry="26" fill="url(#e15-pan)"/>
+  <path d="M 416 528 C 446 520 494 520 524 528" stroke="rgba(120,70,30,0.6)" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- jarra -->
+  <path d="M 640 300 C 640 290 700 290 700 300 L 696 330 C 760 350 770 440 740 500 C 728 524 612 524 600 500 C 570 440 580 350 644 330 Z" fill="url(#e15-barro)" stroke="#4a2410" stroke-width="5"/>
+  <path d="M 700 340 C 760 330 780 380 742 420" fill="none" stroke="#4a2410" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 610 420 C 640 414 700 414 730 420" stroke="rgba(255,220,180,0.35)" stroke-width="5" fill="none"/>
+  <!-- dos copas -->
+  <path d="M 790 450 L 860 450 L 850 500 C 846 512 804 512 800 500 Z" fill="url(#e15-barro)" stroke="#4a2410" stroke-width="4"/>
+  <path d="M 170 440 L 236 440 L 228 486 C 224 498 182 498 178 486 Z" fill="url(#e15-barro)" stroke="#4a2410" stroke-width="4"/>
+  <!-- lámpara de aceite -->
+  <path d="M 860 520 C 860 500 960 500 980 512 C 990 518 990 528 980 532 C 950 544 870 544 860 520 Z" fill="url(#e15-barro)" stroke="#4a2410" stroke-width="4"/>
+  <g class="llama"><path d="M 982 512 C 970 490 984 466 990 452 C 998 470 1010 492 994 512 Z" fill="url(#e15-llama)"/><ellipse cx="990" cy="486" rx="40" ry="54" fill="rgba(255,200,110,0.18)"/></g>
+</svg></div>
+<div class="pie" style="left:40px;bottom:20px">dibujo propio, sin personas: una mesa con pan, una jarra, copas y una lámpara</div>
+
+<div class="col15">
+  <div class="b b1">
+    <div class="k">EN EL SÉPTIMO MES</div>
+    <div class="m">Ismael llega con <b>10 hombres</b></div>
+    <div class="cita c1">“era de linaje real y uno de los hombres principales del rey”<span class="ref">JEREMÍAS 41:1</span></div>
+    <div class="nota n1">nota: “de linaje real”, literalmente <b>“la descendencia del reino”</b></div>
+  </div>
+  <div class="b b2">
+    <div class="m m2">matan a Guedalías, a los judíos que estaban con él y a los soldados caldeos</div>
+    <div class="s s2">Jeremías 41:2, 3 · lo mismo, en una línea: 2 Reyes 25:25</div>
+  </div>
+  <div class="b b3">
+    <div class="m oro">comer juntos era una señal de paz</div>
+    <div class="cita c3">“Hasta el hombre que estaba en paz conmigo [...] el que comía de mi pan, se ha vuelto en mi contra”<span class="ref">SALMO 41:9 · JESÚS LO APLICÓ A JUDAS, JUAN 13:18</span></div>
+    <div class="propio chico">observación propia: la relación con Ismael</div>
+  </div>
+</div>
+</div>
+
+<script>
+capitulo(".cc", 0.2, at("En el séptimo mes") - 0.6);
+aparece(".f2", at("En el séptimo mes") - 0.5, 0.6);
+// La llama tiembla apenas: un vaivén corto y finito.
+tl.fromTo($(".llama"), { scaleY: 1 }, { scaleY: 0.9, transformOrigin: "50% 100%", duration: 0.6, yoyo: true, repeat: 30, ease: "sine.inOut", immediateRender: false }, 0);
+entra(".b1 .k", at("En el séptimo mes"), { x: 30, y: 0 });
+entra(".b1 .m", at("Ismael llega"), { x: 30, y: 0 });
+entra(".c1", at("Era de linaje"), { x: 30, y: 0 });
+entra(".n1", at("literalmente"), { y: 14 });
+sale(".b1", at("Guedalías los recibe") - 0.2, { d: 0.4 });
+escribe(".l15", at("Y mientras comían"), 1.6);
+// Sobriedad: la muerte no se muestra; solo se apaga la luz de la mesa.
+tl.to($$(".llama, .calor"), { opacity: 0, duration: 1.2, ease: "power2.in" }, at("lo mataron"));
+atenua(".mesa", at("lo mataron") + 0.4, 0.45, 1.2);
+entra(".m2", at("Mataron también"), { x: 30, y: 0 });
+entra(".s2", at("Mataron también") + 0.8, { y: 14 });
+sale(".b2", at("Comer juntos") - 0.3, { d: 0.4 });
+entra(".b3 .m", at("Comer juntos"), { x: 30, y: 0 });
+entra(".c3", at("El Salmo"), { x: 30, y: 0 });
+entra(".b3 .propio", at("Jesús aplicó"), { y: 10 });
+</script>

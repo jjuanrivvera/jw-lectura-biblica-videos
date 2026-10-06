@@ -1,0 +1,43 @@
+<!--lead:2.6-->
+<style>
+.mapa .cam img, .mapa .cam svg { width: 2880px; height: 1800px; }
+.dos { display: flex; flex-direction: column; gap: 22px; }
+.dos .r { display: grid; grid-template-columns: 170px 90px 170px; align-items: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 58px; }
+.dos .r svg { width: 90px; height: 40px; }
+.dos .r path { fill: none; stroke: var(--oro); stroke-width: 6; stroke-linecap: round; }
+.dos .w { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.12em; color: var(--cielo); grid-column: 1 / 4; margin-top: -10px; }
+</style>
+<div class="capcard cc"><div class="num">Génesis 32</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">la noche del Jaboc</div><div class="edad">hacia el 1761 antes de nuestra era</div></div>
+<div class="fase fp">
+<!--incluir:_jaboc.html-->
+<div class="cab sobre"><span class="cap">Génesis 32</span><span>versículos 1 al 3</span></div>
+<div class="col der">
+  <div class="b a1"><div class="cita">“¡Este es el campamento de Dios!”<span class="ref">GÉNESIS 32:2</span></div>
+    <div class="def"><div class="t">Mahanaim</div><div class="x">‘<b>dos campamentos</b>’</div><div class="s">el de Dios, representado por sus ángeles, y el de Jacob</div></div>
+    <div class="f">Nota de la TNM en 32:2 · <i>Perspicacia</i>, vol. 2, “Mahanaim”, pág. 279</div></div>
+  <div class="b a2"><div class="m md">una misma palabra hebrea:</div>
+    <div class="dos">
+      <div class="r d1"><span>Dios</span><svg viewBox="0 0 90 40"><path d="M 6 20 L 80 20 M 62 6 L 82 20 L 62 34"/></svg><span>Jacob</span><div class="w">“ÁNGELES” · 32:1</div></div>
+      <div class="r d2"><span>Jacob</span><svg viewBox="0 0 90 40"><path d="M 6 20 L 80 20 M 62 6 L 82 20 L 62 34"/></svg><span>Esaú</span><div class="w">“MENSAJEROS” · 32:3, 6</div></div>
+    </div>
+    <div class="m oro d3">Dios mandó los suyos primero</div>
+    <span class="propio d3">observación propia</span>
+    <div class="f">TNM de 1987, nota en 32:1: “ángeles” también puede ser “mensajeros”, “como en los vv. 3, 6”</div></div>
+</div>
+</div>
+<script>
+pinta(".marcas", `<circle class="anillo a-m" cx="1033" cy="724" r="70"/><circle class="anillo oro a-m2" cx="1033" cy="724" r="120"/>`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 420, y: 0, w: 1870, h: 1800 }, V), 0);
+camara(".cam", at("llama al lugar") - 0.3, 3.2, encuadre({ x: 420, y: 180, w: 1650, h: 1590 }, V));
+capitulo(".cc", 0.3, at("En el camino") - 0.2);
+aparece(".fp", at("En el camino") + 0.45, 0.5);
+traza(".jb", at("En el camino") + 0.8, 1.6);
+traza(".a-m", at("llama al lugar"), 0.8);
+traza(".a-m2", at("dos campamentos"), 0.8);
+late(".a-m2", at("el de Dios"), { s: 1.12, n: 3 });
+secuencia([[".a1", at("En el camino") + 0.8], [".a2", at("La palabra hebrea")]]);
+entra(".d1", at("se traduce ángeles"), { x: -30, y: 0 });
+entra(".d2", at("mensajeros que Jacob"), { x: -30, y: 0 });
+entra(".d3", at("Dios mandó"), { y: 20 });
+</script>

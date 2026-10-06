@@ -1,0 +1,86 @@
+<!--lead:2.0-->
+<style>
+.img37 { position: absolute; left: 0; top: 0; width: 1060px; height: 1080px; overflow: hidden; }
+.img37 .kb { position: absolute; inset: 0; }
+.img37 img { width: 100%; height: 100%; object-fit: cover; object-position: 46% 50%; display: block; }
+.img37 .vel { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(23,33,43,0) 60%, rgba(23,33,43,0.94) 100%); }
+.pie37 { left: 24px; bottom: 22px; max-width: 900px; }
+.cab37 { left: 1110px; }
+.col37 { position: absolute; left: 1110px; right: 70px; top: 120px; bottom: 80px; }
+.col37 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 34px; }
+.col37 .cita { font-size: 62px; }
+.col37 .cita.sm { font-size: 56px; }
+.col37 .clave { align-self: flex-start; }
+/* Fase 2: a todo el ancho */
+.f37 { position: absolute; left: 70px; right: 70px; top: 140px; bottom: 70px; display: grid; grid-template-columns: 1fr 1.1fr 1fr; column-gap: 34px; align-items: center; }
+.f37 .tj { height: 640px; justify-content: center; gap: 24px; }
+.f37 .tj .x { font-size: 54px; }
+.f37 .def { height: 640px; display: flex; flex-direction: column; justify-content: center; }
+.f37 .def .x { font-size: 72px; }
+.f37 .def .s { font-size: 28px; }
+.f37 .ruta37 { width: 100%; height: 300px; }
+.f37 .ruta37 text { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--tiza); letter-spacing: 0.06em; }
+.fu37 { position: absolute; left: 70px; right: 70px; bottom: 24px; }
+</style>
+
+<div class="fase p1">
+  <div class="img37"><div class="kb"><img src="assets/img/jacob-doce.jpg" /></div><div class="vel"></div></div>
+  <div class="pie pie37">Jacob en su lecho de muerte, con sus hijos. <i>La Atalaya</i>, junio de 2025, pág.&nbsp;2</div>
+  <div class="cab cab37"><span class="cap">Génesis 50</span><span>versículo 1</span></div>
+  <div class="col37">
+    <div class="b b1">
+      <div class="cita">“José se echó encima de su padre, <b>lloró</b> sobre él y lo besó”<span class="ref">GÉNESIS 50:1</span></div>
+    </div>
+    <div class="b b2">
+      <div class="cita sm">“José pondrá su mano <b>sobre tus ojos</b>”<span class="ref">DIOS A JACOB · GÉNESIS 46:4</span></div>
+      <span class="clave">y así fue: el hijo estaba <b>a su lado</b></span>
+    </div>
+  </div>
+</div>
+
+<div class="fase p2">
+  <div class="cab"><span class="cap">Génesis 50</span><span>versículo 2</span></div>
+  <div class="f37">
+    <div class="tj t1"><div class="k">50:2</div><div class="x">“José mandó a sus siervos, los <b>médicos</b>, que embalsamaran a su padre”</div></div>
+    <div class="def t2"><div class="t">Embalsamar</div><div class="x">tratar un cuerpo para <b>retrasar su descomposición</b></div><div class="s"><i>Perspicacia</i>, “Embalsamamiento”, pág.&nbsp;805</div></div>
+    <div class="tj t3"><div class="k">¿para qué?</div><div class="x">el cuerpo tenía que <b>viajar</b> hasta Canaán</div>
+      <svg class="ruta37" viewBox="0 0 520 300">
+        <path class="r37" d="M 60 220 C 160 120 330 90 460 110" fill="none" stroke="#e9bf60" stroke-width="9" stroke-linecap="round"/>
+        <path class="r37p" d="M 436 88 L 466 110 L 436 134" fill="none" stroke="#e9bf60" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle class="r37a" cx="60" cy="220" r="16" fill="#f1e9d8"/><text class="r37a" x="20" y="280">EGIPTO</text>
+        <circle class="r37b" cx="470" cy="110" r="16" fill="#e9bf60"/><text class="r37b" x="330" y="60">CANAÁN</text>
+      </svg>
+    </div>
+  </div>
+  <div class="fu37 f">esquema propio, sin escala</div>
+</div>
+
+<div class="capcard cc"><div class="fondo"><img src="assets/img/perdon-ljf.jpg" /></div>
+  <div class="dentro"><div class="num">Génesis 50</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16" /></svg><div class="sub">honrar, perdonar y esperar</div>
+  <div class="pista"><span class="hecho">48</span><span class="hecho">49</span><span class="on">50</span></div></div></div>
+
+<script>
+const t0 = at("José se echó");
+capitulo(".cc", 0.3, t0 - 0.5);
+entra(".cc .pista", 1.0, { y: 20 });
+kb(".cc .fondo", 0, t0, { s: 1.12 }, { s: 1.0 });
+const tM = at("Luego José mandó");
+aparece(".p1 .img37", t0 - 0.6, 0.6);
+kb(".img37 .kb", t0 - 0.6, tM, { s: 1.04, x: 1 }, { s: 1.14, x: -2 });
+aparece(".pie37", t0, 0.5);
+entra(".cab37", t0 - 0.3, { y: -10 });
+secuencia([[".b1", t0 - 0.2], [".b2", at("Años antes") - 0.2]], null);
+entra(".b2 .clave", at("Y así fue") - 0.1, { y: 16 });
+desaparece(".p1", tM - 0.5, 0.5);
+entra(".p2 .cab", tM, { y: -10 });
+// La tarjeta 50:2 arranca al centro y se hace a un lado cuando llega la definición.
+const tE = at("embalsamaran") + 0.2;
+tl.fromTo(inicial(el(".t1"), { opacity: 0 }), { opacity: 0, y: 30, x: 614 }, { opacity: 1, y: 0, x: 614, duration: 0.6, ease: "power3.out", immediateRender: false }, tM - 0.1);
+tl.fromTo(el(".t1"), { x: 614 }, { x: 0, duration: 0.8, ease: "power2.inOut", immediateRender: false }, tE - 0.2);
+entra(".t2", tE + 0.55, { y: 30 });
+entra(".t3", at("Aquí tenía") - 0.2, { y: 30 });
+aparece([".r37a"], at("Aquí tenía") + 0.3, 0.4);
+traza(".r37", at("tenía que viajar") - 0.2, 1.2);
+aparece([".r37p", ".r37b"], at("hasta Canaán") , 0.4);
+aparece(".fu37", at("Aquí tenía"), 0.5);
+</script>

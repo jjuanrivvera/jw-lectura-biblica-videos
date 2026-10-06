@@ -1,0 +1,57 @@
+<style>
+.f52a { position: absolute; inset: 0; }
+.ilus.i52 { left: 70px; top: 150px; width: 1000px; height: 500px; }
+.i52 img { object-position: 50% 40%; }
+.pie52 { position: absolute; left: 70px; top: 668px; width: 1000px; }
+.col52 { position: absolute; left: 1120px; right: 70px; top: 120px; bottom: 80px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.col52 .cita { font-size: 44px; }
+.col52 .clave { align-self: flex-start; }
+.ex52 { position: absolute; left: 70px; top: 740px; width: 1000px; }
+.ex52 .m { font-size: 64px; }
+.f52b { position: absolute; inset: 0; }
+.tit52 { position: absolute; left: 80px; top: 120px; }
+.tit52 .m { font-size: 84px; }
+.pz52 { position: absolute; left: 70px; right: 70px; top: 300px; height: 600px; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; }
+.pz52 .tj { justify-content: center; align-items: flex-start; padding: 40px 40px; gap: 22px; }
+.pz52 .tj .num { font-family: "Fraunces", serif; font-weight: 700; font-size: 120px; line-height: 0.85; color: var(--oro); }
+.pz52 .tj .m { font-size: 84px; }
+.pz52 .tj .ref { font-size: 26px; margin-top: 0; }
+</style>
+
+<div class="cab"><span class="cap">Hacia Éxodo</span><span>Éxodo 1 y 2</span></div>
+<div class="fase f52a">
+  <div class="ilus i52"><div class="kb" data-layout-allow-overflow><img src="assets/img/moises-bebe.jpg" /></div></div>
+  <div class="pie-img pie52">Míriam ve que la hija del faraón encuentra al bebé Moisés. <i>Lecciones que aprendo de la Biblia</i>, lección 17, “Moisés elige adorar a Jehová”</div>
+  <div class="ex52"><div class="m">el libro siguiente empieza <b>en Egipto</b></div></div>
+  <div class="col52">
+    <div class="cita c1">“Al final murió José y también murieron todos sus hermanos y toda aquella generación”<span class="ref">ÉXODO 1:6</span></div>
+    <div class="cita c2">“Los israelitas [...] empezaron a <b>multiplicarse</b>”<span class="ref">ÉXODO 1:7</span></div>
+    <span class="clave rojo c3">llega la opresión · Éxodo 1:8-14</span>
+    <div class="cita c4">“Dios oyó sus lamentos y <b>recordó el pacto</b> que había hecho con Abrahán, Isaac y Jacob”<span class="ref">ÉXODO 2:24</span></div>
+  </div>
+</div>
+<div class="fase f52b">
+  <div class="tit52"><div class="m">tres piezas que dejan estos capítulos</div></div>
+  <div class="pz52">
+    <div class="tj z1"><span class="num">1</span><div class="m">la tierra futura</div><div class="ref">“los devolverá a la tierra de sus antepasados” · Génesis 48:21</div></div>
+    <div class="tj z2"><span class="num">2</span><div class="m">el rey futuro</div><div class="ref">“hasta que venga Siló” · Génesis 49:10</div></div>
+    <div class="tj z3"><span class="num">3</span><div class="m">una fe que deja <b>instrucciones</b></div><div class="ref">“Llévense de aquí mis huesos” · Génesis 50:25</div></div>
+  </div>
+</div>
+
+<script>
+const tP = at("Estos tres capítulos");
+aparece(".i52", 0.3, 0.6);
+kb(".i52 .kb", 0, tP, { s: 1.0 }, { s: 1.08 });
+aparece(".pie52", 0.8, 0.5);
+entra(".ex52", 1.0, { y: 16 });
+entra(".c1", at("Éxodo empieza") - 0.1, { y: 20 });
+entra(".c2", at("siguieron multiplicándose") - 0.4, { y: 20 });
+entra(".c3", at("Llega la opresión") - 0.2, { y: 14 });
+entra(".c4", at("Pero Dios oyó") - 0.2, { y: 20 });
+sale(".f52a", tP - 0.6, { y: -20, d: 0.5 });
+entra(".tit52", tP - 0.1, { y: 16 });
+entra(".z1", at("la tierra futura") - 0.3, { y: 30 });
+entra(".z2", at("el rey futuro") - 0.3, { y: 30 });
+entra(".z3", at("y una fe") - 0.3, { y: 30 });
+</script>

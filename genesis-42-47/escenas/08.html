@@ -1,0 +1,83 @@
+<style>
+.img08 { position: absolute; inset: 0; overflow: hidden; }
+.img08 .kb { position: absolute; inset: 0; }
+.img08 img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.img08 .velo { background: linear-gradient(90deg, rgba(22, 32, 42, 0.1) 0%, rgba(22, 32, 42, 0.5) 40%, rgba(22, 32, 42, 0.94) 60%, rgba(22, 32, 42, 0.97) 100%); }
+.pie08 { left: 24px; bottom: 20px; }
+.pos08 { position: absolute; left: 190px; top: 120px; width: 640px; height: 360px; }
+.pie08b { left: 190px; top: 490px; width: 640px; }
+.col08 { position: absolute; left: 1050px; right: 70px; top: 110px; bottom: 80px; }
+.col08 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.ord08 { display: flex; flex-direction: column; gap: 14px; }
+.ord08 .o { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; line-height: 1.05; padding-left: 26px; border-left: 6px solid var(--oro); }
+.interp { position: absolute; left: 70px; top: 640px; width: 880px; height: 250px; }
+.interp svg { position: absolute; left: 0; top: 0; width: 880px; height: 250px; }
+.interp .nodo { position: absolute; top: 120px; width: 240px; height: 110px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 20px; background: #1b2733; border: 3px solid rgba(241, 233, 216, 0.3); }
+.interp .nodo .q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.04em; color: var(--tiza); }
+.interp .nodo .l { font-family: "Caveat", cursive; font-weight: 700; font-size: 40px; color: var(--oro); line-height: 1; }
+.interp .t08 { position: absolute; left: 0; right: 0; top: 30px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; color: var(--cielo); }
+.sim08 { display: flex; align-items: center; gap: 30px; }
+.sim08 .med { position: relative; width: 190px; }
+.sim08 .med .foto { border-color: var(--rojo); }
+</style>
+
+<div class="fase f12">
+  <div class="ilus pos08"><div class="kb"><img src="assets/img/postrados-video.jpg" /></div></div>
+  <div class="pie-img pie08b">Los hermanos ante José. Video <i>Jehová siguió mostrando amor leal</i> (jw.org, 2020), minuto 16:15</div>
+  <div class="interp">
+    <div class="t08 tv">José los entendía</div>
+    <svg viewBox="0 0 880 250"><path class="ln1" d="M 260 175 H 320" stroke="#e9bf60" stroke-width="6" fill="none" /><path class="ln2" d="M 560 175 H 620" stroke="#e9bf60" stroke-width="6" fill="none" />
+      <path class="vuelta" d="M 760 118 C 690 70 190 70 120 118" stroke="#93bbef" stroke-width="5" fill="none" stroke-dasharray="14 12" /></svg>
+    <div class="nodo n1" style="left:20px"><div class="q">José</div><div class="l">egipcio</div></div>
+    <div class="nodo n2" style="left:320px"><div class="q">intérprete</div></div>
+    <div class="nodo n3" style="left:620px"><div class="q">los diez</div><div class="l">hebreo</div></div>
+  </div>
+</div>
+<div class="img08"><div class="kb"><img src="assets/img/jose-llora.jpg" /></div><div class="velo"></div></div>
+<div class="pie pie08">“José llorando y al fondo están sus hermanos”. <i>Guía de actividades</i>, mayo de 2020, pág.&nbsp;6 (wol.jw.org)</div>
+<div class="cab sobre" style="left:1050px"><span class="cap">Génesis 42</span><span>versículos 18 al 24</span></div>
+
+<div class="col08">
+  <div class="b a1">
+    <div class="cita">“<b>Yo temo a Dios</b>”<span class="ref">GÉNESIS 42:18</span></div>
+    <div class="ord08"><div class="o o1">uno se queda preso</div><div class="o o2">los demás llevan grano a sus familias</div><div class="o o3">y le traen al hermano menor</div></div>
+  </div>
+  <div class="b a2">
+    <div class="cita md">“De seguro estamos pagando por lo que le hicimos a nuestro hermano. Vimos su angustia cuando nos suplicaba [...], pero no le hicimos caso”<span class="ref">GÉNESIS 42:21</span></div>
+    <div class="f fl" style="font-size:25px">José “seguramente aprendió egipcio cuando sirvió de esclavo en la casa de Potifar” · <i>Perspicacia</i>, vol.&nbsp;2, “Lenguaje”, pág.&nbsp;206</div>
+  </div>
+  <div class="b a3">
+    <div class="m md">José se aparta y llora</div>
+    <div class="cita sm ar">“Él sabía que el verdadero arrepentimiento es algo más que <b>lamentar las consecuencias</b> de lo que uno hace. Así que decidió seguir con la prueba”<span class="ref">LA ATALAYA, 1 DE MAYO DE 2015, PÁG.&nbsp;14</span></div>
+    <div class="sim08"><div class="simw"></div><div><div class="m md rojo">ata a Simeón delante de ellos</div><div class="f" style="font-size:25px">Génesis 42:24 · por qué a él, la Biblia no lo dice</div></div></div>
+  </div>
+</div>
+
+<script>
+$(".simw").outerHTML = medallon("simeon");
+const tC = at("Ellos se dicen");
+const tL = at("José se aparta y llora");
+aparece([".pos08", ".pie08b"], 0.2, 0.6);
+kb(".pos08 .kb", 0, tL, { s: 1.0 }, { s: 1.1 });
+secuencia([[".a1", 0.3], [".a2", tC - 0.2], [".a3", tL - 0.3]]);
+entra(".o1", at("Que uno se quede"), { x: -20, y: 0 });
+entra(".o2", at("los demás, lleven"), { x: -20, y: 0 });
+entra(".o3", at("tráiganme"), { x: -20, y: 0 });
+const tI = at("No sabían que José");
+// El intérprete está en toda la escena (42:23): José les hablaba así desde el principio.
+entra([".n1", ".n2", ".n3"], 0.8, { y: 10, st: 0.25 });
+traza([".ln1", ".ln2"], 1.4, 0.5);
+late(".n1", at("les hablaba en egipcio"), { s: 1.08, n: 1 });
+late(".n2", at("y un intérprete"), { s: 1.08, n: 1 });
+traza(".vuelta", at("traducía") + 0.2, 0.8);
+tl.set($(".vuelta"), { strokeDasharray: "14 12" }, at("traducía") + 1.05);
+aparece(".tv", at("traducía") + 0.6, 0.4);
+aparece(".fl", at("les hablaba en egipcio"), 0.5);
+// Cuando José llora, la ilustración de la Guía ocupa la pantalla.
+aparece(".img08", tL - 0.5, 0.9);
+kb(".img08 .kb", tL - 0.5, DUR, { s: 1.08, x: 1 }, { s: 1.0, x: -1 });
+aparece(".pie08", tL + 0.2, 0.5);
+tl.to($(".f12"), { opacity: 0, duration: 0.6 }, tL - 0.3);
+entra(".ar", at("Pero sigue con la prueba"), { y: 16 });
+entra(".sim08", at("Y ata a Simeón"), { y: 16 });
+</script>

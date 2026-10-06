@@ -1,0 +1,41 @@
+<style>
+.cab.sobre span { background: rgba(15,22,30,0.82); }
+.caja { position: absolute; left: 80px; top: 110px; right: 80px; }
+.caja > div { position: absolute; left: 0; top: 0; max-width: 1760px; padding: 20px 32px; border-radius: 26px; background: rgba(23,33,43,0.92); }
+.caja .cita { font-size: 52px; }
+.caja .def .x { font-size: 52px; }
+.et2 { font-family: "Caveat"; font-weight: 700; font-size: 54px; fill: #1b2733; }
+.fuente-p { position: absolute; left: 80px; bottom: 16px; font-size: 21px; color: #1b2733; }
+</style>
+<svg class="lienzo" viewBox="0 0 1920 1080"></svg>
+<svg class="lienzo et" viewBox="0 0 1920 1080">
+  <text class="et2 e-l halo" x="280" y="800" text-anchor="middle" style="stroke-width:10px">Labán</text>
+  <text class="et2 e-j halo" x="1620" y="800" text-anchor="middle" style="stroke-width:10px">Jacob</text>
+  <text class="et2 e-c halo" x="620" y="470" text-anchor="end" style="stroke-width:10px">la columna (31:45)</text>
+  <text class="et2 e-m halo" x="1120" y="840" style="stroke-width:10px">el montón (31:46)</text>
+  <text class="et2 e-f halo" x="1080" y="540" style="stroke-width:10px">la comida del pacto</text>
+</svg>
+<div class="cab sobre"><span class="cap">Génesis 31</span><span>versículos 43 al 46</span></div>
+<div class="caja">
+  <div class="c1"><div class="cita">“Todo lo que estás mirando es mío”<span class="ref">LABÁN · GÉNESIS 31:43</span></div></div>
+  <div class="c2"><div class="cita">“Vamos, hagamos un pacto tú y yo, y que esto sirva de testigo entre nosotros dos”<span class="ref">GÉNESIS 31:44</span></div></div>
+  <div class="c3"><div class="def"><div class="t">Pacto</div><div class="x">“acuerdo formal o contrato entre dos partes para hacer o dejar de hacer algo”</div><div class="s">TNM, Glosario, “pacto”</div></div></div>
+  <div class="c4"><div class="m">un montón, “quizás en forma de mesa, sobre el que se comió la comida del pacto”</div><div class="s">Perspicacia, vol. 1, “Galeed”, pág. 986</div></div>
+  <div class="c5"><div class="m">testigo para “todos los que pasaban”</div><div class="s">Perspicacia, vol. 1, “Galeed”, pág. 986</div></div>
+</div>
+<div class="fuente-p">dibujo propio, no a escala; la forma del montón y la posición de los campamentos son supuestos</div>
+<script>
+/*incluir:_dibujos.js*/
+/*incluir:_pacto.js*/
+pinta(".lienzo", pactoEscena());
+const E = (s) => root.querySelector(".lienzo " + s);
+tl.set([E(".columna"), E(".comida"), E(".p0"), E(".p1"), E(".p2"), E(".p3"), E(".p4")], { opacity: 0 }, 0);
+aparece([".e-l", ".e-j"], 0.8, 0.5);
+secuencia([[".c1", 0.4], [".c2", at("Pero propone")], [".c3", at("Un pacto es")], [".c4", at("Sus parientes hicieron")], [".c5", at("Y las piedras")]]);
+entra(E(".columna"), at("Jacob levantó una piedra"), { y: 60 });
+aparece(".e-c", at("Jacob levantó una piedra") + 0.5, 0.4);
+[0, 1, 2, 3, 4].forEach((i) => entra(E(".p" + i), at("hicieron un montón") + i * 0.35, { y: -40, d: 0.4 }));
+aparece(".e-m", at("hicieron un montón") + 1.6, 0.4);
+entra(E(".comida"), at("y comieron allí"), { y: -20 });
+aparece(".e-f", at("y comieron allí") + 0.4, 0.4);
+</script>

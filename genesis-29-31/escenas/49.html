@@ -1,0 +1,13 @@
+<style>
+.cierre { position: absolute; left: 160px; right: 160px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 40px; }
+.cierre .cita { font-size: 84px; }
+.cierre .cita .ref { font-size: 34px; margin-top: 30px; }
+.ver { position: absolute; left: 160px; right: 160px; bottom: 60px; text-align: center; font-size: 26px; color: var(--tenue); }
+.ver b { color: var(--tiza); }
+</style>
+<div class="cierre"><div class="cita">“Regresa a la tierra de tus padres y adonde están tus parientes. Yo continuaré contigo”<span class="ref">GÉNESIS 31:3</span></div></div>
+<div class="ver">Para escuchar en familia: <b>“Jacob, un hombre que amaba la paz”</b>, lectura bíblica dramatizada (jw.org), con Génesis 29:16-29 y 31:36-55</div>
+<script>
+entra(".cierre", 0.3, { y: 30, d: 1.0 });
+aparece(".ver", 3.5, 0.8);
+</script>

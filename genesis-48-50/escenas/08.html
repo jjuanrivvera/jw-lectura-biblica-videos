@@ -1,0 +1,63 @@
+<style>
+.dib08 { position: absolute; left: 30px; top: 110px; width: 1000px; height: 820px; }
+.dib08 .manos { width: 1000px; height: 820px; }
+.dib08 .mn-cruzados { display: none; }
+.col08 { position: absolute; left: 1080px; right: 70px; top: 110px; bottom: 70px; }
+.col08 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+.col08 .cita { font-size: 52px; }
+.col08 .cita.g { font-size: 92px; }
+.lt08 { position: relative; height: 250px; }
+.lt08 svg { position: absolute; left: 0; top: 30px; width: 770px; height: 200px; }
+.lt08 .y { position: absolute; top: 150px; font-family: "Fraunces", serif; font-weight: 700; font-size: 58px; }
+.lt08 .d { position: absolute; top: 0; font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; line-height: 1; }
+.col08 .m { font-size: 88px; }
+.col08 .f { font-size: 28px; }
+.abr08 { position: absolute; left: 30px; top: 940px; width: 1000px; text-align: center; }
+.abr08 .clave { font-size: 52px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 48</span><span>versículos 8 al 12</span></div>
+<div class="dib08"><!--incluir:_manos.html--></div>
+<div class="abr08"><span class="clave">los besa y los <b>abraza</b> · 48:10</span></div>
+<div class="col08">
+  <div class="b b1">
+    <div class="cita g">“¿Quiénes son esos?”<span class="ref">ISRAEL · GÉNESIS 48:8</span></div>
+    <div class="cita c2">“Israel casi no podía ver porque los <b>ojos le fallaban</b> debido a la edad”<span class="ref">GÉNESIS 48:10</span></div>
+  </div>
+  <div class="b b2">
+    <div class="m oro">no eran niños pequeños</div>
+    <div class="lt08">
+      <svg viewBox="0 0 770 200"><line x1="20" y1="90" x2="750" y2="90" stroke="rgba(241,233,216,0.4)" stroke-width="6" stroke-linecap="round"/>
+        <rect class="nac08" x="20" y="72" width="170" height="36" rx="12" fill="#93bbef"/>
+        <circle class="p1" cx="250" cy="90" r="14" fill="#e9bf60"/><circle class="p2" cx="700" cy="90" r="14" fill="#f1e9d8"/>
+        <path class="fl08" d="M 262 60 C 400 20 560 20 690 60" fill="none" stroke="#e9bf60" stroke-width="6" stroke-linecap="round"/></svg>
+      <div class="d d1" style="left:10px; color:var(--cielo)">nacen</div>
+      <div class="y y1" style="left:200px">1728</div>
+      <div class="d d2" style="left:400px; color:var(--oro)">17 años</div>
+      <div class="y y2" style="left:650px">1711</div>
+    </div>
+    <div class="f">nacieron en Egipto antes de que llegara Jacob · Génesis 41:50; 48:5 · años antes de nuestra era</div>
+  </div>
+  <div class="b b3">
+    <div class="cita">“Nunca pensé que volvería a verte y, mira ahora, <b>Dios me ha permitido ver a tu descendencia</b>”<span class="ref">ISRAEL · GÉNESIS 48:11</span></div>
+  </div>
+</div>
+
+<script>
+// Los nietos se ven borrosos: Jacob casi no podía ver.
+tl.set($$(".dib08 .mn-man, .dib08 .mn-efr"), { filter: "blur(14px)", opacity: 0.6 }, 0);
+aparece(".dib08", 0.2, 0.7);
+tl.set($(".dib08 .mn-rectos"), { opacity: 0 }, 0);
+tl.to($(".dib08 .mn-rectos"), { opacity: 1, duration: 0.8 }, at("Jacob los besa"));
+secuencia([[".b1", 0.4], [".b2", at("No eran niños") - 0.3], [".b3", at("Jacob los besa") - 0.2]]);
+tl.set(".c2", { opacity: 0 }, 0);
+entra(".c2", at("Casi no podía ver") - 0.2, { y: 16 });
+tl.to($$(".dib08 .mn-man, .dib08 .mn-efr"), { filter: "blur(0px)", opacity: 1, duration: 1.2, ease: "power1.inOut" }, at("No eran niños") - 0.3);
+aparece([".nac08", ".d1"], at("habían nacido") - 0.1, 0.4);
+salta([".p1", ".y1"], at("antes de que Jacob") , { st: 0.1 });
+traza(".fl08", at("diecisiete años"), 0.9);
+aparece(".d2", at("diecisiete años") + 0.3, 0.4);
+salta([".p2", ".y2"], at("diecisiete años") + 0.7, { st: 0.1 });
+entra(".abr08", at("Jacob los besa") - 0.1, { y: 16 });
+late(".dib08 .mn-man, .dib08 .mn-efr", at("los abraza"), { s: 1.04, n: 1 });
+</script>

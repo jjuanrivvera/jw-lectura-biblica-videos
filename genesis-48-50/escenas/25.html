@@ -1,0 +1,63 @@
+<!--incluir:_g49b-hijo.html-->
+<style>
+
+</style>
+
+<div class="fase fmapa"><!--incluir:_b6.html--><div class="funde-der"></div></div>
+<div class="cab ch"><span class="cap">Génesis 49</span><span>versículo 13</span></div>
+<div class="hijo gh lea" style="--c: var(--lea)"><img src="assets/img/zabulon-g.jpg" /></div>
+<div class="pres">
+  <div class="nhijo">Zabulón<small>tolerancia, o posiblemente morada elevada</small></div>
+  <div class="cita">“Zabulón vivirá <b>junto al mar</b>, junto a la orilla donde están anclados los barcos. Y su extremo más lejano estará en <b>dirección a Sidón</b>”<span class="ref">GÉNESIS 49:13</span></div>
+</div>
+<div class="mini"><div class="nhijo">Zabulón<small>cómo se cumplió</small></div></div>
+<div class="col49 x25">
+  <div class="b b1">
+    <div class="cumple"><div class="k">en el mapa</div><div class="x">no toca <b>ni el Mediterráneo ni el mar de Galilea</b></div></div>
+    <div class="cumple c2"><div class="k">pero</div><div class="x">está <b>entre los dos mares</b>: buena posición para el comercio</div></div>
+  </div>
+  <div class="b b2">
+    <div class="cumple"><div class="k">“en dirección a Sidón”</div><div class="x">quiere decir <b>hacia el norte</b></div></div>
+    <div class="cumple c2"><div class="k">Sidón</div><div class="x">no era de Zabulón: quedaba <b>del lado de Aser</b></div></div>
+  </div>
+</div>
+<div class="fu49 f"><i>La Atalaya</i>, junio de 2025, “Qué nos enseñan las últimas palabras de Jacob (parte 2)”, pág.&nbsp;8 · <i>Perspicacia</i>, “Zabulón”, pág.&nbsp;1220</div>
+
+<script>
+/*incluir:_g49b-hijo.js*/
+const [zx, zy] = B6.zabulon, [sx, sy] = B6.sidon, [ax, ay] = B6.aser;
+pinta(".marcas", `
+  <ellipse class="anillo oro a-z" cx="${zx - 10}" cy="${zy - 10}" rx="230" ry="120" transform="rotate(-22 ${zx} ${zy})" style="stroke-width:10"/>
+  ${flecha(1450, 1105, 1292, 1100, "fo", { color: "#1f6fbf", w: 14 })}
+  ${flecha(1730, 1125, 1878, 1180, "fe", { color: "#1f6fbf", w: 14 })}
+  <g class="lm">${chip(1275, 1100, "Mediterráneo", { fs: 30, cls: "cielo", ancla: "der" })}</g>
+  <g class="lg">${chip(1890, 935, "mar de Galilea", { fs: 36, cls: "cielo", ancla: "der" })}</g>
+  ${flecha(zx + 30, zy - 150, sx + 10, sy + 70, "fn", { color: "#d99a14", w: 16 })}
+  <g class="ln">${chip(1735, 300, "hacia el norte", { fs: 36, cls: "oro" })}</g>
+  <circle class="anillo a-s" cx="${sx}" cy="${sy}" r="60" style="stroke-width:9"/>
+  <g class="la">${chip(1730, 160, "Sidón: del lado de Aser", { fs: 30, cls: "rojo" })}</g>
+`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+const tM = at("En el mapa");
+tl.set($(".fmapa .cam"), encuadre({ x: 1000, y: 760, w: 1040, h: 1003 }, V), 0);
+hijoEntra(0.3);
+entra(".pres .cita", 0.9, { y: 24 });
+hijoAMapa(tM - 0.6);
+traza(".a-z", tM + 0.3, 0.9);
+const tE = at("Pero estaba entre");
+secuencia([[".b1", tM + 0.1], [".b2", at("En dirección a Sidón quiere") - 0.2]]);
+entra(".b1 .c2", tE - 0.1, { y: 16 });
+traza(".fo", tE, 0.6); aparece(".fo-p", tE + 0.5, 0.2);
+traza(".fe", tE + 0.3, 0.6); aparece(".fe-p", tE + 0.8, 0.2);
+aparece([".lm", ".lg"], tE + 0.6, 0.4);
+const tS = at("En dirección a Sidón quiere");
+desaparece([".fo", ".fo-p", ".fe", ".fe-p", ".lm", ".lg"], tS - 0.2, 0.4);
+const e2 = encuadre({ x: 1240, y: 100, w: 1000, h: 965 }, V);
+camara(".fmapa .cam", tS - 0.3, 1.0, { scale: e2.scale, x: e2.x });
+camara(".fmapa .cam", tS + 0.5, 1.6, { y: e2.y });
+traza(".fn", tS + 0.2, 1.6); aparece(".fn-p", tS + 1.7, 0.2);
+aparece(".ln", at("hacia el norte") - 0.1, 0.4);
+traza(".a-s", at("Sidón no era") - 0.1, 0.7);
+entra(".b2 .c2", at("Sidón no era") - 0.2, { y: 16 });
+aparece(".la", at("del lado de Aser") - 0.3, 0.4);
+</script>

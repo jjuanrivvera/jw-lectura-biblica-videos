@@ -1,0 +1,26 @@
+<style>
+.mapa .cam img, .mapa .cam svg { width: 2880px; height: 1800px; }
+.alba { position: absolute; left: 0; top: 0; width: 1120px; height: 1080px; background: radial-gradient(ellipse 70% 55% at 85% 0%, rgba(255, 196, 110, 0.55), rgba(255, 160, 80, 0.12) 55%, transparent 75%); mix-blend-mode: screen; }
+.par { display: flex; flex-direction: column; gap: 6px; border-left: 8px solid var(--oro); padding-left: 30px; }
+.par .cita { font-size: 58px; }
+</style>
+<!--incluir:_jaboc.html-->
+<div class="alba"></div>
+<div class="cab sobre"><span class="cap">Génesis 32</span><span>versículos 30 y 31</span></div>
+<div class="col der">
+  <div class="b a1"><div class="def"><div class="t">Peniel<i>Peni·’él</i></div><div class="x">‘<b>rostro de Dios</b>’</div><div class="s">nota de la TNM en 32:30 · también Penuel</div></div><div class="cita md">“He visto a Dios cara a cara y aun así conservo la vida”<span class="ref">GÉNESIS 32:30</span></div></div>
+  <div class="b a2"><div class="m">nadie puede ver a Dios y seguir vivo</div><div class="f">Éxodo 33:20</div><div class="cita md">“sólo fué el ángel materializado de Jehová al que había visto”</div><div class="f"><i>La Atalaya</i>, 1 de diciembre de 1951, pág. 734</div></div>
+  <div class="b a3"><div class="m md">paralelismo: la misma idea dos veces, con otras palabras</div><div class="par"><div class="cita p1">“que se alegre <b>Jacob</b>,</div><div class="cita p2">que <b>Israel</b> esté feliz”</div></div><div class="f">Salmo 14:7 · <i>Perspicacia</i>, vol. 2, “Jacob”, pág. 10</div></div>
+</div>
+<script>
+pinta(".marcas", `<circle class="anillo a-p" cx="1041" cy="874" r="80"/>`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 420, y: 180, w: 1650, h: 1590 }, V), 0);
+tl.set($(".jb"), { opacity: 1 }, 0);
+aparece(".alba", 0.2, 2.5);
+traza(".a-p", at("Peniel"), 0.8);
+late(".a-p", at("rostro de Dios"), { s: 1.15, n: 3 });
+secuencia([[".a1", 0.4], [".a2", at("Nadie puede")], [".a3", at("Desde entonces")]]);
+entra(".p1", at("que se alegre"), { y: 16 });
+entra(".p2", at("que Israel"), { y: 16 });
+</script>

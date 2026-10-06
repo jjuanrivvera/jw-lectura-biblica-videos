@@ -1,0 +1,70 @@
+<style>
+.q03 { position: absolute; left: 90px; right: 90px; top: 92px; text-align: center; }
+.q03 .cita { font-size: 56px; line-height: 1.2; }
+.q03 .cita .ref { margin-top: 16px; }
+.lados { position: absolute; left: 70px; right: 70px; top: 430px; height: 560px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+.lado { position: relative; border-radius: 30px; background: rgba(10, 16, 22, 0.42); border: 3px solid rgba(241, 233, 216, 0.12); overflow: hidden; }
+.lado svg.tp { position: absolute; left: 24px; top: 90px; width: 400px; height: 340px; }
+.lado .tx { position: absolute; left: 440px; right: 30px; top: 70px; display: flex; flex-direction: column; gap: 14px; }
+.lado .tx .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tenue); }
+.lado .tx .m { font-size: 66px; }
+.lado .pie3 { position: absolute; left: 30px; right: 30px; bottom: 26px; }
+.lado.der { border-color: rgba(233, 191, 96, 0.5); }
+.dibujo { fill: none; stroke: var(--tiza); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.dibujo.oro { stroke: var(--oro); }
+.tacha { stroke: var(--rojo); stroke-width: 8; fill: none; stroke-linecap: round; }
+.nota03 { position: absolute; left: 0; right: 0; bottom: 22px; text-align: center; }
+.nota03 span { display: inline-block; padding: 8px 22px; border-radius: 12px; background: rgba(15, 22, 30, 0.86); font-family: "Montserrat", sans-serif; font-size: 24px; color: var(--tenue); }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 40</span><span>versículos 2 y 3</span></div>
+<div class="q03"><div class="cita c03">“Jehová tu Dios predijo esta calamidad contra este lugar, y <b>Jehová la ha traído tal como había dicho</b>, porque ustedes pecaron contra Jehová y desobedecieron su voz”<span class="ref">NEBUZARADÁN, JEFE DE LA GUARDIA · JEREMÍAS 40:2, 3</span></div></div>
+<div class="lados">
+  <div class="lado izq">
+    <svg class="tp" viewBox="0 0 360 300">
+      <!-- el templo en pie: lo que daba confianza a Judá -->
+      <path class="dibujo t1" d="M 40 270 H 320 M 60 270 V 130 M 300 270 V 130 M 50 130 H 310 M 50 130 L 180 60 L 310 130"/>
+      <path class="dibujo t1" d="M 105 270 V 150 M 145 270 V 150 M 215 270 V 150 M 255 270 V 150"/>
+      <path class="dibujo t1" d="M 160 270 V 205 C 160 190 200 190 200 205 V 270"/>
+    </svg>
+    <div class="tx">
+      <div class="k">Judá, por décadas</div>
+      <div class="m i1">reyes, príncipes, sacerdotes</div>
+      <div class="m rojo i2" style="position:relative">decían que Jeremías mentía<svg class="tch" viewBox="0 0 400 100" preserveAspectRatio="none" style="position:absolute;left:-12px;top:8%;width:104%;height:84%"><path class="tacha t-x" vector-effect="non-scaling-stroke" d="M 6 74 C 120 56 260 44 394 26"/></svg></div>
+    </div>
+    <div class="f pie3 j03">“Muchos creían que Jehová jamás haría algo así. Su templo estaba allí” · <i>Dios nos habla mediante Jeremías</i>, cap. 13, párr. 12</div>
+  </div>
+  <div class="lado der">
+    <svg class="tp" viewBox="0 0 360 300">
+      <!-- el mismo templo, en ruinas: columnas rotas, frontón caído, humo -->
+      <path class="dibujo oro t2" d="M 40 270 H 320 M 60 270 V 196 L 70 184 L 78 192 M 300 270 V 168 L 290 158 L 284 170 M 105 270 V 222 L 114 212 M 145 270 V 240 M 215 270 V 206 L 224 196 L 230 204 M 255 270 V 232 L 262 226"/>
+      <path class="dibujo oro t2" d="M 76 262 L 150 238 L 146 266 M 168 266 L 240 246 L 258 266 M 270 264 C 284 252 300 252 312 264"/>
+      <path class="dibujo oro t2" d="M 96 268 C 100 258 110 256 116 266 M 196 268 C 198 260 206 258 212 266"/>
+      <path class="dibujo t3" d="M 130 150 C 116 124 144 108 132 82 C 124 64 140 50 134 34 M 182 160 C 168 128 198 112 184 80 C 176 62 192 48 186 30 M 234 150 C 222 126 246 112 236 88" style="stroke:var(--tenue);stroke-width:5"/>
+    </svg>
+    <div class="tx">
+      <div class="k">en Ramá, ahora</div>
+      <div class="m i3">un oficial babilonio</div>
+      <div class="m oro i4">“tal como había dicho”</div>
+      <div class="propio chico p03">observación propia</div>
+    </div>
+    <div class="f pie3 j04">Por qué Nebuzaradán hablaba así no lo dice la Biblia ni ninguna publicación: no hay base para decir que creyera en Jehová.</div>
+  </div>
+</div>
+
+<script>
+aparece(".cab", 0.2, 0.5);
+escribe(".c03", 0.5, at("Lo llamativo") - 1.2);
+entra(".lados .lado", at("Lo llamativo") - 0.4, { y: 40, st: 0.15 });
+traza(".t1", at("Por décadas"), 1.6, { st: 0.1 });
+entra(".i1", at("los reyes"), { y: 20 });
+entra(".i2", at("mentía") - 0.3, { y: 20 });
+entra(".j03", at("Muchos creían"), { y: 14 });
+traza(".t2", at("Y ahora"), 1.4, { st: 0.15 });
+traza(".t3", at("Y ahora") + 1.0, 1.2);
+entra(".i3", at("un oficial"), { y: 20 });
+entra(".i4", at("cumplió") - 0.2, { y: 20 });
+traza(".t-x", at("es un oficial") + 0.6, 0.6);
+entra(".p03", at("Jehová cumplió"), { y: 10 });
+entra(".j04", at("Por qué hablaba"), { y: 14 });
+</script>

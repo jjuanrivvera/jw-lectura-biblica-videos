@@ -1,0 +1,52 @@
+<style>
+.ext { position: absolute; left: 70px; right: 70px; top: 100px; display: grid; grid-template-columns: 1fr 120px 1fr; align-items: stretch; }
+.ext .p { border-radius: 30px; padding: 30px 36px; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.ext .p .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.18em; }
+.ext .p .x { font-family: "Fraunces", serif; font-weight: 600; font-size: 66px; line-height: 1.1; }
+.ext .p .r { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.1em; color: var(--tenue); }
+.ext .ini { border: 5px solid var(--oro); background: rgba(233, 191, 96, 0.10); }
+.ext .ini .k { color: var(--oro); }
+.ext .fin { border: 5px solid var(--rojo); background: rgba(236, 138, 103, 0.10); }
+.ext .fin .k { color: var(--rojo); }
+.ext svg { width: 120px; height: 100%; }
+.ext svg path { fill: none; stroke: var(--tiza); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+.med26 { position: absolute; left: 70px; right: 70px; top: 470px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; align-items: center; }
+.med26 .m { font-size: 60px; }
+.med26 .m b { color: var(--oro); }
+.semanas { position: absolute; left: 70px; right: 70px; top: 700px; display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 24px; }
+.semanas .tj .x { font-size: 36px; }
+.semanas .tj .k { font-size: 24px; }
+.pie26 { position: absolute; left: 70px; right: 70px; bottom: 18px; font-family: "Montserrat", sans-serif; font-size: 21px; color: var(--tenue); text-align: center; }
+.pie26 i { color: var(--tiza); }
+</style>
+
+<div class="cab"><span class="cap">el hilo de los dos capítulos</span><span>Jeremías 40:9 y 41:18</span></div>
+<div class="ext">
+  <div class="p ini"><div class="k">EL PRINCIPIO</div><div class="x">“No tengan miedo de servir a los caldeos”</div><div class="r">GUEDALÍAS · 40:9</div></div>
+  <svg viewBox="0 0 120 300" preserveAspectRatio="none"><path class="fl26" d="M 14 150 H 100 M 78 126 L 104 150 L 78 174"/></svg>
+  <div class="p fin"><div class="k">EL FINAL</div><div class="x">“porque ahora tenían miedo de los caldeos”</div><div class="r">41:18</div></div>
+</div>
+<div class="med26">
+  <div class="m a26">Babilonia no les había hecho nada: <b>el que mató al gobernador fue Ismael</b></div>
+  <div><div class="m oro b26">el miedo los llevó más lejos que el enemigo</div><div class="propio chico c26" style="margin-top:12px">observación propia</div></div>
+</div>
+<div class="semanas">
+  <div class="tj s1"><div class="k">la semana pasada · 38:19</div><div class="x">Sedequías: “Les tengo miedo a los judíos”</div></div>
+  <div class="tj on s2"><div class="k">esta semana · 41:17, 18</div><div class="x">camino de Egipto antes de preguntarle a Jehová</div></div>
+  <div class="tj s3"><div class="k">la próxima semana · 42:11</div><div class="x">Jehová: “No tengan miedo del rey de Babilonia, a quien ustedes temen”</div></div>
+</div>
+<div class="pie26">“Si dejáramos que el miedo al hombre estuviera por encima de nuestro temor de Dios, podríamos empezar a creernos cosas que están en contra de la verdad que viene de Jehová” · <i>La Atalaya</i>, julio de 2024</div>
+
+<script>
+aparece(".cab", 0.2, 0.5);
+entra(".ini", at("Guedalías dijo"), { x: -40, y: 0 });
+traza(".fl26", at("Y el capítulo") - 0.2, 0.7);
+entra(".fin", at("Y el capítulo"), { x: 40, y: 0 });
+entra(".a26", at("Babilonia no"), { y: 24 });
+entra(".s2", at("Y en vez de"), { y: 24 });
+entra(".b26", at("El miedo los llevó"), { y: 24 });
+entra(".c26", at("enemigo") + 0.3, { y: 10 });
+entra(".s1", at("La semana pasada"), { y: 24 });
+entra(".s3", at("Y en el capítulo siguiente"), { y: 24 });
+aparece(".pie26", at("Y en el capítulo siguiente") + 1.0, 0.6);
+</script>

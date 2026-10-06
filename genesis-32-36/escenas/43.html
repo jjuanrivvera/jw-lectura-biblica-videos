@@ -1,0 +1,20 @@
+<style>
+.ilus.me { left: 60px; top: 90px; width: 900px; height: 987px; border-radius: 0 0 0 0; }
+.ilus.me .kb svg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.col.der { left: 1010px; right: 60px; width: auto; }
+.pie-img.pm { left: 72px; top: 1030px; font-size: 19px; background: rgba(15,22,30,0.85); padding: 3px 10px; border-radius: 8px; }
+</style>
+<div class="ilus me"><div class="kb"><img src="assets/img/mapa-edom.jpg" /><svg viewBox="0 0 1200 1316" preserveAspectRatio="xMidYMid slice"><circle class="anillo a1m" cx="766" cy="397" r="46"/><circle class="anillo a3m" cx="655" cy="675" r="46"/></svg></div></div>
+<div class="pie-img pm">Mapa: “Tierra de Edom”, <i>Perspicacia</i>, vol. 1, “Edom”, pág. 736 (wol.jw.org) · números de la investigación: 1 Bozrá, 2 Temán, 3 Petra</div>
+<div class="cab"><span class="cap">Edom hoy</span><span>Génesis 36:8, 33 · Jeremías 49:16</span></div>
+<div class="col der">
+  <div class="b a1"><div class="m">el sur de Jordania: unos <b>160 km</b> de montañas, con cimas de más de <b>1.700 m</b></div><div class="cita md">“paredes abruptas de arenisca roja que se convierten en desfiladeros inaccesibles”</div><div class="f"><i>Perspicacia</i>, vol. 1, “Edom”, págs. 736, 753</div><div class="cita md" style="color:var(--oro)">“en los refugios del peñasco”<span class="ref">JEREMÍAS 49:16</span></div></div>
+  <div class="b a2"><div class="m xl">Petra</div><div class="cita md">sus ruinas “no formaban parte de la antigua ciudad edomita de Sela”</div><div class="f"><i>Perspicacia</i>, vol. 2, “Sela”, pág. 988</div><div class="m md">la tallaron los nabateos: “la capital del reino nabateo de Aretas IV” (galería de la TNM, 2 Corintios 11:32)</div><span class="externa">hoy, Patrimonio de la Humanidad: cerca de un millón de visitantes al año</span></div>
+  <div class="b a3"><div class="cita md">“Se ha identificado a Bozrá con la moderna Buseira, situada a unos 50 Km. al NNE. de Petra”</div><div class="f"><i>Perspicacia</i>, vol. 1, “Bozrá”, pág. 370</div><span class="externa">excavada entre 1971 y 1980: un centro fortificado de la época de los reyes de Judá</span></div>
+</div>
+<script>
+kb(".me .kb", 0, DUR, { s: 1.12, y: 3 }, { s: 1.0, y: 0 });
+traza(".a3m", at("Allí está Petra"), 0.7);
+traza(".a1m", at("Y Bozrá"), 0.7);
+secuencia([[".a1", 0.4], [".a2", at("Allí está Petra")], [".a3", at("Y Bozrá")]]);
+</script>

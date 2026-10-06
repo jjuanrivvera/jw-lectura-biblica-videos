@@ -1,0 +1,42 @@
+<!--lead:2.4-->
+<style>
+.col.d25 { left: 1100px; right: 60px; width: auto; top: 110px; bottom: 80px; }
+.pie25 { left: 24px; bottom: 20px; }
+.d25 .def .x { font-size: 54px; }
+</style>
+
+<div class="capcard cc"><div class="num">Génesis 39</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">en casa de Potifar</div><div class="edad">José, esclavo en Egipto</div>
+  <div class="pista"><span class="hecho">37</span><span class="hecho">38</span><span class="on">39</span><span>40</span><span>41</span></div></div>
+
+<div class="fase fp">
+  <div class="sangre"><div class="kb"><img src="assets/img/potifar.jpg" /></div></div>
+  <div class="velo der"></div>
+  <div class="pie pie25">“Jehová hizo que a José le fuera bien incluso cuando se lo vendieron a Potifar para que fuera su esclavo”. <i>La Atalaya</i> (estudio), enero de 2023, pág. 15 (wol.jw.org)</div>
+  <div class="cab sobre" style="z-index:3"><span class="cap">Génesis 39</span><span>versículo 1</span></div>
+  <div class="col d25">
+    <div class="b a1">
+      <div class="m">Potifar, “jefe de la guardia del faraón y funcionario de la corte”</div>
+      <div class="f">Génesis 39:1 · no es Potifera, el sacerdote de On</div>
+    </div>
+    <div class="b a2">
+      <div class="def"><div class="t">jefe de la guardia<i>tab·báj</i></div><div class="x">primero “matarife; matador”, después “<b>verdugo</b>”</div><div class="s"><i>Perspicacia</i>, vol. 1, “Guardia”, pág. 1052</div></div>
+      <div class="m md rojo tm">la guardia del rey cumplía sus órdenes, también las ejecuciones: “Potifar ejercía esta función”</div>
+      <div class="f tm"><i>Perspicacia</i>, vol. 1, “Ejecución”, pág. 780</div>
+    </div>
+    <div class="b a3">
+      <div class="def"><div class="t">funcionario de la corte<i>sa·rís</i></div><div class="x">también “eunuco” u “<b>oficial</b>”</div><div class="s">nota de 37:36: o “oficial”</div></div>
+      <div class="cita md ca">Potifar era casado, así que “no era un eunuco en el sentido usual de la palabra”<span class="ref">PERSPICACIA, VOL. 2, “POTIFAR”, PÁG. 692</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const t0 = at("En Egipto");
+capitulo(".cc", 0.3, t0 - 0.45);
+entra(".cc .pista", 0.9, { y: 20 });
+aparece(".fp", t0 - 0.1, 0.6);
+kb(".fp .kb", t0, DUR, { s: 1.1, x: 2 }, { s: 1.0, x: 0 });
+secuencia([[".a1", t0 + 0.3], [".a2", at("Jefe de la guardia")], [".a3", at("Y funcionario")]]);
+entra(".tm", at("La guardia cumplía"), { y: 16, st: 0.2 });
+entra(".ca", at("pero Potifar estaba casado"), { y: 16 });
+</script>

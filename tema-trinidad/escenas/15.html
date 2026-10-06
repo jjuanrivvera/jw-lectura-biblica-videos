@@ -1,0 +1,52 @@
+<style>
+.curva { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.cam { stroke: var(--cielo); stroke-width: 9; fill: none; stroke-linecap: round; }
+.pun { fill: var(--tinta); stroke: var(--cielo); stroke-width: 7; }
+.lb { position: absolute; width: 520px; }
+.lb .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; color: var(--tenue); }
+.lb .cita { font-size: 46px; margin-top: 6px; }
+.la { left: 60px; top: 110px; width: 420px; }
+.lbb { left: 690px; top: 600px; width: 540px; text-align: center; }
+.lc { left: 1440px; top: 110px; width: 420px; }
+.lc .cita b { color: var(--oro); }
+.centro { position: absolute; left: 540px; right: 540px; top: 90px; height: 430px; }
+.centro > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.centro .def .x { font-size: 30px; }
+.centro .cita { font-size: 44px; }
+.centro .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; color: var(--tenue); }
+.gloria { position: absolute; left: 500px; right: 500px; top: 150px; text-align: center; }
+.gloria .cita { font-size: 66px; }
+.gloria .cita b { color: var(--oro); }
+</style>
+
+<div class="cab"><span class="sec">Filipenses 2:5-11</span><span></span></div>
+<svg class="curva" viewBox="0 0 1920 1080">
+  <path class="cam c1" d="M 200 480 C 420 500 600 860 960 870"/>
+  <path class="cam c2" d="M 960 870 C 1320 860 1500 500 1720 480"/>
+  <circle class="pun pa" cx="200" cy="480" r="18"/><circle class="pun pb" cx="960" cy="870" r="18"/><circle class="pun pc" cx="1720" cy="480" r="18"/>
+</svg>
+<div class="lb la"><div class="k">VERSÍCULO 6</div><div class="cita">“Aunque existía en la forma de Dios, <b class="cielo">ni se le pasó por la mente tratar de ser igual a Dios</b>”.</div></div>
+<div class="lb lbb"><div class="k">VERSÍCULO 8</div><div class="cita">“Se humilló y se hizo obediente hasta la muerte”.</div></div>
+<div class="lb lc"><div class="k">VERSÍCULO 9</div><div class="cita">“<b>Dios lo elevó</b> a un puesto superior”.</div></div>
+<div class="centro">
+  <div class="b k1"><div class="def"><div class="t">Término · griego</div><div class="w"><span class="gr">μορφή</span> · morfḗ</div><div class="x">“forma”: naturaleza. Jesús era un ser espiritual, como “Dios es un espíritu” (Juan 4:24)</div></div></div>
+  <div class="b k2"><div class="def"><div class="t">Término · griego</div><div class="w"><span class="gr">ἁρπαγμός</span> · harpagmós</div><div class="x">literalmente, “<b>cosa que arrebatar</b>”. Nunca se usa para retener algo que uno ya tiene</div></div></div>
+  <div class="b k3"><div class="k">LO CONTRARIO: EL DIABLO A EVA</div><div class="cita">“Serán como Dios”.<span class="ref">Génesis 3:5</span></div></div>
+</div>
+<div class="gloria"><div class="cita">“Para <b>la gloria de Dios el Padre</b>”.<span class="ref">Filipenses 2:11</span></div></div>
+<div class="fuente">Nota de estudio de la TNM en Filipenses 2:6</div>
+
+<script>
+entra(".cab", 0.3, { y: -10 });
+aparece(".pa", 0.6, 0.4);
+entra(".la", 0.8, { y: 30 });
+secuencia([[".k1", at("Forma, en griego")], [".k2", at("Y la expresión")], [".k3", at("Su actitud fue")]], at("Jesús se humilló"));
+entra(".fuente", at("Forma, en griego") + 0.5, { y: 10 });
+traza(".c1", at("Jesús se humilló"), 1.8);
+aparece(".pb", at("Jesús se humilló") + 1.7, 0.3);
+entra(".lbb", at("hasta la muerte") - 0.4, { y: 30 });
+traza(".c2", at("Dios lo elevó") - 0.3, 1.6);
+aparece(".pc", at("Dios lo elevó") + 1.2, 0.3);
+entra(".lc", at("Dios lo elevó") + 0.4, { y: 30 });
+entra(".gloria", at("Y todo eso"), { y: 30 });
+</script>

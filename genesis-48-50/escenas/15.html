@@ -1,0 +1,72 @@
+<!--lead:2.0-->
+<style>
+.img15 { position: absolute; inset: 0; overflow: hidden; }
+.img15 .kb { position: absolute; inset: 0; }
+.img15 img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.img15 .baja { position: absolute; left: 0; right: 0; bottom: 0; height: 560px; background: linear-gradient(180deg, rgba(22, 32, 42, 0) 0%, rgba(22, 32, 42, 0.88) 48%, rgba(22, 32, 42, 0.97) 100%); }
+.img15 .apaga { position: absolute; inset: 0; background: rgba(22, 32, 42, 0.86); opacity: 0; }
+.q15 { position: absolute; left: 90px; right: 90px; bottom: 100px; }
+.q15 .cita { font-size: 60px; }
+.pie15 { right: 24px; top: 84px; max-width: 760px; }
+.tit15 { position: absolute; left: 90px; right: 90px; top: 100px; }
+.tit15 .m { white-space: nowrap; }
+.tit15 .m { font-size: 92px; }
+.tit15 .f { font-size: 24px; margin-top: 6px; }
+.tres15 { position: absolute; left: 90px; right: 90px; top: 300px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; }
+.tres15 .tj { min-height: 210px; justify-content: center; }
+.tres15 .tj .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 62px; line-height: 1.02; }
+.fila15 { position: absolute; left: 70px; right: 70px; top: 640px; display: flex; justify-content: space-between; }
+.fila15 .med { position: relative; width: 132px; }
+.fila15 .med .foto { border-width: 5px; }
+.fila15 .med .n { font-size: 24px; letter-spacing: 0; }
+.ley15 { position: absolute; left: 90px; right: 90px; top: 870px; display: flex; justify-content: space-between; align-items: baseline; }
+.ley15 .m { font-size: 64px; }
+.mes15 { position: absolute; left: 380px; top: 528px; }
+</style>
+
+<div class="img15"><div class="kb"><img src="assets/img/jacob-doce.jpg" /></div><div class="baja"></div><div class="apaga"></div></div>
+<div class="pie pie15">Jacob en su lecho de muerte, con sus 12 hijos. <i>La Atalaya</i> (estudio), junio de 2025, pág.&nbsp;2</div>
+<div class="cab sobre"><span class="cap">Génesis 49</span><span>versículos 1 y 2</span></div>
+<div class="q15"><div class="cita">“Reúnanse para que les diga lo que les va a suceder en <b>la parte final de los días</b>”<span class="ref">JACOB · GÉNESIS 49:1</span></div></div>
+
+<div class="tit15"><div class="m oro">una bendición profética</div><div class="f"><i>La Atalaya</i> (estudio), junio de 2025, “Qué nos enseñan las últimas palabras de Jacob”, parte 1, págs.&nbsp;2 a 3</div></div>
+<div class="tres15">
+  <div class="tj t1"><div class="k">algunas palabras</div><div class="x">reprenden</div></div>
+  <div class="tj t2"><div class="k">otras</div><div class="x">prometen una posición</div></div>
+  <div class="tj t3"><div class="k">otras</div><div class="x">describen cómo sería la tribu de cada hijo</div></div>
+</div>
+<div class="fila15"></div>
+<div class="ley15"><div class="m l1">de doce hijos <b>a doce tribus con su tierra</b></div></div>
+<div class="mes15"><span class="clave cm">Judá: <b>hasta el Mesías</b></span></div>
+
+<div class="capcard cc"><div class="fondo"><img src="assets/img/b6.jpg" /></div>
+  <div class="dentro"><div class="num">Génesis 49</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16" /></svg><div class="sub">las palabras a los doce hijos</div>
+  <div class="pista"><span class="hecho">48</span><span class="on">49</span><span>50</span></div></div></div>
+
+<script>
+$(".fila15").innerHTML = HIJOS.map(([k]) => medallon(k)).join("");
+const t0 = at("Jacob llama");
+capitulo(".cc", 0.3, t0 - 0.9);
+entra(".cc .pista", 1.0, { y: 20 });
+kb(".cc .fondo", 0, t0, { s: 1.0 }, { s: 1.08 });
+tl.set($(".img15 .kb"), { transformOrigin: "50% 40%" }, 0);
+kb(".img15 .kb", t0 - 1.0, at("Es una bendición"), { s: 1.12 }, { s: 1.0 });
+aparece(".pie15", t0 - 0.4, 0.5);
+entra(".cab", t0 - 0.5, { y: -16 });
+entra(".q15", at("Reúnanse") - 0.2, { y: 30 });
+// La segunda mitad: la imagen se apaga y quedan las tres clases de palabras y los doce.
+const tB = at("Es una bendición");
+sale(".q15", tB - 0.5, { y: -20 });
+desaparece(".pie15", tB - 0.5);
+tl.fromTo($(".img15 .apaga"), { opacity: 0 }, { opacity: 1, duration: 0.7, ease: "none", immediateRender: false }, tB - 0.4);
+entra(".tit15", tB, { y: 20 });
+entra(".t1", at("algunas palabras reprenden") + 0.4, { y: 24 });
+entra(".t2", at("otras prometen") , { y: 24 });
+entra(".t3", at("o describen"), { y: 24 });
+salta(".fila15 .med", at("la tribu de cada hijo") - 0.3, { desde: 0.5, st: 0.08, d: 0.45 });
+escribe(".l1", at("hay que mirar") , 1.4);
+const tJ = at("las palabras sobre Judá");
+atenua($$(".fila15 .med").filter((m) => !m.classList.contains("r-juda")), tJ, 0.3);
+tl.to($(".fila15 .r-juda"), { scale: 1.22, y: -14, duration: 0.6, ease: "back.out(2)" }, tJ);
+entra(".mes15", tJ + 0.3, { y: 16 });
+</script>

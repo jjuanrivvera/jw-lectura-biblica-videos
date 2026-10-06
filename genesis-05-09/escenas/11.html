@@ -1,0 +1,53 @@
+<!--lead:2.6-->
+<style>
+.dia { position: absolute; left: 60px; top: 130px; width: 980px; height: 880px; }
+.dia .rot { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 4px; }
+.dia .lb { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; }
+.col { top: 120px; bottom: 70px; right: 60px; width: 780px; }
+.col .cita { font-size: 50px; }
+.col .m { font-size: 66px; }
+</style>
+
+<div class="capcard"><div class="num">Génesis 6</div><svg viewBox="0 0 820 40"><path d="M 10 22 C 220 6 600 36 810 16"/></svg><div class="sub">ángeles, violencia y el arca</div></div>
+<div class="fase fx">
+  <div class="cab"><span class="cap">Génesis 6</span><span>versículos 1 y 2</span></div>
+  <svg class="dia" viewBox="0 0 980 880">
+    <defs>
+      <linearGradient id="e11-cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c1830"/><stop offset="1" stop-color="#23406e"/></linearGradient>
+      <linearGradient id="e11-tierra" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a5b38"/><stop offset="1" stop-color="#3a2a1c"/></linearGradient>
+      <radialGradient id="e11-luz"><stop offset="0" stop-color="#fff2c0" stop-opacity="0.55"/><stop offset="1" stop-color="#fff2c0" stop-opacity="0"/></radialGradient>
+    </defs>
+    <g class="cielo"><rect x="0" y="0" width="980" height="400" rx="30" fill="url(#e11-cielo)"/>
+      <circle cx="490" cy="120" r="260" fill="url(#e11-luz)"/>
+      <g fill="#fff8e6"><circle cx="90" cy="60" r="3"/><circle cx="180" cy="140" r="2"/><circle cx="820" cy="80" r="3"/><circle cx="900" cy="190" r="2"/><circle cx="700" cy="40" r="2"/><circle cx="300" cy="50" r="2.5"/><circle cx="620" cy="170" r="2"/><circle cx="60" cy="250" r="2"/><circle cx="940" cy="330" r="2.5"/></g>
+      <text class="rot" x="40" y="370" fill="#93bbef">LOS CIELOS</text>
+      <text class="lb" x="40" y="80" fill="#f1e9d8">los “hijos del Dios verdadero”</text>
+      <text x="40" y="120" font-family="Montserrat" font-weight="600" font-size="22" fill="#b3bdc8">la misma expresión en Job 1:6; 2:1; 38:7</text></g>
+    <g class="tierra"><rect x="0" y="480" width="980" height="400" rx="30" fill="url(#e11-tierra)"/>
+      <text class="rot" x="40" y="850" fill="#e9bf60">LA TIERRA</text>
+      <text class="lb" x="40" y="560" fill="#f1e9d8">“las hijas de los hombres”</text></g>
+    <path class="baja" d="M 700 250 C 720 380 700 520 690 690" stroke="#e9adcc" stroke-width="10" fill="none" stroke-dasharray="20 14" stroke-linecap="round"/>
+    <path class="punta" d="M 664 662 L 690 704 L 716 664" stroke="#e9adcc" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text class="lb tb" x="430" y="450" fill="#e9adcc">abandonaron su lugar</text>
+    <text class="lb tm" x="330" y="760" fill="#f1e9d8">se materializaron como hombres</text>
+  </svg>
+  <div class="col">
+    <div class="b a1"><div class="m">¿quiénes eran?</div><div class="cita">“En hebreo, esta expresión se refiere a los <b>ángeles</b>”<span class="ref">NOTA DE LA TNM EN GÉNESIS 6:2</span></div></div>
+    <div class="b a2"><div class="cita">“los ángeles que no mantuvieron su posición original, sino que <b>abandonaron el lugar</b> donde les correspondía vivir”<span class="ref">JUDAS 6</span></div></div>
+    <div class="b a3"><div class="cita">“en los días de Noé, mientras se construía el arca”<span class="ref">1 PEDRO 3:20</span></div></div>
+    <div class="b a4"><div class="m">¿hombres fieles de la línea de Set? <b style="color:var(--rojo)">No cuadra</b></div><div class="cita" style="font-size:42px">“¿por qué mencionar su matrimonio con las hijas de los hombres como algo especial? El matrimonio y el nacimiento de niños había tenido lugar por más de mil quinientos años”<span class="ref">PERSPICACIA, VOL. 2, “NEFILIM”</span></div></div>
+  </div>
+</div>
+
+<script>
+capitulo(".capcard", 0.2, LEAD - 0.1);
+const T0 = LEAD + 0.35;
+entra(".cab", T0, { y: -20 });
+aparece(".cielo", T0, 0.6);
+aparece(".tierra", at("con las hijas"), 0.6);
+secuencia([[".a1", at("Quiénes eran")], [".a2", at("Judas habla")], [".a3", at("Y Pedro fecha")], [".a4", at("Serían hombres")]]);
+traza(".baja", at("Unos ángeles"), 1.2);
+aparece(".punta", at("Unos ángeles") + 1.1, 0.2);
+escribe(".tm", at("se materializaron"), 1.0);
+escribe(".tb", at("abandonaron el lugar"), 1.0);
+</script>

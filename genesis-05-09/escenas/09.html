@@ -1,0 +1,39 @@
+<style>
+.ilus.im { left: 60px; top: 140px; width: 1060px; height: 530px; }
+.pie-img.pi { left: 60px; top: 682px; width: 1060px; }
+.barras { position: absolute; left: 60px; top: 760px; width: 1060px; height: 260px; }
+.col { top: 120px; bottom: 70px; right: 60px; width: 690px; }
+.col .cita { font-size: 48px; }
+.col .m { font-size: 64px; }
+.duda { align-self: stretch; }
+</style>
+
+<div class="cab sobre"><span class="cap">Génesis 5</span><span>versículo 24 · Hebreos 11:5 · Juan 3:13</span></div>
+<div class="ilus im"><div class="kb"><img src="assets/img/enoc-cueva.jpg" /></div></div>
+<div class="pie-img pi">Recreación: Génesis no dice que se escondiera · La Atalaya, núm. 1 de 2017, pág. 13</div>
+<svg class="barras" viewBox="0 0 1060 260">
+  <g font-family="Fraunces" font-weight="700" font-size="34" fill="#f1e9d8">
+    <g class="b0"><text x="0" y="52">Jared</text><rect x="220" y="22" width="800" height="42" rx="8" fill="#34496a" stroke="#93bbef" stroke-width="3"/><text x="620" y="54" text-anchor="middle" font-family="Montserrat" font-size="24">962 años</text></g>
+    <g class="b1"><text x="0" y="132" fill="#e9bf60">Enoc</text><rect x="220" y="102" width="304" height="42" rx="8" fill="#8a6a22" stroke="#e9bf60" stroke-width="3"/><text x="372" y="134" text-anchor="middle" font-family="Montserrat" font-size="24">365</text></g>
+    <g class="b2"><text x="0" y="212">Matusalén</text><rect x="220" y="182" width="806" height="42" rx="8" fill="#34496a" stroke="#93bbef" stroke-width="3"/><text x="623" y="214" text-anchor="middle" font-family="Montserrat" font-size="24">969 años</text></g>
+  </g>
+  <text class="mitad" x="560" y="134" font-family="Caveat" font-weight="700" font-size="44" fill="#e9bf60">menos de la mitad</text>
+</svg>
+<div class="col">
+  <div class="b a1"><div class="m">¿subió al <b>cielo</b>? <b style="color:var(--rojo)">No</b></div><div class="cita">“ningún hombre ha subido al cielo excepto el que bajó del cielo”<span class="ref">JUAN 3:13</span></div></div>
+  <div class="b a2"><div class="m">Jehová le <b>interrumpió la vida</b></div><div class="s">sin la agonía de morir · “Dios no permitió que sus opositores lo matasen” · Perspicacia, vol. 1, “Enoc”</div></div>
+  <div class="b a3"><div class="duda"><div class="t">¿en un trance profético?</div><div class="s">algo como una visión · Perspicacia lo propone como posibilidad, no como enseñanza cerrada (Heb. 11:5)</div></div></div>
+  <div class="b a4"><div class="m">el “Libro de Enoc”</div><div class="cita">“Este es un libro <b>apócrifo</b>, no inspirado”<span class="ref">PERSPICACIA, VOL. 1, “ENOC”</span></div><div class="s">escrito siglos después, probablemente en los siglos II y I a. e. c.</div></div>
+</div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".im", 0.3, { y: 30 });
+kb(".im .kb", 0.3, DUR, { s: 1.0, x: 0 }, { s: 1.1, x: -3 });
+aparece(".pi", 0.9, 0.5);
+secuencia([[".a1", 0.5], [".a2", at("Jehová le interrumpió")], [".a3", at("Puede que")], [".a4", at("Y el llamado")]]);
+[".b0", ".b2"].forEach((b) => tl.fromTo($(b + " rect"), { scaleX: 0 }, { scaleX: 1, transformOrigin: "0% 50%", duration: 0.7, ease: "power2.out", immediateRender: true }, at("menos de la mitad") - 0.6));
+tl.fromTo($(".b1 rect"), { scaleX: 0 }, { scaleX: 1, transformOrigin: "0% 50%", duration: 0.7, ease: "power2.out", immediateRender: true }, at("menos de la mitad"));
+aparece([".b0 text", ".b2 text", ".b1 text"], at("menos de la mitad") - 0.6, 0.4);
+escribe(".mitad", at("menos de la mitad") + 0.7, 0.8);
+</script>

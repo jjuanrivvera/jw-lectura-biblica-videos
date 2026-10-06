@@ -1,0 +1,47 @@
+<style>
+.pasto { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.cab.sobre span { background: rgba(15,22,30,0.82); }
+.caja-t { position: absolute; left: 80px; top: 110px; width: 1000px; padding: 22px 32px; border-radius: 26px; background: rgba(23,33,43,0.92); }
+.caja-t .m { font-size: 64px; }
+.caja-t .s { font-size: 24px; }
+.dist { font-family: "Caveat"; font-weight: 700; font-size: 64px; fill: #6b4400; }
+.fuente-p { position: absolute; left: 80px; bottom: 16px; font-size: 21px; color: #17212b; }
+</style>
+<svg class="pasto" viewBox="0 0 1920 1080"></svg>
+<div class="cab sobre"><span class="cap">Génesis 30</span><span>versículos 31 al 36</span></div>
+<div class="caja-t t1"><div class="m">salario normal: <b style="color:var(--oro)">1 de cada 5</b> crías (20 %)</div><div class="s">La Atalaya, 15 de octubre de 2003, pág. 30 · Perspicacia, vol. 2, “Pastor”, pág. 604</div></div>
+<div class="caja-t t2"><div class="m">Jacob pide solo los de <b style="color:var(--oro)">colores raros</b></div><div class="s">ovejas oscuras y cabras moteadas o con manchas · Génesis 30:32</div></div>
+<div class="caja-t t3"><div class="m">ovejas <b>blancas</b>, cabras <b>negras</b>: “solo una minoría era de varios colores”</div><div class="s">Perspicacia, vol. 2, “Jacob”, pág. 9 · vol. 1, “Cabra”, pág. 384</div></div>
+<div class="caja-t t4"><div class="m">Labán aparta los raros, <b style="color:var(--oro)">a 3 días</b> de distancia</div><div class="s">Génesis 30:35, 36 · a Jacob le queda un rebaño de un solo color</div></div>
+<div class="fuente-p">dibujo propio; los números de animales son supuestos</div>
+<script>
+/*incluir:_dibujos.js*/
+/*incluir:_rebano.js*/
+const L = [];
+for (let i = 0; i < 30; i++) {
+  if (i === 3 || i === 17) L.push({ t: "oveja", oscura: true, cls: "raro" });
+  else if (i === 8 || i === 22 || i === 27) L.push({ t: "cabra", manchas: true, cls: "raro" });
+  else L.push(i % 3 === 0 ? { t: "cabra" } : { t: "oveja" });
+}
+const fondo = defsDibujos() +
+  '<rect x="0" y="0" width="1920" height="420" fill="' + G("cielo") + '"/>' +
+  '<path d="M 0 360 C 400 320 800 380 1200 340 C 1500 310 1700 350 1920 330 L 1920 1080 L 0 1080 Z" fill="' + G("pasto") + '"/>' +
+  '<path d="M 0 420 C 500 400 1100 450 1920 410 L 1920 1080 L 0 1080 Z" fill="#a9a35c" opacity="0.6"/>' +
+  '<g class="dist-g"><path d="M 1250 470 L 1860 470" stroke="#6b4400" stroke-width="8" stroke-dasharray="20 14"/><path d="M 1836 450 L 1866 470 L 1836 490" fill="none" stroke="#6b4400" stroke-width="8"/><text class="dist" x="1560" y="450" text-anchor="middle">3 días de distancia</text></g>';
+pinta(".pasto", fondo + '<g class="reb">' + rebano(L, 120, 470, 1680, 560) + '</g>');
+const raros = $$(".pasto .raro");
+aparece(".pasto .reb", 0.2, 0.8);
+entra(".t1", 0.4, { y: 20 });
+sale(".t1", at("Jacob pidió algo") - 0.4);
+entra(".t2", at("Jacob pidió algo"), { y: 20 });
+raros.forEach((r, i) => tl.to(r, { opacity: 1, duration: 0.01 }, 0));
+// Los raros se resaltan con un halo dorado (filtro) cuando la voz los nombra.
+tl.fromTo(raros, { filter: "drop-shadow(0 0 0 rgba(240,199,94,0))" }, { filter: "drop-shadow(0 0 18px rgba(240,199,94,1))", duration: 0.6, stagger: 0.1, immediateRender: false }, at("solo los animales de colores raros"));
+sale(".t2", at("Allí las ovejas") - 0.4);
+entra(".t3", at("Allí las ovejas"), { y: 20 });
+sale(".t3", at("Y Labán apartó") - 0.4);
+entra(".t4", at("Y Labán apartó"), { y: 20 });
+aparece(".dist-g", at("a tres días"), 0.5);
+tl.to(raros, { x: "+=1400", duration: 3.2, ease: "power1.in", stagger: 0.15 }, at("Y Labán apartó") + 0.3);
+tl.to(raros, { opacity: 0, duration: 0.6, stagger: 0.15 }, at("Y Labán apartó") + 2.9);
+</script>

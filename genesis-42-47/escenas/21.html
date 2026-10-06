@@ -1,0 +1,75 @@
+<style>
+.estw21 { position: absolute; inset: 0; }
+.tit21 { position: absolute; left: 60px; right: 60px; top: 150px; text-align: center; }
+.tit21 .m { font-size: 80px; }
+.est21 { position: absolute; left: 60px; right: 60px; top: 130px; display: grid; grid-template-columns: 0.8fr 1.3fr 1.3fr 1fr 0.8fr 1fr; gap: 12px; }
+.est21 .pz { border-radius: 18px; padding: 14px 14px; background: rgba(10, 16, 22, 0.5); border: 3px solid rgba(241, 233, 216, 0.14); }
+.est21 .pz .v { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 0.08em; color: var(--oro); }
+.est21 .pz .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 40px; line-height: 1.02; margin-top: 4px; }
+.est21 .pz.on { border-color: var(--oro); background: rgba(233, 191, 96, 0.1); }
+.pr21 { position: absolute; right: 60px; top: 1000px; }
+.graf21 { position: absolute; left: 60px; right: 60px; top: 420px; height: 470px; }
+.graf21 svg { width: 1800px; height: 470px; }
+.gr-n { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; fill: var(--tenue); text-anchor: middle; }
+.ley21 { position: absolute; left: 60px; right: 60px; top: 900px; display: flex; align-items: center; gap: 40px; }
+.ley21 .l { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; }
+.ley21 .cita { font-size: 40px; margin-left: auto; text-align: right; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 44</span><span>versículos 18 al 34 · el discurso de Judá</span></div>
+<div class="tit21"><div class="m">Judá se acerca y habla · <span style="color:var(--oro)">44:18-34</span></div></div>
+<div class="estw21"><div class="est21">
+  <div class="pz z1"><div class="v">44:18</div><div class="x">con respeto: “como el mismísimo faraón”</div></div>
+  <div class="pz z2"><div class="v">44:19-23</div><div class="x">lo que pidió el gobernante</div></div>
+  <div class="pz z3"><div class="v">44:24-29</div><div class="x">lo que dijo su padre</div></div>
+  <div class="pz z4"><div class="v">44:30, 31</div><div class="x">qué pasaría sin el muchacho</div></div>
+  <div class="pz z5"><div class="v">44:32</div><div class="x">salió fiador</div></div>
+  <div class="pz on z6"><div class="v">44:33, 34</div><div class="x">se ofrece él</div></div>
+</div></div>
+<div class="pr21"><span class="propio chico">estructura y recuento sobre la TNM de 2019: observación propia</span></div>
+<div class="res21" style="position:absolute; left:90px; right:90px; top:720px; display:grid; grid-template-columns:1.2fr 1fr; gap:30px; align-items:center"><div class="cita r1" style="font-size:44px">“Te lo suplico, amo mío [...], porque <b>tú eres como el mismísimo faraón</b>”<span class="ref">JUDÁ · GÉNESIS 44:18</span></div><div class="m r2" style="font-size:58px">no pide justicia: pide <b>misericordia para otro</b></div></div>
+<div class="graf21"><svg viewBox="0 0 1800 470"><g class="ejes"></g><g class="barras"></g></svg></div>
+<div class="ley21"><span class="l lp" style="color:var(--oro)">■ 17 veces “padre”</span><span class="l lm" style="color:var(--cielo)">■ 7 veces “muchacho”</span>
+  <div class="cita sm q1">“La vida de mi padre está ligada a la vida del muchacho”<span class="ref">GÉNESIS 44:30</span></div></div>
+
+<script>
+// Recuento sobre trabajo/tnm-44.txt (44:18 a 44:34): 17 "padre" y 7 "muchacho".
+const PADRE = { 19: 1, 20: 3, 22: 2, 24: 1, 25: 1, 27: 1, 30: 2, 31: 2, 32: 2, 34: 2 };
+const MUCH = { 22: 1, 30: 2, 31: 1, 32: 1, 33: 1, 34: 1 };
+const VS = Array.from({ length: 17 }, (_, i) => 18 + i);
+const x0 = 60, ancho = 1740 / 17, U = 110, base = 400;
+let ej = `<path d="M 30 ${base} H 1790" stroke="rgba(241,233,216,0.4)" stroke-width="4"/>`;
+let ba = "";
+VS.forEach((v, i) => {
+  const cx = x0 + i * ancho + ancho / 2;
+  ej += `<text class="gr-n" x="${cx}" y="${base + 40}">${v}</text>`;
+  const p = PADRE[v] || 0, m = MUCH[v] || 0;
+  const xp = m ? cx - 38 : cx - 18, xm = p ? cx + 2 : cx - 18;
+  for (let k = 0; k < p; k++) ba += `<rect class="bp bp${v}" x="${xp}" y="${base - (k + 1) * U + 6}" width="36" height="${U - 12}" rx="8" fill="#e9bf60"/>`;
+  for (let k = 0; k < m; k++) ba += `<rect class="bm bm${v}" x="${xm}" y="${base - (k + 1) * U + 6}" width="36" height="${U - 12}" rx="8" fill="#93bbef"/>`;
+});
+$(".ejes").innerHTML = ej;
+$(".barras").innerHTML = ba;
+const tE = at("Empieza con respeto");
+entra(".tit21", 0.2, { y: 16 });
+entra(".r1", at("Empieza con respeto"), { y: 20 });
+entra(".r2", at("No discute"), { y: 20 });
+sale(".res21", at("Todo gira") - 0.9, { y: 20 });
+centra(".estw21", 300, at("Todo gira") - 0.8);
+sale(".tit21", at("Todo gira") - 0.9, { y: -16 });
+entra(".z1", tE, { y: 16 });
+entra(".z2", at("Repasa lo que pasó"), { y: 16 });
+entra(".z3", at("cuenta lo que dijo"), { y: 16 });
+entra(".z4", at("cuenta lo que dijo") + 1.0, { y: 16 });
+entra(".z5", at("y recuerda que salió"), { y: 16 });
+entra(".z6", at("pide misericordia"), { y: 16 });
+aparece(".pr21", at("Repasa lo que pasó") + 0.5, 0.5);
+aparece(".ejes", at("Todo gira"), 0.5);
+const tP = at("diecisiete veces padre");
+tl.fromTo(inicial(el(".bp"), { opacity: 0 }), { opacity: 1, scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 0.35, ease: "back.out(1.6)", stagger: 0.07, immediateRender: false }, tP - 0.6);
+entra(".lp", tP, { y: 12 });
+const tMu = at("siete veces muchacho");
+tl.fromTo(inicial(el(".bm"), { opacity: 0 }), { opacity: 1, scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 0.35, ease: "back.out(1.6)", stagger: 0.1, immediateRender: false }, tMu - 0.4);
+entra(".lm", tMu, { y: 12 });
+entra(".q1", at("La vida de mi padre"), { y: 12 });
+</script>

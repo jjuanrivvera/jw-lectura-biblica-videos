@@ -1,0 +1,92 @@
+<style>
+.terms { position: absolute; left: 90px; right: 90px; top: 140px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+.terms .def { border-color: rgba(121,214,198,0.7); }
+.terms .def .w { color: var(--turq); }
+.gen { position: absolute; left: 90px; right: 90px; top: 560px; bottom: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.gen .cita { font-size: 60px; max-width: 1600px; }
+/* Fase B: una fuerza, muchos usos */
+.red { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.nucleo { fill: url(#brillo); }
+.anillo { fill: none; stroke: var(--turq); stroke-width: 6; }
+.ray { stroke: var(--turq); stroke-width: 6; fill: none; stroke-linecap: round; opacity: 0.85; }
+.nuc-t { font-family: "Fraunces", serif; font-weight: 700; font-size: 44px; fill: var(--turq); text-anchor: middle; }
+.sal { position: absolute; left: 1050px; width: 780px; display: grid; grid-template-columns: 1fr; }
+.sal .x { font-family: "Fraunces", serif; font-weight: 600; font-size: 52px; line-height: 1.1; }
+.sal .r { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.1em; color: var(--tenue); margin-top: 4px; }
+.o1 { top: 150px; } .o2 { top: 370px; } .o3 { top: 590px; } .o4 { top: 810px; }
+.elec { position: absolute; left: 110px; top: 800px; width: 760px; }
+.elec .m { font-size: 60px; color: var(--turq); }
+/* Fase C: cómo habla la Biblia */
+.exps { position: absolute; left: 90px; width: 1060px; top: 130px; bottom: 210px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.ex { border-left: 8px solid var(--turq); padding: 10px 0 10px 34px; }
+.ex .cita { font-size: 54px; }
+.ex .cita b { color: var(--turq); }
+.ilus.pen { left: 1230px; top: 150px; width: 600px; height: 600px; }
+.ilus.pen .pie-img { left: 14px; bottom: 14px; font-size: 20px; }
+.asi { position: absolute; left: 90px; right: 90px; bottom: 90px; text-align: center; font-family: "Fraunces", serif; font-style: italic; font-weight: 600; font-size: 70px; }
+</style>
+
+<div class="fase fa">
+  <div class="cab"><span class="sec">El espíritu santo</span><span></span></div>
+  <div class="terms">
+    <div class="def d1"><div class="t">Término · hebreo</div><div class="w">rúaj</div><div class="x">“aliento”, “viento”, “espíritu”</div></div>
+    <div class="def d2"><div class="t">Término · griego</div><div class="w"><span class="gr">πνεῦμα</span> · pnéuma</div><div class="x">de significado parecido: algo <b>invisible</b> que se nota por su <b>fuerza</b></div></div>
+  </div>
+  <div class="gen"><div class="cita">“La oscuridad cubría la superficie de las aguas profundas, y <b class="turq">la fuerza activa de Dios</b> se movía de un lado a otro por encima de las aguas”.<span class="ref">Génesis 1:2</span></div></div>
+  <div class="fuente"><i>¿Debería creer usted en la Trinidad?</i>· glosario de la TNM, “espíritu”</div>
+</div>
+
+<div class="fase fb">
+  <svg class="red" viewBox="0 0 1920 1080">
+    <defs><radialGradient id="brillo"><stop offset="0" stop-color="#bff3ea"/><stop offset="0.45" stop-color="#79d6c6" stop-opacity="0.9"/><stop offset="1" stop-color="#79d6c6" stop-opacity="0"/></radialGradient></defs>
+    <path class="ray r1" d="M 640 470 C 820 330 900 220 1030 205"/>
+    <path class="ray r2" d="M 660 490 C 830 450 930 425 1030 425"/>
+    <path class="ray r3" d="M 660 520 C 830 580 930 640 1030 645"/>
+    <path class="ray r4" d="M 640 540 C 820 700 900 850 1030 865"/>
+    <circle class="nucleo" cx="490" cy="505" r="200"/>
+    <circle class="anillo" cx="490" cy="505" r="130"/>
+    <text class="nuc-t" x="490" y="705">la fuerza activa de Dios</text>
+  </svg>
+  <div class="sal o1"><div class="x">dio forma a la Tierra</div><div class="r">GÉNESIS 1:2</div></div>
+  <div class="sal o2"><div class="x">inspiró a los escritores de la Biblia</div><div class="r">2 PEDRO 1:21</div></div>
+  <div class="sal o3"><div class="x">dio poder a sus siervos</div><div class="r">HECHOS 1:8</div></div>
+  <div class="sal o4"><div class="x">llenó a los discípulos en Pentecostés</div><div class="r">HECHOS 2:4</div></div>
+  <div class="elec"><div class="m">hasta cierto punto, como la electricidad: una fuerza, muchos usos</div></div>
+</div>
+
+<div class="fase fc">
+  <div class="cab"><span class="sec">Cómo habla la Biblia de él</span><span></span></div>
+  <div class="exps">
+    <div class="ex e1"><div class="cita">“Todos <b>se llenaron de espíritu santo</b>”.<span class="ref">Hechos 2:4</span></div></div>
+    <div class="ex e2"><div class="cita">“Él los bautizará <b>con espíritu santo y con fuego</b>”.<span class="ref">Mateo 3:11</span></div></div>
+    <div class="ex e3"><div class="cita">“Esteban, un hombre <b>lleno de fe y espíritu santo</b>”.<span class="ref">Hechos 6:5</span></div></div>
+  </div>
+  <div class="ilus pen"><div class="kb"><img src="assets/img/1101978163_univ_sqr.jpg" /></div><div class="pie-img">Ilustración: <i>Mi libro de historias bíblicas</i>, historia 105</div></div>
+  <div class="asi">Así no se habla de una persona</div>
+</div>
+
+<script>
+const tB = at("Hasta cierto punto") - 0.3;
+const tC = at("Fíjense en cómo") - 0.3;
+entra(".fa .cab", 0.3, { y: -10 });
+entra(".d1", at("En hebreo la palabra"), { y: 30 });
+entra(".d2", at("pneuma"), { y: 30 });
+entra(".gen", at("Ya en el segundo"), { y: 30 });
+entra(".fa .fuente", at("En la Biblia, el espíritu"), { y: 10 });
+tl.to($(".fa"), { opacity: 0, duration: 0.5 }, tB);
+aparece(".fb", tB + 0.3, 0.4);
+aparece(".nucleo, .anillo, .nuc-t", tB + 0.4, 0.8);
+entra(".elec", tB + 1.0, { y: 20 });
+traza(".r1", at("Dios creó"), 0.7); entra(".o1", at("Dios creó") + 0.4, { x: 30, y: 0 });
+traza(".r2", at("inspiró"), 0.7); entra(".o2", at("inspiró") + 0.4, { x: 30, y: 0 });
+traza(".r3", at("dio poder"), 0.7); entra(".o3", at("dio poder") + 0.4, { x: 30, y: 0 });
+traza(".r4", at("dio poder") + 1.6, 0.7); entra(".o4", at("dio poder") + 2.0, { x: 30, y: 0 });
+tl.to($(".fb"), { opacity: 0, duration: 0.5 }, tC);
+aparece(".fc", tC + 0.3, 0.4);
+entra(".fc .cab", tC + 0.4, { y: -10 });
+entra(".e1", at("En Pentecostés"), { x: -30, y: 0 });
+entra(".pen", at("En Pentecostés") + 0.3, { y: 30 });
+entra(".e2", at("Juan el Bautista"), { x: -30, y: 0 });
+entra(".e3", at("A Esteban"), { x: -30, y: 0 });
+entra(".asi", at("Así no se habla"), { y: 30 });
+</script>

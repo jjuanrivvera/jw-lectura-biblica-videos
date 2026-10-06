@@ -1,0 +1,72 @@
+<style>
+.bg { position: absolute; inset: 0; overflow: hidden; }
+.bg .kb { position: absolute; inset: 0; }
+.bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vel-izq { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,26,36,0.97) 0%, rgba(18,26,36,0.92) 42%, rgba(18,26,36,0.25) 62%, rgba(18,26,36,0) 74%); }
+.ca { position: absolute; left: 90px; width: 920px; top: 110px; bottom: 110px; display: flex; flex-direction: column; justify-content: center; gap: 40px; }
+.ca .cita { font-size: 60px; }
+.ca .q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.16em; color: var(--tenue); margin-bottom: 10px; }
+.pie-a { left: 1220px; bottom: 30px; }
+.ego { position: absolute; left: 0; right: 0; top: 70px; text-align: center; }
+.ego .g { font-family: "Griego", serif; font-size: 150px; line-height: 1; }
+.ego .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 70px; color: var(--oro); margin-top: 10px; }
+.quien { position: absolute; left: 90px; right: 90px; top: 360px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.qn { border-radius: 24px; border: 3px solid var(--linea); background: rgba(16,24,34,0.92); padding: 26px 28px; }
+.qn .w { font-family: "Fraunces", serif; font-weight: 700; font-size: 46px; line-height: 1.08; }
+.qn .r { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.1em; color: var(--tenue); margin-top: 10px; }
+.qn .c { font-family: "Fraunces", serif; font-style: italic; font-size: 40px; color: var(--oro); margin-top: 8px; }
+.lxx { position: absolute; left: 90px; right: 90px; top: 700px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; }
+.lxx .def .w .gr { font-size: 56px; }
+.lxx .def .x { font-size: 29px; }
+.lxx .cita { font-size: 46px; align-self: center; }
+.edad { position: absolute; left: 90px; right: 90px; top: 420px; text-align: center; font-family: "Fraunces", serif; font-style: italic; font-weight: 600; font-size: 72px; }
+</style>
+
+<div class="fase fa">
+  <div class="bg"><div class="kb"><img src="assets/img/1102014799_univ_cnt_1.jpg" style="object-position: 65% 40%" /></div></div>
+  <div class="vel-izq"></div>
+  <div class="cab"><span class="sec">Juan 8:57, 58</span><span></span></div>
+  <div class="ca">
+    <div class="b1"><div class="q">LA PREGUNTA</div><div class="cita">“No tienes ni 50 años, ¿y has visto a Abrahán?”.</div></div>
+    <div class="b2"><div class="q">LA RESPUESTA</div><div class="cita">“Antes de que Abrahán naciera, <b class="cielo">yo ya existía</b>”.<span class="ref">Juan 8:58 · citado en <i>Jesús: el camino</i>, cap. 69</span></div></div>
+  </div>
+  <div class="pie-img pie-a">Ilustración: <i>Jesús: el camino, la verdad y la vida</i>, cap. 69</div>
+</div>
+
+<div class="fase fb">
+  <div class="ego"><div class="g">ἐγώ εἰμι</div><div class="x">“soy yo”: una expresión común</div></div>
+  <div class="quien">
+    <div class="qn n1"><div class="w">el hombre que nació ciego</div><div class="c">“Sí, soy yo”</div><div class="r">JUAN 9:9</div></div>
+    <div class="qn n2"><div class="w">el ángel Gabriel</div><div class="r">LUCAS 1:19</div></div>
+    <div class="qn n3"><div class="w">el apóstol Pedro</div><div class="r">HECHOS 10:21</div></div>
+    <div class="qn n4"><div class="w">el apóstol Pablo</div><div class="r">HECHOS 22:3</div></div>
+  </div>
+  <div class="lxx">
+    <div class="def"><div class="t">Septuaginta · Éxodo 3:14</div><div class="w"><span class="gr">ἐγώ εἰμι ὁ ὤν</span></div><div class="x">“yo soy el existente”: otra expresión, más larga. La <b>Septuaginta</b> es la traducción griega de las Escrituras Hebreas que se usaba en tiempos de Jesús</div></div>
+    <div class="cita">En la TNM: “<b class="oro">Yo Seré lo que Yo Decida Ser</b>”.<span class="ref">Éxodo 3:14</span></div>
+  </div>
+  <div class="edad">Jesús contestaba lo que le preguntaron: <span class="cielo">su edad</span></div>
+  <div class="fuente">Notas de estudio de la TNM en Juan 4:26 y 8:58</div>
+</div>
+
+<script>
+const tB = at("Pero la expresión griega") - 0.3;
+kb(".fa .kb", 0, tB + 0.5, { s: 1.1, x: -2 }, { s: 1.0, x: 0 });
+entra(".fa .cab", 0.3, { y: -10 });
+entra(".pie-a", 1.0, { y: 10 });
+entra(".b1", at("No tienes ni"), { y: 30 });
+entra(".b2", at("Él les respondió"), { y: 30 });
+atenua(".b1", at("Algunas traducciones dicen"), 0.4);
+tl.to($(".fa"), { opacity: 0, duration: 0.5 }, tB);
+aparece(".fb", tB + 0.3, 0.4);
+entra(".ego", tB + 0.4, { y: 30 });
+entra(".n1", at("El hombre que había nacido"), { y: 30 });
+entra(".n2", at("También las usan") + 0.6, { y: 30 });
+entra(".n3", at("Pedro y Pablo") - 0.3, { y: 30 });
+entra(".n4", at("Pedro y Pablo") + 0.4, { y: 30 });
+entra(".lxx .def", at("Y en la Septuaginta"), { y: 30 });
+entra(".lxx .cita", at("una expresión más larga"), { y: 30 });
+entra(".fb .fuente", at("Y en la Septuaginta") + 0.5, { y: 10 });
+sale(".quien", at("Jesús estaba contestando") - 0.4, { y: -20 });
+entra(".edad", at("Jesús estaba contestando"), { y: 20 });
+</script>

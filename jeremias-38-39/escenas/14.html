@@ -1,0 +1,61 @@
+<style>
+.iz14 { position: absolute; left: 80px; top: 120px; width: 880px; bottom: 330px; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.iz14 .cita { font-size: 48px; }
+.iz14 .m { font-size: 58px; }
+.charcos { position: absolute; left: 1010px; right: 60px; top: 120px; height: 560px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; }
+.charco { position: relative; border-radius: 26px; overflow: hidden; background: rgba(10, 16, 22, 0.42); border: 3px solid rgba(241, 233, 216, 0.14); }
+.charco svg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.charco .k { position: absolute; left: 24px; top: 20px; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; color: var(--oro); text-transform: uppercase; }
+.charco .x { position: absolute; left: 24px; right: 24px; bottom: 22px; font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; line-height: 1.05; }
+.pr14 { position: absolute; left: 1010px; top: 700px; }
+.v23 { position: absolute; left: 80px; right: 60px; bottom: 70px; display: grid; grid-template-columns: 210px 1fr 1fr; column-gap: 26px; align-items: stretch; }
+.v23 .rt { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.12em; color: var(--rojo); display: flex; align-items: center; }
+.v23 .tj { border-color: rgba(236, 138, 103, 0.6); }
+.v23 .tj .x { font-size: 38px; }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 38</span><span>versículos 21 al 23</span></div>
+
+<div class="iz14">
+  <div class="cita q22">“Los hombres en los que confiabas te han engañado y te han vencido. Han hecho que <b>tus pies se hundan en el fango</b>. Ahora se han dado la vuelta en retirada”<span class="ref">JEREMÍAS 38:22 · LAS MUJERES DEL PALACIO</span></div>
+  <div class="m lit14">literalmente, “los hombres de tu <b>paz</b>”: sus <b>príncipes</b></div>
+  <div class="f f14">nota de la TNM en 38:22 · “Los príncipes de Jerusalén fueron quienes actuaron como ‘hombres que están en paz’ con el rey Sedequías”: <i>La Atalaya</i>, 1 de julio de 1980, pág. 25</div>
+</div>
+
+<div class="charcos">
+  <div class="charco ch1"><svg viewBox="0 0 400 560">
+    <defs><linearGradient id="e14-f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6d4d2e"/><stop offset="0.45" stop-color="#4b3320"/><stop offset="1" stop-color="#2e2014"/></linearGradient></defs>
+    <path d="M 0 330 C 80 318 160 342 240 326 C 310 314 360 334 400 326 L 400 560 L 0 560 Z" fill="url(#e14-f)"/>
+    <path d="M 60 336 C 110 330 160 340 210 334" stroke="rgba(255,230,190,0.25)" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 196 90 L 196 318 M 214 90 L 214 318" stroke="#c9a468" stroke-width="7" stroke-linecap="round"/>
+    <ellipse class="on1" cx="205" cy="328" rx="60" ry="10" fill="none" stroke="rgba(255,230,190,0.5)" stroke-width="3"/>
+  </svg><div class="k">38:6 · Jeremías</div><div class="x">los príncipes lo dejaron hundirse en el fango</div></div>
+  <div class="charco ch2"><svg viewBox="0 0 400 560">
+    <path d="M 0 330 C 80 318 160 342 240 326 C 310 314 360 334 400 326 L 400 560 L 0 560 Z" fill="url(#e14-f)"/>
+    <path d="M 60 336 C 110 330 160 340 210 334" stroke="rgba(255,230,190,0.25)" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <ellipse class="on2" cx="205" cy="328" rx="60" ry="10" fill="none" stroke="rgba(255,230,190,0.5)" stroke-width="3"/>
+  </svg><div class="k">38:22 · el rey</div><div class="x">esos mismos hombres le hundirían los pies en el fango</div></div>
+</div>
+<div class="propio pr14">el fango dos veces: observación propia</div>
+
+<div class="v23">
+  <div class="rt">38:23</div>
+  <div class="tj t1"><div class="x">“Y a todas tus esposas y tus hijos los entregarán a los caldeos”</div></div>
+  <div class="tj t2"><div class="x">“y por tu culpa quemarán con fuego esta ciudad”</div></div>
+</div>
+
+<script>
+aparece(".cab", 0.2, 0.5);
+entra(".q22", 0.5, { y: 24 });
+entra(".lit14", at("Literalmente"), { y: 20 });
+entra(".f14", at("sus propios"), { y: 12 });
+entra(".ch2", at("fango") - 0.4, { x: 30, y: 0 });
+[".on2"].forEach((o) => tl.fromTo($(o), { attr: { rx: 20, ry: 4 }, opacity: 0.9 }, { attr: { rx: 150, ry: 20 }, opacity: 0, duration: 1.6, repeat: 2, ease: "power1.out", immediateRender: false }, at("fango") + 0.2));
+entra(".ch1", at("Los que dejaron"), { x: 30, y: 0 });
+tl.fromTo($(".on1"), { attr: { rx: 20, ry: 4 }, opacity: 0.9 }, { attr: { rx: 150, ry: 20 }, opacity: 0, duration: 1.6, repeat: 2, ease: "power1.out", immediateRender: false }, at("hundirse") + 0.1);
+tl.set([$(".on1"), $(".on2")], { opacity: 0 }, 0);
+aparece(".pr14", at("le hundirían"), 0.5);
+aparece(".v23 .rt", at("Y a sus esposas") - 0.2, 0.4);
+entra(".t1", at("Y a sus esposas"), { y: 20 });
+entra(".t2", at("quemarían"), { y: 20 });
+</script>

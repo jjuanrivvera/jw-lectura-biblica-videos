@@ -1,0 +1,30 @@
+<style>
+.diez { position: absolute; left: 80px; top: 120px; width: 820px; bottom: 80px; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.diez .grande { font-size: 300px; color: var(--oro); line-height: 0.9; }
+.diez .m { font-size: 72px; }
+.rot { display: flex; gap: 16px; flex-wrap: wrap; }
+.rot span { font-family: "Caveat"; font-weight: 700; font-size: 52px; padding: 4px 22px; border-radius: 30px; border: 3px solid rgba(241,233,216,0.3); }
+.col { top: 120px; bottom: 90px; right: 70px; width: 880px; }
+.col .cita { font-size: 58px; }
+</style>
+<div class="cab"><span class="cap">Génesis 31</span><span>versículos 4 al 16</span></div>
+<div class="diez">
+  <div class="m">el salario, cambiado</div>
+  <div class="grande n10">1</div>
+  <div class="m">veces</div>
+  <div class="rot"><span>rayados</span><span>manchados</span><span>moteados</span></div>
+  <div class="s">Génesis 31:7, 41 · “unas veces decía que los rayados, otras que los manchados y otras que los moteados” · La Atalaya, 15 de octubre de 2003, pág. 30</div>
+</div>
+<div class="col">
+  <div class="b a1"><div class="cita">“envió un mensaje a Raquel y a Lea para que fueran al campo donde él estaba con su rebaño”<span class="ref">GÉNESIS 31:4</span></div><div class="m md">lejos de la casa y de los hijos de Labán</div><span class="propio">observación propia</span></div>
+  <div class="b a2"><div class="cita">“Él nos ha vendido y ha estado viviendo del dinero que recibió por nosotras”<span class="ref">RAQUEL Y LEA · GÉNESIS 31:15</span></div></div>
+  <div class="b a3"><div class="m">14 años de trabajo = <b style="color:var(--oro)">el precio de ellas</b></div><div class="m md">y Labán se quedó con todo</div><div class="s">“La importancia que Labán dio a la ganancia material resultó en que sus hijas le perdieran el respeto” · La Atalaya, 15 de septiembre de 1998, pág. 24</div></div>
+  <div class="b a4"><div class="cita">“Así que haz todo lo que te ha dicho Dios”<span class="ref">GÉNESIS 31:16</span></div><div class="m md">una sola voz</div></div>
+</div>
+<script>
+aparece(".diez", 0.3, 0.5);
+cuenta(".n10", 1, 10, at("diez veces") - 0.4, 1.0);
+late(".n10", at("diez veces") + 0.6, { s: 1.08, n: 1 });
+entra(".rot span", at("diez veces") + 0.6, { y: 20, st: 0.25 });
+secuencia([[".a1", 0.4], [".a2", at("Ellas respondieron")], [".a3", at("Labán se había quedado")], [".a4", at("Y le dicen")]]);
+</script>

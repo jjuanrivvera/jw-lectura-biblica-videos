@@ -1,0 +1,49 @@
+<style>
+.pr46 { position: absolute; left: 90px; right: 90px; top: 50px; text-align: center; }
+.pr46 .grande { font-size: 96px; }
+.pr46 .grande b { color: var(--oro); }
+.kk46 { position: absolute; left: 90px; right: 90px; top: 250px; height: 480px; display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+.kk46 .tj { padding: 30px 36px; gap: 18px; justify-content: center; }
+.kk46 .tj.si { border-color: var(--oro); }
+.kk46 .tj.no { border-color: var(--rojo); }
+.kk46 .tj.no .k { color: var(--rojo); }
+.kk46 .tj .k { font-size: 30px; }
+.kk46 .cita { font-size: 44px; }
+.kk46 .cita.sm { font-size: 38px; }
+.ab46 { position: absolute; left: 90px; right: 90px; top: 770px; bottom: 50px; display: flex; align-items: center; gap: 56px; }
+.ab46 .m { flex: 0.8; font-size: 72px; }
+.ab46 .cita { flex: 1.25; font-size: 42px; }
+</style>
+
+<div class="pr46"><div class="grande">¿Era Lot una mala persona? <b class="no46">No.</b></div></div>
+<div class="kk46">
+  <div class="tj si k1">
+    <div class="k">justo</div>
+    <div class="cita">“al <b>justo</b> Lot, que estaba muy angustiado por la conducta descarada de los malvados”<span class="ref">2 PEDRO 2:7</span></div>
+    <div class="f f1">“Lot no se volvió como los habitantes de Sodoma” · <i>Perspicacia</i>, vol. 2, “Lot”, pág. 252</div>
+  </div>
+  <div class="tj no k2">
+    <div class="k">pero escogió mal</div>
+    <div class="cita sm">Lot “por algún motivo no respetó a Abrán en este asunto, y parece que <b>ni siquiera le pidió consejo</b>”</div>
+    <div class="cita sm c2">la decisión “causaría con el tiempo <b>mucho dolor</b> a la familia de Lot”<span class="ref">LA ATALAYA, 15 DE AGOSTO DE 2001, PÁG. 22</span></div>
+  </div>
+</div>
+<div class="ab46">
+  <div class="m">Abrán <b>no le guardó rencor</b></div>
+  <div class="cita r46">“Abrahán no guardó rencor a Lot, por el contrario, <b>acudió a toda prisa</b> en su ayuda”<span class="ref">LA ATALAYA, 15 DE AGOSTO DE 2001, PÁG. 27 · GÉNESIS 14:14-16</span></div>
+</div>
+
+<script>
+// La pregunta abre centrada y sube cuando llegan las tarjetas.
+tl.set($(".pr46"), { y: 400 }, 0);
+entra(".pr46 .grande", 0.3, { y: 24 });
+tl.set($(".no46"), { opacity: 0 }, 0);
+tl.to($(".no46"), { opacity: 1, duration: 0.3, ease: "none" }, at("No", 0) - 0.1);
+tl.to($(".pr46"), { y: 0, duration: 0.8, ease: "power2.inOut" }, at("Pedro") - 0.7);
+entra(".k1", at("Pedro") - 0.1, { y: 24 });
+entra(".f1", at("malvados") + 0.3, { y: 10 });
+entra(".k2", at("Pero parece") - 0.2, { y: 24 });
+entra(".c2", at("esa decisión") - 0.2, { y: 16 });
+entra(".ab46 .m", at("Abrán no le") - 0.2, { y: 20 });
+entra(".r46", at("cuando se llevaron") - 0.2, { y: 20 });
+</script>

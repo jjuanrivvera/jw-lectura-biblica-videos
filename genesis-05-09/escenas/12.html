@@ -1,0 +1,40 @@
+<style>
+.ilus.im { left: 60px; top: 130px; width: 1000px; height: 500px; }
+.pie-img.pi { left: 60px; top: 640px; width: 1000px; }
+.pal { position: absolute; left: 60px; top: 730px; width: 1000px; display: flex; align-items: center; gap: 22px; }
+.pal .p { border-radius: 22px; padding: 14px 22px; background: rgba(10,16,22,0.5); border: 3px solid rgba(241,233,216,0.16); }
+.pal .p .h { font-family: "Fraunces", serif; font-style: italic; font-weight: 600; font-size: 44px; color: var(--cielo); }
+.pal .p .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; line-height: 1.05; }
+.pal .p.fin { border-color: var(--oro); }
+.pal .fl { font-family: "Fraunces", serif; font-size: 60px; color: var(--oro); }
+.col { top: 120px; bottom: 70px; right: 60px; width: 740px; }
+.col .cita { font-size: 46px; }
+.col .m { font-size: 64px; }
+.col .def .x { font-size: 60px; }
+</style>
+
+<div class="cab sobre"><span class="cap">Génesis 6</span><span>versículo 4</span></div>
+<div class="ilus im"><div class="kb"><img src="assets/img/nefilim.jpg" /></div></div>
+<div class="pie-img pi">Noé aparta a sus hijos de un nefilim armado · Imite su fe, cap. 2, “Andaba con el Dios verdadero”, pág. 19</div>
+<div class="pal">
+  <div class="p p1"><div class="h">na·fál</div><div class="x">“caer”</div></div><div class="fl f1">→</div>
+  <div class="p p2"><div class="h">causativa</div><div class="x">hacer que otro caiga</div></div><div class="fl f2">→</div>
+  <div class="p fin p3"><div class="h">nefi·lím</div><div class="x">“los <b style="color:var(--oro)">derribadores</b>”</div></div>
+</div>
+<div class="col">
+  <div class="b a1"><div class="m">hijos <b>híbridos</b></div><div class="def"><div class="t">nefilim <i>nefi·lím</i></div><div class="x">“los que hacen <b>caer a otros</b>”</div><div class="s">no “los caídos” · Perspicacia, vol. 2, “Nefilim” · nota de la TNM</div></div></div>
+  <div class="b a2"><div class="m">¿gigantes? <b>la Biblia no dice cuánto medían</b></div><div class="def"><div class="t">el paralelo <i>hag·guib·bo·rím</i></div><div class="x">“los <b>poderosos</b>”</div><div class="s">ninguna de las dos palabras habla de estatura · “gigantes” viene de la Septuaginta, guí·gan·tes</div></div></div>
+  <div class="b a3"><div class="cita">“no eran hombres de fama <b>para Dios</b>, puesto que no sobrevivieron al Diluvio”<span class="ref">PERSPICACIA, VOL. 2, “NEFILIM”</span></div><div class="s">la base de muchas mitologías, “después de la confusión de lenguas en Babel” · los semidioses, un eco deformado</div></div>
+</div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".im", 0.3, { y: 30 });
+kb(".im .kb", 0.3, DUR, { s: 1.06, x: 1 }, { s: 1.0, x: 0 });
+aparece(".pi", 0.9, 0.5);
+secuencia([[".a1", 0.5], [".a2", at("La Biblia nunca")], [".a3", at("Fueron famosos")]]);
+entra(".p1", at("verbo hebreo"), { y: 20 });
+entra([".f1", ".p2"], at("causativa quiere"), { y: 20, st: 0.2 });
+entra([".f2", ".p3"], at("los derribadores") - 0.3, { y: 20, st: 0.2 });
+late(".p3", at("Matones"), { s: 1.06, n: 1 });
+</script>

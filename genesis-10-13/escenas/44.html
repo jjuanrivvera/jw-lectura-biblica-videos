@@ -1,0 +1,56 @@
+<style>
+.ilu44 { position: absolute; left: 0; top: 0; width: 1920px; height: 730px; overflow: hidden; }
+.ilu44 .kb { position: absolute; inset: 0; }
+.ilu44 img { width: 1920px; height: 730px; object-fit: cover; object-position: 50% 32%; display: block; }
+.vilu44 { position: absolute; left: 0; right: 0; top: 540px; height: 200px; background: linear-gradient(180deg, rgba(23, 33, 43, 0), #17212b 92%); }
+.nom44 { position: absolute; }
+.pie44 { right: 24px; top: 20px; }
+.bn44 { position: absolute; left: 90px; right: 90px; top: 720px; bottom: 44px; }
+.bn44 > .b { position: absolute; inset: 0; display: flex; align-items: center; gap: 56px; }
+.bn44 .cita { font-size: 46px; flex: 1.35; }
+.bn44 .cita.sm { font-size: 38px; }
+.bn44 .lado { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+.bn44 .m.md { font-size: 60px; }
+.bn44 .ancho { font-size: 52px; flex: 1; }
+</style>
+
+<div class="ilu44"><div class="kb">
+  <img src="assets/img/abran-lot.jpg" />
+  <div class="clave nom44 n1" style="left:300px;top:70px">Abrán</div>
+  <div class="clave nom44 n2" style="left:790px;top:108px">Lot</div>
+</div></div>
+<div class="vilu44"></div>
+<div class="pie pie44"><i>La Atalaya</i> (estudio), mayo de 2016, “Resolvamos los desacuerdos con amor” (wol.jw.org) · nombres añadidos</div>
+
+<div class="bn44">
+  <div class="b a1">
+    <div class="cita">“estalló una <b>pelea</b> entre los ganaderos de Abrán y los ganaderos de Lot”<span class="ref">GÉNESIS 13:7</span></div>
+    <div class="lado"><div class="m md">los campos <b>no daban abasto</b></div><div class="f">Génesis 13:6</div></div>
+  </div>
+  <div class="b a2">
+    <div class="cita">“(En aquel tiempo, los <b>cananeos y los perizitas</b> vivían en el país)”<span class="ref">GÉNESIS 13:7</span></div>
+    <div class="lado"><span class="propio chico">observación propia</span><div class="m md">los vecinos <b>estaban mirando</b></div><div class="f">los perizitas no están en la tabla de Génesis 10: “se desconoce su ascendencia” · <i>Perspicacia</i>, vol. 2, “Perizitas”, pág. 645</div></div>
+  </div>
+  <div class="b a3">
+    <div class="lado"><div class="m md">Abrán era el <b>mayor</b>: tenía derecho a escoger</div></div>
+    <div class="cita sm">“Estaba dispuesto a sacrificar el derecho de elección que tenía por ser mayor que su sobrino, aunque eso significara <b>ceder algo</b>”<span class="ref">LA ATALAYA, 15 DE AGOSTO DE 2000, PÁG. 24</span></div>
+  </div>
+  <div class="b a4">
+    <div class="cita ancho">“Por favor, <b>somos hermanos</b>. No debería haber peleas entre tú y yo [...]. Si tú vas a la izquierda, yo iré a la derecha”<span class="ref">GÉNESIS 13:8, 9</span></div>
+  </div>
+  <div class="b a5">
+    <div class="lado"><div class="m md">tenía fe en que Jehová le daría <b>toda la tierra</b></div></div>
+    <div class="cita sm">“no iba a discutir por una <b>pequeña parte</b> de ella”<span class="ref">LA ATALAYA, 15 DE AGOSTO DE 2001, PÁGS. 22, 23</span></div>
+  </div>
+</div>
+
+<script>
+kb(".kb", 0, DUR, { s: 1.08, x: 1 }, { s: 1.0, x: 0 });
+aparece(".pie44", 0.6, 0.5);
+entra(".n1", 0.8, { y: 14 });
+entra(".n2", 1.1, { y: 14 });
+secuencia([[".a1", 0.5], [".a2", at("Y el texto añade")], [".a3", at("Abrán era el mayor")], [".a4", at("Pero le dijo")], [".a5", at("Tenía fe")]]);
+entra(".a2 .propio", at("Los vecinos") - 0.3, { y: 10 });
+entra(".a2 .m", at("Los vecinos") - 0.2, { y: 14 });
+entra(".a2 .f", at("perizitas") - 0.2, { y: 10 });
+</script>

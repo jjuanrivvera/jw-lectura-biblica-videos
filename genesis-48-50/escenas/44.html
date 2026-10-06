@@ -1,0 +1,58 @@
+<style>
+.mapa.REC { left: 0; top: 0; width: 1100px; height: 1080px; }
+.mapa.REC .pie-mapa { max-width: 960px; z-index: 3; }
+.funde44 { left: 1062px; width: 38px; }
+.base44 { position: absolute; left: 0; top: 950px; width: 1100px; height: 130px; background: linear-gradient(0deg, #17212b 8%, rgba(23,33,43,0)); }
+.cab44 { left: 1120px; }
+.col44 { position: absolute; left: 1120px; right: 70px; top: 120px; bottom: 80px; }
+.col44 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+.col44 .cita { font-size: 50px; }
+.dos44 { display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; }
+.dos44 .tj .x { font-size: 40px; }
+.dos44 .tj.si { border-color: var(--oro); }
+.dos44 .tj.no { border-color: var(--rojo); }
+.dos44 .tj.no .k { color: var(--rojo); }
+</style>
+
+<!--incluir:_rec.html-->
+<div class="funde-der funde44"></div>
+<div class="base44"></div>
+<div class="cab cab44"><span class="cap">Génesis 50</span><span>versículos 12 al 14</span></div>
+<div class="col44">
+  <div class="b b1">
+    <div class="cita">“Los hijos de Jacob hicieron <b>exactamente</b> lo que él les había pedido”<span class="ref">GÉNESIS 50:12</span></div>
+    <div class="cita c2" style="font-size:44px">“Lo enterraron en la cueva del campo de <b>Macpelá</b>, el campo que estaba frente a Mamré”<span class="ref">GÉNESIS 50:13</span></div>
+  </div>
+  <div class="b b2">
+    <div class="cita">“José <b>volvió a Egipto</b> con sus hermanos”<span class="ref">GÉNESIS 50:14</span></div>
+    <div class="dos44">
+      <div class="tj si d1"><div class="k">ya</div><div class="x">un <b>acto de fe</b>: enterrado en Canaán</div></div>
+      <div class="tj no d2"><div class="k">todavía no</div><div class="x"><b>poseer</b> la tierra</div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+pinta(".marcas", `
+  <circle class="an44" cx="657" cy="1413" r="64" fill="none" stroke="#d99a14" stroke-width="10"/>
+  <g class="n3"><circle cx="720" cy="1570" r="40" fill="#e9bf60" stroke="#fff" stroke-width="7"/><text x="720" y="1587" text-anchor="middle" font-family="Fraunces" font-weight="700" font-size="48" fill="#17212b">3</text></g>
+  <g class="n4"><circle cx="380" cy="1600" r="40" fill="#e9bf60" stroke="#fff" stroke-width="7"/><text x="380" y="1617" text-anchor="middle" font-family="Fraunces" font-weight="700" font-size="48" fill="#17212b">4</text>
+    ${chip(370, 1790, "vuelven a Egipto", { fs: 52, cls: "oro" })}</g>
+  <path class="fl44" d="M 400 1632 C 340 1690 290 1760 230 1820" fill="none" stroke="#b8430f" stroke-width="12" stroke-linecap="round"/>
+  <path class="fl44p" d="M 226 1782 L 222 1828 L 268 1826" fill="none" stroke="#b8430f" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+`);
+const V = { x: 0, y: 0, w: 1100, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 190, y: 700, w: 1730, h: 1699 }, V), 0);
+camara(".cam", 0.2, DUR - 0.5, encuadre({ x: 190, y: 740, w: 1690, h: 1659 }, V), "none");
+entra(".cab44", 0.2, { y: -10 });
+secuencia([[".b1", 0.3], [".b2", at("Y después") - 0.2]]);
+entra(".c2", at("lo enterraron") - 0.2, { y: 16 });
+traza(".an44", at("Macpelá") - 0.3, 0.8);
+salta(".n3", at("Macpelá"));
+const tV = at("todos volvieron");
+salta(".n4", tV - 0.2);
+traza(".fl44", tV, 0.8);
+aparece(".fl44p", tV + 0.7, 0.3);
+entra(".d1", at("Enterrar a Jacob") - 0.1, { y: 20 });
+entra(".d2", at("todavía no era") - 0.1, { y: 20 });
+</script>

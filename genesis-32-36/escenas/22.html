@@ -1,0 +1,41 @@
+<style>
+.pozo { position: absolute; left: 50px; top: 100px; width: 980px; height: 960px; }
+.pozo svg { width: 980px; height: 960px; }
+.cota { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 26px; fill: var(--tenue); }
+.et { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; fill: var(--tiza); }
+.ilus.ga { left: 1090px; top: 100px; width: 780px; height: 439px; }
+.pie-img.pg { left: 1090px; top: 548px; width: 780px; font-size: 19px; }
+.col.der { top: 610px; bottom: 40px; width: 780px; right: 50px; }
+.col.der > .b { justify-content: flex-start; gap: 16px; }
+</style>
+<div class="cab"><span class="cap">El pozo de Jacob hoy</span><span>Juan 4:5, 6, 12, 20</span></div>
+<div class="pozo"><svg viewBox="0 0 980 960" class="pozo-svg"></svg></div>
+<div class="ilus ga"><div class="kb"><img src="assets/img/guerizim-aereo.jpg" /></div></div>
+<div class="pie-img pg">Monte Guerizim (1), cerca del posible lugar del pozo. Fotograma del video “Monte Guerizim”, galería de la TNM en Juan 4 (wol.jw.org)</div>
+<div class="col der">
+  <div class="b a1"><div class="m">unos <b>23 m</b> de hondo y <b>2,5 m</b> de ancho</div><div class="f">medidas del siglo XIX · <i>Perspicacia</i>, vol. 1, “Fuente de Jacob”, pág. 974 · nota de estudio de la TNM en Juan 4:6: “pudo haber sido aún más profundo”</div></div>
+  <div class="b a2"><div class="cita md">“Así podría evitar problemas con sus vecinos, que sin duda ya eran dueños de otras fuentes de agua”</div><div class="f">nota de estudio de la TNM en Juan 4:6</div></div>
+  <div class="b a3"><span class="externa">fuente externa · Wikipedia</span><div class="m md">hoy, en la cripta de una iglesia ortodoxa griega · en la cima del Guerizim, samaritanos que todavía celebran allí su Pascua</div><div class="f">“Nuestros antepasados adoraban a Dios en esta montaña” · Juan 4:20</div></div>
+</div>
+<script>
+// Escala: 30 px por metro. Suelo en y = 150.
+const M = 30, S = 150;
+let p = `<path d="M 0 ${S} L 980 ${S} L 980 960 L 0 960 Z" fill="#3a2d22"/>`;
+p += `<rect class="hueco-p" x="${230 - 1.25 * M}" y="${S}" width="${2.5 * M}" height="${23 * M}" fill="#0d1218" stroke="#8aa0b8" stroke-width="3"/>`;
+p += `<rect class="agua-p" x="${230 - 1.25 * M}" y="${S + 21.5 * M}" width="${2.5 * M}" height="${1.5 * M}" fill="#3f78b0"/>`;
+let pisos = "";
+for (let i = 0; i < 8; i++) pisos += `<rect x="560" y="${S + i * 3 * M}" width="160" height="${3 * M}" fill="#26313f" stroke="#4d5b6d" stroke-width="3"/><rect x="585" y="${S + i * 3 * M + 26}" width="36" height="36" fill="#3b4a5d"/><rect x="660" y="${S + i * 3 * M + 26}" width="36" height="36" fill="#3b4a5d"/>`;
+p += `<g class="edif">${pisos}<text class="et" x="640" y="${S + 24 * M + 50}" text-anchor="middle">8 pisos ≈ 24 m</text><text class="cota" x="640" y="${S + 24 * M + 84}" text-anchor="middle">puesto hacia abajo, para comparar</text></g>`;
+p += `<g class="persona" transform="translate(360 ${S})"><circle cx="0" cy="${-1.55 * M}" r="7" fill="var(--tiza)"/><path d="M 0 ${-1.4 * M} L 0 ${-0.75 * M} M 0 ${-0.75 * M} L -9 0 M 0 ${-0.75 * M} L 9 0 M -12 ${-1.15 * M} L 12 ${-1.15 * M}" stroke="var(--tiza)" stroke-width="5" stroke-linecap="round"/><text class="cota" x="18" y="-30">1,70 m</text></g>`;
+for (let m = 0; m <= 20; m += 5) p += `<path d="M 120 ${S + m * M} L 140 ${S + m * M}" stroke="var(--tenue)" stroke-width="3"/><text class="cota" x="110" y="${S + m * M + 9}" text-anchor="end">${m} m</text>`;
+p += `<text class="et" x="230" y="${S + 23 * M + 56}" text-anchor="middle" fill="var(--oro)" style="fill:var(--oro)">unos 23 m</text>`;
+p += `<text class="cota" x="470" y="${S - 20}">nivel del suelo</text>`;
+$(".pozo-svg").innerHTML = p;
+tl.fromTo($(".hueco-p"), { scaleY: 0 }, { scaleY: 1, svgOrigin: "230 150", duration: 2.2, ease: "power2.inOut", immediateRender: false }, at("medía") - 0.2);
+tl.set($(".hueco-p"), { scaleY: 0 }, 0);
+aparece(".agua-p", at("de hondo"), 0.5);
+aparece(".persona", 0.4, 0.5);
+aparece(".edif", at("edificio"), 0.6);
+secuencia([[".a1", 0.4], [".a2", at("Con él")], [".a3", at("Hoy está")]]);
+kb(".ga .kb", 0, DUR, { s: 1.08 }, { s: 1.0 });
+</script>

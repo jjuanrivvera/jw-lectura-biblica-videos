@@ -1,0 +1,33 @@
+<style>
+.arriba { position: absolute; left: 90px; right: 90px; top: 120px; display: grid; grid-template-columns: 1.1fr 1fr; column-gap: 50px; }
+.orden { position: absolute; left: 90px; right: 90px; top: 470px; height: 360px; }
+.orden svg { width: 1740px; height: 360px; }
+.ot { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.12em; fill: var(--tenue); }
+.ev { font-family: "Caveat", cursive; font-weight: 700; font-size: 48px; }
+.abajo34 { position: absolute; left: 90px; right: 90px; bottom: 50px; display: flex; gap: 40px; align-items: baseline; }
+.abajo34 .grande { font-size: 120px; color: var(--oro); }
+</style>
+<div class="cab"><span class="cap">Génesis 35</span><span>versículos 27 al 29</span></div>
+<div class="arriba">
+  <div class="u1"><div class="cita">“Sus hijos Esaú y Jacob lo enterraron”<span class="ref">GÉNESIS 35:29</span></div><div class="m md" style="margin-top:14px">180 años · en Hebrón, en la cueva de Macpelá (49:31)</div></div>
+  <div class="def u2"><div class="t">“fue reunido con su pueblo”</div><div class="x">“una forma poética de referirse a la muerte” · literalmente, “<b>viejo y lleno de días</b>”</div><div class="s">notas de la TNM en 35:29</div></div>
+</div>
+<div class="orden"><svg viewBox="0 0 1740 360" class="os"></svg></div>
+<div class="abajo34"><div class="grande">≈ 23</div><div class="m">años sin verse los gemelos · tenían <b>120</b></div><div class="f" style="margin-left:auto;max-width:600px"><i>Perspicacia</i>, vol. 2, “Jacob”, págs. 10, 11 · vol. 1, “Isaac”, pág. 1253 · <span class="propio" style="font-size:24px;padding:0 10px">observación propia</span> la paz que aguantó</div></div>
+<script>
+let o = `<text class="ot" x="0" y="40">ORDEN DEL RELATO</text><text class="ot" x="0" y="230">ORDEN DE LOS HECHOS</text>`;
+o += `<g class="r1"><rect x="0" y="60" width="760" height="90" rx="16" fill="rgba(185,164,234,0.16)" stroke="#b9a4ea" stroke-width="4"/><text class="ev" x="380" y="120" text-anchor="middle" fill="#b9a4ea">Génesis 35 · muere Isaac</text></g>`;
+o += `<g class="r2"><rect x="800" y="60" width="760" height="90" rx="16" fill="rgba(146,209,147,0.14)" stroke="var(--verde)" stroke-width="4"/><text class="ev" x="1180" y="120" text-anchor="middle" fill="var(--verde)">Génesis 37 · venden a José</text></g>`;
+o += `<g class="h1"><rect x="0" y="250" width="760" height="90" rx="16" fill="rgba(146,209,147,0.14)" stroke="var(--verde)" stroke-width="4"/><text class="ev" x="380" y="310" text-anchor="middle" fill="var(--verde)">1750 · venden a José</text></g>`;
+o += `<g class="h2"><rect x="800" y="250" width="760" height="90" rx="16" fill="rgba(185,164,234,0.16)" stroke="#b9a4ea" stroke-width="4"/><text class="ev" x="1180" y="310" text-anchor="middle" fill="#b9a4ea">1738 · muere Isaac</text></g>`;
+o += `<g class="doce"><text class="ev" x="1600" y="310" fill="var(--oro)">12 años</text><text class="ev" x="1600" y="350" fill="var(--oro)" style="font-size:34px">después</text></g>`;
+$(".os").innerHTML = o;
+entra(".u1", 0.4, { y: 20 });
+entra(".u2", at("fue reunido"), { y: 20 });
+entra(".r1", at("Pero no murió"), { x: -30, y: 0 });
+entra(".r2", at("Génesis cierra"), { x: -30, y: 0 });
+entra(".h1", at("Isaac murió doce"), { x: -30, y: 0 });
+entra(".h2", at("Isaac murió doce") + 0.8, { x: -30, y: 0 });
+aparece(".doce", at("doce años") + 0.5, 0.5);
+entra(".abajo34", at("El entierro"), { y: 20 });
+</script>

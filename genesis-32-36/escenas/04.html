@@ -1,0 +1,36 @@
+<style>
+.ora { position: absolute; left: 60px; right: 60px; top: 150px; height: 580px; grid-template-columns: repeat(5, 1fr); column-gap: 20px; left: 60px; }
+.ora .tj { padding: 22px 22px; }
+.ora .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 84px; line-height: 0.9; color: var(--oro); }
+.ora .k { font-size: 23px; }
+.ora .x { font-size: 38px; line-height: 1.18; }
+.ora .x.m { font-family: "Caveat", cursive; font-size: 44px; color: var(--rojo); }
+.bajo { position: absolute; left: 60px; right: 60px; top: 750px; display: grid; grid-template-columns: 1.5fr 1fr; column-gap: 30px; align-items: stretch; }
+.bajo .def .x { font-size: 54px; }
+.propio-o { position: absolute; right: 60px; top: 88px; }
+</style>
+<div class="cab"><span class="cap">Génesis 32</span><span>versículos 9 al 12</span></div>
+<span class="propio propio-o">las cinco partes: observación propia</span>
+<div class="tarjetas ora">
+  <div class="tj o1"><div class="n">1</div><div class="k">A quién le habla</div><div class="x">“Oh, Dios de mi padre Abrahán y Dios de mi padre Isaac, tú, Jehová”</div><div class="ref">32:9</div></div>
+  <div class="tj o2"><div class="n">2</div><div class="k">Lo que Jehová le dijo</div><div class="x">“Regresa a tu tierra y adonde están tus parientes, y yo te trataré bien”</div><div class="ref">32:9 · 31:3</div></div>
+  <div class="tj o3"><div class="n">3</div><div class="k">Gratitud humilde</div><div class="x">“Yo no merezco el amor leal ni la fidelidad que me has mostrado a mí, tu siervo”</div><div class="ref">32:10</div></div>
+  <div class="tj o4"><div class="n">4</div><div class="k">La petición</div><div class="x">“Te suplico que me salves de las manos de mi hermano Esaú”</div><div class="x m o4m">“tengo miedo”</div><div class="ref">32:11</div></div>
+  <div class="tj o5"><div class="n">5</div><div class="k">Otra vez la promesa</div><div class="x">“haré que tu descendencia sea como los granos de arena del mar”</div><div class="ref">32:12</div></div>
+</div>
+<div class="bajo">
+  <div class="def d1"><div class="t">amor leal<i>jé·sedh</i></div><div class="x">el amor motivado por <b>el compromiso, la integridad, la lealtad y el apego profundo</b></div><div class="s">TNM, glosario, “amor leal”</div></div>
+  <div class="def d2"><div class="t">fidelidad<i>ha·’eméth</i></div><div class="x">también: “<b>la verdad</b>”</div><div class="s">TNM de 1987, nota en 32:10</div></div>
+</div>
+<script>
+const T = [at("Primero"), at("Segundo"), at("Tercero"), at("Cuarto"), at("Quinto")];
+T.forEach((t, i) => {
+  entra(".o" + (i + 1), t, { y: 40 });
+  tl.to($(".o" + (i + 1)), { borderColor: "rgba(233,191,96,0.95)", duration: 0.3 }, t);
+  tl.to($(".o" + (i + 1)), { borderColor: "rgba(241,233,216,0.14)", duration: 0.3 }, (T[i + 1] ?? at("Amor leal traduce")) - 0.1);
+});
+entra(".o4m", at("no esconde"), { y: 10 });
+entra(".propio-o", at("paso a paso"), { y: -10 });
+entra(".d1", at("Amor leal traduce"), { y: 30 });
+entra(".d2", at("el apego profundo") - 1.2, { y: 30 });
+</script>

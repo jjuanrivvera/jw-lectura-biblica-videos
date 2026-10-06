@@ -1,0 +1,33 @@
+<style>
+.sangre img { object-position: 40% 50%; }
+.pie39 { left: 24px; bottom: 20px; max-width: 900px; }
+.col39 { position: absolute; left: 1060px; right: 60px; top: 110px; bottom: 90px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.col39 .cita { font-size: 40px; }
+.hoy39 .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.16em; color: var(--oro); text-transform: uppercase; }
+.hoy39 .v { font-family: "Fraunces", serif; font-weight: 700; font-size: 66px; line-height: 1.05; }
+.hoy39 .v small { display: block; font-family: "Caveat", cursive; font-size: 52px; color: var(--tiza); margin-top: 6px; }
+</style>
+
+<div class="sangre"><div class="kb"><img src="assets/img/betel.jpg" /></div></div>
+<div class="velo der"></div>
+<div class="pie pie39">“Ruinas en el lugar donde estuvo la antigua Betel”. <i>Perspicacia</i>, vol. 1, pág. 346 (wol.jw.org)</div>
+<div class="cab sobre" style="z-index:3"><span class="cap">Betel y Hai, hoy</span><span></span></div>
+
+<div class="col39">
+  <div class="hoy39 h1"><div class="k">Betel</div><div class="v">hoy, Beitín<small>el campamento de Abrán: Burj Beitín, “a poca distancia al SE.”, en “una de las mejores vistas panorámicas de Palestina”</small></div><div class="f" style="margin-top:8px">“se ha pensado” · <i>Perspicacia</i>, vol. 1, “Betel”, págs. 345, 346</div></div>
+  <div class="hoy39 h2"><div class="k">Hai</div><div class="v">¿et-Tell?<small>las excavaciones muestran ese lugar deshabitado en esa época</small></div></div>
+  <div class="cita h3">“Si las fechas que presentan los arqueólogos son correctas, entonces Hai debió estar ubicada <b>en alguna otra parte</b>”<span class="ref">PERSPICACIA, VOL. 1, “HAI”, PÁG. 1078</span></div>
+</div>
+
+<script>
+kb(".kb", 0, DUR, { s: 1.12, x: 2 }, { s: 1.0, x: 0 });
+// La columna baja al centro mientras solo está Betel y sube con cada bloque nuevo.
+tl.set($(".col39"), { y: 227 }, 0);
+tl.to($(".col39"), { y: 102, duration: 0.7, ease: "power2.inOut" }, at("La ciudad de Hai") - 0.7);
+tl.to($(".col39"), { y: 0, duration: 0.7, ease: "power2.inOut" }, at("Si esas fechas") - 0.7);
+aparece(".pie39", 0.6, 0.5);
+entra(".cab", 0.3, { y: -16 });
+entra(".h1", 0.6, { y: 20 });
+entra(".h2", at("La ciudad de Hai") - 0.2, { y: 20 });
+entra(".h3", at("Si esas fechas") - 0.2, { y: 20 });
+</script>

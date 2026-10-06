@@ -1,0 +1,42 @@
+<style>
+.mapa { left: 0; top: 0; width: 1180px; height: 1080px; }
+.mapa .cam img, .mapa .cam svg { width: 2200px; height: 2000px; }
+.ovalo { fill: rgba(233,191,96,0.25); stroke: #8a5a00; stroke-width: 7; stroke-dasharray: 20 12; }
+.num { font-family: "Montserrat"; font-weight: 800; font-size: 44px; fill: #fff; }
+.pieza circle.c { stroke: #fff; stroke-width: 6; }
+.anillo2 { fill: none; stroke-width: 8; }
+.funde { position: absolute; left: 1060px; top: 0; width: 160px; height: 1080px; background: linear-gradient(90deg, rgba(23,33,43,0), #17212b); }
+.pie-mapa { top: auto; bottom: 22px; max-width: 1040px; }
+.col { top: 110px; bottom: 90px; right: 60px; width: 690px; }
+.lin { display: grid; grid-template-columns: 70px 1fr; column-gap: 18px; align-items: start; }
+.lin .n { width: 64px; height: 64px; border-radius: 50%; color: #fff; font-family: "Montserrat"; font-weight: 800; font-size: 34px; display: flex; align-items: center; justify-content: center; }
+</style>
+<div class="mapa">
+  <div class="cam">
+    <img src="assets/img/mapa-b6.jpg" />
+    <svg viewBox="0 0 2200 2000">
+      <g class="z1"><ellipse class="ovalo" cx="1010" cy="900" rx="230" ry="95"/><g class="pieza"><circle class="c" cx="1300" cy="780" r="42" fill="#b8860b"/><text class="num" x="1300" y="796" text-anchor="middle">1</text></g></g>
+      <g class="z2"><circle class="anillo2" cx="1012" cy="1174" r="34" stroke="#c0392b"/><g class="pieza"><circle class="c" cx="1180" cy="1290" r="42" fill="#c0392b"/><text class="num" x="1180" y="1306" text-anchor="middle">2</text></g></g>
+      <g class="z3"><circle class="anillo2" cx="864" cy="1062" r="34" stroke="#1f5fa8"/><g class="pieza"><circle class="c" cx="700" cy="1250" r="42" fill="#1f5fa8"/><text class="num" x="700" y="1266" text-anchor="middle">3</text></g></g>
+    </svg>
+  </div>
+  <div class="pie-mapa">Mapa: apéndice B6 de la TNM, “La ocupación de la Tierra Prometida” (wol.jw.org) · óvalo, círculos y números añadidos, como en la investigación</div>
+</div>
+<div class="funde"></div>
+<div class="cab sobre"><span class="cap">¿Dónde estaba Galeed?</span><span>Génesis 31:45-49</span></div>
+<div class="col">
+  <div class="b a1"><div class="lin"><div class="n" style="background:#b8860b">1</div><div><div class="m md">en las montañas de Galaad, <b style="color:var(--oro)">al norte del Jaboc</b></div><div class="s">“a unos pocos kilómetros al N. del Jaboq” · Perspicacia, vol. 2, “Jacob”, pág. 10 · el punto exacto no se sabe</div></div></div></div>
+  <div class="b a2"><div class="lin"><div class="n" style="background:#c0392b">2</div><div><div class="m md">Mizpá de Galaad, la ciudad de <b style="color:var(--oro)">Jefté</b></div><div class="s">“su ubicación exacta es incierta” · Perspicacia, vol. 2, “Mizpá, Mizpé”, pág. 407 · Jueces 11:29, 34</div><div class="m md">¿la misma “Atalaya”? <b>No se puede afirmar.</b></div></div></div><span class="externa">fuente externa</span><div class="s">se propone Khirbet Jalʽad, con baja confianza · OpenBible.info, “Mizpah 1”, consultado el 28-sep-2026</div></div>
+  <div class="b a3"><div class="lin"><div class="n" style="background:#1f5fa8">3</div><div><div class="m md">en el camino hacia <b style="color:var(--oro)">Penuel</b>, junto al Jaboc</div><div class="s">donde luchó con el ángel · Génesis 32:30, 31</div></div></div><div class="m md">del montón no queda rastro</div></div>
+</div>
+<script>
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+const cam = $(".cam");
+tl.set(cam, encuadre({ x: 480, y: 560, w: 1130, h: 1034 }, V), 0);
+tl.to(cam, { ...encuadre({ x: 520, y: 600, w: 1000, h: 915 }, V), duration: DUR, ease: "none" }, 0);
+aparece(".z1", 0.5, 0.5);
+aparece(".z2", at("Siglos después"), 0.5);
+aparece(".z3", at("Estaba en el camino"), 0.5);
+late(".z3 .anillo2", at("Estaba en el camino") + 0.3, { s: 1.3, n: 3 });
+secuencia([[".a1", 0.4], [".a2", at("Siglos después")], [".a3", at("Estaba en el camino")]]);
+</script>

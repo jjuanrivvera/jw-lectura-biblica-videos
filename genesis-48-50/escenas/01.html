@@ -1,0 +1,80 @@
+<style>
+/* Escala 1760-1650: x = 120 + (1760 - año) * 1680 / 110 */
+.lt01 svg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.tit01 { position: absolute; left: 80px; top: 120px; }
+.tit01 .m { font-size: 88px; }
+.fila01 { position: absolute; left: 0; height: 96px; border-radius: 18px; display: flex; align-items: center; padding-left: 22px; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 32px; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; overflow: hidden; color: #17212b; transform-origin: 0 50%; }
+.nom01 { position: absolute; left: 70px; font-family: "Fraunces", serif; font-weight: 700; font-size: 56px; }
+.et01 { position: absolute; width: 360px; margin-left: -180px; text-align: center; }
+.et01 .a { font-family: "Fraunces", serif; font-weight: 700; font-size: 60px; line-height: 1; }
+.et01 .d { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; line-height: 1.02; color: var(--tiza); margin-top: 6px; }
+.et01.oro .a { color: var(--oro); }
+.ed01 { position: absolute; width: 220px; margin-left: -110px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 56px; line-height: 1; }
+.ed01.calc { color: var(--cielo); }
+.llave01 { position: absolute; top: 0; left: 0; width: 1920px; height: 1080px; }
+.t54 { position: absolute; top: 938px; width: 600px; margin-left: -300px; text-align: center; }
+.t54 .m { font-size: 70px; }
+.pp01 { position: absolute; right: 80px; top: 130px; }
+.fu01 { position: absolute; left: 80px; right: 80px; bottom: 26px; }
+</style>
+
+<div class="cab"><span class="cap">Contexto</span><span>de Génesis 47 a Génesis 50</span></div>
+<div class="tit01"><div class="m">diecisiete años juntos</div></div>
+<div class="pp01"><span class="propio chico">edades de José: cálculo propio con Gé 41:46; 45:6; 47:9, 28</span></div>
+
+<div class="fase lt01">
+  <svg viewBox="0 0 1920 1080">
+    <line x1="120" y1="590" x2="1800" y2="590" stroke="rgba(241,233,216,0.4)" stroke-width="6" stroke-linecap="round"/>
+    <g class="pt01">
+      <circle class="p p1728" cx="609" cy="590" r="15" fill="#e9bf60"/>
+      <circle class="p p1711" cx="869" cy="590" r="15" fill="#f1e9d8"/>
+      <circle class="p p1657" cx="1693" cy="590" r="15" fill="#f1e9d8"/>
+    </g>
+  </svg>
+  <div class="nom01 nj" style="top:318px">Jacob</div>
+  <div class="fila01 bj" style="left:273px; width:328px; top:300px; font-size:23px; letter-spacing:0.02em; padding-left:12px; background:#b3bdc8;">Jacob, en Canaán</div>
+  <div class="fila01 be" style="left:609px; width:260px; top:300px; padding-left:24px; background:#93bbef;">17 años</div>
+  <div class="nom01 nx" style="top:718px">José</div>
+  <div class="fila01 bx" style="left:273px; width:1420px; top:700px; background:#e9bf60;">José, en Egipto</div>
+  <div class="et01 oro e1728" style="left:609px; top:445px;"><div class="a">1728</div><div class="d">Jacob llega</div></div>
+  <div class="et01 e1711" style="left:869px; top:445px;"><div class="a">1711</div><div class="d">muere Jacob</div></div>
+  <div class="et01 e1657" style="left:1693px; top:445px;"><div class="a">1657</div><div class="d">muere José</div></div>
+  <div class="ed01 a130" style="left:609px; top:228px;">130 años</div>
+  <div class="ed01 a147" style="left:869px; top:228px;">147 años</div>
+  <div class="ed01 calc x39" style="left:609px; top:814px;">unos 39</div>
+  <div class="ed01 calc x56" style="left:869px; top:814px;">unos 56</div>
+  <div class="ed01 x110" style="left:1693px; top:814px;">110 años</div>
+  <svg class="llave01" viewBox="0 0 1920 1080"><path class="ll54" d="M 869 896 C 869 926 900 926 1000 926 L 1240 926 C 1270 926 1281 936 1281 952 C 1281 936 1292 926 1322 926 L 1563 926 C 1663 926 1693 926 1693 896" fill="none" stroke="#93bbef" stroke-width="6" stroke-linecap="round"/></svg>
+  <div class="t54" style="left:1281px;"><div class="m cielo">54 años sin su padre</div></div>
+</div>
+<div class="fu01 f"><i>Perspicacia</i>, “Jacob”, págs.&nbsp;11 a 12, y “José”, pág.&nbsp;127 · años antes de nuestra era · escala proporcional</div>
+
+<script>
+entra(".tit01", 0.3, { y: 16 });
+aparece(".lt01 svg line", 0.3, 0.6);
+aparece(".fu01", 0.8, 0.5);
+const tJ = at("Jacob llegó a Egipto");
+entra(".nj", tJ - 0.3, { x: -20, y: 0 });
+tl.fromTo($(".bj"), { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.out", immediateRender: false }, tJ - 0.2);
+aparece(".bj", tJ - 0.2, 0.2);
+salta(".p1728", at("mil setecientos veintiocho") - 0.2);
+entra(".e1728", at("mil setecientos veintiocho"), { y: 14 });
+entra(".a130", at("ciento treinta años"), { y: 10 });
+tl.fromTo($(".be"), { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.out", immediateRender: false }, at("diecisiete años más") - 0.2);
+aparece(".be", at("diecisiete años más") - 0.2, 0.2);
+salta(".p1711", at("mil setecientos once") - 0.2);
+entra(".e1711", at("mil setecientos once"), { y: 14 });
+entra(".a147", at("ciento cuarenta y siete"), { y: 10 });
+const tX = at("José tenía unos");
+entra(".nx", tX - 0.3, { x: -20, y: 0 });
+tl.fromTo($(".bx"), { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: "power2.out", immediateRender: false }, tX - 0.2);
+aparece(".bx", tX - 0.2, 0.2);
+entra(".x39", at("treinta y nueve") - 0.1, { y: 10 });
+entra(".x56", at("cincuenta y seis") - 0.1, { y: 10 });
+aparece(".pp01", at("cincuenta y seis") + 0.4, 0.5);
+salta(".p1657", at("mil seiscientos cincuenta y siete") - 0.2);
+entra(".e1657", at("mil seiscientos cincuenta y siete"), { y: 14 });
+entra(".x110", at("mil seiscientos cincuenta y siete") + 0.4, { y: 10 });
+traza(".ll54", at("cincuenta y cuatro años") - 0.3, 0.9);
+entra(".t54", at("cincuenta y cuatro años"), { y: 14 });
+</script>

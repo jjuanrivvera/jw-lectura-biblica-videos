@@ -1,0 +1,74 @@
+<style>
+.tt02 { position: absolute; left: 90px; top: 44px; display: flex; align-items: baseline; gap: 30px; }
+.tt02 .grande { font-size: 96px; }
+.tt02 .s { font-size: 34px; }
+.lt02 { position: absolute; inset: 0; }
+.lt02 svg { width: 1920px; height: 1080px; display: block; }
+.et02 { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: #17212b; }
+.an02 { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 26px; fill: var(--tenue); text-anchor: middle; }
+.ev02 { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; fill: var(--tiza); text-anchor: middle; }
+.ev02.oro { fill: var(--oro); }
+.cu02 { font-family: "Fraunces", serif; font-weight: 700; font-size: 60px; fill: var(--oro); text-anchor: middle; }
+.bab02 { position: absolute; left: 90px; right: 90px; top: 858px; }
+.bab02 .dato { padding: 16px 30px; display: flex; align-items: center; gap: 40px; }
+.bab02 .dato .k { font-size: 54px; flex: 1.2; }
+.bab02 .dato .s { flex: 1; margin: 0; }
+.f02 { position: absolute; left: 90px; right: 90px; bottom: 22px; }
+</style>
+
+<div class="tt02"><div class="grande">Unos 430 años</div><div class="s">del Diluvio al cruce del Éufrates · fechas antes de nuestra era</div></div>
+
+<div class="lt02"><svg viewBox="0 0 1920 1080">
+  <defs>
+    <pattern id="g02-rayas" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="18" height="18" fill="rgba(147,187,239,0.10)"/><rect width="7" height="18" fill="rgba(147,187,239,0.28)"/></pattern>
+    <linearGradient id="g02-agua" x1="0" x2="1"><stop offset="0" stop-color="#2f6fa8"/><stop offset="1" stop-color="#5f9fd8"/></linearGradient>
+  </defs>
+  <g class="rej"></g>
+  <path class="eje" d="M 120 640 H 1800" stroke="rgba(241,233,216,0.45)" stroke-width="6" stroke-linecap="round"/>
+  <g class="bn"><rect x="120" y="262" width="1330" height="62" rx="14" fill="#8fb3e8"/><path d="M 150 272 L 128 293 L 150 314" fill="none" stroke="#17212b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><text class="et02" x="176" y="305">Noé · 950 años</text></g>
+  <g class="bp"><rect x="578" y="352" width="837" height="62" rx="14" fill="url(#g02-rayas)" stroke="#93bbef" stroke-width="3" stroke-dasharray="12 9"/><text class="et02" x="604" y="395" style="fill:#cfe0f7">Péleg · en sus días, Babel (sin fecha)</text></g>
+  <g class="ba"><rect x="1457" y="442" width="343" height="62" rx="14" fill="#e9bf60"/><path d="M 1770 452 L 1794 473 L 1770 494" fill="none" stroke="#17212b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><text class="et02" x="1480" y="485">Abrán</text></g>
+  <g class="evs">
+    <g class="e1"><circle cx="225" cy="640" r="16" fill="url(#g02-agua)" stroke="#cfe0f7" stroke-width="4"/><text class="ev02" x="240" y="590">2370 · comienza el Diluvio</text></g>
+    <g class="e2"><circle cx="1450" cy="640" r="14" fill="#8fb3e8"/><text class="ev02" x="1440" y="590" style="text-anchor:end">2020 · muere Noé</text></g>
+    <g class="e3"><circle cx="1457" cy="640" r="16" fill="#e9bf60"/><text class="ev02 oro" x="1470" y="590" style="text-anchor:start">2018 · nace Abrán en Ur</text></g>
+    <g class="e4"><circle cx="1719" cy="640" r="18" fill="#e9bf60"/></g>
+  </g>
+  <g class="br"><path d="M 225 736 V 756 H 1719 V 736" fill="none" stroke="#e9bf60" stroke-width="5" stroke-linejoin="round"/><text class="cu02" x="972" y="826"><tspan class="n427">427</tspan> años</text></g>
+  <g class="e4t"><path d="M 1719 556 V 622" stroke="#e9bf60" stroke-width="4" stroke-dasharray="6 7"/><text class="ev02 oro" x="1840" y="545" style="text-anchor:end">1943 · cruza el Éufrates, con 75 años</text></g>
+  <g class="cursor"><path d="M 0 236 L 0 660" stroke="#fff" stroke-width="5"/><path d="M -16 230 L 16 230 L 0 254 Z" fill="#fff"/></g>
+</svg></div>
+
+<div class="bab02">
+  <div class="dato"><div class="k">¿Y Babel? La Biblia <b style="color:var(--oro)">no da la fecha</b>: fue “en los días de Péleg”, que vivió de 2269 a 2030</div><div class="s">“En el registro bíblico no se da la fecha en la que se intentó construir la Torre de Babel” · <i>Perspicacia</i>, vol. 1, “Cronología”, pág. 597</div></div>
+</div>
+<div class="f02 f">Fechas: <i>Perspicacia</i>, vol. 1, “Cronología”, págs. 595-597, y “Abrahán”, pág. 30 · Génesis 9:28; 11:10-32; 12:4</div>
+
+<script>
+const X = (y) => 120 + (2400 - y) * 3.5;
+let r = "";
+for (let y = 2400; y >= 1950; y -= 50) r += `<path d="M ${X(y)} 626 V 654" stroke="rgba(241,233,216,0.5)" stroke-width="4"/><text class="an02" x="${X(y)}" y="690">${y}</text>`;
+pinta(".rej", r);
+entra(".tt02", 0.2, { y: -20 });
+aparece([".rej", ".eje"], 0.3, 0.6);
+tl.fromTo($$(".bn rect, .bp rect, .ba rect"), { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.9, stagger: 0.25, ease: "power2.out", immediateRender: false }, 0.5);
+tl.set($$(".bn rect, .bp rect, .ba rect"), { scaleX: 0, transformOrigin: "0% 50%" }, 0);
+aparece([".bn text", ".bn path", ".bp text", ".ba text", ".ba path"], 1.2, 0.5);
+tl.set($(".cursor"), { x: X(2370) }, 0);
+aparece(".cursor", at("Diluvio") - 0.3, 0.3);
+salta(".e1", at("Diluvio"), { desde: 0.5 });
+tl.to($(".cursor"), { x: X(2020), duration: 1.4, ease: "power1.inOut" }, at("Noé murió") - 0.3);
+salta(".e2", at("Noé murió") + 0.8, { desde: 0.5 });
+tl.to($(".cursor"), { x: X(2018), duration: 0.5, ease: "power1.inOut" }, at("nació Abrán") - 0.2);
+salta(".e3", at("nació Abrán"), { desde: 0.5 });
+tl.to($(".cursor"), { x: X(1943), duration: 1.6, ease: "power1.inOut" }, at("mil novecientos cuarenta") - 0.2);
+salta(".e4", at("mil novecientos cuarenta") + 1.2, { desde: 0.5 });
+entra(".e4t", at("cruzó el Éufrates") - 0.4, { y: 10 });
+traza(".br path", at("cruzó el Éufrates"), 1.0);
+entra(".br text", at("cruzó el Éufrates") + 0.4, { y: 10 });
+cuenta(".n427", 0, 427, at("cruzó el Éufrates") + 0.4, 1.4);
+late(".bp rect", at("Y Babel"), { s: 1.03, n: 3 });
+entra(".bab02", at("Y Babel"), { y: 24 });
+aparece(".f02", 0.8, 0.5);
+late(".bp rect", at("días de Péleg"), { s: 1.04, n: 3 });
+</script>

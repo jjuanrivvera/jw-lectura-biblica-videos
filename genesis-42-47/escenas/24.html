@@ -1,0 +1,44 @@
+<!--lead:2.0-->
+<style>
+.img24 { position: absolute; left: 240px; top: 30px; width: 1440px; height: 720px; overflow: hidden; border-radius: 22px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
+.img24 .kb { position: absolute; inset: 0; }
+.img24 img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+.img24 .baja { position: absolute; left: 0; right: 0; bottom: 0; height: 560px; background: linear-gradient(180deg, rgba(22, 32, 42, 0) 0%, rgba(22, 32, 42, 0.88) 42%, rgba(22, 32, 42, 0.97) 100%); }
+.pie24 { right: 250px; top: 44px; max-width: 560px; }
+.band24 { position: absolute; left: 80px; right: 80px; bottom: 60px; height: 400px; }
+.band24 > .b { position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; gap: 18px; }
+.band24 .cita { font-size: 58px; }
+.band24 .fila { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+.band24 .clave { font-size: 46px; }
+.band24 .f { font-size: 24px; }
+.llora24 { position: absolute; left: 270px; top: 56px; display: flex; gap: 14px; align-items: center; }
+.llora24 .clave { font-size: 40px; }
+</style>
+
+<div class="img24"><div class="kb"><img src="assets/img/jose-revela.jpg" /></div><div class="baja"></div></div>
+<div class="pie pie24">“José contándoles quién es a sus hermanos mientras ellos lo miran con asombro”. <i>Guía de actividades</i>, junio de 2020, pág.&nbsp;2</div>
+<div class="llora24"><span class="clave l0">llora</span><span class="clave l1">42:24</span><span class="clave l2">43:30</span><span class="clave l3"><b>45:2</b> · delante de ellos</span></div>
+<div class="band24">
+  <div class="b a1"><div class="cita q1">“¡Hagan salir a todos de aquí!”<span class="ref">GÉNESIS 45:1</span></div></div>
+  <div class="b a2"><div class="cita q2" style="font-size:72px">“Yo soy José. Y mi padre, <b>¿sigue vivo?</b>”<span class="ref">GÉNESIS 45:3</span></div>
+    <div class="fila"><span class="clave c1">no pudieron contestarle</span><span class="f c2">podía encarcelarlos, enviarlos a casa sin alimento “o, peor aún, ¡ejecutarlos!” · <i>La Atalaya</i>, 1 de enero de 1999, pág.&nbsp;30</span></div></div>
+  <div class="b a3"><div class="cita q3">“Acérquense a mí, por favor. [...] Yo soy su hermano José, <b>al que ustedes vendieron a Egipto</b>”<span class="ref">GÉNESIS 45:4</span></div></div>
+</div>
+
+<div class="capcard cc"><div class="fondo"><img src="assets/img/perdon-video.jpg" /></div>
+  <div class="dentro"><div class="num">Génesis 45</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16" /></svg><div class="sub">“Yo soy José”</div>
+  <div class="pista"><span class="hecho">42</span><span class="hecho">43</span><span class="hecho">44</span><span class="on">45</span><span>46</span><span>47</span></div></div></div>
+
+<script>
+const t0 = at("José ya no puede");
+capitulo(".cc", 0.3, t0 - 0.5);
+entra(".cc .pista", 1.0, { y: 20 });
+kb(".cc .fondo", 0, t0, { s: 1.12 }, { s: 1.0 });
+kb(".img24 .kb", t0 - 0.6, DUR, { s: 1.06, x: 1 }, { s: 1.0, x: -1 });
+aparece(".pie24", t0, 0.5);
+secuencia([[".a1", at("Hagan salir") - 0.2], [".a2", at("Yo soy José") - 0.3], [".a3", at("Acérquense") - 0.3]]);
+entra(".l0", at("Es la tercera vez"), { y: -12 });
+entra([".l1", ".l2", ".l3"], at("Es la tercera vez") + 0.3, { y: -12, st: 0.35 });
+entra(".c1", at("Ellos no pueden contestar"), { y: 12 });
+entra(".c2", at("tenían motivos"), { y: 12 });
+</script>

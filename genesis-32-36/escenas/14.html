@@ -1,0 +1,32 @@
+<style>
+.ilus.sv { left: 0; top: 0; width: 1160px; height: 1080px; border-radius: 0; box-shadow: none; }
+.ilus.sv img { object-position: 42% 50%; }
+.velo { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: linear-gradient(90deg, rgba(23,33,43,0) 0%, rgba(23,33,43,0) 48%, rgba(23,33,43,0.96) 56%, #17212b 100%); }
+.col.der { width: 720px; }
+.siete { display: flex; align-items: baseline; gap: 20px; }
+.siete .grande { font-size: 200px; color: var(--oro); }
+.pie-img.ps { left: 40px; bottom: 26px; background: rgba(15,22,30,0.8); padding: 4px 12px; border-radius: 8px; font-size: 21px; }
+.porque { display: flex; flex-direction: column; gap: 18px; }
+.porque .r { display: grid; grid-template-columns: 70px 1fr; align-items: baseline; }
+.porque .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 70px; color: var(--oro); }
+</style>
+<div class="ilus sv"><div class="kb"><img src="assets/img/siete-veces.jpg" /></div></div>
+<div class="velo"></div>
+<div class="pie-img ps">Ilustración: <i>Lecciones que aprendo de la Biblia</i>, lección 13, pág. 36 (wol.jw.org)</div>
+<div class="cab sobre"><span class="cap">Génesis 33</span><span>versículos 3 y 4</span></div>
+<div class="col der">
+  <div class="b a1"><div class="siete"><span class="grande cnt">1</span><span class="m">veces</span></div><div class="cita md">“se inclinó hasta el suelo siete veces”<span class="ref">GÉNESIS 33:3</span></div></div>
+  <div class="b a2"><div class="cita md">“Inclinarse era común al saludarse [...] o como señal de sumo respeto”</div><div class="f"><i>Perspicacia</i>, vol. 2, “Posturas y ademanes”, pág. 688</div><div class="m oro">no era adoración</div><div class="f"><i>La Atalaya</i>, 1 de octubre de 1968, pág. 606</div><div class="m md">siete veces, deteniéndose a cada paso: presentarse del todo como inferior</div></div>
+  <div class="b a3"><div class="cita md">“Pero Esaú fue corriendo a su encuentro, lo abrazó y lo besó, y los dos se echaron a llorar”<span class="ref">GÉNESIS 33:4</span></div><div class="m verde-no">“con los brazos abiertos, ¡sin ningún arma!”</div><div class="f"><i>Seamos valientes</i>, cap. 7, pág. 41</div></div>
+  <div class="b a4"><div class="m">¿Por qué cambió Esaú?</div><div class="porque">
+    <div class="r r1"><span class="n">1</span><span class="cita md">“sobre todo porque <b>Jehová contestó su oración</b>”</span></div>
+    <div class="r r2"><span class="n">2</span><span class="cita md">“Los regalos generosos de Jacob y su actitud humilde habían calmado la ira de su hermano”</span></div>
+  </div><div class="f"><i>La Atalaya</i>, 15 de noviembre de 2009, pág. 8 · <i>Seamos valientes</i>, cap. 7, pág. 41</div></div>
+</div>
+<script>
+kb(".sv .kb", 0, DUR, { s: 1.1, x: -2 }, { s: 1.0, x: 1 });
+secuencia([[".a1", 0.4], [".a2", at("Inclinarse era")], [".a3", at("Y Esaú fue")], [".a4", at("Por qué cambió")]]);
+cuenta(".cnt", 1, 7, at("siete veces") - 0.6, 1.4);
+entra(".r1", at("Sobre todo"), { y: 20 });
+entra(".r2", at("Y los regalos"), { y: 20 });
+</script>

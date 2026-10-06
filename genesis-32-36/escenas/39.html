@@ -1,0 +1,43 @@
+<style>
+.arbol39 { position: absolute; left: 60px; right: 60px; top: 110px; height: 560px; }
+.arbol39 svg { width: 1800px; height: 560px; }
+.nd { font-family: "Fraunces", serif; font-weight: 700; font-size: 36px; fill: var(--tiza); text-anchor: middle; }
+.nd2 { font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 22px; fill: var(--tenue); text-anchor: middle; }
+.nt { font-family: "Caveat", cursive; font-weight: 700; font-size: 40px; fill: var(--tiza); }
+.caja { fill: rgba(10,16,22,0.55); stroke: rgba(241,233,216,0.25); stroke-width: 3; }
+.lin { stroke: #56657a; stroke-width: 3; fill: none; }
+.abajo39 { position: absolute; left: 60px; right: 60px; top: 700px; grid-template-columns: 1fr 1fr 1fr; }
+.abajo39 .tj .x { font-size: 36px; }
+</style>
+<div class="cab"><span class="cap">Génesis 36</span><span>versículos 9 al 19 y 40 al 43</span></div>
+<div class="arbol39"><svg viewBox="0 0 1800 560" class="ar"></svg></div>
+<div class="tarjetas abajo39">
+  <div class="tj t1"><div class="k">jeque · ʼal·lúf</div><div class="x">“Un jeque era un jefe tribal”: “jefe”, “<b>caudillo de un millar</b>”</div><div class="ref">nota de la TNM en 36:15 · <i>Perspicacia</i>, vol. 2, “Jeque”, pág. 56</div></div>
+  <div class="tj t2"><div class="k">Una red de clanes</div><div class="x">“Los clanes que surgieron de los jeques adoptaron el mismo nombre del jeque”: <b>Temán</b>, famosa por su sabiduría</div><div class="ref"><i>Perspicacia</i>, vol. 2, págs. 56, 1095 · Job 2:11</div></div>
+  <div class="tj t3 on"><div class="k">Amalec · 36:12, 16</div><div class="x">hijo de Timná, <b>concubina</b>: “los hijos de las concubinas eran legítimos”</div><div class="x t3b" style="color:var(--rojo)">los amalequitas, “la primera de las naciones” que atacó a Israel</div><div class="ref"><i>Perspicacia</i>, vol. 1, págs. 109, 521 · Éxodo 17:8</div></div>
+</div>
+<script>
+let a = "";
+a += `<g class="n0"><rect class="caja" x="770" y="0" width="260" height="70" rx="14" style="stroke:var(--oro)"/><text class="nd" x="900" y="47" style="fill:var(--oro)">Esaú (Edom)</text></g>`;
+const E = [["Adá", "hija de Elón el hitita", 300, "Elifaz"], ["Basemat", "hija de Ismael", 900, "Reuel"], ["Oholibamá", "hija de Aná", 1500, "Jeús, Jalam, Coré"]];
+E.forEach(([n, s, x, h], i) => {
+  a += `<g class="e${i}"><path class="lin" d="M 900 70 L 900 95 L ${x} 95 L ${x} 115"/><rect class="caja" x="${x - 190}" y="115" width="380" height="84" rx="14"/><text class="nd" x="${x}" y="155">${n}</text><text class="nd2" x="${x}" y="186">${s}</text>`;
+  a += `<path class="lin" d="M ${x} 199 L ${x} 225"/><rect class="caja" x="${x - 190}" y="225" width="380" height="64" rx="14"/><text class="nd" x="${x}" y="268">${h}</text></g>`;
+});
+const J1 = ["Temán", "Omar", "Zefó", "Quenaz", "Coré (?)", "Gatam", "Amalec"];
+J1.forEach((n, i) => { a += `<text class="nt j1 j1-${i}" x="${130 + (i % 4) * 110}" y="${340 + Math.floor(i / 4) * 60}" ${n === "Amalec" ? 'style="fill:var(--rojo)"' : n === "Temán" ? 'style="fill:var(--oro)"' : ""}>· ${n}</text>`; });
+["Náhat", "Zérah", "Samá", "Mizá"].forEach((n, i) => { a += `<text class="nt j2" x="${780 + (i % 2) * 150}" y="${340 + Math.floor(i / 2) * 60}">· ${n}</text>`; });
+a += `<text class="nt j3" x="1500" y="340" text-anchor="middle" style="font-size:34px;fill:var(--tenue)">ellos mismos, jeques</text>`;
+a += `<text class="nd2 jt" x="900" y="500" style="font-size:26px">nietos de Esaú que fueron jeques (36:15-19) · Coré entre los de Elifaz: “no se sabe con seguridad”</text>`;
+$(".ar").innerHTML = a;
+entra(".n0", 0.3, { y: -20 });
+entra([".e0", ".e1", ".e2"], 0.6, { y: 20, st: 0.3 });
+entra(".j1", at("Sus nietos") + 0.3, { st: 0.12, y: 12 });
+entra([".j2", ".j3", ".jt"], at("Sus nietos") + 1.0, { st: 0.12, y: 12 });
+entra(".t1", at("Un jeque"), { y: 30 });
+entra(".t2", at("Edom empezó"), { y: 30 });
+late(".j1-0", at("Temán"), { s: 1.25, n: 3 });
+entra(".t3", at("Entre los nietos"), { y: 30 });
+late(".j1-6", at("Amalec"), { s: 1.25, n: 3 });
+entra(".t3b", at("amalequitas"), { y: 12 });
+</script>

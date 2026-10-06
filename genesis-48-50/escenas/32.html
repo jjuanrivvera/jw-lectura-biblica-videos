@@ -1,0 +1,74 @@
+<!--incluir:_g49b-hijo.html-->
+<style>
+.lobo32 { left: 70px; top: 110px; width: 600px; height: 474px; }
+.lobo32 img { object-position: 50% 50%; }
+.hon32 { position: absolute; left: 710px; top: 120px; width: 370px; display: flex; flex-direction: column; gap: 18px; }
+.hon32 .cumple .x { font-size: 50px; }
+.hon32 .cita { font-size: 34px; }
+.hon32 .cita .ref { font-size: 22px; }
+.cielo32 { position: absolute; left: 70px; top: 610px; width: 1010px; height: 440px; border-radius: 26px; overflow: hidden; box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45); }
+.cielo32 .grad { position: absolute; inset: 0; background: linear-gradient(90deg, #f6dfa0 0%, #9cc3e6 28%, #7aa6d6 55%, #e39a5c 80%, #6b4a7a 100%); }
+.cielo32 .sombra { position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: linear-gradient(180deg, rgba(23, 33, 43, 0), rgba(23, 33, 43, 0.82)); }
+.cielo32 svg { position: absolute; inset: 0; width: 1010px; height: 440px; }
+.et32 { position: absolute; bottom: 16px; width: 470px; box-sizing: border-box; padding: 14px 22px 14px; border-radius: 20px; background: rgba(15, 22, 30, 0.82); border: 2px solid rgba(255, 255, 255, 0.16); }
+.et32 .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2; letter-spacing: 0.14em; text-transform: uppercase; color: #f4d57a; margin-bottom: 6px; }
+.et32 .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 52px; line-height: 1.08; color: #fff; }
+.et32 .r { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; line-height: 1.25; color: #f1e9d8; margin-top: 8px; }
+.et32.m { left: 20px; }
+.et32.a { right: 20px; text-align: right; }
+.sig32 { position: absolute; left: 50%; top: 22px; width: 300px; margin-left: -150px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; color: #17212b; }
+</style>
+<div class="fase fmapa">
+  <div class="ilus lobo32"><img src="assets/img/lobo.jpg" /><div class="pie" style="left:0; right:0; bottom:0; border-radius:0">“En Israel, los lobos (<i>Canis lupus</i>)…” · <i>TNM</i>, edición de estudio, galería multimedia</div></div>
+  <div class="hon32">
+    <div class="cumple"><div class="k">guerreros hábiles</div><div class="x">famosos incluso <b>con la honda</b></div></div>
+    <div class="cita">“podía lanzar una piedra con la honda y darle a un cabello sin fallar el tiro”<span class="ref">JUECES 20:16</span></div>
+  </div>
+  <div class="cielo32">
+    <div class="grad"></div>
+    <svg viewBox="0 0 1010 440">
+      <circle class="sol-m" cx="150" cy="96" r="50" fill="#fff3c4"/>
+      <circle class="sol-a" cx="860" cy="104" r="54" fill="#ffb066"/>
+      <path class="arco32" d="M 150 96 C 380 6 640 6 860 104" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="5" stroke-dasharray="14 12"/>
+    </svg>
+    <div class="sig32">siglos después</div>
+    <div class="sombra"></div>
+    <div class="et32 m"><div class="k">por la mañana</div><div class="x">Saúl, de Benjamín, primer rey de Israel</div><div class="r">1 Samuel 9:1, 2, 21</div></div>
+    <div class="et32 a"><div class="k">al atardecer</div><div class="x">Ester y Mardoqueo salvan al pueblo</div><div class="r">Ester 2:5-7; 10:3 · Imperio persa</div></div>
+  </div>
+</div>
+<div class="cab ch"><span class="cap">Génesis 49</span><span>versículo 27</span></div>
+<div class="hijo gh" style="--c: var(--raquel)"><img src="assets/img/benjamin-g.jpg" /></div>
+<div class="pres">
+  <div class="nhijo">Benjamín<small>“hijo de la diestra”</small></div>
+  <div class="cita">“Benjamín irá desgarrando a su presa <b>como un lobo</b>. <b>Por la mañana</b> se comerá a su presa y <b>al atardecer</b> repartirá el botín”<span class="ref">GÉNESIS 49:27</span></div>
+</div>
+<div class="mini"><div class="nhijo">Benjamín<small>cómo se cumplió</small></div></div>
+<div class="col49">
+  <div class="b b1">
+    <div class="cumple"><div class="k">en la mañana del reino</div><div class="x"><b>Saúl</b>, el primer rey de Israel</div></div>
+    <div class="cumple c2"><div class="k">al atardecer, siglos después</div><div class="x"><b>Ester y Mardoqueo</b> ayudan a salvar al pueblo en el Imperio persa</div></div>
+  </div>
+</div>
+<div class="fu49 f"><i>La Atalaya</i>, junio de 2025, “Qué nos enseñan las últimas palabras de Jacob (parte 2)”, pág.&nbsp;13 · <i>Perspicacia</i>, “Benjamín”, págs.&nbsp;312 a 314</div>
+
+<script>
+/*incluir:_g49b-hijo.js*/
+hijoEntra(0.3);
+entra(".pres .cita", 0.9, { y: 24 });
+const tM = at("Los benjamitas");
+hijoAMapa(tM - 0.5);
+entra(".hon32 .cumple", tM + 0.2, { y: 14 });
+entra(".hon32 .cita", at("con la honda") - 0.2, { y: 14 });
+const tS = at("En la mañana del reino");
+entra(".cielo32", tS - 0.6, { y: 30 });
+salta(".sol-m", tS - 0.2, { desde: 0.3 });
+entra(".et32.m", tS, { y: 16 });
+entra(".b1", tS, { y: 16 });
+const tA = at("atardecer, siglos");
+traza(".arco32", tA - 0.3, 1.0);
+aparece(".sig32", at("siglos después") - 0.2, 0.4);
+salta(".sol-a", tA + 0.5, { desde: 0.3 });
+entra(".et32.a", at("Ester y Mardoqueo") - 0.2, { y: 16 });
+entra(".b1 .c2", at("Ester y Mardoqueo") - 0.2, { y: 14 });
+</script>

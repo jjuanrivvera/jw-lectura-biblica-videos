@@ -1,0 +1,70 @@
+<style>
+.dos13 { position: absolute; left: 70px; right: 70px; top: 110px; display: grid; grid-template-columns: 0.75fr 1.25fr; column-gap: 28px; }
+.dos13 .tj { padding: 26px 32px; }
+.dos13 .tj .x { font-size: 58px; line-height: 1.12; }
+.dos13 .tj .veredicto { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; margin-top: 6px; }
+.dos13 .bien { border-color: var(--oro); }
+.dos13 .bien .veredicto { color: var(--oro); }
+.dos13 .mal { border-color: var(--rojo); }
+.dos13 .mal .veredicto { color: var(--rojo); }
+.esp { position: absolute; left: 70px; right: 70px; top: 430px; height: 300px; }
+.esp svg { position: absolute; left: 0; top: 0; width: 1780px; height: 300px; }
+.esp .extremo { position: absolute; top: 160px; width: 360px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; color: var(--rojo); line-height: 1.05; }
+.esp .medio { position: absolute; top: 18px; left: 250px; right: 250px; display: flex; justify-content: center; gap: 22px; }
+.esp .medio .op { padding: 12px 26px 10px; border-radius: 40px; border: 4px solid var(--oro); background: rgba(233, 191, 96, 0.12); font-family: "Caveat", cursive; font-weight: 700; font-size: 48px; color: var(--tiza); white-space: nowrap; }
+.esp .pw { position: absolute; left: 0; right: 0; top: 236px; display: flex; justify-content: center; }
+.pre13 { position: absolute; left: 70px; right: 70px; top: 790px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+.pre13 .m { font-size: 60px; }
+.pre13 .s { font-size: 26px; }
+.nom13 { position: absolute; left: 70px; right: 70px; top: 790px; display: grid; grid-template-columns: 1fr auto; column-gap: 40px; align-items: center; }
+.nom13 .dato .v { font-size: 60px; }
+.nom13 .dato .k { font-size: 50px; }
+</style>
+
+<div class="cab"><span class="cap">Jeremías 40</span><span>versículo 16</span></div>
+
+<div class="dos13">
+  <div class="tj bien b1"><div class="k">primera parte</div><div class="x">“No lo hagas,</div><div class="veredicto">bien: un asesinato en secreto no era la solución</div></div>
+  <div class="tj mal b2"><div class="k">segunda parte</div><div class="x">porque lo que estás diciendo de Ismael <b style="color:var(--rojo)">es mentira</b>”</div><div class="veredicto">mal: no tomó ninguna precaución</div></div>
+</div>
+
+<div class="esp">
+  <svg viewBox="0 0 1780 300"><path class="trazo eje13" d="M 180 140 H 1600"/><path class="trazo x1" style="stroke:var(--rojo);stroke-width:9" d="M 150 110 L 210 170 M 210 110 L 150 170"/><path class="trazo x2" style="stroke:var(--rojo);stroke-width:9" d="M 1570 110 L 1630 170 M 1630 110 L 1570 170"/></svg>
+  <div class="extremo e1" style="left:0">matar a Ismael en secreto</div>
+  <div class="extremo e2" style="right:0">no hacer nada</div>
+  <div class="medio"><span class="op o1">investigar</span><span class="op o2">poner guardia</span><span class="op o3">no recibirlo con pocos hombres</span></div>
+  <div class="pw"><span class="propio chico p13">observación propia, apoyada en Perspicacia</span></div>
+</div>
+
+<div class="pre13">
+  <div><div class="m oro">“no tomó precauciones”</div><div class="s"><i>Perspicacia</i>, «Guedalías»</div></div>
+  <div><div class="m">“no obró con cautela”</div><div class="s">“Aunque al gobernador Guedalías se le advirtió de antemano” · <i>Perspicacia</i>, «Mizpá»</div></div>
+</div>
+
+<div class="nom13">
+  <div class="dato d1"><div class="v">Ismael</div><div class="k">“Dios Oye [Escucha]”</div><div class="s">el que no escuchó fue Guedalías</div></div>
+  <div class="propio chico p13b">observación propia sobre los nombres</div>
+</div>
+
+<script>
+aparece(".cab", 0.2, 0.5);
+entra(".b1", at("No lo hagas") - 0.2, { x: -30, y: 0 });
+entra(".b2", at("porque lo que") - 0.1, { x: 30, y: 0 });
+gsap.set($$(".dos13 .veredicto"), { opacity: 0 });
+tl.to($(".b1 .veredicto"), { opacity: 1, duration: 0.5 }, at("No lo hagas estaba bien"));
+tl.to($(".b2 .veredicto"), { opacity: 1, duration: 0.5 }, at("El error"));
+late(".b2", at("es mentira", at("El error")), { s: 1.02, n: 1 });
+traza(".eje13", at("Entre matar") - 0.2, 1.2);
+traza(".x1", at("Entre matar") + 0.2, 0.5);
+entra(".e1", at("Entre matar") + 0.2, { y: 16 });
+traza(".x2", at("no hacer nada"), 0.5);
+entra(".e2", at("no hacer nada"), { y: 16 });
+salta(".o1", at("investigar"));
+salta(".o2", at("poner guardia"));
+salta(".o3", at("no recibirlo"));
+entra(".p13", at("no recibirlo") + 1.0, { y: 10 });
+entra(".pre13 > div", at("Pero Guedalías no tomó"), { y: 24, st: 0.4 });
+sale(".pre13", at("Y un detalle") - 0.4, { d: 0.4 });
+entra(".d1", at("Ismael quiere decir"), { y: 24 });
+entra(".p13b", at("no escuchó") + 0.8, { y: 10 });
+</script>

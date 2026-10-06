@@ -1,0 +1,45 @@
+<!--lead:2.6-->
+<style>
+.q { position: absolute; left: 80px; right: 80px; top: 130px; display: grid; grid-template-columns: 1.3fr 1fr; column-gap: 50px; }
+.q .cita { font-size: 50px; }
+.q .def .x { font-size: 56px; }
+.curva { position: absolute; left: 0; top: 0; }
+.ct { font-family: "Caveat", cursive; font-weight: 700; font-size: 52px; }
+.cd { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; fill: var(--tenue); }
+</style>
+
+<div class="capcard"><div class="num">Génesis 8</div><svg viewBox="0 0 820 40"><path d="M 10 22 C 220 6 600 36 810 16"/></svg><div class="sub">“Dios no se olvidó de Noé”</div></div>
+<div class="fase fx">
+  <div class="cab"><span class="cap">Génesis 8</span><span>versículo 1</span></div>
+  <div class="q">
+    <div class="cita c1">“Pero Dios <b>no se olvidó</b> de Noé ni de los animales salvajes ni de los animales domésticos que estaban con él en el arca”<span class="ref">GÉNESIS 8:1</span></div>
+    <div class="def d1"><div class="t">nota: lit. “Dios se acordó”</div><div class="x">acordarse = <b>pasar a actuar</b> a su favor</div><div class="s">en hebreo, no es recuperar un dato</div></div>
+  </div>
+  <svg class="curva" width="1920" height="1080" viewBox="0 0 1920 1080">
+    <defs><linearGradient id="e27-ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f95c8" stop-opacity="0.75"/><stop offset="1" stop-color="#1c4d78" stop-opacity="0.35"/></linearGradient></defs>
+    <path class="eje" d="M 140 960 L 1790 960" stroke="#b3bdc8" stroke-width="4"/>
+    <path class="area" d="M 140 960 C 200 900 260 700 316 620 L 800 600 C 1000 610 1100 800 1300 880 C 1500 940 1650 955 1768 960 Z" fill="url(#e27-ag)"/>
+    <path class="borde" d="M 140 960 C 200 900 260 700 316 620 L 800 600 C 1000 610 1100 800 1300 880 C 1500 940 1650 955 1768 960" stroke="#93bbef" stroke-width="7" fill="none"/>
+    <g class="cd"><text x="140" y="1000" text-anchor="middle">día 0</text><text x="316" y="1000" text-anchor="middle">40</text><text x="800" y="1000" text-anchor="middle">150</text><text x="1768" y="1000" text-anchor="middle">370</text></g>
+    <g class="eje81"><path d="M 800 540 L 800 960" stroke="#e9bf60" stroke-width="5" stroke-dasharray="12 10"/><circle cx="800" cy="600" r="16" fill="#e9bf60"/><text class="ct" x="800" y="525" text-anchor="middle" fill="#e9bf60">8:1 · un viento</text></g>
+    <text class="ct sube" x="340" y="720" fill="#f1e9d8">todo lo anterior sube</text>
+    <text class="ct baja" x="1060" y="740" fill="#f1e9d8">todo lo que sigue baja</text>
+  </svg>
+</div>
+
+<script>
+capitulo(".capcard", 0.2, LEAD - 0.1);
+const T0 = LEAD + 0.35;
+entra(".cab", T0, { y: -20 });
+entra(".c1", T0 + 0.1, { y: 30 });
+entra(".d1", at("Literalmente"), { y: 30 });
+traza(".eje", T0 + 0.3, 0.8);
+aparece(".cd", T0 + 0.6, 0.5);
+tl.set($$(".area, .eje81, .sube, .baja"), { opacity: 0 }, 0);
+traza(".borde", T0 + 0.8, 3.0, { ease: "none" });
+aparece(".area", T0 + 3.4, 0.8);
+aparece(".eje81", at("un viento"), 0.5);
+late(".eje81 circle", at("un viento"), { s: 1.5, n: 3 });
+aparece(".sube", at("Todo lo anterior"), 0.5);
+aparece(".baja", at("todo lo que sigue"), 0.5);
+</script>

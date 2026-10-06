@@ -1,0 +1,39 @@
+<!--lead:2.6-->
+<style>
+.mapa .cam img, .mapa .cam svg { width: 1980px; height: 1800px; }
+.hist { display: grid; grid-template-columns: 1fr 50px 1fr; row-gap: 14px; align-items: center; }
+.hist .tj { padding: 14px 18px; }
+.hist .tj .x { font-size: 34px; }
+.hist .fl { font-family: "Fraunces", serif; font-size: 44px; color: var(--oro); text-align: center; }
+.hist .apart { border-color: rgba(236,138,103,0.7); }
+</style>
+<div class="capcard cc"><div class="num">Génesis 36</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16"/></svg><div class="sub">la historia de Edom</div><div class="edad">de Esaú a los reyes de Edom</div></div>
+<div class="fase fp">
+<div class="mapa L">
+  <div class="cam">
+    <img src="assets/img/b2-edom.jpg" />
+    <svg viewBox="0 0 1980 1800"><path class="flecha verde punt re" stroke-width="14" d="M 795 610 C 880 760 900 900 880 1100"/><ellipse class="anillo s-e" cx="800" cy="1180" rx="230" ry="130"/></svg>
+  </div>
+  <div class="pie-mapa">Mapa: apéndice B2 de la TNM (wol.jw.org) · marcas añadidas</div>
+</div>
+<div class="sombra-der"></div>
+<div class="cab sobre"><span class="cap">Génesis 36</span><span>versículos 1 al 8</span></div>
+<div class="col der">
+  <div class="b a1"><div class="cita">“Esta es la historia de Esaú”<span class="ref">GÉNESIS 36:1</span></div><div class="def"><div class="t">historia<i>toh·le·dhóhth</i></div><div class="x">“se traduciría mejor por ‘<b>historias</b>’ u ‘<b>orígenes</b>’”</div><div class="s"><i>Perspicacia</i>, vol. 1, “Génesis, Libro de”, pág. 1014</div></div></div>
+  <div class="b a2"><div class="m md">la rama que se aparta va primero:</div><div class="hist">
+    <div class="tj apart"><div class="k">25:12</div><div class="x">historia de Ismael</div></div><div class="fl">→</div><div class="tj on"><div class="k">25:19</div><div class="x">historia de Isaac</div></div>
+    <div class="tj apart"><div class="k">36:1, 9</div><div class="x">historia de Esaú</div></div><div class="fl">→</div><div class="tj on"><div class="k">37:2</div><div class="x">historia de Jacob</div></div>
+  </div><span class="propio">observación propia</span></div>
+  <div class="b a3"><div class="cita md">“Como los dos habían acumulado muchos bienes, ya no podían vivir juntos”<span class="ref">GÉNESIS 36:7</span></div><div class="cita md" style="color:var(--tenue)">“como habían acumulado muchos bienes, los campos no daban abasto”<span class="ref">GÉNESIS 13:6 · ABRAHÁN Y LOT</span></div><div class="m md">Seír: la región montañosa entre el mar Muerto y el golfo de Áqaba</div></div>
+  <div class="b a4"><div class="def"><div class="t">Edom<i>’Edhóhm</i></div><div class="x">“<b>Rojo</b>”, por el guisado rojo</div><div class="s">notas de la TNM en 25:30 · Esaú era “muy rubicundo” y sus tierras, de color rojizo (<i>Perspicacia</i>, vol. 1, “Edom”, pág. 735)</div></div></div>
+</div>
+</div>
+<script>
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 330, y: 150, w: 1150, h: 1109 }, V), 0);
+capitulo(".cc", 0.3, at("Esta es") - 0.2);
+aparece(".fp", at("Esta es") + 0.45, 0.5);
+secuencia([[".a1", at("Esta es")], [".a2", at("Y Génesis cierra")], [".a3", at("Esaú y Jacob se")], [".a4", at("Y Edom")]]);
+traza(".re", at("Esaú se fue"), 1.6);
+traza(".s-e", at("Esaú se fue") + 1.2, 1.0);
+</script>

@@ -1,0 +1,70 @@
+<style>
+.q40 { position: absolute; left: 80px; right: 80px; top: 130px; bottom: 90px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 70px; align-items: center; }
+.q40 .cita { font-size: 58px; }
+.q40 .tj { padding: 40px 44px; gap: 20px; }
+.q40 .tj .x { font-size: 56px; }
+.multi40 { position: absolute; left: 60px; top: 120px; width: 1180px; height: 760px; }
+.leg40 { position: absolute; left: 1290px; right: 70px; top: 130px; display: flex; flex-direction: column; gap: 16px; }
+.leg40 .it { display: flex; align-items: center; gap: 18px; font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; line-height: 1.0; }
+.leg40 .it i { width: 34px; height: 34px; border-radius: 50%; flex: none; }
+.leg40 .it.carro i { border-radius: 6px; }
+.queda40 { position: absolute; left: 1290px; right: 70px; top: 650px; }
+.queda40 .tj { border-color: var(--verde); }
+.queda40 .tj .k { color: var(--verde); }
+.queda40 .tj .x { font-size: 40px; }
+.num40 { position: absolute; left: 80px; top: 880px; width: 1140px; text-align: center; }
+.num40 .cita { font-size: 50px; }
+.fu40 { position: absolute; left: 80px; right: 80px; bottom: 22px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 50</span><span class="vv40">versículos 4 al 9</span></div>
+<div class="fase q40">
+  <div class="tj a1"><div class="k">José · 50:5</div><div class="x">“Mi padre me hizo hacer un <b>juramento</b>. [...] Por favor, déjame subir y enterrar a mi padre, y después de eso <b>volveré</b>”</div></div>
+  <div class="tj on a2"><div class="k">El faraón · 50:6</div><div class="x">“Ve a enterrar a tu padre, tal como te lo hizo <b>jurar</b>”</div></div>
+</div>
+
+<svg class="multi40" viewBox="0 0 1180 760"><g class="gente40"></g></svg>
+<div class="leg40">
+  <div class="it e1"><i style="background:#93bbef"></i>siervos del faraón</div>
+  <div class="it e2"><i style="background:#c8d8ee"></i>ancianos de Egipto</div>
+  <div class="it e3"><i style="background:#e9bf60"></i>la familia de José</div>
+  <div class="it carro e4"><i style="background:#ec8a67"></i>carros y jinetes</div>
+</div>
+<div class="queda40"><div class="tj"><div class="k">se quedan en Gosén · 50:8</div><div class="x">los niñitos, los rebaños y las manadas: <b>iban a volver</b></div></div></div>
+<div class="num40"><div class="cita">“El grupo era <b>muy numeroso</b>” <span style="font-family:Montserrat;font-size:26px;font-weight:700;color:var(--oro);letter-spacing:0.1em">GÉNESIS 50:9</span></div></div>
+<div class="fu40 f">puntos ilustrativos: no representan un número de personas</div>
+
+<script>
+// Una multitud de puntos con posiciones fijas (generador determinista), por grupos.
+let sem = 11;
+const rnd = () => ((sem = (sem * 16807) % 2147483647) / 2147483647);
+const GR = [["e1", "#93bbef", 70, "c"], ["e2", "#c8d8ee", 40, "c"], ["e3", "#e9bf60", 60, "c"], ["e4", "#ec8a67", 18, "r"]];
+let s = "", libres = [];
+for (let r = 0; r < 12; r++) for (let c = 0; c < 22; c++) libres.push([40 + c * 52 + (r % 2) * 26, 40 + r * 60]);
+// Barajar con el generador fijo.
+for (let i = libres.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [libres[i], libres[j]] = [libres[j], libres[i]]; }
+let k = 0;
+GR.forEach(([g, col, n, f]) => {
+  for (let i = 0; i < n; i++) {
+    const [x, y] = libres[k++];
+    const jx = x + (rnd() - 0.5) * 14, jy = y + (rnd() - 0.5) * 14;
+    s += f === "r"
+      ? `<g class="p ${g}"><rect x="${(jx - 26).toFixed(0)}" y="${(jy - 15).toFixed(0)}" width="52" height="30" rx="6" fill="${col}"/><circle cx="${(jx - 14).toFixed(0)}" cy="${(jy + 17).toFixed(0)}" r="9" fill="#17212b" stroke="${col}" stroke-width="4"/><circle cx="${(jx + 14).toFixed(0)}" cy="${(jy + 17).toFixed(0)}" r="9" fill="#17212b" stroke="${col}" stroke-width="4"/></g>`
+      : `<circle class="p ${g}" cx="${jx.toFixed(0)}" cy="${jy.toFixed(0)}" r="17" fill="${col}"/>`;
+  }
+});
+$(".gente40").innerHTML = s;
+entra(".cab", 0.2, { y: -10 });
+entra(".a1", 0.5, { y: 24 });
+entra(".a2", at("Y el faraón") - 0.2, { y: 24 });
+const tC = at("Sube un cortejo");
+desaparece(".q40", at("los siervos") - 0.5, 0.4);
+const orden = [["e1", at("los siervos")], ["e2", at("los ancianos")], ["e3", at("la familia de José")], ["e4", at("carros y jinetes")]];
+orden.forEach(([g, t]) => {
+  entra(`.leg40 .${g}`, t - 0.2, { x: 20, y: 0 });
+  salta(`.gente40 .${g}`, t - 0.1, { st: 0.9 / $$(`.gente40 .${g}`).length, desde: 0.2, d: 0.35 });
+});
+entra(".num40", at("carros y jinetes") + 1.0, { y: 16 });
+aparece(".fu40", tC, 0.5);
+entra(".queda40", at("En Gosén") - 0.2, { y: 24 });
+</script>

@@ -1,0 +1,42 @@
+<style>
+.mapa.im { left: 0; top: 0; width: 1920px; height: 1080px; background: #e8dcc0; }
+.mapa.im .cam img, .mapa.im .cam svg { width: 2400px; height: 1472px; }
+.velo22 { position: absolute; top: 0; bottom: 0; right: 0; width: 900px; background: linear-gradient(90deg, rgba(23, 33, 43, 0) 0%, rgba(23, 33, 43, 0.9) 22%, rgba(23, 33, 43, 0.97) 100%); }
+.col22 { position: absolute; left: 1290px; right: 56px; top: 110px; bottom: 90px; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.col22 .grande { font-size: 118px; }
+.col22 .m { font-size: 60px; }
+.col22 .s { font-size: 27px; }
+.km { font-family: "Fraunces", serif; font-weight: 700; font-size: 110px; line-height: 1; color: var(--rojo); white-space: nowrap; }
+.km small { font-size: 48px; }
+.r2, .rh2, .a-bab, .ch-bab { display: none; }
+</style>
+
+<!--incluir:_imperios.html-->
+<div class="velo22"></div>
+<div class="pie" style="left:24px;bottom:20px"><i>Veamos “la buena tierra”</i>, pág. 23, “Imperios asirio y babilónico” · ruta y marcas añadidas</div>
+<div class="cab" style="left:1290px;right:56px"><span class="cap">Jeremías 39</span><span>versículo 5</span></div>
+
+<div class="col22">
+  <div><div class="grande g22">Riblá</div><div class="m oro h22">“en la tierra de Hamat”</div></div>
+  <div class="k22"><div class="km"><span class="n22">0</span> <small>km</small></div><div class="s">por la ruta principal (≈ 320 en línea recta)</div></div>
+  <div class="propio pr22">medición propia · control: Damasco–Hamat ≈ 190 km, como dice <i>Perspicacia</i></div>
+  <div class="s e22">“una ubicación estratégica para un campamento militar”; desde allí podía “regresar rápidamente a Babilonia si era necesario”</div>
+  <div class="f f22"><i>Perspicacia</i>, «Riblá» y «Hamat»</div>
+</div>
+
+<script>
+const V = { x: 0, y: 0, w: 1290, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 330, y: 340, w: 1300, h: 1088 }, V), 0);
+camara(".cam", at("No era un pueblo") - 0.5, 3.0, encuadre({ x: 420, y: 350, w: 1120, h: 937 }, V));
+aparece(".cab", 0.2, 0.5);
+salta(".a-jer", 0.5, {});
+entra(".g22", at("Riblá") - 0.3, { x: 30, y: 0 });
+entra(".h22", at("tierra de Hamat"), { x: 30, y: 0 });
+traza([".rh1", ".r1"], at("Lo llevaron") + 0.3, 5.0, { ease: "power1.inOut" });
+salta(".a-rib", at("Lo llevaron") + 5.2, {});
+entra(".k22", at("muy al norte"), { x: 30, y: 0 });
+cuenta(".n22", 0, 390, at("unos trescientos"), 1.4, (v) => "≈ " + Math.round(v));
+entra(".pr22", at("ruta principal"), { y: 12 });
+aparece(".ch-rib", at("campamento militar"), 0.4);
+entra([".e22", ".f22"], at("Era un lugar"), { y: 16, st: 0.3 });
+</script>

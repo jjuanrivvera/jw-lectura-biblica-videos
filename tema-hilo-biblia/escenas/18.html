@@ -1,0 +1,58 @@
+<style>
+.arriba { position: absolute; left: 140px; right: 140px; top: 120px; height: 400px; }
+.arriba > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 18px; }
+.arriba .cita { font-size: 52px; }
+.arriba .cita b { color: var(--oro-claro); }
+.arriba .s { font-size: 34px; color: var(--papel); }
+.arriba .s b { color: var(--cielo); }
+.ruta { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+.ruta text { font-family: "Montserrat", sans-serif; }
+.med { position: absolute; width: 230px; height: 230px; border-radius: 50%; overflow: hidden; border: 6px solid var(--papel); box-shadow: 0 16px 40px rgba(0,0,0,0.45); }
+.med img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.m1 { left: 95px; top: 545px; }
+.m2 { left: 1375px; top: 545px; }
+.aqui { position: absolute; left: 380px; top: 640px; width: 260px; text-align: center; font-family: "Caveat", cursive; font-weight: 700; font-size: 58px; color: var(--cielo); }
+.fuente { bottom: 22px; }
+</style>
+
+<div class="cab"><span class="sec">Cómo termina</span><span>Apocalipsis</span></div>
+<div class="arriba">
+  <div class="b a1"><div class="cita">“El reino del mundo ha llegado a ser <b>el Reino de nuestro Señor y de su Cristo</b>, y él reinará para siempre jamás”.<span class="ref">Apocalipsis 11:15</span></div></div>
+  <div class="b a2"><div class="cita">“Hacia abajo fue arrojado el gran dragón, <b>la serpiente original</b>, al que llaman Diablo y Satanás”.<span class="ref">Apocalipsis 12:9</span></div><div class="s">Jesús se convirtió en Rey en 1914, y poco después expulsó a Satanás del cielo.</div></div>
+  <div class="b a3"><div class="cita">“Ahora el Diablo solo puede ejercer su influencia en la Tierra y <b>está esperando su destrucción</b>”.<span class="ref">La Atalaya (estudio), julio de 2022, pág. 17</span></div></div>
+  <div class="b a4"><div class="s"><b>Armagedón:</b> la guerra de Dios contra los que se oponen a él (Apocalipsis 16:16).</div><div class="s"><b>Los mil años:</b> Satanás, en el abismo, “en un estado de inactividad semejante a la muerte”, mientras Cristo gobierna.<span class="ref">Apocalipsis 20:1-3 · Apocalipsis... ¡se acerca su magnífica culminación!, cap. 40, pág. 288</span></div></div>
+  <div class="b a5"><div class="cita">“El Diablo, que las estuvo engañando, <b>fue arrojado al lago de fuego</b>”.<span class="ref">Apocalipsis 20:10</span></div><div class="s">“¡Ahora llegamos al cumplimiento de esa profecía!”: la de Génesis 3:15.<span class="ref">Apocalipsis... ¡se acerca su magnífica culminación!, cap. 40, pág. 286</span></div></div>
+  <div class="b a6"><div class="cita">“El Hijo mismo también se someterá a aquel que sometió todas las cosas a él, <b>para que Dios sea todas las cosas para todos</b>”.<span class="ref">1 Corintios 15:28</span></div></div>
+</div>
+<svg class="ruta" viewBox="0 0 1920 1080"></svg>
+<div class="med m1"><img src="assets/img/w22-1914.jpg" /></div>
+<div class="med m2"><img src="assets/img/w22-lago.jpg" /></div>
+<div class="aqui">estamos aquí</div>
+<div class="fuente">Ilustraciones: <i>La Atalaya</i> (estudio), julio de 2022, pág. 17</div>
+
+<script>
+const LY = 830;
+const EST = [[210, "1914", "el Reino gobierna"], [510, "hoy", ""], [790, "Armagedón", ""], [1010, "", ""], [1260, "", ""], [1490, "la cabeza,", "aplastada"], [1740, "Dios, todo", "para todos"]];
+let sv = '<path class="trazo base" d="M 120 ' + LY + ' L 1820 ' + LY + '" style="stroke: #ebbd5c; stroke-width: 7" />' +
+  '<rect class="mil" x="1010" y="' + (LY - 24) + '" width="250" height="48" rx="12" fill="rgba(143,185,242,0.3)" stroke="#8fb9f2" stroke-width="3"/>' +
+  '<text class="milt" x="1135" y="' + (LY + 70) + '" text-anchor="middle" font-size="30" font-weight="800" fill="#8fb9f2">mil años</text>';
+EST.forEach(([x, a, b], i) => {
+  if (i === 3 || i === 4) return;
+  sv += '<g class="es es' + i + '"><circle cx="' + x + '" cy="' + LY + '" r="16" fill="#10162a" stroke="' + (i === 1 ? "#8fb9f2" : "#f6d98f") + '" stroke-width="6"/>' +
+    '<text x="' + x + '" y="' + (LY + 70) + '" text-anchor="middle" font-size="30" font-weight="800" fill="#f3ead8">' + a + '</text>' +
+    (b ? '<text x="' + x + '" y="' + (LY + 108) + '" text-anchor="middle" font-size="28" font-weight="600" fill="#aab4c8">' + b + '</text>' : "") + "</g>";
+});
+$(".ruta").innerHTML = sv;
+
+entra(".cab", 0.3, { y: -10 });
+traza(".base", 0.4, 1.4);
+secuencia([[".a1", 0.6], [".a2", at("Jesús se convirtió")], [".a3", at("Ahí estamos nosotros")], [".a4", at("Sigue Armagedón")], [".a5", at("Y al final llega")], [".a6", at("Por último")]]);
+entra([".es0", ".m1"], at("Jesús se convirtió"), { y: 16 });
+entra(".fuente", at("Jesús se convirtió") + 0.5, { y: 10 });
+entra(".es1", at("Ahí estamos nosotros"), { y: 16 });
+escribe(".aqui", at("Ahí estamos nosotros") + 0.2, 0.9);
+entra(".es2", at("Sigue Armagedón"), { y: 16 });
+aparece([".mil", ".milt"], at("durante mil años"), 0.5);
+entra([".es5", ".m2"], at("Y al final llega"), { y: 16 });
+entra(".es6", at("Por último"), { y: 16 });
+</script>

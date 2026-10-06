@@ -1,0 +1,43 @@
+<style>
+.frase { position: absolute; left: 80px; right: 80px; top: 130px; display: grid; grid-template-columns: 1fr 70px 1fr 70px 1fr; align-items: center; }
+.frase .p { border-radius: 24px; padding: 20px 26px; background: rgba(10,16,22,0.5); border: 4px solid rgba(241,233,216,0.16); min-height: 190px; display: flex; flex-direction: column; justify-content: center; }
+.frase .p .r { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.14em; color: var(--tenue); }
+.frase .p .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 60px; line-height: 1.05; margin-top: 6px; }
+.frase .fl { font-family: "Fraunces", serif; font-size: 64px; color: var(--oro); text-align: center; }
+.frase .p3 { border-color: var(--oro); }
+.hilos { position: absolute; left: 80px; right: 80px; top: 440px; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 26px; row-gap: 22px; }
+.hilo { border-radius: 22px; padding: 18px 24px; border: 3px solid rgba(241,233,216,0.14); background: rgba(10,16,22,0.42); }
+.hilo .t { font-family: "Caveat", cursive; font-weight: 700; font-size: 60px; line-height: 1.05; }
+.hilo .t b { color: var(--oro); }
+.hilo .s { font-size: 26px; margin-top: 6px; }
+.hilo.jesus { grid-column: span 3; border-color: var(--oro); }
+</style>
+
+<div class="cab"><span class="cap">Cómo se amarran los cinco capítulos</span><span>los hilos de la investigación</span></div>
+<div class="frase">
+  <div class="p p1"><div class="r">GÉNESIS 5</div><div class="x">“Entonces murió”, ocho veces</div></div><div class="fl f1">→</div>
+  <div class="p p2"><div class="r">GÉNESIS 7</div><div class="x">“murió todo ser vivo que había en la tierra”</div></div><div class="fl f2">→</div>
+  <div class="p p3"><div class="r">GÉNESIS 8:22</div><div class="x">“siempre habrá siembra y cosecha”</div></div>
+</div>
+<div class="hilos">
+  <div class="hilo h1"><div class="t">Enoc y Noé: los dos que <b>anduvieron</b> con el Dios verdadero</div><div class="s">Génesis 5:22, 24; 6:9</div></div>
+  <div class="hilo h2"><div class="t">el nombre de Noé se <b>cumple</b> tres capítulos después</div><div class="s">Génesis 5:29 → 8:21</div></div>
+  <div class="hilo h3"><div class="t"><b>dos pactos</b>, no uno</div><div class="s">Génesis 6:18 · 9:8-17</div></div>
+  <div class="hilo h4"><div class="t">la <b>sangre</b>, de Caín a Hechos</div><div class="s">Génesis 4:10 · 9:4-6 · Hechos 15:28, 29</div></div>
+  <div class="hilo h5"><div class="t">Génesis 9 repite Génesis 1, <b>con las heridas</b> a la vista</div><div class="s">Génesis 1:28 · 9:1, 2</div></div>
+  <div class="hilo h6"><div class="t">el agua de la creación es <b>la misma</b> del Diluvio</div><div class="s">Génesis 1:6-8 · 7:11 · 2 Pedro 3:5, 6</div></div>
+  <div class="hilo jesus h7"><div class="t">Jesús cierra el círculo: no solo la maldad, <b>la indiferencia</b></div><div class="s">“no hicieron caso hasta que vino el Diluvio” · Mateo 24:37-39</div></div>
+</div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".p1", at("Génesis cinco repite"), { y: 20 });
+entra([".f1", ".p2"], at("Génesis siete lo lleva"), { y: 20, st: 0.2 });
+entra([".f2", ".p3"], at("Y Génesis ocho gira"), { y: 20, st: 0.2 });
+entra(".h1", at("Enoc y su bisnieto"), { y: 6 });
+entra(".h2", at("El nombre de Noé"), { y: 6 });
+entra(".h3", at("Dos pactos"), { y: 6 });
+entra(".h4", at("La sangre"), { y: 6 });
+entra(".h5", at("Génesis nueve, que repite"), { y: 6 });
+entra([".h6", ".h7"], at("Y Jesús"), { y: 6, st: 0.3 });
+</script>

@@ -1,0 +1,50 @@
+<style>
+.top { position: absolute; left: 80px; right: 80px; top: 130px; }
+.c3 { position: absolute; left: 80px; right: 80px; top: 800px; }
+.top .cita { font-size: 52px; }
+.top .m { font-size: 60px; }
+.dib { position: absolute; left: 0; top: 0; z-index: 0; }
+.top, .fecha, .cierre, .c3 { z-index: 2; }
+.fecha { position: absolute; left: 80px; top: 800px; }
+.fecha .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.14em; color: var(--tenue); }
+.fecha .v { font-family: "Fraunces", serif; font-weight: 700; font-size: 70px; color: var(--cielo); }
+.cierre { position: absolute; left: 700px; right: 80px; top: 790px; }
+.cierre .cita { font-size: 62px; }
+.cierre .m { font-size: 56px; margin-top: 16px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 7</span><span>versículos 2, 11 y 16 · 8:20</span></div>
+<div class="top">
+  <div class="c2"><div class="cita">“De cada tipo de animal <b>puro</b> debes llevar <b>siete</b> contigo”<span class="ref">GÉNESIS 7:2 · NOTA: “O QUIZÁS ‘SIETE PAREJAS’”</span></div></div>
+</div>
+<div class="c3"><div class="m">¿para qué más? para el <b>sacrificio</b> al salir</div><div class="s">Jehová tenía previsto ese altar antes de que empezara a llover · Génesis 8:20 · Perspicacia, vol. 2, “Noé”</div></div>
+<div class="fecha"><div class="t">año 600 de Noé</div><div class="v">mes 2, día 17</div></div>
+<div class="cierre"><div class="cita">“Después, <b>Jehová cerró la puerta</b> detrás de él”<span class="ref">GÉNESIS 7:16</span></div><div class="m">Noé no tuvo que cargar con esa decisión</div></div>
+<svg class="dib" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <g class="lluvia" stroke="rgba(170,200,230,0.55)" stroke-width="3" stroke-linecap="round"></g>
+  <g class="arca-g"></g>
+  <path class="suelo" d="M 0 712 C 400 700 900 706 1920 700 L 1920 1080 L 0 1080 Z" fill="#26331f"/>
+</svg>
+
+<script>
+/*incluir:_arca.js*/
+$(".arca-g").innerHTML = arcaSVG(260, 540, 1400);
+// Lluvia fija con semilla: cada cuadro sale igual.
+let s = 11, gotas = "";
+const rnd = () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
+for (let i = 0; i < 160; i++) { const x = rnd() * 2000 - 40, y = rnd() * 1000; gotas += `<path d="M ${x.toFixed(0)} ${y.toFixed(0)} l -10 34"/>`; }
+$(".lluvia").innerHTML = gotas;
+tl.set($(".lluvia"), { opacity: 0 }, 0);
+entra(".cab", 0.2, { y: -20 });
+entra(".c2", 0.4, { y: 30 });
+entra(".c3", at("Para qué más"), { y: 30 });
+aparece(".arca-g", 0.5, 0.8);
+sale(".c3", at("El día diecisiete") - 0.4);
+entra(".fecha", at("El día diecisiete"), { y: 20 });
+entra(".cierre .cita", at("Jehová cerró la puerta"), { y: 20 });
+entra(".cierre .m", at("Noé no tuvo"), { y: 20 });
+// La puerta está abierta (la hoja plegada) hasta que la voz dice que Jehová la cerró.
+tl.fromTo($(".ar-puerta"), { scaleX: 0.05 }, { scaleX: 1, transformOrigin: "0% 50%", duration: 1.2, ease: "power2.inOut", immediateRender: true }, at("Jehová cerró la puerta") + 0.2);
+tl.to($(".lluvia"), { opacity: 1, duration: 1.5 }, at("Jehová cerró la puerta") + 1.6);
+tl.fromTo($(".lluvia"), { y: -40 }, { y: 60, duration: DUR, ease: "none", immediateRender: true }, 0);
+</script>

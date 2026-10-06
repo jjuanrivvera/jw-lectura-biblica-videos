@@ -1,0 +1,37 @@
+<style>
+/*incluir:_ruta.css*/
+</style>
+<!--incluir:_ruta.html-->
+<div class="cab sobre"><span class="cap">Génesis 31</span><span>versículos 17 al 21</span></div>
+<div class="col">
+  <div class="b a1"><div class="m md">sube a sus hijos y esposas a los camellos y sale con <b style="color:var(--oro)">“todos sus rebaños”</b></div><div class="s">Génesis 31:17, 18</div></div>
+  <div class="b a2"><div class="def"><div class="t">“El Río”</div><div class="x">el <b>Éufrates</b>: “Debido a su importancia, en numerosas ocasiones se le llama “el Río””</div><div class="s">nota de la TNM en 31:21 · Perspicacia, vol. 1, “Éufrates”, pág. 883</div></div></div>
+  <div class="b a3"><div class="def"><div class="t">Vado</div><div class="x">donde el agua es <b>poco honda</b> y se pasa a pie</div></div><div class="m md">el más usado: <b>Carquemis</b>, “el lugar que los ejércitos y las caravanas tomaban con más frecuencia para vadear el río”</div><div class="s">Perspicacia, vol. 1, “Éufrates”, pág. 883 · a unos 90 km de Harán: <span style="color:var(--cielo)">cálculo propio</span></div></div>
+  <div class="b a4"><div class="m">en primavera, <b>río crecido</b></div><div class="s">el nivel más bajo en septiembre; el más alto en mayo, con el deshielo · Perspicacia, vol. 1, “Éufrates”, pág. 884</div><span class="propio">unir los dos datos: observación propia</span></div>
+  <div class="b a5"><div class="m">por Alepo, Hamat y Damasco</div><div class="m">hasta <b>Galaad</b></div><div class="m md">despacio: un día de prisa podía matar al rebaño</div><div class="s">Génesis 31:21; 33:13</div></div>
+</div>
+<script>
+const V = { x: 0, y: 0, w: 1180, h: 1080 };
+const cam = $(".cam");
+tl.set(cam, encuadre({ x: 1850, y: 80, w: 1450, h: 1330 }, V), 0);
+tl.to(cam, { ...encuadre({ x: 1100, y: 120, w: 2400, h: 2640 }, V), duration: 2.4, ease: "power2.inOut" }, at("El camino probable") - 0.3);
+tl.to(cam, { ...encuadre({ x: 1150, y: 300, w: 2250, h: 2470 }, V), duration: 6, ease: "none" }, at("El camino probable") + 2.2);
+aparece(".l-ha", 0.3, 0.4);
+tl.set($(".car.lab"), { opacity: 0 }, 0);
+tl.set($(".car.jac"), { opacity: 0 }, 0);
+tl.set($(".car.jac"), { opacity: 1 }, at("y salió con todos") - 0.2);
+recorre(".car.jac", ".s1", at("y salió con todos"), 0.1, { hasta: 0.02 });
+aparece(".r-eu", at("cruzar el Río"), 0.5);
+traza([".rh1", ".rj1"], at("Primero tenía que cruzar") + 0.3, 1.2, { ease: "none" });
+traza([".rh2", ".rj2"], at("El camino probable") + 0.4, 3.0, { ease: "none" });
+recorre(".car.jac", ".s2", at("El camino probable") + 0.4, 3.0, { ease: "none" });
+traza([".rh3", ".rj3"], at("hasta la región montañosa") + 0.2, 1.8, { ease: "none" });
+recorre(".car.jac", ".s3", at("hasta la región montañosa") + 0.2, 1.8, { ease: "none" });
+aparece(".l-da", at("y Damasco"), 0.4);
+aparece(".l-ga", at("hasta la región montañosa") + 1.6, 0.5);
+tl.set([$(".rhl"), $(".rl")], { opacity: 0 }, 0);
+recorre(".car.jac", ".s1", at("Primero tenía que cruzar") + 0.3, 1.2, { desde: 0.02 });
+aparece(".vado", at("había que buscar un vado"), 0.5);
+late(".anillo-v", at("El más usado"), { s: 1.3, n: 3 });
+secuencia([[".a1", 0.4], [".a2", at("Primero tenía que cruzar")], [".a3", at("había que buscar un vado")], [".a4", at("Y en primavera")], [".a5", at("El camino probable")]]);
+</script>

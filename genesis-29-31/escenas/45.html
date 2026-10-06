@@ -1,0 +1,20 @@
+<style>
+.grid4 { position: absolute; left: 80px; right: 80px; top: 110px; bottom: 60px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 30px; }
+.hilo { border-radius: 28px; background: rgba(10,16,22,0.42); border: 3px solid rgba(241,233,216,0.14); padding: 26px 34px; display: flex; flex-direction: column; gap: 12px; justify-content: center; }
+.hilo .r { font-family: "Montserrat"; font-weight: 800; font-size: 26px; letter-spacing: 0.16em; color: var(--oro); text-transform: uppercase; }
+.hilo .m { font-size: 56px; }
+.hilo .s { font-size: 22px; }
+</style>
+<div class="cab"><span class="cap">Los hilos</span><span>cómo se amarran los tres capítulos</span></div>
+<div class="grid4">
+  <div class="hilo h1"><div class="r">dos pozos</div><div class="m">Rebeca (24) y, casi un siglo después, Raquel (29); en los dos corre Labán</div><div class="s">Génesis 24:15-29; 29:9-13 · La Atalaya, 15 de octubre de 2003, pág. 31, nota</div></div>
+  <div class="hilo h2"><div class="r">el mayor y el menor</div><div class="m">Jacob, el menor, recibió la bendición; a él le cambian la menor por la mayor</div><div class="s">Génesis 25:23; 29:26 · el derecho de primogénito, a José: La Atalaya (estudio), diciembre de 2017, pág. 14 · <span style="color:var(--cielo)">la relación: observación propia</span></div></div>
+  <div class="hilo h3"><div class="r">dos hermanas, una nación</div><div class="m">“ser como Raquel y Lea, de quienes salió la nación de Israel”</div><div class="s">Rut 4:11</div></div>
+  <div class="hilo h4"><div class="r">los terafim</div><div class="m">enterrados en Siquem (35:4), y siglos después, otra vez en Israel, hasta que Josías los quitó</div><div class="s">Jueces 17:5; 2 Reyes 23:24 · TNM, Glosario, “terafim” · <span style="color:var(--cielo)">observación propia</span></div></div>
+</div>
+<script>
+entra(".h1", at("Dos pozos"), { y: 30 });
+entra(".h2", at("El mayor y el menor"), { y: 30 });
+entra(".h3", at("De dos hermanas"), { y: 30 });
+entra(".h4", at("Y los terafim"), { y: 30 });
+</script>

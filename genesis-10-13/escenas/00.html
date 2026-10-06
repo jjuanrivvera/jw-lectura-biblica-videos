@@ -1,0 +1,71 @@
+<style>
+.mapa.todo { left: 0; top: 0; width: 1920px; height: 1080px; background: #e9e4cf; }
+.mapa .cam img, .mapa .cam svg { width: 3888px; height: 2808px; }
+.titulo0 { position: absolute; left: 70px; top: 60px; padding: 26px 40px 30px; border-radius: 26px; background: rgba(15, 22, 30, 0.88); }
+.titulo0 .grande { font-size: 118px; color: var(--tiza); }
+.titulo0 .grande b { color: var(--oro); }
+.titulo0 .s { font-size: 36px; margin-top: 12px; color: var(--tiza); }
+.banda0 { position: absolute; left: 0; right: 0; bottom: 0; height: 290px; background: linear-gradient(180deg, rgba(23, 33, 43, 0) 0%, rgba(23, 33, 43, 0.9) 34%, rgba(23, 33, 43, 0.97) 100%); }
+.lin0 { position: absolute; left: 90px; right: 90px; bottom: 58px; display: grid; grid-template-columns: 250px 1fr; align-items: center; column-gap: 34px; }
+.lin0 .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 104px; line-height: 1; color: var(--oro); text-align: right; white-space: nowrap; }
+.lin0 .t { font-family: "Caveat", cursive; font-weight: 700; font-size: 72px; line-height: 1.02; }
+.lin0 .t b { color: var(--oro); }
+.lin0.fin .t { color: var(--verde); }
+.lin0.fin .n { font-size: 60px; color: var(--verde); }
+.pie0 { position: absolute; right: 24px; top: 20px; }
+</style>
+
+<div class="mapa todo"><div class="cam">
+  <img src="assets/img/b2-todo.jpg" />
+  <svg viewBox="0 0 3888 2808">
+    <path class="ruta-h r0h" stroke-width="22" d=""/><path class="ruta r0" stroke-width="11" d=""/>
+    <g class="b10"><path d="M 3250 590 L 3070 650" stroke="#1b2733" stroke-width="7"/><circle cx="3300" cy="560" r="62" fill="#1f5d99" stroke="#fff" stroke-width="9"/><text class="insig" x="3300" y="586" font-size="72" fill="#fff" text-anchor="middle">10</text></g>
+    <g class="b11"><path d="M 3190 1640 L 3300 1730" stroke="#1b2733" stroke-width="7"/><circle cx="3150" cy="1600" r="62" fill="#6a3d9a" stroke="#fff" stroke-width="9"/><text class="insig" x="3150" y="1626" font-size="72" fill="#fff" text-anchor="middle">11</text></g>
+    <g class="b12"><path d="M 1560 1420 L 1440 1460" stroke="#1b2733" stroke-width="7"/><circle cx="1620" cy="1400" r="62" fill="#c0392b" stroke="#fff" stroke-width="9"/><text class="insig" x="1620" y="1426" font-size="72" fill="#fff" text-anchor="middle">12</text></g>
+    <g class="b13"><circle cx="1330" cy="1990" r="62" fill="#b8860b" stroke="#fff" stroke-width="9"/><text class="insig" x="1330" y="2016" font-size="72" fill="#fff" text-anchor="middle">13</text></g>
+    <circle class="anillo a-niv" cx="3015" cy="639" r="40"/>
+    <circle class="anillo a-cal" cx="3056" cy="722" r="40"/>
+    <circle class="anillo oro a-bab" cx="3320" cy="1749" r="44"/>
+    <circle class="anillo a-heb" cx="1116" cy="2010" r="40"/>
+    <circle class="anillo a-bet" cx="1149" cy="1902" r="40"/>
+  </svg>
+</div></div>
+<div class="pie pie0">Mapa: apéndice B2 de la TNM, “Génesis y los viajes de los patriarcas” (wol.jw.org) · marcas añadidas</div>
+
+<div class="titulo0"><div class="grande">Génesis <b>10 al 13</b></div><div class="s">de los hijos de Noé a Abrán en Hebrón · unos 430 años</div></div>
+
+<div class="banda0"></div>
+<div class="lin0 l10"><div class="n">10</div><div class="t">setenta familias · <b>Nemrod</b>, el primer rey</div></div>
+<div class="lin0 l11"><div class="n">11</div><div class="t">la torre de <b>Babel</b> · la confusión de los idiomas</div></div>
+<div class="lin0 l12"><div class="n">12</div><div class="t"><b>“Sal de tu país”</b> · Canaán y Egipto</div></div>
+<div class="lin0 l13"><div class="n">13</div><div class="t">Abrán y <b>Lot</b> se separan · Hebrón</div></div>
+<div class="lin0 fin l99"><div class="n">al final</div><div class="t">lecciones y preguntas para pensar</div></div>
+
+<script>
+// Unidades del B2 (648 x 468) a píxeles de b2-todo.jpg (6 px por unidad).
+const B = (u, v) => [u * 6, v * 6];
+const camino = (pts) => "M " + pts.map((p) => B(...p).map((n) => n.toFixed(0)).join(" ")).join(" L ");
+const RUTA = camino([[340.75, 80], [301, 85.75], [267, 114], [251.5, 167], [233.5, 243.25], [207.75, 255.5], [193, 304], [191.5, 317], [186, 335], [175.75, 348], [150, 354], [117, 356.5], [82, 361], [62, 364]]);
+$(".r0h").setAttribute("d", RUTA); $(".r0").setAttribute("d", RUTA);
+const V = { x: 0, y: 0, w: 1920, h: 1080 };
+const TODO = { x: 0, y: 330, w: 3888, h: 2187 };
+tl.set($(".cam"), encuadre({ x: 900, y: 460, w: 2988, h: 1681 }, V), 0);
+entra(".titulo0", 0.4, { y: 30, d: 0.8 });
+const t10 = at("En el diez"), t11 = at("En el once"), t12 = at("En el doce"), t13 = at("en el trece"), tfin = at("Al final");
+sale(".titulo0", t10 - 0.5, { y: -30 });
+camara(".cam", t10 - 0.6, 2.2, encuadre({ x: 1500, y: 420, w: 2388, h: 1343 }, V));
+camara(".cam", t11 - 0.4, 2.0, encuadre({ x: 2560, y: 1260, w: 1328, h: 747 }, V));
+camara(".cam", t12 - 0.4, 2.2, encuadre(TODO, V));
+camara(".cam", t13 - 0.4, 2.2, encuadre({ x: 560, y: 1500, w: 1400, h: 788 }, V));
+camara(".cam", tfin - 1.0, 2.2, encuadre(TODO, V));
+salta(".b10", t10 + 0.4, { desde: 0.3 });
+traza([".a-niv", ".a-cal"], at("Nemrod") - 0.2, 0.6, { st: 0.2 });
+salta(".b11", t11 + 0.4, { desde: 0.3 });
+traza(".a-bab", at("Babel", t11), 0.6);
+salta(".b12", t12 + 0.3, { desde: 0.3 });
+traza([".r0h", ".r0"], at("sale de su país"), at("Egipto", t12) - at("sale de su país") + 0.6, { ease: "none" });
+salta(".b13", t13 + 0.3, { desde: 0.3 });
+traza([".a-bet", ".a-heb"], at("Lot", t13), 0.6, { st: 0.5 });
+secuencia([[".l10", t10], [".l11", t11], [".l12", t12], [".l13", t13], [".l99", tfin]]);
+aparece(".pie0", 0.6, 0.5);
+</script>

@@ -1,0 +1,47 @@
+<style>
+.mapa .cam img, .mapa .cam svg { width: 2880px; height: 1800px; }
+.corte svg { width: 100%; display: block; }
+.tierra { fill: #7a5b3c; } .tierra2 { fill: #5d4630; }
+.agua { fill: #4f93d6; }
+.paso { fill: none; stroke: var(--tiza); stroke-width: 6; stroke-dasharray: 4 14; stroke-linecap: round; }
+.et { font-family: "Caveat", cursive; font-weight: 700; font-size: 40px; fill: var(--tiza); }
+.barras { display: flex; flex-direction: column; gap: 14px; }
+.barras .fila { display: grid; grid-template-columns: 250px 1fr; align-items: center; column-gap: 16px; font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; }
+.barras .b { height: 50px; border-radius: 10px; transform-origin: 0 50%; }
+.barras .b span { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 30px; color: #17212b; padding-left: 14px; line-height: 50px; }
+</style>
+<!--incluir:_jaboc.html-->
+<div class="cab sobre"><span class="cap">Génesis 32</span><span>versículos 22 al 24</span></div>
+<div class="col der">
+  <div class="b a1"><div class="def"><div class="t">vado</div><div class="x">“la parte menos profunda” de un río: se pasa <b>a pie</b>, sin puente ni barca</div><div class="s">Génesis 32:22</div></div>
+    <div class="corte"><svg viewBox="0 0 700 230"><path class="tierra" d="M 0 60 C 150 70 220 150 300 160 L 400 160 C 480 150 550 70 700 60 L 700 230 L 0 230 Z"/><path class="agua" d="M 250 138 C 280 150 290 158 300 160 L 400 160 C 410 158 420 150 450 138 Z"/><path class="paso ps" d="M 120 80 C 220 110 260 150 350 150 C 440 150 480 110 580 80"/><text class="et" x="350" y="215" text-anchor="middle">agua baja</text></svg></div>
+    <div class="f">“aguas poco profundas y fácilmente vadeables” · <i>Perspicacia</i>, vol. 2, “Jaboq”, pág. 7</div></div>
+  <div class="b a2"><div class="def"><div class="t">valle torrencial, uadi<i>ná·jal</i></div><div class="x">un cauce que con las lluvias <b>lleva mucha agua</b> y en la seca puede quedar <b>casi vacío</b></div><div class="s">nota de la TNM en 32:23 · <i>Perspicacia</i>, vol. 2, “Valle torrencial”, pág. 1180</div></div>
+    <div class="corte" style="display:grid;grid-template-columns:1fr 1fr;column-gap:20px">
+      <svg viewBox="0 0 340 170"><path class="tierra" d="M 0 30 C 90 40 120 130 170 135 C 220 130 250 40 340 30 L 340 170 L 0 170 Z"/><path class="agua" d="M 40 52 C 100 70 120 132 170 135 C 220 132 240 70 300 52 Z"/><text class="et" x="170" y="28" text-anchor="middle">lluvias</text></svg>
+      <svg viewBox="0 0 340 170"><path class="tierra" d="M 0 30 C 90 40 120 130 170 135 C 220 130 250 40 340 30 L 340 170 L 0 170 Z"/><path class="agua" d="M 145 124 C 155 131 160 135 170 135 C 180 135 185 131 195 124 Z"/><text class="et" x="170" y="28" text-anchor="middle">seca</text></svg>
+    </div></div>
+  <div class="b a3"><div class="m md">desemboca en el Jordán a unos <b>39 km</b> al norte del mar Muerto</div>
+    <div class="barras">
+      <div class="fila"><span>de punta a punta</span><div class="b b40" style="width:40%;background:var(--cielo)"><span>≈ 40 km</span></div></div>
+      <div class="fila"><span>su curso</span><div class="b b100" style="width:100%;background:var(--oro)"><span>casi 100 km</span></div></div>
+    </div>
+    <div class="corte"><svg viewBox="0 0 700 200"><path class="tierra2" d="M 0 20 L 230 30 L 320 175 L 380 175 L 470 30 L 700 20 L 700 200 L 0 200 Z"/><path class="agua" d="M 322 168 L 378 168 L 380 175 L 320 175 Z"/><text class="et" x="560" y="90">laderas escarpadas</text></svg></div>
+    <div class="f"><i>Perspicacia</i>, vol. 2, “Jaboq, Valle torrencial de”, pág. 7</div></div>
+  <div class="b a4"><div class="cita md">“los llevó al otro lado del río y también llevó todo lo demás que tenía”<span class="ref">GÉNESIS 32:23</span></div><div class="m rojo">y Jacob se quedó solo</div></div>
+</div>
+<script>
+pinta(".marcas", `<path class="flecha fx" stroke-width="16" stroke="#1f5d99" stroke-dasharray="26 18" d="M 930 560 C 950 660 960 760 990 930"/><path class="flecha fxp" stroke-width="16" stroke="#1f5d99" d="M 950 895 L 992 945 L 1025 885"/><circle class="jacob" cx="880" cy="620" r="30" fill="#c0392b" stroke="#fff" stroke-width="8"/><text class="lugar rojo jacob-t halo" x="600" y="560" font-size="96" stroke-width="16">Jacob, solo</text><text class="lugar azul fx-t halo" x="1110" y="1190" font-size="76" stroke-width="16">la familia cruza (esquema)</text>`);
+const V = { x: 0, y: 0, w: 1120, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 420, y: 0, w: 1870, h: 1800 }, V), 0);
+camara(".cam", at("Jacob pasó") - 1.0, 3, encuadre({ x: 420, y: 180, w: 1650, h: 1590 }, V));
+traza(".jb", 0.4, 1.8);
+traza(".fx", at("menos profunda"), 1.4);
+aparece([".fxp", ".fx-t"], at("menos profunda") + 1.3, 0.4);
+salta([".jacob", ".jacob-t"], at("se quedó solo"), {});
+late(".jacob", at("otra orilla"), { s: 1.3, n: 3 });
+secuencia([[".a1", 0.5], [".a2", at("La Biblia llama")], [".a3", at("Desemboca")], [".a4", at("Jacob pasó")]]);
+traza(".ps", at("pasar a pie") - 0.4, 1.2);
+tl.fromTo($$(".barras .b"), { scaleX: 0 }, { scaleX: 1, duration: 1.2, stagger: 1.2, ease: "power2.out", immediateRender: false }, at("y su curso"));
+tl.set($$(".barras .b"), { scaleX: 0 }, 0);
+</script>

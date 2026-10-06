@@ -1,0 +1,57 @@
+<style>
+.top { position: absolute; left: 80px; right: 80px; top: 120px; display: flex; gap: 50px; align-items: baseline; }
+.top .v { font-family: "Fraunces", serif; font-weight: 700; font-size: 100px; color: var(--oro); line-height: 1; }
+.top .v small { font-size: 50px; }
+.top .m { font-size: 64px; }
+.trenes { position: absolute; left: 80px; top: 260px; width: 1760px; height: 330px; }
+.ttr { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; }
+.fb { }
+.gen { position: absolute; left: 80px; top: 600px; width: 820px; }
+.gen .def .x { font-size: 56px; }
+.gen .s { margin-top: 12px; }
+.mam { position: absolute; left: 980px; right: 80px; top: 600px; height: 380px; }
+.mt { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; }
+.irán { position: absolute; left: 980px; right: 80px; top: 870px; }
+.irán .cita { font-size: 46px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 6</span><span>versículos 19 y 20 · 7:2, 3</span></div>
+<div class="top"><div class="v vol">≈ 40.000 <small>m³</small></div><div class="m t445">= <b>445</b> vagones de ferrocarril</div></div>
+<svg class="trenes" viewBox="0 0 1760 330"><g class="vg"></g><text class="ttr tt" x="1760" y="320" text-anchor="end" fill="#e9bf60">10 trenes de unos 44 vagones · ¡Despertad!, 8/9/1975, pág. 5</text></svg>
+<div class="gen">
+  <div class="def"><div class="t">“género”</div><div class="x">una pareja de cada <b>género</b>, no de cada especie de hoy</div><div class="s">el límite original de reproducción que puso el Creador · Perspicacia, “Género”</div></div>
+  <div class="s g2">quienes lo calculan: 43 géneros de mamíferos, 74 de aves y 10 de reptiles · no subieron los peces ni las ballenas</div>
+</div>
+<svg class="mam" viewBox="0 0 860 380">
+  <text class="mt" x="0" y="40" fill="#f1e9d8">especies de mamíferos:</text>
+  <g class="m1"><rect class="r1" x="0" y="70" width="170" height="60" rx="10" fill="rgba(236,138,103,0.3)" stroke="#ec8a67" stroke-width="4"/><text class="mt" x="190" y="115" fill="#ec8a67">≈ 290 más grandes que una oveja</text></g>
+  <g class="m2"><rect class="r2" x="0" y="160" width="800" height="60" rx="10" fill="rgba(146,209,147,0.28)" stroke="#92d193" stroke-width="4"/><text class="mt" x="20" y="204" fill="#f1e9d8">≈ 1.360 más pequeñas que una rata</text></g>
+</svg>
+<div class="irán"><div class="cita">“irán adonde estés y <b>entrarán en el arca</b>”<span class="ref">GÉNESIS 6:20</span></div></div>
+
+<script>
+// 445 vagones: 10 filas de 44 y cinco más; cada tren se llena de izquierda a derecha.
+let v = "";
+for (let i = 0; i < 445; i++) {
+  const f = Math.floor(i / 44), c = i % 44;
+  v += `<rect class="w w${f}" x="${(c * 39.8).toFixed(1)}" y="${f * 27}" width="34" height="20" rx="3"/>`;
+}
+$(".vg").innerHTML = v;
+$$(".vg rect").forEach((r) => { r.setAttribute("fill", "rgba(233,191,96,0.22)"); r.setAttribute("stroke", "#e9bf60"); r.setAttribute("stroke-width", "2"); });
+entra(".cab", 0.2, { y: -20 });
+entra(".vol", 0.3, { y: 30 });
+entra(".t445", at("cuatrocientos cuarenta"), { y: 20 });
+const t0 = at("cuatrocientos cuarenta");
+for (let f = 0; f <= 10; f++) aparece(".w" + f, t0 + f * 0.28, 0.25);
+aparece(".tt", at("diez trenes"), 0.5);
+entra(".gen .def", at("Noé no metió"), { y: 30 });
+entra(".g2", at("Los peces"), { y: 20 });
+aparece(".mam .mt", at("Y de los mamíferos"), 0.4);
+tl.set($$(".m1, .m2"), { opacity: 0 }, 0);
+aparece(".m1", at("doscientas noventa"), 0.3);
+tl.fromTo($(".r1"), { scaleX: 0 }, { scaleX: 1, transformOrigin: "0% 50%", duration: 0.6, immediateRender: false }, at("doscientas noventa"));
+aparece(".m2", at("mil trescientas"), 0.3);
+tl.fromTo($(".r2"), { scaleX: 0 }, { scaleX: 1, transformOrigin: "0% 50%", duration: 1.0, immediateRender: false }, at("mil trescientas"));
+atenua(".mam", at("Además, Noé") - 0.2, 0.3);
+entra(".irán", at("Además, Noé"), { y: 30 });
+</script>

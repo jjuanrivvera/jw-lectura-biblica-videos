@@ -1,0 +1,39 @@
+<style>
+.ilus.im { left: 60px; top: 140px; width: 1060px; height: 596px; }
+.pie-img.pi { left: 60px; top: 748px; width: 1060px; }
+.camino { position: absolute; left: 60px; top: 820px; width: 1060px; height: 220px; }
+.col { top: 120px; bottom: 70px; right: 60px; width: 690px; }
+.col .cita { font-size: 48px; }
+.col .m { font-size: 64px; }
+.col .def .x { font-size: 58px; }
+</style>
+
+<div class="cab sobre"><span class="cap">Génesis 5</span><span>versículos 21 a 24 · Judas 14, 15</span></div>
+<div class="ilus im"><div class="kb"><img src="assets/img/enoc-calle.jpg" /></div></div>
+<div class="pie-img pi"><i>Seamos valientes al andar con Dios</i>, cap. 1, pág. 16 · la escena se apoya en Judas 14, 15</div>
+<svg class="camino" viewBox="0 0 1060 220">
+  <path class="otros" d="M 20 150 C 120 60 180 210 280 120 C 380 40 420 200 540 110 C 640 40 700 190 820 120 C 900 70 960 170 1040 100" stroke="#ec8a67" stroke-width="6" fill="none" stroke-dasharray="3 14" stroke-linecap="round" opacity="0.8"/>
+  <path class="recto" d="M 20 60 L 1030 60" stroke="#e9bf60" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <path class="punta" d="M 1010 40 L 1040 60 L 1010 80" stroke="#e9bf60" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="t300" x="20" y="30" font-family="Caveat" font-weight="700" font-size="44" fill="#e9bf60">300 años en la misma dirección</text>
+  <text class="tot" x="1040" y="210" text-anchor="end" font-family="Caveat" font-weight="700" font-size="40" fill="#ec8a67">una sociedad hacia el lado contrario</text>
+</svg>
+<div class="col">
+  <div class="b a1"><div class="m rojo" style="font-size:54px">no dice “Entonces murió”</div><div class="cita">“Entonces nadie lo volvió a ver, porque <b>Dios lo tomó</b>”<span class="ref">GÉNESIS 5:24</span></div></div>
+  <div class="b a2"><div class="cita">“Enoc <b>siguió andando</b> con el Dios verdadero”<span class="ref">GÉNESIS 5:22</span></div><div class="def"><div class="t">el verbo hebreo</div><div class="x">acción <b>continua y repetitiva</b></div><div class="s">La Atalaya, 15/9/2001, págs. 29 a 31</div></div></div>
+  <div class="b a3"><div class="def"><div class="t">el Dios verdadero <i>ha·ʼElo·hím</i></div><div class="x">“<b>el</b> Dios”, con artículo</div><div class="s">primera vez en la Biblia · Ayuda para entender la Biblia, “Elohím” · nota de 5:22</div></div></div>
+  <div class="b a4"><div class="cita">“Jehová vino con sus santas <b>miríadas</b> para juzgar a todos”<span class="ref">JUDAS 14</span></div><div class="m">miríada = <b>10.000</b></div><div class="s">“este quizás fue el motivo por el que se le persiguió” · Perspicacia, vol. 1, “Enoc”</div></div>
+</div>
+
+<script>
+entra(".cab", 0.2, { y: -20 });
+entra(".im", 0.3, { y: 30 });
+kb(".im .kb", 0.3, DUR, { s: 1.1, x: 2 }, { s: 1.0, x: 0 });
+aparece(".pi", 0.9, 0.5);
+secuencia([[".a1", 0.5], [".a2", at("Antes, el texto")], [".a3", at("Y aquí aparece")], [".a4", at("Judas conserva")]]);
+traza(".recto", at("trescientos años"), 2.2, { ease: "none" });
+aparece(".punta", at("trescientos años") + 2.1, 0.2);
+escribe(".t300", at("trescientos años"), 1.0);
+traza(".otros", at("en una sociedad"), 1.8);
+aparece(".tot", at("en una sociedad") + 0.6, 0.5);
+</script>

@@ -1,0 +1,60 @@
+<!--lead:2.0-->
+<style>
+.capcard .num { font-size: 120px; }
+.monte { position: absolute; left: 60px; top: 130px; width: 900px; height: 880px; }
+.mt { font-family: "Caveat", cursive; font-weight: 700; font-size: 44px; paint-order: stroke; stroke: #17212b; stroke-width: 8px; }
+.mb { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 26px; }
+.der { position: absolute; left: 1010px; right: 60px; top: 130px; bottom: 60px; }
+.der > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.der .m { font-size: 58px; }
+.der .cita { font-size: 46px; }
+.caja { border-radius: 22px; padding: 18px 26px; }
+.caja .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.14em; text-transform: uppercase; }
+.caja .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; line-height: 1.08; margin-top: 6px; }
+.caja.geo { border: 4px dotted var(--rosa); }
+.caja.geo .t { color: var(--rosa); }
+.caja.pub { border: 4px solid var(--oro); }
+.caja.pub .t { color: var(--oro); }
+</style>
+
+<div class="capcard"><div class="num">Lo que se puede decir</div><svg viewBox="0 0 820 40"><path d="M 10 22 C 220 6 600 36 810 16"/></svg><div class="sub">y lo que no</div></div>
+<div class="fase fx">
+  <div class="cab"><span class="cap">Las pruebas del Diluvio</span><span>Perspicacia, vol. 1, “Diluvio”</span></div>
+  <svg class="monte" viewBox="0 0 900 880">
+    <defs><clipPath id="e42-m"><path d="M 450 60 L 860 820 L 40 820 Z"/></clipPath>
+      <linearGradient id="e42-roca" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a6a80"/><stop offset="1" stop-color="#2c3644"/></linearGradient></defs>
+    <path d="M 450 60 L 860 820 L 40 820 Z" fill="url(#e42-roca)" stroke="#b3bdc8" stroke-width="5" stroke-linejoin="round"/>
+    <g clip-path="url(#e42-m)">
+      <rect class="bq" x="0" y="60" width="900" height="130" fill="#6f86b0"/>
+      <rect class="ba" x="0" y="190" width="900" height="120" fill="#b8913e"/>
+    </g>
+    <path d="M 450 60 L 860 820 L 40 820 Z" fill="none" stroke="#b3bdc8" stroke-width="5" stroke-linejoin="round"/>
+    <text class="mt t1" x="560" y="120" fill="#f1e9d8">cima, 8.849 m</text>
+    <text class="mt t2" x="40" y="150" fill="#93bbef">caliza marina con fósiles</text>
+    <text class="mb t2b" x="40" y="186" fill="#b3bdc8">crinoideos, trilobites, braquiópodos</text>
+    <text class="mt t3" x="600" y="270" fill="#e9bf60">banda amarilla</text>
+    <path class="sube" d="M 450 780 L 450 360" stroke="#e9adcc" stroke-width="12" stroke-linecap="round"/>
+    <path class="sube" d="M 420 400 L 450 350 L 480 400" stroke="#e9adcc" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text class="mt t4" x="480" y="600" fill="#e9adcc">la roca subió</text>
+    <text class="mb" x="450" y="860" text-anchor="middle" fill="#b3bdc8">corte esquemático · altitudes y formaciones: fuente externa</text>
+  </svg>
+  <div class="der">
+    <div class="b a1"><div class="m">los fósiles del Everest <b>no prueban</b> el Diluvio</div><div class="s">Génesis 7:19, 20: “todas las montañas altas que hay bajo los cielos”, las de entonces</div><div class="caja pub"><div class="t">lo que afirman las publicaciones</div><div class="x">antes del Diluvio “las montañas eran mucho más bajas que en la actualidad”</div></div></div>
+    <div class="b a2"><div class="caja geo"><div class="t">lo que dice la geología · fuente externa</div><div class="x">se formó en el fondo de un antiguo océano y subió con el choque de la placa india contra la euroasiática</div></div><div class="m">la roca subió; <b>el agua no llegó hasta allí</b></div><div class="cita">“la prueba de que hubo un Diluvio no depende de la existencia de restos fósiles”<span class="ref">PERSPICACIA, VOL. 1, “DILUVIO”</span></div></div>
+    <div class="b a3"><div class="m">relatos de un diluvio en <b>muchos pueblos</b></div><div class="s">“1) un lugar de refugio para unos pocos sobrevivientes, 2) una destrucción universal por agua [...] y 3) la conservación de personas humanas” · unos 270 relatos (enciclopedia citada en Perspicacia); más de 500 leyendas (La Atalaya, 15/1/1992)</div><div class="cita">“tal como eran los días de Noé, así será la presencia del Hijo del Hombre”<span class="ref">MATEO 24:37</span></div><div class="m">nuestra confianza: <b>Jesús lo trató como historia</b></div></div>
+  </div>
+</div>
+
+<script>
+capitulo(".capcard", 0.2, LEAD - 0.1);
+const T0 = LEAD + 0.35;
+entra(".cab", T0, { y: -20 });
+aparece(".monte", T0, 0.8);
+tl.set($$(".bq, .ba, .t1, .t2, .t2b, .t3, .t4, .sube"), { opacity: 0 }, 0);
+aparece(".t1", at("cima del Everest"), 0.5);
+aparece([".bq", ".t2", ".t2b"], at("La geología"), 0.6);
+aparece([".ba", ".t3"], at("La geología") + 0.8, 0.6);
+aparece([".sube", ".t4"], at("y subió con"), 0.6);
+secuencia([[".a1", at("A veces se dice")], [".a2", at("La geología")], [".a3", at("Lo que sí llama")]]);
+atenua(".monte", at("Lo que sí llama"), 0.35);
+</script>

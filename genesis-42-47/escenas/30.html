@@ -1,0 +1,52 @@
+<style>
+.noche30 { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 70% at 50% 20%, #203a5c 0%, #142338 55%, #0c1522 100%); }
+.noche30 svg { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+.q30 { position: absolute; left: 140px; right: 140px; top: 120px; text-align: center; }
+.q30 .cita { font-size: 68px; }
+.razones30 { position: absolute; left: 90px; right: 90px; top: 500px; display: grid; grid-template-columns: 1fr 1fr 1.1fr; gap: 24px; }
+.razones30 .tj { background: rgba(8, 14, 22, 0.72); }
+.razones30 .tj .x { font-size: 36px; }
+.pp30 { position: absolute; left: 90px; top: 810px; }
+.f2 { position: absolute; left: 90px; right: 90px; top: 110px; bottom: 70px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.f2 .cita { font-size: 56px; }
+.f2 .def { background: rgba(10, 18, 28, 0.9); }
+.f2 .def .x { font-size: 56px; }
+</style>
+
+<div class="noche30"><svg viewBox="0 0 1920 1080"><g class="estrellas"></g></svg></div>
+<div class="cab"><span class="cap">Génesis 46</span><span>versículos 2 al 4</span></div>
+<div class="fase f1">
+  <div class="q30"><div class="cita c0" style="font-size:48px; color:var(--tenue); margin-bottom:24px">“¡Jacob! ¡Jacob!” <span style="color:var(--oro)">“¡Aquí estoy!”</span><span class="ref">GÉNESIS 46:2</span></div><div class="cita c1">“No tengas miedo de bajar a Egipto, porque <b>allí te convertiré en una gran nación</b>”<span class="ref">GÉNESIS 46:3</span></div></div>
+  <div class="razones30">
+    <div class="tj r1"><div class="k">Abrahán · 12:12</div><div class="x">había corrido peligro en Egipto</div></div>
+    <div class="tj r2"><div class="k">Isaac · 26:2</div><div class="x">“No bajes a Egipto”</div></div>
+    <div class="tj on r3"><div class="k">Jacob</div><div class="x">no dio el paso sin consultar a Dios</div><div class="ref">“recibió en visión la aprobación divina para aquel traslado” · <i>Perspicacia</i>, vol.&nbsp;2, “José”, pág.&nbsp;125</div></div>
+  </div>
+  <div class="pp30"><span class="propio chico">relacionar esos antecedentes con el miedo de Jacob: observación propia</span></div>
+</div>
+<div class="f2">
+  <div class="cita q2">“Yo mismo bajaré contigo a Egipto y <b>yo mismo también te traeré de vuelta</b>. Y José pondrá su mano sobre tus ojos”<span class="ref">GÉNESIS 46:4</span></div>
+  <div class="def d1"><div class="t">la mano sobre los ojos</div><div class="x">José le <b>cerraría los ojos</b> al morir: eso le tocaba al primogénito</div><div class="s">nota de la TNM en 46:4 · “Jehová reveló de este modo que José recibiría el derecho de primogenitura” · <i>Perspicacia</i>, vol.&nbsp;2, “José”, pág.&nbsp;126</div></div>
+</div>
+
+<script>
+let sem = 5;
+const rnd = () => ((sem = (sem * 9301 + 49297) % 233280) / 233280);
+let es = "";
+for (let i = 0; i < 140; i++) { const x = rnd() * 1920, y = rnd() * 1080, r = 0.8 + rnd() * 2.2; es += `<circle class="es${i % 3}" cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${r.toFixed(1)}" fill="#f4f1e6" opacity="${(0.35 + rnd() * 0.55).toFixed(2)}"/>`; }
+$(".estrellas").innerHTML = es;
+tl.fromTo($$(".es1"), { opacity: 0.25 }, { opacity: 0.9, duration: 2.2, yoyo: true, repeat: 8, ease: "sine.inOut", immediateRender: false }, 0);
+tl.fromTo($$(".es2"), { opacity: 0.8 }, { opacity: 0.3, duration: 2.8, yoyo: true, repeat: 6, ease: "sine.inOut", immediateRender: false }, 0.5);
+const tY = at("Yo mismo bajaré");
+entra(".c0", 0.3, { y: 20 });
+entra(".c1", at("No tengas miedo") - 0.2, { y: 24, d: 0.8 });
+centra(".q30", 200, at("Salir de la tierra") - 0.5);
+entra(".r1", at("Abrahán había corrido"), { y: 20 });
+entra(".r2", at("a Isaac, Dios"), { y: 20 });
+aparece(".pp30", at("a Isaac, Dios") + 1.0, 0.5);
+entra(".r3", at("Jacob no dio el paso"), { y: 20 });
+tl.to($(".f1"), { opacity: 0, duration: 0.5, ease: "none" }, tY - 0.5);
+tl.set(inicial(el(".f2"), { opacity: 0 }), { opacity: 1 }, tY - 0.1);
+entra(".q2", tY, { y: 20 });
+entra(".d1", tY + 2.5, { y: 20 });
+</script>

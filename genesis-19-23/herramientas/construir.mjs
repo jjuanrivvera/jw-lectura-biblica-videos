@@ -103,6 +103,7 @@ const W = ${JSON.stringify(W)};
 ${lib}
 ${script}
 marco();
+window.__timelines = window.__timelines || {};
 window.__timelines[ID] = tl;
 })();
 </script>
@@ -151,6 +152,7 @@ ${voces}
       const tl = gsap.timeline({ paused: true });
       // El polvo de tiza deriva muy despacio durante todo el video.
       tl.fromTo("#grano", { x: 0, y: 0 }, { x: -30, y: -24, duration: ${TOTAL}, ease: "none" }, 0);
+      window.__timelines = window.__timelines || {};
       window.__timelines["main"] = tl;
     </script>
   </body>

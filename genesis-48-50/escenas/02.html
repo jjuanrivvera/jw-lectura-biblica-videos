@@ -1,0 +1,66 @@
+<!--lead:2.0-->
+<style>
+.mapa.REC { left: 0; top: 0; width: 1120px; height: 1080px; }
+.mapa.REC .pie-mapa { left: 24px; right: auto; max-width: 980px; }
+.funde02 { left: 1000px; }
+.col02 { position: absolute; left: 1130px; right: 70px; top: 120px; bottom: 80px; }
+.col02 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+.col02 .cita { font-size: 50px; }
+.col02 .def .x { font-size: 56px; }
+.prom02 { display: flex; flex-direction: column; gap: 16px; }
+.prom02 .it { display: flex; align-items: baseline; gap: 18px; font-family: "Caveat", cursive; font-weight: 700; font-size: 64px; line-height: 1.02; }
+.prom02 .it span { font-family: "Fraunces", serif; font-size: 44px; color: var(--oro); width: 40px; flex: none; }
+.w02 { display: flex; flex-direction: column; gap: 30px; }
+.cab02 { left: 1130px; }
+.col02 .clave { align-self: flex-start; }
+</style>
+
+<!--incluir:_rec.html-->
+<div class="funde-der funde02"></div>
+<div class="cab cab02"><span class="cap">Génesis 48</span><span>versículos 1 al 4</span></div>
+<div class="col02">
+  <div class="b b1">
+    <div class="cita">“Tu padre se está poniendo <b>muy débil</b>”<span class="ref">GÉNESIS 48:1</span></div>
+    <div class="cita">“Israel hizo un <b>gran esfuerzo</b> y se sentó en la cama”<span class="ref">GÉNESIS 48:2</span></div>
+  </div>
+  <div class="b b2">
+    <div class="w02"><div class="cita">“El Dios Todopoderoso se me apareció en <b>Luz</b>, en la tierra de Canaán, y me bendijo”<span class="ref">JACOB · GÉNESIS 48:3</span></div>
+    <div class="def"><div class="t">Luz</div><div class="x">el nombre antiguo de <b>Betel</b></div><div class="s">“Antes, la ciudad se llamaba Luz” · Génesis 28:19</div></div></div>
+  </div>
+  <div class="b b3">
+    <div class="m md oro">lo que Dios le prometió allí · 48:4</div>
+    <div class="prom02">
+      <div class="it i1"><span>1</span>hijos</div>
+      <div class="it i2"><span>2</span>un gran grupo de naciones</div>
+      <div class="it i3"><span>3</span>esta tierra para su descendencia, de forma permanente</div>
+    </div>
+    <span class="clave cl">habla desde <b>la promesa</b></span>
+  </div>
+</div>
+
+<div class="capcard cc"><div class="fondo"><img src="assets/img/belen-hoy.jpg" /></div>
+  <div class="dentro"><div class="num">Génesis 48</div><svg viewBox="0 0 820 40"><path d="M 6 22 C 220 8 560 34 814 16" /></svg><div class="sub">dos nietos, dos herencias</div>
+  <div class="pista"><span class="on">48</span><span>49</span><span>50</span></div></div></div>
+
+<script>
+const t0 = at("Le avisan a José");
+capitulo(".cc", 0.3, t0 - 0.5);
+entra(".cc .pista", 1.0, { y: 20 });
+kb(".cc .fondo", 0, t0, { s: 1.12 }, { s: 1.0 });
+pinta(".marcas", `
+  <circle class="anillo oro a-bet" cx="808" cy="786" r="70" style="stroke-width:9"/>
+  ${chip(760, 630, "aquí le habló Dios", { fs: 40, cls: "oro", ancla: "der" })}
+`);
+const V = { x: 0, y: 0, w: 1000, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 100, y: 150, w: 1500, h: 1620 }, V), 0);
+camara(".cam", at("en Luz"), 2.4, encuadre({ x: 190, y: 340, w: 1400, h: 1512 }, V));
+secuencia([[".b1", t0 - 0.2], [".b2", at("Lo primero que hace") - 0.2], [".b3", at("Allí Dios le prometió") - 0.2]]);
+traza(".a-bet", at("en Luz"), 0.9);
+aparece(".mchip", at("Luz era el nombre") , 0.5);
+centra(".w02", 110, at("Luz era el nombre") - 0.6);
+entra(".b2 .def", at("Luz era el nombre") - 0.2, { y: 20 });
+entra(".i1", at("hijos", at("Allí Dios")) - 0.1, { x: -20, y: 0 });
+entra(".i2", at("un gran grupo") - 0.1, { x: -20, y: 0 });
+entra(".i3", at("y esta tierra") - 0.1, { x: -20, y: 0 });
+entra(".cl", at("Jacob no habla") , { y: 16 });
+</script>

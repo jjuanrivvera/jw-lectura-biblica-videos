@@ -1,0 +1,69 @@
+<style>
+.cu23 { position: absolute; inset: 0; }
+.cu23 svg { width: 1920px; height: 1080px; display: block; }
+.l23 { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 30px; fill: var(--tenue); }
+.n23 { font-family: "Caveat", cursive; font-weight: 700; font-size: 70px; fill: var(--tiza); text-anchor: end; }
+.n23.oro { fill: var(--oro); }
+.t23 { font-family: "Fraunces", serif; font-weight: 700; font-size: 96px; fill: var(--oro); text-anchor: end; }
+.y23 { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 26px; fill: var(--tiza); }
+.y23 tspan { fill: var(--tenue); font-weight: 600; }
+.r23 { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; fill: var(--oro); }
+.tt23 { position: absolute; left: 90px; top: 40px; }
+.tt23 .grande { font-size: 76px; }
+.fu23 { position: absolute; left: 90px; right: 90px; bottom: 18px; }
+</style>
+
+<div class="tt23"><div class="grande">La cuenta de Génesis 11</div></div>
+<div class="cu23"><svg viewBox="0 0 1920 1080">
+  <g class="filas"></g>
+  <path class="ln1" d="M 170 660 H 840" stroke="rgba(241,233,216,0.6)" stroke-width="4"/>
+  <g class="s222"><text class="l23" x="180" y="720">hasta que nace Taré</text><text class="n23 oro" x="840" y="724">222</text></g>
+  <g class="s205"><text class="l23" x="180" y="796">+ lo que vivió Taré</text><text class="n23" x="840" y="800">205</text></g>
+  <path class="ln2" d="M 170 826 H 840" stroke="rgba(241,233,216,0.6)" stroke-width="4"/>
+  <g class="s427"><text class="l23" x="180" y="910">del Diluvio al cruce del Éufrates</text><text class="t23" x="840" y="920">427</text></g>
+  <g class="barra">
+    <rect x="1090" y="150" width="70" height="750" rx="10" fill="rgba(241,233,216,0.08)" stroke="rgba(241,233,216,0.25)" stroke-width="3"/>
+    <g class="seg"></g>
+    <g class="marcas"></g>
+  </g>
+</svg></div>
+<div class="fu23 f">fechas: <i>Perspicacia</i>, vol. 1, “Cronología”, págs. 595-597, que trae esta misma tabla · Génesis 11:10-32</div>
+
+<script>
+const F = [["Diluvio → nace Arpaksad", 2], ["Arpaksad → Selá", 35], ["Selá → Éber", 30], ["Éber → Péleg", 34], ["Péleg → Reú", 30], ["Reú → Serug", 32], ["Serug → Nacor", 30], ["Nacor → Taré", 29]];
+const HIJO = ["Arpaksad", "Selá", "Éber", "Péleg", "Reú", "Serug", "Nacor", "Taré"];
+const Y = (anio) => 150 + (2370 - anio) * (750 / 427);
+let s = "", sg = "", mk = "", anio = 2370;
+F.forEach(([l, n], i) => {
+  const y = 190 + i * 60;
+  s += `<g class="f f${i}"><text class="l23" x="180" y="${y}">${l}</text><text class="n23" x="840" y="${y + 6}">${n}</text></g>`;
+  const a0 = anio; anio -= n;
+  sg += `<rect class="sg sg${i}" x="1094" y="${Y(a0).toFixed(1)}" width="62" height="${(Y(anio) - Y(a0)).toFixed(1)}" fill="${i % 2 ? "#d4a94e" : "#e9bf60"}"/>`;
+  if (i > 0) mk += `<g class="mk mk${i}"><path d="M 1160 ${Y(anio).toFixed(1)} H 1190" stroke="#e9bf60" stroke-width="3"/><text class="y23" x="1200" y="${(Y(anio) + 9).toFixed(1)}">${anio} <tspan>· nace ${HIJO[i]}</tspan></text></g>`;
+});
+sg += `<rect class="sg sgT" x="1094" y="${Y(2148).toFixed(1)}" width="62" height="${(Y(1943) - Y(2148)).toFixed(1)}" fill="#c9956a"/>`;
+mk += `<g class="mk mk0"><text class="y23" x="1200" y="${(Y(2370) + 12).toFixed(1)}">2370 <tspan>· el Diluvio · 2368, nace Arpaksad</tspan></text></g>`;
+mk += `<g class="mkA"><path d="M 1040 ${Y(2018).toFixed(1)} H 1210" stroke="#92d193" stroke-width="4" stroke-dasharray="10 7"/><text class="r23" x="1220" y="${(Y(2018) + 14).toFixed(1)}" style="fill:#92d193">2018 · nace Abrán · 352 años</text></g>`;
+mk += `<g class="mkT"><text class="r23" x="1200" y="${(Y(1943) + 6).toFixed(1)}">1943 · cruza el Éufrates · 427 años</text></g>`;
+pinta(".filas", s); pinta(".seg", sg); pinta(".marcas", mk);
+entra(".tt23", 0.3, { y: -16 });
+aparece(".barra > rect", 0.6, 0.5);
+aparece(".fu23", 1.0, 0.5);
+const n1 = at("treinta y cinco"), n2 = at("treinta", n1 + 0.5), n3 = at("treinta y cuatro"), n4 = at("treinta", n3 + 0.5), n5 = at("treinta y dos"), n6 = at("treinta", n5 + 0.5), n7 = at("veintinueve");
+const T = [at("dos años") - 0.3, n1, n2, n3, n4, n5, n6, n7];
+T.forEach((t, i) => {
+  entra(".f" + i, t - 0.15, { x: -20, y: 0, d: 0.4 });
+  tl.fromTo($(".sg" + i), { scaleY: 0, transformOrigin: "50% 0%" }, { scaleY: 1, duration: 0.4, ease: "power1.out", immediateRender: false }, t);
+  tl.set($(".sg" + i), { scaleY: 0, transformOrigin: "50% 0%" }, 0);
+  aparece(".mk" + i, t + 0.2, 0.3);
+});
+traza(".ln1", at("Son doscientos") - 0.3, 0.5);
+entra(".s222", at("Son doscientos"), { y: 12 });
+entra(".s205", at("Taré vivió") - 0.2, { y: 12 });
+tl.fromTo($(".sgT"), { scaleY: 0, transformOrigin: "50% 0%" }, { scaleY: 1, duration: 1.2, ease: "power1.inOut", immediateRender: false }, at("Taré vivió"));
+tl.set($(".sgT"), { scaleY: 0, transformOrigin: "50% 0%" }, 0);
+traza(".ln2", at("cuatrocientos veintisiete") - 0.4, 0.4);
+entra(".s427", at("cuatrocientos veintisiete") - 0.1, { y: 14 });
+entra(".mkT", at("cuatrocientos veintisiete") + 0.3, { x: -16, y: 0 });
+entra(".mkA", at("nacimiento de Abrán") - 0.2, { x: -16, y: 0 });
+</script>

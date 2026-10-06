@@ -1,0 +1,66 @@
+<style>
+.sac43 { position: absolute; left: 60px; top: 120px; width: 860px; height: 420px; }
+.sac43 .def .x { font-size: 44px; }
+.gav43 { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.eti43 { position: absolute; top: 880px; font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; text-align: center; }
+.col43 { position: absolute; left: 980px; right: 60px; top: 110px; height: 640px; }
+.col43 > .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.col43 .cita { font-size: 46px; }
+.col43 .def .x { font-size: 46px; }
+</style>
+
+<div class="cab"><span class="cap">Génesis 47</span><span>versículos 22 al 26</span></div>
+<div class="sac43"><div class="tj s0"><div class="k">los sacerdotes · 47:22</div><div class="x">no vendieron sus tierras: vivían de las <b>raciones</b> que les daba el faraón</div></div></div>
+<svg class="gav43" viewBox="0 0 1920 1080"><defs>
+  <linearGradient id="g43-tallo" x1="0" x2="0" y1="1" y2="0"><stop offset="0" stop-color="#b98a3a" /><stop offset="1" stop-color="#f0cf78" /></linearGradient>
+  <radialGradient id="g43-espiga" cx="0.4" cy="0.35" r="0.8"><stop offset="0" stop-color="#fbe3a0" /><stop offset="1" stop-color="#c9953c" /></radialGradient>
+</defs><g class="gavs"></g><g class="llaves"></g></svg>
+<div class="eti43 e1" style="left:60px; width:250px; color:var(--oro)">1 para el faraón</div>
+<div class="eti43 e2" style="left:320px; width:620px; color:var(--tiza)">4 para sembrar y comer</div>
+<div class="col43">
+  <div class="b a1">
+    <div class="cita q1">“Cuando llegue la cosecha, entréguenle <b>la quinta parte</b> al faraón. Las cuatro partes que queden les servirán para volver a sembrar sus campos y para alimentarse”<span class="ref">GÉNESIS 47:24</span></div>
+    <div class="f" style="font-size:25px; color:#d5dbe1">“por el uso de la tierra” · <i>Perspicacia</i>, vol.&nbsp;2, “José”, pág.&nbsp;126</div>
+  </div>
+  <div class="b a2">
+    <div class="def d1"><div class="t">arrendamiento</div><div class="x">uno trabaja la tierra <b>de otro</b> y le paga con parte de la cosecha: aquí, un 20 %</div></div>
+    <span class="propio chico pp">la comparación con el arrendamiento y el 20 %: observación propia</span>
+    <div class="tj on d2"><div class="k">en los años buenos · 41:34</div><div class="x">se había guardado la <b>misma</b> quinta parte</div></div>
+    <div class="cita q2" style="color:var(--oro)">“Mi señor, <b style="color:var(--tiza)">nos has salvado la vida</b>”<span class="ref">GÉNESIS 47:25</span></div>
+  </div>
+</div>
+
+<script>
+// Cinco gavillas: una para el faraón y cuatro para la familia.
+function gavilla(alto) {
+  let s = "";
+  const n = 11;
+  for (let i = 0; i < n; i++) {
+    const f = i / (n - 1) - 0.5;
+    const xb = f * 46, xa = f * 16, xt = f * 92, yt = -alto + Math.abs(f) * 26;
+    s += `<path d="M ${xb.toFixed(1)} 0 L ${xa.toFixed(1)} ${(-alto * 0.42).toFixed(1)} L ${xt.toFixed(1)} ${yt.toFixed(1)}" stroke="url(#g43-tallo)" stroke-width="4.5" fill="none" stroke-linecap="round"/>`;
+    const ang = Math.atan2(xt - xa, -(yt + alto * 0.42)) * 57.3;
+    s += `<ellipse cx="${xt.toFixed(1)}" cy="${(yt - 12).toFixed(1)}" rx="6.5" ry="17" fill="url(#g43-espiga)" transform="rotate(${ang.toFixed(1)} ${xt.toFixed(1)} ${(yt - 12).toFixed(1)})"/>`;
+  }
+  s += `<rect x="-17" y="${(-alto * 0.42 - 7).toFixed(1)}" width="34" height="14" rx="5" fill="#7a5320"/>`;
+  return s;
+}
+const XS = [185, 420, 560, 700, 840];
+$(".gavs").innerHTML = XS.map((x, i) => `<g transform="translate(${x} 840)"><g class="gv gv${i}">${gavilla(230)}</g></g>`).join("");
+$(".llaves").innerHTML = `<path class="ll1" d="M 110 856 Q 110 872 185 872 Q 260 872 260 856" stroke="#e9bf60" stroke-width="6" fill="none"/><path class="ll2" d="M 350 856 Q 350 872 630 872 Q 910 872 910 856" stroke="#f1e9d8" stroke-width="6" fill="none"/>`;
+const tA = at("Hoy lo llamaríamos");
+entra(".s0", 0.3, { y: 16 });
+salta($$(".gv"), at("A los demás") + 0.2, { desde: 0.3, st: 0.12 });
+entra(".q1", at("A los demás"), { y: 16 });
+tl.to($(".gv0"), { y: -10, duration: 0.6, ease: "power2.out" }, at("la quinta parte"));
+tl.to($$(".gv0 path"), { stroke: "#f6c64a", duration: 0.4 }, at("la quinta parte"));
+traza(".ll1", at("la quinta parte") + 0.3, 0.6);
+entra(".e1", at("la quinta parte") + 0.5, { y: 10 });
+traza(".ll2", at("y las otras cuatro"), 0.8);
+entra(".e2", at("y las otras cuatro") + 0.4, { y: 10 });
+secuencia([[".a1", at("A los demás")], [".a2", tA - 0.3]]);
+entra(".d1", tA, { y: 16 });
+entra(".pp", tA + 1.0, { y: 10 });
+entra(".d2", at("Era la misma proporción"), { y: 16 });
+entra(".q2", at("Mi señor"), { y: 16 });
+</script>

@@ -1,0 +1,29 @@
+<style>
+.parecido { position: absolute; left: 80px; right: 80px; top: 120px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 50px; }
+.parecido .dato .v { font-size: 58px; }
+.parecido .dato .k { font-size: 46px; }
+.nota-p { position: absolute; left: 80px; right: 80px; top: 470px; display: flex; gap: 30px; align-items: center; }
+.nota-p .m { font-size: 60px; }
+.pregunta { position: absolute; left: 80px; right: 80px; top: 110px; }
+.pregunta .m { font-size: 76px; }
+.norma { position: absolute; left: 80px; right: 80px; top: 240px; bottom: 60px; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 36px; align-content: center; }
+.est { border-radius: 28px; padding: 28px 30px; background: rgba(10,16,22,0.45); border: 3px solid rgba(241,233,216,0.14); display: flex; flex-direction: column; gap: 16px; min-height: 520px; }
+.est .r { font-family: "Montserrat"; font-weight: 800; font-size: 26px; letter-spacing: 0.16em; color: var(--tenue); text-transform: uppercase; }
+.est .m { font-size: 64px; }
+.est .cita { font-size: 46px; }
+.est.medio { border-color: var(--oro); }
+.flecha { position: absolute; top: 50%; width: 40px; height: 6px; background: var(--oro); }
+</style>
+<div class="cab"><span class="cap">Génesis 29</span><span>versículos 28 al 30</span></div>
+<div class="pregunta"><div class="m">¿Aprobaba Jehová que Jacob tuviera <b>dos esposas</b>?</div></div>
+<div class="norma f2">
+  <div class="est e1"><div class="r">al principio</div><div class="m">no entraba en los <b style="color:var(--oro)">planes de Dios</b></div><div class="s">Génesis 2:24</div></div>
+  <div class="est medio e2"><div class="r">se toleró</div><div class="m">“hasta el tiempo de la congregación cristiana”</div><div class="s">Perspicacia, vol. 2, “Matrimonio”, pág. 345</div><div class="m md">Jacob no la buscó: <b style="color:var(--oro)">“por engaño de su suegro”</b></div><div class="s">ibíd., pág. 346</div></div>
+  <div class="est e3"><div class="r">siglos después, la Ley</div><div class="cita">“No te cases con la hermana de tu esposa, porque se hará su <b>rival</b>”<span class="ref">LEVÍTICO 18:18</span></div></div>
+</div>
+<script>
+entra(".pregunta", 0.3, { y: -20 });
+entra(".e1", at("La poligamia no estaba"), { y: 30 });
+entra(".e2", at("pero la toleró"), { y: 30 });
+entra(".e3", at("la Ley diría"), { y: 30 });
+</script>

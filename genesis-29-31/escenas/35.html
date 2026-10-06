@@ -1,0 +1,33 @@
+<style>
+.esc { position: absolute; left: 60px; top: 110px; width: 1160px; height: 900px; }
+.et { font-family: "Caveat"; font-weight: 700; font-size: 46px; fill: var(--tiza); }
+.et.o { fill: var(--oro); }
+.col { top: 120px; bottom: 90px; right: 64px; width: 620px; }
+.fuente-p { position: absolute; left: 80px; bottom: 16px; font-size: 21px; color: var(--tenue); }
+</style>
+<div class="cab"><span class="cap">Génesis 31</span><span>versículos 19 y 34</span></div>
+<svg class="esc" viewBox="0 0 1160 900">
+  <path class="suelo" d="M 0 800 L 1160 800" stroke="#b3bdc8" stroke-width="4"/>
+  <g class="per"><circle cx="160" cy="210" r="46" fill="#6d7f91"/><path d="M 100 270 C 110 256 210 256 220 270 L 240 560 L 204 560 L 200 800 L 172 800 L 164 600 L 156 600 L 148 800 L 120 800 L 116 560 L 80 560 Z" fill="#6d7f91"/><text class="et" x="160" y="850" text-anchor="middle">persona · 1,70 m</text></g>
+  <g class="gra"><rect x="330" y="190" width="120" height="610" rx="50" fill="rgba(125,90,55,0.5)" stroke="#c9a06a" stroke-width="4" stroke-dasharray="16 10"/><text class="et" x="390" y="890" text-anchor="middle">del tamaño de un hombre</text><text class="et o" x="390" y="160" text-anchor="middle">1 Samuel 19:13</text></g>
+  <g class="peq"><rect x="600" y="752" width="22" height="48" rx="9" fill="#e9bf60"/><text class="et o" x="600" y="720" text-anchor="middle">10 a 15 cm</text></g>
+  <g class="zoom"><rect x="700" y="180" width="440" height="620" rx="30" fill="rgba(10,16,22,0.5)" stroke="rgba(241,233,216,0.3)" stroke-width="3"/><text class="et" x="920" y="240" text-anchor="middle">ampliado</text>
+    <g class="fig"><circle cx="830" cy="430" r="40" fill="url(#oro-t)"/><path d="M 780 480 C 790 466 870 466 880 480 L 896 700 C 880 720 780 720 764 700 Z" fill="url(#oro-t)"/><text class="et o" x="830" y="760" text-anchor="middle">15 cm</text></g>
+    <g class="mano"><path d="M 950 700 L 950 520 C 950 505 972 505 972 520 L 972 470 C 972 455 994 455 994 470 L 994 460 C 994 445 1016 445 1016 460 L 1016 475 C 1016 460 1038 460 1038 475 L 1038 640 L 1064 590 C 1072 575 1094 585 1086 600 L 1050 700 C 1040 720 960 720 950 700 Z" fill="#b89a82" stroke="#7d6450" stroke-width="3"/><text class="et" x="1010" y="760" text-anchor="middle">una mano</text></g>
+  </g>
+  <defs><linearGradient id="oro-t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6d98c"/><stop offset="1" stop-color="#b98a2e"/></linearGradient></defs>
+</svg>
+<div class="col">
+  <div class="b a1"><div class="def"><div class="t">Terafim<i>’elo·hái: “mis dioses”</i></div><div class="x">“Dioses o ídolos domésticos a los que a veces se consultaba para saber el futuro”</div><div class="s">TNM, Glosario, “terafim” · Génesis 31:30</div></div></div>
+  <div class="b a2"><div class="m">cabían en la <b style="color:var(--oro)">canasta de una silla de camello</b></div><div class="m md">“de 10 a 15 centímetros”: del largo de una mano</div><div class="s">Perspicacia, vol. 2, “Terafim”, págs. 1104, 1105 · La Atalaya, 15 de abril de 1981, pág. 8</div></div>
+</div>
+<div class="fuente-p">dibujo a escala de la investigación, redibujado · la forma de la figurilla, la estatura de la persona y el tamaño de la mano son supuestos</div>
+<script>
+traza(".suelo", 0.3, 0.6);
+entra(".per", 0.6, { y: 20 });
+entra(".gra", at("a los que a veces") - 0.5, { y: 20 });
+salta(".peq", at("Los de Labán"), { desde: 0.4 });
+late(".peq rect", at("de diez a quince"), { s: 1.6, n: 2 });
+entra(".zoom", at("de diez a quince"), { y: 20 });
+secuencia([[".a1", 0.4], [".a2", at("Los de Labán")]]);
+</script>

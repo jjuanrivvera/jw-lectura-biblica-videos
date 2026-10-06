@@ -1,0 +1,44 @@
+<style>
+.intro { position: absolute; left: 80px; right: 80px; top: 110px; display: grid; grid-template-columns: 1.3fr 1fr; column-gap: 40px; align-items: start; }
+.intro .cita { font-size: 46px; }
+.intro .def .x { font-size: 50px; }
+.tabla { top: 130px; grid-template-columns: 250px 360px 1fr; }
+.tabla .c { font-size: 36px; }
+.tabla .c.n { font-family: "Fraunces"; font-weight: 700; font-size: 48px; color: var(--cielo); }
+.tabla .c.sig { font-family: "Caveat"; font-weight: 700; font-size: 50px; color: var(--oro); }
+.tabla .c b.jac { color: var(--rosa); }
+.fin { position: absolute; left: 80px; right: 80px; bottom: 36px; display: flex; gap: 30px; }
+.fin .dato { flex: 1; padding: 16px 26px; }
+.fin .dato .v { font-size: 56px; }
+.fin .dato .k { font-size: 40px; }
+</style>
+<div class="cab"><span class="cap">Génesis 29</span><span>versículos 31 al 35</span></div>
+<div class="intro">
+  <div class="i1"><div class="cita">“Cuando Jehová vio que Lea no era amada, hizo posible que ella quedara embarazada. Sin embargo, Raquel era estéril”<span class="ref">GÉNESIS 29:31</span></div></div>
+  <div class="i2"><div class="def"><div class="t">“No era amada”</div><div class="x">lit. “era <b>odiada</b>”: aquí, “amar a un grado menor”</div><div class="s">nota de la TNM en 29:31 · Perspicacia, vol. 2, “Odio”, pág. 517 · “le abrió la matriz”: Dios hizo posible el embarazo</div></div></div>
+</div>
+<div class="tabla">
+  <div class="h hh">Hijo</div><div class="h hh">Qué significa</div><div class="h hh">Qué dijo Lea</div>
+  <div class="c n r1">Rubén</div><div class="c sig r1">‘¡vean, un hijo!’</div><div class="c r1">“Jehová ha visto mi dolor. Ahora <b class="jac">mi esposo</b> empezará a amarme” <small>29:32</small></div>
+  <div class="c n r2">Simeón</div><div class="c sig r2">‘oír’</div><div class="c r2">“Jehová escuchó, porque no era amada” <small>29:33</small></div>
+  <div class="c n r3">Leví</div><div class="c sig r3">‘unido’</div><div class="c r3">“Ahora sí que <b class="jac">mi esposo</b> se unirá a mí” <small>29:34</small></div>
+  <div class="c n r4">Judá</div><div class="c sig r4">‘alabado’</div><div class="c si r4">“Esta vez alabaré a Jehová” <small>29:35 · ya no nombra a Jacob</small></div>
+</div>
+<div class="fin">
+  <div class="dato f1"><div class="k">de Leví</div><div class="v">la tribu de los sacerdotes</div></div>
+  <div class="dato f2"><div class="k">de Judá</div><div class="v">los reyes y el Mesías</div><div class="s">Génesis 49:10 · Perspicacia, vol. 2, “Lea”, pág. 194</div></div>
+</div>
+<script>
+entra(".i1", 0.4, { y: 20 });
+entra(".i2", at("El hebreo dice"), { y: 20 });
+aparece(".hh", at("Los nombres de sus hijos") + 0.1, 0.5);
+entra(".r1", at("Rubén"), { y: 6, st: 0.08 });
+entra(".r2", at("Simeón"), { y: 6, st: 0.08 });
+entra(".r3", at("Leví unido"), { y: 6, st: 0.08 });
+entra(".r4", at("Y Judá"), { y: 6, st: 0.08 });
+late(".jac", at("ya no menciona"), { s: 1.1, n: 2 });
+atenua([".r1", ".r2", ".r3"], at("ya no menciona") + 0.8, 0.45);
+sale([".i1", ".i2"], at("Los nombres de sus hijos") - 0.5);
+entra(".f1", at("salieron Leví"), { y: 20 });
+entra(".f2", at("y Judá la de los reyes"), { y: 20 });
+</script>
