@@ -1,0 +1,43 @@
+<style>
+.fila11 { position: absolute; left: 80px; right: 80px; top: 130px; display: grid; grid-template-columns: 1fr 70px 1fr 70px 1fr; align-items: center; }
+.st { border-radius: 26px; border: 3px solid rgba(241, 233, 216, 0.2); background: rgba(10, 16, 22, 0.52); padding: 18px 26px 22px; min-height: 260px; align-self: stretch; }
+.st .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro); }
+.st .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 54px; line-height: 1.04; margin-top: 8px; }
+.st .r { font-size: 28px; color: var(--tenue); font-weight: 700; margin-top: 10px; letter-spacing: 0.06em; }
+.fl11 { font-family: "Fraunces", serif; font-weight: 700; font-size: 64px; text-align: center; color: var(--tenue); }
+.ilus.i11 { left: 80px; top: 450px; width: 860px; height: 430px; }
+.dcha11 { position: absolute; left: 980px; right: 80px; top: 450px; height: 470px; }
+.dcha11 .b { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 16px; justify-content: center; }
+.dcha11 .cita { font-size: 46px; }
+.dcha11 .m { font-size: 62px; }
+.edad11 { position: absolute; left: 980px; right: 80px; top: 450px; height: 470px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.edad11 .gr { font-family: "Fraunces", serif; font-weight: 700; font-size: 300px; line-height: 1; color: var(--oro); }
+.edad11 .tx { font-family: "Caveat", cursive; font-weight: 700; font-size: 64px; }
+</style>
+<div class="cab"><span class="cap">Éxodo 2</span><span>versículos 11 a 15</span></div>
+<div class="fila11">
+  <div class="st s1"><div class="k">Primer día</div><div class="x">ve a un egipcio golpear a un hebreo; lo mata y lo esconde en la arena</div><div class="r">2:11, 12</div></div>
+  <div class="fl11 a1">→</div>
+  <div class="st s2"><div class="k">Segundo día</div><div class="x">intenta detener una pelea entre dos hebreos; ya se supo lo que hizo</div><div class="r">2:13, 14</div></div>
+  <div class="fl11 a2">→</div>
+  <div class="st s3"><div class="k">Después</div><div class="x">el faraón quiere matarlo y Moisés huye a Madián</div><div class="r">2:15</div></div>
+</div>
+<div class="ilus i11 im"><div class="kb"><img src="assets/img/f13.jpg"/></div></div>
+<div class="pie-img" style="left:80px;top:890px;width:860px;font-size:24px">“Por qué huyó Moisés”, <i>Mi libro de historias bíblicas</i>, historia 29</div>
+<div class="edad11 ed"><div class="gr">40</div><div class="tx">años, según Hechos 7:23</div></div>
+<div class="dcha11">
+  <div class="b b1"><div class="m cielo">¿Qué pensaba Moisés?</div><div class="cita">“Pensó que sus hermanos comprenderían que Dios los estaba salvando mediante él, pero ellos no lo comprendieron”<span class="ref">HECHOS 7:25</span></div></div>
+  <div class="b b2"><div class="m oro">Su fe era real, pero…</div><div class="cita md">el momento y el modo de la liberación aún no le correspondían. El relato <b>no aprueba el homicidio</b> como método de justicia.</div><div class="s" style="font-size:28px;margin-top:6px">Hebreos 11:24-26 · Hechos 7:23-29 · Jehová lo prepararía y lo enviaría más tarde (Éxodo 3:10-12)</div></div>
+</div>
+<div class="fuente">TNM, Éxodo 2:11-15; Hechos 7:23-29 · <i>La Atalaya</i>, 15 de abril de 2014, pp. 3-7 · <i>Seamos valientes</i>, cap. 10, pp. 52-57</div>
+<script>
+prepara(".st, .fl11", 0.6, 0.22); ilumina(".s1", 0.8); ilumina(".a1", at("Al día siguiente")); ilumina(".s2", at("Al día siguiente"));
+ilumina(".a2", at("El faraón se enteró")); ilumina(".s3", at("El faraón se enteró"));
+entra(".im", 1.0, { y: 30 });
+entra(".ed", at("Ya adulto"), { y: 24 });
+sale(".ed", at("Hechos siete explica") - 0.4, { y: 0, d: 0.4 });
+entra(".b1", at("Hechos siete explica"), { x: 30, y: 0 });
+sale(".b1", at("Su fe era real") - 0.4, { y: 0, d: 0.4 });
+entra(".b2", at("Su fe era real"), { x: 30, y: 0 });
+atenua([".fila11"], at("Hechos siete explica"), 0.3, 0.5);
+</script>

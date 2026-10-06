@@ -1,0 +1,36 @@
+<style>
+.arriba18 { position: absolute; left: 0; right: 0; top: 150px; text-align: center; }
+.verbo { display: inline-block; border-radius: 30px; border: 4px solid var(--oro); background: rgba(233, 191, 96, 0.08); padding: 18px 56px 22px; }
+.verbo .m { font-size: 96px; color: var(--oro); }
+.verbo .s { font-size: 30px; margin-top: 2px; }
+.dos18 { position: absolute; left: 90px; right: 90px; top: 440px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 56px; }
+.rama { border-radius: 30px; border: 3px solid rgba(241, 233, 216, 0.22); background: rgba(10, 16, 22, 0.55); padding: 26px 36px 30px; }
+.rama .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cielo); }
+.rama .t { font-family: "Fraunces", serif; font-weight: 700; font-size: 66px; line-height: 1.05; margin-top: 12px; }
+.rama .t b { color: var(--oro); }
+.rama .s { font-size: 32px; margin-top: 14px; }
+.nom { text-align: center; position: absolute; left: 90px; right: 90px; top: 800px; }
+.nom .cita { font-size: 46px; }
+.svg18 { position: absolute; left: 0; top: 330px; width: 1920px; height: 130px; }
+.svg18 path { fill: none; stroke: var(--oro); stroke-width: 6; stroke-linecap: round; }
+</style>
+<div class="cab"><span class="cap">Éxodo 3</span><span>versículos 13 a 15</span></div>
+<div class="preg" style="position:absolute;left:90px;right:90px;top:350px;text-align:center"><div class="m cielo" style="font-size:96px">Si me preguntan su nombre, ¿qué les digo?</div><div class="s" style="margin-top:14px;font-size:34px">Éxodo 3:13 · no pide una contraseña: necesita decir quién respalda la misión y qué hará</div></div>
+<div class="arriba18"><div class="verbo vv"><div class="m">llegar a ser</div><div class="s">el verbo hebreo detrás de las dos formas</div></div></div>
+<svg class="svg18" viewBox="0 0 1920 130"><path class="r1" d="M 960 10 C 960 70 560 50 560 120"/><path class="r2" d="M 960 10 C 960 70 1360 50 1360 120"/></svg>
+<div class="dos18">
+  <div class="rama q1"><div class="k">Éxodo 3:14 · primera persona</div><div class="t">“Yo Seré lo que <b>Yo Decida Ser</b>”</div><div class="s">“Llegaré a ser” o “resultaré ser”: Jehová puede llegar a ser lo que haga falta para liberar a Israel y cumplir lo que prometió.</div></div>
+  <div class="rama q2"><div class="k">El nombre Jehová · forma causativa</div><div class="t">“Él Hace que <b>Llegue a Ser</b>”</div><div class="s">Su propósito se cumple: el nombre no es una etiqueta vacía ni una afirmación abstracta de existencia.</div></div>
+</div>
+<div class="nom"><div class="cita md nn">“Jehová, el Dios de sus antepasados [...] me ha enviado a ustedes. Este es mi nombre para siempre, y así es como se me recordará de generación en generación”<span class="ref">ÉXODO 3:15</span></div></div>
+<div class="fuente">TNM, Éxodo 3:14, 15 y nota de estudio; apéndice A4 · <i>La Atalaya</i>, 15 de julio de 2014, p. 27 · <i>Acerquémonos a Jehová</i>, pp. 7-10 · No son dos traducciones literales idénticas</div>
+<script>
+entra(".preg", 0.6, { y: 26 });
+sale(".preg", at("Dios le contestó") - 0.5, { y: 0, d: 0.4 });
+entra(".vv", at("Dios le contestó"), { y: 26 });
+traza(".r1", at("La nota de estudio"), 0.8); traza(".r2", at("Y el nombre Jehová") , 0.8);
+entra(".q1", at("La nota de estudio"), { y: 30 });
+entra(".q2", at("Y el nombre Jehová"), { y: 30 });
+atenua(".dos18", at("Después Dios añadió"), 0.25, 0.5);
+entra(".nn", at("Después Dios añadió"), { y: 26 });
+</script>

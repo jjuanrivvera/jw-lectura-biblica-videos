@@ -1,0 +1,35 @@
+<!--lead:2.8-->
+<style>
+.cc .num { font-size: 210px; }
+.col16 { position: absolute; left: 1020px; right: 70px; top: 110px; bottom: 90px; }
+.col16 .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.col16 .cita { font-size: 52px; }
+.col16 .m { font-size: 72px; }
+.col16 .s { font-size: 32px; }
+.col16 .def .s { font-size: 28px; }
+.col16 .def .x { font-size: 54px; }
+.cl16 { position: absolute; left: 60px; bottom: 70px; }
+.cl16 .clave { font-size: 64px; }
+</style>
+<div class="capcard cc">
+  <div class="num">Éxodo 3</div>
+  <svg viewBox="0 0 820 40"><path d="M 10 22 C 200 10 420 34 810 16"/></svg>
+  <div class="sub">el Dios que ve, oye y envía</div>
+</div>
+<div class="fase f2">
+<div class="sangre"><div class="kb img16"><img src="assets/img/f25.jpg" style="object-position:30% 50%"/></div></div>
+<div class="velo der"></div>
+<div class="cab sobre" style="left:1020px;right:70px"><span class="cap">Éxodo 3</span><span>versículos 1 a 6</span></div>
+<div class="pie" style="left:60px;bottom:24px;font-size:25px;max-width:900px">“El arbusto en llamas”, <i>Lecciones que aprendo de la Biblia</i> · El texto no identifica ni el arbusto ni el pico exacto</div>
+<div class="col16">
+  <div class="b b1"><div class="m oro">Horeb, “la montaña del Dios verdadero”</div><div class="cita">“Moisés vio que la zarza estaba ardiendo pero que no se quemaba”<span class="ref">ÉXODO 3:1, 2</span></div></div>
+  <div class="b b2"><div class="m cielo">Dios lo llama por su nombre</div><div class="cita">“¡Moisés! ¡Moisés!” [...] “Aquí estoy”. “No te acerques más. Quítate las sandalias, porque estás pisando suelo santo”<span class="ref">ÉXODO 3:4, 5</span></div></div>
+  <div class="b b3"><div class="def"><div class="t">Quitarse las sandalias</div><div class="x">una señal de <b>respeto</b> donde Dios se hacía presente</div><div class="s">El suelo no tenía propiedades mágicas, ni el arbusto era sagrado por sí mismo: el fuego sin consumirlo fue la señal que llamó la atención de Moisés.</div></div><div class="m" style="font-size:56px">Y Moisés se cubrió la cara</div></div>
+</div>
+</div>
+<script>
+capitulo(".cc", 0.2, at("Moisés llevó") - 0.9);
+aparece(".f2", at("Moisés llevó") - 0.7, 0.6);
+kb(".img16", at("Moisés llevó") - 0.7, DUR, { s: 1.0 }, { s: 1.08, x: -2 });
+secuencia([[".b1", at("Moisés llevó")], [".b2", at("Se acercó para mirar")], [".b3", at("Quitarse el calzado")]], null);
+</script>

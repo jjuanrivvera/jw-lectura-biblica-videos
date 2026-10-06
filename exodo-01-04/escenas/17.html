@@ -1,0 +1,42 @@
+<style>
+.l17 { position: absolute; left: 80px; width: 940px; top: 130px; bottom: 100px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+.l17 .vb { display: flex; align-items: baseline; gap: 22px; }
+.l17 .vb .m { font-size: 118px; line-height: 1; }
+.l17 .vb .p { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 34px; color: var(--tenue); }
+.l17 .cita { font-size: 44px; margin-top: 16px; }
+.r17 { position: absolute; left: 1080px; right: 80px; top: 130px; bottom: 100px; }
+.r17 .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.r17 .def .x { font-size: 50px; }
+.r17 .def .s { font-size: 28px; }
+.r17 .s { font-size: 30px; }
+.pueblos { display: flex; flex-wrap: wrap; gap: 12px; }
+.pueblos span { font-family: "Fraunces", serif; font-weight: 600; font-size: 40px; padding: 2px 22px 4px; border-radius: 40px; border: 3px solid rgba(241, 233, 216, 0.35); background: rgba(10, 16, 22, 0.5); }
+.r17 .m { font-size: 66px; }
+.r17 .cita { font-size: 50px; }
+</style>
+<div class="cab"><span class="cap">Éxodo 3</span><span>versículos 7 a 12</span></div>
+<div class="l17">
+  <div class="vb a1"><span class="m oro">he visto</span><span class="p">el dolor de mi pueblo en Egipto</span></div>
+  <div class="vb a2"><span class="m oro">he oído</span><span class="p">sus quejas</span></div>
+  <div class="vb a3"><span class="m oro">conozco bien</span><span class="p">sus sufrimientos</span></div>
+  <div class="cita a4">“Bajaré para liberarlos de los egipcios y para hacerlos subir de aquella tierra a una tierra buena y espaciosa, una tierra que rebosa de leche y miel”<span class="ref">ÉXODO 3:7, 8</span></div>
+</div>
+<div class="ilus i17 im17" style="left:1080px;top:150px;width:760px;height:380px"><div class="kb"><img src="assets/img/f25.jpg" style="object-position:70% 50%"/></div></div>
+<div class="pie-img im17p" style="left:1080px;top:545px;width:760px;font-size:24px">“El arbusto en llamas”, <i>Lecciones que aprendo de la Biblia</i></div>
+<div class="r17">
+  <div class="b b1"><div class="def"><div class="t">Leche y miel</div><div class="x">una imagen de <b>abundancia</b>: leche de los rebaños y miel como alimento dulce de la región</div><div class="s">No es que el terreno estuviera literalmente cubierto de productos · <i>Perspicacia</i>; Números 13:27</div></div>
+    <div class="pueblos"><span>cananeos</span><span>hititas</span><span>amorreos</span><span>perizitas</span><span>heveos</span><span>jebuseos</span></div><div class="s">La tierra ya estaba ocupada por estos pueblos (Éxodo 3:8)</div></div>
+  <div class="b b2"><div class="m cielo">“¿Quién soy yo para presentarme ante el faraón?”</div><div class="cita">“Yo estaré contigo. Esta es la señal que tendrás de que soy yo quien te ha enviado: cuando saques de Egipto al pueblo, todos ustedes vendrán a esta montaña y servirán al Dios verdadero”<span class="ref">ÉXODO 3:11, 12</span></div></div>
+</div>
+<div class="fuente">TNM, Éxodo 3:7-12 · <i>La Atalaya</i>, diciembre de 2024 (Éxodo 3:7 en un recuadro de consuelo)</div>
+<script>
+entra(".a1", 0.6, { x: -30, y: 0 }); entra(".a2", at("he oído") , { x: -30, y: 0 }); entra(".a3", at("Conozco bien"), { x: -30, y: 0 });
+entra(".a4", at("Así que bajaré"), { y: 26 });
+entra(".im17, .im17p", 0.8, { x: 30, y: 0 });
+sale(".im17, .im17p", at("Leche y miel pinta") - 0.5, { y: 0, d: 0.4 });
+entra(".b1", at("Leche y miel pinta"), { x: 30, y: 0 });
+sale(".b1", at("A quien Jehová envía") - 0.4, { y: 0, d: 0.4 });
+entra(".b2", at("A quien Jehová envía"), { x: 30, y: 0 });
+atenua(".l17", at("A quien Jehová envía"), 0.25, 0.5);
+entra(".pueblos span", at("cananeos"), { y: 14, st: 0.3, d: 0.4 });
+</script>

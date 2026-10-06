@@ -1,0 +1,43 @@
+<style>
+.arbol { position: absolute; left: 80px; top: 130px; width: 1040px; height: 800px; }
+.arbol svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.nd { position: absolute; border-radius: 24px; border: 3px solid rgba(241, 233, 216, 0.25); background: rgba(10, 16, 22, 0.6); padding: 14px 22px 16px; text-align: center; }
+.nd .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 54px; line-height: 1; }
+.nd .s { font-size: 28px; margin-top: 6px; }
+.nd.or { border-color: var(--oro); } .nd.or .n { color: var(--oro); }
+.hijas { display: flex; gap: 10px; justify-content: center; margin-top: 10px; }
+.hijas i { display: block; width: 26px; height: 26px; border-radius: 50%; background: var(--rosa); }
+.der12 { position: absolute; left: 1160px; right: 80px; top: 130px; bottom: 100px; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.der12 .def .x { font-size: 54px; }
+.der12 .nota { border-radius: 22px; border: 3px solid var(--cielo); padding: 14px 24px 16px; font-size: 30px; line-height: 1.3; color: var(--tiza); background: rgba(147, 187, 239, 0.07); }
+.der12 .nota b { color: var(--cielo); }
+</style>
+<div class="cab"><span class="cap">Éxodo 2</span><span>versículos 16 a 22</span></div>
+<div class="arbol">
+  <svg viewBox="0 0 1040 800"><g fill="none" stroke="#b3bdc8" stroke-width="5" stroke-linecap="round">
+    <path class="l1" d="M 310 262 L 310 330"/><path class="l2" d="M 530 385 L 660 385"/>
+    <path class="l3" d="M 595 385 L 595 470"/><path class="l4" d="M 250 470 L 830 470"/><path class="l5" d="M 250 470 L 250 535"/><path class="l6" d="M 830 470 L 830 535"/></g></svg>
+  <div class="nd or reu" style="left:50px;top:20px;width:540px"><div class="n">Reuel</div><div class="s">sacerdote de Madián · también Jetró</div><div class="hijas"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="s">siete hijas · Éx 2:16; 3:1; 18:1-6</div></div>
+  <div class="nd zip" style="left:90px;top:330px;width:440px"><div class="n">Zípora</div><div class="s">hija de Reuel; se casa con Moisés (Éx 2:21)</div></div>
+  <div class="nd poz" style="left:660px;top:330px;width:350px"><div class="n">Moisés</div><div class="s">defiende y da de beber al rebaño</div></div>
+  <div class="nd gue" style="left:30px;top:535px;width:450px"><div class="n">Guersom</div><div class="s">“residente extranjero” (Éx 2:22)</div></div>
+  <div class="nd eli" style="left:600px;top:535px;width:430px"><div class="n">Eliézer</div><div class="s">el otro hijo (Éx 18:4)</div></div>
+</div>
+<div class="der12">
+  <div class="def d12"><div class="t">Pozo</div><div class="x">un punto de <b>abastecimiento indispensable</b></div><div class="s">Sacar agua para personas y animales llevaba tiempo y causaba disputas por los turnos · <i>Perspicacia</i>, «Madián»</div></div>
+  <div class="nota nn"><b>Reuel o Jetró:</b> es posible que Reuel sea un nombre familiar, o que ambos nombres identifiquen al mismo hombre.</div>
+</div>
+<div class="fuente">TNM, Éxodo 2:15-22 · <i>Perspicacia</i>, «Zipora», «Jetró», «Reuel» · Esquema familiar basado en esos pasajes</div>
+<script>
+prepara(".nd", 0.6, 0.22); ilumina(".poz", 0.8);
+entra(".d12", at("Un pozo era"), { x: 30, y: 0 });
+ilumina(".reu", at("Allí llegaron"));
+entra(".hijas i", at("las siete hijas"), { s: 0.2, y: 0, st: 0.1, d: 0.3 });
+
+ilumina(".zip", at("después le dio"));
+traza([".l1"], at("Reuel, lo invitó") + 0.3, 0.6); traza([".l2"], at("en matrimonio"), 0.6);
+traza([".l3", ".l4", ".l5", ".l6"], at("Su primer hijo"), 1.0);
+ilumina(".gue", at("Su primer hijo"));
+ilumina(".eli", at("Más adelante se nombra"));
+entra(".nn", at("Otros pasajes"), { x: 30, y: 0 });
+</script>

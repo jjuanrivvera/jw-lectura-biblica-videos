@@ -1,0 +1,42 @@
+<style>
+.nochep { position: absolute; left: 1160px; top: 150px; width: 700px; height: 520px; }
+.nochep svg { width: 100%; height: 100%; }
+.izq24 { position: absolute; left: 90px; width: 1000px; top: 150px; bottom: 100px; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.izq24 .cita { font-size: 54px; }
+.izq24 .m { font-size: 70px; }
+.dcha24 { position: absolute; left: 1160px; right: 70px; top: 130px; bottom: 100px; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+.dcha24 .cd { border-radius: 26px; border: 3px solid var(--cielo); padding: 20px 30px 24px; background: rgba(147, 187, 239, 0.07); }
+.dcha24 .cd .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cielo); }
+.dcha24 .cd .x { font-family: "Fraunces", serif; font-weight: 500; font-size: 40px; line-height: 1.2; margin-top: 8px; }
+.dcha24 .cd .x b { color: var(--oro); }
+.dcha24 .cd .s { font-size: 28px; margin-top: 10px; }
+</style>
+<div class="cab"><span class="cap">Éxodo 4</span><span>versículos 24 a 26</span></div>
+<div class="nochep nch"><svg viewBox="0 0 700 520">
+  <defs><linearGradient id="cl24" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d1624"/><stop offset="1" stop-color="#2a3d57"/></linearGradient></defs>
+  <rect width="700" height="520" rx="30" fill="url(#cl24)"/>
+  <g fill="#f1e9d8"><circle cx="90" cy="70" r="4"/><circle cx="200" cy="130" r="3"/><circle cx="320" cy="60" r="4"/><circle cx="430" cy="150" r="3"/><circle cx="560" cy="90" r="4"/><circle cx="640" cy="200" r="3"/><circle cx="140" cy="220" r="3"/><circle cx="500" cy="40" r="3"/></g>
+  <path d="M 520 70 A 70 70 0 1 0 590 170 A 56 56 0 1 1 520 70 Z" fill="#f1e9d8"/>
+  <path d="M 0 420 C 120 370 240 400 360 380 C 480 360 600 400 700 372 L 700 520 L 0 520 Z" fill="#17212b"/>
+  <path d="M 0 470 C 140 440 260 470 380 452 C 500 434 600 470 700 450 L 700 520 L 0 520 Z" fill="#0f1822"/>
+  <path d="M 270 400 L 340 320 L 410 400 Z" fill="#3d3126"/><path d="M 340 320 L 340 400" stroke="#17212b" stroke-width="4"/><path d="M 322 400 L 340 360 L 358 400 Z" fill="#e9bf60" opacity=".85"/>
+</svg></div>
+<div class="izq24">
+  <div class="m oro a1">Un episodio breve y difícil</div>
+  <div class="cita a2">“Cuando estaban de camino hacia el lugar donde iban a pasar la noche, Jehová se encontró con él y trató de darle muerte”<span class="ref">ÉXODO 4:24</span></div>
+  <div class="cita a3">“Ziporá agarró una piedra de pedernal afilada y circuncidó a su hijo [...] Así que Dios lo dejó ir”<span class="ref">ÉXODO 4:25, 26</span></div>
+</div>
+<div class="dcha24">
+  <div class="cd d1"><div class="k">El texto es breve</div><div class="x">El pronombre “él” no deja claro <b>sobre quién recae el peligro</b>. No hace falta añadir detalles.</div></div>
+  <div class="cd d2"><div class="k">Génesis 17:10, 11</div><div class="x">“Deben circuncidar a todos los varones [...] como señal del pacto entre ustedes y yo”</div><div class="s">Una explicación entiende que el hijo no había sido circuncidado y que Moisés, antes de representar a Jehová, debía cumplir el pacto. Zípora actuó y el peligro pasó.</div></div>
+</div>
+<div class="fuente">TNM, Éxodo 4:24-26; Génesis 17:10-14 · <i>La Atalaya</i>, 15 de marzo de 2004, p. 28 · Se cuenta con sobriedad, sin detalles gráficos</div>
+<script>
+entra(".a1", 0.6, { y: 20 }); entra(".a2", at("De camino al lugar"), { y: 26 });
+atenua(".a2", at("Zípora agarró"), 0.3, 0.4);
+entra(".a3", at("Zípora agarró"), { y: 26 });
+entra(".nch", 0.8, { x: 30, y: 0 });
+sale(".nch", at("El texto es breve") - 0.4, { y: 0, d: 0.4 });
+entra(".d1", at("El texto es breve"), { x: 30, y: 0 });
+entra(".d2", at("Una explicación entiende"), { x: 30, y: 0 });
+</script>

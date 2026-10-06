@@ -1,0 +1,26 @@
+<style>
+.ilus.i7 { left: 80px; top: 130px; width: 1010px; height: 568px; }
+.col7 { position: absolute; left: 1130px; right: 80px; top: 130px; bottom: 100px; }
+.col7 .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.col7 .cita { font-size: 52px; }
+.col7 .m { font-size: 68px; }
+.col7 .s { font-size: 32px; }
+.sil { position: absolute; left: 80px; right: 1010px; top: 800px; }
+.sil .def .x { font-size: 44px; }
+.sil .def .s { font-size: 28px; }
+</style>
+<div class="cab"><span class="cap">Éxodo 1</span><span>versículos 15 a 19</span></div>
+<div class="ilus i7 im"><div class="kb"><img src="assets/img/f05.jpg"/></div></div>
+<div class="pie-img" style="left:80px;top:706px;width:1010px;font-size:24px">Sifrá y Puá: la Biblia no describe qué método usaron · <i>Seamos valientes al andar con Dios</i>, cap. 9, pp. 48-51</div>
+<div class="sil"><div class="def d7" style="width:1010px"><div class="t">Silla de parto</div><div class="x">una banqueta que <b>ayudaba a la madre</b> a ponerse en cuclillas para dar a luz</div><div class="s">La orden quería que las parteras reconocieran el sexo del bebé y lo mataran al instante</div></div></div>
+<div class="col7">
+  <div class="b b1"><div class="m rojo">La orden</div><div class="cita">“Cuando ayuden a las hebreas a dar a luz y las vean en la silla de parto, [...] si tienen un niño, mátenlo, pero, si tienen una niña, déjenla vivir”<span class="ref">ÉXODO 1:16</span></div></div>
+  <div class="b b2"><div class="m oro">Sifrá y Puá</div><div class="cita">“Las parteras temían al Dios verdadero. Así que, en lugar de hacer lo que el rey de Egipto les había mandado, dejaban con vida a los varoncitos”<span class="ref">ÉXODO 1:17</span></div></div>
+  <div class="b b3"><div class="m cielo">Ante el rey</div><div class="cita">“Las hebreas no son como las egipcias. Ellas son mujeres fuertes y, antes de que la partera llegue, ya han dado a luz”<span class="ref">ÉXODO 1:19</span></div></div>
+</div>
+<script>
+entra(".im", 0.5, { y: 30 });
+kb(".im .kb", 0.5, DUR, { s: 1.0 }, { s: 1.07, x: 1.5 });
+secuencia([[".b1", at("Entonces el rey")], [".b2", at("Sin embargo")], [".b3", at("Cuando el rey las llamó")]], null);
+entra(".d7", at("La silla de parto era"), { y: 30 });
+</script>

@@ -1,0 +1,53 @@
+<style>
+.rio { position: absolute; left: 0; right: 0; bottom: 0; height: 330px; }
+.rio svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ilus.i8 { left: 80px; top: 130px; width: 860px; height: 484px; }
+.dec8 { position: absolute; left: 110px; right: 110px; top: 120px; }
+.dec8 .m { font-size: 84px; margin-bottom: 14px; }
+.dec8 .cita { font-size: 64px; }
+.col8 { position: absolute; left: 990px; right: 80px; top: 130px; height: 484px; }
+.col8 .b { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.col8 .cita { font-size: 50px; }
+.col8 .m { font-size: 66px; }
+.usos { position: absolute; left: 80px; right: 80px; top: 650px; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 24px; z-index: 3; }
+.uso { border-radius: 24px; background: rgba(16, 24, 32, 0.9); border: 3px solid rgba(233, 191, 96, 0.5); padding: 16px 26px 20px; text-align: center; }
+.uso .t { font-family: "Caveat", cursive; font-weight: 700; font-size: 62px; color: var(--oro); line-height: 1; }
+.uso .s { font-size: 28px; margin-top: 6px; }
+.rb { position: absolute; left: 80px; top: 640px; right: 80px; z-index: 3; display: flex; gap: 22px; }
+.rb .nb { flex: 1; text-align: center; border-radius: 24px; background: rgba(16, 24, 32, 0.9); border: 3px solid rgba(147, 187, 239, 0.5); padding: 14px 20px 16px; }
+.rb .nb .t { font-family: "Caveat", cursive; font-weight: 700; font-size: 58px; line-height: 1; color: var(--cielo); }
+</style>
+<div class="cab"><span class="cap">Éxodo 1</span><span>versículos 20 a 22</span></div>
+<div class="rio"><svg viewBox="0 0 1920 330" preserveAspectRatio="none">
+  <defs><linearGradient id="ag8" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2e5f86"/><stop offset="1" stop-color="#173a57"/></linearGradient></defs>
+  <rect x="0" y="150" width="1920" height="180" fill="url(#ag8)"/>
+  <g class="olas" stroke="#8fc3ee" stroke-width="5" fill="none" stroke-linecap="round" opacity=".5"><path d="M 80 220 q 40 -14 80 0 t 80 0"/><path d="M 520 260 q 40 -14 80 0 t 80 0"/><path d="M 980 215 q 40 -14 80 0 t 80 0"/><path d="M 1400 270 q 40 -14 80 0 t 80 0"/><path d="M 1700 230 q 40 -14 80 0 t 80 0"/></g>
+  <g class="c1"></g><g class="c2"></g></svg></div>
+<div class="ilus i8 im"><div class="kb"><img src="assets/img/f15.jpg"/></div></div>
+<div class="pie-img" style="left:80px;top:622px;width:860px;display:none">x</div>
+<div class="dec8"><div class="m rojo">El decreto</div><div class="cita">“Arrojen al río Nilo a todos los hebreos recién nacidos que sean varones, pero dejen con vida a las niñas”<span class="ref">ÉXODO 1:22</span></div></div>
+<div class="dec8 ben8"><div class="m oro">Dios bendijo a las parteras</div><div class="cita">“Dios bendijo a las parteras, y el pueblo siguió haciéndose más numeroso y muy poderoso. [...] Como las parteras habían temido al Dios verdadero, él les dio hijos”<span class="ref">ÉXODO 1:20, 21</span></div><div class="s" style="margin-top:20px;font-size:44px">Las parteras tienen nombre. El faraón, no.</div></div>
+<div class="col8">
+  <div class="b b2"><div class="m cielo">El delta oriental</div><div class="cita md">una red de brazos del río, humedales y cañaverales: daba agua, transporte y cultivos</div></div>
+</div>
+<div class="rb"><div class="nb nb1"><div class="t">agua</div></div><div class="nb nb2"><div class="t">transporte</div></div><div class="nb nb3"><div class="t">cultivos</div></div></div>
+<div class="usos">
+  <div class="uso u1"><div class="t">cestas</div><div class="s">tallos entretejidos</div></div>
+  <div class="uso u2"><div class="t">embarcaciones ligeras</div><div class="s">hechas con tallos de papiro</div></div>
+  <div class="uso u3"><div class="t">láminas para escribir</div><div class="s">tiras de tallo</div></div>
+</div>
+<div class="pie" style="left:24px;right:24px;bottom:16px;z-index:3;font-size:24px">TNM, Éxodo 1:20-22 · Obrero egipcio armando una embarcación de papiro: <i>Seamos valientes al andar con Dios</i>, cap. 9, imagen A · Los cauces actuales cambiaron: un mapa de hoy no es la hidrografía antigua</div>
+<script>
+cañas(".c1", 40, 1880, 170, 60, 90, 170, "#6f8f4a", 7);
+cañas(".c2", 20, 1900, 190, 50, 60, 130, "#4f7a3e", 6);
+entra(".im", at("Conviene conocer") - 0.2, { y: 30 });
+kb(".im .kb", at("Conviene conocer") - 0.2, DUR, { s: 1.0 }, { s: 1.07, x: -1.5 });
+entra(".ben8", 0.6, { y: 30 });
+sale(".ben8", at("Entonces, como el primer plan") - 0.4, { y: 0, d: 0.4 });
+entra(".dec8:not(.ben8)", at("Entonces, como el primer plan"), { y: 30 });
+sale(".dec8:not(.ben8)", at("Conviene conocer") - 0.5, { y: 0, d: 0.4 });
+entra(".b2", at("El delta oriental"), { x: 30, y: 0 });
+entra(".rb .nb1", at("daba agua") , { y: 20 }); entra(".rb .nb2", at("transporte"), { y: 20 }); entra(".rb .nb3", at("cultivos"), { y: 20 });
+sale(".rb", at("Allí crecía") - 0.2, { y: 0, d: 0.4 });
+entra(".u1", at("cestas"), { y: 24 }); entra(".u2", at("embarcaciones ligeras"), { y: 24 }); entra(".u3", at("láminas para escribir"), { y: 24 });
+</script>

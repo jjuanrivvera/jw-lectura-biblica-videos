@@ -1,0 +1,31 @@
+<style>
+.col01 { position: absolute; left: 90px; right: 90px; top: 120px; display: flex; flex-direction: column; gap: 22px; }
+.col01 .gran { font-family: "Fraunces", serif; font-weight: 700; font-size: 76px; line-height: 1.04; }
+.col01 .gran b { color: var(--oro); }
+.dosprov { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; margin-top: 8px; }
+.pan { border-radius: 26px; border: 3px solid rgba(241, 233, 216, 0.16); background: rgba(10, 16, 22, 0.45); padding: 22px 30px; }
+.pan .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro); margin-bottom: 10px; }
+.pan .x { font-family: "Fraunces", serif; font-weight: 500; font-size: 44px; line-height: 1.2; }
+.pan .x i { color: var(--oro); font-style: normal; font-weight: 700; }
+.pan .r { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.06em; color: var(--tenue); margin-top: 14px; }
+.pan.b2 { border-color: var(--oro); }
+.lt-et { top: 690px; }
+</style>
+<div class="cab"><span class="cap">Éxodo 1 al 4</span><span>dónde estamos</span></div>
+<div class="col01">
+  <div class="gran g1">Génesis termina con <b>José</b> muerto y una instrucción que mira lejos</div>
+  <div class="dosprov">
+    <div class="pan p1"><div class="k">Génesis 50:24, 25</div><div class="x">“Dios se fijará en ustedes. Él de veras los sacará de esta tierra y los llevará a la tierra que juró darles a Abrahán, a Isaac y a Jacob”</div><div class="r">José a sus hermanos</div></div>
+    <div class="pan p2 b2"><div class="k">Éxodo 1:1 · en hebreo</div><div class="x">“Y estos <i>son los nombres</i>”</div><div class="r">El libro enlaza con Génesis: no empieza una historia desconectada</div></div>
+  </div>
+</div>
+<!--incluir:_etapas.html-->
+<div class="fuente">Cronología: Hechos 7:23, 30; Éxodo 7:7 · Génesis 50:24-26 · <i>Perspicacia</i>, «Éxodo»</div>
+<script>
+entra(".g1", 0.6, { y: 30 });
+entra(".p1", at("Génesis terminó") + 1.2, { y: 30 });
+entra(".p2", at("Por eso el libro"), { y: 30 });
+atenua([".g1", ".p1"], at("Lo que cambia"), 0.18, 0.6);
+prepara(".seg", 0.8, 0.22); ilumina(".seg.s1", at("La Biblia permite")); ilumina(".seg.s2", at("Otros cuarenta")); ilumina(".seg.s3", at("a los ochenta"));
+entra(".et-marca", at("Estos cuatro capítulos"), { y: 20 });
+</script>

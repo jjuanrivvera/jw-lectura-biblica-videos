@@ -4,7 +4,7 @@ Monorepositorio de proyectos audiovisuales que recorren capítulos de la Biblia 
 
 ## Videos incluidos
 
-El repositorio reúne **18 proyectos editables de HyperFrames**: once tramos de Génesis, tres de Jeremías y cuatro temas.
+El repositorio reúne los proyectos editables de HyperFrames de la lectura bíblica, en orden: los once tramos de Génesis y Éxodo 1 al 4. Solo entran los videos de la lectura en orden; los de otros libros sueltos y los temáticos viven aparte.
 
 | Carpeta | Lectura o tema | Contenido |
 | --- | --- | --- |
@@ -19,13 +19,7 @@ El repositorio reúne **18 proyectos editables de HyperFrames**: once tramos de 
 | `genesis-37-41` | Génesis 37 al 41 | José en Egipto |
 | `genesis-42-47` | Génesis 42 al 47 | José se reúne con su familia |
 | `genesis-48-50` | Génesis 48 al 50 | Últimos días de Jacob y José |
-| `jeremias-36-37` | Jeremías 36 al 37 | El rollo y el sitio de Jerusalén |
-| `jeremias-38-39` | Jeremías 38 al 39 | Jeremías y la caída de Jerusalén |
-| `jeremias-40-41` | Jeremías 40 al 41 | Los sobrevivientes después de la caída |
-| `tema-hilo-biblia` | Tema | El hilo conductor de la Biblia |
-| `tema-siete-tiempos` | Tema | Los siete tiempos |
-| `tema-trinidad` | Tema | La Trinidad |
-| `tema-verdaderos-cristianos` | Tema | Cómo identificar a los verdaderos cristianos |
+| `exodo-01-04` | Éxodo 1 al 4 | La opresión en Egipto y el llamado de Moisés |
 
 ## Flujo de producción
 
@@ -72,8 +66,7 @@ El audio y los renders quedan fuera del control de versiones. `tools/render.sh <
 ```text
 .
 ├── genesis-*/           # Lecturas de Génesis
-├── jeremias-*/          # Lecturas de Jeremías
-├── tema-*/              # Videos temáticos
+├── exodo-*/            # Lecturas de Éxodo
 ├── tools/               # Voz, descarga de recursos, construcción y render
 ├── .gitignore
 ├── LICENSE

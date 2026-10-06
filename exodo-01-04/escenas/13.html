@@ -1,0 +1,46 @@
+<style>
+.mapa.m13 { left: 0; top: 0; width: 1180px; height: 1080px; background: #e4d6b7; }
+.mapa.m13 .cam img, .mapa.m13 .cam svg { width: 3200px; height: 4623px; }
+.col13 { position: absolute; left: 1200px; right: 56px; top: 100px; bottom: 90px; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.col13 .cd { border-radius: 26px; border: 3px solid rgba(241, 233, 216, 0.2); background: rgba(10, 16, 22, 0.55); padding: 18px 26px 22px; }
+.col13 .cd .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 54px; color: var(--oro); line-height: 1; }
+.col13 .cd .x { font-family: "Caveat", cursive; font-weight: 700; font-size: 50px; line-height: 1.05; margin-top: 6px; }
+.col13 .cd .s { font-size: 28px; margin-top: 8px; }
+.col13 .ext { display: inline-block; margin-top: 8px; font-family: "Caveat", cursive; font-weight: 700; font-size: 34px; color: var(--rosa); border: 3px dotted var(--rosa); border-radius: 12px; padding: 1px 14px 0; }
+.col13 .cd.rj { border-color: var(--rojo); }
+</style>
+<div class="cab" style="left:1200px;right:56px"><span class="cap">Éxodo 2</span><span>Qué hay hoy</span></div>
+<div class="mapa m13"><div class="cam"><img src="assets/img/b3.jpg"/>
+  <svg viewBox="0 0 3200 4623">
+    <circle class="anillo ag" cx="360" cy="2330" r="230" style="stroke-width:26"/>
+    <g class="cgo"><rect x="120" y="2560" width="560" height="120" rx="26" fill="rgba(23,33,43,0.93)"/><text x="400" y="2645" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="76" fill="#f1e9d8">EGIPTO</text></g>
+    <ellipse class="hueco hm" cx="2760" cy="3400" rx="330" ry="430" style="stroke-width:24"/>
+    <g class="cmd"><rect x="2400" y="2830" width="760" height="120" rx="26" fill="rgba(192,57,43,0.94)"/><text x="2780" y="2916" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="76" fill="#fff6e8">MADIÁN</text></g>
+    <path class="flc" d="M 560 2400 C 1100 2600 1800 2900 2290 3170" fill="none" stroke="#17212b" stroke-width="22" stroke-dasharray="52 40" stroke-linecap="round"/>
+    <path class="fla" d="M 2210 3120 L 2300 3180 L 2190 3210" fill="none" stroke="#17212b" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+    <g class="cor"><rect x="1010" y="2840" width="900" height="132" rx="26" fill="rgba(23,33,43,0.93)"/><text x="1460" y="2926" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="78" fill="#f1e9d8">solo el orden del relato</text></g>
+    <g class="cag"><rect x="1960" y="3600" width="560" height="110" rx="24" fill="rgba(23,33,43,0.93)"/><text x="2240" y="3680" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="62" fill="#93bbef">golfo de Áqaba</text></g>
+    <g class="crr"><rect x="780" y="3110" width="1000" height="132" rx="26" fill="rgba(184,67,15,0.94)"/><text x="1280" y="3196" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="76" fill="#fff6e8">rojo: la salida posterior</text></g>
+  </svg></div></div>
+<div class="funde-der" style="left:1060px"></div>
+<div class="pie" style="left:24px;bottom:20px">TNM, apéndice B3 “El éxodo de Egipto” · marcas añadidas</div>
+<div class="col13">
+  <div class="cd c1"><div class="n">Madián</div><div class="x">un pueblo descendiente de Abrahán y el territorio donde vivía</div><div class="s">Al este del golfo de Áqaba, en el noroeste de Arabia; sus límites antiguos variaron · <i>Perspicacia</i>, «Madián, madianitas»</div></div>
+  <div class="cd c2"><div class="n">Hoy</div><div class="x">noroeste de Arabia Saudita</div><div class="s">Los oasis y restos de al-Badʿ documentan una larga ocupación, pero no identifican el pozo de Moisés.</div><span class="ext">fuente externa: estudio “Madian revealed?”</span></div>
+  <div class="cd c3 rj"><div class="n">¿Cuál fue su ruta?</div><div class="x">Éxodo 2:15 solo dice que llegó a Madián. No da itinerario.</div></div>
+</div>
+<script>
+const V13 = { x: 0, y: 0, w: 1180, h: 1080 };
+tl.set($(".cam"), encuadre({ x: 1300, y: 2750, w: 1900, h: 1450 }, V13), 0);
+entra(".c1", at("Madián era un pueblo"), { x: 30, y: 0 });
+traza(".hm", at("Se sitúa al este"), 1.8); aparece(".cmd", at("Se sitúa al este") + 0.8, 0.4); aparece(".cag", at("golfo de Áqaba"), 0.4);
+atenua(".c1", at("Hoy esa región"), 0.4, 0.4);
+entra(".c2", at("Hoy esa región"), { x: 30, y: 0 });
+atenua(".c2", at("Y fíjate"), 0.4, 0.4);
+entra(".c3", at("Y fíjate"), { x: 30, y: 0 });
+camara(".cam", at("Y fíjate"), 2.4, encuadre({ x: 0, y: 2200, w: 3100, h: 1800 }, V13));
+aparece(".crr", at("Los trazos rojos"), 0.4);
+salta(".ag", at("Y fíjate") + 1.0, {}); aparece(".cgo", at("Y fíjate") + 1.2, 0.4);
+traza(".flc", at("La línea punteada"), 2.0); aparece(".fla", at("La línea punteada") + 1.7, 0.3); aparece(".cor", at("La línea punteada") + 0.8, 0.4);
+sale(".crr", at("La línea punteada") - 0.3, { y: 0, d: 0.3 });
+</script>

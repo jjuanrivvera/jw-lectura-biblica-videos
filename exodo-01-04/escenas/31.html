@@ -1,0 +1,25 @@
+<style>
+.fondo31 { position: absolute; inset: 0; }
+.fondo31 .kb { position: absolute; inset: 0; }
+.fondo31 img { width: 100%; height: 100%; object-fit: cover; opacity: 0.42; }
+.fondo31::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 70% at 50% 50%, rgba(23, 33, 43, 0.55), rgba(23, 33, 43, 0.95)); }
+.cen31 { position: absolute; left: 150px; right: 150px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 36px; }
+.cen31 .gr { font-family: "Fraunces", serif; font-weight: 700; font-size: 110px; letter-spacing: -0.02em; }
+.cen31 .m { font-size: 84px; color: var(--oro); }
+.cen31 .cita { font-size: 62px; }
+.cen31 .sig { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tenue); margin-top: 20px; }
+</style>
+<div class="fondo31"><div class="kb k31"><img src="assets/img/f25.jpg"/></div></div>
+<div class="cen31">
+  <div class="gr t1">Éxodo 1 al 4</div>
+  <div class="m t2">Jehová vio, oyó y preparó a Moisés</div>
+  <div class="cita t3">“Cuando los israelitas supieron que Jehová se había fijado en ellos y había visto su sufrimiento, se inclinaron y se postraron”<span class="ref">ÉXODO 4:31</span></div>
+  <div class="sig t4">Sigue Éxodo 5 · la primera audiencia ante el faraón</div>
+</div>
+<script>
+kb(".k31", 0, DUR, { s: 1.0 }, { s: 1.08 });
+entra(".t1", 0.6, { y: 24 });
+entra(".t2", at("Jehová vio"), { y: 24 });
+entra(".t3", at("Y el pueblo"), { y: 24 });
+entra(".t4", at("Después viene"), { y: 16 });
+</script>

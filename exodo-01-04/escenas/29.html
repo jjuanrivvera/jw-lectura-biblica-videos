@@ -1,0 +1,27 @@
+<style>
+.leccion .l { font-size: 126px; }
+.leccion .p { font-size: 70px; }
+.leccion .cuerpo { gap: 40px; }
+.leccion .s { font-size: 36px; }
+.leccion .n { font-size: 270px; }
+.leccion { grid-template-columns: 260px 1fr; }
+.pro-l { position: absolute; right: 90px; top: 74px; font-size: 34px; }
+</style>
+
+<div class="seccion"><span class="r">Lecciones y preguntas para pensar</span><span class="t">Éxodo 3</span></div>
+<div class="seccion-linea"><svg viewBox="0 0 1740 20" preserveAspectRatio="none" style="width:100%;height:20px"><path d="M 4 10 C 400 4 900 16 1736 8"/></svg></div>
+<div class="propio chico pro-l">observación propia</div>
+<div class="leccion l1"><div class="n">1</div><div class="cuerpo"><div class="l">Jehová <b>no trata el sufrimiento</b> como algo invisible</div><div class="p"><span class="k">PARA PENSAR</span>Cuando alguien me cuenta su carga, ¿lo escucho primero, sin minimizarla?</div><div class="s">Dice que ve, oye y conoce bien lo que vive su pueblo · Éxodo 3:7-9</div></div></div>
+<div class="leccion l2"><div class="n">2</div><div class="cuerpo"><div class="l">Una tarea difícil puede empezar con <b>una promesa de apoyo</b></div><div class="p"><span class="k">PARA PENSAR</span>¿Cómo puedo dividir una responsabilidad en pasos y pedir ayuda?</div><div class="s">Jehová responde a la inseguridad de Moisés: “Yo estaré contigo” · Éxodo 3:11, 12</div></div></div>
+<div class="leccion l3"><div class="n">3</div><div class="cuerpo"><div class="l">El nombre de Dios <b>da razones para confiar</b></div><div class="p"><span class="k">PARA PENSAR</span>Al estudiar una promesa, ¿qué revela del carácter de quien la hizo?</div><div class="s">Jehová puede hacer lo necesario para cumplir sus promesas · Éxodo 3:14, 15</div></div></div>
+<script>
+entra(".seccion", 0.3, { y: -20 });
+traza(".seccion-linea path", 0.6, 1.0);
+secuencia([[".l1", at("Primera")], [".l2", at("Segunda")], [".l3", at("Tercera")]], null, { y: 30, d: 0.6 });
+entra(".l1 .p", at("cuando alguien me cuenta") - 0.2, { y: 20 });
+entra(".l1 .s", at("cuando alguien me cuenta") + 0.3, { y: 10 });
+entra(".l2 .p", at("cómo puedo dividir") - 0.2, { y: 20 });
+entra(".l2 .s", at("cómo puedo dividir") + 0.3, { y: 10 });
+entra(".l3 .p", at("al estudiar una promesa") - 0.2, { y: 20 });
+entra(".l3 .s", at("al estudiar una promesa") + 0.3, { y: 10 });
+</script>
